@@ -2,7 +2,13 @@
 
 ## Current status
 
-Initial foundation implemented in real files. **Project not complete; no iOS build verified.** Master scope is preserved verbatim in `MASTER_SPEC.md`. Do not treat this checkpoint as completing Phase 1 or any later phase.
+Initial foundation implemented in real files. **Project not complete; iOS Simulator build verified at `a2f4679`.** Master scope is preserved verbatim in `MASTER_SPEC.md`. Native UI runtime verification is the current milestone.
+
+## Current session: Simulator UI automation
+
+Fetched origin and verified a clean `main` matching `origin/main`; no user changes overwritten. GitHub connector confirmed every job step succeeded in [run 42666624049](https://github.com/srcnxylmz/the-cards-of-fate/actions/runs/42666624049), including Swift/content tests, 30,000 simulations, XcodeGen and simulator build. macOS/Xcode is available through CI and is no longer a general development blocker.
+
+Added real Turkish/English XCUITest flows, Debug-only isolated test saves, stable accessibility identifiers, installed-simulator discovery, install/launch, screenshot export and crash/log artifacts. Details in `UI_TESTING.md`. First remote execution of this new infrastructure is pending; no UI result is claimed yet. Earlier unexecuted-iOS statements below describe the previous Windows-only checkpoint and are superseded by this section.
 
 Workspace initially empty; no existing assets/code or Git remote available. Host: Windows/PowerShell, Node v24.11.1. Swift was absent at the initial checkpoint; the user subsequently installed Swift 6.4.2 and its Windows SDK. Windows core builds/tests now run successfully. Xcode remains unavailable. No remote workflow was dispatched and no signing/account operation was performed.
 

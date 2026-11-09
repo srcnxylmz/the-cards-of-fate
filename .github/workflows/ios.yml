@@ -6,6 +6,7 @@ on:
 jobs:
   verify:
     runs-on: macos-15
+    timeout-minutes: 35
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -23,8 +24,45 @@ jobs:
         run: |
           brew install xcodegen
           xcodegen generate
+      - name: Boot an available iPhone
+        run: |
+          mkdir -p artifacts
+          xcodebuild -version | tee artifacts/xcode-version.txt
+          xcrun simctl list --json > artifacts/simulator-inventory.json
+          python3 tools/select-simulator.py | tee artifacts/selected-simulator.txt
       - name: Build iPhone simulator app
-        run: xcodebuild -project TheCardsOfFate.xcodeproj -scheme TheCardsOfFate -sdk iphonesimulator -configuration Debug -destination 'generic/platform=iOS Simulator' CODE_SIGNING_ALLOWED=NO build
+        run: |
+          set -o pipefail
+          xcodebuild -project TheCardsOfFate.xcodeproj -scheme TheCardsOfFate -sdk iphonesimulator -configuration Debug -destination "platform=iOS Simulator,id=$SIMULATOR_UDID" -derivedDataPath .build-ios CODE_SIGNING_ALLOWED=NO build 2>&1 | tee artifacts/build.log
+      - name: Install and launch the real app
+        run: |
+          xcrun simctl install "$SIMULATOR_UDID" .build-ios/Build/Products/Debug-iphonesimulator/TheCardsOfFate.app
+          xcrun simctl launch --terminate-running-process "$SIMULATOR_UDID" games.monkeybonkey.thecardsoffate --ui-testing --reset-ui-test-save -language tr | tee artifacts/launch.log
+          sleep 3
+          xcrun simctl io "$SIMULATOR_UDID" screenshot artifacts/installed-launch.png
+      - name: Exercise UI and persistence in Turkish and English
+        run: |
+          set -o pipefail
+          xcodebuild -project TheCardsOfFate.xcodeproj -scheme TheCardsOfFate -configuration Debug -destination "platform=iOS Simulator,id=$SIMULATOR_UDID" -derivedDataPath .build-ios -resultBundlePath artifacts/UITests.xcresult -parallel-testing-enabled NO CODE_SIGNING_ALLOWED=NO test 2>&1 | tee artifacts/ui-tests.log
+      - name: Export screenshots and simulator diagnostics
+        if: always()
+        run: |
+          mkdir -p artifacts/screenshots artifacts/crashes
+          if [ -d artifacts/UITests.xcresult ]; then
+            xcrun xcresulttool export attachments --path artifacts/UITests.xcresult --output-path artifacts/screenshots || echo "Attachment export failed; inspect full xcresult" >> artifacts/export-errors.txt
+          fi
+          if [ -n "$SIMULATOR_UDID" ]; then
+            xcrun simctl io "$SIMULATOR_UDID" screenshot artifacts/final-screen.png || true
+            xcrun simctl spawn "$SIMULATOR_UDID" log show --last 15m --style compact --predicate 'process == "TheCardsOfFate"' > artifacts/app-system.log 2>&1 || true
+          fi
+          find "$HOME/Library/Logs/DiagnosticReports" -type f -name '*TheCardsOfFate*' -exec cp {} artifacts/crashes/ \; 2>/dev/null || true
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: iphone-ui-evidence
+          path: artifacts/
+          retention-days: 14
+          if-no-files-found: warn
       - uses: actions/upload-artifact@v4
         if: always()
         with:

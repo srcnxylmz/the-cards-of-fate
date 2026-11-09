@@ -30,8 +30,23 @@ targets:
         # Release builds still require a real AppIcon.appiconset.
         Debug:
           ASSETCATALOG_COMPILER_APPICON_NAME: ''
+  FateUITests:
+    type: bundle.ui-testing
+    platform: iOS
+    sources: [UITests]
+    dependencies:
+      - target: TheCardsOfFate
+    settings:
+      base:
+        GENERATE_INFOPLIST_FILE: YES
+        SWIFT_VERSION: '5.9'
+        TEST_TARGET_NAME: TheCardsOfFate
 schemes:
   TheCardsOfFate:
     build:
       targets:
         TheCardsOfFate: all
+    test:
+      targets:
+        - FateUITests
+      gatherCoverageData: false

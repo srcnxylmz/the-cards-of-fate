@@ -21,8 +21,21 @@ final class GameStore: ObservableObject {
 
     init() {
         let directory = FileManager.default.urls(for: .applicationSupportDirectory, in: .userDomainMask)[0]
+        #if DEBUG
+        let testing = ProcessInfo.processInfo.arguments.contains("--ui-testing")
+        saveDirectory = directory.appendingPathComponent(testing ? "TheCardsOfFate-UITests" : "TheCardsOfFate")
+        #else
         saveDirectory = directory.appendingPathComponent("TheCardsOfFate")
+        #endif
         do {
+            #if DEBUG
+            if testing && ProcessInfo.processInfo.arguments.contains("--reset-ui-test-save") {
+                for name in ["story-v1.json", "weekly-v1.json"] {
+                    let file = saveDirectory.appendingPathComponent(name)
+                    if FileManager.default.fileExists(atPath: file.path) { try FileManager.default.removeItem(at: file) }
+                }
+            }
+            #endif
             let database = try ContentDatabase.bundled()
             content = database; engine = GameEngine(content: database)
             let lastMode = UserDefaults.standard.string(forKey: "lastRunMode")
@@ -53,7 +66,10 @@ final class GameStore: ObservableObject {
 
     func start(_ mode: RunMode) {
         guard let engine else { return }
-        let seed = UInt64.random(in: 0...UInt64.max) // Only new story creation uses system entropy.
+        var seed = UInt64.random(in: 0...UInt64.max) // Only new story creation uses system entropy.
+        #if DEBUG
+        if ProcessInfo.processInfo.arguments.contains("--ui-testing") { seed = 42 }
+        #endif
         commit(engine.start(seed: seed, mode: mode))
         if error == nil { inGame = true }
     }
@@ -137,11 +153,13 @@ struct RootView: View {
                 VStack(spacing: 12) {
                     if store.hasSave(.story) {
                         menuButton(t("Mirasına devam et", "Continue your legacy"), icon: "arrow.right") { store.resume(.story) }
+                            .accessibilityIdentifier("menu.continue")
                     }
                     if store.hasSave(.weekly) {
                         menuButton(t("Mücadeleye devam et", "Resume challenge"), icon: "globe") { store.resume(.weekly) }
                     }
                     menuButton(t("Yeni uygarlık", "New civilization"), icon: "flame") { begin(.story) }
+                        .accessibilityIdentifier("menu.newGame")
                     menuButton(t("Zor başlangıç", "Hard beginning"), icon: "mountain.2") { begin(.hard) }
                     menuButton(t("Haftalık mücadele", "Weekly challenge"), icon: "globe") { begin(.weekly) }
                     HStack {
@@ -164,6 +182,7 @@ struct RootView: View {
     }
     private func menuButton(_ title: String, icon: String, action: @escaping () -> Void) -> some View {
         Button(action: action) { HStack { Image(systemName: icon); Text(title); Spacer(); Image(systemName: "chevron.right") }.padding(16).frame(minHeight: 52) }
+            .accessibilityLabel(title)
             .background(gold.opacity(0.08), in: RoundedRectangle(cornerRadius: 12))
             .overlay(RoundedRectangle(cornerRadius: 12).stroke(gold.opacity(0.28)))
     }
@@ -173,10 +192,12 @@ struct RootView: View {
             VStack(spacing: 18) {
                 HStack {
                     Button { store.inGame = false } label: { Image(systemName: "chevron.left").frame(width: 44, height: 44) }.accessibilityLabel(t("Ana menü", "Main menu"))
+                        .accessibilityIdentifier("game.menu")
                     Spacer()
                     VStack {
                         Text(store.content?.eras.first(where: { $0.id == state.era })?.name.value(language) ?? "").font(.system(.headline, design: .serif))
                         Text(t("Tur \(state.turn) · Kuşak \(state.generation)", "Turn \(state.turn) · Generation \(state.generation)")).font(.caption).foregroundStyle(.secondary)
+                            .accessibilityIdentifier("game.turn").accessibilityValue(String(state.turn))
                     }
                     Spacer()
                     Button { panel = .history } label: { Image(systemName: "book.closed").frame(width: 44, height: 44) }.accessibilityLabel(t("Uygarlık tarihim", "My civilization history"))
@@ -187,6 +208,7 @@ struct RootView: View {
                             HStack { Text(statName(stat)).font(.caption); Spacer(); Text("\(state.stats[stat.rawValue, default: 0])").font(.caption.monospacedDigit()) }
                             ProgressView(value: Double(state.stats[stat.rawValue, default: 0]), total: 100).tint(state.stats[stat.rawValue, default: 0] < 20 ? .orange : gold)
                         }.accessibilityElement(children: .ignore).accessibilityLabel("\(statName(stat)), \(state.stats[stat.rawValue, default: 0]) / 100")
+                            .accessibilityIdentifier("stat.\(stat.rawValue)").accessibilityValue(String(state.stats[stat.rawValue, default: 0]))
                     }
                 }
                 HStack {
@@ -216,6 +238,7 @@ struct RootView: View {
                             SettlementView(era: state.era, buildings: state.buildings, reduceMotion: reduceMotion).frame(height: 150).clipShape(RoundedRectangle(cornerRadius: 12)).accessibilityLabel(t("Uygarlık taslak görünümü", "Civilization prototype view"))
                         }
                         Text(card.title.value(language)).font(.system(.title2, design: .serif, weight: .semibold))
+                            .accessibilityIdentifier("card.title").accessibilityValue(card.id)
                         Text(card.description.value(language)).font(.body).lineSpacing(5).fixedSize(horizontal: false, vertical: true)
                         ForEach(card.choices) { choice in
                             Button { store.choose(choice, sound: sound, haptics: haptics) } label: {
@@ -224,6 +247,7 @@ struct RootView: View {
                                     Text(choice.risk.value(language)).font(.caption).foregroundStyle(.secondary)
                                 }.frame(maxWidth: .infinity, minHeight: 48, alignment: .leading).padding(12)
                             }.buttonStyle(.plain)
+                                .accessibilityIdentifier("choice.\(choice.id)")
                                 .background(gold.opacity(0.10), in: RoundedRectangle(cornerRadius: 10))
                                 .overlay(RoundedRectangle(cornerRadius: 10).stroke(gold.opacity(0.30)))
                                 .disabled(!choice.available(in: state))
@@ -247,6 +271,7 @@ struct RootView: View {
     private func resultView(_ result: Resolution, state: GameState) -> some View {
         VStack(spacing: 20) {
             Text(result.title.value(language)).font(.system(.title2, design: .serif))
+                .accessibilityIdentifier("result.title")
             Text(result.text.value(language)).lineSpacing(5)
             ForEach(Array((result.consequences ?? []).enumerated()), id: \.offset) { _, text in
                 Text(text.value(language)).font(.callout).foregroundStyle(.secondary).lineSpacing(4)
@@ -254,11 +279,14 @@ struct RootView: View {
             ForEach(Stat.allCases.filter { result.changes[$0.rawValue, default: 0] != 0 }, id: \.self) { stat in
                 let delta = result.changes[stat.rawValue, default: 0]
                 HStack { Text(statName(stat)); Spacer(); Text(delta > 0 ? "+\(delta)" : "\(delta)").foregroundStyle(delta > 0 ? .green : .orange) }
+                    .accessibilityElement(children: .ignore).accessibilityLabel(statName(stat))
+                    .accessibilityIdentifier("delta.\(stat.rawValue)").accessibilityValue(String(delta))
             }
             if result.previousEra != state.era {
                 Text(t("Yeni bir çağ başladı", "A new era begins")).font(.system(.title, design: .serif)).foregroundStyle(gold)
             }
             Button(t("Sonucu kabul et", "Continue")) { store.acknowledge() }.buttonStyle(.borderedProminent).frame(minHeight: 48)
+                .accessibilityIdentifier("result.continue")
         }.padding(24).frame(maxWidth: .infinity).background(gold.opacity(0.07), in: RoundedRectangle(cornerRadius: 18))
     }
 
