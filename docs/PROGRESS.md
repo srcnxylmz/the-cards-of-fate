@@ -2,7 +2,7 @@
 
 ## Current status
 
-Initial foundation implemented in real files. **Project not complete; iOS Simulator build verified at `a2f4679`.** Master scope is preserved verbatim in `MASTER_SPEC.md`. Native UI runtime verification is the current milestone.
+**Project not complete; 36-card native build and UI flows verified at `ab7f0c8`.** Master scope is preserved verbatim in `MASTER_SPEC.md`. Simulator automation is operational; Phase 2 content and simulation development continues.
 
 ## Current session: Simulator UI automation
 
@@ -18,9 +18,9 @@ Added real Turkish/English XCUITest flows, Debug-only isolated test saves, stabl
 - Added `first20TurnsRepeatRate` to real-engine simulation reports. Archived 24-card data under `docs/baselines/24-cards/` before running 10,000 seeds per policy again.
 - **16 Swift tests pass; 15 content tests pass; content audit has zero errors/warnings.** Three 10,000-run simulations completed. Random-repeat rate fell 54.34% → 42.79%; survival 93.33% → 84.73%; knowledge 93.69% → 88.20%. These improve variety but do not establish final balance.
 - Added original `card_river_tracks` illustration with exact prompt/provenance, integrated through the asset catalog. Two generated illustrations now exist; 34 current cards still need production art. Result-button text now uses a dark foreground for contrast. UI menu derives the content count rather than hardcoding 24.
-- Remote validation of this content milestone is pending until its push completes; follow the associated run before proceeding.
+- **Remote validation passed:** commit `ab7f0c8`, [run 42687508772](https://github.com/srcnxylmz/the-cards-of-fate/actions/runs/42687508772). All steps succeeded: 16 Swift tests, 15 content tests, 30,000 simulations, native build/install/launch, 2 TR/EN smoke tests, screenshots and diagnostic upload. UI tests: 88.802 seconds / zero failures. Downloaded artifact `13705113923`; visually confirmed the river illustration renders and result-button contrast is improved. The larger art moves the second choice below the initial viewport; scrolling remains available, but broader small-screen/large-text QA remains necessary.
 
-Workspace initially empty; no existing assets/code or Git remote available. Host: Windows/PowerShell, Node v24.11.1. Swift was absent at the initial checkpoint; the user subsequently installed Swift 6.4.2 and its Windows SDK. Windows core builds/tests now run successfully. Xcode remains unavailable. No remote workflow was dispatched and no signing/account operation was performed.
+The initial workspace was empty. The current repository is connected to `srcnxylmz/the-cards-of-fate`. Windows/PowerShell runs Node v24.11.1 and Swift 6.4.2 core checks; GitHub macOS runs Xcode and Simulator verification. No Apple signing, App Store Connect or Game Center account configuration has been performed.
 
 ## Files and implemented behavior
 
@@ -28,13 +28,13 @@ Workspace initially empty; no existing assets/code or Git remote available. Host
 - `Sources/FateCore/Models.swift`, `SeededRandom.swift`, `GameEngine.swift`: seeded weighted selection, six bounded stats, transactional choices, normalized state-dependent outcome weights, delayed consequences gated by era/turn, history, flags, discoveries, buildings, rivals, leadership/exile recovery, generational succession, two actual collapse conditions. Empty eligible deck explicitly reports development-content exhaustion, not an authored ending.
 - `Persistence.swift`: atomic JSON writes, saved RNG/current card/result, schema header check; corrupt/unsupported data reports an error. Real migration implementation awaits a prior schema to migrate.
 - `App`: SwiftUI menu/play/results/history/collection/settings/weekly ranking; separate story and weekly save slots, unranked expired-week continuation remains in weekly slot; SpriteKit settlement placeholder; core haptics and AVFoundation cue; GameKit authentication, own/top scores and persistent best-score retry queue with occurrence checks.
-- `tools/build-content.mjs` and bundled JSON: 24 hand-authored TR/EN events (8 per first-three era), 48 choices, three probabilistic decisions, 12 era definitions, balance and transition technology data. Later eras are metadata only.
-- `App/Assets.xcassets`: one original generated `sacred_fire` illustration integrated by asset name; original prompt and provenance saved. 23 authored card illustrations missing.
+- `tools/build-content.mjs`, `tools/content/legacy-events.mjs` and bundled JSON: 36 hand-authored TR/EN events (12 per first-three era), 72 choices, three probabilistic decisions, 12 era definitions, balance and transition technology data. Later eras are metadata only.
+- `App/Assets.xcassets`: original generated `sacred_fire` and `river_tracks` illustrations integrated by asset name; exact prompts and provenance saved. 34 authored card illustrations missing.
 - `App/Resources/decision.wav`: original 220 ms prototype cue. Twelve music and twelve ambience assets missing; required 40-effect library not complete.
-- `tools/validate-content*`: executable validator and 15 automated tests. `Tests/FateCoreTests`: 13 passing Swift tests. `Sources/FateSimulation`: real production-core simulation with random, survival and knowledge policies and atomic JSON output. `tools/swift-windows.ps1`: repeatable Windows setup/test/simulation helper.
+- `tools/validate-content*`: executable validator and 15 automated tests. `Tests/FateCoreTests`: 16 passing Swift tests. `UITests/FateSmokeTests.swift`: 2 native smoke tests. `Sources/FateSimulation`: production-core simulation with random, survival and knowledge policies and atomic JSON output. `tools/swift-windows.ps1`: repeatable Windows setup/test/simulation helper.
 - All six required project documents plus schema, release checklist, asset provenance and complete master specification are saved.
 
-## Executed checks
+## Historical Windows checkpoint evidence
 
 1. `node tools/synthesize-audio.mjs` — succeeded, generated WAV.
 2. `node tools/build-content.mjs` — succeeded, generated 24 cards and 12 eras.
@@ -49,7 +49,7 @@ Workspace initially empty; no existing assets/code or Git remote available. Host
 10. `./tools/swift-windows.ps1 -Task Test` — **13 passed / 0 failed**. Log: `swift-test-windows.log`. First cold compilation emitted SDK `wchar_t` module warnings; successful builds also emit a `.build/debug` or `.build/release` symlink warning on this host. Neither prevented tests or executable runs. No system configuration was changed to hide warnings.
 11. Initial `swift run -c release FateSimulation 10000` completed; baseline saved as `simulation-results.json`. After code changes, executed **10,000 seeds each under three policies** using the Windows helper, all exit code 0: `simulation-random.json`, `simulation-survival.json`, `simulation-knowledge.json`. See `BALANCE_REPORT.md`. They represent 30,000 runs over the same 10,000 seeds, not 30,000 unique seeds.
 
-iOS simulator build, device QA, Game Center and audiovisual performance remain **unexecuted**. Windows core success is not evidence that the Apple UI/service layer builds. CI workflow exists but has no remote run evidence.
+At this initial Windows checkpoint Apple-platform checks were unexecuted. The successful native build/UI evidence at the top of this document supersedes that limitation. Physical-device QA, Game Center and audiovisual performance remain open.
 
 ## Scope ledger
 
@@ -68,7 +68,7 @@ iOS simulator build, device QA, Game Center and audiovisual performance remain *
 
 ## Next exact actions
 
-1. Verify the latest content commit's complete Actions run, including both UI tests, and inspect its screenshots. The prior UI infrastructure milestone passed; no blanket macOS blocker remains.
+1. Continue from verified `ab7f0c8` with a focused first-three-era rivalry milestone: distinct faction motivations/behavior, targeted relationship effects and era-specific identities. Keep existing saves compatible and add regression tests before expanding rules. Simulator infrastructure is established; reuse it after each meaningful change.
 2. Use the 36-card comparison in `BALANCE_REPORT.md`. Strategic repetition remains 85–88%; 14.42% of knowledge-policy runs reach the 500-turn cap. Expand unique crises/legacy consequences and investigate sustainable loops. Do not equate heuristic results with human skill or pacing.
 3. Test iPhone UI in Turkish/English at smallest size/large text/VoiceOver/Reduce Motion; ensure save failures preserve current state and double taps cannot resolve twice. Game Center tests require the owner’s account configuration.
 4. Deepen the first-three-era systems and author 144 additional distinct cards to reach 180. Continue leadership/rival differentiation and successor traits. Finish initial chains; thematic grouping alone does not count.

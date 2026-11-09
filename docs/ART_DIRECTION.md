@@ -22,7 +22,8 @@ Composition: portrait main illustration, readable subject at iPhone size, delibe
 ## Actual assets
 
 - `card_sacred_fire`: generated with built-in imagegen, copied into `App/Assets.xcassets/card_sacred_fire.imageset`. Inspected visually: elder/child, winter forest, fire, original painterly composition, no text. Final production/color/performance acceptance remains pending.
-- All other 23 authored illustrations: missing. SpriteKit draws an explicitly temporary original settlement silhouette; this is not counted as card art.
+- `card_river_tracks`: generated with built-in imagegen and integrated in its asset-catalog image set. Paleolithic scout, wild grain, river mud and migrating herd visually checked; exact prompt in `assets/generation_prompts.json`.
+- All other 34 authored illustrations: missing. SpriteKit draws an explicitly temporary original settlement silhouette; this is not counted as card art.
 - `decision.wav`: original deterministic two-tone prototype, 220 ms, mono PCM16 at 44.1 kHz. Quiet envelope and app gain limit. Not a finished sound-design pack.
 - Studio mascot/logo, game logo, App Store icon, 12 music sets, 12 ambience tracks, 39+ additional effects: missing.
 

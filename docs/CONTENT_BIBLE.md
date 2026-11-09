@@ -1,6 +1,6 @@
 # Content bible
 
-Editorial principle: each card needs a specific human conflict, an observable cost, competing reasonable values, and consequences that fit the era. Neither option should simply be the same reward in different wording. Turkish is authored naturally, with a complete English counterpart for this initial 24-card set.
+Editorial principle: each card needs a specific human conflict, an observable cost, competing reasonable values, and consequences that fit the era. Neither option should simply be the same reward in different wording. Turkish is authored naturally, with a complete English counterpart for the current 36-card set.
 
 ## Current inventory
 

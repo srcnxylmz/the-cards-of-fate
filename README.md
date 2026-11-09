@@ -2,7 +2,7 @@
 
 MonKeyBonKey Games · Native iPhone narrative strategy game · Development version 0.1
 
-This repository starts implementing the complete specification preserved in `docs/MASTER_SPEC.md`. It is **not a completed or release-ready game**. Current content: 24 individually authored bilingual events across the first three eras, 12 era definitions, a deterministic Swift engine, SwiftUI screens, persistence, SpriteKit settlement prototype, and an unverified Game Center adapter.
+This repository implements the specification preserved in `docs/MASTER_SPEC.md`. It is **not a completed or release-ready game**. Current content: 36 individually authored bilingual events across the first three eras, 12 era definitions, a deterministic Swift engine, SwiftUI screens, persistence, SpriteKit settlement prototype, and an unverified Game Center adapter. iPhone Simulator build and Turkish/English runtime smoke flows now pass in GitHub Actions; see `docs/UI_TESTING.md` for evidence and screenshots.
 
 ## Run quality checks on Windows
 
@@ -15,7 +15,7 @@ node tools/validate-content.mjs
 
 `node tools/validate-content.mjs --release` intentionally fails until release requirements are fulfilled. Structural validation alone never certifies narrative quality or shipping readiness.
 
-Swift 6.4.2 on Windows has now built and tested the core: **13 XCTest tests passed**. The production core also completed 10,000 seeds per policy (random, survival, knowledge). See `docs/BALANCE_REPORT.md` for results and limitations.
+Swift 6.4.2 on Windows has built and tested the current core: **16 XCTest tests passed**. The production core also completed 10,000 seeds per policy (random, survival, knowledge). See `docs/BALANCE_REPORT.md` for results and limitations.
 
 With Swift's Windows SDK and Visual Studio prerequisites installed:
 
@@ -42,7 +42,7 @@ open TheCardsOfFate.xcodeproj
 
 Choose an iPhone simulator and run the application. Physical devices require your own signing team and provisioning. No credentials are stored here. XcodeGen generates the project from `project.yml`; generated projects are not the source of truth.
 
-GitHub Actions contains the same checks, but no repository remote or workflow execution was available in the initial workspace. Do not interpret the presence of CI as a successful build.
+GitHub Actions runs these checks plus iPhone Simulator install/launch, Turkish/English UI smoke tests and screenshot export. Verified run links are in `docs/UI_TESTING.md`; check the run for the specific commit rather than treating the presence of CI as proof of success.
 
 ## Content and continuation
 
