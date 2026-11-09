@@ -1,0 +1,80 @@
+[
+  {
+    "id": "cultivation",
+    "era": 1,
+    "unlockedBy": [
+      "river_tracks"
+    ],
+    "status": "implemented"
+  },
+  {
+    "id": "smelting",
+    "era": 2,
+    "unlockedBy": [
+      "green_stone"
+    ],
+    "status": "implemented"
+  },
+  {
+    "id": "writing",
+    "era": 3,
+    "unlockedBy": [
+      "clay_archive"
+    ],
+    "status": "implemented"
+  },
+  {
+    "id": "civil_law",
+    "era": 4,
+    "unlockedBy": [],
+    "status": "planned"
+  },
+  {
+    "id": "printing",
+    "era": 5,
+    "unlockedBy": [],
+    "status": "planned"
+  },
+  {
+    "id": "navigation",
+    "era": 6,
+    "unlockedBy": [],
+    "status": "planned"
+  },
+  {
+    "id": "steam",
+    "era": 7,
+    "unlockedBy": [],
+    "status": "planned"
+  },
+  {
+    "id": "electricity",
+    "era": 8,
+    "unlockedBy": [],
+    "status": "planned"
+  },
+  {
+    "id": "computing",
+    "era": 9,
+    "unlockedBy": [],
+    "status": "planned"
+  },
+  {
+    "id": "autonomy",
+    "era": 10,
+    "unlockedBy": [],
+    "status": "planned"
+  },
+  {
+    "id": "stellar_drive",
+    "era": 11,
+    "unlockedBy": [],
+    "status": "planned"
+  },
+  {
+    "id": "continuity",
+    "era": 12,
+    "unlockedBy": [],
+    "status": "planned"
+  }
+]

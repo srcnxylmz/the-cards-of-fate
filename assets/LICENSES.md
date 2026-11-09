@@ -1,0 +1,10 @@
+# Asset provenance
+
+| Asset | Origin | Status |
+|---|---|---|
+| `card_sacred_fire.png` | Built-in OpenAI imagegen, generated for this project on 2026-11-09; no reference images | Original generated candidate; human commercial/legal review pending |
+| `decision.wav` | Original waveform synthesis in `tools/synthesize-audio.mjs` | Prototype project-created cue |
+| SpriteKit settlement | Original programmatic shapes in `App/SettlementScene.swift` | Temporary presentation, not final illustration |
+| SF Symbols | Apple system symbol API | Review Apple usage terms for final distribution |
+
+No music recordings, stock imagery or previous game assets were imported. A provenance entry is not a legal guarantee. Record source, author, license/terms, modification history and review for each future imported asset.

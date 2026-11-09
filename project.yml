@@ -1,0 +1,32 @@
+name: TheCardsOfFate
+options:
+  bundleIdPrefix: games.monkeybonkey
+  deploymentTarget:
+    iOS: '16.0'
+packages:
+  FateCore:
+    path: .
+targets:
+  TheCardsOfFate:
+    type: application
+    platform: iOS
+    sources: [App]
+    dependencies:
+      - package: FateCore
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: games.monkeybonkey.thecardsoffate
+        SWIFT_VERSION: '5.9'
+        TARGETED_DEVICE_FAMILY: '1'
+        GENERATE_INFOPLIST_FILE: YES
+        INFOPLIST_KEY_UILaunchScreen_Generation: YES
+        INFOPLIST_KEY_UISupportedInterfaceOrientations: UIInterfaceOrientationPortrait
+        INFOPLIST_KEY_CFBundleDisplayName: The Cards of Fate
+        MARKETING_VERSION: '0.1.0'
+        CURRENT_PROJECT_VERSION: '1'
+        CODE_SIGN_ENTITLEMENTS: App/Fate.entitlements
+schemes:
+  TheCardsOfFate:
+    build:
+      targets:
+        TheCardsOfFate: all

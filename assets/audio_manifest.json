@@ -1,0 +1,146 @@
+{
+  "status": "production-incomplete",
+  "effects": [
+    {
+      "id": "decision",
+      "status": "prototype",
+      "file": "App/Resources/decision.wav"
+    }
+  ],
+  "music": [
+    {
+      "id": "era_1",
+      "status": "missing",
+      "file": null,
+      "brief": "Kaya, kemik, ateş; ochre charcoal; cave wind and stone percussion."
+    },
+    {
+      "id": "era_2",
+      "status": "missing",
+      "file": null,
+      "brief": "Kil, keten, saz; sage clay; water and wooden rhythm."
+    },
+    {
+      "id": "era_3",
+      "status": "missing",
+      "file": null,
+      "brief": "Bronz, mühür, tablet; bronze teal; workshop and strings."
+    },
+    {
+      "id": "era_4",
+      "status": "missing",
+      "file": null,
+      "brief": "Mermer, mozaik; ivory gold; crowds and ceremonial drums."
+    },
+    {
+      "id": "era_5",
+      "status": "missing",
+      "file": null,
+      "brief": "Parşömen, vitray; plum silver; rain bells and bowed strings."
+    },
+    {
+      "id": "era_6",
+      "status": "missing",
+      "file": null,
+      "brief": "Yağlı boya, gravür; sienna gold; workshop lute."
+    },
+    {
+      "id": "era_7",
+      "status": "missing",
+      "file": null,
+      "brief": "Harita, pusula; ocean parchment; rigging and chamber ensemble."
+    },
+    {
+      "id": "era_8",
+      "status": "missing",
+      "file": null,
+      "brief": "Çelik, buhar; rust charcoal; machinery and low pulse."
+    },
+    {
+      "id": "era_9",
+      "status": "missing",
+      "file": null,
+      "brief": "Özgün fotoğrafik kolaj; muted green; radio texture and orchestra."
+    },
+    {
+      "id": "era_10",
+      "status": "missing",
+      "file": null,
+      "brief": "Cam, veri; cyan graphite; restrained electronic pulse."
+    },
+    {
+      "id": "era_11",
+      "status": "missing",
+      "file": null,
+      "brief": "Hologram, seramik; violet white; habitat hum and synthesis."
+    },
+    {
+      "id": "era_12",
+      "status": "missing",
+      "file": null,
+      "brief": "Kozmik ışık; indigo gold; stellar ambience and spacious harmonics."
+    }
+  ],
+  "ambience": [
+    {
+      "id": "ambience_1",
+      "status": "missing",
+      "file": null
+    },
+    {
+      "id": "ambience_2",
+      "status": "missing",
+      "file": null
+    },
+    {
+      "id": "ambience_3",
+      "status": "missing",
+      "file": null
+    },
+    {
+      "id": "ambience_4",
+      "status": "missing",
+      "file": null
+    },
+    {
+      "id": "ambience_5",
+      "status": "missing",
+      "file": null
+    },
+    {
+      "id": "ambience_6",
+      "status": "missing",
+      "file": null
+    },
+    {
+      "id": "ambience_7",
+      "status": "missing",
+      "file": null
+    },
+    {
+      "id": "ambience_8",
+      "status": "missing",
+      "file": null
+    },
+    {
+      "id": "ambience_9",
+      "status": "missing",
+      "file": null
+    },
+    {
+      "id": "ambience_10",
+      "status": "missing",
+      "file": null
+    },
+    {
+      "id": "ambience_11",
+      "status": "missing",
+      "file": null
+    },
+    {
+      "id": "ambience_12",
+      "status": "missing",
+      "file": null
+    }
+  ]
+}

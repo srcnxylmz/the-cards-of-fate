@@ -1,0 +1,194 @@
+[
+  {
+    "id": "card_sacred_fire",
+    "cardID": "sacred_fire",
+    "status": "generated-review-pending",
+    "file": "App/Assets.xcassets/card_sacred_fire.imageset/card_sacred_fire.png",
+    "brief": "Paleolithic cave mouth, child and elder beside small hearth, bare grove in distance; ochre and charcoal, warm light from lower left, portrait composition.",
+    "license": "Generated for project; provenance in assets/LICENSES.md"
+  },
+  {
+    "id": "card_river_tracks",
+    "cardID": "river_tracks",
+    "status": "missing",
+    "file": null,
+    "brief": "Scout crouching beside wild grain on muddy riverbank; cold dawn, green and silt palette; herd small on horizon.",
+    "license": null
+  },
+  {
+    "id": "card_broken_spear",
+    "cardID": "broken_spear",
+    "status": "missing",
+    "file": null,
+    "brief": "Broken flint spear between wounded youth and proud hunter, hide tent, restrained amber side lighting.",
+    "license": null
+  },
+  {
+    "id": "card_stranger_child",
+    "cardID": "stranger_child",
+    "status": "missing",
+    "file": null,
+    "brief": "Small bundled child at snowy camp boundary, two distant figures, blue dusk and single orange torch.",
+    "license": null
+  },
+  {
+    "id": "card_red_mushrooms",
+    "cardID": "red_mushrooms",
+    "status": "missing",
+    "file": null,
+    "brief": "Red mushrooms in woven basket, elder hands sorting, forest floor, diffuse daylight, close composition.",
+    "license": null
+  },
+  {
+    "id": "card_cave_marks",
+    "cardID": "cave_marks",
+    "status": "missing",
+    "file": null,
+    "brief": "Hand painting abstract memorial marks on cave wall, bone lamp, red ochre, intimate portrait crop.",
+    "license": null
+  },
+  {
+    "id": "card_ice_crossing",
+    "cardID": "ice_crossing",
+    "status": "missing",
+    "file": null,
+    "brief": "Hunters paused on fractured frozen river, elk on far shore, slate blue, wide depth within portrait frame.",
+    "license": null
+  },
+  {
+    "id": "card_empty_seat",
+    "cardID": "empty_seat",
+    "status": "missing",
+    "file": null,
+    "brief": "Empty ceremonial hide in circle of people, sunrise entering cave, bone tokens, dignified earthy palette.",
+    "license": null
+  },
+  {
+    "id": "card_first_granary",
+    "cardID": "first_granary",
+    "status": "missing",
+    "file": null,
+    "brief": "Raised mud granary under construction, families with grain baskets, clay and flax palette, late sunlight.",
+    "license": null
+  },
+  {
+    "id": "card_canal_boundary",
+    "cardID": "canal_boundary",
+    "status": "missing",
+    "file": null,
+    "brief": "Forked irrigation ditch between green field and dry field, small sacred grove, overhead oblique view.",
+    "license": null
+  },
+  {
+    "id": "card_green_stone",
+    "cardID": "green_stone",
+    "status": "missing",
+    "file": null,
+    "brief": "Potter holding copper droplet near clay kiln, malachite fragments, warm furnace light, smoke overhead.",
+    "license": null
+  },
+  {
+    "id": "card_seed_debt",
+    "cardID": "seed_debt",
+    "status": "missing",
+    "file": null,
+    "brief": "Two hands weighing seeds against small clay labor tokens, worried family in background, muted umber.",
+    "license": null
+  },
+  {
+    "id": "card_reed_fever",
+    "cardID": "reed_fever",
+    "status": "missing",
+    "file": null,
+    "brief": "Reed huts by stagnant canal, caregiver carrying bowl, humid dusk, gentle green and amber.",
+    "license": null
+  },
+  {
+    "id": "card_ancestor_field",
+    "cardID": "ancestor_field",
+    "status": "missing",
+    "file": null,
+    "brief": "Exposed burial stones beside unfinished clay foundations, settlers keeping respectful distance, dawn haze.",
+    "license": null
+  },
+  {
+    "id": "card_forest_oath",
+    "cardID": "forest_oath",
+    "status": "missing",
+    "file": null,
+    "brief": "Healthy grove beside reed village, elderly carved marker and young woodcutter, emerald daylight.",
+    "license": null
+  },
+  {
+    "id": "card_market_measures",
+    "cardID": "market_measures",
+    "status": "missing",
+    "file": null,
+    "brief": "Different grain baskets surrounding one clay measuring jar, village market, honey sunlight.",
+    "license": null
+  },
+  {
+    "id": "card_tin_caravan",
+    "cardID": "tin_caravan",
+    "status": "missing",
+    "file": null,
+    "brief": "Pack animals with tin ingots at mountain toll gate, bronze seal foreground, dry gold light.",
+    "license": null
+  },
+  {
+    "id": "card_clay_archive",
+    "cardID": "clay_archive",
+    "status": "missing",
+    "file": null,
+    "brief": "Scribe making original abstract wedge marks, shelves of clay tablets, shaft of light, bronze and cream.",
+    "license": null
+  },
+  {
+    "id": "card_debt_tablet",
+    "cardID": "debt_tablet",
+    "status": "missing",
+    "file": null,
+    "brief": "Worn debt tablet held by farm worker before seated scribe, severe side lighting, dusty clay palette.",
+    "license": null
+  },
+  {
+    "id": "card_city_walls",
+    "cardID": "city_walls",
+    "status": "missing",
+    "file": null,
+    "brief": "Unfinished mudbrick wall, well outside and storehouses inside marked boundary, high angle afternoon.",
+    "license": null
+  },
+  {
+    "id": "card_furnace_wood",
+    "cardID": "furnace_wood",
+    "status": "missing",
+    "file": null,
+    "brief": "Bronze foundry beside shrinking forest, stacked logs and small village, ember glow through charcoal haze.",
+    "license": null
+  },
+  {
+    "id": "card_hostage_prince",
+    "cardID": "hostage_prince",
+    "status": "missing",
+    "file": null,
+    "brief": "Young adult foreign heir at bronze palace window, guard beyond curtain, blue and gold twilight.",
+    "license": null
+  },
+  {
+    "id": "card_salt_ship",
+    "cardID": "salt_ship",
+    "status": "missing",
+    "file": null,
+    "brief": "Storm-battered wooden merchant ship, salt sacks on quay, dark teal water and warm harbor torches.",
+    "license": null
+  },
+  {
+    "id": "card_council_seal",
+    "cardID": "council_seal",
+    "status": "missing",
+    "file": null,
+    "brief": "Two original cylinder seals on bronze tray between ruler and scribe, sunlit stone hall, crisp gold accents.",
+    "license": null
+  }
+]

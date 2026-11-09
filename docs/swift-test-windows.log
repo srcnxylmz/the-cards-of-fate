@@ -1,0 +1,93 @@
+Building for debugging...
+[Using on-disk description]
+[2 / 17] FateCore
+[5 / 20] FateCore
+[11 / 23] FateSimulation-product
+[15 / 27] FateCoreTests-product
+[18 / 30] FateCoreTests-product
+[23 / 34] FateCore
+[29 / 34] FateCoreTests-product
+[32 / 38] FateCoreTests-test-runner
+[34 / 40] FateCoreTests-test-runner
+[36 / 38] FateCoreTests-test-runner
+[39 / 39] FateCoreTests-test-runner
+Build complete! (3.58 secs)
+warning: unable to create symbolic link at C:\Users\Impassive\Desktop\Projeler\The Cards Of Fate\.build\debug: encountered an I/O error (code: 512) while reading C:\Users\Impassive\Desktop\Projeler\The Cards Of Fate\.build\debug
+Test Suite 'All tests' started at 2026-11-09 16:40:48.733
+
+Test Suite 'Debug-windows-x86_64.xctest' started at 2026-11-09 16:40:48.734
+
+Test Suite 'GameEngineTests' started at 2026-11-09 16:40:48.734
+
+Test Case 'GameEngineTests.testAtomicSaveRoundTripAndFutureSchemaRejection' started at 2026-11-09 16:40:48.734
+
+Test Case 'GameEngineTests.testAtomicSaveRoundTripAndFutureSchemaRejection' passed (0.014 seconds)
+
+Test Case 'GameEngineTests.testAuthorityLossIsRecoverable' started at 2026-11-09 16:40:48.748
+
+Test Case 'GameEngineTests.testAuthorityLossIsRecoverable' passed (0.004 seconds)
+
+Test Case 'GameEngineTests.testChoiceRequirementsAndTerminalState' started at 2026-11-09 16:40:48.752
+
+Test Case 'GameEngineTests.testChoiceRequirementsAndTerminalState' passed (0.003 seconds)
+
+Test Case 'GameEngineTests.testConditionsAndCooldownNeverBypassed' started at 2026-11-09 16:40:48.755
+
+Test Case 'GameEngineTests.testConditionsAndCooldownNeverBypassed' passed (0.004 seconds)
+
+Test Case 'GameEngineTests.testDeterministicReplayAcrossSaveBoundary' started at 2026-11-09 16:40:48.759
+
+Test Case 'GameEngineTests.testDeterministicReplayAcrossSaveBoundary' passed (0.011 seconds)
+
+Test Case 'GameEngineTests.testDoubleTapCannotSpendTwoTurns' started at 2026-11-09 16:40:48.770
+
+Test Case 'GameEngineTests.testDoubleTapCannotSpendTwoTurns' passed (0.189 seconds)
+
+Test Case 'GameEngineTests.testEraRequiresTechnologyAndSocialThresholds' started at 2026-11-09 16:40:48.959
+
+Test Case 'GameEngineTests.testEraRequiresTechnologyAndSocialThresholds' passed (0.005 seconds)
+
+Test Case 'GameEngineTests.testHistoricalConsequenceWaitsForEraAndTurn' started at 2026-11-09 16:40:48.964
+
+Test Case 'GameEngineTests.testHistoricalConsequenceWaitsForEraAndTurn' passed (0.003 seconds)
+
+Test Case 'GameEngineTests.testLegacyV1ResolutionLoadsWithoutConsequenceField' started at 2026-11-09 16:40:48.967
+
+Test Case 'GameEngineTests.testLegacyV1ResolutionLoadsWithoutConsequenceField' passed (0.004 seconds)
+
+Test Case 'GameEngineTests.testProbabilitiesAreNormalizedAndKnowledgeImprovesRisk' started at 2026-11-09 16:40:48.972
+
+Test Case 'GameEngineTests.testProbabilitiesAreNormalizedAndKnowledgeImprovesRisk' passed (0.003 seconds)
+
+Test Case 'GameEngineTests.testSplitMixKnownVector' started at 2026-11-09 16:40:48.975
+
+Test Case 'GameEngineTests.testSplitMixKnownVector' passed (0.0 seconds)
+
+Test Case 'GameEngineTests.testSuccessionCanRemoveLeadershipInTheSameTurn' started at 2026-11-09 16:40:48.975
+
+Test Case 'GameEngineTests.testSuccessionCanRemoveLeadershipInTheSameTurn' passed (0.003 seconds)
+
+Test Case 'GameEngineTests.testWeeklyMondayUTCAndYearBoundary' started at 2026-11-09 16:40:48.978
+
+Test Case 'GameEngineTests.testWeeklyMondayUTCAndYearBoundary' passed (0.006 seconds)
+
+Test Suite 'GameEngineTests' passed at 2026-11-09 16:40:48.984
+
+	 Executed 13 tests, with 0 failures (0 unexpected) in 0.25 (0.25) seconds
+
+Test Suite 'Debug-windows-x86_64.xctest' passed at 2026-11-09 16:40:48.984
+
+	 Executed 13 tests, with 0 failures (0 unexpected) in 0.25 (0.25) seconds
+
+Test Suite 'All tests' passed at 2026-11-09 16:40:48.984
+
+	 Executed 13 tests, with 0 failures (0 unexpected) in 0.25 (0.25) seconds
+
+◊ Test run started.
+
+→ Testing Library Version: 6.4.2 (288a2328ff84644)
+
+→ Target Platform: x86_64-unknown-windows-msvc
+
+√ Test run with 0 tests in 0 suites passed after 0.001 seconds.
+

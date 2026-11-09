@@ -1,0 +1,11 @@
+.build/
+.swiftpm/
+DerivedData/
+*.xcodeproj/
+*.xcworkspace/
+*.xcuserstate
+.DS_Store
+node_modules/
+*.p12
+*.mobileprovision
+.env

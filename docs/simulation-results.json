@@ -1,0 +1,23 @@
+{
+  "averageTurns" : 32.7746,
+  "cappedRuns" : 0,
+  "endings" : {
+    "The land fell silent. Only roads remain after your people scattered." : 132,
+    "The last hearth went dark. Hunger consumed your civilization's living memory." : 9868
+  },
+  "engine" : "FateCore Swift (production core)",
+  "eraReachCounts" : {
+    "1" : 10000,
+    "2" : 7402,
+    "3" : 4792
+  },
+  "limitation" : "24-card development content. Random policy does not establish skill balance or 45–90 minute pacing.",
+  "maxTurns" : 154,
+  "meanResources" : 14.81329139028394,
+  "meanStrongestRival" : 46.08339079653146,
+  "minTurns" : 9,
+  "policy" : "uniform-random-available-choice",
+  "repeatRate" : 0.5433964106350649,
+  "runs" : 10000,
+  "uniqueCardsSeen" : 24
+}
