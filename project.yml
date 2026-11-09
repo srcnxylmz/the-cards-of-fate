@@ -25,6 +25,11 @@ targets:
         MARKETING_VERSION: '0.1.0'
         CURRENT_PROJECT_VERSION: '1'
         CODE_SIGN_ENTITLEMENTS: App/Fate.entitlements
+      configs:
+        # Development builds run without a branded icon until the final art asset exists.
+        # Release builds still require a real AppIcon.appiconset.
+        Debug:
+          ASSETCATALOG_COMPILER_APPICON_NAME: ''
 schemes:
   TheCardsOfFate:
     build:
