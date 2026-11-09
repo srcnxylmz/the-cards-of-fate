@@ -1,5 +1,11 @@
 # QA report — 2026-11-09
 
+## Latest verified milestones
+
+Native runtime: commit `6bd22bc`, [Actions run 42668076933](https://github.com/srcnxylmz/the-cards-of-fate/actions/runs/42668076933), Xcode 16.4 / iPhone 16. Build, install, launch, both TR/EN UI tests, stat delta checks, terminate/relaunch persistence and screenshot export passed. 2 UI tests / 0 failures. Actual TR menu/card/result PNGs were inspected from downloaded artifact 13696279860. No overlap observed at the tested size; result-button contrast is improved in the subsequent content revision. This supersedes the historical Apple-platform limitations below; physical-device and broader visual/accessibility QA still remain.
+
+Current 36-card revision: 16 Windows XCTest tests and 15 content tests pass; zero content errors/warnings; three real 10,000-seed simulations completed. Added unseen-event priority, follow-up unlock/closure regressions and river artwork. Remote UI verification of this revision is pending until its push is checked. Historical 24-card results below remain an audit trail, not the latest counts.
+
 ## Evidence actually obtained
 
 Node content tooling executed on Windows, Node v24.11.1. **15 tests passed**, zero failures. Positive fixture validation plus negative tests for duplicate IDs, missing translations, invalid/negative probability, invalid stat effects, impossible conditions, unavailable flag producers, future-only dependencies, duplicate choice IDs, invalid delay eras, unknown condition keys, combined contradictions, equivalent choices and unknown affinities.

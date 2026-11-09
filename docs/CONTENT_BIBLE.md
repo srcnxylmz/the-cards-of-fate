@@ -4,7 +4,9 @@ Editorial principle: each card needs a specific human conflict, an observable co
 
 ## Current inventory
 
-8 Paleolithic events, 8 Neolithic events, 8 Bronze events. 48 choices; 3 choices have weighted alternatives. Seven chain group labels, four with multiple authored cards. These counts are **not** claims of seven finished chains. Four explicit cross-era links are detected (two gated delayed consequences and two required-flag connections).
+12 Paleolithic events, 12 Neolithic events, 12 Bronze events. 72 choices; 3 choices have weighted alternatives. Seven chain groups now all have multiple authored cards. These counts are **not** claims of seven finished chains. Nine explicit cross-era links are detected. Eight new historical follow-ups are one-shot, closed by every possible outcome.
+
+The second authored batch is in `tools/content/legacy-events.mjs`: witness stones, guest hunting routes, a damaged waterskin, shared boundary signs, flood-marker memory, missing granary shares, an apprentice's cracked kiln, ash farming, descendants' trading rights, competing historical records, water law and harvest guarantees. New flags connect these disputes to actual earlier decisions. Source→follow-up eligibility and branch closure are covered by executed Swift tests.
 
 Current chain intent:
 

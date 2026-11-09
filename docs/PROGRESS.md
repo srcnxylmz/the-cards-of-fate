@@ -8,7 +8,17 @@ Initial foundation implemented in real files. **Project not complete; iOS Simula
 
 Fetched origin and verified a clean `main` matching `origin/main`; no user changes overwritten. GitHub connector confirmed every job step succeeded in [run 42666624049](https://github.com/srcnxylmz/the-cards-of-fate/actions/runs/42666624049), including Swift/content tests, 30,000 simulations, XcodeGen and simulator build. macOS/Xcode is available through CI and is no longer a general development blocker.
 
-Added real Turkish/English XCUITest flows, Debug-only isolated test saves, stable accessibility identifiers, installed-simulator discovery, install/launch, screenshot export and crash/log artifacts. Details in `UI_TESTING.md`. First remote execution of this new infrastructure is pending; no UI result is claimed yet. Earlier unexecuted-iOS statements below describe the previous Windows-only checkpoint and are superseded by this section.
+Added real Turkish/English XCUITest flows, Debug-only isolated test saves, stable accessibility identifiers, installed-simulator discovery, install/launch, screenshot export and crash/log artifacts. Details in `UI_TESTING.md`. **Remote run 42668076933 passed all steps** at commit `6bd22bc`: 2 UI tests / 0 failures on iPhone 16 / Xcode 16.4. Downloaded artifact 13696279860 and visually inspected TR menu, card and result PNGs. Launch, real decisions, stat deltas and disk resume are verified. Earlier unexecuted-iOS statements below describe the previous Windows-only checkpoint and are superseded by this section.
+
+## Current content milestone: 36 cards
+
+- Added 12 individually authored bilingual events in `tools/content/legacy-events.mjs` (four per first-three era), bringing content to **36 cards / 72 choices**. Seven multi-card chain groups and nine explicit cross-era links; not seven fully finished master-plan chains.
+- New historical follow-ups use actual required flags. Eight one-shot events close through explicit outcome flags; no reissuing the same resolved dispute. Tests prove sources unlock their follow-ups and every choice closes them.
+- Event selection now exhausts eligible unseen events before considering repeats. Cooldowns and prerequisites are preserved, weighted choice remains within the selected pool. This changes future event sequences versus older builds; current saved cards/results still load. Balance/content revisions are not yet version-pinned for weekly competition, which remains a release concern.
+- Added `first20TurnsRepeatRate` to real-engine simulation reports. Archived 24-card data under `docs/baselines/24-cards/` before running 10,000 seeds per policy again.
+- **16 Swift tests pass; 15 content tests pass; content audit has zero errors/warnings.** Three 10,000-run simulations completed. Random-repeat rate fell 54.34% → 42.79%; survival 93.33% → 84.73%; knowledge 93.69% → 88.20%. These improve variety but do not establish final balance.
+- Added original `card_river_tracks` illustration with exact prompt/provenance, integrated through the asset catalog. Two generated illustrations now exist; 34 current cards still need production art. Result-button text now uses a dark foreground for contrast. UI menu derives the content count rather than hardcoding 24.
+- Remote validation of this content milestone is pending until its push completes; follow the associated run before proceeding.
 
 Workspace initially empty; no existing assets/code or Git remote available. Host: Windows/PowerShell, Node v24.11.1. Swift was absent at the initial checkpoint; the user subsequently installed Swift 6.4.2 and its Windows SDK. Windows core builds/tests now run successfully. Xcode remains unavailable. No remote workflow was dispatched and no signing/account operation was performed.
 
@@ -45,12 +55,12 @@ iOS simulator build, device QA, Game Center and audiovisual performance remain *
 
 | Requirement | Actual | Outstanding |
 |---|---|---|
-| ≥800 original cards | 24 | 776 minimum, correctly distributed |
-| ≥60 per era | 8 each in eras 1–3; zero in 4–12 | 156 more for Phase 2, 540 for eras 4–12, 80 special |
-| ≥100 completed chains | No fully approved chains; 7 group labels / 4 multi-card groups | Branching, closure, reachability and editorial completion |
-| ≥50 cross-era links | 4 explicit links detected | 46+ and full validation |
+| ≥800 original cards | 36 | 764 minimum, correctly distributed |
+| ≥60 per era | 12 each in eras 1–3; zero in 4–12 | 144 more for Phase 2, 540 for eras 4–12, 80 special |
+| ≥100 completed chains | No fully approved chains; 7 multi-card groups | Branching, closure, reachability and editorial completion |
+| ≥50 cross-era links | 9 explicit links detected | 41+ and full validation |
 | ≥30 endings | 2 collapse predicates | 28+ unique designed fates and narrative summaries |
-| Card illustrations | 1 generated candidate | 23 current + all future content; final visual approval |
+| Card illustrations | 2 generated candidates | 34 current + all future content; final visual approval |
 | Audio | 1 prototype cue | 12 music, 12 ambience, 40 production effects |
 | Animations | Basic transitions/flicker/haptics | 15 distinct coordinated presets, cinematic eras |
 | 10,000 simulations | 10,000 seeds × 3 policies executed; reports saved | High repetition and censored long runs; expand content and rebalance with human playtests |
@@ -58,10 +68,10 @@ iOS simulator build, device QA, Game Center and audiovisual performance remain *
 
 ## Next exact actions
 
-1. On macOS/Xcode run `swift test`, then `xcodegen generate` and the simulator build command in README. Fix any Apple-platform failures. Windows core verification is complete for the current 13 tests, but Phase 1 still needs iPhone build evidence.
-2. Use `BALANCE_REPORT.md` and saved JSON as the measured baseline. Repetition reaches 93–94% in strategic runs and 21.14% of knowledge-policy runs reach the 500-turn cap. Expand unique crisis/legacy content and investigate sustainable strategy loops before tuning global consumption. Do not equate heuristic win rates with human skill or pacing.
+1. Verify the latest content commit's complete Actions run, including both UI tests, and inspect its screenshots. The prior UI infrastructure milestone passed; no blanket macOS blocker remains.
+2. Use the 36-card comparison in `BALANCE_REPORT.md`. Strategic repetition remains 85–88%; 14.42% of knowledge-policy runs reach the 500-turn cap. Expand unique crises/legacy consequences and investigate sustainable loops. Do not equate heuristic results with human skill or pacing.
 3. Test iPhone UI in Turkish/English at smallest size/large text/VoiceOver/Reduce Motion; ensure save failures preserve current state and double taps cannot resolve twice. Game Center tests require the owner’s account configuration.
-4. Deepen the first-three-era systems and author 156 additional distinct cards to reach 180. Finish the seven initial chains with real state dependencies; thematic grouping alone does not count.
+4. Deepen the first-three-era systems and author 144 additional distinct cards to reach 180. Continue leadership/rival differentiation and successor traits. Finish initial chains; thematic grouping alone does not count.
 5. Continue sequentially through master phases 3–9. Keep every blocker and unexecuted check explicit. Do not replace missing production assets with placeholders and call release ready.
 
 ## Known limitations to address

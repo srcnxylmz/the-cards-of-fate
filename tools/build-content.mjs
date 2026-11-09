@@ -1,5 +1,6 @@
 import { mkdirSync, writeFileSync, existsSync, readFileSync } from 'node:fs';
 import { resolve } from 'node:path';
+import { addLegacyEvents } from './content/legacy-events.mjs';
 
 // Authoring helpers normalize structure only. Every event below is individually authored.
 const root = resolve(import.meta.dirname, '..');
@@ -16,6 +17,11 @@ const choice = (id, tr, en, outcomes, requirements = []) => ({ id, text: text(tr
 const delayed = (afterTurns, minimumEra, tr, en, stats, flags = []) => ({ afterTurns, minimumEra, text: text(tr, en), effect: effect(stats, flags) });
 const cards = [];
 function card(id, era, category, titleTR, titleEN, descriptionTR, descriptionEN, artDirection, choices, options = {}) {
+  if (options.once) {
+    const closed = `resolved_${id}`;
+    for (const decision of choices) for (const result of decision.outcomes) result.effect.flags.push(closed);
+    options.exclusions = [...(options.exclusions ?? []), { flag: closed }];
+  }
   cards.push({ id, era, category, title: text(titleTR, titleEN), description: text(descriptionTR, descriptionEN),
     artAsset: `card_${id}`, artDirection, rarity: options.chain ? 'uncommon' : 'common', weight: 10,
     requirements: options.requirements ?? [], exclusionConditions: options.exclusions ?? [], choices,
@@ -215,6 +221,8 @@ card('council_seal', 3, 'leadership', 'Mührün Sahibi', 'Keeper of the Seal',
     choice('delegate', 'Yetkiyi paylaş; kayıtları her ay denetle.', 'Share authority and audit records monthly.', [outcome('Anlaşmalar hızlandı. Yönetim ilk kez bir insanın uyanık kalmasına bağlı olmaktan çıktı.', 'Agreements moved faster. Government no longer depended on one person staying awake.', { authority: -7, knowledge: 10, resources: 7, stability: 5 }, { technologies: ['institutions'], flags: ['delegated_rule'] })]),
     choice('centralize', 'Mühür tek kalsın; yardımcılar rapor hazırlasın.', 'Keep one seal; have assistants prepare reports.', [outcome('Son söz sende kaldı. Kapındaki kuyruk artık şehrin gündelik manzarası.', 'The final word remained yours. The queue at your door became part of city life.', { authority: 13, resources: -4, stability: -3 }, { flags: ['single_seal'] })])
   ], { chain: 'public_voice' });
+
+addLegacyEvents({ card, choice, outcome, delayed });
 
 const eraRows = [
   ['Paleolitik Çağ','Paleolithic','Mağara Kampı','Cave Camp','Kabile Meclisi','Tribal Council','cultivation',55,'#B07845','Kaya, kemik, ateş; ochre charcoal; cave wind and stone percussion.'],

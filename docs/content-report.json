@@ -1,17 +1,13 @@
 {
   "errors": [],
-  "warnings": [
-    "Chain river_memory has only 1 authored card(s); incomplete.",
-    "Chain hospitality has only 1 authored card(s); incomplete.",
-    "Chain stored_power has only 1 authored card(s); incomplete."
-  ],
-  "cards": 24,
-  "choices": 48,
+  "warnings": [],
+  "cards": 36,
+  "choices": 72,
   "stochasticChoices": 3,
   "eras": {
-    "1": 8,
-    "2": 8,
-    "3": 8,
+    "1": 12,
+    "2": 12,
+    "3": 12,
     "4": 0,
     "5": 0,
     "6": 0,
@@ -23,10 +19,9 @@
     "12": 0
   },
   "authoredChainGroups": 7,
-  "multiCardChainGroups": 4,
-  "crossEraLinks": 4,
+  "multiCardChainGroups": 7,
+  "crossEraLinks": 9,
   "missingArt": [
-    "card_river_tracks",
     "card_broken_spear",
     "card_stranger_child",
     "card_red_mushrooms",
@@ -48,7 +43,19 @@
     "card_furnace_wood",
     "card_hostage_prince",
     "card_salt_ship",
-    "card_council_seal"
+    "card_council_seal",
+    "card_witness_stones",
+    "card_guest_paths",
+    "card_leaking_skin",
+    "card_ochre_border",
+    "card_river_markers",
+    "card_missing_grain",
+    "card_kiln_crack",
+    "card_ash_garden",
+    "card_caravan_charter",
+    "card_archive_dispute",
+    "card_water_court",
+    "card_debt_insurance"
   ],
   "missingAudio": [
     "era_1",
@@ -78,11 +85,11 @@
   ],
   "releaseReady": false,
   "releaseBlockers": [
-    "800 original cards required; current 24",
+    "800 original cards required; current 36",
     "At least 60 cards per era and 80 special events required",
     "100 completed chains / 50 cross-era links required",
     "30 distinct endings required",
     "Full asset, localization, accessibility, device and Game Center QA pending",
-    "iOS simulator build and real-device evidence not yet recorded; Windows Swift core verified separately"
+    "Physical-device and release/signing evidence pending; simulator build and TR/EN smoke flows verified separately"
   ]
 }

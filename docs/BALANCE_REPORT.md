@@ -1,5 +1,25 @@
 # Measured balance baseline — 2026-11-09
 
+## Current 36-card milestone
+
+The table below supersedes the 24-card measurements for current behavior. Same 10,000 seeds and policies, real Swift release core. This revision combines 12 new events with unseen-eligible-first selection, so differences cannot be attributed to either change alone. Old raw reports are preserved in `baselines/24-cards/`.
+
+| Metric | Random | Survival | Knowledge |
+|---|---:|---:|---:|
+| Mean observed turns | 32.5176 | 78.5560 | 146.1875 |
+| Reached Neolithic | 67.47% | 0% | 72.62% |
+| Reached Bronze | 53.06% | 0% | 48.98% |
+| Capped at 500 turns | 0 | 0 | 1,442 |
+| Repeated-card decisions | 42.79% | 84.73% | 88.20% |
+| Repetition within first 20 decisions | 21.57% | 40.00% | 21.89% |
+| Unique cards seen across runs | 36 | 12 | 36 |
+
+Random-repeat rate improved by 11.55 percentage points; strategic repeats remain too high. Random Bronze reach improved despite lower Neolithic reach, consistent with the additional smelting discovery route. The survival policy still avoids cultivation; it is not a progression strategy. One-shot follow-ups and broader choice costs reduce the previously measured long-lived loops, but 1,442 knowledge runs remain unfinished at the cap. No eligible-deck exhaustion appeared. All stat invariants held. No final pacing or fairness claim is made.
+
+Current raw reports: `simulation-random.json`, `simulation-survival.json`, `simulation-knowledge.json` (each records `contentCardCount: 36`). The historical section below retains the earlier baseline for comparison.
+
+## Historical 24-card baseline
+
 Executed with Swift 6.4.2, `x86_64-unknown-windows-msvc`, release configuration. Every simulation uses the production `FateCore` engine and bundled 24-card database. Each policy covers seeds 0 through 9,999, at most 500 decisions per run. Policy randomness is separate from game randomness. Heuristics inspect current state and authored event effects, never peek at the next random draw or future cards.
 
 | Metric | Random | Survival heuristic | Knowledge heuristic |

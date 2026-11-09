@@ -3,5 +3,10 @@
     "asset": "card_sacred_fire",
     "tool": "built-in imagegen",
     "prompt": "Use case: historical-scene. Asset type: original event card illustration for The Cards of Fate, card sacred_fire. Primary request: cinematic historical fantasy illustration, premium collectible card art, atmospheric storytelling. Paleolithic cave mouth, an elder woman and a child in animal hide clothing beside a small hearth, bare grove visible in the winter distance; the dilemma is burning the last wood for survival or preserving the forest. Ochre and charcoal palette, warm fire light from lower left meeting cold blue night, painterly rich material detail, restrained emotion. Portrait 2:3 composition, central subjects readable on iPhone, no text, no border, no logo, no watermark. Original composition, no existing game references."
+  },
+  {
+    "asset": "card_river_tracks",
+    "tool": "built-in imagegen",
+    "prompt": "Use case: historical-scene. Asset type: original premium event-card illustration for The Cards of Fate, river_tracks. A Paleolithic scout in weathered animal-hide clothing crouches by sprouting wild grain on a muddy riverbank after waters recede. The scout studies tiny seedlings and animal tracks, while a migrating herd is small and distant across the valley. The narrative dilemma is staying to understand the grain cycle versus following the herd for immediate food. Cinematic painterly historical fantasy realism, restrained natural anatomy, textured mud, reeds, stone tools only, cold dawn light from upper right, moss green and silt ochre palette with pale mist. Portrait 2:3 composition with readable central silhouette on iPhone, intimate foreground and deep river landscape. No farming buildings, no metal tools, no text, no borders, no logo or watermark. Original composition, no copied game designs."
   }
 ]

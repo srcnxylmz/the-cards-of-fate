@@ -171,7 +171,7 @@ struct RootView: View {
                     }.frame(minHeight: 44)
                     Button(t("Haftalık sıralama", "Weekly standings")) { panel = .leaderboard }.frame(minHeight: 44)
                 }.padding(.top, 20)
-                Text(t("Geliştirme sürümü · 24 olay · İlk üç çağ\nGörseller ve müzik henüz tamamlanmadı.", "Development build · 24 events · First three eras\nIllustrations and music are not complete."))
+                Text(t("Geliştirme sürümü · \(store.content?.cards.count ?? 0) olay · İlk üç çağ\nGörseller ve müzik henüz tamamlanmadı.", "Development build · \(store.content?.cards.count ?? 0) events · First three eras\nIllustrations and music are not complete."))
                     .font(.caption).foregroundStyle(.secondary).multilineTextAlignment(.center)
             }.padding(26).frame(maxWidth: 550)
         }
@@ -286,6 +286,7 @@ struct RootView: View {
                 Text(t("Yeni bir çağ başladı", "A new era begins")).font(.system(.title, design: .serif)).foregroundStyle(gold)
             }
             Button(t("Sonucu kabul et", "Continue")) { store.acknowledge() }.buttonStyle(.borderedProminent).frame(minHeight: 48)
+                .foregroundStyle(Color(red: 0.08, green: 0.10, blue: 0.11))
                 .accessibilityIdentifier("result.continue")
         }.padding(24).frame(maxWidth: .infinity).background(gold.opacity(0.07), in: RoundedRectangle(cornerRadius: 18))
     }

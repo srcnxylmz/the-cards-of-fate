@@ -114,7 +114,7 @@ export function report() {
   result.missingArt=art.filter(a=>!a.file||!existsSync(resolve(root,a.file))).map(a=>a.id);
   result.missingAudio=[...audio.effects,...audio.music,...audio.ambience].filter(a=>!a.file||!existsSync(resolve(root,a.file))).map(a=>a.id);
   result.releaseReady=false;
-  result.releaseBlockers=['800 original cards required; current '+result.cards,'At least 60 cards per era and 80 special events required','100 completed chains / 50 cross-era links required','30 distinct endings required','Full asset, localization, accessibility, device and Game Center QA pending','iOS simulator build and real-device evidence not yet recorded; Windows Swift core verified separately'];
+  result.releaseBlockers=['800 original cards required; current '+result.cards,'At least 60 cards per era and 80 special events required','100 completed chains / 50 cross-era links required','30 distinct endings required','Full asset, localization, accessibility, device and Game Center QA pending','Physical-device and release/signing evidence pending; simulator build and TR/EN smoke flows verified separately'];
   const destination=resolve(root,'docs/content-report.json');mkdirSync(dirname(destination),{recursive:true});writeFileSync(destination,JSON.stringify(result,null,2)+'\n');
   console.log(JSON.stringify(result,null,2));
   return result;

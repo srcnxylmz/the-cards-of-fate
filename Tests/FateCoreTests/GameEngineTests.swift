@@ -4,6 +4,64 @@ import XCTest
 final class GameEngineTests: XCTestCase {
     private func engine() throws -> GameEngine { GameEngine(content: try .bundled()) }
 
+    func testUnseenEligibleEventsAlwaysPrecedeRepeats() throws {
+        let engine = try engine()
+        for seed in 0..<100 {
+            var state = engine.start(seed: UInt64(seed))
+            for _ in 0..<30 {
+                guard state.ending == nil, let card = engine.content.card(state.currentCardID) else { break }
+                state = try engine.choose(card.choices.first { $0.available(in: state) }!.id, in: state)
+                let seen = state.discovered
+                let unseenEligible = engine.content.cards.filter { candidate in
+                    candidate.era == state.era && !seen.contains(candidate.id)
+                    && candidate.requirements.allSatisfy { $0.matches(state) }
+                    && !candidate.exclusionConditions.contains { $0.matches(state) }
+                    && candidate.choices.filter { $0.available(in: state) }.count >= 2
+                    && state.turn - state.lastSeen[candidate.id, default: -10000] >= candidate.cooldown
+                }
+                state = engine.acknowledge(state)
+                if state.ending == nil && !unseenEligible.isEmpty {
+                    XCTAssertFalse(seen.contains(try XCTUnwrap(state.currentCardID)))
+                }
+            }
+        }
+    }
+
+    func testHistoricalChoicesUnlockAndCloseTheirFollowups() throws {
+        let engine = try engine()
+        for (source, choice, target, era) in [
+            ("river_tracks", "observe", "river_markers", 2),
+            ("stranger_child", "shelter", "caravan_charter", 3),
+            ("seed_debt", "commons", "debt_insurance", 3)
+        ] {
+            var state = engine.start(seed: 12)
+            let followup = try XCTUnwrap(engine.content.card(target))
+            XCTAssertFalse(followup.requirements.allSatisfy { $0.matches(state) })
+            state.era = try XCTUnwrap(engine.content.card(source)).era
+            state.currentCardID = source
+            state = try engine.choose(choice, in: state)
+            state.era = era
+            state.discovered = Set(engine.content.cards.map(\.id).filter { $0 != target })
+            state = engine.acknowledge(state)
+            XCTAssertEqual(state.currentCardID, target)
+            for decision in followup.choices {
+                let resolved = try engine.choose(decision.id, in: state)
+                XCTAssertTrue(followup.exclusionConditions.contains { $0.matches(resolved) }, "Every branch must close \(target)")
+            }
+        }
+    }
+
+    func testNewlyUnlockedFollowupCannotBeStarvedBySeenEvents() throws {
+        let engine = try engine()
+        var state = engine.start(seed: 22)
+        state.currentCardID = "first_granary"
+        state.era = 2
+        state = try engine.choose("shared", in: state)
+        state.discovered = Set(engine.content.cards.map(\.id).filter { $0 != "missing_grain" })
+        let next = engine.acknowledge(state)
+        XCTAssertEqual(next.currentCardID, "missing_grain")
+    }
+
     func testSuccessionCanRemoveLeadershipInTheSameTurn() throws {
         let engine = try engine()
         var state = engine.start(seed: 15)

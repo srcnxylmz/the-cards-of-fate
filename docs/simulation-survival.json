@@ -1,26 +1,26 @@
 {
-  "averageTurns" : 119.8541,
-  "cappedRuns" : 96,
-  "contentCardCount" : 24,
+  "averageTurns" : 78.556,
+  "cappedRuns" : 0,
+  "contentCardCount" : 36,
   "endings" : {
-    "simulation_cap" : 96,
-    "The last hearth went dark. Hunger consumed your civilization's living memory." : 9904
+    "The last hearth went dark. Hunger consumed your civilization's living memory." : 10000
   },
   "engine" : "FateCore Swift (production core)",
   "eraReachCounts" : {
     "1" : 10000
   },
+  "first20TurnsRepeatRate" : 0.40001600384092184,
   "limitation" : "Small development deck; capped runs are censored observations, not confirmed endings. Heuristic policies do not establish human skill balance or session duration.",
-  "maxTurns" : 500,
-  "meanLeaderTurns" : 67.7832,
-  "meanResources" : 42.661666976765915,
-  "meanStrongestRival" : 85.8275419864652,
-  "minTurns" : 10,
+  "maxTurns" : 439,
+  "meanLeaderTurns" : 41.0502,
+  "meanResources" : 34.2504289933296,
+  "meanStrongestRival" : 76.02870690972046,
+  "minTurns" : 16,
   "policy" : "survival",
-  "repeatRate" : 0.9332646943241825,
+  "repeatRate" : 0.8472567340495952,
   "runs" : 10000,
-  "runsWithExile" : 294,
+  "runsWithExile" : 164,
   "seedRange" : "0..<10000",
   "turnCap" : 500,
-  "uniqueCardsSeen" : 8
+  "uniqueCardsSeen" : 12
 }

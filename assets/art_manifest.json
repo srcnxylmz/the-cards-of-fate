@@ -10,10 +10,10 @@
   {
     "id": "card_river_tracks",
     "cardID": "river_tracks",
-    "status": "missing",
-    "file": null,
+    "status": "generated-review-pending",
+    "file": "App/Assets.xcassets/card_river_tracks.imageset/card_river_tracks.png",
     "brief": "Scout crouching beside wild grain on muddy riverbank; cold dawn, green and silt palette; herd small on horizon.",
-    "license": null
+    "license": "Generated for project; provenance in assets/LICENSES.md"
   },
   {
     "id": "card_broken_spear",
@@ -189,6 +189,102 @@
     "status": "missing",
     "file": null,
     "brief": "Two original cylinder seals on bronze tray between ruler and scribe, sunlit stone hall, crisp gold accents.",
+    "license": null
+  },
+  {
+    "id": "card_witness_stones",
+    "cardID": "witness_stones",
+    "status": "missing",
+    "file": null,
+    "brief": "Paleolithic council, hands placing smooth witness stones in a circle; hide clothing, low amber firelight, close portrait composition.",
+    "license": null
+  },
+  {
+    "id": "card_guest_paths",
+    "cardID": "guest_paths",
+    "status": "missing",
+    "file": null,
+    "brief": "Guest tracing mountain pass in sand beside two hunters; bone tools, grey dawn, ochre handprints, portrait close-up.",
+    "license": null
+  },
+  {
+    "id": "card_leaking_skin",
+    "cardID": "leaking_skin",
+    "status": "missing",
+    "file": null,
+    "brief": "Split leather waterskin on parched ground, hunter loosening a boot, distant muddy pool; pale ochre harsh noon light.",
+    "license": null
+  },
+  {
+    "id": "card_ochre_border",
+    "cardID": "ochre_border",
+    "status": "missing",
+    "file": null,
+    "brief": "Opposing hunters examining ochre boundary on rock, snow behind, open empty hands; dawn red and slate portrait composition.",
+    "license": null
+  },
+  {
+    "id": "card_river_markers",
+    "cardID": "river_markers",
+    "status": "missing",
+    "file": null,
+    "brief": "Neolithic survey stones half buried beside clay home foundations, broad river, sage reeds, cloudy silver side light.",
+    "license": null
+  },
+  {
+    "id": "card_missing_grain",
+    "cardID": "missing_grain",
+    "status": "missing",
+    "file": null,
+    "brief": "Two village keepers holding wooden key over open grain jar, clay granary, concerned families; warm shaded earth tones.",
+    "license": null
+  },
+  {
+    "id": "card_kiln_crack",
+    "cardID": "kiln_crack",
+    "status": "missing",
+    "file": null,
+    "brief": "Cracked clay kiln, apprentice with green residue on shard, no anachronistic tools; copper green and clay orange, firelit portrait.",
+    "license": null
+  },
+  {
+    "id": "card_ash_garden",
+    "cardID": "ash_garden",
+    "status": "missing",
+    "file": null,
+    "brief": "Ash-dark garden patch next to rooted hillside, farmer holding charred branch; Neolithic reed clothing, overcast green and charcoal.",
+    "license": null
+  },
+  {
+    "id": "card_caravan_charter",
+    "cardID": "caravan_charter",
+    "status": "missing",
+    "file": null,
+    "brief": "Bronze Age traders presenting an old bone token beside city market stalls; copper clay teal, afternoon diagonal light.",
+    "license": null
+  },
+  {
+    "id": "card_archive_dispute",
+    "cardID": "archive_dispute",
+    "status": "missing",
+    "file": null,
+    "brief": "Scribe with clay tablet facing elder holding cave-mark tracing, Bronze archive shelves, ivory and ochre side light.",
+    "license": null
+  },
+  {
+    "id": "card_water_court",
+    "cardID": "water_court",
+    "status": "missing",
+    "file": null,
+    "brief": "Bronze civic courtyard, clay water schedule and workshop wheel visible through arch; turquoise water, pale stone, morning light.",
+    "license": null
+  },
+  {
+    "id": "card_debt_insurance",
+    "cardID": "debt_insurance",
+    "status": "missing",
+    "file": null,
+    "brief": "Bronze market seed sacks withheld behind counter, farmer and treasurer with clay tokens; warm muted gold, human-scale portrait.",
     "license": null
   }
 ]

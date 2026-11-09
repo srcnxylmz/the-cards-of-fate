@@ -5,12 +5,12 @@ Full requirements: `MASTER_SPEC.md`. Target: commercially polished, offline-firs
 | Phase | Deliverables and acceptance | Current status |
 |---|---|---|
 | 0 | Architecture, 12-era guide, schema, acceptance ledger, real source | Initial documents and source exist; design needs further depth |
-| 1 | iPhone build; deterministic decisions; result acknowledgment; atomic save; start/end tests | Windows core compiled; 13 Swift tests pass; iOS build still unverified |
-| 2 | 180 distinct first-three-era events, rivals, settlements, legacy, artwork and transitions | 24 events; foundational systems only |
+| 1 | iPhone build; deterministic decisions; result acknowledgment; atomic save; start/end tests | Native build and 2 TR/EN UI smoke tests verified at 6bd22bc; current core has 16 passing tests |
+| 2 | 180 distinct first-three-era events, rivals, settlements, legacy, artwork and transitions | 36 events; 9 explicit cross-era links; deeper systems and production art remain |
 | 3 | 300 era 4–8 events, diplomacy/trade/war/science, visual/audio integration | Planned; era metadata only |
 | 4 | 240 era 9–12 events, modern/AI/space systems, endings | Planned; era metadata only |
 | 5 | 80 extra events; 800 total; 100 complete chains; 50 cross-era links; 30 endings | Not met |
-| 6 | Original branding/icon, unique card art, 15 animation types, 12 scores/ambiences, 40 effects | One illustration; one prototype cue; presentation prototypes |
+| 6 | Original branding/icon, unique card art, 15 animation types, 12 scores/ambiences, 40 effects | Two illustrations; one prototype cue; presentation prototypes |
 | 7 | Weekly Game Center, custom rankings, retry, week isolation, production configuration | Adapter and week logic written; account/device tests pending |
 | 8 | 10,000 actual engine simulations; pacing, skill balance, localization/accessibility/offline QA | 10,000 seeds × 3 strategies executed on Windows; balance/production QA incomplete |
 | 9 | Signed release, privacy/licensing, App Store metadata, screenshots, TestFlight | Checklist drafted; release blocked |

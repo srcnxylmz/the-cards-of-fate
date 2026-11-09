@@ -52,6 +52,8 @@ var reached: [String: Int] = [:]
 var endings: [String: Int] = [:]
 var seen: Set<String> = []
 var repeated = 0
+var earlyRepeated = 0
+var earlyDecisions = 0
 var decisions = 0
 var capped = 0
 var totalResources = 0
@@ -64,7 +66,12 @@ for seed in 0..<count {
     var hadExile = false
     for _ in 0..<500 {
         guard state.ending == nil, let card = content.card(state.currentCardID) else { break }
-        if state.history.contains(where: { $0.cardID == card.id }) { repeated += 1 }
+        let isRepeat = state.history.contains(where: { $0.cardID == card.id })
+        if isRepeat { repeated += 1 }
+        if state.turn < 20 {
+            earlyDecisions += 1
+            if isRepeat { earlyRepeated += 1 }
+        }
         let choices = card.choices.filter { $0.available(in: state) }
         let choice = select(choices, state: state, random: &policy)
         state = try engine.choose(choice.id, in: state)
@@ -89,6 +96,7 @@ let report: [String: Any] = [
     "averageTurns": Double(turns.reduce(0,+))/Double(count), "minTurns": turns.min()!, "maxTurns": turns.max()!,
     "eraReachCounts": reached, "endings": endings, "uniqueCardsSeen": seen.count,
     "repeatRate": Double(repeated)/Double(max(1,decisions)), "cappedRuns": capped,
+    "first20TurnsRepeatRate": Double(earlyRepeated)/Double(max(1,earlyDecisions)),
     "meanResources": Double(totalResources)/Double(max(1,decisions)),
     "meanStrongestRival": Double(totalRivalPower)/Double(max(1,decisions)),
     "meanLeaderTurns": Double(totalLeaderTurns)/Double(count), "runsWithExile": exileRuns,

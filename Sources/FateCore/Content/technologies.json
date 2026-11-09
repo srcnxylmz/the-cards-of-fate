@@ -11,7 +11,8 @@
     "id": "smelting",
     "era": 2,
     "unlockedBy": [
-      "green_stone"
+      "green_stone",
+      "kiln_crack"
     ],
     "status": "implemented"
   },

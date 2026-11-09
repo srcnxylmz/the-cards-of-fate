@@ -92,13 +92,16 @@ public struct GameEngine {
             && card.choices.filter { $0.available(in: state) }.count >= 2
         }
         // Never bypass story conditions or cooldowns to fill an empty deck.
-        let candidates = eligible.filter { state.turn - state.lastSeen[$0.id, default: -10000] >= $0.cooldown }
+        let cooled = eligible.filter { state.turn - state.lastSeen[$0.id, default: -10000] >= $0.cooldown }
             .sorted { $0.id < $1.id }
+        // Newly unlocked history gets its turn before another familiar event.
+        let unseen = cooled.filter { !state.discovered.contains($0.id) }
+        let candidates = unseen.isEmpty ? cooled : unseen
         guard !candidates.isEmpty else {
             state.ending = .init(tr: "Bu geliştirme sürümündeki olaylar tükendi. Uygarlığın kaydı korunuyor.", en: "This development build has no eligible events left. Your civilization record is preserved.")
             return
         }
-        let weighted = candidates.map { state.discovered.contains($0.id) ? $0.weight : $0.weight * 3 }
+        let weighted = candidates.map(\.weight)
         var roll = state.random.unit() * Double(weighted.reduce(0, +))
         var selected = candidates[candidates.count - 1]
         for (card, weight) in zip(candidates, weighted) {

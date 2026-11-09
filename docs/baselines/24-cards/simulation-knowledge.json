@@ -1,0 +1,29 @@
+{
+  "averageTurns" : 210.2978,
+  "cappedRuns" : 2114,
+  "contentCardCount" : 24,
+  "endings" : {
+    "simulation_cap" : 2114,
+    "The land fell silent. Only roads remain after your people scattered." : 4680,
+    "The last hearth went dark. Hunger consumed your civilization's living memory." : 3206
+  },
+  "engine" : "FateCore Swift (production core)",
+  "eraReachCounts" : {
+    "1" : 10000,
+    "2" : 7897,
+    "3" : 3526
+  },
+  "limitation" : "Small development deck; capped runs are censored observations, not confirmed endings. Heuristic policies do not establish human skill balance or session duration.",
+  "maxTurns" : 500,
+  "meanLeaderTurns" : 174.6007,
+  "meanResources" : 32.48578159162863,
+  "meanStrongestRival" : 87.72678981900904,
+  "minTurns" : 12,
+  "policy" : "knowledge",
+  "repeatRate" : 0.9368818884458135,
+  "runs" : 10000,
+  "runsWithExile" : 139,
+  "seedRange" : "0..<10000",
+  "turnCap" : 500,
+  "uniqueCardsSeen" : 24
+}
