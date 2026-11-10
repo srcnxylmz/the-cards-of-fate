@@ -15,3 +15,5 @@ Effect: six permitted integer stat deltas, flags, technologies, buildings, integ
 Save schema v1 persists RNG, chosen card, outcome acknowledgment, all simulation state, delayed queue, history and weekly identity. Future versions are explicitly rejected before state decoding. A migration dispatch point exists in `PersistenceService.load`; no older schema exists to migrate yet. Introduce tested migrations before incrementing schema version, never silently discard a save.
 
 The current v1 `Resolution` adds optional `consequences: [LocalizedText]`. Older v1 saves without this field load as nil and still select the same next card. This additive compatibility is covered by an executed Swift regression test. It is not a general schema migration implementation.
+
+Effects may add optional `rivalRelations: { "hunters": Int, "keepers": Int }`. Each delta is -100...100, adds to the common `rivalRelation`, then the final relationship clamps to -100...100. Stable IDs survive era name changes. Missing maps decode as nil in old v1 saved consequences; unknown IDs and malformed maps are rejected by content validation.

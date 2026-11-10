@@ -6,6 +6,9 @@ const cards=JSON.parse(readFileSync(new URL('../Sources/FateCore/Content/cards.j
 const eras=JSON.parse(readFileSync(new URL('../Sources/FateCore/Content/eras.json',import.meta.url)));
 test('authored content passes structural validation',()=>assert.deepEqual(validate(cards,eras).errors,[]));
 const mutations=[
+  ['unknown faction',c=>c[0].choices[0].outcomes[0].effect.rivalRelations={ghost:2},'invalid targeted relation'],
+  ['invalid faction delta',c=>c[0].choices[0].outcomes[0].effect.rivalRelations={hunters:101},'invalid targeted relation'],
+  ['malformed faction effects',c=>c[0].choices[0].outcomes[0].effect.rivalRelations=[],'invalid targeted relations'],
   ['duplicate IDs',c=>c.push(structuredClone(c[0])),'duplicate ID'],
   ['missing translations',c=>delete c[0].description.en,'missing translation'],
   ['bad probability total',c=>c[0].choices[0].outcomes[0].probability=0.8,'probabilities must total one'],

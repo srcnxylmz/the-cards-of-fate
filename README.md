@@ -15,7 +15,7 @@ node tools/validate-content.mjs
 
 `node tools/validate-content.mjs --release` intentionally fails until release requirements are fulfilled. Structural validation alone never certifies narrative quality or shipping readiness.
 
-Swift 6.4.2 on Windows has built and tested the current core: **16 XCTest tests passed**. The production core also completed 10,000 seeds per policy (random, survival, knowledge). See `docs/BALANCE_REPORT.md` for results and limitations.
+Swift 6.4.2 on Windows has built and tested the current core: **19 XCTest tests passed**. The production core also completed 10,000 seeds per policy (random, survival, knowledge). See `docs/BALANCE_REPORT.md` for results and limitations.
 
 With Swift's Windows SDK and Visual Studio prerequisites installed:
 

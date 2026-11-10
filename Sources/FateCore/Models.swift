@@ -34,6 +34,8 @@ public struct Effect: Codable, Equatable {
     public var technologies: [String]
     public var buildings: [String]
     public var rivalRelation: Int
+    /// Optional so existing v1 saved consequences remain decodable.
+    public var rivalRelations: [String: Int]? = nil
     public static let empty = Effect(stats: [:], flags: [], technologies: [], buildings: [], rivalRelation: 0)
 }
 

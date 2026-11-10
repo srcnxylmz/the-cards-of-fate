@@ -323,7 +323,11 @@
               ],
               "technologies": [],
               "buildings": [],
-              "rivalRelation": -5
+              "rivalRelation": 0,
+              "rivalRelations": {
+                "hunters": -10,
+                "keepers": 8
+              }
             },
             "delayedEffects": [],
             "animationPreset": "normal"
@@ -368,7 +372,11 @@
               ],
               "technologies": [],
               "buildings": [],
-              "rivalRelation": 12
+              "rivalRelation": 0,
+              "rivalRelations": {
+                "hunters": 12,
+                "keepers": -8
+              }
             },
             "delayedEffects": [],
             "animationPreset": "normal"

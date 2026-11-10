@@ -48,3 +48,7 @@ GitHub macOS CI supplies Xcode and an iPhone Simulator; the native app and UI te
 All unexecuted Apple-platform tests; missing content count and gameplay subsystems; incomplete story reachability/editorial review; missing assets/branding; high measured event repetition and unbalanced strategy loops; absent Game Center console/device validation; incomplete localization/accessibility/performance/signing/privacy review. `--release` intentionally returns failure.
 
 No stage is certified complete solely because source files exist. Core, native build and smoke execution evidence is now real; content and production-quality acceptance remain open.
+
+## Rivalry checkpoint — 2026-11-10
+
+19 Swift tests and 18 content tests pass locally. Added old-effect decoding, targeted relationship outcomes/save round-trip, faction identity continuity, and friendly-strongest/opposition regression coverage. Native UI verification for this change awaits the next CI run. Physical-device and broad accessibility checks remain outstanding.

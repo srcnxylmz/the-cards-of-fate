@@ -1,10 +1,19 @@
-# Progress checkpoint — 2026-11-09
+# Progress checkpoint — 2026-11-10
 
 ## Current status
 
 **Project not complete; 36-card native build and UI flows verified at `ab7f0c8`.** Master scope is preserved verbatim in `MASTER_SPEC.md`. Simulator automation is operational; Phase 2 content and simulation development continues.
 
-## Current session: Simulator UI automation
+## Rivalry milestone — 2026-11-10
+
+- Confirmed all steps passed on the previous documentation push, run 42688637013 (f0250fd), and fast-forward synchronized origin without losing work.
+- Added optional targeted effect map `rivalRelations`; old v1 effects still decode. Broken Spear now creates opposing hunter/keeper reactions instead of changing both equally. Other cards retain authored common deltas for now.
+- Stable faction IDs retain power/relations through first-three-era identities (Hunters → Field Council → Bronze Guild; Memory Keepers → Ancestors → Scribes). Council UI displays era-appropriate motivations, including for existing saves.
+- Every fourth turn the strongest eligible opponent challenges the player, with stable ID tie-breaking. A friendly strongest faction no longer shields a weaker opponent. Hunters affect authority; keepers affect stability. At most one challenge occurs per meeting and its explanation is included in history/results.
+- Local verification: **19 Swift tests and 18 content tests passed**, zero content errors/warnings. Three-policy simulation comparison recorded in BALANCE_REPORT.md. New native build/UI validation is pending the milestone push; do not treat local tests as iPhone evidence.
+- This is an initial differentiation step, not a complete rival system: coalitions, support actions, successor traits, data-driven faction profiles and broader targeted card authoring remain open. Existing weekly balance-version pinning concern remains.
+
+## Previous session: Simulator UI automation
 
 Fetched origin and verified a clean `main` matching `origin/main`; no user changes overwritten. GitHub connector confirmed every job step succeeded in [run 42666624049](https://github.com/srcnxylmz/the-cards-of-fate/actions/runs/42666624049), including Swift/content tests, 30,000 simulations, XcodeGen and simulator build. macOS/Xcode is available through CI and is no longer a general development blocker.
 
@@ -68,7 +77,7 @@ At this initial Windows checkpoint Apple-platform checks were unexecuted. The su
 
 ## Next exact actions
 
-1. Continue from verified `ab7f0c8` with a focused first-three-era rivalry milestone: distinct faction motivations/behavior, targeted relationship effects and era-specific identities. Keep existing saves compatible and add regression tests before expanding rules. Simulator infrastructure is established; reuse it after each meaningful change.
+1. Verify the rivalry milestone in native CI, then expand targeted decisions in eras 2–3 and design bounded faction support/coalitions. Keep existing saves compatible; reuse Simulator automation after each milestone.
 2. Use the 36-card comparison in `BALANCE_REPORT.md`. Strategic repetition remains 85–88%; 14.42% of knowledge-policy runs reach the 500-turn cap. Expand unique crises/legacy consequences and investigate sustainable loops. Do not equate heuristic results with human skill or pacing.
 3. Test iPhone UI in Turkish/English at smallest size/large text/VoiceOver/Reduce Motion; ensure save failures preserve current state and double taps cannot resolve twice. Game Center tests require the owner’s account configuration.
 4. Deepen the first-three-era systems and author 144 additional distinct cards to reach 180. Continue leadership/rival differentiation and successor traits. Finish initial chains; thematic grouping alone does not count.
@@ -76,6 +85,6 @@ At this initial Windows checkpoint Apple-platform checks were unexecuted. The su
 
 ## Known limitations to address
 
-No full secondary-stat model, census/stock simulation, individualized successor traits, era-specific faction transformations, branching technology tree, achievements, persistent cross-run collection/history, personal-record dashboard, full error/technology-name localization, tutorial, backup recovery, all 30 endings, branding/icon, premium animations or complete audio. Current rivals share a relation delta and simple pressure behavior. Save version dispatch rejects unknown versions; it does not yet transform old schemas. Static reachability checks are approximate, not proof of every chain’s playability. Sound/music settings exist but only one prototype sound is available.
+No full secondary-stat model, census/stock simulation, individualized successor traits, branching technology tree, achievements, persistent cross-run collection/history, personal-record dashboard, full error/technology-name localization, tutorial, backup recovery, all 30 endings, branding/icon, premium animations or complete audio. Most cards still share a common relation delta; Broken Spear uses targeted deltas. Faction pressure is differentiated, but support/coalitions are not implemented. Save version dispatch rejects unknown versions; it does not yet transform old schemas. Static reachability checks are approximate, not proof of every chain’s playability. Sound/music settings exist but only one prototype sound is available.
 
 The small event pool permits repetition and may exhaust under conditions/cooldowns. This is visibly labeled development behavior and must be eliminated as a content bottleneck before release.

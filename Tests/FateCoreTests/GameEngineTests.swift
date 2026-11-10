@@ -4,6 +4,56 @@ import XCTest
 final class GameEngineTests: XCTestCase {
     private func engine() throws -> GameEngine { GameEngine(content: try .bundled()) }
 
+    func testLegacyEffectAndTargetedRelations() throws {
+        let old = Data(#"{"stats":{},"flags":[],"technologies":[],"buildings":[],"rivalRelation":3}"#.utf8)
+        XCTAssertNil(try JSONDecoder().decode(Effect.self, from: old).rivalRelations)
+        let engine = try engine()
+        var state = engine.start(seed: 42)
+        state.currentCardID = "broken_spear"
+        let hearing = try engine.choose("hearing", in: state)
+        XCTAssertEqual(hearing.rivals.map(\.relation), [-10, 18])
+        let protect = try engine.choose("protect", in: state)
+        XCTAssertEqual(protect.rivals.map(\.relation), [12, 2])
+        XCTAssertEqual(try JSONDecoder().decode(GameState.self, from: JSONEncoder().encode(hearing)), hearing)
+    }
+
+    func testFactionIdentityPreservesLegacyRelationshipsAcrossEras() throws {
+        let state = try engine().start(seed: 42)
+        for era in 2...3 {
+            for rival in state.rivals {
+                let transformed = rival.identity(in: era)
+                XCTAssertEqual(transformed.id, rival.id)
+                XCTAssertEqual(transformed.power, rival.power)
+                XCTAssertEqual(transformed.relation, rival.relation)
+                XCTAssertNotEqual(transformed.name, rival.name)
+                XCTAssertNotEqual(transformed.motivation, rival.motivation)
+            }
+        }
+    }
+
+    func testFriendlyStrongestFactionDoesNotHideOpposition() throws {
+        let engine = try engine()
+        var state = engine.start(seed: 1)
+        state.turn = 3
+        state.currentCardID = "river_tracks"
+        state.stats["authority"] = 30
+        state.rivals[0].power = 95
+        state.rivals[0].relation = 50
+        state.rivals[1].power = 80
+        state.rivals[1].relation = -10
+        let challenged = try engine.choose("follow", in: state)
+        var friendly = state
+        friendly.rivals[1].relation = 50
+        let peaceful = try engine.choose("follow", in: friendly)
+        XCTAssertEqual(challenged.stats["authority"], peaceful.stats["authority"])
+        XCTAssertEqual(challenged.stats["stability"], peaceful.stats["stability"]! - engine.content.balance.rivalPressure)
+        XCTAssertTrue(challenged.resolution!.consequences!.contains { $0.en.contains("stability fell") })
+        state.rivals[0].relation = -10
+        let hunterChallenge = try engine.choose("follow", in: state)
+        XCTAssertEqual(hunterChallenge.stats["authority"], peaceful.stats["authority"]! - engine.content.balance.rivalPressure)
+        XCTAssertEqual(hunterChallenge.stats["stability"], peaceful.stats["stability"])
+    }
+
     func testUnseenEligibleEventsAlwaysPrecedeRepeats() throws {
         let engine = try engine()
         for seed in 0..<100 {

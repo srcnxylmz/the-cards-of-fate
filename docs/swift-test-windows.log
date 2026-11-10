@@ -1,100 +1,111 @@
 Building for debugging...
+[Starting]
 [1 / 3] FateCore
 [3 / 5] FateCore
-[13 / 15] FateSimulation-product
-[15 / 17] FateSimulation-product
-[18 / 18] FateSimulation-product
-[20 / 22] FateCoreTests-product
-[21 / 23] FateCoreTests-product
-[26 / 33] FateCoreTests-product
-[29 / 34] FateCoreTests-product
-[31 / 37] FateCoreTests-test-runner
-[33 / 39] FateCoreTests-test-runner
-[35 / 37] FateCoreTests-test-runner
-[38 / 38] FateCoreTests-test-runner
-Build complete! (4.62 secs)
+[9 / 9] FateSimulation-product
+[10 / 12] FateCoreTests-product
+[11 / 13] FateCoreTests-product
+[16 / 23] FateCoreTests-product
+[19 / 24] FateCoreTests-product
+[21 / 27] FateCoreTests-test-runner
+[23 / 29] FateCoreTests-test-runner
+[25 / 27] FateCoreTests-test-runner
+[28 / 28] FateCoreTests-test-runner
+Build complete! (3.44 secs)
 warning: unable to create symbolic link at C:\Users\Impassive\Desktop\Projeler\The Cards Of Fate\.build\debug: encountered an I/O error (code: 512) while reading C:\Users\Impassive\Desktop\Projeler\The Cards Of Fate\.build\debug
-Test Suite 'All tests' started at 2026-11-09 19:49:22.333
+Test Suite 'All tests' started at 2026-11-10 14:52:28.024
 
-Test Suite 'Debug-windows-x86_64.xctest' started at 2026-11-09 19:49:22.334
+Test Suite 'Debug-windows-x86_64.xctest' started at 2026-11-10 14:52:28.025
 
-Test Suite 'GameEngineTests' started at 2026-11-09 19:49:22.334
+Test Suite 'GameEngineTests' started at 2026-11-10 14:52:28.025
 
-Test Case 'GameEngineTests.testAtomicSaveRoundTripAndFutureSchemaRejection' started at 2026-11-09 19:49:22.334
+Test Case 'GameEngineTests.testAtomicSaveRoundTripAndFutureSchemaRejection' started at 2026-11-10 14:52:28.025
 
 Test Case 'GameEngineTests.testAtomicSaveRoundTripAndFutureSchemaRejection' passed (0.016 seconds)
 
-Test Case 'GameEngineTests.testAuthorityLossIsRecoverable' started at 2026-11-09 19:49:22.351
+Test Case 'GameEngineTests.testAuthorityLossIsRecoverable' started at 2026-11-10 14:52:28.041
 
 Test Case 'GameEngineTests.testAuthorityLossIsRecoverable' passed (0.005 seconds)
 
-Test Case 'GameEngineTests.testChoiceRequirementsAndTerminalState' started at 2026-11-09 19:49:22.356
+Test Case 'GameEngineTests.testChoiceRequirementsAndTerminalState' started at 2026-11-10 14:52:28.046
 
 Test Case 'GameEngineTests.testChoiceRequirementsAndTerminalState' passed (0.005 seconds)
 
-Test Case 'GameEngineTests.testConditionsAndCooldownNeverBypassed' started at 2026-11-09 19:49:22.361
+Test Case 'GameEngineTests.testConditionsAndCooldownNeverBypassed' started at 2026-11-10 14:52:28.050
 
 Test Case 'GameEngineTests.testConditionsAndCooldownNeverBypassed' passed (0.005 seconds)
 
-Test Case 'GameEngineTests.testDeterministicReplayAcrossSaveBoundary' started at 2026-11-09 19:49:22.365
+Test Case 'GameEngineTests.testDeterministicReplayAcrossSaveBoundary' started at 2026-11-10 14:52:28.055
 
 Test Case 'GameEngineTests.testDeterministicReplayAcrossSaveBoundary' passed (0.014 seconds)
 
-Test Case 'GameEngineTests.testDoubleTapCannotSpendTwoTurns' started at 2026-11-09 19:49:22.379
+Test Case 'GameEngineTests.testDoubleTapCannotSpendTwoTurns' started at 2026-11-10 14:52:28.069
 
 Test Case 'GameEngineTests.testDoubleTapCannotSpendTwoTurns' passed (0.005 seconds)
 
-Test Case 'GameEngineTests.testEraRequiresTechnologyAndSocialThresholds' started at 2026-11-09 19:49:22.384
+Test Case 'GameEngineTests.testEraRequiresTechnologyAndSocialThresholds' started at 2026-11-10 14:52:28.073
 
-Test Case 'GameEngineTests.testEraRequiresTechnologyAndSocialThresholds' passed (0.005 seconds)
+Test Case 'GameEngineTests.testEraRequiresTechnologyAndSocialThresholds' passed (0.182 seconds)
 
-Test Case 'GameEngineTests.testHistoricalChoicesUnlockAndCloseTheirFollowups' started at 2026-11-09 19:49:22.389
+Test Case 'GameEngineTests.testFactionIdentityPreservesLegacyRelationshipsAcrossEras' started at 2026-11-10 14:52:28.255
 
-Test Case 'GameEngineTests.testHistoricalChoicesUnlockAndCloseTheirFollowups' passed (0.006 seconds)
+Test Case 'GameEngineTests.testFactionIdentityPreservesLegacyRelationshipsAcrossEras' passed (0.005 seconds)
 
-Test Case 'GameEngineTests.testHistoricalConsequenceWaitsForEraAndTurn' started at 2026-11-09 19:49:22.395
+Test Case 'GameEngineTests.testFriendlyStrongestFactionDoesNotHideOpposition' started at 2026-11-10 14:52:28.260
+
+Test Case 'GameEngineTests.testFriendlyStrongestFactionDoesNotHideOpposition' passed (0.005 seconds)
+
+Test Case 'GameEngineTests.testHistoricalChoicesUnlockAndCloseTheirFollowups' started at 2026-11-10 14:52:28.266
+
+Test Case 'GameEngineTests.testHistoricalChoicesUnlockAndCloseTheirFollowups' passed (0.005 seconds)
+
+Test Case 'GameEngineTests.testHistoricalConsequenceWaitsForEraAndTurn' started at 2026-11-10 14:52:28.271
 
 Test Case 'GameEngineTests.testHistoricalConsequenceWaitsForEraAndTurn' passed (0.005 seconds)
 
-Test Case 'GameEngineTests.testLegacyV1ResolutionLoadsWithoutConsequenceField' started at 2026-11-09 19:49:22.400
+Test Case 'GameEngineTests.testLegacyEffectAndTargetedRelations' started at 2026-11-10 14:52:28.276
+
+Test Case 'GameEngineTests.testLegacyEffectAndTargetedRelations' passed (0.005 seconds)
+
+Test Case 'GameEngineTests.testLegacyV1ResolutionLoadsWithoutConsequenceField' started at 2026-11-10 14:52:28.281
 
 Test Case 'GameEngineTests.testLegacyV1ResolutionLoadsWithoutConsequenceField' passed (0.006 seconds)
 
-Test Case 'GameEngineTests.testNewlyUnlockedFollowupCannotBeStarvedBySeenEvents' started at 2026-11-09 19:49:22.405
+Test Case 'GameEngineTests.testNewlyUnlockedFollowupCannotBeStarvedBySeenEvents' started at 2026-11-10 14:52:28.287
 
 Test Case 'GameEngineTests.testNewlyUnlockedFollowupCannotBeStarvedBySeenEvents' passed (0.005 seconds)
 
-Test Case 'GameEngineTests.testProbabilitiesAreNormalizedAndKnowledgeImprovesRisk' started at 2026-11-09 19:49:22.410
+Test Case 'GameEngineTests.testProbabilitiesAreNormalizedAndKnowledgeImprovesRisk' started at 2026-11-10 14:52:28.292
 
 Test Case 'GameEngineTests.testProbabilitiesAreNormalizedAndKnowledgeImprovesRisk' passed (0.005 seconds)
 
-Test Case 'GameEngineTests.testSplitMixKnownVector' started at 2026-11-09 19:49:22.414
+Test Case 'GameEngineTests.testSplitMixKnownVector' started at 2026-11-10 14:52:28.298
 
 Test Case 'GameEngineTests.testSplitMixKnownVector' passed (0.0 seconds)
 
-Test Case 'GameEngineTests.testSuccessionCanRemoveLeadershipInTheSameTurn' started at 2026-11-09 19:49:22.414
+Test Case 'GameEngineTests.testSuccessionCanRemoveLeadershipInTheSameTurn' started at 2026-11-10 14:52:28.298
 
-Test Case 'GameEngineTests.testSuccessionCanRemoveLeadershipInTheSameTurn' passed (0.004 seconds)
+Test Case 'GameEngineTests.testSuccessionCanRemoveLeadershipInTheSameTurn' passed (0.005 seconds)
 
-Test Case 'GameEngineTests.testUnseenEligibleEventsAlwaysPrecedeRepeats' started at 2026-11-09 19:49:22.419
+Test Case 'GameEngineTests.testUnseenEligibleEventsAlwaysPrecedeRepeats' started at 2026-11-10 14:52:28.303
 
-Test Case 'GameEngineTests.testUnseenEligibleEventsAlwaysPrecedeRepeats' passed (0.357 seconds)
+Test Case 'GameEngineTests.testUnseenEligibleEventsAlwaysPrecedeRepeats' passed (0.214 seconds)
 
-Test Case 'GameEngineTests.testWeeklyMondayUTCAndYearBoundary' started at 2026-11-09 19:49:22.776
+Test Case 'GameEngineTests.testWeeklyMondayUTCAndYearBoundary' started at 2026-11-10 14:52:28.516
 
 Test Case 'GameEngineTests.testWeeklyMondayUTCAndYearBoundary' passed (0.008 seconds)
 
-Test Suite 'GameEngineTests' passed at 2026-11-09 19:49:22.783
+Test Suite 'GameEngineTests' passed at 2026-11-10 14:52:28.524
 
-	 Executed 16 tests, with 0 failures (0 unexpected) in 0.449 (0.449) seconds
+	 Executed 19 tests, with 0 failures (0 unexpected) in 0.499 (0.499) seconds
 
-Test Suite 'Debug-windows-x86_64.xctest' passed at 2026-11-09 19:49:22.783
+Test Suite 'Debug-windows-x86_64.xctest' passed at 2026-11-10 14:52:28.524
 
-	 Executed 16 tests, with 0 failures (0 unexpected) in 0.449 (0.449) seconds
+	 Executed 19 tests, with 0 failures (0 unexpected) in 0.499 (0.499) seconds
 
-Test Suite 'All tests' passed at 2026-11-09 19:49:22.783
+Test Suite 'All tests' passed at 2026-11-10 14:52:28.524
 
-	 Executed 16 tests, with 0 failures (0 unexpected) in 0.449 (0.449) seconds
+	 Executed 19 tests, with 0 failures (0 unexpected) in 0.499 (0.499) seconds
 
 ◊ Test run started.
 

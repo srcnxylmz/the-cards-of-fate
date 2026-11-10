@@ -5,10 +5,10 @@ import { addLegacyEvents } from './content/legacy-events.mjs';
 // Authoring helpers normalize structure only. Every event below is individually authored.
 const root = resolve(import.meta.dirname, '..');
 const text = (tr, en) => ({ tr, en });
-const effect = (stats = {}, flags = [], technologies = [], buildings = [], rivalRelation = 0) => ({ stats, flags, technologies, buildings, rivalRelation });
+const effect = (stats = {}, flags = [], technologies = [], buildings = [], rivalRelation = 0, rivalRelations) => ({ stats, flags, technologies, buildings, rivalRelation, ...(rivalRelations ? { rivalRelations } : {}) });
 const outcome = (tr, en, stats, options = {}) => ({
   id: options.id ?? 'result', probability: options.probability ?? 1, affinity: options.affinity ?? null,
-  text: text(tr, en), effect: effect(stats, options.flags, options.technologies, options.buildings, options.relation),
+  text: text(tr, en), effect: effect(stats, options.flags, options.technologies, options.buildings, options.relation, options.relations),
   delayedEffects: options.delayed ?? [], animationPreset: options.animation ?? 'normal'
 });
 const choice = (id, tr, en, outcomes, requirements = []) => ({ id, text: text(tr, en),
@@ -50,8 +50,8 @@ card('broken_spear', 1, 'leadership', 'Kırık Mızrak', 'The Broken Spear',
   'Başavcı, mamutun önünde kırılan mızrağını sakladı. Yaralı genç onun hatasını herkesin önünde anlatmak istiyor. Sessizlik de bir karar olacak.',
   'The chief hunter hid the spear that broke before a mammoth. An injured youth wants to tell everyone. Silence will be a decision too.',
   'Broken flint spear between wounded youth and proud hunter, hide tent, restrained amber side lighting.', [
-    choice('hearing', 'Avı birlikte sorgulayalım; suçlu aramayalım.', 'Review the hunt together, without a scapegoat.', [outcome('Ustalar sapları yeniden bağladı. Başavcı sözünü kaybetti, gençler söz hakkı kazandı.', 'Craftspeople rebound the shafts. The chief lost his monopoly on speaking.', { knowledge: 7, authority: 6, resources: -3 }, { flags: ['public_hearing'], relation: -5 })]),
-    choice('protect', 'Başavcının itibarını koru; aileye erzak ver.', 'Protect the chief; compensate the family.', [outcome('Avcılar yanında durdu. Yaralı gencin ailesi bunu unutmadı.', 'The hunters backed you. The injured youth’s family did not forget.', { authority: 11, resources: -7, stability: -5 }, { flags: ['protected_elite'], relation: 12 })])
+    choice('hearing', 'Avı birlikte sorgulayalım; suçlu aramayalım.', 'Review the hunt together, without a scapegoat.', [outcome('Ustalar sapları yeniden bağladı. Başavcı sözünü kaybetti, gençler söz hakkı kazandı.', 'Craftspeople rebound the shafts. The chief lost his monopoly on speaking.', { knowledge: 7, authority: 6, resources: -3 }, { flags: ['public_hearing'], relations: { hunters: -10, keepers: 8 } })]),
+    choice('protect', 'Başavcının itibarını koru; aileye erzak ver.', 'Protect the chief; compensate the family.', [outcome('Avcılar yanında durdu. Yaralı gencin ailesi bunu unutmadı.', 'The hunters backed you. The injured youth’s family did not forget.', { authority: 11, resources: -7, stability: -5 }, { flags: ['protected_elite'], relations: { hunters: 12, keepers: -8 } })])
   ], { chain: 'public_voice' });
 
 card('stranger_child', 1, 'diplomacy', 'Karın Getirdiği Çocuk', 'A Child in the Snow',

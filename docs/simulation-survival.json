@@ -1,5 +1,5 @@
 {
-  "averageTurns" : 78.556,
+  "averageTurns" : 76.3418,
   "cappedRuns" : 0,
   "contentCardCount" : 36,
   "endings" : {
@@ -11,15 +11,15 @@
   },
   "first20TurnsRepeatRate" : 0.40001600384092184,
   "limitation" : "Small development deck; capped runs are censored observations, not confirmed endings. Heuristic policies do not establish human skill balance or session duration.",
-  "maxTurns" : 439,
-  "meanLeaderTurns" : 41.0502,
-  "meanResources" : 34.2504289933296,
-  "meanStrongestRival" : 76.02870690972046,
+  "maxTurns" : 424,
+  "meanLeaderTurns" : 24.3925,
+  "meanResources" : 34.29063894223086,
+  "meanStrongestRival" : 79.10594851051455,
   "minTurns" : 16,
   "policy" : "survival",
-  "repeatRate" : 0.8472567340495952,
+  "repeatRate" : 0.8428266035120995,
   "runs" : 10000,
-  "runsWithExile" : 164,
+  "runsWithExile" : 1853,
   "seedRange" : "0..<10000",
   "turnCap" : 500,
   "uniqueCardsSeen" : 12

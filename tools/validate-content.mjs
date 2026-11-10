@@ -42,6 +42,12 @@ export function validate(cards, eras) {
     for(const [stat,delta] of Object.entries(value.stats)) assert(stats.has(stat)&&Number.isInteger(delta)&&Math.abs(delta)<=100,`${label}: invalid stat effect ${stat}`);
     for(const field of ['flags','technologies','buildings']) assert(Array.isArray(value[field])&&value[field].every(v=>typeof v==='string'&&v.length>0),`${label}: invalid ${field}`);
     assert(Number.isInteger(value.rivalRelation)&&Math.abs(value.rivalRelation)<=100,`${label}: invalid rival relation`);
+    if(value.rivalRelations !== undefined) {
+      const valid = value.rivalRelations && typeof value.rivalRelations === 'object' && !Array.isArray(value.rivalRelations);
+      assert(valid,`${label}: invalid targeted relations`);
+      if(valid) for(const [id,delta] of Object.entries(value.rivalRelations))
+        assert(['hunters','keepers'].includes(id)&&Number.isInteger(delta)&&Math.abs(delta)<=100,`${label}: invalid targeted relation ${id}`);
+    }
     for(const flag of value.flags??[]) flags.set(flag,Math.min(flags.get(flag)??99,era));
   }
   for(const card of cards) {

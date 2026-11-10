@@ -1,8 +1,20 @@
 # Measured balance baseline — 2026-11-09
 
-## Current 36-card milestone
+## Rivalry revision — 2026-11-10
 
-The table below supersedes the 24-card measurements for current behavior. Same 10,000 seeds and policies, real Swift release core. This revision combines 12 new events with unseen-eligible-first selection, so differences cannot be attributed to either change alone. Old raw reports are preserved in `baselines/24-cards/`.
+Executed 10,000 seeds per policy again using the production Swift release engine. Previous 36-card reports are archived in `baselines/36-cards/`; current raw reports remain at this document's level. Changes combine targeted Broken Spear relations and corrected/differentiated faction pressure. These comparisons do not isolate either cause.
+
+| Policy | Mean turns, before → after | Runs with exile, before → after | Repeat rate now | Capped runs now |
+|---|---:|---:|---:|---:|
+| random | 32.5176 → 32.5157 | 99 → 120 | 42.79% | 0 |
+| survival | 78.556 → 76.3418 | 164 → 1853 | 84.28% | 0 |
+| knowledge | 146.1875 → 146.098 | 633 → 1055 | 88.19% | 1446 |
+
+All three runs completed without invariant failures. Repetition and long knowledge-policy loops remain unresolved; this milestone does not establish final balance. The policies do not explicitly optimize faction relationships. Native CI repeats these simulations separately.
+
+## Previous 36-card milestone
+
+The historical table below superseded the 24-card measurements before the rivalry revision. Same 10,000 seeds and policies, real Swift release core. This revision combines 12 new events with unseen-eligible-first selection, so differences cannot be attributed to either change alone. Old raw reports are preserved in `baselines/24-cards/`.
 
 | Metric | Random | Survival | Knowledge |
 |---|---:|---:|---:|
@@ -16,7 +28,7 @@ The table below supersedes the 24-card measurements for current behavior. Same 1
 
 Random-repeat rate improved by 11.55 percentage points; strategic repeats remain too high. Random Bronze reach improved despite lower Neolithic reach, consistent with the additional smelting discovery route. The survival policy still avoids cultivation; it is not a progression strategy. One-shot follow-ups and broader choice costs reduce the previously measured long-lived loops, but 1,442 knowledge runs remain unfinished at the cap. No eligible-deck exhaustion appeared. All stat invariants held. No final pacing or fairness claim is made.
 
-Current raw reports: `simulation-random.json`, `simulation-survival.json`, `simulation-knowledge.json` (each records `contentCardCount: 36`). The historical section below retains the earlier baseline for comparison.
+Raw reports for this previous milestone: `baselines/36-cards/simulation-random.json`, `baselines/36-cards/simulation-survival.json`, `baselines/36-cards/simulation-knowledge.json` (each records `contentCardCount: 36`). The historical section below retains the earlier baseline for comparison.
 
 ## Historical 24-card baseline
 

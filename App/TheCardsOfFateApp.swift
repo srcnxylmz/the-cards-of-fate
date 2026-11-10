@@ -259,7 +259,9 @@ struct RootView: View {
                 DisclosureGroup(t("Meclis ve keşifler", "Council and discoveries")) {
                     VStack(alignment: .leading, spacing: 10) {
                         ForEach(state.rivals) { rival in
-                            Text("\(rival.name.value(language)) · \(t("Güç", "Power")) \(rival.power) · \(t("İlişki", "Relation")) \(rival.relation)")
+                            let identity = rival.identity(in: state.era)
+                            Text("\(identity.name.value(language)) · \(t("Güç", "Power")) \(rival.power) · \(t("İlişki", "Relation")) \(rival.relation)")
+                            Text(identity.motivation.value(language)).foregroundStyle(.secondary)
                         }
                         Text(t("Keşifler: ", "Discoveries: ") + state.technologies.sorted().joined(separator: ", "))
                     }.font(.caption).frame(maxWidth: .infinity, alignment: .leading).padding(.vertical, 8)

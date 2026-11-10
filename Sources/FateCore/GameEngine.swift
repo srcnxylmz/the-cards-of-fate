@@ -33,6 +33,7 @@ public struct GameEngine {
             throw ContentError.unavailableChoice
         }
         var state = original
+        state.rivals = state.rivals.map { $0.identity(in: state.era) }
         let before = state.stats
         let previousEra = state.era
         // Knowledge/authority/etc. bias outcome weights without introducing extra random draws.
@@ -78,7 +79,10 @@ public struct GameEngine {
         state.flags.formUnion(effect.flags)
         state.technologies.formUnion(effect.technologies)
         state.buildings.formUnion(effect.buildings)
-        for i in state.rivals.indices { state.rivals[i].relation = min(100, max(-100, state.rivals[i].relation + effect.rivalRelation)) }
+        for i in state.rivals.indices {
+            let delta = effect.rivalRelation + (effect.rivalRelations?[state.rivals[i].id] ?? 0)
+            state.rivals[i].relation = min(100, max(-100, state.rivals[i].relation + delta))
+        }
     }
 
     private func append(_ text: LocalizedText, card: String? = nil, choice: String? = nil, to state: inout GameState) {
@@ -125,8 +129,17 @@ public struct GameEngine {
             let relation = state.rivals[index].relation
             state.rivals[index].power = min(100, max(0, state.rivals[index].power + (relation < 0 ? 2 : 1)))
         }
-        if state.turn % 4 == 0, let strongest = state.rivals.max(by: { $0.power < $1.power }), strongest.power > state.stats["authority", default: 0], strongest.relation < 20 {
-            apply(.init(stats: ["authority": -balance.rivalPressure], flags: [], technologies: [], buildings: [], rivalRelation: 0), to: &state)
+        // A friendly powerful faction must not hide another faction's opposition.
+        // Resolve at most one challenge per council meeting, with stable ID tie-breaking.
+        if state.turn % 4 == 0, let opponent = state.rivals.filter({
+            $0.power > state.stats["authority", default: 0] && $0.relation < 20
+        }).sorted(by: { $0.power == $1.power ? $0.id < $1.id : $0.power > $1.power }).first {
+            let stat = opponent.id == "keepers" ? "stability" : "authority"
+            apply(.init(stats: [stat: -balance.rivalPressure], flags: [], technologies: [], buildings: [], rivalRelation: 0), to: &state)
+            let action = stat == "stability"
+                ? LocalizedText(tr: "Ortak kurallara itiraz etti; istikrar azaldı.", en: "Contested the common rules; stability fell.")
+                : LocalizedText(tr: "Önderliğine meydan okudu; otorite azaldı.", en: "Challenged your leadership; authority fell.")
+            append(.init(tr: "\(opponent.name.tr): \(action.tr)", en: "\(opponent.name.en): \(action.en)"), to: &state)
         }
         // Succession can itself remove the last authority: resolve it before leadership and scoring.
         if state.turn % balance.successionTurns == 0 {
@@ -165,6 +178,7 @@ public struct GameEngine {
         if let next = content.eras.first(where: { $0.id == state.era }) {
             append(next.name, to: &state)
             for i in state.rivals.indices { state.rivals[i].power = max(20, state.rivals[i].power - 15) }
+            state.rivals = state.rivals.map { $0.identity(in: state.era) }
         }
     }
 }
