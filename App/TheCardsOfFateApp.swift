@@ -273,7 +273,7 @@ struct RootView: View {
     }
 
     private func councilView(_ state: GameState) -> some View {
-                DisclosureGroup(t("Meclis ve keşifler", "Council and discoveries")) {
+                DisclosureGroup {
                     VStack(alignment: .leading, spacing: 10) {
                         ForEach(state.rivals) { rival in
                             let identity = rival.identity(in: state.era)
@@ -282,9 +282,11 @@ struct RootView: View {
                                 .accessibilityValue(String(rival.relation))
                             Text(identity.motivation.value(language)).foregroundStyle(.secondary)
                             if let rules = store.content?.politics {
-                                Button(t("Ortak çalışma", "Joint work") + " (−\(rules.negotiationCost) / +\(rules.negotiationGain))") {
+                                Button {
                                     store.council(.negotiate(rival.id))
-                                }.disabled(!store.canCouncil(.negotiate(rival.id)))
+                                } label: {
+                                    Text(t("Ortak çalışma", "Joint work") + " (−\(rules.negotiationCost) / +\(rules.negotiationGain))").frame(minHeight: 44)
+                                }.buttonStyle(.bordered).disabled(!store.canCouncil(.negotiate(rival.id)))
                                     .accessibilityIdentifier("council.negotiate.\(rival.id)")
                             }
                         }
@@ -292,7 +294,9 @@ struct RootView: View {
                             Text(t("Meclis savunması: ", "Council defense: ") + String(GameEngine(content: store.content!).councilDefense(state)))
                             Text(t("Savunma; otorite, istikrar ve dost gruplardan gelir. İki düşman grup birleşirse baskı gücü artar. Başarılı meydan okuma \(store.content!.balance.rivalPressure) puan kaybettirir.", "Defense comes from authority, stability and friendly factions. Two hostile factions combine their strength. A successful challenge costs \(store.content!.balance.rivalPressure) points."))
                             Text(t("Ortak çalışma kaynak harcar, ilişkiyi artırır. Her \(rules.actionCooldown) turda bir siyasi eylem yapabilirsin. İlişki \(rules.supportRelation) olduğunda grup mecliste seni savunur.", "Joint work spends resources to improve relations. One political action every \(rules.actionCooldown) turns. At relation \(rules.supportRelation), a faction defends you in council."))
-                            Button(t("Meclis uzlaşısı kur", "Form council pact") + " (−\(rules.allianceCost))") { store.council(.alliance) }
+                            Button { store.council(.alliance) } label: {
+                                Text(t("Meclis uzlaşısı kur", "Form council pact") + " (−\(rules.allianceCost))").frame(minHeight: 44)
+                            }.buttonStyle(.bordered)
                                 .disabled(!store.canCouncil(.alliance)).accessibilityIdentifier("council.alliance")
                             Text(t("Uzlaşı: her iki ilişki ≥\(rules.allianceRelation), istikrar ≥\(rules.legitimacyThreshold). Süre: \(rules.allianceDuration) tur; güven bozulursa dağılır. Otorite desteği ve nesil değişiminde koruma sağlar.", "Pact: both relations ≥\(rules.allianceRelation), stability ≥\(rules.legitimacyThreshold). Lasts \(rules.allianceDuration) turns; breaks if trust falls. Grants authority support and succession protection."))
                             if let until = state.politics?.allianceUntilTurn, until > state.turn {
@@ -301,7 +305,9 @@ struct RootView: View {
                         }
                         Text(t("Keşifler: ", "Discoveries: ") + state.technologies.sorted().joined(separator: ", "))
                     }.font(.caption).frame(maxWidth: .infinity, alignment: .leading).padding(.vertical, 8)
-                }.accessibilityIdentifier("council.panel")
+                } label: {
+                    Text(t("Meclis ve keşifler", "Council and discoveries")).accessibilityIdentifier("council.panel")
+                }
     }
 
     private func resultView(_ result: Resolution, state: GameState) -> some View {
