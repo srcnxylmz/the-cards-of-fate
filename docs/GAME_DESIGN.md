@@ -14,7 +14,7 @@ Rivals gain power each turn and exert pressure every four turns if stronger and 
 
 Outcome weights are normalized from authored probabilities. A declared affinity stat multiplies a weight by `0.5 + stat / 100`, so knowledge can improve a risky option without introducing hidden random draws. The UI distinguishes predictable and conditional outcomes. More specific risk previews remain pending.
 
-Probability calculation is now shared between decision resolution and simulation policy analysis, with regression coverage for normalization and unchanged RNG state. Generational succession is resolved before leadership scoring, so losing the last authority during succession immediately removes leadership. Result records include the additional historical consequences of the turn; the SwiftUI result screen renders their explanations alongside stat changes (Apple UI still awaits platform verification).
+Probability calculation is now shared between decision resolution and simulation policy analysis, with regression coverage for normalization and unchanged RNG state. Generational succession is resolved before leadership scoring, so losing the last authority during succession immediately removes leadership. Result records include the additional historical consequences of the turn; the SwiftUI result screen renders their explanations alongside stat changes (result/save flows are now verified by Simulator smoke tests; broader consequence-layout/device QA remains open).
 
 Delayed consequences store due turn, minimum era, effect and narrative text. They apply once when both gates hold. Flags persist across generations. Story chains are not complete simply because cards share a chain name; actual dependencies must be authored and checked.
 

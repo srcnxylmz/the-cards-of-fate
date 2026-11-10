@@ -2,7 +2,7 @@
 
 ## Current status
 
-**Project not complete; 36-card native build and UI flows verified at `ab7f0c8`.** Master scope is preserved verbatim in `MASTER_SPEC.md`. Simulator automation is operational; Phase 2 content and simulation development continues.
+**Project not complete; 36-card rivalry revision and UI flows verified at `dffeea8`.** Master scope is preserved verbatim in `MASTER_SPEC.md`. Simulator automation is operational; Phase 2 content and simulation development continues.
 
 ## Rivalry milestone — 2026-11-10
 
@@ -10,7 +10,7 @@
 - Added optional targeted effect map `rivalRelations`; old v1 effects still decode. Broken Spear now creates opposing hunter/keeper reactions instead of changing both equally. Other cards retain authored common deltas for now.
 - Stable faction IDs retain power/relations through first-three-era identities (Hunters → Field Council → Bronze Guild; Memory Keepers → Ancestors → Scribes). Council UI displays era-appropriate motivations, including for existing saves.
 - Every fourth turn the strongest eligible opponent challenges the player, with stable ID tie-breaking. A friendly strongest faction no longer shields a weaker opponent. Hunters affect authority; keepers affect stability. At most one challenge occurs per meeting and its explanation is included in history/results.
-- Local verification: **19 Swift tests and 18 content tests passed**, zero content errors/warnings. Three-policy simulation comparison recorded in BALANCE_REPORT.md. New native build/UI validation is pending the milestone push; do not treat local tests as iPhone evidence.
+- Local verification: **19 Swift tests and 18 content tests passed**, zero content errors/warnings. Three-policy simulation comparison recorded in BALANCE_REPORT.md. Remote validation: [run 42838850246](https://github.com/srcnxylmz/the-cards-of-fate/actions/runs/42838850246) at `dffeea8`: all steps passed, including 19 Swift tests, 18 content tests, 30,000 simulations, native build/install/launch, and 2 TR/EN UI tests (89.585 seconds, zero failures). Artifact `13776020493` contains 12 test PNGs, accessibility hierarchies, xcresult and diagnostics; downloaded locally for inspection.
 - This is an initial differentiation step, not a complete rival system: coalitions, support actions, successor traits, data-driven faction profiles and broader targeted card authoring remain open. Existing weekly balance-version pinning concern remains.
 
 ## Previous session: Simulator UI automation
@@ -40,7 +40,7 @@ The initial workspace was empty. The current repository is connected to `srcnxyl
 - `tools/build-content.mjs`, `tools/content/legacy-events.mjs` and bundled JSON: 36 hand-authored TR/EN events (12 per first-three era), 72 choices, three probabilistic decisions, 12 era definitions, balance and transition technology data. Later eras are metadata only.
 - `App/Assets.xcassets`: original generated `sacred_fire` and `river_tracks` illustrations integrated by asset name; exact prompts and provenance saved. 34 authored card illustrations missing.
 - `App/Resources/decision.wav`: original 220 ms prototype cue. Twelve music and twelve ambience assets missing; required 40-effect library not complete.
-- `tools/validate-content*`: executable validator and 15 automated tests. `Tests/FateCoreTests`: 16 passing Swift tests. `UITests/FateSmokeTests.swift`: 2 native smoke tests. `Sources/FateSimulation`: production-core simulation with random, survival and knowledge policies and atomic JSON output. `tools/swift-windows.ps1`: repeatable Windows setup/test/simulation helper.
+- `tools/validate-content*`: executable validator and 18 automated tests. `Tests/FateCoreTests`: 19 passing Swift tests. `UITests/FateSmokeTests.swift`: 2 native smoke tests. `Sources/FateSimulation`: production-core simulation with random, survival and knowledge policies and atomic JSON output. `tools/swift-windows.ps1`: repeatable Windows setup/test/simulation helper.
 - All six required project documents plus schema, release checklist, asset provenance and complete master specification are saved.
 
 ## Historical Windows checkpoint evidence
@@ -77,7 +77,7 @@ At this initial Windows checkpoint Apple-platform checks were unexecuted. The su
 
 ## Next exact actions
 
-1. Verify the rivalry milestone in native CI, then expand targeted decisions in eras 2–3 and design bounded faction support/coalitions. Keep existing saves compatible; reuse Simulator automation after each milestone.
+1. Expand targeted decisions in eras 2–3 and design bounded faction support/coalitions. Investigate survival-policy exile increase before adding further pressure. Add native council-panel screenshot assertions; current smoke tests cover the main game/save flow, not detailed faction presentation. Keep existing saves compatible; reuse Simulator automation after each milestone.
 2. Use the 36-card comparison in `BALANCE_REPORT.md`. Strategic repetition remains 85–88%; 14.42% of knowledge-policy runs reach the 500-turn cap. Expand unique crises/legacy consequences and investigate sustainable loops. Do not equate heuristic results with human skill or pacing.
 3. Test iPhone UI in Turkish/English at smallest size/large text/VoiceOver/Reduce Motion; ensure save failures preserve current state and double taps cannot resolve twice. Game Center tests require the owner’s account configuration.
 4. Deepen the first-three-era systems and author 144 additional distinct cards to reach 180. Continue leadership/rival differentiation and successor traits. Finish initial chains; thematic grouping alone does not count.

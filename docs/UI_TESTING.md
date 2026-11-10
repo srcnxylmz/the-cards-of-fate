@@ -22,3 +22,7 @@ Failed assertions/launch/build make the job fail. Evidence upload runs even afte
 No automatic pixel-baseline comparison is currently implemented. Inspect the actual screenshots after a successful run. Physical-device performance, VoiceOver interaction, large Dynamic Type, haptics/audio quality, Game Center and signing remain separate checks.
 
 Sources: [Apple XCTest attachments](https://developer.apple.com/documentation/xctest/adding-attachments-to-tests-activities-and-issues), [XcodeGen project specification](https://github.com/yonaskolb/XcodeGen/blob/master/Docs/ProjectSpec.md).
+
+## Rivalry revision evidence — 2026-11-10
+
+[run 42838850246](https://github.com/srcnxylmz/the-cards-of-fate/actions/runs/42838850246) at `dffeea8`: all steps passed, including 19 Swift tests, 18 content tests, 30,000 simulations, native build/install/launch, and 2 TR/EN UI tests (89.585 seconds, zero failures). Artifact `13776020493` contains 12 test PNGs, accessibility hierarchies, xcresult and diagnostics; downloaded locally for inspection. The English result screenshot was visually reviewed; card/result rendering and contrast remain intact. Council-panel-specific screenshots and small-device/Dynamic Type coverage are still open.

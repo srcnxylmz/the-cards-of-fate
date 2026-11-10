@@ -10,7 +10,7 @@ Executed 10,000 seeds per policy again using the production Swift release engine
 | survival | 78.556 → 76.3418 | 164 → 1853 | 84.28% | 0 |
 | knowledge | 146.1875 → 146.098 | 633 → 1055 | 88.19% | 1446 |
 
-All three runs completed without invariant failures. Repetition and long knowledge-policy loops remain unresolved; this milestone does not establish final balance. The policies do not explicitly optimize faction relationships. Native CI repeats these simulations separately.
+All three runs completed without invariant failures. Survival-policy exile rose from 1.64% to 18.53%, a material change requiring further balance work and human playtesting. It is recorded as an unresolved concern, not a balance improvement. Repetition and long knowledge-policy loops remain unresolved; this milestone does not establish final balance. The policies do not explicitly optimize faction relationships. Native CI repeats these simulations separately.
 
 ## Previous 36-card milestone
 
