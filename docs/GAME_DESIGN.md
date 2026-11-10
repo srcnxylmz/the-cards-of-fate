@@ -37,3 +37,7 @@ These are manually authored situations. Repeated generic actions are not counted
 ## Remaining design work
 
 30 authored endings with genuine preconditions and personalized retrospective narration; 100 connected chains; 50 cross-era dependencies; adaptive music; choice-specific animation choreography; meaningful adversarial AI; weekly balance; multiple run history; persistent collection and achievements; full technology trees; tutorial and onboarding. Current history export shares actual recorded events as text, not a finished illustrated share card.
+
+## Council support revision
+
+POLITICS.md supersedes the earlier monotonic faction-power description. Factions now follow an era-specific economic/cultural power base; friendly support and public stability contribute to council defense. Paid joint work and finite pacts give the player strategic influence, with persistent costs/cooldowns. Two hostile groups can coordinate opposition. This remains a partial political system, not the full successor/legitimacy model.

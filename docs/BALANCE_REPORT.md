@@ -1,6 +1,28 @@
 # Measured balance baseline — 2026-11-09
 
-## Rivalry revision — 2026-11-10
+## Support/pact revision — 2026-11-10
+
+Before changing rules, reran the original three policies on seeds 0..<10000 with observational telemetry. Average turns, exile, repetition and cap counts reproduced 2287550 exactly. Raw before reports: baselines/2287550. Current reports use the same seed set and unchanged choice policies; no council actions in these three runs.
+
+| Policy | Runs with exile before → after | Mean turns before → after | Era 2 / 3 reach now (of 10000) | Repetition before → after | 500-turn caps before → after |
+|---|---:|---:|---:|---:|---:|
+| random | 120 → 3 | 32.5157 → 32.5173 | 6747 / 5306 | 42.79% → 42.79% | 0 → 0 |
+| survival | 1853 → 1 | 76.3418 → 78.8368 | 0 / 0 | 84.28% → 84.78% | 0 → 0 |
+| knowledge | 1055 → 12 | 146.098 → 120.2965 | 7267 / 4896 | 88.19% → 85.65% | 1446 → 474 |
+
+All runs passed state bounds; each retains its observed-card counts in raw JSON. Pressure damage remains five. The large drop in exile is consistent with bounded faction power and real defense from relationships/stability. It does NOT prove final balance: political difficulty may now be too low for these policies. Meaningful adverse choices, leadership recovery and human testing remain needed. Repeat rates and censored knowledge loops are unresolved. No new content was added during this isolated rules comparison.
+
+### Measured diagnosis
+
+In the survival baseline, broken_spear.hearing was chosen 73,240 times versus protect 1,620 times. Hearing gives hunters -10 and keepers +8; the policy scores only immediate stats and ignores this political split. Council caused 724,606 authority loss, succession 212,333; card losses were 317,655 (empty_seat.council), 125,481 (red_mushrooms.feast), 53,312 (leaking_skin.boil). 283,329 decision snapshots had a hostile faction at power 100. Monotonic +1/+2 growth made old pressure persistent even without an economic base.
+
+Final zero-authority triggers: council 544, succession 722, empty_seat.council 273, red_mushrooms.feast 225, leaking_skin.boil 89. These sum to 1,853 transitions here. Final-trigger attribution is not an isolated causal experiment: earlier losses matter. Regression tests independently show that friendly support/legitimacy can block pressure, opposition can still win, and succession can still remove a leader in the same turn.
+
+### Optional political management experiment
+
+A separate survival run uses --manage-council, without modifying the baseline policy. It spends only when resources >=35, forming an eligible pact or funding the least-friendly faction below support threshold. 10,000 runs: 37912 political actions, 49.3196 mean turns, 0 exile runs, 0 capped runs. Raw report: simulation-survival-council.json. Resource costs change survival decisions; this is a deliberately simple policy, not an optimal-player or pure one-variable comparison. All actions pass the production eligibility and persistence-compatible state logic.
+
+## Previous rivalry revision — 2026-11-10
 
 Executed 10,000 seeds per policy again using the production Swift release engine. Previous 36-card reports are archived in `baselines/36-cards/`; current raw reports remain at this document's level. Changes combine targeted Broken Spear relations and corrected/differentiated faction pressure. These comparisons do not isolate either cause.
 

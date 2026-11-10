@@ -172,6 +172,8 @@ public struct GameState: Codable, Equatable {
     public var longestLeadership = 0
     public var ending: LocalizedText?
     public var rivals: [Rival]
+    /// Nil in existing schema-v1 saves; introduced only when a political action is taken.
+    public var politics: PoliticalState? = nil
 
     public init(seed: UInt64, mode: RunMode, weekID: String?, balance: Balance) {
         self.seed = seed

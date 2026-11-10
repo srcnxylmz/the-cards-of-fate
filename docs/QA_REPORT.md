@@ -52,3 +52,7 @@ No stage is certified complete solely because source files exist. Core, native b
 ## Rivalry checkpoint — 2026-11-10
 
 19 Swift tests and 18 content tests pass locally. Added old-effect decoding, targeted relationship outcomes/save round-trip, faction identity continuity, and friendly-strongest/opposition regression coverage. Native verification: [run 42838850246](https://github.com/srcnxylmz/the-cards-of-fate/actions/runs/42838850246) at `dffeea8`: all steps passed, including 19 Swift tests, 18 content tests, 30,000 simulations, native build/install/launch, and 2 TR/EN UI tests (89.585 seconds, zero failures). Artifact `13776020493` contains 12 test PNGs, accessibility hierarchies, xcresult and diagnostics; downloaded locally for inspection. Existing smoke tests do not open the council panel, so its detailed visual/accessibility QA remains pending. Physical-device and broad accessibility checks remain outstanding.
+
+## Support/pact checkpoint
+
+26 Swift tests / 18 content tests pass locally. Baseline observer reproduces 2287550 metrics exactly. Three new core simulations and a separately labeled managed-council experiment are recorded in BALANCE_REPORT.md. Native test count is now three in source; execution and screenshot review await the milestone CI run. No small-device, Dynamic Type, VoiceOver, physical-device or release claim.

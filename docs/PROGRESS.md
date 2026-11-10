@@ -4,7 +4,19 @@
 
 **Project not complete; 36-card rivalry revision and UI flows verified at `dffeea8`.** Master scope is preserved verbatim in `MASTER_SPEC.md`. Simulator automation is operational; Phase 2 content and simulation development continues.
 
-## Rivalry milestone — 2026-11-10
+## Support and pact investigation — 2026-11-10
+
+Continuation requirements are preserved in CONTINUATION_REQUEST.md. Clean local/remote HEAD 2287550 confirmed before work. All nine requested project documents were reviewed.
+
+- Instrumented actual authority changes without altering gameplay; reproduced all three 2287550 baseline policies exactly on seeds 0..<10000. Archived diagnostic reports in baselines/2287550.
+- Survival: 73,240 broken_spear.hearing choices; 724,606 authority lost to council; exile final triggers 544 council, 722 succession, 587 card effects. 283,329 decision snapshots had hostile power at 100. Existing policies ignore relations, so aggregate exile is not a human skill measurement.
+- Implemented JSON-configured economic/cultural faction power, friendly defense, stability-based legitimacy, common opposition, paid joint work, cooldowns, finite council pacts, betrayal/expiry and inherited support. Pressure damage remains five. See POLITICS.md for exact rules and limits.
+- Added optional v1 political state and save validation; no state reset, RNG draw or score increase from political transactions. Meclis panel now exposes real actions, rules and faction values.
+- 26 Swift tests and 18 content tests pass locally. Tests include cost/cooldown/score restrictions, old saves/replay, pact expiry/betrayal/succession, support/legitimacy, hostile coalition, bounded faction growth and observer neutrality. Three-policy comparisons plus a separate managed-council experiment are recorded in BALANCE_REPORT.md.
+- Added a third native UI test for actual council opening, negotiation, stat cost, unchanged turn/card, save restoration and cooldown. Native execution is pending this milestone push; do not mark the council UI verified until CI and screenshots are inspected.
+- Next: pass native gate, then author a batch of 10–15 distinct first-three-era cards with targeted faction effects and reachable historical branches. The 90-card intermediate and 180-card first-three-era targets remain open. Full leadership, audiovisual, accessibility and 12-era master scope remain incomplete.
+
+## Previous rivalry milestone — 2026-11-10
 
 - Confirmed all steps passed on the previous documentation push, run 42688637013 (f0250fd), and fast-forward synchronized origin without losing work.
 - Added optional targeted effect map `rivalRelations`; old v1 effects still decode. Broken Spear now creates opposing hunter/keeper reactions instead of changing both equally. Other cards retain authored common deltas for now.

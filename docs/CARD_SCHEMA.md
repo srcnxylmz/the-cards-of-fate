@@ -17,3 +17,5 @@ Save schema v1 persists RNG, chosen card, outcome acknowledgment, all simulation
 The current v1 `Resolution` adds optional `consequences: [LocalizedText]`. Older v1 saves without this field load as nil and still select the same next card. This additive compatibility is covered by an executed Swift regression test. It is not a general schema migration implementation.
 
 Effects may add optional `rivalRelations: { "hunters": Int, "keepers": Int }`. Each delta is -100...100, adds to the common `rivalRelation`, then the final relationship clamps to -100...100. Stable IDs survive era name changes. Missing maps decode as nil in old v1 saved consequences; unknown IDs and malformed maps are rejected by content validation.
+
+GameState may now contain optional politics (lastActionTurn, allianceUntilTurn). Missing state remains nil for schema-v1 compatibility. Politics is persisted transactionally and cannot advance decision score or RNG. Rule configuration is validated independently of saved state.

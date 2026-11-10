@@ -23,6 +23,32 @@ final class FateSmokeTests: XCTestCase {
     func testTurkishDecisionAndPersistentResume() throws { try exercise(language: "tr") }
     func testEnglishDecisionAndPersistentResume() throws { try exercise(language: "en") }
 
+    func testCouncilNegotiationAndPersistentCooldown() throws {
+        launch(language: "en", reset: true)
+        tap(element("menu.newGame"))
+        let before = try values()
+        let card = element("card.title").value as? String
+        tap(element("council.panel"))
+        XCTAssertTrue(element("faction.hunters").waitForExistence(timeout: 5))
+        XCTAssertTrue(element("faction.hunters").label.contains("Council of Hunters"))
+        XCTAssertEqual(element("faction.hunters").value as? String, "0")
+        tap(element("council.negotiate.hunters"))
+        XCTAssertEqual(element("faction.hunters").value as? String, "20")
+        XCTAssertFalse(element("council.negotiate.keepers").isEnabled)
+        capture("en-06-council-negotiation")
+        XCTAssertEqual(try values()["resources"], before["resources"]! - 8)
+        XCTAssertEqual(element("game.turn").value as? String, "0")
+        XCTAssertEqual(element("card.title").value as? String, card)
+        app.terminate()
+        launch(language: "en", reset: false)
+        tap(element("menu.continue"))
+        tap(element("council.panel"))
+        XCTAssertEqual(element("faction.hunters").value as? String, "20")
+        XCTAssertFalse(element("council.negotiate.hunters").isEnabled)
+        capture("en-07-restored-council")
+        XCTAssertEqual(app.alerts.count, 0)
+    }
+
     private func element(_ id: String) -> XCUIElement {
         app.descendants(matching: .any).matching(identifier: id).firstMatch
     }

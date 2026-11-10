@@ -26,5 +26,9 @@ public struct PersistenceService {
         guard (1...12).contains(state.era), state.turn >= 0,
               Stat.allCases.allSatisfy({ (0...100).contains(state.stats[$0.rawValue, default: -1]) }),
               !(state.currentCardID != nil && state.resolution != nil) else { throw SaveError.invalidState }
+        if let politics = state.politics {
+            guard politics.lastActionTurn.map({ (0...state.turn).contains($0) }) ?? true,
+                  politics.allianceUntilTurn.map({ $0 >= 0 }) ?? true else { throw SaveError.invalidState }
+        }
     }
 }

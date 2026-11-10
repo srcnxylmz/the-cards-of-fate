@@ -91,6 +91,17 @@ final class GameStore: ObservableObject {
         commit(engine.acknowledge(state))
     }
 
+    func council(_ action: CouncilAction) {
+        guard let state, let engine else { return }
+        do { commit(try engine.council(action, in: state)) }
+        catch { self.error = String(describing: error) }
+    }
+
+    func canCouncil(_ action: CouncilAction) -> Bool {
+        guard let state, let engine else { return false }
+        return engine.councilActionAvailable(action, in: state)
+    }
+
     func convertExpiredChallenge() {
         guard var next = state, next.mode == .weekly else { return }
         next.mode = .unrankedWeekly
@@ -256,18 +267,41 @@ struct RootView: View {
                     }.padding(20).background(.white.opacity(0.035), in: RoundedRectangle(cornerRadius: 20)).id(card.id)
                         .transition(reduceMotion ? .opacity : .move(edge: .bottom).combined(with: .opacity))
                 }
+                councilView(state)
+            }.padding(.horizontal, 18).padding(.bottom, 28).frame(maxWidth: 550)
+        }
+    }
+
+    private func councilView(_ state: GameState) -> some View {
                 DisclosureGroup(t("Meclis ve keşifler", "Council and discoveries")) {
                     VStack(alignment: .leading, spacing: 10) {
                         ForEach(state.rivals) { rival in
                             let identity = rival.identity(in: state.era)
                             Text("\(identity.name.value(language)) · \(t("Güç", "Power")) \(rival.power) · \(t("İlişki", "Relation")) \(rival.relation)")
+                                .accessibilityIdentifier("faction.\(rival.id)")
+                                .accessibilityValue(String(rival.relation))
                             Text(identity.motivation.value(language)).foregroundStyle(.secondary)
+                            if let rules = store.content?.politics {
+                                Button(t("Ortak çalışma", "Joint work") + " (−\(rules.negotiationCost) / +\(rules.negotiationGain))") {
+                                    store.council(.negotiate(rival.id))
+                                }.disabled(!store.canCouncil(.negotiate(rival.id)))
+                                    .accessibilityIdentifier("council.negotiate.\(rival.id)")
+                            }
+                        }
+                        if let rules = store.content?.politics {
+                            Text(t("Meclis savunması: ", "Council defense: ") + String(GameEngine(content: store.content!).councilDefense(state)))
+                            Text(t("Savunma; otorite, istikrar ve dost gruplardan gelir. İki düşman grup birleşirse baskı gücü artar. Başarılı meydan okuma \(store.content!.balance.rivalPressure) puan kaybettirir.", "Defense comes from authority, stability and friendly factions. Two hostile factions combine their strength. A successful challenge costs \(store.content!.balance.rivalPressure) points."))
+                            Text(t("Ortak çalışma kaynak harcar, ilişkiyi artırır. Her \(rules.actionCooldown) turda bir siyasi eylem yapabilirsin. İlişki \(rules.supportRelation) olduğunda grup mecliste seni savunur.", "Joint work spends resources to improve relations. One political action every \(rules.actionCooldown) turns. At relation \(rules.supportRelation), a faction defends you in council."))
+                            Button(t("Meclis uzlaşısı kur", "Form council pact") + " (−\(rules.allianceCost))") { store.council(.alliance) }
+                                .disabled(!store.canCouncil(.alliance)).accessibilityIdentifier("council.alliance")
+                            Text(t("Uzlaşı: her iki ilişki ≥\(rules.allianceRelation), istikrar ≥\(rules.legitimacyThreshold). Süre: \(rules.allianceDuration) tur; güven bozulursa dağılır. Otorite desteği ve nesil değişiminde koruma sağlar.", "Pact: both relations ≥\(rules.allianceRelation), stability ≥\(rules.legitimacyThreshold). Lasts \(rules.allianceDuration) turns; breaks if trust falls. Grants authority support and succession protection."))
+                            if let until = state.politics?.allianceUntilTurn, until > state.turn {
+                                Text(t("Uzlaşının bitiş turu: ", "Pact expires on turn: ") + String(until)).accessibilityIdentifier("council.pactStatus")
+                            }
                         }
                         Text(t("Keşifler: ", "Discoveries: ") + state.technologies.sorted().joined(separator: ", "))
                     }.font(.caption).frame(maxWidth: .infinity, alignment: .leading).padding(.vertical, 8)
-                }
-            }.padding(.horizontal, 18).padding(.bottom, 28).frame(maxWidth: 550)
-        }
+                }.accessibilityIdentifier("council.panel")
     }
 
     private func resultView(_ result: Resolution, state: GameState) -> some View {

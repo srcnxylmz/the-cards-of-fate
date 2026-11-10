@@ -24,7 +24,7 @@ public struct GameEngine {
     }
 
     /// A decision and its result are one transaction; callers persist before publishing the new state.
-    public func choose(_ choiceID: String, in original: GameState, now: Date = Date()) throws -> GameState {
+    public func choose(_ choiceID: String, in original: GameState, now: Date = Date(), observe: ((String, GameState) -> Void)? = nil) throws -> GameState {
         guard original.ending == nil else { throw ContentError.finished }
         guard original.resolution == nil else { throw ContentError.awaitingAcknowledgment }
         if original.mode == .weekly, original.weekID != WeeklyChallenge.id(at: now) { throw ContentError.weeklyExpired }
@@ -48,6 +48,7 @@ public struct GameEngine {
         state.turn += 1
         apply(choice.immediateEffects, to: &state)
         apply(outcome.effect, to: &state)
+        observe?("card", state)
         state.delayed += outcome.delayedEffects.map {
             ScheduledConsequence(dueTurn: state.turn + $0.afterTurns, minimumEra: $0.minimumEra, text: $0.text, effect: $0.effect)
         }
@@ -55,7 +56,8 @@ public struct GameEngine {
         let due = state.delayed.filter { $0.dueTurn <= state.turn && $0.minimumEra <= state.era }
         state.delayed.removeAll { $0.dueTurn <= state.turn && $0.minimumEra <= state.era }
         for event in due { apply(event.effect, to: &state); append(event.text, to: &state) }
-        simulate(&state)
+        observe?("delayed", state)
+        simulate(&state, observe: observe)
         advanceEra(&state)
         state.currentCardID = nil
         state.resolution = Resolution(title: card.title, text: outcome.text, animation: outcome.animationPreset,
@@ -117,7 +119,7 @@ public struct GameEngine {
         state.discovered.insert(selected.id)
     }
 
-    private func simulate(_ state: inout GameState) {
+    private func simulate(_ state: inout GameState, observe: ((String, GameState) -> Void)?) {
         let balance = content.balance
         let production = state.buildings.contains("granary") ? balance.farmProduction : 0
         let consumption = balance.resourceConsumption + (state.mode == .hard ? balance.hardExtraConsumption : 0)
@@ -125,14 +127,25 @@ public struct GameEngine {
         if state.stats["resources"] == 0 {
             apply(.init(stats: ["population": -balance.starvationLoss, "stability": -4], flags: [], technologies: [], buildings: [], rivalRelation: 0), to: &state)
         }
-        for index in state.rivals.indices {
-            let relation = state.rivals[index].relation
-            state.rivals[index].power = min(100, max(0, state.rivals[index].power + (relation < 0 ? 2 : 1)))
+        let politics = content.politics
+        updateFactionPower(&state)
+        if let until = state.politics?.allianceUntilTurn, !hasAlliance(state) {
+            state.politics?.allianceUntilTurn = nil
+            append(until <= state.turn
+                ? .init(tr: "Meclis uzlaşısının süresi doldu.", en: "The council pact expired.")
+                : .init(tr: "Bozulan ilişkiler meclis uzlaşısını dağıttı.", en: "Damaged relations dissolved the council pact."), to: &state)
         }
+        if state.turn % politics.meetingInterval == 0 && hasAlliance(state), state.stats["authority", default: 0] < politics.supportAuthorityCeiling {
+            let gain = min(politics.supportAuthority, politics.supportAuthorityCeiling - state.stats["authority", default: 0])
+            apply(.init(stats: ["authority": gain], flags: [], technologies: [], buildings: [], rivalRelation: 0), to: &state)
+            append(.init(tr: "Meclis uzlaşısı yönetimine destek verdi.", en: "The council pact backed your leadership."), to: &state)
+        }
+        observe?("world", state)
         // A friendly powerful faction must not hide another faction's opposition.
         // Resolve at most one challenge per council meeting, with stable ID tie-breaking.
-        if state.turn % 4 == 0, let opponent = state.rivals.filter({
-            $0.power > state.stats["authority", default: 0] && $0.relation < 20
+        let coalition = state.rivals.filter { $0.relation <= politics.hostileRelation }.count >= 2 ? politics.coalitionBonus : 0
+        if state.turn % politics.meetingInterval == 0, let opponent = state.rivals.filter({
+            $0.power + coalition > councilDefense(state) && $0.relation < politics.neutralRelation
         }).sorted(by: { $0.power == $1.power ? $0.id < $1.id : $0.power > $1.power }).first {
             let stat = opponent.id == "keepers" ? "stability" : "authority"
             apply(.init(stats: [stat: -balance.rivalPressure], flags: [], technologies: [], buildings: [], rivalRelation: 0), to: &state)
@@ -141,12 +154,15 @@ public struct GameEngine {
                 : LocalizedText(tr: "Önderliğine meydan okudu; otorite azaldı.", en: "Challenged your leadership; authority fell.")
             append(.init(tr: "\(opponent.name.tr): \(action.tr)", en: "\(opponent.name.en): \(action.en)"), to: &state)
         }
+        observe?("council", state)
         // Succession can itself remove the last authority: resolve it before leadership and scoring.
         if state.turn % balance.successionTurns == 0 {
             state.generation += 1
-            apply(.init(stats: ["authority": -8, "knowledge": 2], flags: [], technologies: [], buildings: [], rivalRelation: 0), to: &state)
+            let cost = politics.successionCost - (hasAlliance(state) ? politics.allianceSuccessionRelief : 0)
+            apply(.init(stats: ["authority": -cost, "knowledge": 2], flags: [], technologies: [], buildings: [], rivalRelation: 0), to: &state)
             append(.init(tr: "Yeni kuşak, önceki liderin sözlerini ve borçlarını devraldı.", en: "A new generation inherited the last leader's promises and debts."), to: &state)
         }
+        observe?("succession", state)
         let authority = state.stats["authority", default: 0]
         if authority == 0, state.leadership != .exile {
             state.leadership = .exile

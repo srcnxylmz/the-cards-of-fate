@@ -2,6 +2,7 @@ param(
     [ValidateSet('Test', 'Simulate')][string]$Task = 'Test',
     [ValidateRange(1, 1000000)][int]$Runs = 10000,
     [ValidateSet('random', 'survival', 'knowledge')][string]$Policy = 'random',
+    [switch]$ManageCouncil,
     [string]$SwiftRoot = (Join-Path $env:LOCALAPPDATA 'Programs\Swift')
 )
 $ErrorActionPreference = 'Stop'
@@ -27,8 +28,11 @@ try {
         if ($Task -eq 'Test') {
             & (Join-Path $bin 'swift.exe') test 2>&1 | Tee-Object -FilePath 'docs/swift-test-windows.log'
         } else {
-            & (Join-Path $bin 'swift.exe') run -c release FateSimulation $Runs --policy $Policy --output "docs/simulation-$Policy.json" 2>&1 |
-                Tee-Object -FilePath "docs/swift-simulation-$Policy-windows.log"
+            $councilArgs = @()
+            $reportName = $Policy
+            if ($ManageCouncil) { $councilArgs = @('--manage-council'); $reportName = "$Policy-council" }
+            & (Join-Path $bin 'swift.exe') run -c release FateSimulation $Runs --policy $Policy @councilArgs --output "docs/simulation-$reportName.json" 2>&1 |
+                Tee-Object -FilePath "docs/swift-simulation-$reportName-windows.log"
         }
         if ($LASTEXITCODE -ne 0) { throw "Swift $Task failed with exit code $LASTEXITCODE" }
     } finally { Pop-Location }

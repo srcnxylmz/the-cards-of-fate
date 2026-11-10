@@ -1,8 +1,7 @@
 Building for production...
-[Planning deferred tasks]
-[11 / 18] FateCore
-[17 / 19] FateSimulation-product
-[19 / 19] FateSimulation-product
-Build complete! (6.92 secs)
+[4 / 11] FateCore
+[10 / 12] FateSimulation-product
+[12 / 12] FateSimulation-product
+Build complete! (6.99 secs)
 warning: unable to create symbolic link at C:\Users\Impassive\Desktop\Projeler\The Cards Of Fate\.build\release: encountered an I/O error (code: 512) while reading C:\Users\Impassive\Desktop\Projeler\The Cards Of Fate\.build\release
 Saved 10000 random simulations to docs/simulation-random.json
