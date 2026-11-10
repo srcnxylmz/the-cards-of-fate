@@ -1,6 +1,24 @@
 # Measured balance baseline — 2026-11-09
 
-## Support/pact revision — 2026-11-10
+## 48-card narrative revision — 2026-11-10
+
+Same seeds 0..<10000, same three baseline policies, unchanged support/pact rules. The change combines twelve new events and one-shot closure of Broken Spear; comparison cannot isolate these two changes. 36-card support reports are archived in baselines/support-36-cards. The current reports at this directory level describe 48 cards.
+
+| Policy | Mean turns before → after | Exile runs before → after | Era 2 / 3 reach now | Repeat before → after | First-20 repeat before → after | Caps before → after |
+|---|---:|---:|---:|---:|---:|---:|
+| random | 32.5173 → 33.7944 | 3 → 2 | 6464 / 4922 | 42.79% → 38.88% | 21.57% → 16.06% | 0 → 0 |
+| survival | 78.8368 → 128.3012 | 1 → 98 | 0 / 0 | 84.78% → 88.76% | 40.00% → 29.85% | 0 → 97 |
+| knowledge | 120.2965 → 178.2993 | 12 → 143 | 7069 / 4498 | 85.65% → 89.24% | 21.90% → 16.00% | 474 → 1643 |
+
+All four runs completed without invariant failures. Random play encountered all 48 cards across seeds, not every branch. Survival still remains in era 1 by its own investment policy. Early variety and long-run repetition must be read separately: the small pool of recurring older events dominates long games after one-shot history is exhausted. Higher survival duration increases overall repetition; adding one-shot history does not solve late-game loops. No final balance or completed 90/180-card milestone claim.
+
+Managed-council survival: 66.0739 mean turns, 2 exile runs, 0 caps; 44928 paid political actions. This is an optional additional 10,000-run experiment, not one of the unchanged baseline policies.
+
+### Rejected finite-stock loop
+
+The initial 48-card candidate let marrow_shares recur. Its full four-policy results are preserved under experiments/48-repeating-marrow. Survival chose crack 71,298 times, had 165 capped runs, averaged 144.4622 turns and repeated 90.02% of decisions. The only gameplay change in the next experiment made this finite bone cache one-shot after either choice. Crack fell to 9,770 choices, caps to 97, mean to 128.3012 and repeats to 88.76%. This both respects the story and removes repeated use of the same stock. It does not eliminate other sustainable loops; do not conceal the remaining 97 censored survival runs.
+
+## Previous support/pact revision — 2026-11-10
 
 Before changing rules, reran the original three policies on seeds 0..<10000 with observational telemetry. Average turns, exile, repetition and cap counts reproduced 2287550 exactly. Raw before reports: baselines/2287550. Current reports use the same seed set and unchanged choice policies; no council actions in these three runs.
 

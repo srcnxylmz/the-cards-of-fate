@@ -286,5 +286,101 @@
     "file": null,
     "brief": "Bronze market seed sacks withheld behind counter, farmer and treasurer with clay tokens; warm muted gold, human-scale portrait.",
     "license": null
+  },
+  {
+    "id": "card_winter_cairn",
+    "cardID": "winter_cairn",
+    "status": "missing",
+    "file": null,
+    "brief": "Paleolithic girl teaching adults beside a small stone cairn, hide cloaks, snowy mountain saddle, cold blue dawn and ochre foreground, portrait, no lettering.",
+    "license": null
+  },
+  {
+    "id": "card_injured_tracker",
+    "cardID": "injured_tracker",
+    "status": "missing",
+    "file": null,
+    "brief": "Injured adult tracker binding an ankle beside a flint spear, hunter offering dried meat, Paleolithic hide shelter, amber side light, intimate portrait.",
+    "license": null
+  },
+  {
+    "id": "card_return_from_ridge",
+    "cardID": "return_from_ridge",
+    "status": "missing",
+    "file": null,
+    "brief": "Exiled Paleolithic leader outside a ridge shelter, two adult messengers with empty hands, valley camp below, restrained gold sunset, portrait.",
+    "license": null
+  },
+  {
+    "id": "card_marrow_shares",
+    "cardID": "marrow_shares",
+    "status": "missing",
+    "file": null,
+    "brief": "Paleolithic hands weighing a heavy bone and chipped hammerstone over empty wooden bowls, frost and low fire, ochre charcoal portrait.",
+    "license": null
+  },
+  {
+    "id": "card_speaking_field",
+    "cardID": "speaking_field",
+    "status": "missing",
+    "file": null,
+    "brief": "Neolithic irrigation worker holding a muddy spade before seated landholders, old witness stones beside clay water jar, sage and warm earth, morning portrait.",
+    "license": null
+  },
+  {
+    "id": "card_guest_seed",
+    "cardID": "guest_seed",
+    "status": "missing",
+    "file": null,
+    "brief": "Neolithic guest family offering a small woven seed pouch across a furrow, local farmer and child, dry sage fields, warm side-lit portrait.",
+    "license": null
+  },
+  {
+    "id": "card_winter_reserve",
+    "cardID": "winter_reserve",
+    "status": "missing",
+    "file": null,
+    "brief": "Neolithic granary doorway, damp grain basket between farmer and keeper, two carved wooden keys, cold daylight through reed walls, portrait.",
+    "license": null
+  },
+  {
+    "id": "card_borrowed_ox",
+    "cardID": "borrowed_ox",
+    "status": "missing",
+    "file": null,
+    "brief": "Neolithic farmer beside a sturdy ox and simple wooden ard, neighboring herder at a field boundary, damp clay and spring green, overcast portrait.",
+    "license": null
+  },
+  {
+    "id": "card_seal_appeal",
+    "cardID": "seal_appeal",
+    "status": "missing",
+    "file": null,
+    "brief": "Bronze Age worker holding an unopened clay envelope before a scribe and metalworker, public court, teal shadow and golden window light, portrait.",
+    "license": null
+  },
+  {
+    "id": "card_guest_gate",
+    "cardID": "guest_gate",
+    "status": "missing",
+    "file": null,
+    "brief": "Bronze city gate, adult guest descendant holding old woven seed pouch beside clay agreement, guard and local resident, dusk copper and blue, portrait.",
+    "license": null
+  },
+  {
+    "id": "card_store_witness",
+    "cardID": "store_witness",
+    "status": "missing",
+    "file": null,
+    "brief": "Bronze warehouse clerk comparing two clay grain tablets while waiting workers hold empty baskets, dusty sunlight, clay gold portrait.",
+    "license": null
+  },
+  {
+    "id": "card_charcoal_embargo",
+    "cardID": "charcoal_embargo",
+    "status": "missing",
+    "file": null,
+    "brief": "Bronze charcoal merchant stopped beside ancient carved grove marker, furnace beyond healthy trees, ember orange and deep green, portrait side lighting.",
+    "license": null
   }
 ]

@@ -26,3 +26,7 @@ Sources: [Apple XCTest attachments](https://developer.apple.com/documentation/xc
 ## Rivalry revision evidence — 2026-11-10
 
 [run 42838850246](https://github.com/srcnxylmz/the-cards-of-fate/actions/runs/42838850246) at `dffeea8`: all steps passed, including 19 Swift tests, 18 content tests, 30,000 simulations, native build/install/launch, and 2 TR/EN UI tests (89.585 seconds, zero failures). Artifact `13776020493` contains 12 test PNGs, accessibility hierarchies, xcresult and diagnostics; downloaded locally for inspection. The English result screenshot was visually reviewed; card/result rendering and contrast remain intact. Council-panel-specific screenshots and small-device/Dynamic Type coverage are still open.
+
+## Paid council action verified
+
+[run 42889283237](https://github.com/srcnxylmz/the-cards-of-fate/actions/runs/42889283237), commit fdf2b79: all steps passed; 26 Swift tests, 18 content tests, three 10,000-seed policies plus one 10,000-seed managed-council experiment, build/install/launch and 3 UI tests (119.418 seconds, zero failures). Artifact 13798560384 downloaded. The council screenshot confirms hunter relation 20; panel content is partly below the viewport, so the next test revision explicitly scrolls for full-panel captures. The initial run 42845432807 failed because the DisclosureGroup identifier propagated to its children. Fixed by tagging only its label. No assertions were removed to hide the failure.

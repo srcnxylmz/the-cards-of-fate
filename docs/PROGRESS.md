@@ -2,7 +2,17 @@
 
 ## Current status
 
-**Project not complete; 36-card rivalry revision and UI flows verified at `dffeea8`.** Master scope is preserved verbatim in `MASTER_SPEC.md`. Simulator automation is operational; Phase 2 content and simulation development continues.
+**Project not complete; support/pact revision and 3 UI flows verified at `fdf2b79`. 48-card content batch is locally under validation.** Master scope is preserved verbatim in `MASTER_SPEC.md`. Simulator automation is operational; Phase 2 content and simulation development continues.
+
+## 48-card authored batch — 2026-11-10
+
+- After the native support/pact gate passed, added 12 individually authored TR/EN events (four per first-three era): winter_cairn, injured_tracker, return_from_ridge, marrow_shares, speaking_field, guest_seed, winter_reserve, borrowed_ox, seal_appeal, guest_gate, store_witness, charcoal_embargo. Totals: 48 cards, 97 choices, four probabilistic choices, 15 explicit cross-era links. Seven thematic groups are still not seven complete approved chains.
+- Every new event has targeted faction effects, a distinct art brief, decision cue/animation metadata and future consequences/flags. Eleven are one-shot; only the seasonal ox loan recurs under low-resource conditions. The finite bone cache was made one-shot after a controlled simulation exposed repeatable food supply. No missing production art/audio is counted as delivered.
+- Conditions add optional faction relationship and leadership gates, compatible with old JSON. Delayed tracker recovery opens a third exile-return choice. Charcoal inspection has authority-sensitive outcomes.
+- Broken Spear now closes after either choice, including old saves already carrying public_hearing/protected_elite. Previously chosen saved cards remain resolvable. This prevents the same historical injury repeatedly yielding conflicting flags in new runs; it does not erase old history.
+- 32 Swift tests and 25 content tests pass; zero content audit errors/warnings. Tests cover eight public-voice paths through three eras, hospitality/granary paths, delayed unlock and save compatibility. Era fixtures test conditional consistency, not unconstrained natural draw timing. Full narrative completion/editorial approval remains open.
+- Four simulation reports compare against baselines/support-36-cards; native 48-card verification is pending. UI capture now scrolls the open council panel into view.
+- Next: verify this batch natively, inspect full council screenshots, then continue in 10–15-card groups toward 90 and 180, with active art/audio and small-screen QA. Do not treat the phase as finished.
 
 ## Support and pact investigation — 2026-11-10
 
@@ -49,10 +59,10 @@ The initial workspace was empty. The current repository is connected to `srcnxyl
 - `Sources/FateCore/Models.swift`, `SeededRandom.swift`, `GameEngine.swift`: seeded weighted selection, six bounded stats, transactional choices, normalized state-dependent outcome weights, delayed consequences gated by era/turn, history, flags, discoveries, buildings, rivals, leadership/exile recovery, generational succession, two actual collapse conditions. Empty eligible deck explicitly reports development-content exhaustion, not an authored ending.
 - `Persistence.swift`: atomic JSON writes, saved RNG/current card/result, schema header check; corrupt/unsupported data reports an error. Real migration implementation awaits a prior schema to migrate.
 - `App`: SwiftUI menu/play/results/history/collection/settings/weekly ranking; separate story and weekly save slots, unranked expired-week continuation remains in weekly slot; SpriteKit settlement placeholder; core haptics and AVFoundation cue; GameKit authentication, own/top scores and persistent best-score retry queue with occurrence checks.
-- `tools/build-content.mjs`, `tools/content/legacy-events.mjs` and bundled JSON: 36 hand-authored TR/EN events (12 per first-three era), 72 choices, three probabilistic decisions, 12 era definitions, balance and transition technology data. Later eras are metadata only.
-- `App/Assets.xcassets`: original generated `sacred_fire` and `river_tracks` illustrations integrated by asset name; exact prompts and provenance saved. 34 authored card illustrations missing.
+- `tools/build-content.mjs`, `tools/content/legacy-events.mjs` and bundled JSON: 48 hand-authored TR/EN events (16 per first-three era), 72 choices, three probabilistic decisions, 12 era definitions, balance and transition technology data. Later eras are metadata only.
+- `App/Assets.xcassets`: original generated `sacred_fire` and `river_tracks` illustrations integrated by asset name; exact prompts and provenance saved. 46 authored card illustrations missing.
 - `App/Resources/decision.wav`: original 220 ms prototype cue. Twelve music and twelve ambience assets missing; required 40-effect library not complete.
-- `tools/validate-content*`: executable validator and 18 automated tests. `Tests/FateCoreTests`: 19 passing Swift tests. `UITests/FateSmokeTests.swift`: 2 native smoke tests. `Sources/FateSimulation`: production-core simulation with random, survival and knowledge policies and atomic JSON output. `tools/swift-windows.ps1`: repeatable Windows setup/test/simulation helper.
+- `tools/validate-content*`: executable validator and 25 automated tests. `Tests/FateCoreTests`: 32 passing Swift tests. `UITests/FateSmokeTests.swift`: 3 native smoke tests. `Sources/FateSimulation`: production-core simulation with random, survival and knowledge policies and atomic JSON output. `tools/swift-windows.ps1`: repeatable Windows setup/test/simulation helper.
 - All six required project documents plus schema, release checklist, asset provenance and complete master specification are saved.
 
 ## Historical Windows checkpoint evidence
@@ -76,12 +86,12 @@ At this initial Windows checkpoint Apple-platform checks were unexecuted. The su
 
 | Requirement | Actual | Outstanding |
 |---|---|---|
-| ≥800 original cards | 36 | 764 minimum, correctly distributed |
-| ≥60 per era | 12 each in eras 1–3; zero in 4–12 | 144 more for Phase 2, 540 for eras 4–12, 80 special |
+| ≥800 original cards | 48 | 752 minimum, correctly distributed |
+| ≥60 per era | 16 each in eras 1–3; zero in 4–12 | 132 more for Phase 2, 540 for eras 4–12, 80 special |
 | ≥100 completed chains | No fully approved chains; 7 multi-card groups | Branching, closure, reachability and editorial completion |
-| ≥50 cross-era links | 9 explicit links detected | 41+ and full validation |
+| ≥50 cross-era links | 15 explicit links detected | 35+ and full validation |
 | ≥30 endings | 2 collapse predicates | 28+ unique designed fates and narrative summaries |
-| Card illustrations | 2 generated candidates | 34 current + all future content; final visual approval |
+| Card illustrations | 2 generated candidates | 46 current + all future content; final visual approval |
 | Audio | 1 prototype cue | 12 music, 12 ambience, 40 production effects |
 | Animations | Basic transitions/flicker/haptics | 15 distinct coordinated presets, cinematic eras |
 | 10,000 simulations | 10,000 seeds × 3 policies executed; reports saved | High repetition and censored long runs; expand content and rebalance with human playtests |
@@ -92,15 +102,19 @@ At this initial Windows checkpoint Apple-platform checks were unexecuted. The su
 1. Expand targeted decisions in eras 2–3 and design bounded faction support/coalitions. Investigate survival-policy exile increase before adding further pressure. Add native council-panel screenshot assertions; current smoke tests cover the main game/save flow, not detailed faction presentation. Keep existing saves compatible; reuse Simulator automation after each milestone.
 2. Use the 36-card comparison in `BALANCE_REPORT.md`. Strategic repetition remains 85–88%; 14.42% of knowledge-policy runs reach the 500-turn cap. Expand unique crises/legacy consequences and investigate sustainable loops. Do not equate heuristic results with human skill or pacing.
 3. Test iPhone UI in Turkish/English at smallest size/large text/VoiceOver/Reduce Motion; ensure save failures preserve current state and double taps cannot resolve twice. Game Center tests require the owner’s account configuration.
-4. Deepen the first-three-era systems and author 144 additional distinct cards to reach 180. Continue leadership/rival differentiation and successor traits. Finish initial chains; thematic grouping alone does not count.
+4. Deepen the first-three-era systems and author 132 additional distinct cards to reach 180. Continue leadership/rival differentiation and successor traits. Finish initial chains; thematic grouping alone does not count.
 5. Continue sequentially through master phases 3–9. Keep every blocker and unexecuted check explicit. Do not replace missing production assets with placeholders and call release ready.
 
 ## Known limitations to address
 
-No full secondary-stat model, census/stock simulation, individualized successor traits, branching technology tree, achievements, persistent cross-run collection/history, personal-record dashboard, full error/technology-name localization, tutorial, backup recovery, all 30 endings, branding/icon, premium animations or complete audio. Most cards still share a common relation delta; Broken Spear uses targeted deltas. Faction pressure is differentiated, but support/coalitions are not implemented. Save version dispatch rejects unknown versions; it does not yet transform old schemas. Static reachability checks are approximate, not proof of every chain’s playability. Sound/music settings exist but only one prototype sound is available.
+No full secondary-stat model, census/stock simulation, individualized successor traits, branching technology tree, achievements, persistent cross-run collection/history, personal-record dashboard, full error/technology-name localization, tutorial, backup recovery, all 30 endings, branding/icon, premium animations or complete audio. Most cards still share a common relation delta; Broken Spear uses targeted deltas. Faction support, finite pacts and initial common opposition are implemented; richer inter-faction relationships and successors remain pending. Save version dispatch rejects unknown versions; it does not yet transform old schemas. Static reachability checks are approximate, not proof of every chain’s playability. Sound/music settings exist but only one prototype sound is available.
 
 The small event pool permits repetition and may exhaust under conditions/cooldowns. This is visibly labeled development behavior and must be eliminated as a content bottleneck before release.
 
 ### Native gate failure and correction
 
-Run 42845432807 at ed6090b passed core/content tests, four simulation policies, build/install/launch, and the two existing UI flows. The new council test failed at faction.hunters existence. Downloaded artifact 13778407627; the screenshot proves the panel opened. The accessibility hierarchy shows every child inherited council.panel, overwriting the faction/action IDs. Moved the identifier from DisclosureGroup to its label and enlarged council button hit areas. Corrected native run is pending; content expansion remains behind this gate.
+Run 42845432807 at ed6090b passed core/content tests, four simulation policies, build/install/launch, and the two existing UI flows. The new council test failed at faction.hunters existence. Downloaded artifact 13778407627; the screenshot proves the panel opened. The accessibility hierarchy shows every child inherited council.panel, overwriting the faction/action IDs. Moved the identifier from DisclosureGroup to its label and enlarged council button hit areas. Corrected native gate passed: [run 42889283237](https://github.com/srcnxylmz/the-cards-of-fate/actions/runs/42889283237), commit fdf2b79: all steps passed; 26 Swift tests, 18 content tests, three 10,000-seed policies plus one 10,000-seed managed-council experiment, build/install/launch and 3 UI tests (119.418 seconds, zero failures). Artifact 13798560384 downloaded. The council screenshot confirms hunter relation 20; panel content is partly below the viewport, so the next test revision explicitly scrolls for full-panel captures.
+
+### Completed-world event recurrence correction
+
+The 48-card candidate still reused completed smelting/writing discoveries and built city walls. Added optional technology/building predicates and world-state exclusions for river_tracks after observation, green_stone/kiln_crack after smelting, clay_archive after writing, and city_walls after construction. No weights or pressure-damage constants changed. Old saves already holding technologies/buildings are recognized; an already displayed card can finish normally. Pre-correction reports preserved in experiments/48-completed-events-repeat. 32 Swift tests / 25 content tests pass. Final same-seed comparison below BALANCE_REPORT.md supersedes the intermediate 48-card numbers.

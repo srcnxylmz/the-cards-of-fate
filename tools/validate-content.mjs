@@ -11,6 +11,9 @@ export function validate(cards, eras) {
   const localized=(value,label)=>assert(value && typeof value.tr==='string' && value.tr.trim().length>0 && typeof value.en==='string' && value.en.trim().length>0,`${label}: missing translation`);
   const flags=new Map(), chains=new Map(), ids=new Set(), titles=new Set(), descriptions=new Set();
   let crossEraLinks=0, stochasticChoices=0, choicesCount=0;
+  const effects=cards.flatMap(c=>(c.choices??[]).flatMap(ch=>[ch.immediateEffects,...(ch.outcomes??[]).map(o=>o.effect)])).filter(Boolean);
+  const technologies=new Set(effects.flatMap(e=>e.technologies??[]));
+  const buildings=new Set(effects.flatMap(e=>e.buildings??[]));
   const eraIDs=new Set(eras.map(e=>e.id));
   assert(eras.length===12 && eraIDs.size===12 && eras.every(e=>Number.isInteger(e.id)&&e.id>=1&&e.id<=12),'Must define all twelve eras exactly once');
   for(const era of eras) {
@@ -21,8 +24,17 @@ export function validate(cards, eras) {
     assert(Array.isArray(list),`${label}: conditions must be array`);
     if(!Array.isArray(list)) return;
     for(const condition of list) {
-      assert(Object.keys(condition).every(k=>['stat','minimum','maximum','flag','absentFlag'].includes(k)),`${label}: unknown condition key`);
-      assert(condition.stat||condition.flag||condition.absentFlag,`${label}: empty condition`);
+      assert(Object.keys(condition).every(k=>['stat','minimum','maximum','flag','absentFlag','faction','relationMinimum','relationMaximum','leadership','technology','building'].includes(k)),`${label}: unknown condition key`);
+      assert(condition.stat||condition.flag||condition.absentFlag||condition.faction||condition.leadership||condition.technology||condition.building,`${label}: empty condition`);
+      if(condition.technology!==undefined) assert(technologies.has(condition.technology),`${label}: unknown technology condition`);
+      if(condition.building!==undefined) assert(buildings.has(condition.building),`${label}: unknown building condition`);
+      if(condition.faction!==undefined) assert(['hunters','keepers'].includes(condition.faction),`${label}: unknown faction`);
+      if(condition.leadership!==undefined) assert(['contender','ruler','exile'].includes(condition.leadership),`${label}: unknown leadership`);
+      for(const bound of ['relationMinimum','relationMaximum']) if(condition[bound]!==undefined) {
+        assert(['hunters','keepers'].includes(condition.faction),`${label}: relation bounds without faction`);
+        assert(Number.isInteger(condition[bound])&&condition[bound]>=-100&&condition[bound]<=100,`${label}: invalid relation bound`);
+      }
+      assert((condition.relationMinimum??-100)<=(condition.relationMaximum??100),`${label}: impossible relation range`);
       if(condition.stat) assert(stats.has(condition.stat),`${label}: unknown stat`);
       if(condition.minimum!==undefined||condition.maximum!==undefined) assert(stats.has(condition.stat),`${label}: bounds without stat`);
       for(const bound of ['minimum','maximum']) if(condition[bound]!==undefined) assert(Number.isInteger(condition[bound])&&condition[bound]>=0&&condition[bound]<=100,`${label}: invalid bound`);
@@ -33,6 +45,11 @@ export function validate(cards, eras) {
       const relevant=list.filter(c=>c.stat===stat);
       assert(Math.max(0,...relevant.map(c=>c.minimum??0))<=Math.min(100,...relevant.map(c=>c.maximum??100)),`${label}: mutually impossible bounds`);
     }
+    for(const faction of ['hunters','keepers']) {
+      const relevant=list.filter(c=>c.faction===faction);
+      assert(Math.max(-100,...relevant.map(c=>c.relationMinimum??-100))<=Math.min(100,...relevant.map(c=>c.relationMaximum??100)),`${label}: contradictory faction bounds`);
+    }
+    assert(new Set(list.map(c=>c.leadership).filter(Boolean)).size<=1,`${label}: contradictory leadership`);
     const present=new Set(list.map(c=>c.flag).filter(Boolean));
     assert(!list.some(c=>present.has(c.absentFlag)),`${label}: mutually contradictory flags`);
   }

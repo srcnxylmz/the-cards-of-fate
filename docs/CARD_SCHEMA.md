@@ -19,3 +19,7 @@ The current v1 `Resolution` adds optional `consequences: [LocalizedText]`. Older
 Effects may add optional `rivalRelations: { "hunters": Int, "keepers": Int }`. Each delta is -100...100, adds to the common `rivalRelation`, then the final relationship clamps to -100...100. Stable IDs survive era name changes. Missing maps decode as nil in old v1 saved consequences; unknown IDs and malformed maps are rejected by content validation.
 
 GameState may now contain optional politics (lastActionTurn, allianceUntilTurn). Missing state remains nil for schema-v1 compatibility. Politics is persisted transactionally and cannot advance decision score or RNG. Rule configuration is validated independently of saved state.
+
+Conditions may include faction (hunters/keepers), relationMinimum/relationMaximum (-100...100), and leadership (contender/ruler/exile). All predicates are conjunctive; an unknown/missing faction never matches. Validator rejects unknown IDs, missing bound owners and combined contradictory bounds/leadership. Old conditions decode with nil additional fields.
+
+Conditions also accept technology and building predicates, checked against existing state sets; validator requires an authored producer. They can be used as exclusions to prevent repeating a completed discovery or construction. These optional fields do not invalidate old conditions or saves.

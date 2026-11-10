@@ -5,8 +5,8 @@ Full requirements: `MASTER_SPEC.md`. Target: commercially polished, offline-firs
 | Phase | Deliverables and acceptance | Current status |
 |---|---|---|
 | 0 | Architecture, 12-era guide, schema, acceptance ledger, real source | Initial documents and source exist; design needs further depth |
-| 1 | iPhone build; deterministic decisions; result acknowledgment; atomic save; start/end tests | Native build and 2 TR/EN UI smoke tests verified at 6bd22bc; current core has 19 passing tests |
-| 2 | 180 distinct first-three-era events, rivals, settlements, legacy, artwork and transitions | 36 events; 9 explicit cross-era links; first-three-era faction identities and differentiated opposition; support/coalitions and production art remain |
+| 1 | iPhone build; deterministic decisions; result acknowledgment; atomic save; start/end tests | Native build and 2 TR/EN UI smoke tests verified at 6bd22bc; current core has 32 passing tests |
+| 2 | 180 distinct first-three-era events, rivals, settlements, legacy, artwork and transitions | 48 events; 15 explicit cross-era links; faction support/pacts and initial opposition coalition implemented; richer politics, content and production art remain |
 | 3 | 300 era 4–8 events, diplomacy/trade/war/science, visual/audio integration | Planned; era metadata only |
 | 4 | 240 era 9–12 events, modern/AI/space systems, endings | Planned; era metadata only |
 | 5 | 80 extra events; 800 total; 100 complete chains; 50 cross-era links; 30 endings | Not met |

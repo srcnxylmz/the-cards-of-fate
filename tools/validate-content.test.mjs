@@ -6,6 +6,13 @@ const cards=JSON.parse(readFileSync(new URL('../Sources/FateCore/Content/cards.j
 const eras=JSON.parse(readFileSync(new URL('../Sources/FateCore/Content/eras.json',import.meta.url)));
 test('authored content passes structural validation',()=>assert.deepEqual(validate(cards,eras).errors,[]));
 const mutations=[
+  ['unknown technology condition',c=>c[0].requirements=[{technology:'teleport'}],'unknown technology condition'],
+  ['unknown building condition',c=>c[0].requirements=[{building:'spaceport'}],'unknown building condition'],
+  ['unknown faction condition',c=>c[0].requirements=[{faction:'ghost'}],'unknown faction'],
+  ['orphan relation bounds',c=>c[0].requirements=[{relationMinimum:10}],'relation bounds without faction'],
+  ['conflicting faction bounds',c=>c[0].requirements=[{faction:'hunters',relationMinimum:30},{faction:'hunters',relationMaximum:20}],'contradictory faction bounds'],
+  ['unknown leadership condition',c=>c[0].requirements=[{leadership:'king'}],'unknown leadership'],
+  ['conflicting leadership',c=>c[0].requirements=[{leadership:'ruler'},{leadership:'exile'}],'contradictory leadership'],
   ['unknown faction',c=>c[0].choices[0].outcomes[0].effect.rivalRelations={ghost:2},'invalid targeted relation'],
   ['invalid faction delta',c=>c[0].choices[0].outcomes[0].effect.rivalRelations={hunters:101},'invalid targeted relation'],
   ['malformed faction effects',c=>c[0].choices[0].outcomes[0].effect.rivalRelations=[],'invalid targeted relations'],

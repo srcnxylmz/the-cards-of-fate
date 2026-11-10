@@ -35,6 +35,7 @@ final class FateSmokeTests: XCTestCase {
         tap(element("council.negotiate.hunters"))
         XCTAssertEqual(element("faction.hunters").value as? String, "20")
         XCTAssertFalse(element("council.negotiate.keepers").isEnabled)
+        app.swipeUp(); app.swipeUp()
         capture("en-06-council-negotiation")
         XCTAssertEqual(try values()["resources"], before["resources"]! - 8)
         XCTAssertEqual(element("game.turn").value as? String, "0")
@@ -45,6 +46,7 @@ final class FateSmokeTests: XCTestCase {
         tap(element("council.panel"))
         XCTAssertEqual(element("faction.hunters").value as? String, "20")
         XCTAssertFalse(element("council.negotiate.hunters").isEnabled)
+        app.swipeUp(); app.swipeUp()
         capture("en-07-restored-council")
         XCTAssertEqual(app.alerts.count, 0)
     }

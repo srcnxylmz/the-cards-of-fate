@@ -1,0 +1,69 @@
+{
+  "authorityGainBySource" : {
+    "card:broken_spear.hearing" : 272485,
+    "card:cave_marks.lamps" : 225789,
+    "card:empty_seat.lead" : 59144,
+    "card:ice_crossing.cross" : 117423,
+    "card:stranger_child.supplies" : 64584,
+    "card:witness_stones.delegate" : 60000,
+    "world" : 27239
+  },
+  "authorityLossBySource" : {
+    "card:empty_seat.council" : 215605,
+    "card:leaking_skin.boil" : 56540,
+    "card:red_mushrooms.feast" : 86040,
+    "council" : 15,
+    "succession" : 109980
+  },
+  "averageTurns" : 49.3196,
+  "cappedRuns" : 0,
+  "contentCardCount" : 36,
+  "decisionCounts" : {
+    "broken_spear.hearing" : 47750,
+    "cave_marks.lamps" : 47421,
+    "empty_seat.council" : 43121,
+    "empty_seat.lead" : 4261,
+    "guest_paths.secret" : 9686,
+    "ice_crossing.cross" : 47401,
+    "ice_crossing.detour" : 65,
+    "leaking_skin.boil" : 14135,
+    "leaking_skin.repair" : 33196,
+    "ochre_border.move" : 46264,
+    "ochre_border.symbols" : 1037,
+    "red_mushrooms.feast" : 47040,
+    "red_mushrooms.test" : 578,
+    "river_tracks.follow" : 46923,
+    "sacred_fire.burn" : 13029,
+    "sacred_fire.conserve" : 33910,
+    "stranger_child.shelter" : 33952,
+    "stranger_child.supplies" : 13427,
+    "witness_stones.delegate" : 10000
+  },
+  "decisionsWithHostilePowerAtCap" : 0,
+  "endings" : {
+    "The last hearth went dark. Hunger consumed your civilization's living memory." : 10000
+  },
+  "engine" : "FateCore Swift (production core)",
+  "eraReachCounts" : {
+    "1" : 10000
+  },
+  "exileTransitionsByTrigger" : {
+
+  },
+  "first20TurnsRepeatRate" : 0.40087475268903594,
+  "limitation" : "Small development deck; capped runs are censored observations, not confirmed endings. Heuristic policies do not establish human skill balance or session duration.",
+  "managesCouncil" : true,
+  "maxTurns" : 201,
+  "meanLeaderTurns" : 31.3905,
+  "meanResources" : 20.83722495721782,
+  "meanStrongestRival" : 55.413083236684805,
+  "minTurns" : 13,
+  "policy" : "survival",
+  "politicalActions" : 37912,
+  "repeatRate" : 0.757325687961784,
+  "runs" : 10000,
+  "runsWithExile" : 0,
+  "seedRange" : "0..<10000",
+  "turnCap" : 500,
+  "uniqueCardsSeen" : 12
+}

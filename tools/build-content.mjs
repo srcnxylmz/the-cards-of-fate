@@ -1,6 +1,7 @@
 import { mkdirSync, writeFileSync, existsSync, readFileSync } from 'node:fs';
 import { resolve } from 'node:path';
 import { addLegacyEvents } from './content/legacy-events.mjs';
+import { addCouncilEvents } from './content/council-events.mjs';
 
 // Authoring helpers normalize structure only. Every event below is individually authored.
 const root = resolve(import.meta.dirname, '..');
@@ -52,7 +53,7 @@ card('broken_spear', 1, 'leadership', 'Kırık Mızrak', 'The Broken Spear',
   'Broken flint spear between wounded youth and proud hunter, hide tent, restrained amber side lighting.', [
     choice('hearing', 'Avı birlikte sorgulayalım; suçlu aramayalım.', 'Review the hunt together, without a scapegoat.', [outcome('Ustalar sapları yeniden bağladı. Başavcı sözünü kaybetti, gençler söz hakkı kazandı.', 'Craftspeople rebound the shafts. The chief lost his monopoly on speaking.', { knowledge: 7, authority: 6, resources: -3 }, { flags: ['public_hearing'], relations: { hunters: -10, keepers: 8 } })]),
     choice('protect', 'Başavcının itibarını koru; aileye erzak ver.', 'Protect the chief; compensate the family.', [outcome('Avcılar yanında durdu. Yaralı gencin ailesi bunu unutmadı.', 'The hunters backed you. The injured youth’s family did not forget.', { authority: 11, resources: -7, stability: -5 }, { flags: ['protected_elite'], relations: { hunters: 12, keepers: -8 } })])
-  ], { chain: 'public_voice' });
+  ], { chain: 'public_voice', once: true, exclusions: [{flag: 'public_hearing'}, {flag: 'protected_elite'}] });
 
 card('stranger_child', 1, 'diplomacy', 'Karın Getirdiği Çocuk', 'A Child in the Snow',
   'Yabancı bir kabilenin işaretini taşıyan çocuk kampın sınırına ulaştı. Ardındaki ayak izleri iki yetişkine ait. Onları içeri almak, kampın yerini açığa çıkaracak.',
@@ -223,6 +224,16 @@ card('council_seal', 3, 'leadership', 'Mührün Sahibi', 'Keeper of the Seal',
   ], { chain: 'public_voice' });
 
 addLegacyEvents({ card, choice, outcome, delayed });
+addCouncilEvents({ card, choice, outcome, delayed });
+
+// Completed discoveries/builds are world facts, not reusable reward cards.
+for (const [id, exclusion] of [
+  ['river_tracks', {flag:'river_observers'}],
+  ['green_stone', {technology:'smelting'}],
+  ['kiln_crack', {technology:'smelting'}],
+  ['clay_archive', {technology:'writing'}],
+  ['city_walls', {building:'walls'}]
+]) cards.find(c=>c.id===id).exclusionConditions.push(exclusion);
 
 const eraRows = [
   ['Paleolitik Çağ','Paleolithic','Mağara Kampı','Cave Camp','Kabile Meclisi','Tribal Council','cultivation',55,'#B07845','Kaya, kemik, ateş; ochre charcoal; cave wind and stone percussion.'],

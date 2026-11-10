@@ -16,7 +16,21 @@ public struct Condition: Codable, Equatable {
     public var maximum: Int?
     public var flag: String?
     public var absentFlag: String?
+    public var faction: String? = nil
+    public var relationMinimum: Int? = nil
+    public var relationMaximum: Int? = nil
+    public var leadership: Leadership? = nil
+    public var technology: String? = nil
+    public var building: String? = nil
     public func matches(_ state: GameState) -> Bool {
+        if let technology, !state.technologies.contains(technology) { return false }
+        if let building, !state.buildings.contains(building) { return false }
+        if let faction {
+            guard let rival = state.rivals.first(where: { $0.id == faction }) else { return false }
+            if let relationMinimum, rival.relation < relationMinimum { return false }
+            if let relationMaximum, rival.relation > relationMaximum { return false }
+        }
+        if let leadership, state.leadership != leadership { return false }
         if let stat {
             let value = state.stats[stat.rawValue, default: 0]
             if let minimum, value < minimum { return false }
