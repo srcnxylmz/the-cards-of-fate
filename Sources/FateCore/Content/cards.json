@@ -6768,14 +6768,14 @@
     "category": "economy",
     "title": {
       "tr": "Ambar Yemini",
-      "en": "The Common Granary"
+      "en": "The Granary Pledge"
     },
     "description": {
-      "tr": "İlk ambara kış tahhili kararlaştırıldı. Taşınmasını savunanlar kuyu yanında ortak paylaşım istiyor; aydan aya yürüyen avcılar ise kuralı bozmak istemiyor. Paylaşmak herkesi doyurur, fakat tek bir çuvallın eksikliği hepsine düşer.",
-      "en": "The first granary's winter stores were apportioned. Those by the well want common sharing; hunters who walk the shares refuse to break the rule. Sharing feeds everyone, but one missing sack falls on all."
+      "tr": "Kışlık tahıl dağıtılırken eski kural yeniden tartışılıyor: yalnızca çalışabilenler pay alıyor. Yaralılar, yaşlılar ve hastalar ambarın önünde bekliyor. Onlara da pay ayırmak kimseyi aç bırakmamayı sağlayabilir, ancak köyün kalan erzağını azaltacak.",
+      "en": "As winter grain is distributed, an old rule is challenged: only those able to work receive a share. Injured, elderly and sick villagers wait outside the granary. Setting grain aside for them could keep everyone fed, but would leave the village with fewer reserves."
     },
     "artAsset": "card_granary_pledge",
-    "artDirection": "Bronze grain store with open clay jars and a divided queue; hunter with walking staff beside a scribe counting tokens; ochre grain, wet clay, lantern light from below, portrait composition.",
+    "artDirection": "Neolithic village granary with open clay storage jars and woven grain baskets; a villager with a bandaged leg and an elderly villager wait beside farm workers distributing grain; mudbrick walls, simple linen clothing, ochre grain and warm hearth light, portrait composition; no bronze tools or scribes.",
     "rarity": "common",
     "weight": 10,
     "requirements": [
@@ -6792,8 +6792,8 @@
       {
         "id": "pledge",
         "text": {
-          "tr": "Hasalı sadece ihtiyaçlılarına ver; kuralı yenile.",
-          "en": "Pledge the harvest only to those in need; renew the rule."
+          "tr": "Çalışamayanlara da tahıl ayır; erzağın azalmasını göze al.",
+          "en": "Reserve grain for those unable to work, accepting fewer supplies."
         },
         "risk": {
           "tr": "Sonucu öngörülebilir",
@@ -6813,8 +6813,8 @@
             "probability": 1,
             "affinity": null,
             "text": {
-              "tr": "Güneş altında çilekli yaşlı ve yaşlandıklarından doğurgan çavuşlar ambara ilk erdi. Kural yeni yaşta ve_dayanmazlar için yeniden yazıldı.",
-              "en": "The sick and aged, and those disabled by age, reached the granary first. The rule was anew written for the weak and inflexible."
+              "tr": "Yaralılar, yaşlılar ve hastalar da paylarını aldı. Ambar hafifledi; köy, çalışamayanların da sofrada yeri olduğunu kabul etti.",
+              "en": "Injured, elderly and sick villagers received their shares. The stores shrank, but the village accepted that those unable to work still had a place at the table."
             },
             "effect": {
               "stats": {
@@ -6836,8 +6836,8 @@
                 "afterTurns": 4,
                 "minimumEra": 2,
                 "text": {
-                  "tr": "Ambarda ilk ödeme ağır geldi; ortak paylaşım güven kazandı.",
-                  "en": "The first granary repayment arrived heavy; common sharing won trust."
+                  "tr": "Yeni paylaşım düzenine güvenen aileler, ellerinde kalan tahılın bir bölümünü ortak ambara getirdi.",
+                  "en": "Trusting the new distribution rule, families brought some of their remaining grain to the common granary."
                 },
                 "effect": {
                   "stats": {
@@ -6858,8 +6858,8 @@
       {
         "id": "reserve",
         "text": {
-          "tr": "Kuyu yanındaki özel depoyu koru; kuralı eski haline döndür.",
-          "en": "Protect the private store by the well; restore the rule to its old form."
+          "tr": "Payları çalışmaya göre dağıtmayı sürdür; çalışamayanlar pay alamayacak.",
+          "en": "Keep work-based rations; those unable to work will receive no share."
         },
         "risk": {
           "tr": "Sonucu öngörülebilir",
@@ -6879,8 +6879,8 @@
             "probability": 1,
             "affinity": null,
             "text": {
-              "tr": "Özel ambara gelenler doldurdu, kuyu kenarında kalanlar boş el döndü. Kural eski haline döndü; genç sağlıklı çalışanlar ödüller aldı.",
-              "en": "Those at the private store were filled; those by the well returned empty-handed. The rule restored its old form; young healthy workers received rewards."
+              "tr": "Çalışanların payı korundu, ambarda daha çok tahıl kaldı. Çalışamayanlar ise yakınlarının yardımına muhtaç oldu; aileler arasında öfke büyüdü.",
+              "en": "Workers kept their shares and more grain remained in storage. Those unable to work were left dependent on relatives, and resentment grew between families."
             },
             "effect": {
               "stats": {
@@ -6902,8 +6902,8 @@
                 "afterTurns": 5,
                 "minimumEra": 2,
                 "text": {
-                  "tr": "Gizli depolar boşalınca, kışın sadece sağlam çalışan aileler yiyecek buldu.",
-                  "en": "When secret stores ran out, only strong working families found food for winter."
+                  "tr": "Kış uzadıkça yakınlarının yardımı da yetmez oldu. Pay alamayanlar arasında açlık arttı; köydeki kırgınlık derinleşti.",
+                  "en": "As winter dragged on, help from relatives was no longer enough. Hunger spread among those denied rations, deepening resentment in the village."
                 },
                 "effect": {
                   "stats": {
@@ -6947,8 +6947,8 @@
       "en": "The Water Quota"
     },
     "description": {
-      "tr": "Tunç atölyesi geceleri su çekmeye başladı; yazılmış su hukumunun uygulanmasıyla sorunlar ortaya çıktı. Sumeyi ölçenler koruma altına alındı; yağış azaldıkça ölçülen su miktarının çoğunluğu gerekli normu aşmıyor. Ağaçların saklanan kayıtlar incelendiğinde, bazı ölçümlerin false (yapay/korumasız) olduğu ve kimi Toprak Meclisi üyelerinin çıkar uğranda su hakkının unequally (arasından feragat edildiği) ortaya çıktı.",
-      "en": "The bronze workshop began drawing water at night, but the written agreement says nothing about nights. The tablet council cannot decide between splitting the quota or upholding the old ban."
+      "tr": "Kuraklık kentin suyunu azaltıyor. Daha önce kabul edilen yazılı su yasası yürürlükte, ancak dağıtım tabletlerinde bazı tahsislerin şişirildiği ortaya çıktı. Bu kayıtlar birkaç haneye ve atölyeye fazladan su sağlıyor. Sahteciliği hemen açığa çıkarmak düzeni sarsabilir; soruşturmayı ertelemek ise haksız payları koruyacak.",
+      "en": "Drought is reducing the water available to the city. The written water law remains in force, but some allocations on the distribution tablets have been inflated. These entries give several households and workshops extra water. Exposing the fraud now could disrupt order; postponing the investigation would preserve unfair shares."
     },
     "artAsset": "card_water_apportion",
     "artDirection": "Bronze civic courtyard, clay water-wheel beside a sealed tablet archive, night lanterns and stream water; turquoise, pale stone, workshop glow, portrait composition of a corrupt official.",
@@ -6968,8 +6968,8 @@
       {
         "id": "revise",
         "text": {
-          "tr": "Sözleşmeyi yenileyin; atölyeye gece kotası verin.",
-          "en": "Revise the agreement; grant the workshop a night quota."
+          "tr": "Kayıtları halka aç; sahte tahsisleri kaldır, kotaları denetle.",
+          "en": "Disclose the records, remove fraudulent allocations and monitor quotas."
         },
         "risk": {
           "tr": "Sonucu öngörülebilir",
@@ -6989,8 +6989,8 @@
             "probability": 1,
             "affinity": null,
             "text": {
-              "tr": "Yeni yazılan kotalarla atölye gececeği oynadı; akarsu hizmeti erken kısıtlandı.",
-              "en": "The new quotas put the workshop to night work; stream service was rationed early."
+              "tr": "Haksız tahsislerden geri alınan su üretime yönlendirildi. Denetimin başına geçtin, ancak ayrıcalıklarını kaybedenler karara karşı çıktı. Üretim sürerken azalan nehir üzerindeki baskı da sürdü.",
+              "en": "Water recovered from fraudulent allocations was redirected to production. You took charge of oversight, but those stripped of privileges opposed the decision. Keeping production running maintained pressure on the dwindling river."
             },
             "effect": {
               "stats": {
@@ -7016,8 +7016,8 @@
                 "afterTurns": 5,
                 "minimumEra": 3,
                 "text": {
-                  "tr": "Gece sulaması tabakayı tüketti; akarsu katından azaldı.",
-                  "en": "Night irrigation consumed the quota; the stream fell."
+                  "tr": "Kotalar denetlense de kuraklık ağırlaştı. Nehir çekilince üretim için ayrılan suyu da azaltmak zorunda kaldınız.",
+                  "en": "Despite monitored quotas, the drought worsened. As the river receded, water reserved for production had to be cut as well."
                 },
                 "effect": {
                   "stats": {
@@ -7038,8 +7038,8 @@
       {
         "id": "hold",
         "text": {
-          "tr": "Yazılmış yasağı sürdürün; atölyeyi gündüzde sınırlayın.",
-          "en": "Uphold the written ban; limit the workshop to day hours."
+          "tr": "Mevcut tahsisleri herkes için aynı oranda kıs; soruşturmayı ertele.",
+          "en": "Reduce all existing allocations by the same proportion and postpone the inquiry."
         },
         "risk": {
           "tr": "Sonucu öngörülebilir",
@@ -7059,8 +7059,8 @@
             "probability": 1,
             "affinity": null,
             "text": {
-              "tr": "Yasa korundu. Atölye geceleri durdu ve işçiler mücadireye hazırlandı; emek verimi düştü.",
-              "en": "The ban held. The workshop stopped at night and workers readied a dispute; labor output fell."
+              "tr": "Herkese aynı kesinti uygulanınca ilk gerilim yatıştı, fakat üretim yavaşladı. Şişirilmiş kayıtlar düzeltilmedi; sahtecilik iddialarını bekletmen yönetimine duyulan güveni zedeledi.",
+              "en": "Applying the same cut to everyone eased immediate tensions but slowed production. Inflated records remained unchanged, and delaying the fraud inquiry weakened trust in your leadership."
             },
             "effect": {
               "stats": {
@@ -7085,8 +7085,8 @@
                 "afterTurns": 6,
                 "minimumEra": 3,
                 "text": {
-                  "tr": "Atölyenin sessiz duruşu, yazılmış yasanın onayını yeniden yazdı.",
-                  "en": "The workshop's silent stand confirmed the written law once more."
+                  "tr": "Kesintiler herkese aynı oranda uygulanmaya devam edince dağıtım öngörülebilir hale geldi. Düzeni koruman biraz güven kazandırdı, ancak sahte kayıtların hesabı hâlâ sorulmadı.",
+                  "en": "As the same proportional cuts continued, distribution became predictable. Maintaining order restored some trust, but those responsible for the false records still had not been held to account."
                 },
                 "effect": {
                   "stats": {
