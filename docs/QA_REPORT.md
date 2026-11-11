@@ -60,3 +60,13 @@ No stage is certified complete solely because source files exist. Core, native b
 ## Support native gate and 48-card local checks
 
 [run 42889283237](https://github.com/srcnxylmz/the-cards-of-fate/actions/runs/42889283237), commit fdf2b79: all steps passed; 26 Swift tests, 18 content tests, three 10,000-seed policies plus one 10,000-seed managed-council experiment, build/install/launch and 3 UI tests (119.418 seconds, zero failures). Artifact 13798560384 downloaded. The council screenshot confirms hunter relation 20; panel content is partly below the viewport, so the next test revision explicitly scrolls for full-panel captures. New 48-card content: 32 Swift tests and 25 content tests passed locally, zero validation warnings/errors. Native verification awaits the next push.
+
+## Verified CI baseline (recorded, not re-claimed)
+- Commit `0989bb6da81af522d966b38f67de8ba90a8b5c6e`, GitHub Actions run `42898795340` — SUCCESS: iOS Simulator build, launch, UI tests and simulations passed; 48 original cards across the first three eras; 25 passing content tests and 32 passing Swift tests reported.
+
+## 50-card local development status (this task — CI not yet run)
+- Scope: exactly two original narrative cards added, 48 → 50 (Era 2 `granary_pledge` "Ortak Ambara / The Common Granary"; Era 3 `water_apportion` "Su Kotası / The Water Quota"), all 48 previous card IDs preserved.
+- Local verification: `node tools/build-content.mjs` → 50 cards, 0 errors, 0 warnings; Era 1:16 / Era 2:17 / Era 3:17; TR/EN localization complete for new cards; generated `assets/art_manifest.json` lists both new events with honest `status: "missing"` (no missing artwork/audio claimed as completed).
+- `node --test tools/validate-content.test.mjs` → 25/25 pass.
+- `swift test` → 38/38 pass, 0 failures (was 32/32; +6 new narrative tests: decode, requirements/exclusions, both choice branches, flag-gated follow-ups, one-shot non-repetition, save round-trip, deterministic replay). Swift verification executed on Windows with the toolchain plus MSVC linker on PATH; `.\tools\swift-windows.ps1 -Task Test` requires the MSVC `link.exe` path in the environment and is not itself a passed iOS build.
+- The 50-card iOS/simulator build has NOT been run through GitHub Actions and is NOT claimed as passed. Physical-device, signing/TestFlight, Game Center, accessibility and large-text QA remain open.

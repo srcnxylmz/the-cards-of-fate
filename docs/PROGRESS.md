@@ -2,7 +2,7 @@
 
 ## Current status
 
-**Project not complete; support/pact revision and 3 UI flows verified at `fdf2b79`. 48-card content batch is locally under validation.** Master scope is preserved verbatim in `MASTER_SPEC.md`. Simulator automation is operational; Phase 2 content and simulation development continues.
+**Project not complete; support/pact revision and 3 UI flows verified at `fdf2b79`. 48-card CI baseline is verified (GitHub Actions run 42898795340); 50-card local development batch is under local validation (not yet claimed on CI).** Master scope is preserved verbatim in `MASTER_SPEC.md`. Simulator automation is operational; Phase 2 content and simulation development continues.
 
 ## 48-card authored batch — 2026-11-10
 
@@ -13,6 +13,15 @@
 - 32 Swift tests and 25 content tests pass; zero content audit errors/warnings. Tests cover eight public-voice paths through three eras, hospitality/granary paths, delayed unlock and save compatibility. Era fixtures test conditional consistency, not unconstrained natural draw timing. Full narrative completion/editorial approval remains open.
 - Four simulation reports compare against baselines/support-36-cards; native 48-card verification is pending. UI capture now scrolls the open council panel into view.
 - Next: verify this batch natively, inspect full council screenshots, then continue in 10–15-card groups toward 90 and 180, with active art/audio and small-screen QA. Do not treat the phase as finished.
+
+## 50-card development batch — 2026-11-11 (local development; CI pending)
+
+- Added exactly two original narrative events, raising the authored pool from 48 to 50 cards (Era 1: 16, Era 2: 17, Era 3: 17):
+  - `granary_pledge` (Era 2, economy) — "Ortak Ambara / The Common Granary". Gated behind the Era-1 `injured_tracker` "walk" flag (`walking_share_rule`), proving a cross-era story-chain link. Two choices: pledge the harvest to the common granary (population/stability up, resources down, `grain_credit` flag, delayed repayment reward) or protect the private store and keep the share rule (authority/resources up, stability down, `granary_closure` flag, delayed hunger cost). One-shot; closes via `resolved_granary_pledge` exclusion after either choice.
+  - `water_apportion` (Era 3, legacy, chain `river_memory`) — "Su Kotası / The Water Quota". Gated behind the Era-3 `water_court` flag (`water_court_law`) in the river_memory chain. Two choices: revise the written water agreement to grant the bronze workshop a night quota (resources/authority up, environment/stability down, `workshop_quota`, delayed stream cost) or uphold the written ban and limit the workshop to day hours (stability up, resources/authority down, `water_law_held`, delayed trust recovery). One-shot; closes via `resolved_water_apportion` exclusion after either choice.
+- Both events carry unique Turkish/English titles and descriptions, distinct art directions, decision animation/sound metadata, eligibility requirements, cooldown 4, and one-shot closure behavior. No existing card IDs, choice IDs, flags, or schema fields were altered; all 48 previous card IDs remain present.
+- Verified locally: `node tools/build-content.mjs` → 50 cards; `node tools/validate-content.mjs` → 0 errors, 0 warnings; `node --test tools/validate-content.test.mjs` → 25/25 pass; `swift test` → 38/38 pass (was 32/32; +6 new narrative tests covering decode, requirements/exclusions, both choice branches, flag-gated follow-ups, one-shot non-repetition, save round-trip and deterministic replay).
+- The 48-card CI baseline remains GitHub Actions run 42898795340 (SUCCESS). The 50-card local status has NOT been run through GitHub Actions and is not claimed as a passed iOS/simulator build.
 
 ## Support and pact investigation — 2026-11-10
 

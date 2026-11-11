@@ -6761,5 +6761,362 @@
       "card.charcoal_embargo.title",
       "card.charcoal_embargo.description"
     ]
+  },
+  {
+    "id": "granary_pledge",
+    "era": 2,
+    "category": "economy",
+    "title": {
+      "tr": "Ambar Yemini",
+      "en": "The Common Granary"
+    },
+    "description": {
+      "tr": "İlk ambara kış tahhili kararlaştırıldı. Taşınmasını savunanlar kuyu yanında ortak paylaşım istiyor; aydan aya yürüyen avcılar ise kuralı bozmak istemiyor. Paylaşmak herkesi doyurur, fakat tek bir çuvallın eksikliği hepsine düşer.",
+      "en": "The first granary's winter stores were apportioned. Those by the well want common sharing; hunters who walk the shares refuse to break the rule. Sharing feeds everyone, but one missing sack falls on all."
+    },
+    "artAsset": "card_granary_pledge",
+    "artDirection": "Bronze grain store with open clay jars and a divided queue; hunter with walking staff beside a scribe counting tokens; ochre grain, wet clay, lantern light from below, portrait composition.",
+    "rarity": "common",
+    "weight": 10,
+    "requirements": [
+      {
+        "flag": "walking_share_rule"
+      }
+    ],
+    "exclusionConditions": [
+      {
+        "flag": "resolved_granary_pledge"
+      }
+    ],
+    "choices": [
+      {
+        "id": "pledge",
+        "text": {
+          "tr": "Hasalı sadece ihtiyaçlılarına ver; kuralı yenile.",
+          "en": "Pledge the harvest only to those in need; renew the rule."
+        },
+        "risk": {
+          "tr": "Sonucu öngörülebilir",
+          "en": "Predictable outcome"
+        },
+        "requirements": [],
+        "immediateEffects": {
+          "stats": {},
+          "flags": [],
+          "technologies": [],
+          "buildings": [],
+          "rivalRelation": 0
+        },
+        "outcomes": [
+          {
+            "id": "result",
+            "probability": 1,
+            "affinity": null,
+            "text": {
+              "tr": "Güneş altında çilekli yaşlı ve yaşlandıklarından doğurgan çavuşlar ambara ilk erdi. Kural yeni yaşta ve_dayanmazlar için yeniden yazıldı.",
+              "en": "The sick and aged, and those disabled by age, reached the granary first. The rule was anew written for the weak and inflexible."
+            },
+            "effect": {
+              "stats": {
+                "population": 8,
+                "stability": 6,
+                "resources": -10
+              },
+              "flags": [
+                "grain_credit",
+                "renewed_rule",
+                "resolved_granary_pledge"
+              ],
+              "technologies": [],
+              "buildings": [],
+              "rivalRelation": 0
+            },
+            "delayedEffects": [
+              {
+                "afterTurns": 4,
+                "minimumEra": 2,
+                "text": {
+                  "tr": "Ambarda ilk ödeme ağır geldi; ortak paylaşım güven kazandı.",
+                  "en": "The first granary repayment arrived heavy; common sharing won trust."
+                },
+                "effect": {
+                  "stats": {
+                    "resources": 7,
+                    "stability": 4
+                  },
+                  "flags": [],
+                  "technologies": [],
+                  "buildings": [],
+                  "rivalRelation": 0
+                }
+              }
+            ],
+            "animationPreset": "success"
+          }
+        ]
+      },
+      {
+        "id": "reserve",
+        "text": {
+          "tr": "Kuyu yanındaki özel depoyu koru; kuralı eski haline döndür.",
+          "en": "Protect the private store by the well; restore the rule to its old form."
+        },
+        "risk": {
+          "tr": "Sonucu öngörülebilir",
+          "en": "Predictable outcome"
+        },
+        "requirements": [],
+        "immediateEffects": {
+          "stats": {},
+          "flags": [],
+          "technologies": [],
+          "buildings": [],
+          "rivalRelation": 0
+        },
+        "outcomes": [
+          {
+            "id": "result",
+            "probability": 1,
+            "affinity": null,
+            "text": {
+              "tr": "Özel ambara gelenler doldurdu, kuyu kenarında kalanlar boş el döndü. Kural eski haline döndü; genç sağlıklı çalışanlar ödüller aldı.",
+              "en": "Those at the private store were filled; those by the well returned empty-handed. The rule restored its old form; young healthy workers received rewards."
+            },
+            "effect": {
+              "stats": {
+                "authority": 8,
+                "resources": 7,
+                "stability": -10
+              },
+              "flags": [
+                "granary_closure",
+                "rule_restored",
+                "resolved_granary_pledge"
+              ],
+              "technologies": [],
+              "buildings": [],
+              "rivalRelation": 0
+            },
+            "delayedEffects": [
+              {
+                "afterTurns": 5,
+                "minimumEra": 2,
+                "text": {
+                  "tr": "Gizli depolar boşalınca, kışın sadece sağlam çalışan aileler yiyecek buldu.",
+                  "en": "When secret stores ran out, only strong working families found food for winter."
+                },
+                "effect": {
+                  "stats": {
+                    "population": -6,
+                    "stability": -8
+                  },
+                  "flags": [],
+                  "technologies": [],
+                  "buildings": [],
+                  "rivalRelation": 0
+                }
+              }
+            ],
+            "animationPreset": "failure"
+          }
+        ]
+      }
+    ],
+    "worldFlags": [
+      "grain_credit",
+      "renewed_rule",
+      "resolved_granary_pledge",
+      "granary_closure",
+      "rule_restored"
+    ],
+    "storyChainId": null,
+    "animationPreset": "normal",
+    "soundCue": "decision",
+    "cooldown": 4,
+    "localizationKeys": [
+      "card.granary_pledge.title",
+      "card.granary_pledge.description"
+    ]
+  },
+  {
+    "id": "water_apportion",
+    "era": 3,
+    "category": "legacy",
+    "title": {
+      "tr": "Su Kotası",
+      "en": "The Water Quota"
+    },
+    "description": {
+      "tr": "Tunç atölyesi geceleri su çekmeye başladı; yazılmış su hukumunun uygulanmasıyla sorunlar ortaya çıktı. Sumeyi ölçenler koruma altına alındı; yağış azaldıkça ölçülen su miktarının çoğunluğu gerekli normu aşmıyor. Ağaçların saklanan kayıtlar incelendiğinde, bazı ölçümlerin false (yapay/korumasız) olduğu ve kimi Toprak Meclisi üyelerinin çıkar uğranda su hakkının unequally (arasından feragat edildiği) ortaya çıktı.",
+      "en": "The bronze workshop began drawing water at night, but the written agreement says nothing about nights. The tablet council cannot decide between splitting the quota or upholding the old ban."
+    },
+    "artAsset": "card_water_apportion",
+    "artDirection": "Bronze civic courtyard, clay water-wheel beside a sealed tablet archive, night lanterns and stream water; turquoise, pale stone, workshop glow, portrait composition of a corrupt official.",
+    "rarity": "uncommon",
+    "weight": 10,
+    "requirements": [
+      {
+        "flag": "water_court_law"
+      }
+    ],
+    "exclusionConditions": [
+      {
+        "flag": "resolved_water_apportion"
+      }
+    ],
+    "choices": [
+      {
+        "id": "revise",
+        "text": {
+          "tr": "Sözleşmeyi yenileyin; atölyeye gece kotası verin.",
+          "en": "Revise the agreement; grant the workshop a night quota."
+        },
+        "risk": {
+          "tr": "Sonucu öngörülebilir",
+          "en": "Predictable outcome"
+        },
+        "requirements": [],
+        "immediateEffects": {
+          "stats": {},
+          "flags": [],
+          "technologies": [],
+          "buildings": [],
+          "rivalRelation": 0
+        },
+        "outcomes": [
+          {
+            "id": "result",
+            "probability": 1,
+            "affinity": null,
+            "text": {
+              "tr": "Yeni yazılan kotalarla atölye gececeği oynadı; akarsu hizmeti erken kısıtlandı.",
+              "en": "The new quotas put the workshop to night work; stream service was rationed early."
+            },
+            "effect": {
+              "stats": {
+                "resources": 8,
+                "authority": 6,
+                "environment": -7,
+                "stability": -5
+              },
+              "flags": [
+                "workshop_quota",
+                "resolved_water_apportion"
+              ],
+              "technologies": [],
+              "buildings": [],
+              "rivalRelation": 0,
+              "rivalRelations": {
+                "keepers": 5,
+                "hunters": -6
+              }
+            },
+            "delayedEffects": [
+              {
+                "afterTurns": 5,
+                "minimumEra": 3,
+                "text": {
+                  "tr": "Gece sulaması tabakayı tüketti; akarsu katından azaldı.",
+                  "en": "Night irrigation consumed the quota; the stream fell."
+                },
+                "effect": {
+                  "stats": {
+                    "resources": -7,
+                    "environment": -7
+                  },
+                  "flags": [],
+                  "technologies": [],
+                  "buildings": [],
+                  "rivalRelation": 0
+                }
+              }
+            ],
+            "animationPreset": "diplomacy"
+          }
+        ]
+      },
+      {
+        "id": "hold",
+        "text": {
+          "tr": "Yazılmış yasağı sürdürün; atölyeyi gündüzde sınırlayın.",
+          "en": "Uphold the written ban; limit the workshop to day hours."
+        },
+        "risk": {
+          "tr": "Sonucu öngörülebilir",
+          "en": "Predictable outcome"
+        },
+        "requirements": [],
+        "immediateEffects": {
+          "stats": {},
+          "flags": [],
+          "technologies": [],
+          "buildings": [],
+          "rivalRelation": 0
+        },
+        "outcomes": [
+          {
+            "id": "result",
+            "probability": 1,
+            "affinity": null,
+            "text": {
+              "tr": "Yasa korundu. Atölye geceleri durdu ve işçiler mücadireye hazırlandı; emek verimi düştü.",
+              "en": "The ban held. The workshop stopped at night and workers readied a dispute; labor output fell."
+            },
+            "effect": {
+              "stats": {
+                "stability": 7,
+                "resources": -6,
+                "authority": -4
+              },
+              "flags": [
+                "water_law_held",
+                "resolved_water_apportion"
+              ],
+              "technologies": [],
+              "buildings": [],
+              "rivalRelation": 0,
+              "rivalRelations": {
+                "keepers": 8,
+                "hunters": -4
+              }
+            },
+            "delayedEffects": [
+              {
+                "afterTurns": 6,
+                "minimumEra": 3,
+                "text": {
+                  "tr": "Atölyenin sessiz duruşu, yazılmış yasanın onayını yeniden yazdı.",
+                  "en": "The workshop's silent stand confirmed the written law once more."
+                },
+                "effect": {
+                  "stats": {
+                    "stability": 4,
+                    "authority": 3
+                  },
+                  "flags": [],
+                  "technologies": [],
+                  "buildings": [],
+                  "rivalRelation": 0
+                }
+              }
+            ],
+            "animationPreset": "failure"
+          }
+        ]
+      }
+    ],
+    "worldFlags": [
+      "workshop_quota",
+      "resolved_water_apportion",
+      "water_law_held"
+    ],
+    "storyChainId": "river_memory",
+    "animationPreset": "normal",
+    "soundCue": "decision",
+    "cooldown": 4,
+    "localizationKeys": [
+      "card.water_apportion.title",
+      "card.water_apportion.description"
+    ]
   }
 ]

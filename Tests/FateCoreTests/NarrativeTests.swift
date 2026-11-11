@@ -135,4 +135,183 @@ final class NarrativeTests: XCTestCase {
         state.stats["resources"] = 35
         XCTAssertTrue(crisis.requirements.allSatisfy { $0.matches(state) })
     }
+
+    func testNewCardsDecodeAndAreReachableByFlag() throws {
+        let engine = try GameEngine(content: .bundled())
+        XCTAssertEqual(engine.content.cards.count, 50, "48 legacy cards plus 2 newly authored events")
+        for id in ["granary_pledge", "water_apportion"] {
+            let card = try XCTUnwrap(engine.content.card(id), id)
+            XCTAssertFalse(card.title.tr.isEmpty, "\(id) Turkish title missing")
+            XCTAssertFalse(card.title.en.isEmpty, "\(id) English title missing")
+            XCTAssertFalse(card.description.tr.isEmpty, "\(id) Turkish description missing")
+            XCTAssertFalse(card.description.en.isEmpty, "\(id) English description missing")
+            XCTAssertEqual(card.choices.count, 2, "\(id) must offer two strategic choices")
+            XCTAssertFalse(card.artDirection.isEmpty, "\(id) needs an art direction")
+        }
+    }
+
+    func testGranaryPledgeRequiresTrackerFlagAndClosesAfterChoice() throws {
+        let engine = try GameEngine(content: .bundled())
+        var state = engine.start(seed: 41)
+        state.era = 2
+        state.stats = Dictionary(uniqueKeysWithValues: Stat.allCases.map { ($0.rawValue, 75) })
+        let card = try XCTUnwrap(engine.content.card("granary_pledge"))
+        XCTAssertFalse(card.requirements.allSatisfy { $0.matches(state) })
+        state.flags.insert("walking_share_rule")
+        XCTAssertTrue(card.requirements.allSatisfy { $0.matches(state) })
+        XCTAssertFalse(card.exclusionConditions.contains { $0.matches(state) })
+
+        let before = state.stats
+        state.currentCardID = "granary_pledge"
+        state = try engine.choose("pledge", in: state)
+        XCTAssertTrue(card.exclusionConditions.contains { $0.matches(state) }, "one-shot must close")
+        XCTAssertTrue(state.flags.contains("grain_credit"))
+        XCTAssertTrue(state.stats["population", default: 0] > before["population", default: 0])
+        XCTAssertTrue(state.stats["stability", default: 0] > before["stability", default: 0])
+        XCTAssertTrue(state.stats["resources", default: 0] < before["resources", default: 0])
+
+        let restored = try JSONDecoder().decode(GameState.self, from: JSONEncoder().encode(state))
+        XCTAssertTrue(card.exclusionConditions.contains { $0.matches(restored) })
+    }
+
+    func testGranaryPledgeReserveBranch() throws {
+        let engine = try GameEngine(content: .bundled())
+        var state = engine.start(seed: 41)
+        state.era = 2
+        state.stats = Dictionary(uniqueKeysWithValues: Stat.allCases.map { ($0.rawValue, 75) })
+        state.flags.insert("walking_share_rule")
+        let card = try XCTUnwrap(engine.content.card("granary_pledge"))
+        let before = state.stats
+        state.currentCardID = "granary_pledge"
+        state = try engine.choose("reserve", in: state)
+        XCTAssertTrue(card.exclusionConditions.contains { $0.matches(state) })
+        XCTAssertTrue(state.flags.contains("granary_closure"))
+        XCTAssertTrue(state.stats["authority", default: 0] > before["authority", default: 0])
+        XCTAssertTrue(state.stats["resources", default: 0] > before["resources", default: 0])
+        XCTAssertTrue(state.stats["stability", default: 0] < before["stability", default: 0])
+    }
+
+    func testWaterApportionRequiresWaterCourtLawAndClosesAfterChoice() throws {
+        let engine = try GameEngine(content: .bundled())
+        var state = engine.start(seed: 43)
+        state.era = 3
+        state.stats = Dictionary(uniqueKeysWithValues: Stat.allCases.map { ($0.rawValue, 75) })
+        let card = try XCTUnwrap(engine.content.card("water_apportion"))
+        XCTAssertFalse(card.requirements.allSatisfy { $0.matches(state) })
+        state.flags.insert("water_court_law")
+        XCTAssertTrue(card.requirements.allSatisfy { $0.matches(state) })
+        XCTAssertFalse(card.exclusionConditions.contains { $0.matches(state) })
+
+        let before = state.stats
+        state.currentCardID = "water_apportion"
+        state = try engine.choose("revise", in: state)
+        XCTAssertTrue(card.exclusionConditions.contains { $0.matches(state) }, "one-shot must close")
+        XCTAssertTrue(state.flags.contains("workshop_quota"))
+        XCTAssertTrue(state.stats["resources", default: 0] > before["resources", default: 0])
+        XCTAssertTrue(state.stats["authority", default: 0] > before["authority", default: 0])
+        XCTAssertTrue(state.stats["environment", default: 0] < before["environment", default: 0])
+
+        let restored = try JSONDecoder().decode(GameState.self, from: JSONEncoder().encode(state))
+        XCTAssertTrue(card.exclusionConditions.contains { $0.matches(restored) })
+    }
+
+    func testWaterApportionHoldBranch() throws {
+        let engine = try GameEngine(content: .bundled())
+        var state = engine.start(seed: 43)
+        state.era = 3
+        state.stats = Dictionary(uniqueKeysWithValues: Stat.allCases.map { ($0.rawValue, 75) })
+        state.flags.insert("water_court_law")
+        let card = try XCTUnwrap(engine.content.card("water_apportion"))
+        let before = state.stats
+        state.currentCardID = "water_apportion"
+        state = try engine.choose("hold", in: state)
+        XCTAssertTrue(card.exclusionConditions.contains { $0.matches(state) })
+        XCTAssertTrue(state.flags.contains("water_law_held"))
+        XCTAssertTrue(state.stats["stability", default: 0] > before["stability", default: 0])
+        XCTAssertTrue(state.stats["resources", default: 0] < before["resources", default: 0])
+        XCTAssertTrue(state.stats["authority", default: 0] < before["authority", default: 0])
+    }
+
+    func testNewEventsSaveCompatibilityAndDeterminism() throws {
+        let engine = try GameEngine(content: .bundled())
+        var stateA = engine.start(seed: 7)
+        stateA.era = 2
+        stateA.stats = Dictionary(uniqueKeysWithValues: Stat.allCases.map { ($0.rawValue, 75) })
+        stateA.flags.insert("walking_share_rule")
+        stateA.currentCardID = "granary_pledge"
+        stateA = try engine.choose("pledge", in: stateA)
+
+        let encoded = try JSONEncoder().encode(stateA)
+        let restored = try JSONDecoder().decode(GameState.self, from: encoded)
+        XCTAssertEqual(restored.flags, stateA.flags)
+        XCTAssertEqual(restored.stats, stateA.stats)
+        XCTAssertEqual(restored.currentCardID, stateA.currentCardID)
+
+        var stateB = engine.start(seed: 7)
+        stateB.era = 2
+        stateB.stats = Dictionary(uniqueKeysWithValues: Stat.allCases.map { ($0.rawValue, 75) })
+        stateB.flags.insert("walking_share_rule")
+        stateB.currentCardID = "granary_pledge"
+        stateB = try engine.choose("pledge", in: stateB)
+        XCTAssertEqual(stateB, stateA, "same seed and choices must be deterministic")
+    }
+
+    func testGranaryPledgeReachabilityThroughLegitimateDecisions() throws {
+        let engine = try GameEngine(content: .bundled())
+        // Era-1 injured_tracker is available at start (hunters relation 0 <= 0).
+        var state = engine.start(seed: 11)
+        state.era = 1
+        state.stats = Dictionary(uniqueKeysWithValues: Stat.allCases.map { ($0.rawValue, 75) })
+        let tracker = try XCTUnwrap(engine.content.card("injured_tracker"))
+        XCTAssertTrue(tracker.requirements.allSatisfy { $0.matches(state) })
+
+        // Choose "walk" to set walking_share_rule.
+        state.currentCardID = "injured_tracker"
+        state = try engine.choose("walk", in: state)
+        state = engine.acknowledge(state)
+        XCTAssertTrue(state.flags.contains("walking_share_rule"))
+
+        // Era-2 granary_pledge must now be eligible.
+        state.era = 2
+        let granary = try XCTUnwrap(engine.content.card("granary_pledge"))
+        XCTAssertTrue(granary.requirements.allSatisfy { $0.matches(state) })
+        XCTAssertFalse(granary.exclusionConditions.contains { $0.matches(state) })
+
+        // Choosing either branch closes the one-shot card.
+        state.currentCardID = "granary_pledge"
+        state = try engine.choose("pledge", in: state)
+        XCTAssertTrue(granary.exclusionConditions.contains { $0.matches(state) })
+    }
+
+    func testWaterApportionReachabilityThroughLegitimateDecisions() throws {
+        let engine = try GameEngine(content: .bundled())
+        // Era-2 canal_boundary has no requirements and sets water_compact.
+        var state = engine.start(seed: 13)
+        state.era = 2
+        state.stats = Dictionary(uniqueKeysWithValues: Stat.allCases.map { ($0.rawValue, 75) })
+        let canal = try XCTUnwrap(engine.content.card("canal_boundary"))
+        XCTAssertTrue(canal.requirements.allSatisfy { $0.matches(state) })
+        state.currentCardID = "canal_boundary"
+        state = try engine.choose("ration", in: state)
+        state = engine.acknowledge(state)
+        XCTAssertTrue(state.flags.contains("water_compact"))
+
+        // Era-3 water_court requires water_compact.
+        state.era = 3
+        let court = try XCTUnwrap(engine.content.card("water_court"))
+        XCTAssertTrue(court.requirements.allSatisfy { $0.matches(state) })
+        state.currentCardID = "water_court"
+        state = try engine.choose("revise", in: state)
+        state = engine.acknowledge(state)
+        XCTAssertTrue(state.flags.contains("water_court_law"))
+
+        // Era-3 water_apportion must now be eligible.
+        let apportion = try XCTUnwrap(engine.content.card("water_apportion"))
+        XCTAssertTrue(apportion.requirements.allSatisfy { $0.matches(state) })
+        XCTAssertFalse(apportion.exclusionConditions.contains { $0.matches(state) })
+
+        state.currentCardID = "water_apportion"
+        state = try engine.choose("hold", in: state)
+        XCTAssertTrue(apportion.exclusionConditions.contains { $0.matches(state) })
+    }
 }

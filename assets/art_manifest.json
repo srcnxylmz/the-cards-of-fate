@@ -382,5 +382,21 @@
     "file": null,
     "brief": "Bronze charcoal merchant stopped beside ancient carved grove marker, furnace beyond healthy trees, ember orange and deep green, portrait side lighting.",
     "license": null
+  },
+  {
+    "id": "card_granary_pledge",
+    "cardID": "granary_pledge",
+    "status": "missing",
+    "file": null,
+    "brief": "Bronze grain store with open clay jars and a divided queue; hunter with walking staff beside a scribe counting tokens; ochre grain, wet clay, lantern light from below, portrait composition.",
+    "license": null
+  },
+  {
+    "id": "card_water_apportion",
+    "cardID": "water_apportion",
+    "status": "missing",
+    "file": null,
+    "brief": "Bronze civic courtyard, clay water-wheel beside a sealed tablet archive, night lanterns and stream water; turquoise, pale stone, workshop glow, portrait composition of a corrupt official.",
+    "license": null
   }
 ]

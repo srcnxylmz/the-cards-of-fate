@@ -20,7 +20,30 @@ try {
     $sdk = Join-Path $SwiftRoot "Platforms\$version\Windows.platform\Developer\SDKs\Windows.sdk"
     if (-not (Test-Path -LiteralPath $sdk)) { throw "Matching Windows SDK not found: $sdk" }
     $bin = Join-Path $toolchain.FullName 'usr\bin'
-    $env:Path = "$bin;$runtime;$previousPath"
+    # Swift on Windows needs a C linker (link.exe). Locate MSVC from the locally
+    # installed Visual Studio build tools without touching machine-wide PATH.
+    $msvcRootCandidates = @(
+        (Join-Path $env:ProgramFiles 'Microsoft Visual Studio\2022\Community\VC\Tools\MSVC'),
+        (Join-Path ${env:ProgramFiles(x86)} 'Microsoft Visual Studio\2022\Community\VC\Tools\MSVC'),
+        (Join-Path $env:ProgramFiles 'Microsoft Visual Studio\2022\Professional\VC\Tools\MSVC'),
+        (Join-Path $env:ProgramFiles 'Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC'),
+        (Join-Path $env:ProgramFiles 'Microsoft Visual Studio\2022\BuildTools\VC\Tools\MSVC')
+    )
+    $msvcDir = $null
+    foreach ($candidate in $msvcRootCandidates) {
+        if (Test-Path -LiteralPath $candidate) {
+            $latest = Get-ChildItem -LiteralPath $candidate -Directory |
+                Sort-Object { [version]$_.Name } -Descending | Select-Object -First 1
+            if ($latest) {
+                $msvcDir = Join-Path $latest.FullName 'bin\Hostx64\x64'
+                break
+            }
+        }
+    }
+    if (-not $msvcDir -or -not (Test-Path -LiteralPath (Join-Path $msvcDir 'link.exe'))) {
+        throw "MSVC link.exe not found. Install Visual Studio Build Tools or set $env:Path to include link.exe."
+    }
+    $env:Path = "$bin;$runtime;$msvcDir;$previousPath"
     $env:SDKROOT = $sdk
     Push-Location $projectRoot
     try {
