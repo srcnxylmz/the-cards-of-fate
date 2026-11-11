@@ -1075,6 +1075,155 @@
     ]
   },
   {
+    "id": "bark_shelter",
+    "era": 1,
+    "category": "engineering",
+    "title": {
+      "tr": "Kabuk Sığınağı",
+      "en": "Bark Shelter"
+    },
+    "description": {
+      "tr": "Günlerdir süren yağmur, mağaranın girişini su altında bıraktı. Çocuklar ve yaşlılar kuru bir yer bulamıyor. Ormandaki geniş ağaç kabuklarıyla geçici bir sığınak kurabilirsiniz; ancak bunun için avcıların bir bölümünü yiyecek aramaktan alıkoymanız gerekecek.",
+      "en": "Days of rain have flooded the cave entrance. Children and elders struggle to find a dry place. Large pieces of tree bark could provide a temporary shelter, but building it would divert some hunters from gathering food."
+    },
+    "artAsset": "card_bark_shelter",
+    "artDirection": "Paleolithic forest during heavy rainfall, a small temporary shelter built from large bark sheets and branches, prehistoric families protecting children, a flooded cave entrance in the distance, realistic natural materials, dramatic overcast light, portrait composition, no metal tools or modern objects.",
+    "rarity": "common",
+    "weight": 10,
+    "requirements": [],
+    "exclusionConditions": [
+      {
+        "flag": "resolved_bark_shelter"
+      }
+    ],
+    "choices": [
+      {
+        "id": "build",
+        "text": {
+          "tr": "Ağaç kabuklarından sığınak kur; yiyecek toplamak için daha az insan ayır.",
+          "en": "Build a shelter from bark; assign fewer people to gathering food."
+        },
+        "risk": {
+          "tr": "Sonucu öngörülebilir",
+          "en": "Predictable outcome"
+        },
+        "requirements": [],
+        "immediateEffects": {
+          "stats": {},
+          "flags": [],
+          "technologies": [],
+          "buildings": [],
+          "rivalRelation": 0
+        },
+        "outcomes": [
+          {
+            "id": "result",
+            "probability": 1,
+            "affinity": null,
+            "text": {
+              "tr": "Yeni sığınak, çocukları ve yaşlıları yağmurdan korudu. Ancak yapım için harcanan zaman yüzünden yiyecek stokları azaldı.",
+              "en": "The new shelter protected children and elders from the rain. However, the time spent building it reduced the group's food supplies."
+            },
+            "effect": {
+              "stats": {
+                "authority": 8,
+                "resources": -6,
+                "environment": -4
+              },
+              "flags": [
+                "shanty",
+                "resolved_bark_shelter"
+              ],
+              "technologies": [],
+              "buildings": [],
+              "rivalRelation": 0
+            },
+            "delayedEffects": [],
+            "animationPreset": "normal"
+          }
+        ]
+      },
+      {
+        "id": "wait",
+        "text": {
+          "tr": "Mağarada kal; yağmurun dinmesini bekleyerek erzağı koru.",
+          "en": "Remain in the cave; conserve supplies while waiting for the rain to end."
+        },
+        "risk": {
+          "tr": "Sonucu öngörülebilir",
+          "en": "Predictable outcome"
+        },
+        "requirements": [],
+        "immediateEffects": {
+          "stats": {},
+          "flags": [],
+          "technologies": [],
+          "buildings": [],
+          "rivalRelation": 0
+        },
+        "outcomes": [
+          {
+            "id": "result",
+            "probability": 1,
+            "affinity": null,
+            "text": {
+              "tr": "Avcılar yiyecek toplamayı sürdürdü ve erzak korundu. Fakat mağaradaki nem ve soğuk, özellikle çocukları ve yaşlıları güçsüz düşürdü.",
+              "en": "The hunters continued gathering food, preserving the supplies. But damp and cold conditions in the cave weakened the children and elders."
+            },
+            "effect": {
+              "stats": {
+                "knowledge": 4,
+                "stability": 6,
+                "resources": -3
+              },
+              "flags": [
+                "damp_danger",
+                "resolved_bark_shelter"
+              ],
+              "technologies": [],
+              "buildings": [],
+              "rivalRelation": 0
+            },
+            "delayedEffects": [
+              {
+                "afterTurns": 8,
+                "minimumEra": 2,
+                "text": {
+                  "tr": "Yağmur dinmeyince mağaradaki nem hastalıklara yol açtı. Özellikle çocuklar ve yaşlılar güçsüz düştü.",
+                  "en": "As the rain continued, damp conditions inside the cave caused illness. Children and elders suffered most."
+                },
+                "effect": {
+                  "stats": {
+                    "stability": -3,
+                    "population": -2
+                  },
+                  "flags": [],
+                  "technologies": [],
+                  "buildings": [],
+                  "rivalRelation": 0
+                }
+              }
+            ],
+            "animationPreset": "normal"
+          }
+        ]
+      }
+    ],
+    "worldFlags": [
+      "shanty",
+      "resolved_bark_shelter",
+      "damp_danger"
+    ],
+    "storyChainId": null,
+    "animationPreset": "normal",
+    "soundCue": "decision",
+    "cooldown": 4,
+    "localizationKeys": [
+      "card.bark_shelter.title",
+      "card.bark_shelter.description"
+    ]
+  },
+  {
     "id": "first_granary",
     "era": 2,
     "category": "settlement",

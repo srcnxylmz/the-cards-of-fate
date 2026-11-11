@@ -95,6 +95,14 @@ card('empty_seat', 1, 'leadership', 'Boş Post', 'The Empty Hide',
     choice('council', 'Postu boş bırak; kararları meclis alsın.', 'Leave the hide empty; let the council decide.', [outcome('Kararlar yavaşladı. Hiç kimse artık tek başına av payını değiştiremiyordu.', 'Decisions slowed. Nobody could change a hunting share alone.', { authority: -5, stability: 12, knowledge: 4 }, { flags: ['council_tradition'], relation: 8 })])
   ]);
 
+card('bark_shelter', 1, 'engineering', 'Kabuk Sığınağı', 'Bark Shelter',
+  'Günlerdir süren yağmur, mağaranın girişini su altında bıraktı. Çocuklar ve yaşlılar kuru bir yer bulamıyor. Ormandaki geniş ağaç kabuklarıyla geçici bir sığınak kurabilirsiniz; ancak bunun için avcıların bir bölümünü yiyecek aramaktan alıkoymanız gerekecek.',
+  'Days of rain have flooded the cave entrance. Children and elders struggle to find a dry place. Large pieces of tree bark could provide a temporary shelter, but building it would divert some hunters from gathering food.',
+  'Paleolithic forest during heavy rainfall, a small temporary shelter built from large bark sheets and branches, prehistoric families protecting children, a flooded cave entrance in the distance, realistic natural materials, dramatic overcast light, portrait composition, no metal tools or modern objects.', [
+    choice('build', 'Ağaç kabuklarından sığınak kur; yiyecek toplamak için daha az insan ayır.', 'Build a shelter from bark; assign fewer people to gathering food.', [outcome('Yeni sığınak, çocukları ve yaşlıları yağmurdan korudu. Ancak yapım için harcanan zaman yüzünden yiyecek stokları azaldı.', 'The new shelter protected children and elders from the rain. However, the time spent building it reduced the group\'s food supplies.', { authority: 8, resources: -6, environment: -4 }, { flags: ['shanty'] })]),
+    choice('wait', 'Mağarada kal; yağmurun dinmesini bekleyerek erzağı koru.', 'Remain in the cave; conserve supplies while waiting for the rain to end.', [outcome('Avcılar yiyecek toplamayı sürdürdü ve erzak korundu. Fakat mağaradaki nem ve soğuk, özellikle çocukları ve yaşlıları güçsüz düşürdü.', 'The hunters continued gathering food, preserving the supplies. But damp and cold conditions in the cave weakened the children and elders.', { knowledge: 4, stability: 6, resources: -3 })])
+  ], { once: true });
+
 card('first_granary', 2, 'settlement', 'Kapısı Olan Bereket', 'Abundance Behind a Door',
   'İlk hasat kuruyor. Ortak bir ambar için saz evlerin bir kısmı sökülecek. Aileler, kapının anahtarını kimin tutacağını soruyor.',
   'The first harvest dries. A shared granary needs reeds from family houses. Everyone asks who will hold its key.',

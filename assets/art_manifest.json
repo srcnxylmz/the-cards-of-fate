@@ -64,6 +64,14 @@
     "license": null
   },
   {
+    "id": "card_bark_shelter",
+    "cardID": "bark_shelter",
+    "status": "missing",
+    "file": null,
+    "brief": "Paleolithic forest during heavy rainfall, a small temporary shelter built from large bark sheets and branches, prehistoric families protecting children, a flooded cave entrance in the distance, realistic natural materials, dramatic overcast light, portrait composition, no metal tools or modern objects.",
+    "license": null
+  },
+  {
     "id": "card_first_granary",
     "cardID": "first_granary",
     "status": "missing",
