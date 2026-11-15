@@ -1,0 +1,16 @@
+{
+  "coreSHA": "3d589af1a02be3032f60e6560e75fabeefa2c407",
+  "documentationHEAD": "bd679f5f9c70569056b7467930231fce956ac917",
+  "cards": 105,
+  "seeds": "0..<10000",
+  "turnCap": 500,
+  "oldFieldsExactlyMatched": [
+    "random",
+    "survival",
+    "knowledge",
+    "progression",
+    "recovery",
+    "survival-council"
+  ],
+  "telemetry": "Current Sources/FateSimulation instrumentation compiled against archived reference core; no legacy rules switch in production"
+}

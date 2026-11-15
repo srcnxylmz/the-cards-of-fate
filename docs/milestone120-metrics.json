@@ -1,0 +1,1494 @@
+{
+  "seeds": "0..<10000",
+  "turnCap": 500,
+  "referenceCore": "3d589af1a02be3032f60e6560e75fabeefa2c407",
+  "limitations": [
+    "Living caps are censored, not victories.",
+    "Complete-window cohorts condition on surviving that horizon; prefix cohorts include truncated runs.",
+    "After100 is Bronze residence time, not global run time.",
+    "Recovery means condition on recovery; ended/censored episodes are separately counted.",
+    "Food rules and 15 new events changed together; this is not isolated causal attribution.",
+    "Reserve-emptying stage labels show execution phase, including within-turn invoice settlement at world, not an isolated causal source."
+  ],
+  "policies": {
+    "random": {
+      "before": {
+        "cards": 105,
+        "meanTurns": 50.8816,
+        "repeatPercent": 36.15157542215653,
+        "eraReach": {
+          "1": 10000,
+          "2": 5947,
+          "3": 4866
+        },
+        "caps": 0,
+        "capsByEra": {},
+        "endings": {
+          "The land fell silent. Only roads remain after your people scattered.": 204,
+          "The last hearth went dark. Hunger consumed your civilization's living memory.": 9796
+        },
+        "bronze": {
+          "decisions": 224997,
+          "windows": {
+            "20": {
+              "entrantRuns": 4866,
+              "completeRuns": 3989,
+              "decisions": 91035,
+              "prefixRepeatPercent": 10.318009556763881,
+              "completeRepeatPercent": 11.071697167209827,
+              "completeMeanCards": 17.785660566558036,
+              "completeMeanChoices": 18.92128352970669
+            },
+            "40": {
+              "entrantRuns": 4866,
+              "completeRuns": 2226,
+              "decisions": 152046,
+              "prefixRepeatPercent": 44.67529563421596,
+              "completeRepeatPercent": 51.666666666666664,
+              "completeMeanCards": 19.333333333333332,
+              "completeMeanChoices": 26.343216531895777
+            },
+            "80": {
+              "entrantRuns": 4866,
+              "completeRuns": 628,
+              "decisions": 199560,
+              "prefixRepeatPercent": 57.76107436359992,
+              "completeRepeatPercent": 74.42078025477707,
+              "completeMeanCards": 20.463375796178344,
+              "completeMeanChoices": 30.35031847133758
+            }
+          },
+          "after100": {
+            "runs": 341,
+            "decisions": 16111,
+            "repeatPercent": 99.96896530320899,
+            "meanCards": 7.442815249266862,
+            "meanChoices": 13.36950146627566
+          },
+          "starvationTurns": 40381,
+          "starvationPopulationPer100": 138.60584807797437,
+          "emptyWorldTurns": 40570,
+          "emptyWorldPercent": 18.0313515291315,
+          "dueDebitsExceedReserve": 21169,
+          "hunger": {
+            "started": 21407,
+            "recovered": 17367,
+            "meanRecoveryTurnsAmongRecovered": 1.762422986123107,
+            "endedUnrecovered": 4040,
+            "censored": 0
+          },
+          "reserve": {
+            "started": 21482,
+            "recovered": 17367,
+            "meanRecoveryTurnsAmongRecovered": 1.762422986123107,
+            "endedUnrecovered": 4115,
+            "censored": 0
+          },
+          "reserveEmptiedBy": {
+            "card": 15598,
+            "delayed": 6849,
+            "world": 3038
+          },
+          "meanEnvironment": 57.167828904385395,
+          "meanPopulation": 37.82991328773272,
+          "hostilePowerDecisions": 37222,
+          "lowWorkforceDecisions": 69168
+        },
+        "contexts": {
+          "well_roster.shifts.": {},
+          "quay_exchange.contract.": {},
+          "bread_bond.borrow.": {},
+          "cistern_account.current.": {},
+          "mine_shoring.shore.": {}
+        },
+        "chains": {
+          "repair.shared": 0,
+          "repair.private": 0,
+          "water.preserved": 0,
+          "water.built": 0
+        },
+        "capTailMeanCards": null,
+        "capStatRangeSums": {}
+      },
+      "after": {
+        "cards": 120,
+        "meanTurns": 99.8261,
+        "repeatPercent": 62.254560681024294,
+        "eraReach": {
+          "1": 10000,
+          "2": 6235,
+          "3": 5308
+        },
+        "caps": 445,
+        "capsByEra": {
+          "3": 445
+        },
+        "endings": {
+          "simulation_cap": 445,
+          "The land fell silent. Only roads remain after your people scattered.": 141,
+          "The last hearth went dark. Hunger consumed your civilization's living memory.": 9414
+        },
+        "bronze": {
+          "decisions": 680140,
+          "windows": {
+            "20": {
+              "entrantRuns": 5308,
+              "completeRuns": 4857,
+              "decisions": 102809,
+              "prefixRepeatPercent": 2.0153877578811192,
+              "completeRepeatPercent": 2.0681490632077413,
+              "completeMeanCards": 19.58637018735845,
+              "completeMeanChoices": 19.8118179946469
+            },
+            "40": {
+              "entrantRuns": 5308,
+              "completeRuns": 3944,
+              "decisions": 190930,
+              "prefixRepeatPercent": 41.656628083590846,
+              "completeRepeatPercent": 44.52712981744422,
+              "completeMeanCards": 22.189148073022313,
+              "completeMeanChoices": 29.74188640973631
+            },
+            "80": {
+              "entrantRuns": 5308,
+              "completeRuns": 2412,
+              "decisions": 313141,
+              "prefixRepeatPercent": 64.1544863176652,
+              "completeRepeatPercent": 71.0686152570481,
+              "completeMeanCards": 23.145107794361525,
+              "completeMeanChoices": 36.167081260364846
+            }
+          },
+          "after100": {
+            "runs": 2030,
+            "decisions": 322956,
+            "repeatPercent": 99.9467419710425,
+            "meanCards": 10.71576354679803,
+            "meanChoices": 22.31527093596059
+          },
+          "starvationTurns": 49856,
+          "starvationPopulationPer100": 50.24730202605346,
+          "emptyWorldTurns": 54092,
+          "emptyWorldPercent": 7.953068485899962,
+          "dueDebitsExceedReserve": 29640,
+          "hunger": {
+            "started": 24479,
+            "recovered": 20782,
+            "meanRecoveryTurnsAmongRecovered": 1.8924550091425272,
+            "endedUnrecovered": 3674,
+            "censored": 23
+          },
+          "reserve": {
+            "started": 25513,
+            "recovered": 21745,
+            "meanRecoveryTurnsAmongRecovered": 1.9618303058174293,
+            "endedUnrecovered": 3744,
+            "censored": 24
+          },
+          "reserveEmptiedBy": {
+            "card": 16776,
+            "delayed": 8281,
+            "world": 10156
+          },
+          "meanEnvironment": 51.21376187255565,
+          "meanPopulation": 54.01991354721087,
+          "hostilePowerDecisions": 287824,
+          "lowWorkforceDecisions": 100492
+        },
+        "contexts": {
+          "well_roster.shifts.": {
+            "well_roster.shifts.sound": 1742,
+            "well_roster.shifts.worn": 633
+          },
+          "quay_exchange.contract.": {
+            "quay_exchange.contract.crewed": 22157,
+            "quay_exchange.contract.thin": 3500
+          },
+          "bread_bond.borrow.": {
+            "bread_bond.borrow.bounded": 907,
+            "bread_bond.borrow.private": 4914
+          },
+          "cistern_account.current.": {
+            "cistern_account.current.sound": 29,
+            "cistern_account.current.worn": 24
+          },
+          "mine_shoring.shore.": {
+            "mine_shoring.shore.crewed": 13928,
+            "mine_shoring.shore.thin": 2537
+          }
+        },
+        "chains": {
+          "repair.shared": 29,
+          "repair.private": 381,
+          "water.preserved": 12,
+          "water.built": 24
+        },
+        "capTailMeanCards": 10.887640449438202,
+        "capStatRangeSums": {
+          "authority.final": 44228,
+          "authority.maximum": 44500,
+          "authority.minimum": 40266,
+          "environment.final": 20502,
+          "environment.maximum": 34975,
+          "environment.minimum": 7823,
+          "knowledge.final": 44057,
+          "knowledge.maximum": 44500,
+          "knowledge.minimum": 41905,
+          "population.final": 29262,
+          "population.maximum": 37329,
+          "population.minimum": 23973,
+          "resources.final": 24852,
+          "resources.maximum": 42698,
+          "resources.minimum": 6343,
+          "stability.final": 42954,
+          "stability.maximum": 44440,
+          "stability.minimum": 38168
+        }
+      }
+    },
+    "survival": {
+      "before": {
+        "cards": 105,
+        "meanTurns": 122.3058,
+        "repeatPercent": 76.36154622266483,
+        "eraReach": {
+          "1": 10000
+        },
+        "caps": 82,
+        "capsByEra": {
+          "1": 82
+        },
+        "endings": {
+          "simulation_cap": 82,
+          "The land fell silent. Only roads remain after your people scattered.": 8895,
+          "The last hearth went dark. Hunger consumed your civilization's living memory.": 1023
+        },
+        "bronze": {
+          "decisions": 0,
+          "windows": {
+            "20": {
+              "entrantRuns": 0,
+              "completeRuns": 0,
+              "decisions": 0,
+              "prefixRepeatPercent": null,
+              "completeRepeatPercent": null,
+              "completeMeanCards": null,
+              "completeMeanChoices": null
+            },
+            "40": {
+              "entrantRuns": 0,
+              "completeRuns": 0,
+              "decisions": 0,
+              "prefixRepeatPercent": null,
+              "completeRepeatPercent": null,
+              "completeMeanCards": null,
+              "completeMeanChoices": null
+            },
+            "80": {
+              "entrantRuns": 0,
+              "completeRuns": 0,
+              "decisions": 0,
+              "prefixRepeatPercent": null,
+              "completeRepeatPercent": null,
+              "completeMeanCards": null,
+              "completeMeanChoices": null
+            }
+          },
+          "after100": {
+            "runs": 0,
+            "decisions": 0,
+            "repeatPercent": null,
+            "meanCards": null,
+            "meanChoices": null
+          },
+          "starvationTurns": 0,
+          "starvationPopulationPer100": 0,
+          "emptyWorldTurns": 0,
+          "emptyWorldPercent": null,
+          "dueDebitsExceedReserve": 0,
+          "hunger": {
+            "started": 0,
+            "recovered": 0,
+            "meanRecoveryTurnsAmongRecovered": null,
+            "endedUnrecovered": 0,
+            "censored": 0
+          },
+          "reserve": {
+            "started": 0,
+            "recovered": 0,
+            "meanRecoveryTurnsAmongRecovered": null,
+            "endedUnrecovered": 0,
+            "censored": 0
+          },
+          "reserveEmptiedBy": {
+            "card": 0,
+            "delayed": 0,
+            "world": 0
+          },
+          "meanEnvironment": null,
+          "meanPopulation": null,
+          "hostilePowerDecisions": 0,
+          "lowWorkforceDecisions": 0
+        },
+        "contexts": {
+          "well_roster.shifts.": {},
+          "quay_exchange.contract.": {},
+          "bread_bond.borrow.": {},
+          "cistern_account.current.": {},
+          "mine_shoring.shore.": {}
+        },
+        "chains": {
+          "repair.shared": 0,
+          "repair.private": 0,
+          "water.preserved": 0,
+          "water.built": 0
+        },
+        "capTailMeanCards": 10.865853658536585,
+        "capStatRangeSums": {
+          "authority.final": 7857,
+          "authority.maximum": 8165,
+          "authority.minimum": 6991,
+          "environment.final": 1191,
+          "environment.maximum": 2153,
+          "environment.minimum": 528,
+          "knowledge.final": 8162,
+          "knowledge.maximum": 8200,
+          "knowledge.minimum": 8010,
+          "population.final": 3194,
+          "population.maximum": 4192,
+          "population.minimum": 1994,
+          "resources.final": 4728,
+          "resources.maximum": 7638,
+          "resources.minimum": 2713,
+          "stability.final": 2324,
+          "stability.maximum": 3596,
+          "stability.minimum": 1442
+        }
+      },
+      "after": {
+        "cards": 120,
+        "meanTurns": 172.0053,
+        "repeatPercent": 80.72472185450098,
+        "eraReach": {
+          "1": 10000
+        },
+        "caps": 456,
+        "capsByEra": {
+          "1": 456
+        },
+        "endings": {
+          "simulation_cap": 456,
+          "The land fell silent. Only roads remain after your people scattered.": 8637,
+          "The last hearth went dark. Hunger consumed your civilization's living memory.": 907
+        },
+        "bronze": {
+          "decisions": 0,
+          "windows": {
+            "20": {
+              "entrantRuns": 0,
+              "completeRuns": 0,
+              "decisions": 0,
+              "prefixRepeatPercent": null,
+              "completeRepeatPercent": null,
+              "completeMeanCards": null,
+              "completeMeanChoices": null
+            },
+            "40": {
+              "entrantRuns": 0,
+              "completeRuns": 0,
+              "decisions": 0,
+              "prefixRepeatPercent": null,
+              "completeRepeatPercent": null,
+              "completeMeanCards": null,
+              "completeMeanChoices": null
+            },
+            "80": {
+              "entrantRuns": 0,
+              "completeRuns": 0,
+              "decisions": 0,
+              "prefixRepeatPercent": null,
+              "completeRepeatPercent": null,
+              "completeMeanCards": null,
+              "completeMeanChoices": null
+            }
+          },
+          "after100": {
+            "runs": 0,
+            "decisions": 0,
+            "repeatPercent": null,
+            "meanCards": null,
+            "meanChoices": null
+          },
+          "starvationTurns": 0,
+          "starvationPopulationPer100": 0,
+          "emptyWorldTurns": 0,
+          "emptyWorldPercent": null,
+          "dueDebitsExceedReserve": 0,
+          "hunger": {
+            "started": 0,
+            "recovered": 0,
+            "meanRecoveryTurnsAmongRecovered": null,
+            "endedUnrecovered": 0,
+            "censored": 0
+          },
+          "reserve": {
+            "started": 0,
+            "recovered": 0,
+            "meanRecoveryTurnsAmongRecovered": null,
+            "endedUnrecovered": 0,
+            "censored": 0
+          },
+          "reserveEmptiedBy": {
+            "card": 0,
+            "delayed": 0,
+            "world": 0
+          },
+          "meanEnvironment": null,
+          "meanPopulation": null,
+          "hostilePowerDecisions": 0,
+          "lowWorkforceDecisions": 0
+        },
+        "contexts": {
+          "well_roster.shifts.": {},
+          "quay_exchange.contract.": {},
+          "bread_bond.borrow.": {},
+          "cistern_account.current.": {},
+          "mine_shoring.shore.": {}
+        },
+        "chains": {
+          "repair.shared": 0,
+          "repair.private": 0,
+          "water.preserved": 0,
+          "water.built": 0
+        },
+        "capTailMeanCards": 12.49561403508772,
+        "capStatRangeSums": {
+          "authority.final": 42595,
+          "authority.maximum": 44648,
+          "authority.minimum": 37654,
+          "environment.final": 7122,
+          "environment.maximum": 12015,
+          "environment.minimum": 3240,
+          "knowledge.final": 45385,
+          "knowledge.maximum": 45600,
+          "knowledge.minimum": 44149,
+          "population.final": 17197,
+          "population.maximum": 23341,
+          "population.minimum": 10958,
+          "resources.final": 27760,
+          "resources.maximum": 41855,
+          "resources.minimum": 15441,
+          "stability.final": 16069,
+          "stability.maximum": 23004,
+          "stability.minimum": 10422
+        }
+      }
+    },
+    "knowledge": {
+      "before": {
+        "cards": 105,
+        "meanTurns": 122.9496,
+        "repeatPercent": 71.85635414836649,
+        "eraReach": {
+          "1": 10000,
+          "2": 7719,
+          "3": 6380
+        },
+        "caps": 734,
+        "capsByEra": {
+          "1": 8,
+          "2": 448,
+          "3": 278
+        },
+        "endings": {
+          "simulation_cap": 734,
+          "The land fell silent. Only roads remain after your people scattered.": 3808,
+          "The last hearth went dark. Hunger consumed your civilization's living memory.": 5458
+        },
+        "bronze": {
+          "decisions": 514024,
+          "windows": {
+            "20": {
+              "entrantRuns": 6379,
+              "completeRuns": 6318,
+              "decisions": 127139,
+              "prefixRepeatPercent": 13.911545631159598,
+              "completeRepeatPercent": 13.989395378284268,
+              "completeMeanCards": 17.202120924343145,
+              "completeMeanChoices": 18.093383982272872
+            },
+            "40": {
+              "entrantRuns": 6379,
+              "completeRuns": 5846,
+              "decisions": 250327,
+              "prefixRepeatPercent": 54.34891162359634,
+              "completeRepeatPercent": 54.95638043106398,
+              "completeMeanCards": 18.01744782757441,
+              "completeMeanChoices": 22.918576804652755
+            },
+            "80": {
+              "entrantRuns": 6379,
+              "completeRuns": 2000,
+              "decisions": 403303,
+              "prefixRepeatPercent": 71.47975591552753,
+              "completeRepeatPercent": 75.6775,
+              "completeMeanCards": 19.458,
+              "completeMeanChoices": 26.5715
+            }
+          },
+          "after100": {
+            "runs": 1140,
+            "decisions": 80591,
+            "repeatPercent": 99.882120832351,
+            "meanCards": 7.564912280701755,
+            "meanChoices": 11.93859649122807
+          },
+          "starvationTurns": 11276,
+          "starvationPopulationPer100": 16.248268563335564,
+          "emptyWorldTurns": 11547,
+          "emptyWorldPercent": 2.2463931645215007,
+          "dueDebitsExceedReserve": 12195,
+          "hunger": {
+            "started": 7411,
+            "recovered": 4917,
+            "meanRecoveryTurnsAmongRecovered": 1.3821435834858653,
+            "endedUnrecovered": 2493,
+            "censored": 1
+          },
+          "reserve": {
+            "started": 7579,
+            "recovered": 4917,
+            "meanRecoveryTurnsAmongRecovered": 1.3821435834858653,
+            "endedUnrecovered": 2661,
+            "censored": 1
+          },
+          "reserveEmptiedBy": {
+            "card": 2998,
+            "delayed": 3672,
+            "world": 1880
+          },
+          "meanEnvironment": 18.72092742751311,
+          "meanPopulation": 38.46474094594805,
+          "hostilePowerDecisions": 263985,
+          "lowWorkforceDecisions": 99458
+        },
+        "contexts": {
+          "well_roster.shifts.": {},
+          "quay_exchange.contract.": {},
+          "bread_bond.borrow.": {},
+          "cistern_account.current.": {},
+          "mine_shoring.shore.": {}
+        },
+        "chains": {
+          "repair.shared": 0,
+          "repair.private": 0,
+          "water.preserved": 0,
+          "water.built": 0
+        },
+        "capTailMeanCards": 11.403269754768392,
+        "capStatRangeSums": {
+          "authority.final": 71588,
+          "authority.maximum": 72526,
+          "authority.minimum": 64686,
+          "environment.final": 13994,
+          "environment.maximum": 24341,
+          "environment.minimum": 4581,
+          "knowledge.final": 73162,
+          "knowledge.maximum": 73400,
+          "knowledge.minimum": 71425,
+          "population.final": 47034,
+          "population.maximum": 55080,
+          "population.minimum": 40925,
+          "resources.final": 49459,
+          "resources.maximum": 68671,
+          "resources.minimum": 29218,
+          "stability.final": 22889,
+          "stability.maximum": 32197,
+          "stability.minimum": 11739
+        }
+      },
+      "after": {
+        "cards": 120,
+        "meanTurns": 294.0617,
+        "repeatPercent": 86.11631504544795,
+        "eraReach": {
+          "1": 10000,
+          "2": 8167,
+          "3": 6738
+        },
+        "caps": 3671,
+        "capsByEra": {
+          "1": 2,
+          "2": 595,
+          "3": 3074
+        },
+        "endings": {
+          "simulation_cap": 3671,
+          "The land fell silent. Only roads remain after your people scattered.": 3152,
+          "The last hearth went dark. Hunger consumed your civilization's living memory.": 3177
+        },
+        "bronze": {
+          "decisions": 2089479,
+          "windows": {
+            "20": {
+              "entrantRuns": 6737,
+              "completeRuns": 6699,
+              "decisions": 134506,
+              "prefixRepeatPercent": 4.26672416100397,
+              "completeRepeatPercent": 4.283475145544111,
+              "completeMeanCards": 19.14330497089118,
+              "completeMeanChoices": 19.42289894014032
+            },
+            "40": {
+              "entrantRuns": 6737,
+              "completeRuns": 6660,
+              "decisions": 268103,
+              "prefixRepeatPercent": 47.99685195615118,
+              "completeRepeatPercent": 48.2042042042042,
+              "completeMeanCards": 20.718318318318317,
+              "completeMeanChoices": 25.615015015015015
+            },
+            "80": {
+              "entrantRuns": 6737,
+              "completeRuns": 6339,
+              "decisions": 528950,
+              "prefixRepeatPercent": 73.19538708762643,
+              "completeRepeatPercent": 73.7087868749014,
+              "completeMeanCards": 21.03297050007888,
+              "completeMeanChoices": 28.85044959772835
+            }
+          },
+          "after100": {
+            "runs": 5992,
+            "decisions": 1437300,
+            "repeatPercent": 99.82307103597022,
+            "meanCards": 11.450934579439252,
+            "meanChoices": 20.410380507343124
+          },
+          "starvationTurns": 9728,
+          "starvationPopulationPer100": 2.9715541529730616,
+          "emptyWorldTurns": 11111,
+          "emptyWorldPercent": 0.5317593524510177,
+          "dueDebitsExceedReserve": 12201,
+          "hunger": {
+            "started": 6705,
+            "recovered": 5096,
+            "meanRecoveryTurnsAmongRecovered": 1.331436420722135,
+            "endedUnrecovered": 1600,
+            "censored": 9
+          },
+          "reserve": {
+            "started": 7479,
+            "recovered": 5764,
+            "meanRecoveryTurnsAmongRecovered": 1.3591256072172102,
+            "endedUnrecovered": 1705,
+            "censored": 10
+          },
+          "reserveEmptiedBy": {
+            "card": 2590,
+            "delayed": 3501,
+            "world": 3042
+          },
+          "meanEnvironment": 19.002983518858052,
+          "meanPopulation": 57.018589801572546,
+          "hostilePowerDecisions": 1826934,
+          "lowWorkforceDecisions": 84013
+        },
+        "contexts": {
+          "well_roster.shifts.": {
+            "well_roster.shifts.sound": 29,
+            "well_roster.shifts.worn": 22172
+          },
+          "quay_exchange.contract.": {
+            "quay_exchange.contract.crewed": 164692,
+            "quay_exchange.contract.thin": 239
+          },
+          "bread_bond.borrow.": {
+            "bread_bond.borrow.bounded": 135,
+            "bread_bond.borrow.private": 7905
+          },
+          "cistern_account.current.": {
+            "cistern_account.current.worn": 70
+          },
+          "mine_shoring.shore.": {
+            "mine_shoring.shore.crewed": 81352,
+            "mine_shoring.shore.thin": 13
+          }
+        },
+        "chains": {
+          "repair.shared": 8,
+          "repair.private": 266,
+          "water.preserved": 34,
+          "water.built": 19
+        },
+        "capTailMeanCards": 11.393353309724871,
+        "capStatRangeSums": {
+          "authority.final": 359679,
+          "authority.maximum": 362664,
+          "authority.minimum": 327421,
+          "environment.final": 70647,
+          "environment.maximum": 120986,
+          "environment.minimum": 20007,
+          "knowledge.final": 365007,
+          "knowledge.maximum": 367100,
+          "knowledge.minimum": 354960,
+          "population.final": 252255,
+          "population.maximum": 293281,
+          "population.minimum": 208341,
+          "resources.final": 272674,
+          "resources.maximum": 354904,
+          "resources.minimum": 153193,
+          "stability.final": 146986,
+          "stability.maximum": 203538,
+          "stability.minimum": 92065
+        }
+      }
+    },
+    "progression": {
+      "before": {
+        "cards": 105,
+        "meanTurns": 97.2185,
+        "repeatPercent": 62.979371210212044,
+        "eraReach": {
+          "1": 10000,
+          "2": 9879,
+          "3": 9643
+        },
+        "caps": 98,
+        "capsByEra": {
+          "3": 98
+        },
+        "endings": {
+          "simulation_cap": 98,
+          "The land fell silent. Only roads remain after your people scattered.": 312,
+          "The last hearth went dark. Hunger consumed your civilization's living memory.": 9590
+        },
+        "bronze": {
+          "decisions": 761819,
+          "windows": {
+            "20": {
+              "entrantRuns": 9643,
+              "completeRuns": 9612,
+              "decisions": 192621,
+              "prefixRepeatPercent": 14.048831643486432,
+              "completeRepeatPercent": 14.073033707865168,
+              "completeMeanCards": 17.185393258426966,
+              "completeMeanChoices": 18.262068248023304
+            },
+            "40": {
+              "entrantRuns": 9643,
+              "completeRuns": 9142,
+              "decisions": 382134,
+              "prefixRepeatPercent": 54.888860975469335,
+              "completeRepeatPercent": 55.21412163640341,
+              "completeMeanCards": 17.914351345438636,
+              "completeMeanChoices": 23.542003937869175
+            },
+            "80": {
+              "entrantRuns": 9643,
+              "completeRuns": 2867,
+              "decisions": 618939,
+              "prefixRepeatPercent": 72.01420495396154,
+              "completeRepeatPercent": 76.3694628531566,
+              "completeMeanCards": 18.904429717474713,
+              "completeMeanChoices": 26.608301360306942
+            }
+          },
+          "after100": {
+            "runs": 1488,
+            "decisions": 102072,
+            "repeatPercent": 99.92946155654832,
+            "meanCards": 7.341397849462366,
+            "meanChoices": 12.092069892473118
+          },
+          "starvationTurns": 42490,
+          "starvationPopulationPer100": 41.800217636997765,
+          "emptyWorldTurns": 43245,
+          "emptyWorldPercent": 5.67654521612089,
+          "dueDebitsExceedReserve": 35027,
+          "hunger": {
+            "started": 22456,
+            "recovered": 14343,
+            "meanRecoveryTurnsAmongRecovered": 1.5510004880429478,
+            "endedUnrecovered": 8113,
+            "censored": 0
+          },
+          "reserve": {
+            "started": 22708,
+            "recovered": 14343,
+            "meanRecoveryTurnsAmongRecovered": 1.5510004880429478,
+            "endedUnrecovered": 8365,
+            "censored": 0
+          },
+          "reserveEmptiedBy": {
+            "card": 11252,
+            "delayed": 10400,
+            "world": 4660
+          },
+          "meanEnvironment": 19.873813858672467,
+          "meanPopulation": 39.44984438560866,
+          "hostilePowerDecisions": 381726,
+          "lowWorkforceDecisions": 137476
+        },
+        "contexts": {
+          "well_roster.shifts.": {},
+          "quay_exchange.contract.": {},
+          "bread_bond.borrow.": {},
+          "cistern_account.current.": {},
+          "mine_shoring.shore.": {}
+        },
+        "chains": {
+          "repair.shared": 0,
+          "repair.private": 0,
+          "water.preserved": 0,
+          "water.built": 0
+        },
+        "capTailMeanCards": 8.489795918367347,
+        "capStatRangeSums": {
+          "authority.final": 9780,
+          "authority.maximum": 9800,
+          "authority.minimum": 8951,
+          "environment.final": 1976,
+          "environment.maximum": 3381,
+          "environment.minimum": 455,
+          "knowledge.final": 9745,
+          "knowledge.maximum": 9800,
+          "knowledge.minimum": 9423,
+          "population.final": 2917,
+          "population.maximum": 4126,
+          "population.minimum": 1966,
+          "resources.final": 5098,
+          "resources.maximum": 8678,
+          "resources.minimum": 1981,
+          "stability.final": 7648,
+          "stability.maximum": 8810,
+          "stability.minimum": 6204
+        }
+      },
+      "after": {
+        "cards": 120,
+        "meanTurns": 340.065,
+        "repeatPercent": 87.99688294884801,
+        "eraReach": {
+          "1": 10000,
+          "2": 9939,
+          "3": 9697
+        },
+        "caps": 4029,
+        "capsByEra": {
+          "3": 4029
+        },
+        "endings": {
+          "simulation_cap": 4029,
+          "The land fell silent. Only roads remain after your people scattered.": 204,
+          "The last hearth went dark. Hunger consumed your civilization's living memory.": 5767
+        },
+        "bronze": {
+          "decisions": 3177508,
+          "windows": {
+            "20": {
+              "entrantRuns": 9697,
+              "completeRuns": 9679,
+              "decisions": 193778,
+              "prefixRepeatPercent": 4.34930693886819,
+              "completeRepeatPercent": 4.353755553259634,
+              "completeMeanCards": 19.129248889348073,
+              "completeMeanChoices": 19.450976340531046
+            },
+            "40": {
+              "entrantRuns": 9697,
+              "completeRuns": 9664,
+              "decisions": 387187,
+              "prefixRepeatPercent": 48.71057137765472,
+              "completeRepeatPercent": 48.763451986754966,
+              "completeMeanCards": 20.49461920529801,
+              "completeMeanChoices": 26.216473509933774
+            },
+            "80": {
+              "entrantRuns": 9697,
+              "completeRuns": 9286,
+              "decisions": 768038,
+              "prefixRepeatPercent": 73.71796707975386,
+              "completeRepeatPercent": 73.98906956709024,
+              "completeMeanCards": 20.808744346327806,
+              "completeMeanChoices": 29.55815205685979
+            }
+          },
+          "after100": {
+            "runs": 8867,
+            "decisions": 2227876,
+            "repeatPercent": 99.82359879993321,
+            "meanCards": 11.330438705311831,
+            "meanChoices": 21.496673057403857
+          },
+          "starvationTurns": 30010,
+          "starvationPopulationPer100": 6.31167569050967,
+          "emptyWorldTurns": 32866,
+          "emptyWorldPercent": 1.0343325650163588,
+          "dueDebitsExceedReserve": 29597,
+          "hunger": {
+            "started": 16943,
+            "recovered": 12053,
+            "meanRecoveryTurnsAmongRecovered": 1.514062888907326,
+            "endedUnrecovered": 4868,
+            "censored": 22
+          },
+          "reserve": {
+            "started": 18201,
+            "recovered": 13185,
+            "meanRecoveryTurnsAmongRecovered": 1.5375805839969663,
+            "endedUnrecovered": 4993,
+            "censored": 23
+          },
+          "reserveEmptiedBy": {
+            "card": 7767,
+            "delayed": 8157,
+            "world": 7074
+          },
+          "meanEnvironment": 20.72344648699547,
+          "meanPopulation": 56.65486947633177,
+          "hostilePowerDecisions": 2792167,
+          "lowWorkforceDecisions": 116479
+        },
+        "contexts": {
+          "well_roster.shifts.": {
+            "well_roster.shifts.sound": 25,
+            "well_roster.shifts.worn": 839
+          },
+          "quay_exchange.contract.": {
+            "quay_exchange.contract.crewed": 233858,
+            "quay_exchange.contract.thin": 70
+          },
+          "bread_bond.borrow.": {
+            "bread_bond.borrow.bounded": 657,
+            "bread_bond.borrow.private": 11004
+          },
+          "cistern_account.current.": {
+            "cistern_account.current.worn": 9
+          },
+          "mine_shoring.shore.": {
+            "mine_shoring.shore.crewed": 126163
+          }
+        },
+        "chains": {
+          "repair.shared": 54,
+          "repair.private": 865,
+          "water.preserved": 1,
+          "water.built": 5
+        },
+        "capTailMeanCards": 10.561677835691238,
+        "capStatRangeSums": {
+          "authority.final": 402080,
+          "authority.maximum": 402900,
+          "authority.minimum": 368268,
+          "environment.final": 85692,
+          "environment.maximum": 149928,
+          "environment.minimum": 24344,
+          "knowledge.final": 398894,
+          "knowledge.maximum": 402900,
+          "knowledge.minimum": 382542,
+          "population.final": 256795,
+          "population.maximum": 308144,
+          "population.minimum": 207796,
+          "resources.final": 288880,
+          "resources.maximum": 387312,
+          "resources.minimum": 155484,
+          "stability.final": 224143,
+          "stability.maximum": 286123,
+          "stability.minimum": 162312
+        }
+      }
+    },
+    "recovery": {
+      "before": {
+        "cards": 105,
+        "meanTurns": 159.7507,
+        "repeatPercent": 78.94463060255761,
+        "eraReach": {
+          "1": 10000,
+          "2": 9861,
+          "3": 9763
+        },
+        "caps": 1251,
+        "capsByEra": {
+          "3": 1251
+        },
+        "endings": {
+          "simulation_cap": 1251,
+          "The last hearth went dark. Hunger consumed your civilization's living memory.": 8749
+        },
+        "bronze": {
+          "decisions": 1429927,
+          "windows": {
+            "20": {
+              "entrantRuns": 9763,
+              "completeRuns": 9620,
+              "decisions": 194251,
+              "prefixRepeatPercent": 13.522195509933026,
+              "completeRepeatPercent": 13.586278586278587,
+              "completeMeanCards": 17.282744282744282,
+              "completeMeanChoices": 18.41735966735967
+            },
+            "40": {
+              "entrantRuns": 9763,
+              "completeRuns": 8881,
+              "decisions": 380902,
+              "prefixRepeatPercent": 55.353082945219505,
+              "completeRepeatPercent": 56.018747888751264,
+              "completeMeanCards": 17.592500844499494,
+              "completeMeanChoices": 23.07724355365387
+            },
+            "80": {
+              "entrantRuns": 9763,
+              "completeRuns": 5173,
+              "decisions": 659641,
+              "prefixRepeatPercent": 74.17474050278864,
+              "completeRepeatPercent": 77.39247052000773,
+              "completeMeanCards": 18.086023583993814,
+              "completeMeanChoices": 25.48540498743476
+            }
+          },
+          "after100": {
+            "runs": 3940,
+            "decisions": 680206,
+            "repeatPercent": 99.98618065703626,
+            "meanCards": 8.241624365482233,
+            "meanChoices": 14.835786802030457
+          },
+          "starvationTurns": 47013,
+          "starvationPopulationPer100": 25.188628510406474,
+          "emptyWorldTurns": 47477,
+          "emptyWorldPercent": 3.320239424809798,
+          "dueDebitsExceedReserve": 37059,
+          "hunger": {
+            "started": 29657,
+            "recovered": 24188,
+            "meanRecoveryTurnsAmongRecovered": 1.5099222755085167,
+            "endedUnrecovered": 5465,
+            "censored": 4
+          },
+          "reserve": {
+            "started": 29852,
+            "recovered": 24188,
+            "meanRecoveryTurnsAmongRecovered": 1.5099222755085167,
+            "endedUnrecovered": 5660,
+            "censored": 4
+          },
+          "reserveEmptiedBy": {
+            "card": 18693,
+            "delayed": 11706,
+            "world": 6180
+          },
+          "meanEnvironment": 70.31239986376927,
+          "meanPopulation": 48.77952440928803,
+          "hostilePowerDecisions": 871323,
+          "lowWorkforceDecisions": 164655
+        },
+        "contexts": {
+          "well_roster.shifts.": {},
+          "quay_exchange.contract.": {},
+          "bread_bond.borrow.": {},
+          "cistern_account.current.": {},
+          "mine_shoring.shore.": {}
+        },
+        "chains": {
+          "repair.shared": 0,
+          "repair.private": 0,
+          "water.preserved": 0,
+          "water.built": 0
+        },
+        "capTailMeanCards": 8.708233413269385,
+        "capStatRangeSums": {
+          "authority.final": 124417,
+          "authority.maximum": 125100,
+          "authority.minimum": 112483,
+          "environment.final": 98765,
+          "environment.maximum": 120887,
+          "environment.minimum": 72622,
+          "knowledge.final": 124405,
+          "knowledge.maximum": 125100,
+          "knowledge.minimum": 121021,
+          "population.final": 67871,
+          "population.maximum": 85049,
+          "population.minimum": 53925,
+          "resources.final": 48534,
+          "resources.maximum": 82365,
+          "resources.minimum": 17262,
+          "stability.final": 120709,
+          "stability.maximum": 125098,
+          "stability.minimum": 107606
+        }
+      },
+      "after": {
+        "cards": 120,
+        "meanTurns": 450.223,
+        "repeatPercent": 91.6226625472266,
+        "eraReach": {
+          "1": 10000,
+          "2": 9920,
+          "3": 9766
+        },
+        "caps": 8324,
+        "capsByEra": {
+          "3": 8324
+        },
+        "endings": {
+          "simulation_cap": 8324,
+          "The last hearth went dark. Hunger consumed your civilization's living memory.": 1676
+        },
+        "bronze": {
+          "decisions": 4325894,
+          "windows": {
+            "20": {
+              "entrantRuns": 9766,
+              "completeRuns": 9718,
+              "decisions": 194853,
+              "prefixRepeatPercent": 2.2565729036761044,
+              "completeRepeatPercent": 2.260238732249434,
+              "completeMeanCards": 19.547952253550115,
+              "completeMeanChoices": 19.72607532414077
+            },
+            "40": {
+              "entrantRuns": 9766,
+              "completeRuns": 9676,
+              "decisions": 388862,
+              "prefixRepeatPercent": 48.17595959492056,
+              "completeRepeatPercent": 48.26400372054568,
+              "completeMeanCards": 20.694398511781728,
+              "completeMeanChoices": 26.273770152955766
+            },
+            "80": {
+              "entrantRuns": 9766,
+              "completeRuns": 9511,
+              "decisions": 772578,
+              "prefixRepeatPercent": 73.86192720993867,
+              "completeRepeatPercent": 74.06371569761329,
+              "completeMeanCards": 20.74902744190937,
+              "completeMeanChoices": 29.800126169698245
+            }
+          },
+          "after100": {
+            "runs": 9403,
+            "decisions": 3364208,
+            "repeatPercent": 99.9878723313184,
+            "meanCards": 10.714665532276934,
+            "meanChoices": 21.871104966500052
+          },
+          "starvationTurns": 15352,
+          "starvationPopulationPer100": 2.4069475581232456,
+          "emptyWorldTurns": 17122,
+          "emptyWorldPercent": 0.39580257861149626,
+          "dueDebitsExceedReserve": 13367,
+          "hunger": {
+            "started": 9425,
+            "recovered": 8639,
+            "meanRecoveryTurnsAmongRecovered": 1.4723926380368098,
+            "endedUnrecovered": 771,
+            "censored": 15
+          },
+          "reserve": {
+            "started": 10270,
+            "recovered": 9438,
+            "meanRecoveryTurnsAmongRecovered": 1.508158508158508,
+            "endedUnrecovered": 813,
+            "censored": 19
+          },
+          "reserveEmptiedBy": {
+            "card": 5682,
+            "delayed": 3604,
+            "world": 4736
+          },
+          "meanEnvironment": 86.71237667867035,
+          "meanPopulation": 80.92397455878485,
+          "hostilePowerDecisions": 2067117,
+          "lowWorkforceDecisions": 48163
+        },
+        "contexts": {
+          "well_roster.shifts.": {
+            "well_roster.shifts.sound": 514,
+            "well_roster.shifts.worn": 47
+          },
+          "quay_exchange.contract.": {
+            "quay_exchange.contract.crewed": 419773,
+            "quay_exchange.contract.thin": 896
+          },
+          "bread_bond.borrow.": {
+            "bread_bond.borrow.bounded": 273,
+            "bread_bond.borrow.private": 9124
+          },
+          "cistern_account.current.": {
+            "cistern_account.current.sound": 3
+          },
+          "mine_shoring.shore.": {
+            "mine_shoring.shore.crewed": 149317
+          }
+        },
+        "chains": {
+          "repair.shared": 42,
+          "repair.private": 1195,
+          "water.preserved": 0,
+          "water.built": 1
+        },
+        "capTailMeanCards": 10.111364728495916,
+        "capStatRangeSums": {
+          "authority.final": 828113,
+          "authority.maximum": 832396,
+          "authority.minimum": 753493,
+          "environment.final": 745661,
+          "environment.maximum": 819039,
+          "environment.minimum": 621689,
+          "knowledge.final": 828580,
+          "knowledge.maximum": 832400,
+          "knowledge.minimum": 802403,
+          "population.final": 726763,
+          "population.maximum": 780214,
+          "population.minimum": 651874,
+          "resources.final": 553383,
+          "resources.maximum": 727616,
+          "resources.minimum": 324107,
+          "stability.final": 816438,
+          "stability.maximum": 832333,
+          "stability.minimum": 752819
+        }
+      }
+    },
+    "survival-council": {
+      "before": {
+        "cards": 105,
+        "meanTurns": 60.3904,
+        "repeatPercent": 54.142049067401445,
+        "eraReach": {
+          "1": 10000
+        },
+        "caps": 1,
+        "capsByEra": {
+          "1": 1
+        },
+        "endings": {
+          "simulation_cap": 1,
+          "The land fell silent. Only roads remain after your people scattered.": 7839,
+          "The last hearth went dark. Hunger consumed your civilization's living memory.": 2160
+        },
+        "bronze": {
+          "decisions": 0,
+          "windows": {
+            "20": {
+              "entrantRuns": 0,
+              "completeRuns": 0,
+              "decisions": 0,
+              "prefixRepeatPercent": null,
+              "completeRepeatPercent": null,
+              "completeMeanCards": null,
+              "completeMeanChoices": null
+            },
+            "40": {
+              "entrantRuns": 0,
+              "completeRuns": 0,
+              "decisions": 0,
+              "prefixRepeatPercent": null,
+              "completeRepeatPercent": null,
+              "completeMeanCards": null,
+              "completeMeanChoices": null
+            },
+            "80": {
+              "entrantRuns": 0,
+              "completeRuns": 0,
+              "decisions": 0,
+              "prefixRepeatPercent": null,
+              "completeRepeatPercent": null,
+              "completeMeanCards": null,
+              "completeMeanChoices": null
+            }
+          },
+          "after100": {
+            "runs": 0,
+            "decisions": 0,
+            "repeatPercent": null,
+            "meanCards": null,
+            "meanChoices": null
+          },
+          "starvationTurns": 0,
+          "starvationPopulationPer100": 0,
+          "emptyWorldTurns": 0,
+          "emptyWorldPercent": null,
+          "dueDebitsExceedReserve": 0,
+          "hunger": {
+            "started": 0,
+            "recovered": 0,
+            "meanRecoveryTurnsAmongRecovered": null,
+            "endedUnrecovered": 0,
+            "censored": 0
+          },
+          "reserve": {
+            "started": 0,
+            "recovered": 0,
+            "meanRecoveryTurnsAmongRecovered": null,
+            "endedUnrecovered": 0,
+            "censored": 0
+          },
+          "reserveEmptiedBy": {
+            "card": 0,
+            "delayed": 0,
+            "world": 0
+          },
+          "meanEnvironment": null,
+          "meanPopulation": null,
+          "hostilePowerDecisions": 0,
+          "lowWorkforceDecisions": 0
+        },
+        "contexts": {
+          "well_roster.shifts.": {},
+          "quay_exchange.contract.": {},
+          "bread_bond.borrow.": {},
+          "cistern_account.current.": {},
+          "mine_shoring.shore.": {}
+        },
+        "chains": {
+          "repair.shared": 0,
+          "repair.private": 0,
+          "water.preserved": 0,
+          "water.built": 0
+        },
+        "capTailMeanCards": 9,
+        "capStatRangeSums": {
+          "authority.final": 97,
+          "authority.maximum": 100,
+          "authority.minimum": 81,
+          "environment.final": 21,
+          "environment.maximum": 25,
+          "environment.minimum": 9,
+          "knowledge.final": 100,
+          "knowledge.maximum": 100,
+          "knowledge.minimum": 98,
+          "population.final": 31,
+          "population.maximum": 61,
+          "population.minimum": 23,
+          "resources.final": 59,
+          "resources.maximum": 96,
+          "resources.minimum": 59,
+          "stability.final": 56,
+          "stability.maximum": 57,
+          "stability.minimum": 29
+        }
+      },
+      "after": {
+        "cards": 120,
+        "meanTurns": 75.3778,
+        "repeatPercent": 58.00832605886613,
+        "eraReach": {
+          "1": 10000
+        },
+        "caps": 10,
+        "capsByEra": {
+          "1": 10
+        },
+        "endings": {
+          "simulation_cap": 10,
+          "The land fell silent. Only roads remain after your people scattered.": 8710,
+          "The last hearth went dark. Hunger consumed your civilization's living memory.": 1280
+        },
+        "bronze": {
+          "decisions": 0,
+          "windows": {
+            "20": {
+              "entrantRuns": 0,
+              "completeRuns": 0,
+              "decisions": 0,
+              "prefixRepeatPercent": null,
+              "completeRepeatPercent": null,
+              "completeMeanCards": null,
+              "completeMeanChoices": null
+            },
+            "40": {
+              "entrantRuns": 0,
+              "completeRuns": 0,
+              "decisions": 0,
+              "prefixRepeatPercent": null,
+              "completeRepeatPercent": null,
+              "completeMeanCards": null,
+              "completeMeanChoices": null
+            },
+            "80": {
+              "entrantRuns": 0,
+              "completeRuns": 0,
+              "decisions": 0,
+              "prefixRepeatPercent": null,
+              "completeRepeatPercent": null,
+              "completeMeanCards": null,
+              "completeMeanChoices": null
+            }
+          },
+          "after100": {
+            "runs": 0,
+            "decisions": 0,
+            "repeatPercent": null,
+            "meanCards": null,
+            "meanChoices": null
+          },
+          "starvationTurns": 0,
+          "starvationPopulationPer100": 0,
+          "emptyWorldTurns": 0,
+          "emptyWorldPercent": null,
+          "dueDebitsExceedReserve": 0,
+          "hunger": {
+            "started": 0,
+            "recovered": 0,
+            "meanRecoveryTurnsAmongRecovered": null,
+            "endedUnrecovered": 0,
+            "censored": 0
+          },
+          "reserve": {
+            "started": 0,
+            "recovered": 0,
+            "meanRecoveryTurnsAmongRecovered": null,
+            "endedUnrecovered": 0,
+            "censored": 0
+          },
+          "reserveEmptiedBy": {
+            "card": 0,
+            "delayed": 0,
+            "world": 0
+          },
+          "meanEnvironment": null,
+          "meanPopulation": null,
+          "hostilePowerDecisions": 0,
+          "lowWorkforceDecisions": 0
+        },
+        "contexts": {
+          "well_roster.shifts.": {},
+          "quay_exchange.contract.": {},
+          "bread_bond.borrow.": {},
+          "cistern_account.current.": {},
+          "mine_shoring.shore.": {}
+        },
+        "chains": {
+          "repair.shared": 0,
+          "repair.private": 0,
+          "water.preserved": 0,
+          "water.built": 0
+        },
+        "capTailMeanCards": 13.6,
+        "capStatRangeSums": {
+          "authority.final": 950,
+          "authority.maximum": 996,
+          "authority.minimum": 840,
+          "environment.final": 117,
+          "environment.maximum": 242,
+          "environment.minimum": 43,
+          "knowledge.final": 998,
+          "knowledge.maximum": 1000,
+          "knowledge.minimum": 972,
+          "population.final": 290,
+          "population.maximum": 434,
+          "population.minimum": 189,
+          "resources.final": 479,
+          "resources.maximum": 767,
+          "resources.minimum": 229,
+          "stability.final": 352,
+          "stability.maximum": 476,
+          "stability.minimum": 188
+        }
+      }
+    }
+  }
+}

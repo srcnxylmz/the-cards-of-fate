@@ -99,8 +99,8 @@ final class MilestoneTests: XCTestCase {
     }
     func testOriginalMilestoneCardsRemainInExpandedDeck() throws {
         let e=GameEngine(content:try .bundled())
-        XCTAssertEqual(e.content.cards.count,105)
-        for era in 1...3 { XCTAssertEqual(e.content.cards.filter { $0.era == era }.count,35) }
+        XCTAssertEqual(e.content.cards.count,120)
+        for era in 1...3 { XCTAssertEqual(e.content.cards.filter { $0.era == era }.count,40) }
         for id in newIDs {
             let c=try XCTUnwrap(e.content.card(id))
             XCTAssertFalse(c.artDirection.isEmpty)

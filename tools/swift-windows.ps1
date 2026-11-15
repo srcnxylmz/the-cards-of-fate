@@ -3,6 +3,7 @@ param(
     [ValidateRange(1, 1000000)][int]$Runs = 10000,
     [ValidateSet('random', 'survival', 'knowledge', 'progression', 'recovery')][string]$Policy = 'random',
     [switch]$ManageCouncil,
+    [switch]$SkipBuild,
     [string]$CardsPath,
     [string]$OutputDirectory = 'docs',
     [string]$SwiftRoot = (Join-Path $env:LOCALAPPDATA 'Programs\Swift')
@@ -58,8 +59,13 @@ try {
             $reportName = $Policy
             if ($ManageCouncil) { $councilArgs = @('--manage-council'); $reportName = "$Policy-council" }
             if ($CardsPath) { $councilArgs += @('--cards', $CardsPath) }
-            & (Join-Path $bin 'swift.exe') run -c release FateSimulation $Runs --policy $Policy @councilArgs --output (Join-Path $OutputDirectory "simulation-$reportName.json") 2>&1 |
-                Tee-Object -FilePath (Join-Path $OutputDirectory "swift-simulation-$reportName-windows.log")
+            if ($SkipBuild) {
+                $taskExecutable = Get-ChildItem -LiteralPath (Join-Path $projectRoot '.build') -Filter FateSimulation.exe -File -Recurse | Where-Object { $_.Directory.Name -eq 'release' -or $_.Directory.Name -like 'Release-*' } | Sort-Object LastWriteTime -Descending | Select-Object -First 1
+                if (-not $taskExecutable) { throw 'Build release simulation before using -SkipBuild' }
+                & $taskExecutable.FullName $Runs --policy $Policy @councilArgs --output (Join-Path $OutputDirectory "simulation-$reportName.json") 2>&1 | Tee-Object -FilePath (Join-Path $OutputDirectory "swift-simulation-$reportName-windows.log")
+            } else {
+                & (Join-Path $bin 'swift.exe') run -c release FateSimulation $Runs --policy $Policy @councilArgs --output (Join-Path $OutputDirectory "simulation-$reportName.json") 2>&1 | Tee-Object -FilePath (Join-Path $OutputDirectory "swift-simulation-$reportName-windows.log")
+            }
         }
         if ($LASTEXITCODE -ne 0) { throw "Swift $Task failed with exit code $LASTEXITCODE" }
     } finally { Pop-Location }

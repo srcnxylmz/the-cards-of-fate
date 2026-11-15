@@ -16,7 +16,7 @@ export function composeArtManifest(cards,previous,history) {
    source:'assets/generation_prompts.json (existing prompt record)',sha256:createHash('sha256').update(readFileSync(resolve(projectRoot,old.file))).digest('hex')
   }];
   return {id:card.artAsset,cardID:card.id,status:'missing',file:null,license:null,...old,
-   brief:card.artDirection,modelPrompt:submitted.at(-1)?.prompt??old.modelPrompt??promptFor(card),generationRecords:records};
+   brief:card.artDirection,modelPrompt:submitted.at(-1)?.prompt??promptFor(card),generationRecords:records};
  });
 }
 export function auditArt(cards,manifest,{root=projectRoot}={}) {

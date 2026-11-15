@@ -1,8 +1,12 @@
 # Content bible
 
-Editorial principle: each card needs a specific human conflict, an observable cost, competing reasonable values, and consequences that fit the era. Neither option should simply be the same reward in different wording. Turkish is authored naturally, with a complete English counterpart for the current 105-card set.
+Editorial principle: each card needs a specific human conflict, an observable cost, competing reasonable values, and consequences that fit the era. Neither option should simply be the same reward in different wording. Turkish is authored naturally, with a complete English counterpart for the current 120-card set.
 
-## Current inventory
+## Current 120-card inventory
+
+120 unique events, 40 per authored era, 288 choices; all 105 previous definitions remain intact. New city-events module adds five Paleolithic, five Neolithic and five Bronze conflicts. Five current-state outcome partitions are separately counted from five genuinely stochastic decisions. Eight new events close once resolved; seven are recurring work/resource crises. Two closed chains have author/editor self-review and end-to-end tests; ninety static cross-era references do not mean ninety complete chains. See STORY_REVIEW_120.md. Native acceptance is pending.
+
+## Historical 105-card inventory
 
 105 events, 35 in each first-three era, 245 choices; all ninety previous IDs, texts and effects preserved. Fifteen recovery and historical-inheritance events are detailed at the end of this document. Seven close once resolved and eight are recurring crises. Native acceptance passed at [run 43739396488](https://github.com/srcnxylmz/the-cards-of-fate/actions/runs/43739396488) / code 3d589af1a02be3032f60e6560e75fabeefa2c407.
 
@@ -71,3 +75,10 @@ History routes: shared flint fragments wait until the village era before creatin
 The general kiln trial offers a real supply/ecological investment in smelting even when the older repair-first policy stalls at high knowledge. Prior kiln repair or common-access history reduces that investment. No technology threshold, old decision effect, save schema or baseline diagnostic policy was changed. Delayed production after paid dredging/tool repair offsets recurring upkeep; immediate cargo and rushed recasting require remaining ecological inputs. No choice bypasses the real availability/selection rules.
 
 Thematic labels and 69 static cross-era references are authoring diagnostics, not a claim of 100 completed editorially reviewed chains. Artwork is generated for only ten cards and production music remains missing.
+
+
+## City economy group: 105 → 120
+
+Paleolithic: marsh_raft, antler_moot, thaw_stones, hide_smoke, guest_scouts. Neolithic: reed_ferry, well_roster, ox_rest, field_inquest, winter_bond. Bronze: quay_exchange, bread_bond, mold_audit, cistern_account, mine_shoring. Each new choice has a period-specific human conflict, bilingual narration and delayed effects. Earlier raft/route/guest/count/seed practices alter later access or outcomes. Working population changes trade/mine results; ecology changes well/water-account results; bounded seed guarantees change the bond context.
+
+Borrowing opens a saved bread_bond_open flag. Other actions leave it open. Paying ten actual supplies removes it; default removes the open agreement and permanently records default, closing future credit. This is a specific fixed-share agreement, not a general financial ledger or continuous interest model. Paid work, carrying losses, upkeep and delivered supplies retain costs. A draft sharing option was revised to charge the household loss stated by its travel conflict; its pre-correction measurements remain archived and are not final balance evidence.

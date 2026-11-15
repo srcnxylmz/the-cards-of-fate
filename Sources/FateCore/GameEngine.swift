@@ -6,12 +6,14 @@ public struct GameEngine {
 
     /// Shared by resolution and risk analysis; does not consume randomness.
     public func outcomeProbabilities(for choice: Choice, in state: GameState) -> [Double] {
+        guard choice.outcomes.allSatisfy({ $0.probability.isFinite && $0.probability > 0 }) else { return [] }
         let weights = choice.outcomes.map { outcome -> Double in
+            guard (outcome.requirements ?? []).allSatisfy({ $0.matches(state) }) else { return 0 }
             guard let affinity = outcome.affinity else { return outcome.probability }
             return outcome.probability * (0.5 + Double(state.stats[affinity.rawValue, default: 50]) / 100)
         }
         let total = weights.reduce(0, +)
-        guard total > 0, total.isFinite, weights.allSatisfy({ $0.isFinite && $0 > 0 }) else { return [] }
+        guard total > 0, total.isFinite, weights.allSatisfy({ $0.isFinite && $0 >= 0 }) else { return [] }
         return weights.map { $0 / total }
     }
 
@@ -40,14 +42,14 @@ public struct GameEngine {
         let weights = outcomeProbabilities(for: choice, in: state)
         guard !weights.isEmpty else { throw ContentError.unavailableChoice }
         var roll = state.random.unit()
-        var outcome = choice.outcomes[choice.outcomes.count - 1]
+        var outcome = choice.outcomes[weights.lastIndex(where: { $0 > 0 })!]
         for (candidate, weight) in zip(choice.outcomes, weights) {
             roll -= weight
             if roll < 0 { outcome = candidate; break }
         }
         state.turn += 1
-        apply(choice.immediateEffects, to: &state)
-        apply(outcome.effect, to: &state)
+        var unfundedResources = apply(choice.immediateEffects, to: &state)
+        unfundedResources += apply(outcome.effect, to: &state)
         observe?("card", state)
         state.delayed += outcome.delayedEffects.map {
             ScheduledConsequence(dueTurn: state.turn + $0.afterTurns, minimumEra: $0.minimumEra, text: $0.text, effect: $0.effect)
@@ -55,9 +57,9 @@ public struct GameEngine {
         append(outcome.text, card: card.id, choice: choiceID, to: &state)
         let due = state.delayed.filter { $0.dueTurn <= state.turn && $0.minimumEra <= state.era }
         state.delayed.removeAll { $0.dueTurn <= state.turn && $0.minimumEra <= state.era }
-        for event in due { apply(event.effect, to: &state); append(event.text, to: &state) }
+        for event in due { unfundedResources += apply(event.effect, to: &state); append(event.text, to: &state) }
         observe?("delayed", state)
-        simulate(&state, observe: observe)
+        simulate(&state, unfundedResources: unfundedResources, observe: observe)
         advanceEra(&state)
         state.currentCardID = nil
         state.resolution = Resolution(title: card.title, text: outcome.text, animation: outcome.animationPreset,
@@ -74,10 +76,12 @@ public struct GameEngine {
         return state
     }
 
-    private func apply(_ effect: Effect, to state: inout GameState) {
+    @discardableResult private func apply(_ effect: Effect, to state: inout GameState) -> Int {
+        let unpaid = max(0, -effect.stats["resources", default: 0] - state.stats["resources", default: 0])
         for stat in Stat.allCases {
             state.stats[stat.rawValue] = min(100, max(0, state.stats[stat.rawValue, default: 0] + effect.stats[stat.rawValue, default: 0]))
         }
+        state.flags.subtract(effect.removeFlags ?? [])
         state.flags.formUnion(effect.flags)
         state.technologies.formUnion(effect.technologies)
         state.buildings.formUnion(effect.buildings)
@@ -85,6 +89,7 @@ public struct GameEngine {
             let delta = effect.rivalRelation + (effect.rivalRelations?[state.rivals[i].id] ?? 0)
             state.rivals[i].relation = min(100, max(-100, state.rivals[i].relation + delta))
         }
+        return unpaid
     }
 
     private func append(_ text: LocalizedText, card: String? = nil, choice: String? = nil, to state: inout GameState) {
@@ -119,26 +124,13 @@ public struct GameEngine {
         state.discovered.insert(selected.id)
     }
 
-    private func simulate(_ state: inout GameState, observe: ((String, GameState) -> Void)?) {
+    private func simulate(_ state: inout GameState, unfundedResources: Int, observe: ((String, GameState) -> Void)?) {
         let balance = content.balance
-        let hasGranary = state.buildings.contains("granary")
-        let hasFields = state.technologies.contains("cultivation")
-        // Learning cultivation must feed households even when they chose private stores.
-        // A granary preserves more of that harvest; it is not the source of farming itself.
-        let baseProduction = hasGranary || hasFields ? balance.farmProduction : 0
-        let storageYield = hasGranary && hasFields ? 1 : 0
-        // Stored harvest + irrigation is a real investment. Degraded land reduces its yield;
-        // world production alone never exceeds ordinary consumption (including old saves).
-        let irrigatedYield = baseProduction > 0 && state.technologies.contains("irrigation")
-            ? balance.farmProduction * state.stats["environment", default: 0] / 100 : 0
-        let coordinatedYield = baseProduction > 0 && state.stats["environment", default: 0] > 0
-            && state.buildings.contains("work_calendar") ? 1 : 0
-        let terraceYield = irrigatedYield > 0 && state.buildings.contains("terrace") ? 1 : 0
-        let production = min(balance.resourceConsumption, baseProduction + storageYield + irrigatedYield + coordinatedYield + terraceYield)
-        let consumption = balance.resourceConsumption + (state.mode == .hard ? balance.hardExtraConsumption : 0)
-        apply(.init(stats: ["resources": production - consumption], flags: [], technologies: [], buildings: [], rivalRelation: 0), to: &state)
-        if state.stats["resources"] == 0 {
-            apply(.init(stats: ["population": -balance.starvationLoss, "stability": -4], flags: [], technologies: [], buildings: [], rivalRelation: 0), to: &state)
+        let food = foodBudget(in: state, unfundedResources: unfundedResources)
+        apply(.init(stats: ["resources": food.production-food.consumption-unfundedResources], flags: [], technologies: [], buildings: [], rivalRelation: 0), to: &state)
+        if food.shortfall > 0 {
+            apply(.init(stats: ["population": -food.populationLoss, "stability": -food.stabilityLoss], flags: [], technologies: [], buildings: [], rivalRelation: 0), to: &state)
+            append(.init(tr: "Bu tur yiyecek ihtiyacının \(food.shortfall)/\(food.consumption) payı karşılanamadı; nüfus azaldı.", en: "Food fell short by \(food.shortfall) of \(food.consumption) shares this turn; population declined."), to: &state)
         }
         let politics = content.politics
         updateFactionPower(&state)

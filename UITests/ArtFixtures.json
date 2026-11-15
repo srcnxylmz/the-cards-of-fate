@@ -48,5 +48,30 @@
     "id": "smoke_shift",
     "language": "en",
     "large": false
+  },
+  {
+    "id": "marsh_raft",
+    "language": "tr",
+    "large": false
+  },
+  {
+    "id": "well_roster",
+    "language": "en",
+    "large": false
+  },
+  {
+    "id": "quay_exchange",
+    "language": "tr",
+    "large": false
+  },
+  {
+    "id": "bread_bond",
+    "language": "en",
+    "large": false
+  },
+  {
+    "id": "mine_shoring",
+    "language": "tr",
+    "large": false
   }
 ]

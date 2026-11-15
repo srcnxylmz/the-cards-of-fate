@@ -1,0 +1,9 @@
+{
+  "status": "stopped during knowledge run after final authoring review",
+  "completedPolicies": [
+    "random",
+    "survival"
+  ],
+  "excluded": "excluded-stale-knowledge-from-gift-draft.json belongs to initial gift draft and is not a measured result of this deck",
+  "reason": "Two Paleolithic events needed explicit older-decision gates: ice-crossing history for marsh_raft and hearth technology for hide_smoke"
+}

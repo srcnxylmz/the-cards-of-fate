@@ -1,3 +1,7 @@
+# 120-card milestone — local validation in progress (2026-11-16)
+
+Current source: 120 unique cards, 40/40/40, 288 choices, 15 real illustration candidates and 105 missing images. 83 Swift tests (78 Core + five diagnostics) / 48 Node passed; final six-policy comparison and its reference are complete; all game fields were unchanged by the classifier correction. Native acceptance is pending; do not reuse the historical 105-card CI below as proof for this source. New food/invoice rules, conditional outcomes and open-bond closure are scoped changes; all 105 older authored definitions and five old policy score functions remain unchanged.
+
 # 105-card quality/content checkpoint — 2026-11-15
 
 **Current local source: 105 cards / 245 choices / 35-35-35; 70 Swift and 39 Node tests passed. Ten real illustration candidates, 95 missing. Final same-seed 50,000-run comparison is complete; native acceptance passed at [run 43739396488](https://github.com/srcnxylmz/the-cards-of-fate/actions/runs/43739396488) (code 3d589af1a02be3032f60e6560e75fabeefa2c407).** The original 12-era / 800-card / 100-approved-chain / 30-ending scope is unchanged. The 90-card evidence below is historical and does not validate the new source.
@@ -297,3 +301,30 @@ All four production first-frame OCR notes show visible=6, missing=[] (TR/EN × n
 The checkpoint is now safely published and natively verified. No 120-card content batch was started. Next group: address Bronze starvation spikes and delayed population burdens, investigate genuinely changing civic/trade conditions, profile eligibility/history lookup cost, retain healthy censored caps and repeat the same seeds when rules/content change. Random access and knowledge/progression/recovery lifetime regressions remain explicit in MILESTONE_105_ANALYSIS.md. Scope stays 12 eras / at least 800 original cards / 100 approved chains / 30 endings. Signing, Game Center account/version fairness, physical device/accessibility and 95 missing illustrations remain release blockers.
 
 Subsequent publication changes reports only and uses [skip ci]; native evidence belongs to 3d589af1a02be3032f60e6560e75fabeefa2c407, not an invented second build.
+
+
+## 120-card work in progress — 2026-11-15
+
+Started from bd679f5 on synchronized main; pre-existing README/root technologies/council/log/editor/experiment work preserved. Frozen 105-card deck and all five original reports plus new 60,000-run diagnostic baselines retained in analysis/milestone120-105-before. All old fields in five instrumented reports exactly reproduce the original 105 results. First draft: 120 unique cards, 40 per era, 288 choices, five current-state outcome partitions; old save fields remain optional. Open bread bonds cannot be bypassed by another choice; repayment costs ten actual supplies and default closes future credit. Existing 70 Swift tests passed after the food-budget correction; new boundary/conditional/whole-chain regressions remain to be accepted. Food production is unchanged and bounded by ordinary consumption; starvation now requires real unmet food rather than an empty reserve alone and scales with the unmet fraction. New scenes marsh_raft and well_roster generated/registered; three more planned. Full native acceptance remains pending; no 120 milestone completion claim.
+
+
+### Local draft correction before CI
+
+New tests pass: 78 Swift / 46 Node. All five new real candidates are registered (15 total / 105 missing); mine picks and tall stacks were corrected in an edited candidate with source/reference hashes. Review found that hide_smoke.share described giving up travel food but initially awarded resources/population/stability together. Stopped the ongoing local draft batch after three completed policies, retained its deck/reports under analysis/milestone120-draft-gift, and gave that option an explicit one-household population cost with a minimum-population gate. No paid macOS run was launched for this rejected draft. Final same-seed measurements will be rerun after the actual content change.
+
+
+### Final authoring dependency gate
+
+Added a content regression requiring every new event to depend on a real earlier authored decision. It exposed two implicit-only links: marsh_raft now follows an actual completed ice_crossing and describes the same flooded crossing; hide_smoke requires the hearth discovery. Stopped the local batch after random/survival to avoid finishing stale measurements; the two valid outputs/deck are in analysis/milestone120-draft-unlinked. A stale initial-gift knowledge file is explicitly renamed/excluded in draft-status.json. No native CI has been spent on either rejected draft. All fifteen event links are now checked before the final measurements.
+
+
+### Recovery telemetry terminal-state audit
+
+Found and fixed a measurement bug before CI: zero additional world population loss could be counted as recovery even when the card had already reduced population to zero, or council resolution ended the run later in the turn. Recovery now commits only after the full decision, while alive. Moved the observer to the small FateDiagnostics package target so five real classifier tests cover dead-card, late-ending, living recovery, living censoring and residence-window/choice counters. No game rule, card, RNG or policy changed in this correction. Both reference/final observations are being replayed from prebuilt release binaries in parallel; old recovery tables are explicitly provisional. Existing gameplay metrics will be checked unchanged.
+
+
+### Local 120-card gate accepted — native pending
+
+83 Swift tests passed (78 Core plus five diagnostics), 48 Node passed, content 120/288/40-40-40 with zero errors/warnings, generation/feedback/art audits passed. All 105 older card definitions and the five score policies remain unchanged. Corrected live end-of-turn recovery diagnostics were replayed for both references and final source using prebuilt binaries; all non-diagnostic fields match the earlier same-source outputs exactly. The observer has a separate small package target/test target, while the app still depends only on FateCore.
+
+Final comparisons and negative findings are in MILESTONE_120_ANALYSIS.md / milestone120-metrics.json. Canonical five base-policy reports are updated; the user-owned root council JSON remains untouched and the new council data is separate under analysis/milestone120-final. Source fingerprints are recorded in its reference.json. Card/delay costs that exceed reserves consume current-turn supplies before feeding; production itself remains capped. No fourth-era card or transition unlock was added. Two closed chains have self-review and controlled/natural ordered-history evidence. Fifteen actual illustration candidates exist, 105 remain missing. Full native build/UI/images/audio/OCR acceptance is still pending; do not mark the 120 checkpoint complete until that gate and artifacts are reviewed.

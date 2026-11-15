@@ -114,5 +114,101 @@
       "source": "exec-b5064667-605b-4a31-8eb5-9209439034f2.png",
       "sha256": "862da510d60c6dc683efa5665e563a96a051658d4dce94152ee124ee25632df6"
     }
+  },
+  {
+    "asset": "card_marsh_raft",
+    "tool": "built-in imagegen",
+    "prompt": "Use case: historical-scene. Original premium portrait event-card illustration for The Cards of Fate, marsh_raft. Human conflict: Water covers the migration path. An older raft maker can ferry slower travelers if the reed lashings are renewed. Hunters want the same reeds for dry bedding; there are too few hands for both jobs. Scene: Paleolithic adults binding a small reed raft beside flooded marsh, older raft maker and fur bundles, stone and bone tools only, ochre dawn and slate water. Era: Paleolithic: stone, bone and hide only; ochre/charcoal and winter or dawn light. Cinematic painterly historical realism consistent with the existing hearth, river, granary and copper-workshop collection; natural anatomy, expressive adult faces/hands, tactile materials, restrained emotion. Portrait 2:3, comfortably framed central silhouettes readable on iPhone. Original composition. No text, readable lettering, logo, border, watermark, modern objects or copied game designs. No recognizable borrowed characters. No gleaming steel or iron machinery. All people shown as adults.",
+    "status": "generated-candidate; historical and device QA pending",
+    "generation": {
+      "type": "generated",
+      "tool": "built-in imagegen",
+      "model": "not exposed by built-in tool",
+      "generatedAt": null,
+      "registeredAt": "2026-11-15T17:55:44.894Z",
+      "mode": "generation",
+      "source": "exec-6e262dab-11ba-45b2-9671-7ad2c484ca4c.png",
+      "sha256": "0b98c2bf4c149c1f65d3940fe861abd1a4631ac534020edbf78f22518b0f901b"
+    }
+  },
+  {
+    "asset": "card_well_roster",
+    "tool": "built-in imagegen",
+    "prompt": "Use case: historical-scene. Original premium portrait event-card illustration for The Cards of Fate, well_roster. Human conflict: The well beside the irrigation branch is cloudy. Those queuing cannot reach their fields. Workers propose cleaning in shifts; upstream households want the whole day to finish at once. Scene: Neolithic adults lining up clay water jars while workers lift silt with wooden buckets, small stone-lined well, sage dawn, no metal pump. Era: Neolithic: clay, reed, wood and stone; sage/clay light, no finished bronze equipment unless explicitly discovered in the brief. Cinematic painterly historical realism consistent with the existing hearth, river, granary and copper-workshop collection; natural anatomy, expressive adult faces/hands, tactile materials, restrained emotion. Portrait 2:3, comfortably framed central silhouettes readable on iPhone. Original composition. No text, readable lettering, logo, border, watermark, modern objects or copied game designs. No recognizable borrowed characters. No gleaming steel or iron machinery. All people shown as adults.",
+    "status": "generated-candidate; historical and device QA pending",
+    "generation": {
+      "type": "generated",
+      "tool": "built-in imagegen",
+      "model": "not exposed by built-in tool",
+      "generatedAt": null,
+      "registeredAt": "2026-11-15T17:59:25.458Z",
+      "mode": "generation",
+      "source": "exec-f6c5bd0f-f4a1-4f79-891b-42a75f57fb38.png",
+      "sha256": "a5b31623cf65dd4c5378f125baf9f51ecf9321fbc3e86e900ffbf8c436bc11d7"
+    }
+  },
+  {
+    "asset": "card_quay_exchange",
+    "tool": "built-in imagegen",
+    "prompt": "Use case: historical-scene. Original premium portrait event-card illustration for The Cards of Fate, quay_exchange. Human conflict: A harbor merchant has room for grain but wants the loading crew paid today. A depleted city workforce would delay delivery. Households with empty stores cannot wait for next week’s income. Scene: Bronze city quay with adult grain merchant paying loaders beside baskets and small wooden cargo boat, clay-brick harbor, bronze gold and cool teal, no coins or modern cranes. Era: Bronze Age: clay-brick, timber, bronze and woven textiles; bronze gold and cool teal daylight. Cinematic painterly historical realism consistent with the existing hearth, river, granary and copper-workshop collection; natural anatomy, expressive adult faces/hands, tactile materials, restrained emotion. Portrait 2:3, comfortably framed central silhouettes readable on iPhone. Original composition. No text, readable lettering, logo, border, watermark, modern objects or copied game designs. No recognizable borrowed characters. No gleaming steel or iron machinery. All people shown as adults.",
+    "status": "generated-candidate; historical and device QA pending",
+    "generation": {
+      "type": "generated",
+      "tool": "built-in imagegen",
+      "model": "not exposed by built-in tool",
+      "generatedAt": null,
+      "registeredAt": "2026-11-15T20:40:01.758Z",
+      "mode": "generation",
+      "source": "exec-97c23087-e0c3-420e-b48e-9b71c26fc321.png",
+      "sha256": "42180dbf4390d9cb87a87ed82d0808173e11ffa0b5911aae510a4cd02ecd8d5c"
+    }
+  },
+  {
+    "asset": "card_bread_bond",
+    "tool": "built-in imagegen",
+    "prompt": "Use case: historical-scene. Original premium portrait event-card illustration for The Cards of Fate, bread_bond. Human conflict: Ward bakeries are short of grain. A merchant offers grain now against the next delivery. The scribe opposes opening another bond while one remains unpaid; households reject pledging children. Scene: Bronze adult baker, grain merchant and civic scribe beside nearly empty flour bowls and sealed clay bond, restrained bronze gold and teal shade, no readable text or coins. Era: Bronze Age: clay-brick, timber, bronze and woven textiles; bronze gold and cool teal daylight. Cinematic painterly historical realism consistent with the existing hearth, river, granary and copper-workshop collection; natural anatomy, expressive adult faces/hands, tactile materials, restrained emotion. Portrait 2:3, comfortably framed central silhouettes readable on iPhone. Original composition. No text, readable lettering, logo, border, watermark, modern objects or copied game designs. No recognizable borrowed characters. No gleaming steel or iron machinery. All people shown as adults.",
+    "status": "generated-candidate; historical and device QA pending",
+    "generation": {
+      "type": "generated",
+      "tool": "built-in imagegen",
+      "model": "not exposed by built-in tool",
+      "generatedAt": null,
+      "registeredAt": "2026-11-15T20:44:33.559Z",
+      "mode": "generation",
+      "source": "exec-e33b53ac-17c6-4f05-b5af-5eaa60a0eeac.png",
+      "sha256": "f57783e56579cab39ac3e1b7b0ce3dcc5007e3166d338bdff5c01930a682a894"
+    }
+  },
+  {
+    "asset": "card_mine_shoring",
+    "tool": "built-in imagegen",
+    "prompt": "Use case: historical-scene. Original premium portrait event-card illustration for The Cards of Fate, mine_shoring. Human conflict: A support has bent during this digging season. Craftspeople want to work a small seam safely. The buyer expects the same output from a depleted city workforce; miners say that is no longer the same job. Scene: Bronze adult miners discussing bent timber support at shallow copper mine entrance, stone mauls, baskets and plain bronze tools, ochre stone with teal daylight, no steel rail or modern pit gear. Era: Bronze Age: clay-brick, timber, bronze and woven textiles; bronze gold and cool teal daylight. Cinematic painterly historical realism consistent with the existing hearth, river, granary and copper-workshop collection; natural anatomy, expressive adult faces/hands, tactile materials, restrained emotion. Portrait 2:3, comfortably framed central silhouettes readable on iPhone. Original composition. No text, readable lettering, logo, border, watermark, modern objects or copied game designs. No recognizable borrowed characters. No gleaming steel or iron machinery. All people shown as adults.",
+    "status": "superseded-candidate; replaced modern-looking picks and tall stacks",
+    "generation": {
+      "type": "generated-superseded",
+      "generatedAt": null,
+      "source": "exec-d88d2e1a-a6a3-4e66-b322-83ab484b7fda.png",
+      "sha256": "1367cb5df6944643cf163fa29a9050720a7f0649d5b07ac7f5c70555ee86bca9"
+    }
+  },
+  {
+    "asset": "card_mine_shoring",
+    "tool": "built-in imagegen",
+    "prompt": "Edit this original mine_shoring card illustration for Bronze Age equipment consistency. Preserve the adult group, faces, poses, clothes, cracked timber support, copper ore baskets, composition, natural light and portrait aspect ratio. Replace every modern-looking pointed metal pickaxe and the claw-like pick at the foreground with period-plausible heavy rounded stone mauls bound to plain wooden hafts; keep only small plain bronze chisels if needed. No steel pick heads, modern forged pick profiles or industrial hardware. Replace tall smoking chimney stacks on the distant town roofs with low clay workshop roofs and soft smoke escaping from simple roof openings. No vertical masonry industrial stacks. Preserve all other details. No readable text, logo, watermark or border.",
+    "status": "generated-candidate; historical and device QA pending",
+    "generation": {
+      "type": "generated",
+      "tool": "built-in imagegen",
+      "model": "not exposed by built-in tool",
+      "generatedAt": null,
+      "registeredAt": "2026-11-15T20:48:22.348Z",
+      "mode": "edit",
+      "reference": {
+        "file": "exec-d88d2e1a-a6a3-4e66-b322-83ab484b7fda.png",
+        "sha256": "1367cb5df6944643cf163fa29a9050720a7f0649d5b07ac7f5c70555ee86bca9"
+      },
+      "source": "exec-cb81f7af-70eb-4080-a6c7-b019d4dcd67e.png",
+      "sha256": "66f90e6fa32def7451771a497df24464d7b7a6b1350b66eef392ce22323af043"
+    }
   }
 ]

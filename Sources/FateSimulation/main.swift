@@ -1,5 +1,6 @@
 import Foundation
 import FateCore
+import FateDiagnostics
 
 let arguments = Array(CommandLine.arguments.dropFirst())
 func option(_ name: String) -> String? {
@@ -17,6 +18,8 @@ if let path = option("--cards") {
     guard !content.cards.isEmpty, Set(content.cards.map(\.id)).count == content.cards.count else { throw UsageError.invalidArguments }
 }
 let engine = GameEngine(content: content)
+var crisisTotals: [String:Int] = [:]
+var resolvedOutcomes: [String:Int] = [:]
 var turns: [Int] = []
 var reached: [String: Int] = [:]
 var endings: [String: Int] = [:]
@@ -60,6 +63,7 @@ var capEras: [String:Int] = [:], capChoices: [String:Int] = [:], capStatRanges: 
 var capDistinctCards = 0, capPendingConsequences = 0, reaches100 = 0
 
 for seed in 0..<count {
+    var crisis = CrisisDiagnostics()
     var state = engine.start(seed: UInt64(seed))
     var policy = SeededRandom(state: UInt64(seed) ^ 0xD00D)
     var hadExile = false
@@ -111,6 +115,7 @@ for seed in 0..<count {
         }
         let choices = card.choices.filter { $0.available(in: state) }
         let choice = policyName == "recovery" ? engine.selectRecovery(choices,state:state) : engine.select(choices, state: state, policyName: policyName, random: &policy)
+        crisis.begin(state,card:card,choice:choice)
         let decisionKey = "\(card.id).\(choice.id)"
         decisionCounts[decisionKey, default: 0] += 1
         var lastAuthority = state.stats["authority", default: 0]
@@ -124,6 +129,7 @@ for seed in 0..<count {
         let trackingMetal = previousEra == 2 && previousTechnologies.contains("smelting")
         if trackingMetal { metalDecisionCounts[decisionKey, default: 0] += 1 }
         state = try engine.choose(choice.id, in: state) { stage, snapshot in
+            crisis.observe(stage,state:snapshot,era:previousEra)
             if trackingMetal {
                 for stat in ["population", "stability", "resources"] {
                     let loss = stageStats[stat, default: 0] - snapshot.stats[stat, default: 0]
@@ -149,6 +155,8 @@ for seed in 0..<count {
             if current == 0 && lastAuthority > 0 { zeroStage = key }
             lastAuthority = current
         }
+        crisis.endDecision(state)
+        if let text = state.resolution?.text, let outcome = choice.outcomes.first(where: { $0.text == text }) { resolvedOutcomes[decisionKey+"."+outcome.id,default:0] += 1 }
         for technology in state.technologies.subtracting(previousTechnologies) {
             technologyGains[technology, default: 0] += 1
             technologyTurnSums[technology, default: 0] += state.turn
@@ -205,6 +213,8 @@ for seed in 0..<count {
         }
         if state.stats["resources"] == 0 { metalBlockedRuns["emptyStores", default: 0] += 1 }
     }
+    crisis.finish(state)
+    for (key,value) in crisis.counts { crisisTotals[key,default:0] += value }
     turns.append(state.turn)
     totalLeaderTurns += state.leaderTurns
     if hadExile { exileRuns += 1 }
@@ -214,6 +224,7 @@ for seed in 0..<count {
 }
 let sortedTurns=turns.sorted()
 let report: [String: Any] = [
+    "crisisDiagnostics":crisisTotals,"resolvedOutcomeCounts":resolvedOutcomes,
     "eraDecisionCounts":eraDecisions,"eraRepeatCounts":eraRepeats,"lateEraDecisions":lateDecisions,"lateEraRepeats":lateRepeats,
     "eraStatSums":eraStatSums,"stageStatGains":stageGains,"stageStatLosses":stageLosses,
     "capsByEra":capEras,"cappedLast80ChoiceCounts":capChoices,"cappedLast80StatRangeSums":capStatRanges,

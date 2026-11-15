@@ -10,7 +10,7 @@ export function validate(cards, eras) {
   const assert=(ok,message)=>{if(!ok) errors.push(message);};
   const localized=(value,label)=>assert(value && typeof value.tr==='string' && value.tr.trim().length>0 && typeof value.en==='string' && value.en.trim().length>0,`${label}: missing translation`);
   const flags=new Map(), chains=new Map(), ids=new Set(), titles=new Set(), descriptions=new Set();
-  let crossEraLinks=0, stochasticChoices=0, choicesCount=0;
+  let crossEraLinks=0, stochasticChoices=0, conditionalOutcomeChoices=0, choicesCount=0;
   const effects=cards.flatMap(c=>(c.choices??[]).flatMap(ch=>[ch.immediateEffects,...(ch.outcomes??[]).map(o=>o.effect)])).filter(Boolean);
   const technologies=new Set(effects.flatMap(e=>e.technologies??[]));
   const buildings=new Set(effects.flatMap(e=>e.buildings??[]));
@@ -24,8 +24,9 @@ export function validate(cards, eras) {
     assert(Array.isArray(list),`${label}: conditions must be array`);
     if(!Array.isArray(list)) return;
     for(const condition of list) {
-      assert(Object.keys(condition).every(k=>['stat','minimum','maximum','flag','absentFlag','faction','relationMinimum','relationMaximum','leadership','technology','building','lastDecision','notLastDecision'].includes(k)),`${label}: unknown condition key`);
-      assert(condition.stat||condition.flag||condition.absentFlag||condition.faction||condition.leadership||condition.technology||condition.building||condition.lastDecision||condition.notLastDecision,`${label}: empty condition`);
+      assert(Object.keys(condition).every(k=>['stat','minimum','maximum','flag','absentFlag','faction','relationMinimum','relationMaximum','leadership','technology','building','lastDecision','notLastDecision','completedCard'].includes(k)),`${label}: unknown condition key`);
+      assert(condition.stat||condition.flag||condition.absentFlag||condition.faction||condition.leadership||condition.technology||condition.building||condition.lastDecision||condition.notLastDecision||condition.completedCard,`${label}: empty condition`);
+      if(condition.completedCard!==undefined) assert(cards.some(c=>c.id===condition.completedCard),`${label}: unknown completed card`);
       for(const field of ['lastDecision','notLastDecision']) if(condition[field]!==undefined) {
         const [id,choice,...extra]=String(condition[field]).split('.');
         const source=cards.find(c=>c.id===id);
@@ -65,6 +66,7 @@ export function validate(cards, eras) {
     for(const [stat,delta] of Object.entries(value.stats)) assert(stats.has(stat)&&Number.isInteger(delta)&&Math.abs(delta)<=100,`${label}: invalid stat effect ${stat}`);
     for(const field of ['flags','technologies','buildings']) assert(Array.isArray(value[field])&&value[field].every(v=>typeof v==='string'&&v.length>0),`${label}: invalid ${field}`);
     assert(Number.isInteger(value.rivalRelation)&&Math.abs(value.rivalRelation)<=100,`${label}: invalid rival relation`);
+    if(value.removeFlags!==undefined) assert(Array.isArray(value.removeFlags)&&value.removeFlags.every(f=>typeof f==='string'&&f.length>0),`${label}: invalid removed flags`);
     if(value.rivalRelations !== undefined) {
       const valid = value.rivalRelations && typeof value.rivalRelations === 'object' && !Array.isArray(value.rivalRelations);
       assert(valid,`${label}: invalid targeted relations`);
@@ -96,13 +98,14 @@ export function validate(cards, eras) {
       conditions([...(card.requirements??[]),...(choice.requirements??[])],label+' combined requirements');
       effect(choice.immediateEffects,label,card.era);
       assert(Array.isArray(choice.outcomes)&&choice.outcomes.length>0,`${label}: no outcomes`);
-      if(choice.outcomes?.length>1) stochasticChoices++;
+      if(choice.outcomes?.length>1) { if(choice.outcomes.every(o=>o.requirements?.length)) conditionalOutcomeChoices++; else stochasticChoices++; }
       assert(Math.abs((choice.outcomes??[]).reduce((s,o)=>s+o.probability,0)-1)<1e-9,`${label}: probabilities must total one`);
       const outcomeIDs=new Set();
       for(const outcome of choice.outcomes??[]) {
         assert(typeof outcome.id==='string'&&!outcomeIDs.has(outcome.id),`${label}: duplicate/missing outcome ID`); outcomeIDs.add(outcome.id);
         assert(Number.isFinite(outcome.probability)&&outcome.probability>0&&outcome.probability<=1,`${label}: invalid probability`);
         assert(outcome.affinity==null||stats.has(outcome.affinity),`${label}: unknown affinity`);
+        if(outcome.requirements!==undefined) conditions([...(card.requirements??[]),...(choice.requirements??[]),...outcome.requirements],label+': context outcome');
         localized(outcome.text,label+' outcome'); effect(outcome.effect,label,card.era);
         assert(animations.has(outcome.animationPreset),`${label}: unknown outcome animation`);
         assert(Array.isArray(outcome.delayedEffects),`${label}: missing delayedEffects`);
@@ -121,7 +124,11 @@ export function validate(cards, eras) {
     assert(declaredFlags.size===actualFlags.size&&[...actualFlags].every(f=>declaredFlags.has(f)),label+': stale worldFlags');
     if(card.storyChainId) chains.set(card.storyChainId,[...(chains.get(card.storyChainId)??[]),card.id]);
   }
-  for(const card of cards) for(const condition of [...(card.requirements??[]),...(card.choices??[]).flatMap(c=>c.requirements??[])]) {
+  for(const card of cards) for(const condition of [...(card.requirements??[]),...(card.choices??[]).flatMap(c=>[...(c.requirements??[]),...(c.outcomes??[]).flatMap(o=>o.requirements??[])])]) {
+    if(condition.completedCard) {
+      const source=cards.find(c=>c.id===condition.completedCard);
+      if(source) assert(source.era<=card.era,`${card.id}: history only completed in future era`);
+    }
     if(condition.flag) {
       assert(flags.has(condition.flag),`${card.id}: unproduced required flag ${condition.flag}`);
       assert((flags.get(condition.flag)??99)<=card.era,`${card.id}: required flag only produced in future era`);
@@ -136,7 +143,7 @@ export function validate(cards, eras) {
     const overlap=[...a].filter(t=>b.has(t)).length / new Set([...a,...b]).size;
     if(overlap>0.55) warnings.push(`Editorial similarity: ${cards[i].id}, ${cards[j].id} (${overlap.toFixed(2)})`);
   }
-  return {errors,warnings,cards:cards.length,choices:choicesCount,stochasticChoices,eras:Object.fromEntries(eras.map(e=>[e.id,cards.filter(c=>c.era===e.id).length])),authoredChainGroups:chains.size,multiCardChainGroups:[...chains.values()].filter(v=>v.length>=2).length,crossEraLinks};
+  return {errors,warnings,cards:cards.length,choices:choicesCount,stochasticChoices,conditionalOutcomeChoices,eras:Object.fromEntries(eras.map(e=>[e.id,cards.filter(c=>c.era===e.id).length])),authoredChainGroups:chains.size,multiCardChainGroups:[...chains.values()].filter(v=>v.length>=2).length,crossEraLinks};
 }
 
 export function report() {

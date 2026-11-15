@@ -5,12 +5,12 @@ Full requirements: `MASTER_SPEC.md`. Target: commercially polished, offline-firs
 | Phase | Deliverables and acceptance | Current status |
 |---|---|---|
 | 0 | Architecture, 12-era guide, schema, acceptance ledger, real source | Initial documents and source exist; design needs further depth |
-| 1 | iPhone build; deterministic decisions; result acknowledgment; atomic save; start/end tests | 61 core tests verified at ee15f32; identical-runtime native build and five UI tests verified at 0be976a |
-| 2 | 180 distinct first-three-era events, rivals, settlements, legacy, artwork and transitions | 105 events (35/35/35); 69 statically detected cross-era links; tested debt/hospitality branches; faction support/pacts and initial opposition coalition implemented; richer politics, content and production art remain |
+| 1 | iPhone build; deterministic decisions; result acknowledgment; atomic save; start/end tests | 70 core / six UI tests verified at 3d589af; 120-card local suite has 83 tests (78 Core, five diagnostics), native gate pending |
+| 2 | 180 distinct first-three-era events, rivals, settlements, legacy, artwork and transitions | 120 events (40/40/40); 90 static cross-era references and two self-reviewed/tested closed chains; tested debt/hospitality branches; faction support/pacts and initial opposition coalition implemented; richer politics, content and production art remain |
 | 3 | 300 era 4–8 events, diplomacy/trade/war/science, visual/audio integration | Planned; era metadata only |
 | 4 | 240 era 9–12 events, modern/AI/space systems, endings | Planned; era metadata only |
 | 5 | 80 extra events; 800 total; 100 complete chains; 50 cross-era links; 30 endings | Not met |
-| 6 | Original branding/icon, unique card art, 15 animation types, 12 scores/ambiences, 40 effects | Ten generated illustration candidates; three prototype cues; presentation prototypes |
+| 6 | Original branding/icon, unique card art, 15 animation types, 12 scores/ambiences, 40 effects | Fifteen generated illustration candidates; three prototype cues; presentation prototypes |
 | 7 | Weekly Game Center, custom rankings, retry, week isolation, production configuration | Adapter and week logic written; account/device tests pending |
 | 8 | 10,000 actual engine simulations; pacing, skill balance, localization/accessibility/offline QA | Same-seed 52/64/76/90/105 studies × four policies executed on Windows; five 10,000-seed policies verified in 90-card native CI; 105-card six-policy native gate passed at 3d589af / run 43739396488 (70 Swift, 39 Node, six UI tests); balance/production QA incomplete |
 | 9 | Signed release, privacy/licensing, App Store metadata, screenshots, TestFlight | Checklist drafted; release blocked |
@@ -30,3 +30,8 @@ Full requirements: `MASTER_SPEC.md`. Target: commercially polished, offline-firs
 Do not mark Phase 1 complete until `swift test` and simulator `xcodebuild` actually pass. Fix critical failures before expanding content. No production release while any acceptance ledger item lacks evidence. Later metadata/scaffolding does not mean a later phase is completed.
 
 Every checkpoint must record files, implemented behavior, commands actually executed, failures, missing assets and next steps in `PROGRESS.md`. Never substitute a JavaScript replica simulation for the Swift engine’s balance evidence.
+
+
+## 120 checkpoint boundary
+
+83 local Swift / 48 Node pass; new native gate pending. New food coverage/invoice, contextual work and saved bond closure are implemented without changing the five diagnostic score policies or opening Era 4. Future imperial mechanics and transition dependencies are documented in ERA4_READINESS.md; a single experimental fourth-era card must not masquerade as a complete era. Next: accept native evidence and then design the 120 → 135 group from measured exposure and unfinished city crises.

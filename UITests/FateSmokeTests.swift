@@ -29,7 +29,7 @@ final class FateSmokeTests: XCTestCase {
         struct Fixture: Decodable { var id: String; var language: String; var large: Bool }
         let url = try XCTUnwrap(Bundle(for: FateSmokeTests.self).url(forResource: "ArtFixtures", withExtension: "json"))
         let fixtures = try JSONDecoder().decode([Fixture].self, from: Data(contentsOf: url))
-        XCTAssertGreaterThanOrEqual(fixtures.count, 10)
+        XCTAssertGreaterThanOrEqual(fixtures.count, 15)
         for fixture in fixtures {
             let (id, language, large) = (fixture.id, fixture.language, fixture.large)
             app.terminate()
@@ -39,8 +39,13 @@ final class FateSmokeTests: XCTestCase {
             XCTAssertEqual(element("card.art").value as? String, "card_\(id)")
             if large { app.swipeUp() }
             capture("\(language)-art-\(id)-\(large ? "large-reduced-motion" : "standard")")
-            let second = app.buttons.matching(NSPredicate(format: "identifier BEGINSWITH %@", "choice.")).element(boundBy: 1)
+            let options = app.buttons.matching(NSPredicate(format: "identifier BEGINSWITH %@", "choice."))
+            let preferred = options.element(boundBy: 1)
+            let second: XCUIElement
+            if preferred.exists && preferred.isEnabled { second = preferred }
+            else { second = try XCTUnwrap(options.allElementsBoundByIndex.first { $0.isEnabled }, "No legal fixture choice") }
             reveal(second)
+            XCTAssertTrue(second.isEnabled)
             capture("\(language)-art-\(id)-reachable-options")
             tap(second)
             XCTAssertTrue(element("result.title").waitForExistence(timeout: 10))

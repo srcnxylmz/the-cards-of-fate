@@ -25,6 +25,7 @@ public struct Condition: Codable, Equatable {
     /// Latest decision on the named card (cardID.choiceID), derived from saved history.
     public var lastDecision: String? = nil
     public var notLastDecision: String? = nil
+    public var completedCard: String? = nil
     public func matches(_ state: GameState) -> Bool {
         func latest(_ reference: String) -> Bool {
             let parts = reference.split(separator: ".", maxSplits: 1).map(String.init)
@@ -33,6 +34,7 @@ public struct Condition: Codable, Equatable {
         }
         if let lastDecision, !latest(lastDecision) { return false }
         if let notLastDecision, latest(notLastDecision) { return false }
+        if let completedCard, !state.history.contains(where: { $0.cardID == completedCard && $0.choiceID != nil }) { return false }
         if let technology, !state.technologies.contains(technology) { return false }
         if let building, !state.buildings.contains(building) { return false }
         if let faction {
@@ -60,6 +62,8 @@ public struct Effect: Codable, Equatable {
     public var rivalRelation: Int
     /// Optional so existing v1 saved consequences remain decodable.
     public var rivalRelations: [String: Int]? = nil
+    /// Optional for existing content and saved scheduled effects.
+    public var removeFlags: [String]? = nil
     public static let empty = Effect(stats: [:], flags: [], technologies: [], buildings: [], rivalRelation: 0)
 }
 
@@ -78,6 +82,8 @@ public struct Outcome: Codable, Equatable, Identifiable {
     public var effect: Effect
     public var delayedEffects: [DelayedEffect]
     public var animationPreset: String
+    /// Context gates are evaluated before resolving a choice, without drawing RNG.
+    public var requirements: [Condition]? = nil
 }
 
 public struct Choice: Codable, Equatable, Identifiable {
@@ -87,7 +93,10 @@ public struct Choice: Codable, Equatable, Identifiable {
     public var requirements: [Condition]
     public var immediateEffects: Effect
     public var outcomes: [Outcome]
-    public func available(in state: GameState) -> Bool { requirements.allSatisfy { $0.matches(state) } }
+    public func available(in state: GameState) -> Bool {
+        requirements.allSatisfy { $0.matches(state) }
+            && outcomes.contains { ($0.requirements ?? []).allSatisfy { $0.matches(state) } }
+    }
 }
 
 public struct CardEvent: Codable, Equatable, Identifiable {

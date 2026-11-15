@@ -7,6 +7,7 @@ import { addSeasonEvents } from './content/season-events.mjs';
 import { adaptRecurringEvents } from './content/adapt-events.mjs';
 import { addMilestoneEvents } from './content/milestone-events.mjs';
 import { addRecoveryEvents } from './content/recovery-events.mjs';
+import { addCityEvents } from './content/city-events.mjs';
 import { composeArtManifest } from './art-pipeline.mjs';
 
 // Authoring helpers normalize structure only. Every event below is individually authored.
@@ -244,6 +245,7 @@ addSeasonEvents({ card, choice, outcome, delayed });
 adaptRecurringEvents({ cards, choice, outcome, delayed });
 addMilestoneEvents({ cards, card, choice, outcome, delayed });
 addRecoveryEvents({ cards, card, choice, outcome, delayed });
+addCityEvents({ cards, card, choice, outcome, delayed });
 
 // Durable historical decisions close using existing flags, including older v1 saves.
 for (const id of ['sacred_fire', 'stranger_child', 'cave_marks', 'seed_debt', 'ancestor_field']) {

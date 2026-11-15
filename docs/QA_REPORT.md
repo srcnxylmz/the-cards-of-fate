@@ -1,3 +1,11 @@
+# 120-card quality gate — native acceptance pending (2026-11-16)
+
+Current local source: 120 cards / 288 choices / 40-40-40, 15 real candidates / 105 missing. 83 Swift tests (78 Core plus five diagnostics) and 48 Node passed. Content has zero structural errors/warnings; generation, feedback and art audits pass. Final same-seed measurements are complete; a new native run remains pending. The 105-card evidence below is historical.
+
+New tests cover actual food coverage versus empty reserves, partial/full/hard deficits, funding upkeep from current supplies, conditional outcome boundaries at every 0–100 value, persistent open bonds and real payment/default, both closed story chains, old optional-field decoding and save/replay. The old 105 authored definitions are deeply compared unchanged. Existing five policy functions and all ten old PNGs are retained.
+
+Native art coverage now chooses the second option when enabled, otherwise a genuinely enabled option; an unpaid bond’s repayment is correctly unavailable in a fresh fixture. No choice requirement is bypassed. As before, Debug art fixtures select the card/era for presentation and do not prove unassisted story reachability; engine regressions and natural ordered histories provide that separate evidence. All 15 file-backed fixtures remain real menu/start/choose/result flows. Pixel OCR, safe scrolling, large text, Reduce Motion override and three-cue playback/mute tests are preserved. The CI ceiling is 45 minutes to accommodate longer living/censored runs plus six required 10,000-seed simulations and UI coverage, avoiding timeout-driven duplicate runs; it is a ceiling, not extra work.
+
 # Verified 105-card QA checkpoint — 2026-11-15
 
 Local: 70 Swift / 39 Node passed, generation/audio/art checks passed. Final 50,000-run comparison is complete; all six native UI tests passed at [run 43739396488](https://github.com/srcnxylmz/the-cards-of-fate/actions/runs/43739396488). Previous checkpoint evidence below is historical.
@@ -154,3 +162,8 @@ All four production first-frame OCR notes show visible=6, missing=[] (TR/EN × n
 The checkpoint is now safely published and natively verified. No 120-card content batch was started. Next group: address Bronze starvation spikes and delayed population burdens, investigate genuinely changing civic/trade conditions, profile eligibility/history lookup cost, retain healthy censored caps and repeat the same seeds when rules/content change. Random access and knowledge/progression/recovery lifetime regressions remain explicit in MILESTONE_105_ANALYSIS.md. Scope stays 12 eras / at least 800 original cards / 100 approved chains / 30 endings. Signing, Game Center account/version fairness, physical device/accessibility and 95 missing illustrations remain release blockers.
 
 Subsequent publication changes reports only and uses [skip ci]; native evidence belongs to 3d589af1a02be3032f60e6560e75fabeefa2c407, not an invented second build.
+
+
+### Measurement-only recovery correction
+
+Five dedicated FateDiagnostics tests reject recovery after card death or a later terminal council phase, require a living complete decision, retain censored episodes, and prove local Bronze-window and distinct-choice counting. A test fixture import required @testable FateCore and was corrected before all tests passed. Both archived reference/current cohorts were replayed from prebuilt binaries in parallel. Every non-diagnostic field across all twelve files is unchanged; only corrected recovery observations differ. No game-stat improvement is attributed to this classifier change. Older provisional recovery tables are withdrawn and superseded by the regenerated analysis.

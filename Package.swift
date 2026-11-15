@@ -8,6 +8,8 @@ let package = Package(
     targets: [
         .target(name: "FateCore", resources: [.process("Content")]),
         .testTarget(name: "FateCoreTests", dependencies: ["FateCore"]),
-        .executableTarget(name: "FateSimulation", dependencies: ["FateCore"])
+        .target(name: "FateDiagnostics", dependencies: ["FateCore"]),
+        .testTarget(name: "FateDiagnosticsTests", dependencies: ["FateDiagnostics", "FateCore"]),
+        .executableTarget(name: "FateSimulation", dependencies: ["FateCore", "FateDiagnostics"])
     ]
 )
