@@ -3,7 +3,8 @@
     "id": "cultivation",
     "era": 1,
     "unlockedBy": [
-      "river_tracks"
+      "river_tracks",
+      "spring_seedbed"
     ],
     "status": "implemented"
   },

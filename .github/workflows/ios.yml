@@ -16,11 +16,12 @@ jobs:
       - run: node tools/build-content.mjs --check
       - run: node tools/validate-content.mjs
       - run: swift test
-      - name: Compare three strategies over 10000 seeds each
+      - name: Compare four strategies and optional council management over 10000 seeds each
         run: |
           swift run -c release FateSimulation 10000 --policy random --output docs/simulation-random.json
           swift run -c release FateSimulation 10000 --policy survival --output docs/simulation-survival.json
           swift run -c release FateSimulation 10000 --policy knowledge --output docs/simulation-knowledge.json
+          swift run -c release FateSimulation 10000 --policy progression --output docs/simulation-progression.json
           swift run -c release FateSimulation 10000 --policy survival --manage-council --output docs/simulation-survival-council.json
       - name: Generate Xcode project
         run: |

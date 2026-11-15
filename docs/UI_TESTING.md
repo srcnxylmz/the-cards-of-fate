@@ -30,3 +30,7 @@ Sources: [Apple XCTest attachments](https://developer.apple.com/documentation/xc
 ## Paid council action verified
 
 [run 42889283237](https://github.com/srcnxylmz/the-cards-of-fate/actions/runs/42889283237), commit fdf2b79: all steps passed; 26 Swift tests, 18 content tests, three 10,000-seed policies plus one 10,000-seed managed-council experiment, build/install/launch and 3 UI tests (119.418 seconds, zero failures). Artifact 13798560384 downloaded. The council screenshot confirms hunter relation 20; panel content is partly below the viewport, so the next test revision explicitly scrolls for full-panel captures. The initial run 42845432807 failed because the DisclosureGroup identifier propagated to its children. Fixed by tagging only its label. No assertions were removed to hide the failure.
+
+## 76-card presentation test revision
+
+Original three flows remain. A fourth test displays sacred_fire, river_tracks and first_granary using Debug-only --ui-test-card with a three-ID allowlist. It still enters through the real menu, resolves an actual second choice and verifies turn/result; no result or ending is injected. first_granary uses --large-text-reduced-motion to set the real SwiftUI Dynamic Type/Reduce Motion environment in Debug. This is not an OS Settings/VoiceOver test. Release ignores both fixtures. The compact simulator selector attempts iPhone SE 3 on the installed runtime, logs fallback, and records the actual UDID/type/runtime. Screenshots must be inspected before visual acceptance; native run currently pending.

@@ -1,12 +1,16 @@
 # Content bible
 
-Editorial principle: each card needs a specific human conflict, an observable cost, competing reasonable values, and consequences that fit the era. Neither option should simply be the same reward in different wording. Turkish is authored naturally, with a complete English counterpart for the current 50-card set.
+Editorial principle: each card needs a specific human conflict, an observable cost, competing reasonable values, and consequences that fit the era. Neither option should simply be the same reward in different wording. Turkish is authored naturally, with a complete English counterpart for the current 76-card set.
 
 ## Current inventory — 2026-11-15
 
-64 unique events: 21 Paleolithic, 21 Neolithic, 22 Bronze. The starting local draft had 52 IDs, while GitHub HEAD 83170b3 had 51. All preserved; twelve new events in inheritance-events.mjs. 136 choices, four probabilistic decisions. Seven thematic chain groups and 32 detected cross-era flag links remain distinct from editorially completed chains. See CONTENT_SOURCES.md for canonical generation and draft preservation.
+76 events: 25 Paleolithic, 25 Neolithic, 26 Bronze. All 64 prior IDs retained. 162 choices, four probabilistic decisions, seven thematic chain groups and 35 detected cross-era flag links. Chain grouping is not completed-chain acceptance.
 
-The inheritance batch introduces finite disputes about inherited council authority, access to a quarry, storing seed and maintaining shared roofs. Each has TR/EN narrative, targeted faction effects, delayed consequences, a unique art brief, and cue/animation metadata. None of the twelve repeats after resolution. Optional choices depend on earlier branches; delayed flags gate later events. New flags persist across generations but these cards do not require a specific generation number. Four arcs are regression-tested through actual selection using controlled era/stat fixtures; natural-seed simulations provide separate observed reachability evidence.
+The season-events batch adds nine repeatable, state-aware crises plus three historical one-shot events. Herd access/migration disputes spend food, people or habitat; field rotation/seed testing/pasture/irrigation work require upkeep; cargo fraud and foundry smoke trade immediate production against obligations and health. The seedbed is a second cultivation opportunity with real costs; its delayed village evidence unlocks testing by lot. The shared silt rota opens intercity maintenance terms; old apprentice teaching unlocks a safer furnace rota. Future effects are flags, conditional options and delayed costs/benefits, not only immediate stat deltas.
+
+Historical first decisions close on existing saved flags. Seasonal recurrence is retained where it represents a new herd, harvest, shipment or work cycle. Recurring ash-garden trials now carry maintenance. Regression tests verify closure, gates, branching, explicit costs and replay; full four-policy runs found no exhausted deck. This does not certify every optimal strategy or all narrative branches.
+
+The earlier inheritance batch remains intact, with four long-term arcs documented below.
 
 The second authored batch is in `tools/content/legacy-events.mjs`: witness stones, guest hunting routes, a damaged waterskin, shared boundary signs, flood-marker memory, missing granary shares, an apprentice's cracked kiln, ash farming, descendants' trading rights, competing historical records, water law and harvest guarantees. New flags connect these disputes to actual earlier decisions. Source→follow-up eligibility and branch closure are covered by executed Swift tests.
 

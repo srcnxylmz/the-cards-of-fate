@@ -1,8 +1,10 @@
 param(
     [ValidateSet('Test', 'Simulate')][string]$Task = 'Test',
     [ValidateRange(1, 1000000)][int]$Runs = 10000,
-    [ValidateSet('random', 'survival', 'knowledge')][string]$Policy = 'random',
+    [ValidateSet('random', 'survival', 'knowledge', 'progression')][string]$Policy = 'random',
     [switch]$ManageCouncil,
+    [string]$CardsPath,
+    [string]$OutputDirectory = 'docs',
     [string]$SwiftRoot = (Join-Path $env:LOCALAPPDATA 'Programs\Swift')
 )
 $ErrorActionPreference = 'Stop'
@@ -47,15 +49,17 @@ try {
     $env:SDKROOT = $sdk
     Push-Location $projectRoot
     try {
+        New-Item -ItemType Directory -Force $OutputDirectory | Out-Null
         & (Join-Path $bin 'swift.exe') --version
         if ($Task -eq 'Test') {
-            & (Join-Path $bin 'swift.exe') test 2>&1 | Tee-Object -FilePath 'docs/swift-test-windows.log'
+            & (Join-Path $bin 'swift.exe') test 2>&1 | Tee-Object -FilePath (Join-Path $OutputDirectory 'swift-test-windows.log')
         } else {
             $councilArgs = @()
             $reportName = $Policy
             if ($ManageCouncil) { $councilArgs = @('--manage-council'); $reportName = "$Policy-council" }
-            & (Join-Path $bin 'swift.exe') run -c release FateSimulation $Runs --policy $Policy @councilArgs --output "docs/simulation-$reportName.json" 2>&1 |
-                Tee-Object -FilePath "docs/swift-simulation-$reportName-windows.log"
+            if ($CardsPath) { $councilArgs += @('--cards', $CardsPath) }
+            & (Join-Path $bin 'swift.exe') run -c release FateSimulation $Runs --policy $Policy @councilArgs --output (Join-Path $OutputDirectory "simulation-$reportName.json") 2>&1 |
+                Tee-Object -FilePath (Join-Path $OutputDirectory "swift-simulation-$reportName-windows.log")
         }
         if ($LASTEXITCODE -ne 0) { throw "Swift $Task failed with exit code $LASTEXITCODE" }
     } finally { Pop-Location }

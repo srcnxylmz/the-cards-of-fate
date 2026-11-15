@@ -8,5 +8,11 @@
     "asset": "card_river_tracks",
     "tool": "built-in imagegen",
     "prompt": "Use case: historical-scene. Asset type: original premium event-card illustration for The Cards of Fate, river_tracks. A Paleolithic scout in weathered animal-hide clothing crouches by sprouting wild grain on a muddy riverbank after waters recede. The scout studies tiny seedlings and animal tracks, while a migrating herd is small and distant across the valley. The narrative dilemma is staying to understand the grain cycle versus following the herd for immediate food. Cinematic painterly historical fantasy realism, restrained natural anatomy, textured mud, reeds, stone tools only, cold dawn light from upper right, moss green and silt ochre palette with pale mist. Portrait 2:3 composition with readable central silhouette on iPhone, intimate foreground and deep river landscape. No farming buildings, no metal tools, no text, no borders, no logo or watermark. Original composition, no copied game designs."
+  },
+  {
+    "asset": "card_first_granary",
+    "tool": "built-in imagegen",
+    "prompt": "Use case: historical-scene. Asset type: original event-card illustration for The Cards of Fate, first_granary. Cinematic historical fantasy realism, premium collectible card illustration, natural anatomy, painterly material detail consistent with the existing Paleolithic hearth and river scout images. Neolithic village families constructing their first communal granary: an adult woman and an older man carefully carry a woven basket of grain toward a raised clay-and-reed storage building, unfinished reed roof behind them, other adults considering who should hold a simple wooden key. The dilemma is contributing scarce roof reeds to communal storage versus keeping household stores. Neolithic clay, timber, reed, woven flax garments, stone tools only. Sage green and warm clay palette, low golden late-afternoon side light, intimate foreground faces and hands with a readable raised granary in the middle distance. Portrait 2:3 composition, central subjects readable at iPhone size, full scene extends to edges. Original composition. No text, no lettering, no logo, no border, no watermark, no bronze tools, no scribes, no modern objects.",
+    "status": "generated-candidate; historical and device QA pending"
   }
 ]

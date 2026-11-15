@@ -4,7 +4,7 @@ import FateCore
 @main
 struct TheCardsOfFateApp: App {
     var body: some Scene {
-        WindowGroup { RootView() }
+        WindowGroup { RootView().modifier(UITestAccessibility()) }
     }
 }
 
@@ -70,20 +70,31 @@ final class GameStore: ObservableObject {
         #if DEBUG
         if ProcessInfo.processInfo.arguments.contains("--ui-testing") { seed = 42 }
         #endif
-        commit(engine.start(seed: seed, mode: mode))
+        var initial = engine.start(seed: seed, mode: mode)
+        #if DEBUG
+        let arguments = ProcessInfo.processInfo.arguments
+        if arguments.contains("--ui-testing"), let index = arguments.firstIndex(of: "--ui-test-card"), index + 1 < arguments.count,
+           ["sacred_fire", "river_tracks", "first_granary"].contains(arguments[index + 1]),
+           let card = content?.card(arguments[index + 1]) {
+            initial.era = card.era; initial.currentCardID = card.id
+            initial.discovered.insert(card.id); initial.lastSeen[card.id] = initial.turn
+        }
+        #endif
+        commit(initial)
         if error == nil { inGame = true }
     }
 
-    func choose(_ choice: Choice, sound: Bool, haptics: Bool) {
-        guard let state, let engine else { return }
+    @discardableResult func choose(_ choice: Choice, sound: Bool, haptics: Bool) -> Bool {
+        guard let state, let engine else { return false }
         do {
             let next = try engine.choose(choice.id, in: state)
-            guard commit(next) else { return }
+            guard commit(next) else { return false }
             feedback.play(preset: next.resolution?.animation ?? "normal", sound: sound, haptics: haptics)
             if next.mode == .weekly, let week = next.weekID {
                 gameCenter.queueScore(turns: next.turn, week: week)
             }
-        } catch { self.error = String(describing: error) }
+            return true
+        } catch { self.error = String(describing: error); return false }
     }
 
     func acknowledge() {
@@ -127,6 +138,7 @@ struct RootView: View {
     @AppStorage("haptics") private var haptics = true
     @AppStorage("music") private var music = true
     @Environment(\.accessibilityReduceMotion) private var reduceMotion
+    @Environment(\.dynamicTypeSize) private var typeSize
     @State private var panel: Panel?
     @State private var newMode: RunMode?
     enum Panel: String, Identifiable { case history, collection, settings, leaderboard; var id: String { rawValue } }
@@ -213,7 +225,7 @@ struct RootView: View {
                     Spacer()
                     Button { panel = .history } label: { Image(systemName: "book.closed").frame(width: 44, height: 44) }.accessibilityLabel(t("Uygarlık tarihim", "My civilization history"))
                 }
-                LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible()), GridItem(.flexible())], spacing: 12) {
+                LazyVGrid(columns: Array(repeating: GridItem(.flexible()), count: typeSize.isAccessibilitySize ? 1 : 3), spacing: 12) {
                     ForEach(Stat.allCases, id: \.self) { stat in
                         VStack(alignment: .leading, spacing: 5) {
                             HStack { Text(statName(stat)).font(.caption); Spacer(); Text("\(state.stats[stat.rawValue, default: 0])").font(.caption.monospacedDigit()) }
@@ -242,30 +254,9 @@ struct RootView: View {
                         Button(t("Yeni uygarlık", "New civilization")) { begin(.story) }.buttonStyle(.borderedProminent)
                     }.padding(24)
                 } else if let card = store.content?.card(state.currentCardID) {
-                    VStack(alignment: .leading, spacing: 18) {
-                        if UIImage(named: card.artAsset) != nil {
-                            Image(card.artAsset).resizable().scaledToFit().frame(maxHeight: 300).frame(maxWidth: .infinity).clipShape(RoundedRectangle(cornerRadius: 12)).accessibilityHidden(true)
-                        } else {
-                            SettlementView(era: state.era, buildings: state.buildings, reduceMotion: reduceMotion).frame(height: 150).clipShape(RoundedRectangle(cornerRadius: 12)).accessibilityLabel(t("Uygarlık taslak görünümü", "Civilization prototype view"))
-                        }
-                        Text(card.title.value(language)).font(.system(.title2, design: .serif, weight: .semibold))
-                            .accessibilityIdentifier("card.title").accessibilityValue(card.id)
-                        Text(card.description.value(language)).font(.body).lineSpacing(5).fixedSize(horizontal: false, vertical: true)
-                        ForEach(card.choices) { choice in
-                            Button { store.choose(choice, sound: sound, haptics: haptics) } label: {
-                                VStack(alignment: .leading, spacing: 5) {
-                                    Text(choice.text.value(language)).font(.body.weight(.medium))
-                                    Text(choice.risk.value(language)).font(.caption).foregroundStyle(.secondary)
-                                }.frame(maxWidth: .infinity, minHeight: 48, alignment: .leading).padding(12)
-                            }.buttonStyle(.plain)
-                                .accessibilityIdentifier("choice.\(choice.id)")
-                                .background(gold.opacity(0.10), in: RoundedRectangle(cornerRadius: 10))
-                                .overlay(RoundedRectangle(cornerRadius: 10).stroke(gold.opacity(0.30)))
-                                .disabled(!choice.available(in: state))
-                                .opacity(choice.available(in: state) ? 1 : 0.4)
-                        }
-                    }.padding(20).background(.white.opacity(0.035), in: RoundedRectangle(cornerRadius: 20)).id(card.id)
-                        .transition(reduceMotion ? .opacity : .move(edge: .bottom).combined(with: .opacity))
+                    EventCardView(card: card, era: state.era, buildings: state.buildings, language: language, reduceMotion: reduceMotion, available: { $0.available(in: state) }) { choice in
+                        store.choose(choice, sound: sound, haptics: haptics)
+                    }.id(card.id)
                 }
                 councilView(state)
             }.padding(.horizontal, 18).padding(.bottom, 28).frame(maxWidth: 550)

@@ -74,10 +74,10 @@
   {
     "id": "card_first_granary",
     "cardID": "first_granary",
-    "status": "missing",
-    "file": null,
+    "status": "generated-candidate",
+    "file": "App/Assets.xcassets/card_first_granary.imageset/card_first_granary.png",
     "brief": "Raised mud granary under construction, families with grain baskets, clay and flax palette, late sunlight.",
-    "license": null
+    "license": "Original AI-generated project illustration; see assets/LICENSES.md"
   },
   {
     "id": "card_canal_boundary",
@@ -509,6 +509,102 @@
     "status": "missing",
     "file": null,
     "brief": "Bronze city storehouse under construction, builders carrying timber beside elder grove keeper and reed-roof model, warm amber dust and forest green, portrait.",
+    "license": null
+  },
+  {
+    "id": "card_calving_herd",
+    "cardID": "calving_herd",
+    "status": "missing",
+    "file": null,
+    "brief": "Paleolithic hunters observing adult deer and calves in a rocky pass, flint spears lowered, cold spring light, moss and ochre, portrait, no metal.",
+    "license": null
+  },
+  {
+    "id": "card_spring_seedbed",
+    "cardID": "spring_seedbed",
+    "status": "missing",
+    "file": null,
+    "brief": "Paleolithic gatherer placing woven branches around tiny wild grain patch on river mud, hide shelters and distant herd, cool dawn with warm ochre, portrait.",
+    "license": null
+  },
+  {
+    "id": "card_winter_porters",
+    "cardID": "winter_porters",
+    "status": "missing",
+    "file": null,
+    "brief": "Paleolithic travelers redistributing hide packs beside snowy ridge, adult hunter receiving a heavy bundle, blue dusk and low amber torch, portrait.",
+    "license": null
+  },
+  {
+    "id": "card_hunt_challenge",
+    "cardID": "hunt_challenge",
+    "status": "missing",
+    "file": null,
+    "brief": "Paleolithic adult spokesperson pointing at animal tracks before a tense council, flint spears grounded, ochre hide shelters in morning mist, portrait.",
+    "license": null
+  },
+  {
+    "id": "card_fallow_strips",
+    "cardID": "fallow_strips",
+    "status": "missing",
+    "file": null,
+    "brief": "Neolithic farmers examining sparse grain beside an unsown rooted strip and hillside, wooden digging tools, sage and dry clay, overcast portrait.",
+    "license": null
+  },
+  {
+    "id": "card_seed_lots",
+    "cardID": "seed_lots",
+    "status": "missing",
+    "file": null,
+    "brief": "Neolithic hands sorting grain on a reed mat beside two clay bowls, fields awaiting sowing, soft clay gold morning light, portrait, no writing or metal.",
+    "license": null
+  },
+  {
+    "id": "card_silt_turn",
+    "cardID": "silt_turn",
+    "status": "missing",
+    "file": null,
+    "brief": "Neolithic irrigation channel clogged with pale silt, upstream farmer and downstream worker with wooden spades, green reed banks and cloudy silver light, portrait.",
+    "license": null
+  },
+  {
+    "id": "card_grazing_strip",
+    "cardID": "grazing_strip",
+    "status": "missing",
+    "file": null,
+    "brief": "Neolithic herders disputing unfinished woven fence on grazed land, goats and simple clay houses, muted sage afternoon, portrait.",
+    "license": null
+  },
+  {
+    "id": "card_harbor_ballast",
+    "cardID": "harbor_ballast",
+    "status": "missing",
+    "file": null,
+    "brief": "Bronze harbor workers opening grain sacks with rounded stones in the bottom, wooden ship and clay tally tokens, teal water and amber dock light, portrait.",
+    "license": null
+  },
+  {
+    "id": "card_seal_copy",
+    "cardID": "seal_copy",
+    "status": "missing",
+    "file": null,
+    "brief": "Bronze market scribe comparing two differently sized clay measuring jars with similar abstract seal marks, anxious adult buyers, clay gold light, portrait, no readable writing.",
+    "license": null
+  },
+  {
+    "id": "card_smoke_shift",
+    "cardID": "smoke_shift",
+    "status": "missing",
+    "file": null,
+    "brief": "Bronze foundry workers stepping from smoke toward roof vents, clay furnace and unfinished tools, restrained ember orange and cool daylight, portrait, no modern machinery.",
+    "license": null
+  },
+  {
+    "id": "card_silt_charter",
+    "cardID": "silt_charter",
+    "status": "missing",
+    "file": null,
+    "brief": "Bronze envoys beside silted outer waterway, clay work tokens and wooden dredging tools, distant city walls in teal haze, pale morning gold, portrait.",
     "license": null
   }
 ]

@@ -23,7 +23,7 @@ Composition: portrait main illustration, readable subject at iPhone size, delibe
 
 - `card_sacred_fire`: generated with built-in imagegen, copied into `App/Assets.xcassets/card_sacred_fire.imageset`. Inspected visually: elder/child, winter forest, fire, original painterly composition, no text. Final production/color/performance acceptance remains pending.
 - `card_river_tracks`: generated with built-in imagegen and integrated in its asset-catalog image set. Paleolithic scout, wild grain, river mud and migrating herd visually checked; exact prompt in `assets/generation_prompts.json`.
-- All other 46 authored illustrations: missing. SpriteKit draws an explicitly temporary original settlement silhouette; this is not counted as card art.
+- All other 73 authored illustrations: missing. SpriteKit draws an explicitly temporary original settlement silhouette; this is not counted as card art.
 - `decision.wav`: original deterministic two-tone prototype, 220 ms, mono PCM16 at 44.1 kHz. Quiet envelope and app gain limit. Not a finished sound-design pack.
 - Studio mascot/logo, game logo, App Store icon, 12 music sets, 12 ambience tracks, 39+ additional effects: missing.
 
@@ -34,3 +34,9 @@ Fifteen animation presets are reserved by validation, but only basic SwiftUI tra
 ## Image-generation prompt record
 
 Built-in imagegen; historical-scene; original event illustration for `sacred_fire`. Paleolithic cave mouth, elder woman and child in hide clothing beside a small hearth, bare grove in winter distance. Dilemma: burn the last wood or preserve the forest. Ochre/charcoal, warm lower-left fire against cold blue night, painterly materials, restrained emotion, 2:3 portrait, readable central subjects, no text/border/logo/watermark, no existing game references. Exact submitted prompt is recorded in `assets/generation_prompts.json`.
+
+## First-three-era presentation standard — 2026-11-15
+
+EventCardView shares rounded framing, serif title/body hierarchy and wrapping minimum-48-point choice content with 14-point padding. Era accents: ochre, sage, bronze. Main illustrations retain their full aspect ratio in a 210-point art well with a dim blurred backdrop; the decorative backdrop alone may crop. At accessibility text sizes, the art well is 140 points and stats use one column. The scroll view keeps long descriptions/options reachable; fitting all information on one screen is not a goal. Selection tilts for 180ms before the actual saved transaction; controls guard double taps and re-enable after save failure. Leaving the card cancels pending motion. Reduce Motion performs the transaction immediately without tilt/entrance movement. Full preset choreography and FPS profiling remain open.
+
+first_granary is a new original built-in imagegen candidate (grain basket, clay/reed granary, families, timber key). Prompt and provenance are recorded. The two original images are untouched. Three actual candidates exist; 73 illustrations remain missing. Historical details (including stylized wooden key), color/performance and physical-device acceptance remain review items; generation is not final historical/art approval. No new production sound/music is delivered in this group.

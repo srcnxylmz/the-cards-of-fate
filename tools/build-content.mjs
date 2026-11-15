@@ -3,6 +3,7 @@ import { resolve } from 'node:path';
 import { addLegacyEvents } from './content/legacy-events.mjs';
 import { addCouncilEvents } from './content/council-events.mjs';
 import { addInheritanceEvents } from './content/inheritance-events.mjs';
+import { addSeasonEvents } from './content/season-events.mjs';
 
 // Authoring helpers normalize structure only. Every event below is individually authored.
 const root = resolve(import.meta.dirname, '..');
@@ -235,7 +236,22 @@ card('council_seal', 3, 'leadership', 'Mührün Sahibi', 'Keeper of the Seal',
 addLegacyEvents({ card, choice, outcome, delayed });
 addCouncilEvents({ card, choice, outcome, delayed });
 addInheritanceEvents({ card, choice, outcome, delayed });
+addSeasonEvents({ card, choice, outcome, delayed });
 
+// Durable historical decisions close using existing flags, including older v1 saves.
+for (const id of ['sacred_fire', 'stranger_child', 'cave_marks', 'seed_debt', 'ancestor_field']) {
+  const event = cards.find(c=>c.id===id);
+  const flags = [...new Set(event.choices.flatMap(c=>c.outcomes.flatMap(o=>o.effect.flags)))];
+  event.exclusionConditions.push(...flags.map(flag=>({flag})));
+}
+cards.find(c=>c.id==='empty_seat').exclusionConditions.push({leadership:'ruler'});
+cards.find(c=>c.id==='market_measures').exclusionConditions.push({technology:'weights'});
+cards.find(c=>c.id==='first_granary').exclusionConditions.push({flag:'private_stores'});
+cards.find(c=>c.id==='canal_boundary').exclusionConditions.push({technology:'irrigation'});
+// Recurring soil trials require ongoing maintenance; they cannot generate cost-free grain.
+cards.find(c=>c.id==='ash_garden').choices.find(c=>c.id==='plots').outcomes[0].delayedEffects.push(
+  delayed(4,2,'Deneme parsellerini korumak için işçi ve tohum ayrıldı.','Workers and seed were set aside to maintain the trial plots.',{resources:-5})
+);
 // Completed discoveries/builds are world facts, not reusable reward cards.
 for (const [id, exclusion] of [
   ['river_tracks', {flag:'river_observers'}],

@@ -2,7 +2,31 @@
 
 ## Current status
 
-**Phase 2 active; 64-card development group verified on Windows and GitHub macOS/iPhone at `00895b3`.** Original scope remains 12 eras, minimum 800 cards, 100 complete chains, 50 cross-era links and 30 endings. This milestone does not complete Phase 2 or release acceptance.
+**76-card group locally verified; one native CI stage pending.** Original targets remain 12 eras, 800 cards, 100 complete chains, 50 cross-era links, 30 endings. Phase 2 is not complete.
+
+## Next development group: progression, recurrence and presentation — 2026-11-15
+
+- Confirmed HEAD debb92e and matching origin/main. Preserved unrelated working files; initial patch/files saved in artifacts/phase2-next-before. No reset/clean/stash/force push.
+- Added technology acquisition frequencies/turns, actual pre-transition stats, overlapping gate blockers, first eligible/selected observations, eligible unselected counts and first-era immediate resource costs. Snapshot decks allow reproducing the 52/64 analysis without rewriting the runtime resources. See PROGRESSION_ANALYSIS.md.
+- Extracted the three old policies without changing their scores or tie-breaking; six before runs reproduce prior results exactly. Added deterministic, expected-value progression policy using only available current choices and authored effects; missing technology retains value at knowledge cap. Local tests prove no RNG/state mutation and replay across save.
+- Measurement: 64-card random first river presentation 7.62 versus 6.40 at 52 cards; knowledge 8.03 versus 6.70. Missing cultivation and village stability were major repeated blockers. Progression on the unchanged 64-card deck reached eras 2/3 in 8909/7480 runs.
+- Added exactly twelve TR/EN events in season-events.mjs, four per era. Count 64 → 76 (25/25/26), all old IDs retained. 162 choices, four probabilistic decisions, seven thematic groups, 35 detected cross-era flag links. Not seven approved completed chains.
+- New events: calving_herd, spring_seedbed, winter_porters, hunt_challenge; fallow_strips, seed_lots, silt_turn, grazing_strip; harbor_ballast, seal_copy, smoke_shift, silt_charter. Three one-shot histories and nine recurring crises. Branches use resource/knowledge/faction conditions, old apprenticeship history and delayed seed evidence. Positive supply choices have actual adverse or delayed costs.
+- Closed first fire, stranger child, first memorial, seed-debt rule and ancestral land decision on their existing flags, compatible with old saves. Empty seat excludes current rulers; adopted measures, built household stores and established canal routing stop repeating. Seasonal illness, hunting, migration, irrigation maintenance and market/production crises remain eligible. Added maintenance cost to recurring soil trials. No thresholds, weights or cooldown changes.
+- Local: 53 Swift and 27 Node tests passed, content audit 0 errors/warnings, generation/--check/mirror passed. App/UI Swift syntax parsed on Windows; this is not local iOS compilation. Four final 10,000-seed simulations completed without stat-bound or deck exhaustion failures. New branch, recurrence, cost, save/replay tests pass. Natural policy tests cover 100 seeds × four policies in addition to full reports.
+- Final random era2/3 reach 6992/3768; survival 0/0; knowledge 8255/3937; progression 9879/7034. Repeats: 19.88%, 84.36%, 55.97%, 46.30%. Progression Bronze decline versus 64 cards and survival repetition remain open. See BALANCE_REPORT.md for comparison, not a final balance certification.
+- Presentation: full-ratio main art in a 210-point framed well (140 at accessibility sizes), blurred atmospheric backing, era accents, larger wrapping choice controls, 180ms selection tilt with duplicate-tap guard and save-failure recovery. Reduce Motion skips motion and delay. Accessibility-size stats use one column. Existing art untouched.
+- Produced original first_granary candidate using built-in imagegen; exact prompt and path in assets/generation_prompts.json and LICENSES.md. 3 real candidates now exist; 73 current illustrations remain missing. No new sound/music/branding assets claimed. All three existing-art cards are included in new UI screenshot tests, with large text/Reduce Motion fixtures. Those fixtures are Debug-only and never inject outcomes.
+- CI source now runs progression as well as the old three policies and optional council management. Existing three UI tests retained; one additional art/accessibility test added. Simulator selection attempts a real iPhone SE 3, falls back explicitly if unavailable. Native compilation and actual visual review remain pending until run evidence is recorded.
+
+### Next exact actions
+
+1. Complete this single native CI gate and inspect screenshots, repairing failures before marking this group delivered.
+2. Investigate the remaining post-smelting population/stability burden and survival recurrence with purposeful recovery policies. Do not tune era thresholds solely to raise rates.
+3. Continue toward 90 then 180 first-three-era cards in distinct batches; extend under-covered Bronze/debt/hospitality branches and editorially approve completed chains.
+4. Continue premium art/audio and UI quality alongside content. VoiceOver, actual OS accessibility toggles, device performance, Game Center signing/console setup and weekly balance pinning remain open.
+
+## Historical 64-card checkpoint
 
 ## 2026-11-15 — source consistency and inheritance batch
 
@@ -116,12 +140,12 @@ At this initial Windows checkpoint Apple-platform checks were unexecuted. The su
 
 | Requirement | Actual | Outstanding |
 |---|---|---|
-| ≥800 original cards | 64 | 736 minimum, correctly distributed |
-| ≥60 per era | 21 / 21 / 22 in eras 1–3; zero in 4–12 | 116 more for Phase 2, 540 for eras 4–12, 80 special |
+| ≥800 original cards | 76 | 724 minimum, correctly distributed |
+| ≥60 per era | 25 / 25 / 26 in eras 1–3; zero in 4–12 | 104 more for Phase 2, 540 for eras 4–12, 80 special |
 | ≥100 completed chains | No fully approved chains; 7 multi-card groups | Branching, closure, reachability and editorial completion |
-| ≥50 cross-era links | 32 detected flag links | 18+ and full branch/editorial validation |
+| ≥50 cross-era links | 35 detected flag links | 15+ and full branch/editorial validation |
 | ≥30 endings | 2 collapse predicates | 28+ unique designed fates and narrative summaries |
-| Card illustrations | 2 generated candidates | 62 current + all future content; final visual approval |
+| Card illustrations | 3 generated candidates | 73 current + all future content; final visual approval |
 | Audio | 1 prototype cue | 12 music, 12 ambience, 40 production effects |
 | Animations | Basic transitions/flicker/haptics | 15 distinct coordinated presets, cinematic eras |
 | 10,000 simulations | 10,000 seeds × 3 policies executed; reports saved | High repetition and censored long runs; expand content and rebalance with human playtests |

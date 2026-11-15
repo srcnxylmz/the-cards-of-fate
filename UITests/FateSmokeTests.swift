@@ -23,6 +23,24 @@ final class FateSmokeTests: XCTestCase {
     func testTurkishDecisionAndPersistentResume() throws { try exercise(language: "tr") }
     func testEnglishDecisionAndPersistentResume() throws { try exercise(language: "en") }
 
+    func testIllustratedCardsAndLargeTextReducedMotion() throws {
+        for (id, language, large) in [("sacred_fire", "tr", false), ("river_tracks", "en", false), ("first_granary", "tr", true)] {
+            launch(language: language, reset: true, extra: ["--ui-test-card", id] + (large ? ["--large-text-reduced-motion"] : []))
+            tap(element("menu.newGame"))
+            XCTAssertEqual(element("card.title").value as? String, id)
+            XCTAssertEqual(element("card.art").value as? String, "card_\(id)")
+            capture("\(language)-art-\(id)-\(large ? "large-reduced-motion" : "standard")")
+            let second = app.buttons.matching(NSPredicate(format: "identifier BEGINSWITH %@", "choice.")).element(boundBy: 1)
+            reveal(second)
+            capture("\(language)-art-\(id)-reachable-options")
+            tap(second)
+            XCTAssertTrue(element("result.title").waitForExistence(timeout: 10))
+            XCTAssertEqual(element("game.turn").value as? String, "1")
+            capture("\(language)-art-\(id)-result")
+            app.terminate()
+        }
+    }
+
     func testCouncilNegotiationAndPersistentCooldown() throws {
         launch(language: "en", reset: true)
         tap(element("menu.newGame"))
@@ -63,13 +81,16 @@ final class FateSmokeTests: XCTestCase {
     private func top() {
         for _ in 0..<5 { app.swipeDown() }
     }
-    private func tap(_ target: XCUIElement, file: StaticString = #filePath, line: UInt = #line) {
+    private func reveal(_ target: XCUIElement, file: StaticString = #filePath, line: UInt = #line) {
         XCTAssertTrue(target.waitForExistence(timeout: 10), "Missing control", file: file, line: line)
         for _ in 0..<6 {
             if target.isHittable { break }
             app.swipeUp()
         }
         XCTAssertTrue(target.isHittable, "Control cannot be reached", file: file, line: line)
+    }
+    private func tap(_ target: XCUIElement, file: StaticString = #filePath, line: UInt = #line) {
+        reveal(target, file: file, line: line)
         target.tap()
     }
     private func values() throws -> [String: Int] {
@@ -79,8 +100,8 @@ final class FateSmokeTests: XCTestCase {
             return (stat, try XCTUnwrap(Int(value)))
         })
     }
-    private func launch(language: String, reset: Bool) {
-        app.launchArguments = ["--ui-testing", "-language", language, "-sound", "NO", "-haptics", "NO"]
+    private func launch(language: String, reset: Bool, extra: [String] = []) {
+        app.launchArguments = ["--ui-testing", "-language", language, "-sound", "NO", "-haptics", "NO"] + extra
         if reset { app.launchArguments.append("--reset-ui-test-save") }
         app.launch()
         XCTAssertTrue(app.wait(for: .runningForeground, timeout: 15))

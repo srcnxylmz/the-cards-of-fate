@@ -1,5 +1,22 @@
 # Measured balance baseline — 2026-11-09
 
+## 76-card progression and recurrence group — 2026-11-15
+
+Full diagnostic tables and definitions are in PROGRESSION_ANALYSIS.md, regenerated with node tools/report-progression.mjs. Frozen decks and reports: analysis/progression-52-before, progression-64-before and progression-76-after. Same seeds 0..<10000, four policies, cap 500. Six old-policy runs reproduce the 52/64 historical aggregate metrics exactly. Current root simulation-{policy}.json reports describe 76 cards. CI for this new group is pending.
+
+| Policy | Neolithic /10000 before → after | Bronze /10000 before → after | Repeat before → after | Caps before → after |
+|---|---:|---:|---:|---:|
+| random | 5203 → 6992 | 3322 → 3768 | 27.42% → 19.88% | 0 → 0 |
+| survival | 0 → 0 | 0 → 0 | 85.27% → 84.36% | 91 → 94 |
+| knowledge | 5504 → 8255 | 2959 → 3937 | 84.51% → 55.97% | 1138 → 0 |
+| progression | 8909 → 9879 | 7480 → 7034 | 71.54% → 46.30% | 4 → 0 |
+
+A saturated knowledge stat made the old knowledge policy undervalue missing technologies; a regression test demonstrates follow-herd preference at knowledge 100. The unchanged old policies remain baselines. Progression rewards missing required technology and remaining gate deficits, and considers discounted authored delayed effects. It neither consumes game RNG nor chooses unavailable options. Thresholds/weights/cooldowns remain unchanged.
+
+An alternative one-shot seedbed discovery diversifies cultivation access. Historical decisions now close on old durable flags; the empty seat no longer appears while already ruling. Nine new recurring crises replenish the eligible seasonal/economic pool, three new one-shot stories deepen history. Trial gardens now require delayed maintenance rather than yielding repeated unpriced grain. No original card ID is removed; old presented cards can still finish. These data changes and the twelve-card expansion are a combined intervention, not an isolated causal experiment.
+
+Progression reaches Neolithic more often, but Bronze falls 74.80% → 70.34%. The post-technology population/stability burden remains material; do not hide it behind improved cultivation. Survival remains in era 1 and repeats 84.36% of decisions. No final balance or 45–90-minute pacing claim. All four final 10,000-seed runs completed without stat-bound or eligible-deck exhaustion failures. 500-turn caps are censored living civilizations; costs are tested, but absence of every possible optimal infinite strategy is not proven.
+
 ## 2026-11-15 — normalized 52-card baseline versus 64-card inheritance batch
 
 Native verification: [run 43705065924](https://github.com/srcnxylmz/the-cards-of-fate/actions/runs/43705065924) at `00895b38c8140213271423bb56748d2f9de4f788` passed every step: 27 Node tests, generation --check, structural validation, 46 Swift tests, 10,000 runs each for random/survival/knowledge plus the separate managed-council policy, Xcode project generation, iPhone build/install/launch and 3 UI tests (122.552 seconds, zero failures). CI artifacts retain its simulation outputs. The numerical before/after comparison below is from the executed local Windows runs.
