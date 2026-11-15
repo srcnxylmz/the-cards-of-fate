@@ -137,7 +137,8 @@ struct RootView: View {
     @AppStorage("sound") private var sound = true
     @AppStorage("haptics") private var haptics = true
     @AppStorage("music") private var music = true
-    @Environment(\.accessibilityReduceMotion) private var reduceMotion
+    @Environment(\.accessibilityReduceMotion) private var systemReduceMotion
+    private var reduceMotion: Bool { systemReduceMotion || UITestAccessibility.usesLargeReduced }
     @Environment(\.dynamicTypeSize) private var typeSize
     @State private var panel: Panel?
     @State private var newMode: RunMode?

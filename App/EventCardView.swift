@@ -93,13 +93,16 @@ struct EventCardView: View {
 }
 
 struct UITestAccessibility: ViewModifier {
-    @ViewBuilder func body(content: Content) -> some View {
+    static var usesLargeReduced: Bool {
         #if DEBUG
-        if ProcessInfo.processInfo.arguments.contains("--ui-testing") && ProcessInfo.processInfo.arguments.contains("--large-text-reduced-motion") {
-            content.dynamicTypeSize(.accessibility3).environment(\.accessibilityReduceMotion, true)
-        } else { content }
+        return ProcessInfo.processInfo.arguments.contains("--ui-testing") && ProcessInfo.processInfo.arguments.contains("--large-text-reduced-motion")
         #else
-        content
+        return false
         #endif
+    }
+    @ViewBuilder func body(content: Content) -> some View {
+        if Self.usesLargeReduced {
+            content.dynamicTypeSize(.accessibility3)
+        } else { content }
     }
 }
