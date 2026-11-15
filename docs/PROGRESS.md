@@ -2,9 +2,9 @@
 
 ## Current status
 
-**90 cards / 203 choices / eras 30-30-30; 61 local Swift and 31 Node tests passed. Native OCR/art/audio gate and final comparative report assembly pending.** 12 eras / 800 cards / 100 approved chains / 30 endings remain the original targets. Phase 2 is not complete.
+**90 cards / 203 choices / eras 30-30-30; 61 local Swift and 31 Node tests passed. Local comparisons complete; native same-frame OCR/art/audio gate pending.** 12 eras / 800 cards / 100 approved chains / 30 endings remain the original targets. Phase 2 is not complete.
 
-- Started from main 56aad88, synchronized with origin/main. Existing README, root technology, logs, council report and untracked user work preserved. Pre-edit working patch saved in artifacts/milestone90-before. No reset, clean, stash or force push.
+- Started from main 56aad88, synchronized with origin/main. Existing README, root technology, logs, council report and untracked user work preserved. Working patch after initial diagnostic instrumentation saved in artifacts/milestone90-before. No reset, clean, stash or force push.
 - Measured post-smelting loss stages using actual production choose observer. Original 76-card progression reproduced 9879/7034 era reach exactly. Of 2707 metal-owning runs ending before Bronze, 2706 lacked stability, 1277 lacked population, 667 had empty stores (overlapping final-state counts). Post-metal population losses: world/starvation 98929, delayed 21622, borrowed_ox.smaller 14429. These totals are not independent causal attributions.
 - Initial repair on 76 cards reached Bronze 7554/10000. Initial 90-card draft regressed to 6189; calendar/early-repayment correction alone reached 6520. These failed design trials are retained as evidence, not concealed as passing balance.
 - Root production problem: cultivation granted a technology/era gate but no food when a shared granary was not built. Production now separates fields (farmProduction), storage (+1 with fields), environment-scaled irrigation, work calendar (+1 on living land) and irrigated terrace (+1). Total world production is capped at ordinary consumption; hard extra consumption remains. No era threshold, event weight, cooldown or policy score changed. Old saves need no schema migration.
@@ -14,7 +14,7 @@
 - UI: one text run for a stat label/value, same contrast and adaptive columns; clip the scroll viewport at the safe-area boundary. A new UI test compares the old Debug-only stat layout and production layout at TR/EN normal/accessibility3 sizes, inspecting rendered pixel crops with Vision OCR. No fixed screenshot sleep added. Actual root-cause/reproduction and safe-area acceptance remain pending native artifacts.
 - Existing three illustrations preserved; added original green_stone and smoke_shift candidates with built-in imagegen. Exact prompts/provenance in assets/generation_prompts.json and assets/LICENSES.md. Five real candidates, 85 illustrations missing. Art test covers all five through real menu/decisions. Historical/commercial/physical-device approval remains open.
 - Original synthesized card-open.wav (240ms) and choice-soft.wav (120ms) integrated with sound toggle; existing decision.wav retained. Deterministic PCM structural/peak tests pass. Simulator audio logging records actual player start/failure; hearing/mix quality requires device listening.
-- Final progression 90-card result: Neolithic 9836, Bronze 9557, repeat 70.5572%, mean 114.4874 turns, 376 living caps. More successful progression also means a longer stay in the small Bronze deck; do not describe all-policy repetition as improved. Final four-policy same-seed comparison remains to be assembled after local runs finish.
+- Final progression 90-card result after food correction: Neolithic 9872, Bronze 9594, repeat 70.5930%, mean 114.9993 turns, 378 living caps. More successful progression also means a longer stay in the small Bronze deck; do not describe all-policy repetition as improved. Final four-policy same-seed comparison is in MILESTONE_90_ANALYSIS.md. Survival repeat 75.2792%, mean 101.5947 turns, 51 living caps; its mean remains below the old 136.0397. Random/knowledge Neolithic reach declined to 6212/7745 while Bronze improved to 5024/5849; longer late-era repetition remains open.
 
 ### Next actions for this checkpoint
 
@@ -236,3 +236,7 @@ The pre-food 90 draft reduced survival repetition to 63.39% largely alongside a 
 ### Fixed-frame OCR verification
 
 Review found that the initial OCR helper could take a new screenshot for each stat. It now reuses one first-frame image for all visible values. Only the UI test and workflow change; runtime identity is guarded against ee15f32710c51b8e8148ebcbd4440aba3cfaa6ef before any UI-only rerun. Ordinary pushes/default dispatch still run full validation. Native acceptance is pending.
+
+### Native OCR false negative identified
+
+Full run 43729726032 at ee15f32 passed 61 Swift/31 Node, all five 10,000-seed simulations, build/install/launch and four existing/art UI tests. New OCR test failed reading TR stability as only “istikrar”. Artifact 14168331141 downloaded: full image B729D77C-5454-451A-984B-2B750B08D31D.png and crop 5E49F8A0-7696-4C3F-8B5A-85F5AF4515F1.png visibly contain 55. Fixed-frame run 43730394211 reproduced the same false negative. Increased OCR raster resolution by 3× from the identical captured crop; no wait, expected-digit hint, removed assertion or app change. Native OCR recheck pending. All four policy CI result aggregates/decision counts match local measurements exactly. Audio files are confirmed in the app bundle; the unified log did not retain AUDIO_CUE entries, so actual playback-start evidence and physical listening remain unverified.
