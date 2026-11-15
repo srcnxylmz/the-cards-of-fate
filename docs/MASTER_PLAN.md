@@ -12,7 +12,7 @@ Full requirements: `MASTER_SPEC.md`. Target: commercially polished, offline-firs
 | 5 | 80 extra events; 800 total; 100 complete chains; 50 cross-era links; 30 endings | Not met |
 | 6 | Original branding/icon, unique card art, 15 animation types, 12 scores/ambiences, 40 effects | Ten generated illustration candidates; three prototype cues; presentation prototypes |
 | 7 | Weekly Game Center, custom rankings, retry, week isolation, production configuration | Adapter and week logic written; account/device tests pending |
-| 8 | 10,000 actual engine simulations; pacing, skill balance, localization/accessibility/offline QA | Same-seed 52/64/76/90/105 studies × four policies executed on Windows; five 10,000-seed policies verified in 90-card native CI; 105-card six-policy native gate pending; balance/production QA incomplete |
+| 8 | 10,000 actual engine simulations; pacing, skill balance, localization/accessibility/offline QA | Same-seed 52/64/76/90/105 studies × four policies executed on Windows; five 10,000-seed policies verified in 90-card native CI; 105-card six-policy native gate passed at 3d589af / run 43739396488 (70 Swift, 39 Node, six UI tests); balance/production QA incomplete |
 | 9 | Signed release, privacy/licensing, App Store metadata, screenshots, TestFlight | Checklist drafted; release blocked |
 
 ## Architecture decisions

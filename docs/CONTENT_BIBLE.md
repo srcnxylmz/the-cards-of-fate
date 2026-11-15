@@ -4,7 +4,7 @@ Editorial principle: each card needs a specific human conflict, an observable co
 
 ## Current inventory
 
-105 events, 35 in each first-three era, 245 choices; all ninety previous IDs, texts and effects preserved. Fifteen recovery and historical-inheritance events are detailed at the end of this document. Seven close once resolved and eight are recurring crises. Native acceptance remains pending.
+105 events, 35 in each first-three era, 245 choices; all ninety previous IDs, texts and effects preserved. Fifteen recovery and historical-inheritance events are detailed at the end of this document. Seven close once resolved and eight are recurring crises. Native acceptance passed at [run 43739396488](https://github.com/srcnxylmz/the-cards-of-fate/actions/runs/43739396488) / code 3d589af1a02be3032f60e6560e75fabeefa2c407.
 
 ## Historical 90-card inventory — 2026-11-15
 

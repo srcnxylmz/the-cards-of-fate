@@ -1,6 +1,6 @@
 # 105-card balance checkpoint — 2026-11-15
 
-Latest measured source: 105 cards, 35/35/35, 245 choices. Four original policies unchanged; independent recovery added. Same-seed comparison, rejected drafts, duration/era-normalized repetition, production flows, living caps and negative results: [MILESTONE_105_ANALYSIS.md](MILESTONE_105_ANALYSIS.md), [structured metrics](milestone105-metrics.json). Canonical five policy reports now describe the final 105-card deck; the user-owned council JSON remains untouched. Native acceptance pending.
+Latest measured source: 105 cards, 35/35/35, 245 choices. Four original policies unchanged; independent recovery added. Same-seed comparison, rejected drafts, duration/era-normalized repetition, production flows, living caps and negative results: [MILESTONE_105_ANALYSIS.md](MILESTONE_105_ANALYSIS.md), [structured metrics](milestone105-metrics.json). Canonical five policy reports now describe the final 105-card deck; the user-owned council JSON remains untouched. Native acceptance passed at [run 43739396488](https://github.com/srcnxylmz/the-cards-of-fate/actions/runs/43739396488) (code 3d589af1a02be3032f60e6560e75fabeefa2c407); all five base-policy CI JSONs match local results in every field.
 
 Survival mean 101.59 → 122.31; repeat 75.28% → 76.36%. Knowledge Bronze 58.49% → 63.80%, mean 168.35 → 122.95; progression Bronze 95.94% → 96.43%, mean 115.00 → 97.22. Random access regresses and long Bronze repetition remains unresolved. Do not call shorter runs or fewer censored caps balance success.
 

@@ -1,6 +1,6 @@
-# 105-card QA — native gate pending
+# Verified 105-card QA checkpoint — 2026-11-15
 
-Local: 70 Swift / 39 Node passed, generation/audio/art checks passed. Final 50,000-run comparison is complete; six native UI tests remain to be accepted. Previous checkpoint evidence below is historical.
+Local: 70 Swift / 39 Node passed, generation/audio/art checks passed. Final 50,000-run comparison is complete; all six native UI tests passed at [run 43739396488](https://github.com/srcnxylmz/the-cards-of-fate/actions/runs/43739396488). Previous checkpoint evidence below is historical.
 
 # Current 90-card QA checkpoint — 2026-11-15
 
@@ -128,8 +128,29 @@ Remaining: progression Bronze access regression (74.80% → 70.34%), high surviv
 
 ## 105-card validation in progress
 
-Local Node suite: 39 tests passed; generation --check and art audit passed (105 cards, 10 actual portrait candidates, 95 missing). All 90 older event definitions retain their choice IDs/effects/text; four historical exclusions and derived direct worldFlags metadata are explicitly allowed by the preservation regression. Four instrumented 90-card baseline reports exactly match original era/lifetime/repeat/cap/decision/ending aggregates. Windows Swift: 70 tests passed, zero failures; App/UI Swift syntax parse passed. iOS-native acceptance remains pending; do not reuse old 90-card CI as evidence for the new source.
+Local Node suite: 39 tests passed; generation --check and art audit passed (105 cards, 10 actual portrait candidates, 95 missing). All 90 older event definitions retain their choice IDs/effects/text; four historical exclusions and derived direct worldFlags metadata are explicitly allowed by the preservation regression. Four instrumented 90-card baseline reports exactly match original era/lifetime/repeat/cap/decision/ending aggregates. Windows Swift: 70 tests passed, zero failures; App/UI Swift syntax parse passed. iOS-native acceptance now passed at [run 43739396488](https://github.com/srcnxylmz/the-cards-of-fate/actions/runs/43739396488); the final evidence below supersedes this in-progress entry.
 
 New story fixture failures were retained locally and corrected: acknowledgment was required between winter and canal decisions; supply caching required the actual earlier ice crossing; smelting had to be obtained before selecting the recasting event. Tests now traverse these decisions rather than weakening selector/choice availability. No engine rule was relaxed.
 
 Native suite adds three-cue playback-start and mute assertions, persistent simulator-container JSON and attachments. Records expose actual AVAudioPlayer.play()/isPlaying/duration observations, missing-resource/errors and telemetry persistence failures. This remains API-start evidence, not physical listening or mix approval. Dynamic art fixtures cover every real registered image. Existing fixed-frame pixel OCR, caption recognition, large text, scroll clipping and Reduce Motion assertions are preserved.
+
+
+## Verified 105-card native checkpoint — 2026-11-15
+
+[run 43739396488](https://github.com/srcnxylmz/the-cards-of-fate/actions/runs/43739396488), code commit 3d589af1a02be3032f60e6560e75fabeefa2c407, passed the complete default workflow in one attempt. No failed native test was skipped. The UI-only guard is intentionally skipped in an ordinary full run; all quality/test/build steps executed. Xcode 16.4 (16F6), iPhone SE (3rd generation), iOS 18.5, real 750×1334 PNGs.
+
+- 39 Node tests, generation --check, feedback generation --check, art audit (10 real candidates / 95 missing), structural validation (105 cards / 245 choices / 35-35-35, zero errors or warnings).
+- 70 macOS XCTest tests, zero failures (33.978 seconds); local Windows suite also passed 70. Old save/replay, all new choices, era-delayed history and finite legacy closures included.
+- Six actual 10,000-seed simulations: four unchanged policies, independent recovery and a separate managed-council survival experiment. Downloaded quality artifact 14172641093. Every field of all five base-policy JSON reports exactly matches the local final reports; managed council is separate (10,000 runs, 105 cards, 50,787 political actions). The user's local council file was not overwritten.
+- iPhone build/install/launch and all six UI tests passed, 394.896 seconds / zero failures: TR/EN decision/save/resume, council persistence, ten real illustrations with reachable second choices/results, existing fixed-frame TR/EN normal/large stat OCR and new three-cue audio-start/mute coverage.
+- Downloaded UI artifact 14172372732 (36,970,878 bytes) to artifacts/run-43739396488/ui; quality report to its quality sibling. No export-errors file or crash report was present. This records the captured diagnostics, not proof against every possible crash.
+
+Actual persistent audio-playback.json contains 44 events: 24 started, 20 muted, zero error/missing/rejected records and no telemetry write error. All started records report playReturned=true and isPlaying=true. Durations are card-open 0.24s, choice-soft 0.12s, decision 0.22s; muted records report neither API start nor playing. This verifies actual simulator API-start observations and mute behavior, not audible quality, speaker output, a complete mix or music. Three prototype WAVs are retained; production music/ambience remains missing.
+
+Inspected all five new actual art captures: winter_porters 06A2C9B5-2E05-4882-A605-6FBCF4F732C2.png; fallow_strips 0A4092F3-BF1A-4816-8435-F7BFB1B7E060.png; reed_fever FB764D03-57BE-4C7A-8A27-5D09B6CCF45F.png; furnace_wood F227FE09-0B04-4ED2-BA82-B3C90CB7993E.png; salt_ship C0D7873E-CAA6-4FA0-8DB8-D7F59577EEBB.png. The full portrait is fitted inside the shared frame; atmospheric sides remain separate. Some entrance frames capture intentional partial opacity. Reviewed stable reachable-choice frames for furnace (FE31F3A5-156F-4CDF-A84F-C71FAE6D8D87.png) and winter carriers (B696C1D4-AEB9-4D02-A545-29966C8C2471.png): wrapped text and both options are reachable/readable. Historical/anatomical/legal/color approval and physical performance remain open.
+
+All four production first-frame OCR notes show visible=6, missing=[] (TR/EN × normal/large), with exact per-row pixel checks and status-bar rejection preserved. Actual EN normal 77B53A47-D00F-492C-A19E-7FEC2500C65E.png, TR large 3E216861-3401-4177-9FA4-C8610F1705AF.png and scrolled EN large 3AD32116-01ED-47E3-9985-F9327A4475B0.png were reviewed; no game text paints behind the status bar. Large leadership labels wrap and long descriptions require scrolling. This is not all-device/VoiceOver acceptance. Actual OS Reduce Motion and physical audio remain separate from the existing Debug test override.
+
+The checkpoint is now safely published and natively verified. No 120-card content batch was started. Next group: address Bronze starvation spikes and delayed population burdens, investigate genuinely changing civic/trade conditions, profile eligibility/history lookup cost, retain healthy censored caps and repeat the same seeds when rules/content change. Random access and knowledge/progression/recovery lifetime regressions remain explicit in MILESTONE_105_ANALYSIS.md. Scope stays 12 eras / at least 800 original cards / 100 approved chains / 30 endings. Signing, Game Center account/version fairness, physical device/accessibility and 95 missing illustrations remain release blockers.
+
+Subsequent publication changes reports only and uses [skip ci]; native evidence belongs to 3d589af1a02be3032f60e6560e75fabeefa2c407, not an invented second build.
