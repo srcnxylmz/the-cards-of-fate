@@ -100,14 +100,25 @@ final class FateSmokeTests: XCTestCase {
         text.components(separatedBy:CharacterSet.decimalDigits.inverted).filter { !$0.isEmpty }
     }
     private func recognize(_ image:CGImage) throws -> String {
-        let request=VNRecognizeTextRequest()
-        request.recognitionLevel = .accurate; request.usesLanguageCorrection = false
-        request.recognitionLanguages=["en-US"]
-        // Native caption crops can be only ~24 pixels tall. Preserve the same glyphs
-        // while giving Vision sufficient raster resolution; no expected words/digits are supplied.
-        let enlarged=CIImage(cgImage:image).transformed(by:CGAffineTransform(scaleX:3,y:3))
-        try VNImageRequestHandler(ciImage:enlarged,options:[:]).perform([request])
-        return (request.results ?? []).compactMap { $0.topCandidates(1).first?.string }.joined(separator:" ")
+        // Preserve every source glyph. Padding avoids a tight caption touching the OCR
+        // detection boundary; enlargement keeps short captions at readable raster size.
+        let bounds=CGRect(x:0,y:0,width:CGFloat(image.width)+24,height:CGFloat(image.height)+24)
+        let backing=CIImage(color:CIColor(red:0.055,green:0.075,blue:0.085,alpha:1)).cropped(to:bounds)
+        let prepared=CIImage(cgImage:image).transformed(by:CGAffineTransform(translationX:12,y:12))
+            .composited(over:backing).transformed(by:CGAffineTransform(scaleX:3,y:3))
+        var readings:[String]=[]
+        // Two independent top readings, no expected words/digits or lower-ranked candidates.
+        for accurate in [true,false] {
+            let request=VNRecognizeTextRequest()
+            request.recognitionLevel = accurate ? .accurate : .fast
+            request.usesLanguageCorrection = false; request.recognitionLanguages=["en-US"]
+            try VNImageRequestHandler(ciImage:prepared,options:[:]).perform([request])
+            readings += (request.results ?? []).compactMap {
+                guard let candidate=$0.topCandidates(1).first, candidate.confidence >= 0.5 else { return nil }
+                return candidate.string
+            }
+        }
+        return readings.joined(separator:" ")
     }
     private func pixels(_ element:XCUIElement,name:String, screenshot:UIImage? = nil) throws -> String {
         let shot=screenshot ?? app.screenshot().image
