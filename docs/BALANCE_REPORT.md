@@ -2,7 +2,7 @@
 
 ## 76-card progression and recurrence group — 2026-11-15
 
-Full diagnostic tables and definitions are in PROGRESSION_ANALYSIS.md, regenerated with node tools/report-progression.mjs. Frozen decks and reports: analysis/progression-52-before, progression-64-before and progression-76-after. Same seeds 0..<10000, four policies, cap 500. Six old-policy runs reproduce the 52/64 historical aggregate metrics exactly. Current root simulation-{policy}.json reports describe 76 cards. CI for this new group is pending.
+Full diagnostic tables and definitions are in PROGRESSION_ANALYSIS.md, regenerated with node tools/report-progression.mjs. Frozen decks and reports: analysis/progression-52-before, progression-64-before and progression-76-after. Same seeds 0..<10000, four policies, cap 500. Six old-policy runs reproduce the 52/64 historical aggregate metrics exactly. Current root simulation-{policy}.json reports describe 76 cards. Native verification passed at b444e9f: [run 43709935129](https://github.com/srcnxylmz/the-cards-of-fate/actions/runs/43709935129), including 53 Swift / 27 Node / four UI tests and five 10,000-seed simulation runs. Downloaded quality artifact 14159554347: the four baseline-policy reports match local era reach, mean turns, repeat, caps, technology, endings and decisions exactly. UI-specific limitations are recorded in QA_REPORT.md.
 
 | Policy | Neolithic /10000 before → after | Bronze /10000 before → after | Repeat before → after | Caps before → after |
 |---|---:|---:|---:|---:|

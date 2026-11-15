@@ -1,5 +1,9 @@
 # QA report — 2026-11-09
 
+## Current 76-card milestone
+
+Verified code: `b444e9f7b19c11fffb97d2a88fae1ea415378ee5`, [successful run 43709935129](https://github.com/srcnxylmz/the-cards-of-fate/actions/runs/43709935129). 53 Swift, 27 Node, four UI tests and five 10,000-seed CI simulations passed. Actual compact-screen evidence and remaining visual limitations are recorded at the end of this report. Earlier sections below are historical.
+
 ## Latest verified milestones
 
 Native runtime: commit `6bd22bc`, [Actions run 42668076933](https://github.com/srcnxylmz/the-cards-of-fate/actions/runs/42668076933), Xcode 16.4 / iPhone 16. Build, install, launch, both TR/EN UI tests, stat delta checks, terminate/relaunch persistence and screenshot export passed. 2 UI tests / 0 failures. Actual TR menu/card/result PNGs were inspected from downloaded artifact 13696279860. No overlap observed at the tested size; result-button contrast is improved in the subsequent content revision. This supersedes the historical Apple-platform limitations below; physical-device and broader visual/accessibility QA still remain.
@@ -82,3 +86,17 @@ No stage is certified complete solely because source files exist. Core, native b
 ## 76-card local checkpoint — 2026-11-15
 
 53 Swift and 27 Node tests pass; generation/check/mirror/audit pass with zero content warnings/errors. Eight baseline diagnostic runs (52 and 64 cards × four policies) and four final 10,000-seed policies completed. Old six policy results reproduced exactly before content changes. See PROGRESSION_ANALYSIS.md for conditional means, gate denominators and the remaining Bronze decline. Windows Swift frontend parsed the UI sources; native compilation is pending. UI target retains the original three tests and adds real-art/second-option reachability plus large-text/Reduce Motion fixtures. A compact SE 3 Simulator is attempted with explicit fallback. Generated granary candidate and actual device rendering have not yet passed visual QA. No physical-device, VoiceOver, OS-toggle, Game Center or performance certification.
+
+## Verified 76-card native checkpoint — 2026-11-15
+
+[Run 43709935129](https://github.com/srcnxylmz/the-cards-of-fate/actions/runs/43709935129) at `b444e9f7b19c11fffb97d2a88fae1ea415378ee5` passed every step. Xcode 16.4 (16F6), iPhone SE (3rd generation), iOS 18.5; actual screenshots are 750×1334. Passed: 27 Node tests, generation --check, content audit (76 cards / 162 choices / zero errors or warnings), 53 macOS Swift tests, five 10,000-seed simulations (random, survival, knowledge, progression and optional managed council), XcodeGen, simulator build/install/launch, and four UI tests (165.253 seconds, zero failures). Old save/replay and new narrative/recurrence tests are included in the Swift suite.
+
+Downloaded UI artifact 14160655066 and quality artifact 14159554347 to artifacts/run-43709935129. All four standard-policy CI reports exactly match local era reach, average turns, repeat rate, caps, technology gains, ending distribution and decision counts. The optional managed-council report is separate from the four-policy comparison.
+
+Inspected actual PNGs: TR sacred_fire (59D8CFA3-2E78-46F5-B94E-16EF99A1D274.png), EN river_tracks (DF1EA511-1D1E-4924-9981-5BFCE8AEB26B.png), large TR first_granary text (181978C8-B67C-4034-A25D-DC546D6B415B.png) and reachable choices (70D879C5-8465-412D-8D08-0429E2DCBBC3.png). Main fire/river illustrations now preserve their full portrait ratio; the atmospheric background alone crops. Large text wraps and the second choice can be reached and resolved; the granary art is partially above the viewport after scrolling. This is not approval of every large-text layout.
+
+Visual limitation: the immediate EN river art capture omits numeric stat text despite visible labels/bars. In the standard EN first-card screenshot (9ADC1575-BC2C-4CE9-8701-9EBE40FEFB89.png) and the same river card's result (B6A299B8-FCB2-4F3B-8CDD-DE6779A93A07.png), all six values are visible. Keep initial-render/screenshot stability open; neither claim permanent English layout correctness from passing accessibility assertions nor diagnose a root cause from one frame. Captures after scrolling also place content under the status bar; review scroll-edge treatment next.
+
+Failures are retained: 3f8ae37 failed on a read-only accessibility environment write; a63ae44 failed only the new test's teardown screenshot after terminating the app. Both were fixed without removing assertions. Intermediate run 43709745446 at 5cb15b6 was cancelled to conserve quota after actual screenshots prompted the final layout correction. Successful evidence is for b444e9f. This documentation-only follow-up uses [skip ci] and does not claim a second source build.
+
+Remaining: progression Bronze access regression (74.80% → 70.34%), high survival repetition, first-frame capture stability/scroll-edge treatment, full art historical approval (including stylized timber key), 73 missing illustrations, production audio, VoiceOver and actual OS toggles, physical-device performance, signing and Game Center account checks. No release or full Phase 2 completion claim.

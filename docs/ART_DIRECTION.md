@@ -23,13 +23,14 @@ Composition: portrait main illustration, readable subject at iPhone size, delibe
 
 - `card_sacred_fire`: generated with built-in imagegen, copied into `App/Assets.xcassets/card_sacred_fire.imageset`. Inspected visually: elder/child, winter forest, fire, original painterly composition, no text. Final production/color/performance acceptance remains pending.
 - `card_river_tracks`: generated with built-in imagegen and integrated in its asset-catalog image set. Paleolithic scout, wild grain, river mud and migrating herd visually checked; exact prompt in `assets/generation_prompts.json`.
+- `card_first_granary`: original Neolithic generated candidate integrated in its asset-catalog image set; exact prompt recorded. Stylized timber-key detail and final historical/device acceptance remain pending.
 - All other 73 authored illustrations: missing. SpriteKit draws an explicitly temporary original settlement silhouette; this is not counted as card art.
 - `decision.wav`: original deterministic two-tone prototype, 220 ms, mono PCM16 at 44.1 kHz. Quiet envelope and app gain limit. Not a finished sound-design pack.
 - Studio mascot/logo, game logo, App Store icon, 12 music sets, 12 ambience tracks, 39+ additional effects: missing.
 
 ## Presentation backlog
 
-Fifteen animation presets are reserved by validation, but only basic SwiftUI transitions, SpriteKit fire flicker and haptic variation exist. Need selection tilt, outcome-specific light/particles, state-count animations, skippable cinematic era transformation and Reduce Motion alternatives. Profiling and screen QA must precede a 60 FPS claim.
+Fifteen animation presets are reserved by validation, but only basic SwiftUI transitions, SpriteKit fire flicker and haptic variation exist. Initial selection tilt with Reduce Motion fallback is implemented in EventCardView. Outcome-specific light/particles, state-count animations and skippable cinematic era transformation remain open. Profiling and screen QA must precede a 60 FPS claim.
 
 ## Image-generation prompt record
 

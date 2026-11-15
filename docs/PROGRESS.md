@@ -2,7 +2,7 @@
 
 ## Current status
 
-**76-card group locally verified; one native CI stage pending.** Original targets remain 12 eras, 800 cards, 100 complete chains, 50 cross-era links, 30 endings. Phase 2 is not complete.
+**76-card development group verified locally and in native CI at b444e9f; remaining balance and visual issues are recorded below.** Original targets remain 12 eras, 800 cards, 100 complete chains, 50 cross-era links, 30 endings. Phase 2 is not complete.
 
 ## Next development group: progression, recurrence and presentation — 2026-11-15
 
@@ -21,7 +21,7 @@
 
 ### Next exact actions
 
-1. Complete this single native CI gate and inspect screenshots, repairing failures before marking this group delivered.
+1. Native gate completed at b444e9f / run 43709935129. Next address initial-frame stat rendering and scroll-edge capture stability alongside the balance work.
 2. Investigate the remaining post-smelting population/stability burden and survival recurrence with purposeful recovery policies. Do not tune era thresholds solely to raise rates.
 3. Continue toward 90 then 180 first-three-era cards in distinct batches; extend under-covered Bronze/debt/hospitality branches and editorially approve completed chains.
 4. Continue premium art/audio and UI quality alongside content. VoiceOver, actual OS accessibility toggles, device performance, Game Center signing/console setup and weekly balance pinning remain open.
@@ -188,3 +188,17 @@ Run 43708816346 at a63ae44 passed content/check, 53 Swift tests, five simulation
 ### Actual compact-screen visual correction
 
 Downloaded artifact 14160365084 from the failed teardown run. Its real SE 3 screenshots exposed two layout issues despite passing interaction assertions: an unconstrained decorative image caused the supposedly fitted main image to crop; three stat columns hid English values on the narrow screen. Bounded both image layers using GeometryReader, keeping only the backdrop cropped, and switched normal stats to adaptive minimum-150-point columns (two on SE, three when wide). The large-text fixture now scrolls once before art capture. This visual evidence supersedes the unverified full-ratio claim above; corrected screenshots remain pending. No simulation data or gameplay changed.
+
+## Verified 76-card native checkpoint — 2026-11-15
+
+[Run 43709935129](https://github.com/srcnxylmz/the-cards-of-fate/actions/runs/43709935129) at `b444e9f7b19c11fffb97d2a88fae1ea415378ee5` passed every step. Xcode 16.4 (16F6), iPhone SE (3rd generation), iOS 18.5; actual screenshots are 750×1334. Passed: 27 Node tests, generation --check, content audit (76 cards / 162 choices / zero errors or warnings), 53 macOS Swift tests, five 10,000-seed simulations (random, survival, knowledge, progression and optional managed council), XcodeGen, simulator build/install/launch, and four UI tests (165.253 seconds, zero failures). Old save/replay and new narrative/recurrence tests are included in the Swift suite.
+
+Downloaded UI artifact 14160655066 and quality artifact 14159554347 to artifacts/run-43709935129. All four standard-policy CI reports exactly match local era reach, average turns, repeat rate, caps, technology gains, ending distribution and decision counts. The optional managed-council report is separate from the four-policy comparison.
+
+Inspected actual PNGs: TR sacred_fire (59D8CFA3-2E78-46F5-B94E-16EF99A1D274.png), EN river_tracks (DF1EA511-1D1E-4924-9981-5BFCE8AEB26B.png), large TR first_granary text (181978C8-B67C-4034-A25D-DC546D6B415B.png) and reachable choices (70D879C5-8465-412D-8D08-0429E2DCBBC3.png). Main fire/river illustrations now preserve their full portrait ratio; the atmospheric background alone crops. Large text wraps and the second choice can be reached and resolved; the granary art is partially above the viewport after scrolling. This is not approval of every large-text layout.
+
+Visual limitation: the immediate EN river art capture omits numeric stat text despite visible labels/bars. In the standard EN first-card screenshot (9ADC1575-BC2C-4CE9-8701-9EBE40FEFB89.png) and the same river card's result (B6A299B8-FCB2-4F3B-8CDD-DE6779A93A07.png), all six values are visible. Keep initial-render/screenshot stability open; neither claim permanent English layout correctness from passing accessibility assertions nor diagnose a root cause from one frame. Captures after scrolling also place content under the status bar; review scroll-edge treatment next.
+
+Failures are retained: 3f8ae37 failed on a read-only accessibility environment write; a63ae44 failed only the new test's teardown screenshot after terminating the app. Both were fixed without removing assertions. Intermediate run 43709745446 at 5cb15b6 was cancelled to conserve quota after actual screenshots prompted the final layout correction. Successful evidence is for b444e9f. This documentation-only follow-up uses [skip ci] and does not claim a second source build.
+
+Remaining: progression Bronze access regression (74.80% → 70.34%), high survival repetition, first-frame capture stability/scroll-edge treatment, full art historical approval (including stylized timber key), 73 missing illustrations, production audio, VoiceOver and actual OS toggles, physical-device performance, signing and Game Center account checks. No release or full Phase 2 completion claim.
