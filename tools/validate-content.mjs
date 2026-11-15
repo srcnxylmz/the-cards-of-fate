@@ -116,6 +116,9 @@ export function validate(cards, eras) {
       const signature=JSON.stringify([choice.immediateEffects,choice.outcomes?.map(o=>[o.probability,o.affinity,o.effect,o.delayedEffects])]);
       assert(!effects.has(signature),`${label}: strategically identical choices`); effects.add(signature);
     }
+    const declaredFlags=new Set(card.worldFlags??[]);
+    const actualFlags=new Set((card.choices??[]).flatMap(c=>[...(c.immediateEffects?.flags??[]),...(c.outcomes??[]).flatMap(o=>o.effect?.flags??[])]));
+    assert(declaredFlags.size===actualFlags.size&&[...actualFlags].every(f=>declaredFlags.has(f)),label+': stale worldFlags');
     if(card.storyChainId) chains.set(card.storyChainId,[...(chains.get(card.storyChainId)??[]),card.id]);
   }
   for(const card of cards) for(const condition of [...(card.requirements??[]),...(card.choices??[]).flatMap(c=>c.requirements??[])]) {

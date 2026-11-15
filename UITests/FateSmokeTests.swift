@@ -26,7 +26,12 @@ final class FateSmokeTests: XCTestCase {
     func testEnglishDecisionAndPersistentResume() throws { try exercise(language: "en") }
 
     func testIllustratedCardsAndLargeTextReducedMotion() throws {
-        for (id, language, large) in [("sacred_fire", "tr", false), ("river_tracks", "en", false), ("first_granary", "tr", true), ("green_stone", "en", false), ("smoke_shift", "tr", false)] {
+        struct Fixture: Decodable { var id: String; var language: String; var large: Bool }
+        let url = try XCTUnwrap(Bundle(for: FateSmokeTests.self).url(forResource: "ArtFixtures", withExtension: "json"))
+        let fixtures = try JSONDecoder().decode([Fixture].self, from: Data(contentsOf: url))
+        XCTAssertGreaterThanOrEqual(fixtures.count, 10)
+        for fixture in fixtures {
+            let (id, language, large) = (fixture.id, fixture.language, fixture.large)
             app.terminate()
             launch(language: language, reset: true, extra: ["--ui-test-card", id, "--audio-smoke"] + (large ? ["--large-text-reduced-motion"] : []))
             tap(element("menu.newGame"))
@@ -44,6 +49,43 @@ final class FateSmokeTests: XCTestCase {
         }
     }
 
+
+    func testAudioCuesStartAndRespectMute() throws {
+        struct Event: Decodable { var cue: String; var cardID: String?; var status: String; var playReturned: Bool; var isPlaying: Bool; var duration: Double }
+        struct Evidence: Decodable { var events: [Event]; var writeError: String? }
+        func evidence() throws -> Evidence {
+            let value = try XCTUnwrap(element("debug.audio").value as? String)
+            let attachment = XCTAttachment(string: value)
+            attachment.name = "audio-playback-evidence"; attachment.lifetime = .keepAlways; add(attachment)
+            let result = try JSONDecoder().decode(Evidence.self, from: Data(value.utf8))
+            XCTAssertNil(result.writeError, "Evidence must also be persisted in the simulator container")
+            return result
+        }
+        for (id, choice) in [("river_tracks", "follow"), ("green_stone", "kiln")] {
+            app.terminate()
+            launch(language: "en", reset: true, extra: ["--ui-test-card", id, "--audio-smoke"] + (id == "river_tracks" ? ["--reset-audio-telemetry"] : []))
+            tap(element("menu.newGame"))
+            tap(element("choice." + choice))
+            XCTAssertTrue(element("result.title").waitForExistence(timeout: 10))
+            let events = try evidence().events.filter { $0.cardID == id }
+            for cue in ["card-open", id == "river_tracks" ? "choice-soft" : "decision"] {
+                let event = try XCTUnwrap(events.last { $0.cue == cue })
+                XCTAssertEqual(event.status, "started")
+                XCTAssertTrue(event.playReturned)
+                XCTAssertTrue(event.isPlaying)
+                XCTAssertGreaterThan(event.duration, 0)
+            }
+        }
+        let started = try evidence().events.filter { $0.status == "started" }.count
+        app.terminate()
+        launch(language: "en", reset: true, extra: ["--ui-test-card", "river_tracks"])
+        tap(element("menu.newGame")); tap(element("choice.follow"))
+        XCTAssertTrue(element("result.title").waitForExistence(timeout: 10))
+        let muted = try evidence().events
+        XCTAssertEqual(muted.filter { $0.status == "started" }.count, started)
+        XCTAssertEqual(Array(muted.suffix(2)).map(\.status), ["muted", "muted"])
+        XCTAssertTrue(muted.suffix(2).allSatisfy { !$0.playReturned && !$0.isPlaying })
+    }
 
     // Pixel evidence, independent of accessibilityValue. The legacy layout is a diagnostic
     // control, never an accepted alternative to the assertions on the production layout.

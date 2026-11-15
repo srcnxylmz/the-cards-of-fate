@@ -1,0 +1,52 @@
+[
+  {
+    "id": "sacred_fire",
+    "language": "tr",
+    "large": false
+  },
+  {
+    "id": "river_tracks",
+    "language": "en",
+    "large": false
+  },
+  {
+    "id": "first_granary",
+    "language": "tr",
+    "large": true
+  },
+  {
+    "id": "green_stone",
+    "language": "en",
+    "large": false
+  },
+  {
+    "id": "reed_fever",
+    "language": "tr",
+    "large": false
+  },
+  {
+    "id": "furnace_wood",
+    "language": "en",
+    "large": false
+  },
+  {
+    "id": "salt_ship",
+    "language": "tr",
+    "large": false
+  },
+  {
+    "id": "winter_porters",
+    "language": "en",
+    "large": false
+  },
+  {
+    "id": "fallow_strips",
+    "language": "tr",
+    "large": false
+  },
+  {
+    "id": "smoke_shift",
+    "language": "en",
+    "large": false
+  }
+]

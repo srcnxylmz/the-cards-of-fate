@@ -1,3 +1,7 @@
+# 105-card QA — native gate pending
+
+Local: 70 Swift / 39 Node passed, generation/audio/art checks passed. Final 50,000-run comparison is complete; six native UI tests remain to be accepted. Previous checkpoint evidence below is historical.
+
 # Current 90-card QA checkpoint — 2026-11-15
 
 **Verified in components:** runtime/core ee15f32 (61 Swift, 31 Node, five 10,000-seed CI simulations); identical-runtime UI 0be976a (all five tests passed, including frozen-frame TR/EN normal/large OCR). Full source/evidence, failed OCR cases and remaining limits are recorded at the end. Do not mistake skipped simulations in the final UI-only run for new executions. Prior records below are historical.
@@ -120,3 +124,12 @@ Remaining: progression Bronze access regression (74.80% → 70.34%), high surviv
 ### Remaining work and next group
 
 90 cards (30/30/30), 203 decisions, 51 statically detected cross-era links; these are not 100 editorially approved completed chains. Progression Bronze 70.34% → 95.94%; survival repeat 84.36% → 75.28%, but mean lifetime 136.0397 → 101.5947. Random/knowledge Neolithic access fell; long Bronze runs repeat more and knowledge has 1889 living caps. Prioritize purposeful recovery/ecology and long-session Bronze variety before the next distinct 120/180-card group. Keep 12-era/800-card/100-chain/30-ending scope. Physical device, actual OS accessibility, audio listening, signing, Game Center account/weekly version pinning and final assets remain open.
+
+
+## 105-card validation in progress
+
+Local Node suite: 39 tests passed; generation --check and art audit passed (105 cards, 10 actual portrait candidates, 95 missing). All 90 older event definitions retain their choice IDs/effects/text; four historical exclusions and derived direct worldFlags metadata are explicitly allowed by the preservation regression. Four instrumented 90-card baseline reports exactly match original era/lifetime/repeat/cap/decision/ending aggregates. Windows Swift: 70 tests passed, zero failures; App/UI Swift syntax parse passed. iOS-native acceptance remains pending; do not reuse old 90-card CI as evidence for the new source.
+
+New story fixture failures were retained locally and corrected: acknowledgment was required between winter and canal decisions; supply caching required the actual earlier ice crossing; smelting had to be obtained before selecting the recasting event. Tests now traverse these decisions rather than weakening selector/choice availability. No engine rule was relaxed.
+
+Native suite adds three-cue playback-start and mute assertions, persistent simulator-container JSON and attachments. Records expose actual AVAudioPlayer.play()/isPlaying/duration observations, missing-resource/errors and telemetry persistence failures. This remains API-start evidence, not physical listening or mix approval. Dynamic art fixtures cover every real registered image. Existing fixed-frame pixel OCR, caption recognition, large text, scroll clipping and Reduce Motion assertions are preserved.

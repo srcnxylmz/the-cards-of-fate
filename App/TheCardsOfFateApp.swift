@@ -74,8 +74,7 @@ final class GameStore: ObservableObject {
         #if DEBUG
         let arguments = ProcessInfo.processInfo.arguments
         if arguments.contains("--ui-testing"), let index = arguments.firstIndex(of: "--ui-test-card"), index + 1 < arguments.count,
-           ["sacred_fire", "river_tracks", "first_granary", "green_stone", "smoke_shift"].contains(arguments[index + 1]),
-           let card = content?.card(arguments[index + 1]) {
+           let card = content?.card(arguments[index + 1]), UIImage(named: card.artAsset) != nil {
             initial.era = card.era; initial.currentCardID = card.id
             initial.discovered.insert(card.id); initial.lastSeen[card.id] = initial.turn
         }
@@ -89,7 +88,7 @@ final class GameStore: ObservableObject {
         do {
             let next = try engine.choose(choice.id, in: state)
             guard commit(next) else { return false }
-            feedback.play(preset: next.resolution?.animation ?? "normal", sound: sound, haptics: haptics)
+            feedback.play(preset: next.resolution?.animation ?? "normal", sound: sound, haptics: haptics, cardID: state.currentCardID)
             if next.mode == .weekly, let week = next.weekID {
                 gameCenter.queueScore(turns: next.turn, week: week)
             }
@@ -153,6 +152,11 @@ struct RootView: View {
         }
         .foregroundStyle(Color(red: 0.94, green: 0.90, blue: 0.81))
         .tint(gold)
+        .overlay(alignment: .topLeading) {
+            #if DEBUG
+            if ProcessInfo.processInfo.arguments.contains("--ui-testing") { AudioEvidenceProbe(feedback: store.feedback) }
+            #endif
+        }
         .preferredColorScheme(.dark)
         .animation(reduceMotion ? nil : .easeInOut(duration: 0.3), value: store.state?.resolution != nil)
         .sheet(item: $panel) { item in panelView(item) }
@@ -262,7 +266,7 @@ struct RootView: View {
                         Button(t("Yeni uygarlık", "New civilization")) { begin(.story) }.buttonStyle(.borderedProminent)
                     }.padding(24)
                 } else if let card = store.content?.card(state.currentCardID) {
-                    EventCardView(card: card, era: state.era, buildings: state.buildings, language: language, reduceMotion: reduceMotion, available: { $0.available(in: state) }, onReveal: { store.feedback.openCard(sound: sound) }) { choice in
+                    EventCardView(card: card, era: state.era, buildings: state.buildings, language: language, reduceMotion: reduceMotion, available: { $0.available(in: state) }, onReveal: { store.feedback.openCard(sound: sound, cardID: card.id) }) { choice in
                         store.choose(choice, sound: sound, haptics: haptics)
                     }.id(card.id)
                 }
@@ -380,3 +384,13 @@ struct RootView: View {
         (["THE CARDS OF FATE · MonKeyBonKey Games", "\(state.turn) \(t("tur", "turns"))"] + state.history.suffix(8).map { $0.text.value(language) } + [state.ending?.value(language) ?? ""]).joined(separator: "\n\n")
     }
 }
+
+#if DEBUG
+private struct AudioEvidenceProbe: View {
+    @ObservedObject var feedback: FeedbackService
+    var body: some View {
+        Text("Audio evidence").font(.system(size: 1)).frame(width: 1, height: 1).opacity(0.01)
+            .accessibilityIdentifier("debug.audio").accessibilityValue(feedback.audioEvidence)
+    }
+}
+#endif

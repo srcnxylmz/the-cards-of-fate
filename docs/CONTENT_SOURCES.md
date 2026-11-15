@@ -17,3 +17,8 @@ Starting points must be distinguished: GitHub 51 cards; user's local draft 52 ca
 The progression study stores explicitly frozen 52/64 decks under docs/analysis/progression-*-before/cards.json. These are diagnostic inputs only, never app resources or authoring sources. FateSimulation --cards reads them without modifying the package. Analysis reports define time sampling and overlapping blockers in PROGRESSION_ANALYSIS.md. The current canonical resource/mirror holds 90 IDs.
 
 The 90-card source group is milestone-events.mjs, with recurrence revisions in adapt-events.mjs. Frozen inputs/reports in analysis/milestone90-* are diagnostic only. First-draft and pre-food data retain failed designs; milestone90-76-repair uses the frozen repaired 76 deck with final production rules. Current canonical/mirror count is 90 (30/30/30), 203 choices.
+
+
+## 105-card source extension
+
+tools/content/recovery-events.mjs adds fifteen original events to the existing authoring composition. The package resource and root generated mirror now contain 105 IDs, 35 per authored era, 245 choices. Runtime technology metadata gains potter_lease as a smelting source; root technologies.json remains the user's unrelated local document. Existing ninety event texts, choices and effects are checked against the frozen 90-card baseline by tools/recovery-content.test.mjs. Only the four documented historical exclusions and recomputed direct worldFlags metadata differ on older events. Art generation records and actual files are checked by tools/art-assets.test.mjs and tools/art-audit.mjs. No source-module replacement, save-schema change or baseline-policy tuning.

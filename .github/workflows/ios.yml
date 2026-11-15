@@ -21,7 +21,8 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
-      - run: node --test tools/validate-content.test.mjs tools/content-sync.test.mjs tools/audio-assets.test.mjs
+      - run: node --test tools/validate-content.test.mjs tools/content-sync.test.mjs tools/audio-assets.test.mjs tools/art-assets.test.mjs tools/recovery-content.test.mjs
+      - run: node tools/art-audit.mjs
       - run: node tools/generate-feedback.mjs --check
       - run: node tools/build-content.mjs --check
       - run: node tools/validate-content.mjs
@@ -32,17 +33,18 @@ jobs:
         run: |
           [[ "$VALIDATED_SOURCE" =~ ^[0-9a-fA-F]{40}$ ]] || { echo "A validated source SHA is required"; exit 1; }
           git fetch --no-tags origin "$VALIDATED_SOURCE"
-          git diff --exit-code "$VALIDATED_SOURCE" HEAD -- App Sources Tests Package.swift cards.json assets project.yml tools/build-content.mjs tools/content tools/validate-content.mjs tools/validate-content.test.mjs tools/content-sync.mjs tools/content-sync.test.mjs tools/audio-assets.test.mjs tools/generate-feedback.mjs
+          git diff --exit-code "$VALIDATED_SOURCE" HEAD -- App Sources Tests Package.swift cards.json assets project.yml tools
       - name: Run Swift tests
         if: inputs.ui_only != true
         run: swift test
-      - name: Compare four strategies and optional council management over 10000 seeds each
+      - name: Compare five strategies and optional council management over 10000 seeds each
         if: inputs.ui_only != true
         run: |
           swift run -c release FateSimulation 10000 --policy random --output docs/simulation-random.json
           swift run -c release FateSimulation 10000 --policy survival --output docs/simulation-survival.json
           swift run -c release FateSimulation 10000 --policy knowledge --output docs/simulation-knowledge.json
           swift run -c release FateSimulation 10000 --policy progression --output docs/simulation-progression.json
+          swift run -c release FateSimulation 10000 --policy recovery --output docs/simulation-recovery.json
           swift run -c release FateSimulation 10000 --policy survival --manage-council --output docs/simulation-survival-council.json
       - name: Generate Xcode project
         run: |
@@ -76,6 +78,12 @@ jobs:
             xcrun xcresulttool export attachments --path artifacts/UITests.xcresult --output-path artifacts/screenshots || echo "Attachment export failed; inspect full xcresult" >> artifacts/export-errors.txt
           fi
           if [ -n "$SIMULATOR_UDID" ]; then
+            DATA_CONTAINER=$(xcrun simctl get_app_container "$SIMULATOR_UDID" games.monkeybonkey.thecardsoffate data)
+            if [ -f "$DATA_CONTAINER/Documents/ui-audio-evidence.json" ]; then
+              cp "$DATA_CONTAINER/Documents/ui-audio-evidence.json" artifacts/audio-playback.json
+            else
+              echo "Persistent audio evidence absent" >> artifacts/export-errors.txt
+            fi
             xcrun simctl io "$SIMULATOR_UDID" screenshot artifacts/final-screen.png || true
             xcrun simctl spawn "$SIMULATOR_UDID" log show --last 15m --info --style compact --predicate 'process == "TheCardsOfFate"' > artifacts/app-system.log 2>&1 || true
           fi

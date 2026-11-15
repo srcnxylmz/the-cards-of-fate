@@ -1,8 +1,12 @@
 # Content bible
 
-Editorial principle: each card needs a specific human conflict, an observable cost, competing reasonable values, and consequences that fit the era. Neither option should simply be the same reward in different wording. Turkish is authored naturally, with a complete English counterpart for the current 90-card set.
+Editorial principle: each card needs a specific human conflict, an observable cost, competing reasonable values, and consequences that fit the era. Neither option should simply be the same reward in different wording. Turkish is authored naturally, with a complete English counterpart for the current 105-card set.
 
-## Current inventory — 2026-11-15
+## Current inventory
+
+105 events, 35 in each first-three era, 245 choices; all ninety previous IDs, texts and effects preserved. Fifteen recovery and historical-inheritance events are detailed at the end of this document. Seven close once resolved and eight are recurring crises. Native acceptance remains pending.
+
+## Historical 90-card inventory — 2026-11-15
 
 90 events, 30 in each first-three era, 203 choices; all previous 76 IDs preserved. Eight new one-shot histories and six recurring crises deepen debt, guest settlement, agricultural upkeep and city work. Winter promises → village grain surety → city identity review and guest watch → home rights → harbor residence use actual delayed gates and optional branch-dependent decisions, tested in the production selector with controlled era fixtures. Complete-chain editorial approval remains pending.
 
@@ -56,3 +60,14 @@ Thirteen new events are one-shot. Only borrowed_ox is a repeatable seasonal reso
 All new choices distinguish faction interests and costs. The injured tracker’s delayed recovery unlocks a third exile choice. Charcoal inspection uses normalized authority-sensitive probabilities. Existing generic decision audio and simple animation implementations are still prototypes. Twelve art briefs are saved; all twelve illustrations remain missing.
 
 Completed-world closures: river observation, smelting discovery (both paths), writing archive, and wall construction stop recurring once their world fact is present. Deferred discovery choices remain eligible until the discovery actually occurs. Current saved cards may finish normally even if an updated exclusion would now prevent selecting them again.
+
+
+## Recovery group: 90 → 105
+
+Five events per era; 245 total choices. Paleolithic: salmon_weir, windbreak_camp, flint_fragments, winter_speaker, ash_return. Neolithic: seed_escrow, reed_bank, canal_widows, potter_lease, field_recovery. Bronze: harbor_dredge, copper_recast, ration_council, levy_hearing, roof_cistern. Every new choice has authored TR/EN text and a scheduled consequence; seven events close once resolved, eight describe recurring seasons or production cycles.
+
+History routes: shared flint fragments wait until the village era before creating repair_right; only the stock branch grants shared kiln access and later common molds. The private barter branch still carries a later material cost. Fish passage opens the reed-bank dispute; its buffer/build ruling leaves different city water practice and repair burdens. Old canal advance opens inherited labor debt; pay/witness establish nonhereditary service while assign does not. Earlier winter hearings unlock witnesses. Protecting regrowth after the burned grove unlocks a cheaper ecological field alternative; root clearing does not. Existing riverbank supply stops, intercity silt charter and limited surety unlock specific recurring recovery options.
+
+The general kiln trial offers a real supply/ecological investment in smelting even when the older repair-first policy stalls at high knowledge. Prior kiln repair or common-access history reduces that investment. No technology threshold, old decision effect, save schema or baseline diagnostic policy was changed. Delayed production after paid dredging/tool repair offsets recurring upkeep; immediate cargo and rushed recasting require remaining ecological inputs. No choice bypasses the real availability/selection rules.
+
+Thematic labels and 69 static cross-era references are authoring diagnostics, not a claim of 100 completed editorially reviewed chains. Artwork is generated for only ten cards and production music remains missing.

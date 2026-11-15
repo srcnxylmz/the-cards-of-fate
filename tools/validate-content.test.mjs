@@ -31,6 +31,7 @@ const mutations=[
   ['identical strategic outcomes',c=>c[0].choices[1].outcomes=structuredClone(c[0].choices[0].outcomes),'strategically identical choices'],
   ['unknown decision reference',c=>c[0].requirements=[{lastDecision:'missing.choice'}],'unknown decision reference'],
   ['contradictory decision reference',c=>c[0].requirements=[{lastDecision:'sacred_fire.burn',notLastDecision:'sacred_fire.burn'}],'contradictory decision reference'],
+  ['stale derived flags',c=>c[0].worldFlags=[],'stale worldFlags'],
   ['unknown affinity',c=>c[0].choices[0].outcomes[0].affinity='luck','unknown affinity']
 ];
 for(const [name,mutate,message] of mutations) test(`rejects ${name}`,()=>{

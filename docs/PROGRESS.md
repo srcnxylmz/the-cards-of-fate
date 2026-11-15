@@ -1,3 +1,7 @@
+# 105-card quality/content checkpoint — 2026-11-15
+
+**Current local source: 105 cards / 245 choices / 35-35-35; 70 Swift and 39 Node tests passed. Ten real illustration candidates, 95 missing. Final same-seed 50,000-run comparison is complete; native acceptance is pending.** The original 12-era / 800-card / 100-approved-chain / 30-ending scope is unchanged. The 90-card evidence below is historical and does not validate the new source.
+
 # 90-card milestone checkpoint — 2026-11-15
 
 ## Current status
@@ -258,3 +262,17 @@ OCR preprocessing additionally pads tight crop boundaries and reads independent 
 ### Remaining work and next group
 
 90 cards (30/30/30), 203 decisions, 51 statically detected cross-era links; these are not 100 editorially approved completed chains. Progression Bronze 70.34% → 95.94%; survival repeat 84.36% → 75.28%, but mean lifetime 136.0397 → 101.5947. Random/knowledge Neolithic access fell; long Bronze runs repeat more and knowledge has 1889 living caps. Prioritize purposeful recovery/ecology and long-session Bronze variety before the next distinct 120/180-card group. Keep 12-era/800-card/100-chain/30-ending scope. Physical device, actual OS accessibility, audio listening, signing, Game Center account/weekly version pinning and final assets remain open.
+
+
+## 105-card work in progress — 2026-11-15
+
+Frozen 90-card deck and diagnostic baselines are retained in analysis/milestone105-90-before. Added 15 individually authored events (35 per era, 245 choices); historical closures for council_seal, hostage_prince, salt_ship and flint_apprentice use existing outcome flags and saved history. Original four simulation policies and engine thresholds remain unchanged. Independent recovery policy and era/late-session flow instrumentation added. Five new real portrait candidates registered with exact prompts and SHA-256 provenance: winter_porters, fallow_strips, reed_fever, furnace_wood, salt_ship. Total 10 actual candidates / 95 missing illustrations. Furnace candidate was edited to remove industrial-looking chimneys and later axe styling. No historical/commercial acceptance claim. Local regression/native validation remains pending; do not mark this checkpoint complete. Existing user edits and experimental files are preserved.
+
+
+### Local 105-card quality gate
+
+70 Windows XCTest tests and 39 Node tests passed. Generation --check, audio generation --check, art audit and zero-error/zero-warning content validation passed. All 15 events / 42 new choices occur in natural random-policy runs, with additional controlled real-selector/delay/old-save/replay regressions. Final reports: analysis/milestone105-final and MILESTONE_105_ANALYSIS.md; five root policy reports updated, user council report untouched. Four 90-card diagnostic baselines exactly reproduce old aggregates. No engine thresholds/weights/cooldowns or original four policies changed.
+
+Survival mean 101.59 → 122.31, whole-run repeat 75.28% → 76.36%; knowledge Bronze 58.49% → 63.80%, mean 168.35 → 122.95; progression Bronze 95.94% → 96.43%, mean 115.00 → 97.22. Recovery mean 196.89 → 159.75, living caps 2474 → 1251. Random Neolithic/Bronze access falls. Four historical repeat counts reach zero, but long Bronze repetition and some lifetime regressions remain open; shorter runs/fewer caps are not claimed as balance success. Rejected scarce-production draft and measured intermediate decks/reports are retained.
+
+Next: accept the full native gate and inspect actual ten-art/audio/OCR evidence. Only then is the 105-card checkpoint safe; do not start the 120 content batch first. The next 120-group task is exposure-normalized Bronze starvation and changing civic/trade states; preserve meaningful healthy caps and add durable history payoffs. Production audio/95 missing images, actual device/accessibility toggles, signing and Game Center version/account tests remain open.

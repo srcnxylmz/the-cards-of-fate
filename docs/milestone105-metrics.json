@@ -1,0 +1,3132 @@
+{
+  "seeds": "0..<10000",
+  "turnCap": 500,
+  "capMeaning": "Alive and censored; not a successful ending",
+  "warning": "Global repetition is duration-dependent. Compare lifetimes, era/late rates and real historical closure; no causal claim from pooled repeat rate alone.",
+  "policies": {
+    "random": {
+      "before": {
+        "eraReachCounts": {
+          "1": 10000,
+          "2": 6212,
+          "3": 5024
+        },
+        "averageTurns": 44.7758,
+        "repeatRate": 0.3231187382469995,
+        "cappedRuns": 0,
+        "capsByEra": {},
+        "turnQuantiles": {
+          "p50": 35,
+          "p90": 82,
+          "p99": 154
+        },
+        "runsReaching100": 577,
+        "endings": {
+          "The land fell silent. Only roads remain after your people scattered.": 330,
+          "The last hearth went dark. Hunger consumed your civilization's living memory.": 9670
+        },
+        "eras": {
+          "1": {
+            "decisions": 173977,
+            "repeatRate": 0.09572529702202015,
+            "lateDecisions": 17,
+            "lateRepeatRate": 1,
+            "stats": {
+              "population": {
+                "mean": 46.294705622007505,
+                "netPerDecision": {
+                  "card": 0.2850204337354938,
+                  "delayed": 0.05225403357915127,
+                  "world": -1.7324244009265592,
+                  "council": 0,
+                  "succession": 0
+                }
+              },
+              "resources": {
+                "mean": 22.98334262574938,
+                "netPerDecision": {
+                  "card": 0.46533737218138027,
+                  "delayed": -0.15110618070204682,
+                  "world": -3.0291417831092615,
+                  "council": 0,
+                  "succession": 0
+                }
+              },
+              "authority": {
+                "mean": 56.38698793518684,
+                "netPerDecision": {
+                  "card": 1.479511659587187,
+                  "delayed": -0.13130471269190755,
+                  "world": 0,
+                  "council": -0.0022704150548635738,
+                  "succession": -0.1244762238686723
+                }
+              },
+              "knowledge": {
+                "mean": 53.48798979175408,
+                "netPerDecision": {
+                  "card": 2.459359570517942,
+                  "delayed": 0.19286457405289206,
+                  "world": 0,
+                  "council": 0,
+                  "succession": 0.027308207406726178
+                }
+              },
+              "stability": {
+                "mean": 58.7914896796703,
+                "netPerDecision": {
+                  "card": 0.9891479908263736,
+                  "delayed": -0.04415526190243538,
+                  "world": -0.8985210688769205,
+                  "council": -0.0056616679216218236,
+                  "succession": 0
+                }
+              },
+              "environment": {
+                "mean": 64.30751191249418,
+                "netPerDecision": {
+                  "card": -0.41906688815188214,
+                  "delayed": 0,
+                  "world": 0,
+                  "council": 0,
+                  "succession": 0
+                }
+              }
+            }
+          },
+          "2": {
+            "decisions": 110361,
+            "repeatRate": 0.3268727177173096,
+            "lateDecisions": 3625,
+            "lateRepeatRate": 0.9983448275862069,
+            "stats": {
+              "population": {
+                "mean": 44.246481999981874,
+                "netPerDecision": {
+                  "card": 1.1902211832078362,
+                  "delayed": -0.24321091689999186,
+                  "world": -1.3130453692880637,
+                  "council": 0,
+                  "succession": 0
+                }
+              },
+              "resources": {
+                "mean": 20.052210472902566,
+                "netPerDecision": {
+                  "card": 0.9814427198013791,
+                  "delayed": -0.12002428394088491,
+                  "world": -0.8523028968566795,
+                  "council": 0,
+                  "succession": 0
+                }
+              },
+              "authority": {
+                "mean": 66.19314794175479,
+                "netPerDecision": {
+                  "card": 0.6837016699739944,
+                  "delayed": -0.0636366107592356,
+                  "world": 0,
+                  "council": -0.003660713476681074,
+                  "succession": -0.3034405269977619
+                }
+              },
+              "knowledge": {
+                "mean": 85.12541568126422,
+                "netPerDecision": {
+                  "card": 1.232980853743623,
+                  "delayed": 0.15585215791810514,
+                  "world": 0,
+                  "council": 0,
+                  "succession": 0.04350268663748969
+                }
+              },
+              "stability": {
+                "mean": 48.574641404119205,
+                "netPerDecision": {
+                  "card": 0.5220322396498763,
+                  "delayed": -0.24737905600710397,
+                  "world": -0.659626136044436,
+                  "council": -0.0023559047127155426,
+                  "succession": 0
+                }
+              },
+              "environment": {
+                "mean": 57.149545582225606,
+                "netPerDecision": {
+                  "card": -0.49182229229528546,
+                  "delayed": -0.0481510678591169,
+                  "world": 0,
+                  "council": 0,
+                  "succession": 0
+                }
+              }
+            }
+          },
+          "3": {
+            "decisions": 163420,
+            "repeatRate": 0.5626667482560274,
+            "lateDecisions": 14276,
+            "lateRepeatRate": 0.9422107032782292,
+            "stats": {
+              "population": {
+                "mean": 36.89664667727328,
+                "netPerDecision": {
+                  "card": 0.469220413658059,
+                  "delayed": -0.27705911149186147,
+                  "world": -1.7517317341818628,
+                  "council": 0,
+                  "succession": 0
+                }
+              },
+              "resources": {
+                "mean": 17.898935258842247,
+                "netPerDecision": {
+                  "card": 1.2073430424672622,
+                  "delayed": -0.8021478399216743,
+                  "world": -0.6849161669318321,
+                  "council": 0,
+                  "succession": 0
+                }
+              },
+              "authority": {
+                "mean": 84.06381715824257,
+                "netPerDecision": {
+                  "card": 1.3509607147228002,
+                  "delayed": -0.019471300942357116,
+                  "world": 0,
+                  "council": -0.0007526618528943826,
+                  "succession": -0.3446456982009546
+                }
+              },
+              "knowledge": {
+                "mean": 98.14962672867458,
+                "netPerDecision": {
+                  "card": 0.34533716803328846,
+                  "delayed": -0.06898176477787296,
+                  "world": 0,
+                  "council": 0,
+                  "succession": 0.020450373271325418
+                }
+              },
+              "stability": {
+                "mean": 62.54993268877738,
+                "netPerDecision": {
+                  "card": 0.5037633092644719,
+                  "delayed": 0.19131685228246237,
+                  "world": -0.9179476196304002,
+                  "council": -0.0008077346713988496,
+                  "succession": 0
+                }
+              },
+              "environment": {
+                "mean": 51.98358830008567,
+                "netPerDecision": {
+                  "card": -0.20909925345734917,
+                  "delayed": -0.012354668951168768,
+                  "world": 0,
+                  "council": 0,
+                  "succession": 0
+                }
+              }
+            }
+          }
+        },
+        "cappedLast80": {
+          "meanDistinctCards": null,
+          "meanPendingConsequences": null,
+          "meanStatRanges": {
+            "population": {
+              "minimum": null,
+              "maximum": null,
+              "final": null
+            },
+            "resources": {
+              "minimum": null,
+              "maximum": null,
+              "final": null
+            },
+            "authority": {
+              "minimum": null,
+              "maximum": null,
+              "final": null
+            },
+            "knowledge": {
+              "minimum": null,
+              "maximum": null,
+              "final": null
+            },
+            "stability": {
+              "minimum": null,
+              "maximum": null,
+              "final": null
+            },
+            "environment": {
+              "minimum": null,
+              "maximum": null,
+              "final": null
+            }
+          },
+          "topChoices": []
+        },
+        "historicalRepeatDecisions": {
+          "council_seal": 10628,
+          "hostage_prince": 10733,
+          "salt_ship": 10535,
+          "flint_apprentice": 10656
+        }
+      },
+      "after": {
+        "eraReachCounts": {
+          "1": 10000,
+          "2": 5947,
+          "3": 4866
+        },
+        "averageTurns": 50.8816,
+        "repeatRate": 0.36151575422156534,
+        "cappedRuns": 0,
+        "capsByEra": {},
+        "turnQuantiles": {
+          "p50": 38,
+          "p90": 95,
+          "p99": 215
+        },
+        "runsReaching100": 912,
+        "endings": {
+          "The land fell silent. Only roads remain after your people scattered.": 204,
+          "The last hearth went dark. Hunger consumed your civilization's living memory.": 9796
+        },
+        "eras": {
+          "1": {
+            "decisions": 188907,
+            "repeatRate": 0.08344317574256116,
+            "lateDecisions": 156,
+            "lateRepeatRate": 1,
+            "stats": {
+              "population": {
+                "mean": 45.814104294705864,
+                "netPerDecision": {
+                  "card": 0.238392436489913,
+                  "delayed": 0.047578967428417156,
+                  "world": -1.6468791521754091,
+                  "council": 0,
+                  "succession": 0
+                }
+              },
+              "resources": {
+                "mean": 23.165997024991132,
+                "netPerDecision": {
+                  "card": 0.7158760660007305,
+                  "delayed": -0.12228239292350204,
+                  "world": -3.0816168802638337,
+                  "council": 0,
+                  "succession": 0
+                }
+              },
+              "authority": {
+                "mean": 56.157484899977234,
+                "netPerDecision": {
+                  "card": 1.3578109863583667,
+                  "delayed": -0.11658646847390515,
+                  "world": 0,
+                  "council": -0.002673273092050586,
+                  "succession": -0.14076767933427559
+                }
+              },
+              "knowledge": {
+                "mean": 54.76838867802675,
+                "netPerDecision": {
+                  "card": 2.3004864827666522,
+                  "delayed": 0.19732990307399936,
+                  "world": 0,
+                  "council": 0,
+                  "succession": 0.030237100795629596
+                }
+              },
+              "stability": {
+                "mean": 57.533341803109465,
+                "netPerDecision": {
+                  "card": 0.8960758468452731,
+                  "delayed": -0.08712752836051602,
+                  "world": -0.8537375533992917,
+                  "council": -0.011423610559693395,
+                  "succession": 0
+                }
+              },
+              "environment": {
+                "mean": 64.3115130725701,
+                "netPerDecision": {
+                  "card": -0.3210574515502337,
+                  "delayed": 0,
+                  "world": 0,
+                  "council": 0,
+                  "succession": 0
+                }
+              }
+            }
+          },
+          "2": {
+            "decisions": 94912,
+            "repeatRate": 0.28961564396493594,
+            "lateDecisions": 4806,
+            "lateRepeatRate": 0.9900124843945068,
+            "stats": {
+              "population": {
+                "mean": 41.933833445718136,
+                "netPerDecision": {
+                  "card": 0.9610375927174646,
+                  "delayed": -0.21760156776803777,
+                  "world": -1.2169483310856373,
+                  "council": 0,
+                  "succession": 0
+                }
+              },
+              "resources": {
+                "mean": 21.380995026972354,
+                "netPerDecision": {
+                  "card": 1.1757628118678354,
+                  "delayed": -0.244868931220499,
+                  "world": -0.8981161496965611,
+                  "council": 0,
+                  "succession": 0
+                }
+              },
+              "authority": {
+                "mean": 65.3112883513149,
+                "netPerDecision": {
+                  "card": 0.6441440492245448,
+                  "delayed": -0.057737693863789616,
+                  "world": 0,
+                  "council": -0.005183749157113958,
+                  "succession": -0.29803396830748485
+                }
+              },
+              "knowledge": {
+                "mean": 84.37360923803102,
+                "netPerDecision": {
+                  "card": 1.1111661328388402,
+                  "delayed": 0.23163562036412677,
+                  "world": 0,
+                  "council": 0,
+                  "succession": 0.04275539447066756
+                }
+              },
+              "stability": {
+                "mean": 44.62750758597438,
+                "netPerDecision": {
+                  "card": 0.3710911159811194,
+                  "delayed": -0.19927933243425489,
+                  "world": -0.6141267700606878,
+                  "council": -0.003108142279163857,
+                  "succession": 0
+                }
+              },
+              "environment": {
+                "mean": 59.43701534052596,
+                "netPerDecision": {
+                  "card": -0.31657746122724206,
+                  "delayed": -0.06622977073499663,
+                  "world": 0,
+                  "council": 0,
+                  "succession": 0
+                }
+              }
+            }
+          },
+          "3": {
+            "decisions": 224997,
+            "repeatRate": 0.625315004200056,
+            "lateDecisions": 40214,
+            "lateRepeatRate": 0.9494952006763814,
+            "stats": {
+              "population": {
+                "mean": 37.82991328773272,
+                "netPerDecision": {
+                  "card": 0.5596385729587505,
+                  "delayed": -0.24484770908056552,
+                  "world": -1.3860584807797438,
+                  "council": 0,
+                  "succession": 0
+                }
+              },
+              "resources": {
+                "mean": 22.62269719151811,
+                "netPerDecision": {
+                  "card": 1.642235229803064,
+                  "delayed": -1.0406627643924142,
+                  "world": -0.7628946163726628,
+                  "council": 0,
+                  "succession": 0
+                }
+              },
+              "authority": {
+                "mean": 83.05228514157966,
+                "netPerDecision": {
+                  "card": 0.9911021035836033,
+                  "delayed": -0.017422454521615845,
+                  "world": 0,
+                  "council": -0.000848900207558323,
+                  "succession": -0.34148899763107954
+                }
+              },
+              "knowledge": {
+                "mean": 98.0628097263519,
+                "netPerDecision": {
+                  "card": 0.3547025071445397,
+                  "delayed": -0.09411681044636151,
+                  "world": 0,
+                  "council": 0,
+                  "succession": 0.020222491855446962
+                }
+              },
+              "stability": {
+                "mean": 74.08519669151144,
+                "netPerDecision": {
+                  "card": 0.7474099654662062,
+                  "delayed": 0.2985862033716005,
+                  "world": -0.7210718365133757,
+                  "council": -0.0010444583705560518,
+                  "succession": 0
+                }
+              },
+              "environment": {
+                "mean": 57.167828904385395,
+                "netPerDecision": {
+                  "card": -0.15009977910816588,
+                  "delayed": 0.0910234358680338,
+                  "world": 0,
+                  "council": 0,
+                  "succession": 0
+                }
+              }
+            }
+          }
+        },
+        "cappedLast80": {
+          "meanDistinctCards": null,
+          "meanPendingConsequences": null,
+          "meanStatRanges": {
+            "population": {
+              "minimum": null,
+              "maximum": null,
+              "final": null
+            },
+            "resources": {
+              "minimum": null,
+              "maximum": null,
+              "final": null
+            },
+            "authority": {
+              "minimum": null,
+              "maximum": null,
+              "final": null
+            },
+            "knowledge": {
+              "minimum": null,
+              "maximum": null,
+              "final": null
+            },
+            "stability": {
+              "minimum": null,
+              "maximum": null,
+              "final": null
+            },
+            "environment": {
+              "minimum": null,
+              "maximum": null,
+              "final": null
+            }
+          },
+          "topChoices": []
+        },
+        "historicalRepeatDecisions": {
+          "council_seal": 0,
+          "hostage_prince": 0,
+          "salt_ship": 0,
+          "flint_apprentice": 0
+        }
+      }
+    },
+    "survival": {
+      "before": {
+        "eraReachCounts": {
+          "1": 10000
+        },
+        "averageTurns": 101.5947,
+        "repeatRate": 0.752792222428926,
+        "cappedRuns": 51,
+        "capsByEra": {
+          "1": 51
+        },
+        "turnQuantiles": {
+          "p50": 75,
+          "p90": 190,
+          "p99": 428
+        },
+        "runsReaching100": 2988,
+        "endings": {
+          "simulation_cap": 51,
+          "The land fell silent. Only roads remain after your people scattered.": 8247,
+          "The last hearth went dark. Hunger consumed your civilization's living memory.": 1702
+        },
+        "eras": {
+          "1": {
+            "decisions": 1015947,
+            "repeatRate": 0.752792222428926,
+            "lateDecisions": 252986,
+            "lateRepeatRate": 0.9953317574885567,
+            "stats": {
+              "population": {
+                "mean": 52.03113646676451,
+                "netPerDecision": {
+                  "card": -0.09972370605946963,
+                  "delayed": -0.009472935103898137,
+                  "world": -0.08583026476774872,
+                  "council": 0,
+                  "succession": 0
+                }
+              },
+              "resources": {
+                "mean": 48.014039118182346,
+                "netPerDecision": {
+                  "card": 5.210151710669947,
+                  "delayed": -1.5727788949620403,
+                  "world": -3.968424533956988,
+                  "council": 0,
+                  "succession": 0
+                }
+              },
+              "authority": {
+                "mean": 85.33829225343447,
+                "netPerDecision": {
+                  "card": 0.983359368156016,
+                  "delayed": -0.21915611739588778,
+                  "world": 0,
+                  "council": -0.00005413668232693241,
+                  "succession": -0.29610993486864967
+                }
+              },
+              "knowledge": {
+                "mean": 78.94709271251355,
+                "netPerDecision": {
+                  "card": 0.46069135496241437,
+                  "delayed": 0.1547413398533585,
+                  "world": 0,
+                  "council": 0,
+                  "succession": 0.046233711010515315
+                }
+              },
+              "stability": {
+                "mean": 29.814619266556228,
+                "netPerDecision": {
+                  "card": -0.11634169892720782,
+                  "delayed": -0.26336610079069084,
+                  "world": -0.03845771482173775,
+                  "council": -0.037628931430478164,
+                  "succession": 0
+                }
+              },
+              "environment": {
+                "mean": 28.583142624566044,
+                "netPerDecision": {
+                  "card": -0.6577419885092431,
+                  "delayed": 0,
+                  "world": 0,
+                  "council": 0,
+                  "succession": 0
+                }
+              }
+            }
+          },
+          "2": {
+            "decisions": 0,
+            "repeatRate": null,
+            "lateDecisions": 0,
+            "lateRepeatRate": null,
+            "stats": {
+              "population": {
+                "mean": null,
+                "netPerDecision": {
+                  "card": null,
+                  "delayed": null,
+                  "world": null,
+                  "council": null,
+                  "succession": null
+                }
+              },
+              "resources": {
+                "mean": null,
+                "netPerDecision": {
+                  "card": null,
+                  "delayed": null,
+                  "world": null,
+                  "council": null,
+                  "succession": null
+                }
+              },
+              "authority": {
+                "mean": null,
+                "netPerDecision": {
+                  "card": null,
+                  "delayed": null,
+                  "world": null,
+                  "council": null,
+                  "succession": null
+                }
+              },
+              "knowledge": {
+                "mean": null,
+                "netPerDecision": {
+                  "card": null,
+                  "delayed": null,
+                  "world": null,
+                  "council": null,
+                  "succession": null
+                }
+              },
+              "stability": {
+                "mean": null,
+                "netPerDecision": {
+                  "card": null,
+                  "delayed": null,
+                  "world": null,
+                  "council": null,
+                  "succession": null
+                }
+              },
+              "environment": {
+                "mean": null,
+                "netPerDecision": {
+                  "card": null,
+                  "delayed": null,
+                  "world": null,
+                  "council": null,
+                  "succession": null
+                }
+              }
+            }
+          },
+          "3": {
+            "decisions": 0,
+            "repeatRate": null,
+            "lateDecisions": 0,
+            "lateRepeatRate": null,
+            "stats": {
+              "population": {
+                "mean": null,
+                "netPerDecision": {
+                  "card": null,
+                  "delayed": null,
+                  "world": null,
+                  "council": null,
+                  "succession": null
+                }
+              },
+              "resources": {
+                "mean": null,
+                "netPerDecision": {
+                  "card": null,
+                  "delayed": null,
+                  "world": null,
+                  "council": null,
+                  "succession": null
+                }
+              },
+              "authority": {
+                "mean": null,
+                "netPerDecision": {
+                  "card": null,
+                  "delayed": null,
+                  "world": null,
+                  "council": null,
+                  "succession": null
+                }
+              },
+              "knowledge": {
+                "mean": null,
+                "netPerDecision": {
+                  "card": null,
+                  "delayed": null,
+                  "world": null,
+                  "council": null,
+                  "succession": null
+                }
+              },
+              "stability": {
+                "mean": null,
+                "netPerDecision": {
+                  "card": null,
+                  "delayed": null,
+                  "world": null,
+                  "council": null,
+                  "succession": null
+                }
+              },
+              "environment": {
+                "mean": null,
+                "netPerDecision": {
+                  "card": null,
+                  "delayed": null,
+                  "world": null,
+                  "council": null,
+                  "succession": null
+                }
+              }
+            }
+          }
+        },
+        "cappedLast80": {
+          "meanDistinctCards": 8.764705882352942,
+          "meanPendingConsequences": 5.450980392156863,
+          "meanStatRanges": {
+            "population": {
+              "minimum": 61.21568627450981,
+              "maximum": 88.23529411764706,
+              "final": 76.3921568627451
+            },
+            "resources": {
+              "minimum": 40.11764705882353,
+              "maximum": 94.66666666666667,
+              "final": 70.45098039215686
+            },
+            "authority": {
+              "minimum": 81.50980392156863,
+              "maximum": 97,
+              "final": 93.72549019607843
+            },
+            "knowledge": {
+              "minimum": 97.56862745098039,
+              "maximum": 100,
+              "final": 99.58823529411765
+            },
+            "stability": {
+              "minimum": 19.07843137254902,
+              "maximum": 43.470588235294116,
+              "final": 29.784313725490197
+            },
+            "environment": {
+              "minimum": 2.9019607843137254,
+              "maximum": 21.666666666666668,
+              "final": 11.803921568627452
+            }
+          },
+          "topChoices": [
+            [
+              "river_tracks.follow",
+              539
+            ],
+            [
+              "ochre_border.move",
+              499
+            ],
+            [
+              "council_shelter.lead",
+              468
+            ],
+            [
+              "summer_pools.carry",
+              461
+            ],
+            [
+              "red_mushrooms.feast",
+              276
+            ],
+            [
+              "ice_crossing.cross",
+              275
+            ],
+            [
+              "leaking_skin.relay",
+              274
+            ],
+            [
+              "leaking_skin.repair",
+              272
+            ],
+            [
+              "ice_crossing.cache",
+              270
+            ],
+            [
+              "red_mushrooms.dry",
+              248
+            ],
+            [
+              "summer_pools.bank",
+              85
+            ],
+            [
+              "calving_herd.shadow",
+              71
+            ]
+          ]
+        },
+        "historicalRepeatDecisions": {
+          "council_seal": 0,
+          "hostage_prince": 0,
+          "salt_ship": 0,
+          "flint_apprentice": 0
+        }
+      },
+      "after": {
+        "eraReachCounts": {
+          "1": 10000
+        },
+        "averageTurns": 122.3058,
+        "repeatRate": 0.7636154622266483,
+        "cappedRuns": 82,
+        "capsByEra": {
+          "1": 82
+        },
+        "turnQuantiles": {
+          "p50": 89,
+          "p90": 240,
+          "p99": 475
+        },
+        "runsReaching100": 4350,
+        "endings": {
+          "simulation_cap": 82,
+          "The land fell silent. Only roads remain after your people scattered.": 8895,
+          "The last hearth went dark. Hunger consumed your civilization's living memory.": 1023
+        },
+        "eras": {
+          "1": {
+            "decisions": 1223058,
+            "repeatRate": 0.7636154622266483,
+            "lateDecisions": 402793,
+            "lateRepeatRate": 0.987844873173069,
+            "stats": {
+              "population": {
+                "mean": 42.97153528287293,
+                "netPerDecision": {
+                  "card": -0.13771382877999244,
+                  "delayed": -0.00700130329060437,
+                  "world": -0.04287613506473119,
+                  "council": 0,
+                  "succession": 0
+                }
+              },
+              "resources": {
+                "mean": 52.98609060240806,
+                "netPerDecision": {
+                  "card": 5.064466280421697,
+                  "delayed": -1.347825695919572,
+                  "world": -3.9847742298402857,
+                  "council": 0,
+                  "succession": 0
+                }
+              },
+              "authority": {
+                "mean": 85.36833984978635,
+                "netPerDecision": {
+                  "card": 0.835347955697931,
+                  "delayed": -0.1605042442795027,
+                  "world": 0,
+                  "council": -0.00013899586119382726,
+                  "succession": -0.30285726433251736
+                }
+              },
+              "knowledge": {
+                "mean": 81.89692475745223,
+                "netPerDecision": {
+                  "card": 0.32767538416003167,
+                  "delayed": 0.1944805561142644,
+                  "world": 0,
+                  "council": 0,
+                  "succession": 0.03952715243267286
+                }
+              },
+              "stability": {
+                "mean": 28.25164464808701,
+                "netPerDecision": {
+                  "card": -0.0047250416578772225,
+                  "delayed": -0.30705493934057093,
+                  "world": -0.019238662434651506,
+                  "council": -0.05013253664176188,
+                  "succession": 0
+                }
+              },
+              "environment": {
+                "mean": 25.94699188427695,
+                "netPerDecision": {
+                  "card": -0.5616397587031849,
+                  "delayed": 0,
+                  "world": 0,
+                  "council": 0,
+                  "succession": 0
+                }
+              }
+            }
+          },
+          "2": {
+            "decisions": 0,
+            "repeatRate": null,
+            "lateDecisions": 0,
+            "lateRepeatRate": null,
+            "stats": {
+              "population": {
+                "mean": null,
+                "netPerDecision": {
+                  "card": null,
+                  "delayed": null,
+                  "world": null,
+                  "council": null,
+                  "succession": null
+                }
+              },
+              "resources": {
+                "mean": null,
+                "netPerDecision": {
+                  "card": null,
+                  "delayed": null,
+                  "world": null,
+                  "council": null,
+                  "succession": null
+                }
+              },
+              "authority": {
+                "mean": null,
+                "netPerDecision": {
+                  "card": null,
+                  "delayed": null,
+                  "world": null,
+                  "council": null,
+                  "succession": null
+                }
+              },
+              "knowledge": {
+                "mean": null,
+                "netPerDecision": {
+                  "card": null,
+                  "delayed": null,
+                  "world": null,
+                  "council": null,
+                  "succession": null
+                }
+              },
+              "stability": {
+                "mean": null,
+                "netPerDecision": {
+                  "card": null,
+                  "delayed": null,
+                  "world": null,
+                  "council": null,
+                  "succession": null
+                }
+              },
+              "environment": {
+                "mean": null,
+                "netPerDecision": {
+                  "card": null,
+                  "delayed": null,
+                  "world": null,
+                  "council": null,
+                  "succession": null
+                }
+              }
+            }
+          },
+          "3": {
+            "decisions": 0,
+            "repeatRate": null,
+            "lateDecisions": 0,
+            "lateRepeatRate": null,
+            "stats": {
+              "population": {
+                "mean": null,
+                "netPerDecision": {
+                  "card": null,
+                  "delayed": null,
+                  "world": null,
+                  "council": null,
+                  "succession": null
+                }
+              },
+              "resources": {
+                "mean": null,
+                "netPerDecision": {
+                  "card": null,
+                  "delayed": null,
+                  "world": null,
+                  "council": null,
+                  "succession": null
+                }
+              },
+              "authority": {
+                "mean": null,
+                "netPerDecision": {
+                  "card": null,
+                  "delayed": null,
+                  "world": null,
+                  "council": null,
+                  "succession": null
+                }
+              },
+              "knowledge": {
+                "mean": null,
+                "netPerDecision": {
+                  "card": null,
+                  "delayed": null,
+                  "world": null,
+                  "council": null,
+                  "succession": null
+                }
+              },
+              "stability": {
+                "mean": null,
+                "netPerDecision": {
+                  "card": null,
+                  "delayed": null,
+                  "world": null,
+                  "council": null,
+                  "succession": null
+                }
+              },
+              "environment": {
+                "mean": null,
+                "netPerDecision": {
+                  "card": null,
+                  "delayed": null,
+                  "world": null,
+                  "council": null,
+                  "succession": null
+                }
+              }
+            }
+          }
+        },
+        "cappedLast80": {
+          "meanDistinctCards": 10.865853658536585,
+          "meanPendingConsequences": 7.646341463414634,
+          "meanStatRanges": {
+            "population": {
+              "minimum": 24.317073170731707,
+              "maximum": 51.1219512195122,
+              "final": 38.951219512195124
+            },
+            "resources": {
+              "minimum": 33.08536585365854,
+              "maximum": 93.14634146341463,
+              "final": 57.65853658536585
+            },
+            "authority": {
+              "minimum": 85.2560975609756,
+              "maximum": 99.57317073170732,
+              "final": 95.8170731707317
+            },
+            "knowledge": {
+              "minimum": 97.6829268292683,
+              "maximum": 100,
+              "final": 99.53658536585365
+            },
+            "stability": {
+              "minimum": 17.585365853658537,
+              "maximum": 43.853658536585364,
+              "final": 28.341463414634145
+            },
+            "environment": {
+              "minimum": 6.439024390243903,
+              "maximum": 26.25609756097561,
+              "final": 14.524390243902438
+            }
+          },
+          "topChoices": [
+            [
+              "river_tracks.follow",
+              747
+            ],
+            [
+              "council_shelter.lead",
+              637
+            ],
+            [
+              "summer_pools.carry",
+              609
+            ],
+            [
+              "ochre_border.move",
+              540
+            ],
+            [
+              "salmon_weir.move",
+              405
+            ],
+            [
+              "ice_crossing.cache",
+              374
+            ],
+            [
+              "ice_crossing.cross",
+              366
+            ],
+            [
+              "leaking_skin.relay",
+              357
+            ],
+            [
+              "leaking_skin.repair",
+              357
+            ],
+            [
+              "red_mushrooms.feast",
+              331
+            ],
+            [
+              "red_mushrooms.dry",
+              308
+            ],
+            [
+              "salmon_weir.close",
+              212
+            ]
+          ]
+        },
+        "historicalRepeatDecisions": {
+          "council_seal": 0,
+          "hostage_prince": 0,
+          "salt_ship": 0,
+          "flint_apprentice": 0
+        }
+      }
+    },
+    "knowledge": {
+      "before": {
+        "eraReachCounts": {
+          "1": 10000,
+          "2": 7745,
+          "3": 5849
+        },
+        "averageTurns": 168.3494,
+        "repeatRate": 0.8163682199045557,
+        "cappedRuns": 1889,
+        "capsByEra": {
+          "1": 2,
+          "2": 1137,
+          "3": 750
+        },
+        "turnQuantiles": {
+          "p50": 73,
+          "p90": 500,
+          "p99": 500
+        },
+        "runsReaching100": 3500,
+        "endings": {
+          "simulation_cap": 1889,
+          "The land fell silent. Only roads remain after your people scattered.": 5001,
+          "The last hearth went dark. Hunger consumed your civilization's living memory.": 3110
+        },
+        "eras": {
+          "1": {
+            "decisions": 245846,
+            "repeatRate": 0.47542770677578644,
+            "lateDecisions": 17726,
+            "lateRepeatRate": 0.9949227123998646,
+            "stats": {
+              "population": {
+                "mean": 45.37176931900458,
+                "netPerDecision": {
+                  "card": -0.1881096296055254,
+                  "delayed": 0.03466397663578012,
+                  "world": -0.2850931070670257,
+                  "council": 0,
+                  "succession": 0
+                }
+              },
+              "resources": {
+                "mean": 31.3301660389024,
+                "netPerDecision": {
+                  "card": 3.5445156724128113,
+                  "delayed": -1.26682557373315,
+                  "world": -3.6026414910147,
+                  "council": 0,
+                  "succession": 0
+                }
+              },
+              "authority": {
+                "mean": 54.883947674560495,
+                "netPerDecision": {
+                  "card": 0.8732865289652872,
+                  "delayed": -0.23323544007224034,
+                  "world": 0,
+                  "council": -0.002969338528997828,
+                  "succession": -0.21360119749762047
+                }
+              },
+              "knowledge": {
+                "mean": 77.5441089137102,
+                "netPerDecision": {
+                  "card": 1.8422060964994347,
+                  "delayed": 0.06218527045386136,
+                  "world": 0,
+                  "council": 0,
+                  "succession": 0.023913344125997577
+                }
+              },
+              "stability": {
+                "mean": 47.651041709037365,
+                "netPerDecision": {
+                  "card": 0.3650740707597439,
+                  "delayed": -0.24572699982916135,
+                  "world": -0.14084833595014765,
+                  "council": -0.197204754195716,
+                  "succession": 0
+                }
+              },
+              "environment": {
+                "mean": 44.54399908886051,
+                "netPerDecision": {
+                  "card": -0.6907657639335194,
+                  "delayed": 0,
+                  "world": 0,
+                  "council": 0,
+                  "succession": 0
+                }
+              }
+            }
+          },
+          "2": {
+            "decisions": 951853,
+            "repeatRate": 0.8986314063200935,
+            "lateDecisions": 689607,
+            "lateRepeatRate": 0.9957178508918848,
+            "stats": {
+              "population": {
+                "mean": 84.47536226707275,
+                "netPerDecision": {
+                  "card": 0.6190283583704627,
+                  "delayed": -0.5304716169408512,
+                  "world": -0.007179680055638843,
+                  "council": 0,
+                  "succession": 0
+                }
+              },
+              "resources": {
+                "mean": 70.49425594078077,
+                "netPerDecision": {
+                  "card": 2.749208123523275,
+                  "delayed": -2.1849298158434127,
+                  "world": -0.4803000043073878,
+                  "council": 0,
+                  "succession": 0
+                }
+              },
+              "authority": {
+                "mean": 90.6796847832596,
+                "netPerDecision": {
+                  "card": 0.49624469324570075,
+                  "delayed": -0.011829557715319487,
+                  "world": 0,
+                  "council": -0.00013447454596455545,
+                  "succession": -0.31922366163682836
+                }
+              },
+              "knowledge": {
+                "mean": 98.01264480965023,
+                "netPerDecision": {
+                  "card": 0.14151765030944904,
+                  "delayed": 0.021055772267356408,
+                  "world": 0,
+                  "council": 0,
+                  "succession": 0.019397953255387124
+                }
+              },
+              "stability": {
+                "mean": 23.700941216763514,
+                "netPerDecision": {
+                  "card": 0.18706144751342907,
+                  "delayed": -0.3382560122203744,
+                  "world": -0.0035646260504510674,
+                  "council": -0.0003466921888148695,
+                  "succession": 0
+                }
+              },
+              "environment": {
+                "mean": 22.57761440054294,
+                "netPerDecision": {
+                  "card": -0.15126810547426967,
+                  "delayed": -0.0830075652437929,
+                  "world": 0,
+                  "council": 0,
+                  "succession": 0
+                }
+              }
+            }
+          },
+          "3": {
+            "decisions": 485795,
+            "repeatRate": 0.8277236282794183,
+            "lateDecisions": 235219,
+            "lateRepeatRate": 0.9100710401795773,
+            "stats": {
+              "population": {
+                "mean": 48.780403256517666,
+                "netPerDecision": {
+                  "card": 0.2611965952716681,
+                  "delayed": -0.5031607982791095,
+                  "world": -0.17756049362385368,
+                  "council": 0,
+                  "succession": 0
+                }
+              },
+              "resources": {
+                "mean": 42.35277020142241,
+                "netPerDecision": {
+                  "card": 3.514564785557694,
+                  "delayed": -2.6894266099898103,
+                  "world": -0.9116499758128429,
+                  "council": 0,
+                  "succession": 0
+                }
+              },
+              "authority": {
+                "mean": 91.15523420372791,
+                "netPerDecision": {
+                  "card": 0.8175835486161859,
+                  "delayed": -0.030222624769707388,
+                  "world": 0,
+                  "council": -0.00002058481458228265,
+                  "succession": -0.3308556078181126
+                }
+              },
+              "knowledge": {
+                "mean": 98.82666351032843,
+                "netPerDecision": {
+                  "card": 0.22304264144340719,
+                  "delayed": -0.10463878796611739,
+                  "world": 0,
+                  "council": 0,
+                  "succession": 0.01970790148107741
+                }
+              },
+              "stability": {
+                "mean": 27.79733838347451,
+                "netPerDecision": {
+                  "card": -0.44172541915828695,
+                  "delayed": 0.14651035930793854,
+                  "world": -0.09348387694397843,
+                  "council": -0.004641875688304738,
+                  "succession": 0
+                }
+              },
+              "environment": {
+                "mean": 18.54899288794656,
+                "netPerDecision": {
+                  "card": -0.4615177183791517,
+                  "delayed": -0.01115285254068074,
+                  "world": 0,
+                  "council": 0,
+                  "succession": 0
+                }
+              }
+            }
+          }
+        },
+        "cappedLast80": {
+          "meanDistinctCards": 10.760190577024881,
+          "meanPendingConsequences": 4.384859714134462,
+          "meanStatRanges": {
+            "population": {
+              "minimum": 71.03017469560614,
+              "maximum": 88.39015352038115,
+              "final": 78.96453149814717
+            },
+            "resources": {
+              "minimum": 41.25516146109052,
+              "maximum": 94.12811011116993,
+              "final": 67.92535733192165
+            },
+            "authority": {
+              "minimum": 88.64266807834834,
+              "maximum": 99.98253043938593,
+              "final": 98.86236103758603
+            },
+            "knowledge": {
+              "minimum": 96.70460561143462,
+              "maximum": 100,
+              "final": 99.45791424033881
+            },
+            "stability": {
+              "minimum": 11.350449973530969,
+              "maximum": 36.51773425092642,
+              "final": 23.131815775542616
+            },
+            "environment": {
+              "minimum": 6.174166225516146,
+              "maximum": 32.618316569613555,
+              "final": 18.568025410269986
+            }
+          },
+          "topChoices": [
+            [
+              "reed_fever.maintain",
+              11262
+            ],
+            [
+              "seed_lots.sow",
+              8981
+            ],
+            [
+              "green_stone.pots",
+              8632
+            ],
+            [
+              "kiln_crack.repair",
+              8439
+            ],
+            [
+              "silt_turn.advance",
+              6845
+            ],
+            [
+              "grazing_strip.rotate",
+              6553
+            ],
+            [
+              "ash_garden.plots",
+              6401
+            ],
+            [
+              "village_workdays.levy",
+              6236
+            ],
+            [
+              "fallow_strips.rest",
+              6198
+            ],
+            [
+              "council_seal.delegate",
+              5779
+            ],
+            [
+              "salt_ship.trade",
+              5656
+            ],
+            [
+              "fallow_strips.slope",
+              4966
+            ]
+          ]
+        },
+        "historicalRepeatDecisions": {
+          "council_seal": 45144,
+          "hostage_prince": 45407,
+          "salt_ship": 45367,
+          "flint_apprentice": 45282
+        }
+      },
+      "after": {
+        "eraReachCounts": {
+          "1": 10000,
+          "2": 7719,
+          "3": 6380
+        },
+        "averageTurns": 122.9496,
+        "repeatRate": 0.7185635414836649,
+        "cappedRuns": 734,
+        "capsByEra": {
+          "1": 8,
+          "2": 448,
+          "3": 278
+        },
+        "turnQuantiles": {
+          "p50": 77,
+          "p90": 298,
+          "p99": 500
+        },
+        "runsReaching100": 2974,
+        "endings": {
+          "simulation_cap": 734,
+          "The land fell silent. Only roads remain after your people scattered.": 3808,
+          "The last hearth went dark. Hunger consumed your civilization's living memory.": 5458
+        },
+        "eras": {
+          "1": {
+            "decisions": 273570,
+            "repeatRate": 0.47768030120261723,
+            "lateDecisions": 27814,
+            "lateRepeatRate": 0.9942834543754944,
+            "stats": {
+              "population": {
+                "mean": 44.78583177980042,
+                "netPerDecision": {
+                  "card": -0.24171144496838104,
+                  "delayed": 0.028548451950140732,
+                  "world": -0.17929232006433454,
+                  "council": 0,
+                  "succession": 0
+                }
+              },
+              "resources": {
+                "mean": 34.67762912600066,
+                "netPerDecision": {
+                  "card": 3.688061556457214,
+                  "delayed": -1.2193515370837447,
+                  "world": -3.593632342727638,
+                  "council": 0,
+                  "succession": 0
+                }
+              },
+              "authority": {
+                "mean": 55.630467522023615,
+                "netPerDecision": {
+                  "card": 0.7773184194173338,
+                  "delayed": -0.18794823993858975,
+                  "world": 0,
+                  "council": -0.005062689622400117,
+                  "succession": -0.2231311912855942
+                }
+              },
+              "knowledge": {
+                "mean": 79.05144569945534,
+                "netPerDecision": {
+                  "card": 1.6786855283839601,
+                  "delayed": 0.06305150418540044,
+                  "world": 0,
+                  "council": 0,
+                  "succession": 0.021829879007201083
+                }
+              },
+              "stability": {
+                "mean": 45.59275139817962,
+                "netPerDecision": {
+                  "card": 0.3964031143765764,
+                  "delayed": -0.3198852213327485,
+                  "world": -0.08930072741894214,
+                  "council": -0.21080893372811346,
+                  "succession": 0
+                }
+              },
+              "environment": {
+                "mean": 40.45063786233871,
+                "netPerDecision": {
+                  "card": -0.7450159008663231,
+                  "delayed": 0,
+                  "world": 0,
+                  "council": 0,
+                  "succession": 0
+                }
+              }
+            }
+          },
+          "2": {
+            "decisions": 441902,
+            "repeatRate": 0.8010260193436554,
+            "lateDecisions": 274909,
+            "lateRepeatRate": 0.9842602461178063,
+            "stats": {
+              "population": {
+                "mean": 65.00691329751845,
+                "netPerDecision": {
+                  "card": 0.517506143896158,
+                  "delayed": -0.4637974030441139,
+                  "world": -0.013996315925250394,
+                  "council": 0,
+                  "succession": 0
+                }
+              },
+              "resources": {
+                "mean": 59.48208652597182,
+                "netPerDecision": {
+                  "card": 2.6161004023516528,
+                  "delayed": -1.9218740806785215,
+                  "world": -0.6103321550932107,
+                  "council": 0,
+                  "succession": 0
+                }
+              },
+              "authority": {
+                "mean": 83.67650293503989,
+                "netPerDecision": {
+                  "card": 0.5409027340903639,
+                  "delayed": -0.020427606120814117,
+                  "world": 0,
+                  "council": -0.0007558236894153002,
+                  "succession": -0.3109784522360161
+                }
+              },
+              "knowledge": {
+                "mean": 96.51057926870664,
+                "netPerDecision": {
+                  "card": 0.23689415300224936,
+                  "delayed": 0.06540364153138026,
+                  "world": 0,
+                  "council": 0,
+                  "succession": 0.016460663223972737
+                }
+              },
+              "stability": {
+                "mean": 23.991439278392043,
+                "netPerDecision": {
+                  "card": 0.2080913867780639,
+                  "delayed": -0.4669089526637128,
+                  "world": -0.006965345257545791,
+                  "council": -0.0011541020407239615,
+                  "succession": 0
+                }
+              },
+              "environment": {
+                "mean": 24.707521124593235,
+                "netPerDecision": {
+                  "card": -0.264622020266937,
+                  "delayed": -0.12912365185041028,
+                  "world": 0,
+                  "council": 0,
+                  "succession": 0
+                }
+              }
+            }
+          },
+          "3": {
+            "decisions": 514024,
+            "repeatRate": 0.775872332809363,
+            "lateDecisions": 158055,
+            "lateRepeatRate": 0.9082091676947898,
+            "stats": {
+              "population": {
+                "mean": 38.46474094594805,
+                "netPerDecision": {
+                  "card": 0.0297709834560254,
+                  "delayed": -0.44766586774158407,
+                  "world": -0.16248268563335563,
+                  "council": 0,
+                  "succession": 0
+                }
+              },
+              "resources": {
+                "mean": 41.66671400557173,
+                "netPerDecision": {
+                  "card": 4.369202605325821,
+                  "delayed": -3.301725211274182,
+                  "world": -1.249050627986242,
+                  "council": 0,
+                  "succession": 0
+                }
+              },
+              "authority": {
+                "mean": 89.2235829455434,
+                "netPerDecision": {
+                  "card": 0.9153269108057212,
+                  "delayed": -0.03402953947675595,
+                  "world": 0,
+                  "council": -0.000009727172272111808,
+                  "succession": -0.33240471262042237
+                }
+              },
+              "knowledge": {
+                "mean": 98.72102080836693,
+                "netPerDecision": {
+                  "card": 0.3314514497377554,
+                  "delayed": -0.17427590929606399,
+                  "world": 0,
+                  "council": 0,
+                  "succession": 0.017954414579863975
+                }
+              },
+              "stability": {
+                "mean": 37.44411934073117,
+                "netPerDecision": {
+                  "card": -0.5280473285294072,
+                  "delayed": 0.3560397958071997,
+                  "world": -0.08968841921777972,
+                  "council": -0.00010699889499322989,
+                  "succession": 0
+                }
+              },
+              "environment": {
+                "mean": 18.72092742751311,
+                "netPerDecision": {
+                  "card": -0.517051732993012,
+                  "delayed": 0.007359578541079794,
+                  "world": 0,
+                  "council": 0,
+                  "succession": 0
+                }
+              }
+            }
+          }
+        },
+        "cappedLast80": {
+          "meanDistinctCards": 11.403269754768392,
+          "meanPendingConsequences": 5.855585831062671,
+          "meanStatRanges": {
+            "population": {
+              "minimum": 55.75613079019074,
+              "maximum": 75.04087193460491,
+              "final": 64.07901907356948
+            },
+            "resources": {
+              "minimum": 39.80653950953678,
+              "maximum": 93.55722070844686,
+              "final": 67.38283378746594
+            },
+            "authority": {
+              "minimum": 88.12806539509536,
+              "maximum": 98.80926430517711,
+              "final": 97.53133514986376
+            },
+            "knowledge": {
+              "minimum": 97.30926430517711,
+              "maximum": 100,
+              "final": 99.6757493188011
+            },
+            "stability": {
+              "minimum": 15.993188010899182,
+              "maximum": 43.86512261580381,
+              "final": 31.18392370572207
+            },
+            "environment": {
+              "minimum": 6.241144414168938,
+              "maximum": 33.16212534059945,
+              "final": 19.065395095367847
+            }
+          },
+          "topChoices": [
+            [
+              "reed_fever.maintain",
+              3903
+            ],
+            [
+              "seed_lots.sow",
+              3134
+            ],
+            [
+              "green_stone.pots",
+              2507
+            ],
+            [
+              "kiln_crack.repair",
+              2483
+            ],
+            [
+              "harbor_ballast.release",
+              2421
+            ],
+            [
+              "grazing_strip.rotate",
+              2303
+            ],
+            [
+              "tin_caravan.toll",
+              2303
+            ],
+            [
+              "silt_turn.advance",
+              2189
+            ],
+            [
+              "ash_garden.plots",
+              2126
+            ],
+            [
+              "fallow_strips.rest",
+              2081
+            ],
+            [
+              "field_recovery.upland",
+              1983
+            ],
+            [
+              "field_recovery.rest",
+              1966
+            ]
+          ]
+        },
+        "historicalRepeatDecisions": {
+          "council_seal": 0,
+          "hostage_prince": 0,
+          "salt_ship": 0,
+          "flint_apprentice": 0
+        }
+      }
+    },
+    "progression": {
+      "before": {
+        "eraReachCounts": {
+          "1": 10000,
+          "2": 9872,
+          "3": 9594
+        },
+        "averageTurns": 114.9993,
+        "repeatRate": 0.7059295143535657,
+        "cappedRuns": 378,
+        "capsByEra": {
+          "3": 378
+        },
+        "turnQuantiles": {
+          "p50": 84,
+          "p90": 200,
+          "p99": 500
+        },
+        "runsReaching100": 3659,
+        "endings": {
+          "simulation_cap": 378,
+          "The land fell silent. Only roads remain after your people scattered.": 1166,
+          "The last hearth went dark. Hunger consumed your civilization's living memory.": 8456
+        },
+        "eras": {
+          "1": {
+            "decisions": 106008,
+            "repeatRate": 0.050835785978416724,
+            "lateDecisions": 16,
+            "lateRepeatRate": 1,
+            "stats": {
+              "population": {
+                "mean": 53.19174967926949,
+                "netPerDecision": {
+                  "card": -0.11770809750207531,
+                  "delayed": 0.08485208663497094,
+                  "world": -0.21951173496339899,
+                  "council": 0,
+                  "succession": 0
+                }
+              },
+              "resources": {
+                "mean": 32.36298203909139,
+                "netPerDecision": {
+                  "card": 0.4917459059693608,
+                  "delayed": -0.27753565768621236,
+                  "world": -3.503122405856162,
+                  "council": 0,
+                  "succession": 0
+                }
+              },
+              "authority": {
+                "mean": 46.67887329258169,
+                "netPerDecision": {
+                  "card": 0.9542110029431741,
+                  "delayed": -0.14872462455663724,
+                  "world": 0,
+                  "council": -0.006508942721304052,
+                  "succession": -0.04897743566523281
+                }
+              },
+              "knowledge": {
+                "mean": 53.80139234774734,
+                "netPerDecision": {
+                  "card": 3.8552184740774282,
+                  "delayed": 0.09169119311750057,
+                  "world": 0,
+                  "council": 0,
+                  "succession": 0.00942381707040978
+                }
+              },
+              "stability": {
+                "mean": 57.9220058863482,
+                "netPerDecision": {
+                  "card": 0.6346690815787488,
+                  "delayed": -0.091606293864614,
+                  "world": -0.11109538902724322,
+                  "council": -0.007735265262999019,
+                  "succession": 0
+                }
+              },
+              "environment": {
+                "mean": 68.91562900913138,
+                "netPerDecision": {
+                  "card": -0.07949400045279602,
+                  "delayed": 0,
+                  "world": 0,
+                  "council": 0,
+                  "succession": 0
+                }
+              }
+            }
+          },
+          "2": {
+            "decisions": 129936,
+            "repeatRate": 0.24585180396502893,
+            "lateDecisions": 1238,
+            "lateRepeatRate": 0.9499192245557351,
+            "stats": {
+              "population": {
+                "mean": 51.69413403521734,
+                "netPerDecision": {
+                  "card": 0.6655045560891516,
+                  "delayed": -0.3460165004309814,
+                  "world": -0.22481067602512006,
+                  "council": 0,
+                  "succession": 0
+                }
+              },
+              "resources": {
+                "mean": 28.171430550424823,
+                "netPerDecision": {
+                  "card": 2.510312769363379,
+                  "delayed": -0.8997352542790297,
+                  "world": -1.3838505110208101,
+                  "council": 0,
+                  "succession": 0
+                }
+              },
+              "authority": {
+                "mean": 61.05603527890654,
+                "netPerDecision": {
+                  "card": 0.9445188400443295,
+                  "delayed": -0.13432766900628001,
+                  "world": 0,
+                  "council": -0.0011159339982760744,
+                  "succession": -0.2606590937076715
+                }
+              },
+              "knowledge": {
+                "mean": 85.72134743258219,
+                "netPerDecision": {
+                  "card": 1.3003478635636005,
+                  "delayed": 0.17662541558921316,
+                  "world": 0,
+                  "council": 0,
+                  "succession": 0.033177872183228665
+                }
+              },
+              "stability": {
+                "mean": 39.075414049993846,
+                "netPerDecision": {
+                  "card": -0.47300978943479866,
+                  "delayed": -0.4113563600541805,
+                  "world": -0.1132557566802118,
+                  "council": -0.001847063169560399,
+                  "succession": 0
+                }
+              },
+              "environment": {
+                "mean": 45.82411340967861,
+                "netPerDecision": {
+                  "card": -1.7535171161187046,
+                  "delayed": -0.11025427902967615,
+                  "world": 0,
+                  "council": 0,
+                  "succession": 0
+                }
+              }
+            }
+          },
+          "3": {
+            "decisions": 914049,
+            "repeatRate": 0.8473068730450993,
+            "lateDecisions": 358088,
+            "lateRepeatRate": 0.9955206541408815,
+            "stats": {
+              "population": {
+                "mean": 42.37849721404432,
+                "netPerDecision": {
+                  "card": 0.36253964502997105,
+                  "delayed": -0.48542255393310424,
+                  "world": -0.41069570668530897,
+                  "council": 0,
+                  "succession": 0
+                }
+              },
+              "resources": {
+                "mean": 35.04144963782029,
+                "netPerDecision": {
+                  "card": 3.2717523896421308,
+                  "delayed": -2.4603670043947314,
+                  "world": -1.012750957552604,
+                  "council": 0,
+                  "succession": 0
+                }
+              },
+              "authority": {
+                "mean": 89.34862901223019,
+                "netPerDecision": {
+                  "card": 0.7817370841169347,
+                  "delayed": -0.0278814374284092,
+                  "world": 0,
+                  "council": -0.00010393315894443296,
+                  "succession": -0.33296245606088953
+                }
+              },
+              "knowledge": {
+                "mean": 98.7925702013787,
+                "netPerDecision": {
+                  "card": 0.16559068496327878,
+                  "delayed": -0.07638868375765413,
+                  "world": 0,
+                  "council": 0,
+                  "succession": 0.021723124252638535
+                }
+              },
+              "stability": {
+                "mean": 33.55285219938975,
+                "netPerDecision": {
+                  "card": -0.17288022852166568,
+                  "delayed": 0.15273688828498252,
+                  "world": -0.21898060169640796,
+                  "council": -0.018529641189914327,
+                  "succession": 0
+                }
+              },
+              "environment": {
+                "mean": 18.444929101175102,
+                "netPerDecision": {
+                  "card": -0.3461400865817916,
+                  "delayed": -0.006473394752360103,
+                  "world": 0,
+                  "council": 0,
+                  "succession": 0
+                }
+              }
+            }
+          }
+        },
+        "cappedLast80": {
+          "meanDistinctCards": 8.933862433862434,
+          "meanPendingConsequences": 2.3306878306878307,
+          "meanStatRanges": {
+            "population": {
+              "minimum": 32.666666666666664,
+              "maximum": 57.53439153439153,
+              "final": 44.023809523809526
+            },
+            "resources": {
+              "minimum": 23.3994708994709,
+              "maximum": 87.26190476190476,
+              "final": 55.16931216931217
+            },
+            "authority": {
+              "minimum": 83.78835978835978,
+              "maximum": 100,
+              "final": 97.77248677248677
+            },
+            "knowledge": {
+              "minimum": 94.65079365079364,
+              "maximum": 100,
+              "final": 99.17724867724868
+            },
+            "stability": {
+              "minimum": 24.96031746031746,
+              "maximum": 47.044973544973544,
+              "final": 34.835978835978835
+            },
+            "environment": {
+              "minimum": 4.791005291005291,
+              "maximum": 32.783068783068785,
+              "final": 17.54232804232804
+            }
+          },
+          "topChoices": [
+            [
+              "salt_ship.trade",
+              3582
+            ],
+            [
+              "council_seal.delegate",
+              3561
+            ],
+            [
+              "flint_apprentice.teach",
+              3464
+            ],
+            [
+              "harbor_ballast.release",
+              2875
+            ],
+            [
+              "hostage_prince.assimilate",
+              2407
+            ],
+            [
+              "tin_caravan.toll",
+              2181
+            ],
+            [
+              "gate_ward.contract",
+              2010
+            ],
+            [
+              "furnace_wood.quota",
+              1879
+            ],
+            [
+              "smoke_shift.push",
+              1671
+            ],
+            [
+              "smoke_shift.split",
+              1651
+            ],
+            [
+              "furnace_wood.expand",
+              1588
+            ],
+            [
+              "tin_caravan.route",
+              1252
+            ]
+          ]
+        },
+        "historicalRepeatDecisions": {
+          "council_seal": 90040,
+          "hostage_prince": 90629,
+          "salt_ship": 90033,
+          "flint_apprentice": 90473
+        }
+      },
+      "after": {
+        "eraReachCounts": {
+          "1": 10000,
+          "2": 9879,
+          "3": 9643
+        },
+        "averageTurns": 97.2185,
+        "repeatRate": 0.6297937121021204,
+        "cappedRuns": 98,
+        "capsByEra": {
+          "3": 98
+        },
+        "turnQuantiles": {
+          "p50": 82,
+          "p90": 147,
+          "p99": 491
+        },
+        "runsReaching100": 2921,
+        "endings": {
+          "simulation_cap": 98,
+          "The land fell silent. Only roads remain after your people scattered.": 312,
+          "The last hearth went dark. Hunger consumed your civilization's living memory.": 9590
+        },
+        "eras": {
+          "1": {
+            "decisions": 114933,
+            "repeatRate": 0.055214777305038584,
+            "lateDecisions": 182,
+            "lateRepeatRate": 1,
+            "stats": {
+              "population": {
+                "mean": 52.34962108358783,
+                "netPerDecision": {
+                  "card": -0.2379125229481524,
+                  "delayed": 0.07463478722386085,
+                  "world": -0.1631820277901038,
+                  "council": 0,
+                  "succession": 0
+                }
+              },
+              "resources": {
+                "mean": 33.468533841455454,
+                "netPerDecision": {
+                  "card": 1.0475407411274396,
+                  "delayed": -0.39970243533188904,
+                  "world": -3.5292039710091965,
+                  "council": 0,
+                  "succession": 0
+                }
+              },
+              "authority": {
+                "mean": 46.98545239400346,
+                "netPerDecision": {
+                  "card": 0.8825489633090583,
+                  "delayed": -0.13993370050377177,
+                  "world": 0,
+                  "council": -0.007569627522121584,
+                  "succession": -0.0659862702618047
+                }
+              },
+              "knowledge": {
+                "mean": 54.98899358756841,
+                "netPerDecision": {
+                  "card": 3.611860823262248,
+                  "delayed": 0.08762496410952468,
+                  "world": 0,
+                  "council": 0,
+                  "succession": 0.01309458554114136
+                }
+              },
+              "stability": {
+                "mean": 56.885707325137254,
+                "netPerDecision": {
+                  "card": 0.5933891919640139,
+                  "delayed": -0.166949440108585,
+                  "world": -0.08273515874465993,
+                  "council": -0.012729155246969975,
+                  "succession": 0
+                }
+              },
+              "environment": {
+                "mean": 66.46966493522314,
+                "netPerDecision": {
+                  "card": -0.3021673496732879,
+                  "delayed": 0,
+                  "world": 0,
+                  "council": 0,
+                  "succession": 0
+                }
+              }
+            }
+          },
+          "2": {
+            "decisions": 95433,
+            "repeatRate": 0.18308132407029015,
+            "lateDecisions": 1327,
+            "lateRepeatRate": 0.9562923888470234,
+            "stats": {
+              "population": {
+                "mean": 48.856915322791906,
+                "netPerDecision": {
+                  "card": 0.6607043685098446,
+                  "delayed": -0.2877620948728427,
+                  "world": -0.2525227122693408,
+                  "council": 0,
+                  "succession": 0
+                }
+              },
+              "resources": {
+                "mean": 27.41316944872319,
+                "netPerDecision": {
+                  "card": 2.6293106158247146,
+                  "delayed": -0.9677155700858193,
+                  "world": -1.5346159085431663,
+                  "council": 0,
+                  "succession": 0
+                }
+              },
+              "authority": {
+                "mean": 58.811627005333584,
+                "netPerDecision": {
+                  "card": 0.8496536837362338,
+                  "delayed": -0.13057328177883962,
+                  "world": 0,
+                  "council": -0.0005239277817945575,
+                  "succession": -0.2399694026175432
+                }
+              },
+              "knowledge": {
+                "mean": 83.94933618350046,
+                "netPerDecision": {
+                  "card": 1.2864313183070846,
+                  "delayed": 0.26179623400710444,
+                  "world": 0,
+                  "council": 0,
+                  "succession": 0.033615206479938806
+                }
+              },
+              "stability": {
+                "mean": 40.534773086877706,
+                "netPerDecision": {
+                  "card": -0.4314126140852745,
+                  "delayed": -0.4363794494566869,
+                  "world": -0.1272515796422621,
+                  "council": -0.0017289616799220395,
+                  "succession": 0
+                }
+              },
+              "environment": {
+                "mean": 45.708360839541875,
+                "netPerDecision": {
+                  "card": -1.6655245041023545,
+                  "delayed": -0.12981882577305545,
+                  "world": 0,
+                  "council": 0,
+                  "succession": 0
+                }
+              }
+            }
+          },
+          "3": {
+            "decisions": 761819,
+            "repeatRate": 0.7724380725605426,
+            "lateDecisions": 166449,
+            "lateRepeatRate": 0.984409638988519,
+            "stats": {
+              "population": {
+                "mean": 39.44984438560866,
+                "netPerDecision": {
+                  "card": 0.19226220401433936,
+                  "delayed": -0.44665071362095193,
+                  "world": -0.41800217636997766,
+                  "council": 0,
+                  "succession": 0
+                }
+              },
+              "resources": {
+                "mean": 37.93345663471244,
+                "netPerDecision": {
+                  "card": 4.120703211655262,
+                  "delayed": -3.027205937368325,
+                  "world": -1.3576098784619444,
+                  "council": 0,
+                  "succession": 0
+                }
+              },
+              "authority": {
+                "mean": 86.1950030125266,
+                "netPerDecision": {
+                  "card": 0.9314233433400847,
+                  "delayed": -0.029336364674548678,
+                  "world": 0,
+                  "council": -0.000030190898362996986,
+                  "succession": -0.33396909239596284
+                }
+              },
+              "knowledge": {
+                "mean": 98.50683823847922,
+                "netPerDecision": {
+                  "card": 0.3280608648510998,
+                  "delayed": -0.17059695281950174,
+                  "world": 0,
+                  "council": 0,
+                  "succession": 0.022534224008589968
+                }
+              },
+              "stability": {
+                "mean": 41.948840866400026,
+                "netPerDecision": {
+                  "card": -0.3382877035096263,
+                  "delayed": 0.36605676676480897,
+                  "world": -0.22706180864483558,
+                  "council": -0.0006038179672599397,
+                  "succession": 0
+                }
+              },
+              "environment": {
+                "mean": 19.873813858672467,
+                "netPerDecision": {
+                  "card": -0.48333790572301294,
+                  "delayed": 0.033983137726940386,
+                  "world": 0,
+                  "council": 0,
+                  "succession": 0
+                }
+              }
+            }
+          }
+        },
+        "cappedLast80": {
+          "meanDistinctCards": 8.489795918367347,
+          "meanPendingConsequences": 4,
+          "meanStatRanges": {
+            "population": {
+              "minimum": 20.06122448979592,
+              "maximum": 42.10204081632653,
+              "final": 29.76530612244898
+            },
+            "resources": {
+              "minimum": 20.214285714285715,
+              "maximum": 88.55102040816327,
+              "final": 52.02040816326531
+            },
+            "authority": {
+              "minimum": 91.33673469387755,
+              "maximum": 100,
+              "final": 99.79591836734694
+            },
+            "knowledge": {
+              "minimum": 96.15306122448979,
+              "maximum": 100,
+              "final": 99.43877551020408
+            },
+            "stability": {
+              "minimum": 63.30612244897959,
+              "maximum": 89.89795918367346,
+              "final": 78.04081632653062
+            },
+            "environment": {
+              "minimum": 4.642857142857143,
+              "maximum": 34.5,
+              "final": 20.163265306122447
+            }
+          },
+          "topChoices": [
+            [
+              "harbor_ballast.release",
+              1012
+            ],
+            [
+              "tin_caravan.toll",
+              999
+            ],
+            [
+              "roof_cistern.filter",
+              669
+            ],
+            [
+              "copper_recast.repair",
+              603
+            ],
+            [
+              "smoke_shift.split",
+              578
+            ],
+            [
+              "furnace_wood.expand",
+              556
+            ],
+            [
+              "harbor_dredge.outer",
+              553
+            ],
+            [
+              "furnace_wood.quota",
+              482
+            ],
+            [
+              "smoke_shift.push",
+              457
+            ],
+            [
+              "copper_recast.trial",
+              456
+            ],
+            [
+              "roof_cistern.workshops",
+              437
+            ],
+            [
+              "harbor_dredge.clear",
+              427
+            ]
+          ]
+        },
+        "historicalRepeatDecisions": {
+          "council_seal": 0,
+          "hostage_prince": 0,
+          "salt_ship": 0,
+          "flint_apprentice": 0
+        }
+      }
+    },
+    "recovery": {
+      "before": {
+        "eraReachCounts": {
+          "1": 10000,
+          "2": 9889,
+          "3": 9778
+        },
+        "averageTurns": 196.8934,
+        "repeatRate": 0.8396198145798691,
+        "cappedRuns": 2474,
+        "capsByEra": {
+          "3": 2474
+        },
+        "turnQuantiles": {
+          "p50": 93,
+          "p90": 500,
+          "p99": 500
+        },
+        "runsReaching100": 4759,
+        "endings": {
+          "simulation_cap": 2474,
+          "The last hearth went dark. Hunger consumed your civilization's living memory.": 7526
+        },
+        "eras": {
+          "1": {
+            "decisions": 93201,
+            "repeatRate": 0.010278859668887672,
+            "lateDecisions": 0,
+            "lateRepeatRate": null,
+            "stats": {
+              "population": {
+                "mean": 54.530917050246245,
+                "netPerDecision": {
+                  "card": -0.04734927736826858,
+                  "delayed": 0.07605068615143615,
+                  "world": -0.2656087381036684,
+                  "council": 0,
+                  "succession": 0
+                }
+              },
+              "resources": {
+                "mean": 33.25264750378215,
+                "netPerDecision": {
+                  "card": -0.47511292797287585,
+                  "delayed": 0.00454930741086469,
+                  "world": -3.468170942371863,
+                  "council": 0,
+                  "succession": 0
+                }
+              },
+              "authority": {
+                "mean": 44.79722320575959,
+                "netPerDecision": {
+                  "card": 0.9725539425542644,
+                  "delayed": -0.13944056394244697,
+                  "world": 0,
+                  "council": -0.004130856965054023,
+                  "succession": -0.011244514543835366
+                }
+              },
+              "knowledge": {
+                "mean": 48.01032177766333,
+                "netPerDecision": {
+                  "card": 4.131586570959539,
+                  "delayed": 0.13247711934421305,
+                  "world": 0,
+                  "council": 0,
+                  "succession": 0.0017059902790742588
+                }
+              },
+              "stability": {
+                "mean": 61.05954871728844,
+                "netPerDecision": {
+                  "card": 0.9130159547644339,
+                  "delayed": -0.029667063658115257,
+                  "world": -0.13420456862050836,
+                  "council": -0.0010193023680003434,
+                  "succession": 0
+                }
+              },
+              "environment": {
+                "mean": 71.03152326691773,
+                "netPerDecision": {
+                  "card": 0.12953723672492784,
+                  "delayed": 0,
+                  "world": 0,
+                  "council": 0,
+                  "succession": 0
+                }
+              }
+            }
+          },
+          "2": {
+            "decisions": 93031,
+            "repeatRate": 0.08564886973159484,
+            "lateDecisions": 0,
+            "lateRepeatRate": null,
+            "stats": {
+              "population": {
+                "mean": 55.593823564188284,
+                "netPerDecision": {
+                  "card": 1.1848093646203954,
+                  "delayed": -0.16892218722791327,
+                  "world": -0.635659081381475,
+                  "council": 0,
+                  "succession": 0
+                }
+              },
+              "resources": {
+                "mean": 25.74801947737851,
+                "netPerDecision": {
+                  "card": 0.9239823284711548,
+                  "delayed": -0.018284227838032484,
+                  "world": -1.0054067998839096,
+                  "council": 0,
+                  "succession": 0
+                }
+              },
+              "authority": {
+                "mean": 51.11659554342101,
+                "netPerDecision": {
+                  "card": 0.6492137029592286,
+                  "delayed": -0.149735034558373,
+                  "world": 0,
+                  "council": -0.0019455880297965195,
+                  "succession": -0.20798443529576163
+                }
+              },
+              "knowledge": {
+                "mean": 79.23903860003655,
+                "netPerDecision": {
+                  "card": 1.9046016919091486,
+                  "delayed": 0.22222699960228312,
+                  "world": 0,
+                  "council": 0,
+                  "succession": 0.03101116832023734
+                }
+              },
+              "stability": {
+                "mean": 57.98455353591814,
+                "netPerDecision": {
+                  "card": 0.08470294847953908,
+                  "delayed": -0.2684911481119197,
+                  "world": -0.31929141898936914,
+                  "council": -0.0013973836678096549,
+                  "succession": 0
+                }
+              },
+              "environment": {
+                "mean": 64.6429899710849,
+                "netPerDecision": {
+                  "card": -0.947512119616042,
+                  "delayed": 0.017929507368511573,
+                  "world": 0,
+                  "council": 0,
+                  "succession": 0
+                }
+              }
+            }
+          },
+          "3": {
+            "decisions": 1782702,
+            "repeatRate": 0.9223246510072912,
+            "lateDecisions": 1185679,
+            "lateRepeatRate": 0.9999240941266565,
+            "stats": {
+              "population": {
+                "mean": 58.16749013576021,
+                "netPerDecision": {
+                  "card": 0.4507758447570037,
+                  "delayed": -0.34038723241461555,
+                  "world": -0.3296064064549207,
+                  "council": 0,
+                  "succession": 0
+                }
+              },
+              "resources": {
+                "mean": 34.01442697657825,
+                "netPerDecision": {
+                  "card": 1.7590629280721062,
+                  "delayed": -1.410538609369373,
+                  "world": -0.3803956017326508,
+                  "council": 0,
+                  "succession": 0
+                }
+              },
+              "authority": {
+                "mean": 91.58520605238564,
+                "netPerDecision": {
+                  "card": 0.5406714077843633,
+                  "delayed": 0.017793775964799502,
+                  "world": 0,
+                  "council": -0.00005328989365581011,
+                  "succession": -0.3312993422344284
+                }
+              },
+              "knowledge": {
+                "mean": 99.04395967469605,
+                "netPerDecision": {
+                  "card": 0.11329150918100726,
+                  "delayed": -0.06667631494214961,
+                  "world": 0,
+                  "council": 0,
+                  "succession": 0.01940593548445001
+                }
+              },
+              "stability": {
+                "mean": 77.28161913769098,
+                "netPerDecision": {
+                  "card": 0.12562503435795774,
+                  "delayed": 0.10789464531929621,
+                  "world": -0.1706690181533425,
+                  "council": -0.023601813427033796,
+                  "succession": 0
+                }
+              },
+              "environment": {
+                "mean": 71.97754868732969,
+                "netPerDecision": {
+                  "card": 0.014539726774301032,
+                  "delayed": 0.0005042906778586662,
+                  "world": 0,
+                  "council": 0,
+                  "succession": 0
+                }
+              }
+            }
+          }
+        },
+        "cappedLast80": {
+          "meanDistinctCards": 8.99717057396928,
+          "meanPendingConsequences": 2.2683912691996766,
+          "meanStatRanges": {
+            "population": {
+              "minimum": 56.672594987873886,
+              "maximum": 81.88520614389653,
+              "final": 69.72231204527081
+            },
+            "resources": {
+              "minimum": 16.161277283751012,
+              "maximum": 67.62974939369442,
+              "final": 40.43856103476152
+            },
+            "authority": {
+              "minimum": 85.1568310428456,
+              "maximum": 100,
+              "final": 98.14713015359742
+            },
+            "knowledge": {
+              "minimum": 94.58852061438965,
+              "maximum": 100,
+              "final": 99.21705739692806
+            },
+            "stability": {
+              "minimum": 71.98302344381568,
+              "maximum": 97.87631366208569,
+              "final": 87.48827809215845
+            },
+            "environment": {
+              "minimum": 60.22999191592562,
+              "maximum": 94.98464025869038,
+              "final": 79.25222312045271
+            }
+          },
+          "topChoices": [
+            [
+              "salt_ship.trade",
+              22033
+            ],
+            [
+              "council_seal.delegate",
+              21876
+            ],
+            [
+              "tin_caravan.toll",
+              20222
+            ],
+            [
+              "flint_apprentice.teach",
+              17271
+            ],
+            [
+              "hostage_prince.assimilate",
+              16592
+            ],
+            [
+              "furnace_wood.quota",
+              15198
+            ],
+            [
+              "gate_ward.contract",
+              14432
+            ],
+            [
+              "harbor_ballast.weigh",
+              13233
+            ],
+            [
+              "smoke_shift.push",
+              11688
+            ],
+            [
+              "harbor_ballast.release",
+              8808
+            ],
+            [
+              "furnace_wood.expand",
+              6797
+            ],
+            [
+              "gate_ward.wards",
+              6572
+            ]
+          ]
+        },
+        "historicalRepeatDecisions": {
+          "council_seal": 186489,
+          "hostage_prince": 186755,
+          "salt_ship": 186211,
+          "flint_apprentice": 186159
+        }
+      },
+      "after": {
+        "eraReachCounts": {
+          "1": 10000,
+          "2": 9861,
+          "3": 9763
+        },
+        "averageTurns": 159.7507,
+        "repeatRate": 0.7894463060255761,
+        "cappedRuns": 1251,
+        "capsByEra": {
+          "3": 1251
+        },
+        "turnQuantiles": {
+          "p50": 97,
+          "p90": 500,
+          "p99": 500
+        },
+        "runsReaching100": 4852,
+        "endings": {
+          "simulation_cap": 1251,
+          "The last hearth went dark. Hunger consumed your civilization's living memory.": 8749
+        },
+        "eras": {
+          "1": {
+            "decisions": 102324,
+            "repeatRate": 0.011727453969743168,
+            "lateDecisions": 0,
+            "lateRepeatRate": null,
+            "stats": {
+              "population": {
+                "mean": 54.19194910284977,
+                "netPerDecision": {
+                  "card": -0.08829795551385794,
+                  "delayed": 0.07069700168093507,
+                  "world": -0.24257261248582931,
+                  "council": 0,
+                  "succession": 0
+                }
+              },
+              "resources": {
+                "mean": 33.13725030295923,
+                "netPerDecision": {
+                  "card": -0.015020913959579375,
+                  "delayed": -0.025868808881591807,
+                  "world": -3.4997165865290647,
+                  "council": 0,
+                  "succession": 0
+                }
+              },
+              "authority": {
+                "mean": 45.064931003479145,
+                "netPerDecision": {
+                  "card": 0.9194128454712482,
+                  "delayed": -0.13532504593252806,
+                  "world": 0,
+                  "council": -0.004642117196356671,
+                  "succession": -0.024314921230600837
+                }
+              },
+              "knowledge": {
+                "mean": 48.95473202767679,
+                "netPerDecision": {
+                  "card": 3.815615104960713,
+                  "delayed": 0.1315038505140534,
+                  "world": 0,
+                  "council": 0,
+                  "succession": 0.003977561471404558
+                }
+              },
+              "stability": {
+                "mean": 60.51748367929323,
+                "netPerDecision": {
+                  "card": 0.7959618466830851,
+                  "delayed": -0.06625034205074079,
+                  "world": -0.12286462608967594,
+                  "council": -0.002198897619326844,
+                  "succession": 0
+                }
+              },
+              "environment": {
+                "mean": 70.76066221023416,
+                "netPerDecision": {
+                  "card": 0.07468433603064775,
+                  "delayed": 0,
+                  "world": 0,
+                  "council": 0,
+                  "succession": 0
+                }
+              }
+            }
+          },
+          "2": {
+            "decisions": 65256,
+            "repeatRate": 0.008029912958195416,
+            "lateDecisions": 13,
+            "lateRepeatRate": 0,
+            "stats": {
+              "population": {
+                "mean": 53.35468002942258,
+                "netPerDecision": {
+                  "card": 1.1845807282089003,
+                  "delayed": -0.14979465489763394,
+                  "world": -0.7928313105308324,
+                  "council": 0,
+                  "succession": 0
+                }
+              },
+              "resources": {
+                "mean": 23.676229005761922,
+                "netPerDecision": {
+                  "card": 1.1347615544930734,
+                  "delayed": -0.1778840259899473,
+                  "world": -1.2549497364227045,
+                  "council": 0,
+                  "succession": 0
+                }
+              },
+              "authority": {
+                "mean": 49.47968002942258,
+                "netPerDecision": {
+                  "card": 0.5190480568836582,
+                  "delayed": -0.14982530342037514,
+                  "world": 0,
+                  "council": -0.0015324261370601936,
+                  "succession": -0.18009071962731396
+                }
+              },
+              "knowledge": {
+                "mean": 75.05522863797965,
+                "netPerDecision": {
+                  "card": 2.0271239426259653,
+                  "delayed": 0.3450410690204732,
+                  "world": 0,
+                  "council": 0,
+                  "succession": 0.029054799558661273
+                }
+              },
+              "stability": {
+                "mean": 57.69630378815741,
+                "netPerDecision": {
+                  "card": 0.011416574721098444,
+                  "delayed": -0.28046463160475665,
+                  "world": -0.3981243104082383,
+                  "council": -0.000996076989089126,
+                  "succession": 0
+                }
+              },
+              "environment": {
+                "mean": 65.2725726369989,
+                "netPerDecision": {
+                  "card": -1.1712945936005885,
+                  "delayed": -0.02111683216868947,
+                  "world": 0,
+                  "council": 0,
+                  "succession": 0
+                }
+              }
+            }
+          },
+          "3": {
+            "decisions": 1429927,
+            "repeatRate": 0.8807596471707996,
+            "lateDecisions": 765524,
+            "lateRepeatRate": 0.9996695074223669,
+            "stats": {
+              "population": {
+                "mean": 48.77952440928803,
+                "netPerDecision": {
+                  "card": 0.23581903132117935,
+                  "delayed": -0.31352719404557017,
+                  "world": -0.25188628510406474,
+                  "council": 0,
+                  "succession": 0
+                }
+              },
+              "resources": {
+                "mean": 32.435234106356475,
+                "netPerDecision": {
+                  "card": 2.2974431561890922,
+                  "delayed": -1.6137544084418296,
+                  "world": -0.7216389368128583,
+                  "council": 0,
+                  "succession": 0
+                }
+              },
+              "authority": {
+                "mean": 88.16413984769852,
+                "netPerDecision": {
+                  "card": 0.6217478234902901,
+                  "delayed": -0.005593991861122981,
+                  "world": 0,
+                  "council": -0.000048953547978323366,
+                  "succession": -0.33341911859836204
+                }
+              },
+              "knowledge": {
+                "mean": 99.00986204190843,
+                "netPerDecision": {
+                  "card": 0.23001453920374956,
+                  "delayed": -0.1381140435840431,
+                  "world": 0,
+                  "council": 0,
+                  "succession": 0.016314119531976107
+                }
+              },
+              "stability": {
+                "mean": 84.1687051157157,
+                "netPerDecision": {
+                  "card": -0.06641947456058946,
+                  "delayed": 0.32420466219604216,
+                  "world": -0.13280957699239193,
+                  "council": -0.0020665390610849366,
+                  "succession": 0
+                }
+              },
+              "environment": {
+                "mean": 70.31239986376927,
+                "netPerDecision": {
+                  "card": -0.006050658530120768,
+                  "delayed": 0.0014126595273744743,
+                  "world": 0,
+                  "council": 0,
+                  "succession": 0
+                }
+              }
+            }
+          }
+        },
+        "cappedLast80": {
+          "meanDistinctCards": 8.708233413269385,
+          "meanPendingConsequences": 3.7937649880095923,
+          "meanStatRanges": {
+            "population": {
+              "minimum": 43.10551558752998,
+              "maximum": 67.98481215027978,
+              "final": 54.25339728217426
+            },
+            "resources": {
+              "minimum": 13.798561151079136,
+              "maximum": 65.83932853717026,
+              "final": 38.79616306954436
+            },
+            "authority": {
+              "minimum": 89.9144684252598,
+              "maximum": 100,
+              "final": 99.45403677058353
+            },
+            "knowledge": {
+              "minimum": 96.73940847322142,
+              "maximum": 100,
+              "final": 99.44444444444444
+            },
+            "stability": {
+              "minimum": 86.01598721023181,
+              "maximum": 99.99840127897681,
+              "final": 96.49000799360512
+            },
+            "environment": {
+              "minimum": 58.051159072741804,
+              "maximum": 96.63229416466827,
+              "final": 78.94884092725819
+            }
+          },
+          "topChoices": [
+            [
+              "tin_caravan.toll",
+              12628
+            ],
+            [
+              "copper_recast.repair",
+              10822
+            ],
+            [
+              "harbor_dredge.outer",
+              9298
+            ],
+            [
+              "harbor_ballast.weigh",
+              8558
+            ],
+            [
+              "furnace_wood.quota",
+              8405
+            ],
+            [
+              "gate_ward.contract",
+              8198
+            ],
+            [
+              "smoke_shift.split",
+              6183
+            ],
+            [
+              "ration_council.families",
+              5980
+            ],
+            [
+              "smoke_shift.push",
+              5623
+            ],
+            [
+              "furnace_wood.expand",
+              4587
+            ],
+            [
+              "harbor_ballast.release",
+              4497
+            ],
+            [
+              "gate_ward.wards",
+              3813
+            ]
+          ]
+        },
+        "historicalRepeatDecisions": {
+          "council_seal": 0,
+          "hostage_prince": 0,
+          "salt_ship": 0,
+          "flint_apprentice": 0
+        }
+      }
+    }
+  }
+}

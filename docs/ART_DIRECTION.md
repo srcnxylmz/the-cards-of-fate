@@ -24,7 +24,7 @@ Composition: portrait main illustration, readable subject at iPhone size, delibe
 - `card_sacred_fire`: generated with built-in imagegen, copied into `App/Assets.xcassets/card_sacred_fire.imageset`. Inspected visually: elder/child, winter forest, fire, original painterly composition, no text. Final production/color/performance acceptance remains pending.
 - `card_river_tracks`: generated with built-in imagegen and integrated in its asset-catalog image set. Paleolithic scout, wild grain, river mud and migrating herd visually checked; exact prompt in `assets/generation_prompts.json`.
 - `card_first_granary`: original Neolithic generated candidate integrated in its asset-catalog image set; exact prompt recorded. Stylized timber-key detail and final historical/device acceptance remain pending.
-- All other 85 authored illustrations: missing. SpriteKit draws an explicitly temporary original settlement silhouette; this is not counted as card art.
+- Current inventory: ten real candidates / 95 missing illustrations across 105 cards; see the 105-card ledger below. SpriteKit draws an explicitly temporary original settlement silhouette; this is not counted as card art.
 - `decision.wav`: original deterministic two-tone prototype, 220 ms, mono PCM16 at 44.1 kHz. Quiet envelope and app gain limit. Not a finished sound-design pack.
 - Studio mascot/logo, game logo, App Store icon, 12 music sets, 12 ambience tracks, 39+ additional effects: missing.
 
@@ -42,8 +42,17 @@ EventCardView shares rounded framing, serif title/body hierarchy and wrapping mi
 
 first_granary is a new original built-in imagegen candidate (grain basket, clay/reed granary, families, timber key). Prompt and provenance are recorded. The two original images are untouched. Three actual candidates exist; 73 illustrations remain missing. Historical details (including stylized wooden key), color/performance and physical-device acceptance remain review items; generation is not final historical/art approval. No new production sound/music is delivered in this group.
 
-## 90-card presentation and assets
+## Historical 90-card presentation and assets
 
 Existing three images retained. Original green_stone (Neolithic copper discovery) and smoke_shift (Bronze worker health) built-in imagegen candidates integrated; five total, 85 missing. Same portrait well and era frame standard. Stat label/value now share one text run and the scroll viewport clips at its safe-area boundary; native TR/EN normal/large pixel checks passed at 0be976a; intermittent historical first-paint cause unconfirmed. card-open and choice-soft are original 240/120ms synthesized prototypes with bounded envelopes, not finished music/ambience. Actual device listening, historical/legal image approval and FPS profiling remain open.
 
 Native asset integration verified in run 43731255529: five illustration fixtures resolve real second choices; new copper-workshop and foundry PNGs render full portrait scenes in the shared frame. Real captures inspected; entrance-frame opacity varies during the intentional animation. Safe-area clipping verified on SE 3. These are candidates, with 85 missing current illustrations and full physical/art/audio acceptance still open.
+
+
+## 105-card production workflow
+
+Ten actual portrait candidates are registered; 95 illustrations remain missing. The five new candidates are winter_porters (Paleolithic migration), fallow_strips and reed_fever (Neolithic land/care), furnace_wood and salt_ship (Bronze production/trade). Existing five image bytes are preserved. The furnace candidate was edited to replace industrial-looking stacks with low clay kilns and a later-looking axe with a plain bronze head; original and edit prompt/reference hashes are retained. These are generated candidates, not historical/legal/art-direction approval.
+
+Every manifest row contains authored brief, modelPrompt, status and generationRecords. Missing assets have no file and no fabricated production record. For a real generation: submit its prompt through the available image tool, inspect the result, then run node tools/register-art.mjs --card CARD --source INSPECTED.png --prompt-file EXACT_PROMPT.txt (optional --reference ORIGINAL.png for an edit). Registration refuses existing catalog/image paths and records SHA-256, actual tool, source and registration time; model and generation timestamp remain unknown when not exposed. Rebuild with node tools/build-content.mjs; check with node tools/art-audit.mjs. Original output files remain untouched.
+
+The builder emits UITests/ArtFixtures.json from actual file-backed assets. Native tests load it from their bundle and exercise all ten images, reachable second choices and a turn-1 result; the granary fixture retains large text/Reduce Motion. New candidates do not change the established card-frame, fitted portrait ratio, stat OCR or safe scroll clipping. Simulator review is pending for the 105 checkpoint. Physical-device color, memory, hearing, real accessibility settings and final production acceptance remain separate.

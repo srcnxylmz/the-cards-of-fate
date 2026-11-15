@@ -26,5 +26,93 @@
     "tool": "built-in imagegen",
     "prompt": "Use case: historical-scene. Original premium event-card illustration for The Cards of Fate, smoke_shift. Bronze Age foundry production crisis: two adult craftspeople pause beside a clay furnace, one coughing into a woven cloth while another opens a timber roof vent; a supervisor divides a modest order of unfinished bronze tools on a clay bench. The dilemma is protecting skilled workers through shorter shifts versus urgent delivery. Clay-brick workshop, rough timber beams, charcoal baskets, ceramic molds and a small restrained ember glow, no industrial pipes or modern machinery. Cinematic painterly historical realism, humane restrained expressions and natural hands/anatomy, detailed clay and linen, bronze gold and cool teal daylight through the roof, smoke translucent and controlled, readable central silhouettes. Consistent intimate portrait style with existing hearth, river scout and granary card illustrations. Portrait 2:3, full scene comfortably inside the composition. No text, readable marks, lettering, logo, border, watermark, steel equipment, medieval armor or fantasy weapons. Original composition.",
     "status": "generated-candidate; historical and device QA pending"
+  },
+  {
+    "asset": "card_winter_porters",
+    "tool": "built-in imagegen",
+    "prompt": "Use case: historical-scene. Original premium portrait event-card illustration for The Cards of Fate, winter_porters. A Paleolithic winter migration pauses below a snowy ridge: a strong adult hunter accepts an extra heavy hide bundle from an exhausted family, while an elder and another adult consider how to divide the load and scarce dried food. The human dilemma is sharing burdens fairly versus granting stronger carriers larger rations. Stone tools and hide clothing only, simple leather packs, cold slate-blue dusk and a restrained amber torch. Cinematic painterly historical realism, natural anatomy, expressive adult hands and faces, rich hide and snow textures. Match the intimate naturalistic hearth/river/granary collection; ochre, charcoal, muted blue. Portrait 2:3, full scene comfortably framed, readable central silhouettes at iPhone size. No text, lettering, logo, border, watermark, metal tools, modern objects or fantasy armor. Original composition.",
+    "status": "generated-candidate; historical and device QA pending",
+    "generation": {
+      "type": "generated",
+      "tool": "built-in imagegen",
+      "model": "not exposed by built-in tool",
+      "generatedAt": "2026-11-15T16:19:19.706Z",
+      "source": "exec-9023f148-1f3a-4fc2-97fe-a17ed60b39b8.png",
+      "sha256": "ab5257da7e316aedc886039ad02191ebdee838b55aa8470259449873ba3cbfe2"
+    }
+  },
+  {
+    "asset": "card_fallow_strips",
+    "tool": "built-in imagegen",
+    "prompt": "Use case: historical-scene. Original premium portrait event-card illustration for The Cards of Fate, fallow_strips. Neolithic farmers debate resting a worn-out field strip while their grain reserve is low. In the foreground an adult farmer shows dry clods and sparse grain roots to a woman holding a nearly empty woven seed basket; behind them a small rested green strip contrasts with an eroded cultivated slope and modest clay-and-reed houses. The dilemma is giving the soil time to recover versus opening a fragile slope for immediate food. Stone sickles and wooden digging tools only, woven linen, sage green and warm clay with soft cloudy daylight. Cinematic painterly historical realism consistent with the existing intimate granary and copper-workshop art; natural hands and faces, tactile soil, quiet human conflict. Portrait 2:3, comfortable full-scene framing, central silhouettes readable on iPhone. No text, lettering, logo, border, watermark, steel tools, modern equipment or medieval costumes. Original composition.",
+    "status": "generated-candidate; historical and device QA pending",
+    "generation": {
+      "type": "generated",
+      "tool": "built-in imagegen",
+      "model": "not exposed by built-in tool",
+      "generatedAt": "2026-11-15T16:19:19.779Z",
+      "source": "exec-3ae5ea0d-e5d7-4a90-9c3f-8875a276f9d9.png",
+      "sha256": "b6a1c2113be25a06cccaa64219427351fa208ea7674a8cd8389c54f1acac89b0"
+    }
+  },
+  {
+    "asset": "card_furnace_wood",
+    "tool": "built-in imagegen",
+    "prompt": "Use case: historical-scene. Original premium portrait event-card illustration for The Cards of Fate, furnace_wood. Bronze Age charcoal and forest conflict: a city furnace worker with a small basket of charcoal meets an adult woodland keeper at a nearly bare coppice edge; cut stumps, young recovering shoots and the distant clay-brick foundry show the price of production. They weigh a measured fuel quota against clearing the last mature trees for an urgent order. Restrained human expressions, natural adult hands, linen, rough timber and bronze-era tools, no modern machinery. Cinematic painterly historical realism consistent with the existing foundry and granary cards, bronze gold and cool teal haze, controlled warm embers, detailed bark and charcoal. Portrait 2:3, full scene comfortably framed, central silhouettes readable on iPhone. Original composition. No text, letters, logo, frame, watermark, steel chainsaws, medieval armor or fantasy elements.",
+    "status": "superseded-candidate",
+    "source": "exec-61dc25ad-e29d-4110-a825-df923b17d2bf.png",
+    "reason": "Industrial-looking background corrected in edit; not a final catalog asset"
+  },
+  {
+    "asset": "card_reed_fever",
+    "tool": "built-in imagegen",
+    "prompt": "Use case: historical-scene. Original premium portrait event-card illustration for The Cards of Fate, reed_fever. Neolithic village by a reed-lined water channel: two adult caregivers support a feverish seated adult in the shade while a worker with a wooden spade points toward stagnant water and another family prepares to move light household bundles. The dilemma is moving homes away from the wet ground versus spending scarce labor draining the channel. Humane restrained concern, no graphic illness or wounds, clay houses, reed mats, woven linen, wood and stone tools only. Sage reeds, muted clay ochre, soft silver daylight, intimate cinematic painterly historical realism matching the existing granary and copper-workshop images. Natural anatomy and hands, textured earthen banks, readable central people at iPhone size. Portrait 2:3, comfortable full scene, original composition. No text, letters, logo, border, watermark, metal medical tools, modern equipment or fantasy elements.",
+    "status": "generated-candidate; historical and device QA pending",
+    "generation": {
+      "type": "generated",
+      "tool": "built-in imagegen",
+      "model": "not exposed by built-in tool",
+      "generatedAt": null,
+      "registeredAt": "2026-11-15T16:31:58.844Z",
+      "mode": "generation",
+      "source": "exec-6056e237-c3a1-4eea-a9dd-a1f7c8eca7f5.png",
+      "sha256": "6891b2fda9efd29eaba1c490a87a76f1af9de54784881f4c193aefe4b30f13b0"
+    }
+  },
+  {
+    "asset": "card_furnace_wood",
+    "tool": "built-in imagegen",
+    "prompt": "Edit this original furnace_wood card candidate for tighter Bronze Age historical consistency. Preserve the two foreground adults, faces, clothing, charcoal basket, young shoots, cut woodland, palette, lighting and portrait composition. Replace the tall industrial-looking masonry chimneys in the distance with low clay-domed charcoal/casting kilns and simple open timber-and-reed workshop shelters, with low smoke escaping from roof openings and no vertical industrial stacks. Replace the large bearded axe at the woman's belt with a small plain flat bronze axe head on a simple wooden haft with leather binding, no medieval blade shape or ornament. Keep the tally board abstract with no readable writing. No modern objects, text, logo, watermark or border. Change only those historical equipment/background details.",
+    "status": "generated-candidate; historical and device QA pending",
+    "generation": {
+      "type": "generated",
+      "tool": "built-in imagegen",
+      "model": "not exposed by built-in tool",
+      "generatedAt": null,
+      "registeredAt": "2026-11-15T16:31:58.893Z",
+      "mode": "edit",
+      "reference": {
+        "file": "exec-61dc25ad-e29d-4110-a825-df923b17d2bf.png",
+        "sha256": "f248df0f8b59d91d5543cf08bc24adb78bc713646c86b3b929d8baff06756a3d"
+      },
+      "source": "exec-ad7e89b7-5150-4a40-8cc2-3a7f52c81f68.png",
+      "sha256": "c19e4f354b4e0c790fb19056d810563e89adb937461e4415395c9688efcb9791"
+    }
+  },
+  {
+    "asset": "card_salt_ship",
+    "tool": "built-in imagegen",
+    "prompt": "Use case: historical-scene. Original premium portrait event-card illustration for The Cards of Fate, salt_ship. Bronze Age harbor after a storm: an adult ship captain offers a woven basket of coarse salt to a city steward, while another adult holds the city's last sound roll of woven sailcloth. A modest wooden merchant vessel with a repaired square sail rests beside timber moorings and clay-brick waterfront homes. The human dilemma is bartering scarce sailcloth for food preservation versus risking an escort voyage for a better trade. Bronze-era linen, rope, timber, clay jars and subtle bronze fittings; no cannon, modern ship hardware or medieval rigging. Intimate cinematic painterly historical realism consistent with the granary and foundry collection, natural anatomy, textured salt and wet wood, bronze gold against cool teal sea and breaking cloudy light. Portrait 2:3, comfortable full-scene framing, clear central silhouettes on iPhone. Original composition. No text, readable writing, logo, border, watermark, fantasy weapons or modern objects.",
+    "status": "generated-candidate; historical and device QA pending",
+    "generation": {
+      "type": "generated",
+      "tool": "built-in imagegen",
+      "model": "not exposed by built-in tool",
+      "generatedAt": null,
+      "registeredAt": "2026-11-15T16:31:58.943Z",
+      "mode": "generation",
+      "source": "exec-b5064667-605b-4a31-8eb5-9209439034f2.png",
+      "sha256": "862da510d60c6dc683efa5665e563a96a051658d4dce94152ee124ee25632df6"
+    }
   }
 ]

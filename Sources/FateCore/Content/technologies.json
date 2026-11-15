@@ -13,7 +13,8 @@
     "era": 2,
     "unlockedBy": [
       "green_stone",
-      "kiln_crack"
+      "kiln_crack",
+      "potter_lease"
     ],
     "status": "implemented"
   },

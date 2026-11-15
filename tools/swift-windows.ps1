@@ -1,7 +1,7 @@
 param(
     [ValidateSet('Test', 'Simulate')][string]$Task = 'Test',
     [ValidateRange(1, 1000000)][int]$Runs = 10000,
-    [ValidateSet('random', 'survival', 'knowledge', 'progression')][string]$Policy = 'random',
+    [ValidateSet('random', 'survival', 'knowledge', 'progression', 'recovery')][string]$Policy = 'random',
     [switch]$ManageCouncil,
     [string]$CardsPath,
     [string]$OutputDirectory = 'docs',
