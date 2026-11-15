@@ -62,6 +62,13 @@ final class MilestoneTests: XCTestCase {
             XCTAssertFalse(c.choices.first { $0.id == old }!.available(in:s))
             XCTAssertTrue(c.choices.first { $0.id == new }!.available(in:s))
             XCTAssertGreaterThanOrEqual(c.choices.filter { $0.available(in:s) }.count,2)
+            if ["dry","cache"].contains(new) {
+                let safe=c.choices.first { $0.id == new }!.outcomes[0]
+                let risky=c.choices.first { $0.id == old }!.outcomes[0]
+                XCTAssertLessThan(safe.effect.stats["resources",default:0],risky.effect.stats["resources",default:0])
+                XCTAssertLessThan(safe.effect.stats["environment",default:0],0)
+                XCTAssertTrue(safe.delayedEffects.contains { $0.effect.stats["resources",default:0]<0 })
+            }
             let a = try e.choose(new,in:s)
             let b = try e.choose(new,in:JSONDecoder().decode(GameState.self,from:JSONEncoder().encode(s)))
             XCTAssertEqual(a,b)

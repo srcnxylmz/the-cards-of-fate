@@ -731,7 +731,7 @@
             },
             "effect": {
               "stats": {
-                "resources": 6,
+                "resources": 12,
                 "knowledge": 3,
                 "environment": -2
               },
@@ -1069,7 +1069,7 @@
             },
             "effect": {
               "stats": {
-                "resources": 7,
+                "resources": 12,
                 "environment": -3,
                 "authority": -2
               },
