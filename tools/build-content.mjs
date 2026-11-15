@@ -2,6 +2,7 @@ import { mkdirSync, writeFileSync, existsSync, readFileSync } from 'node:fs';
 import { resolve } from 'node:path';
 import { addLegacyEvents } from './content/legacy-events.mjs';
 import { addCouncilEvents } from './content/council-events.mjs';
+import { addInheritanceEvents } from './content/inheritance-events.mjs';
 
 // Authoring helpers normalize structure only. Every event below is individually authored.
 const root = resolve(import.meta.dirname, '..');
@@ -100,7 +101,7 @@ card('bark_shelter', 1, 'engineering', 'Kabuk Sığınağı', 'Bark Shelter',
   'Days of rain have flooded the cave entrance. Children and elders struggle to find a dry place. Large pieces of tree bark could provide a temporary shelter, but building it would divert some hunters from gathering food.',
   'Paleolithic forest during heavy rainfall, a small temporary shelter built from large bark sheets and branches, prehistoric families protecting children, a flooded cave entrance in the distance, realistic natural materials, dramatic overcast light, portrait composition, no metal tools or modern objects.', [
     choice('build', 'Ağaç kabuklarından sığınak kur; yiyecek toplamak için daha az insan ayır.', 'Build a shelter from bark; assign fewer people to gathering food.', [outcome('Yeni sığınak, çocukları ve yaşlıları yağmurdan korudu. Ancak yapım için harcanan zaman yüzünden yiyecek stokları azaldı.', 'The new shelter protected children and elders from the rain. However, the time spent building it reduced the group\'s food supplies.', { authority: 8, resources: -6, environment: -4 }, { flags: ['shanty'] })]),
-    choice('wait', 'Mağarada kal; yağmurun dinmesini bekleyerek erzağı koru.', 'Remain in the cave; conserve supplies while waiting for the rain to end.', [outcome('Avcılar yiyecek toplamayı sürdürdü ve erzak korundu. Fakat mağaradaki nem ve soğuk, özellikle çocukları ve yaşlıları güçsüz düşürdü.', 'The hunters continued gathering food, preserving the supplies. But damp and cold conditions in the cave weakened the children and elders.', { knowledge: 4, stability: 6, resources: -3 })])
+    choice('wait', 'Mağarada kal; yağmurun dinmesini bekleyerek erzağı koru.', 'Remain in the cave; conserve supplies while waiting for the rain to end.', [outcome('Avcılar yiyecek toplamayı sürdürdü ve erzak korundu. Fakat mağaradaki nem ve soğuk, özellikle çocukları ve yaşlıları güçsüz düşürdü.', 'The hunters continued gathering food, preserving the supplies. But damp and cold conditions in the cave weakened the children and elders.', { knowledge: 4, stability: 6, resources: -3 }, { flags: ['damp_danger'], delayed: [delayed(8, 2, 'Yağmur dinmeyince mağaradaki nem hastalıklara yol açtı. Özellikle çocuklar ve yaşlılar güçsüz düştü.', 'As the rain continued, damp conditions inside the cave caused illness. Children and elders suffered most.', { stability: -3, population: -2 })] })])
   ], { once: true });
 
 card('first_granary', 2, 'settlement', 'Kapısı Olan Bereket', 'Abundance Behind a Door',
@@ -233,6 +234,7 @@ card('council_seal', 3, 'leadership', 'Mührün Sahibi', 'Keeper of the Seal',
 
 addLegacyEvents({ card, choice, outcome, delayed });
 addCouncilEvents({ card, choice, outcome, delayed });
+addInheritanceEvents({ card, choice, outcome, delayed });
 
 // Completed discoveries/builds are world facts, not reusable reward cards.
 for (const [id, exclusion] of [
@@ -259,8 +261,18 @@ const eraRows = [
 ];
 const eras = eraRows.map((r,i) => ({ id:i+1, name:text(r[0],r[1]), settlement:text(r[2],r[3]), government:text(r[4],r[5]), requiredTechnology:r[6], knowledgeThreshold:r[7], stabilityThreshold:35, populationThreshold:25, palette:r[8], artDirection:r[9] }));
 const balance = { startingStats:{population:55,resources:55,authority:40,knowledge:28,stability:55,environment:70}, resourceConsumption:4, hardExtraConsumption:2, farmProduction:2, starvationLoss:8, successionTurns:24, rivalPressure:5 };
-function write(relative, data) { const destination=resolve(root,relative); mkdirSync(resolve(destination,'..'),{recursive:true}); writeFileSync(destination, JSON.stringify(data,null,2)+'\n'); }
+function write(relative, data) {
+  const destination=resolve(root,relative), serialized=JSON.stringify(data,null,2)+'\n';
+  if (process.argv.includes('--check')) {
+    if (!existsSync(destination) || readFileSync(destination,'utf8').replace(/\r\n/g,'\n') !== serialized)
+      throw new Error(`Generated content is stale: ${relative}; run node tools/build-content.mjs`);
+    return;
+  }
+  mkdirSync(resolve(destination,'..'),{recursive:true}); writeFileSync(destination, serialized);
+}
 write('Sources/FateCore/Content/cards.json',cards);
+// Compatibility mirror for existing root-file users; the app reads the package resource above.
+write('cards.json',cards);
 write('Sources/FateCore/Content/eras.json',eras);
 write('Sources/FateCore/Content/balance.json',balance);
 const previousArt = existsSync(resolve(root,'assets/art_manifest.json')) ? JSON.parse(readFileSync(resolve(root,'assets/art_manifest.json'),'utf8')) : [];

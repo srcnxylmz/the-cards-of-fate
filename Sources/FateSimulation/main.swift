@@ -53,6 +53,7 @@ var reached: [String: Int] = [:]
 var endings: [String: Int] = [:]
 var seen: Set<String> = []
 var repeated = 0
+var repeatedByCard: [String: Int] = [:]
 var earlyRepeated = 0
 var earlyDecisions = 0
 var decisions = 0
@@ -74,7 +75,7 @@ for seed in 0..<count {
     for _ in 0..<500 {
         guard state.ending == nil, let card = content.card(state.currentCardID) else { break }
         let isRepeat = state.history.contains(where: { $0.cardID == card.id })
-        if isRepeat { repeated += 1 }
+        if isRepeat { repeated += 1; repeatedByCard[card.id, default: 0] += 1 }
         if state.turn < 20 {
             earlyDecisions += 1
             if isRepeat { earlyRepeated += 1 }
@@ -129,6 +130,7 @@ let report: [String: Any] = [
     "averageTurns": Double(turns.reduce(0,+))/Double(count), "minTurns": turns.min()!, "maxTurns": turns.max()!,
     "eraReachCounts": reached, "endings": endings, "uniqueCardsSeen": seen.count,
     "repeatRate": Double(repeated)/Double(max(1,decisions)), "cappedRuns": capped,
+    "repeatDecisionsByCard": repeatedByCard,
     "first20TurnsRepeatRate": Double(earlyRepeated)/Double(max(1,earlyDecisions)),
     "meanResources": Double(totalResources)/Double(max(1,decisions)),
     "meanStrongestRival": Double(totalRivalPower)/Double(max(1,decisions)),

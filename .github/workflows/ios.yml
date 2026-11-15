@@ -12,7 +12,8 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
-      - run: node --test tools/validate-content.test.mjs
+      - run: node --test tools/validate-content.test.mjs tools/content-sync.test.mjs
+      - run: node tools/build-content.mjs --check
       - run: node tools/validate-content.mjs
       - run: swift test
       - name: Compare three strategies over 10000 seeds each

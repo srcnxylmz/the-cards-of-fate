@@ -1,6 +1,41 @@
 # Measured balance baseline — 2026-11-09
 
-## 48-card narrative revision — 2026-11-10
+## 2026-11-15 — normalized 52-card baseline versus 64-card inheritance batch
+
+Both versions ran seeds 0..<10000 under each of the unchanged random/survival/knowledge policies, production Swift release engine, 500-decision cap. Baseline files: baselines/phase2-52. Final files: simulation-{policy}.json. The baseline includes the user's local bark_shelter consequence and repaired flint_apprentice helper/delayed-effect contract. It is a normalized local 52-card baseline, not the remote 51-card release. No selector, cooldown, weights, RNG, political rules or economy constants changed in this comparison.
+
+| Policy | Mean observed turns before → after | Repeat before → after | First-20 repeat before → after | Exile runs before → after | Capped runs before → after |
+|---|---:|---:|---:|---:|---:|
+| random | 30.9645 → 30.4845 | 33.25% → 27.42% | 13.56% → 6.59% | 0 → 2 | 0 → 0 |
+| survival | 123.47 → 124.2805 | 87.53% → 85.27% | 24.51% → 10.41% | 84 → 38 | 95 → 91 |
+| knowledge | 144.434 → 135.4482 | 86.43% → 84.51% | 13.87% → 7.64% | 159 → 111 | 1307 → 1138 |
+
+| Policy | Era 2 reach before → after | Era 3 reach before → after | Distinct cards observed across seeds before → after |
+|---|---:|---:|---:|
+| random | 5844 → 5203 | 4220 → 3322 | 51 → 63 |
+| survival | 0 → 0 | 0 → 0 | 17 → 20 |
+| knowledge | 6504 → 5504 | 3852 → 2959 | 48 → 61 |
+
+All 30,000 final runs passed stat bounds and completed without a runner failure. Era progression declined in random and knowledge policies (see table); new one-shot choices consume turns/resources and these local heuristics do not value long-term paths. Lower repetition must not hide this regression. Next work must examine the extra early-era opportunity costs and intentionally pursue progression before adjusting thresholds. Random and knowledge each resolved all twelve new events across seeds; survival resolved winter_mantle/shared_quarry/ember_watch but did not pursue cultivation, and therefore did not observe the later branches. This is separate from the targeted regression fixtures, which prove branch predicates, delayed gating and production selection. No claim of every branch being reached by these heuristics.
+
+### Progression concern
+
+Random river_tracks.observe resolutions fell from 7,444 to 6,962; knowledge fell from 6,535 to 5,540, while its follow-herd decisions rose from 31,292 to 37,899. Mean resources: random 14.4567 → 14.4820, knowledge 43.2500 → 41.6054. This supports an opportunity-cost/choice-path concern, not a demonstrated selector bug or proof of a single causal explanation. The pool has more early one-shot decisions before cultivation, while local policies value immediate resources. Delayed/cross-era value is not scored. Test a deliberate progression policy and examine actual timing in the next batch; do not silently lower era thresholds to restore a percentage.
+
+### Repetition diagnosis
+
+The selector prioritizes eligible unseen events, keeps prerequisites/exclusions and cooldowns, sorts IDs, then uses authored weights within the chosen pool. Single-use inheritance history leaves the pool permanently after resolution. Once its limited first-era stories are exhausted, survival repeatedly chooses recurring food/stat events; a larger all-era count cannot expand a first-era policy's eligible pool. Knowledge similarly repeats familiar village events while neglecting some progression costs. No cooldown relaxation or arbitrary weight change was used.
+
+New repeatDecisionsByCard telemetry records actual repeat resolutions, without state changes or RNG consumption. Leading repeats in the 64-card run:
+- random: empty_seat 4202, sacred_fire 4193, stranger_child 4185, leaking_skin 4128, red_mushrooms 4106
+- survival: red_mushrooms 118381, cave_marks 117988, ochre_border 117867, ice_crossing 117841, leaking_skin 117742
+- knowledge: reed_fever 83721, seed_debt 83414, ancestor_field 83333, market_measures 83298, ash_garden 83254
+
+These are targets for the next editorial recurrence review and new resource-state crises, not a justification to close every recurring event and exhaust the deck. Existing one-shot gates remain enforced. These diagnostics do not constitute pacing or human difficulty testing. Caps are censored living civilizations, not successful endings. Survival/knowledge repetition remains too high; 64 cards does not meet either the 90-card intermediate or 180-card first-three-era target.
+
+The existing simulation-survival-council.json in the working tree predates this task and was deliberately not overwritten or included as final local evidence. CI separately runs that optional policy on the committed content. Normalizing the local draft and adding twelve narratives changes future seeded sequences versus older versions; same-version save/replay remains deterministic. Competitive balance version pinning remains open.
+
+## Historical 48-card narrative revision — 2026-11-10
 
 Same seeds 0..<10000, same three baseline policies, unchanged support/pact rules. The change combines twelve new events and one-shot closure of Broken Spear; comparison cannot isolate these two changes. 36-card support reports are archived in baselines/support-36-cards. The current reports at this directory level describe 48 cards.
 

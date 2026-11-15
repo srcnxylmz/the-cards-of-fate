@@ -1,8 +1,29 @@
-# Progress checkpoint — 2026-11-10
+# Progress checkpoint — 2026-11-15
 
 ## Current status
 
-**Project not complete; support/pact revision and 3 UI flows verified at `fdf2b79`. 48-card CI baseline is verified (GitHub Actions run 42898795340); 50-card local development batch is under local validation (not yet claimed on CI).** Master scope is preserved verbatim in `MASTER_SPEC.md`. Simulator automation is operational; Phase 2 content and simulation development continues.
+**Phase 2 active; 64 cards locally tested, native verification pending this development commit.** Original scope remains 12 eras, minimum 800 cards, 100 complete chains, 50 cross-era links and 30 endings. This milestone does not complete Phase 2 or release acceptance.
+
+## 2026-11-15 — source consistency and inheritance batch
+
+- Confirmed clean remote relationship at HEAD 83170b3 and successful run 43030804344. The working tree was not clean: staged/unstaged content, tests, reports, draft flint_apprentice, bark_shelter effects and root copies existed. Original staged/working patches and affected files were saved locally under artifacts/phase2-2026-11-15-before; no reset, clean, stash or force push used.
+- Runtime: package resource Sources/FateCore/Content/cards.json. Authored source: tools/build-content.mjs and imported event modules. Root cards.json was 24 cards in Git, 52 locally, with an older apprentice variant. Canonical local JSON also had 52 IDs but malformed apprentice outcomes. Normalized the latest draft helper calls and delayed arrays while preserving IDs, teach/reserve decisions, effects and flags. Retained the user's bark_shelter work. See CONTENT_SOURCES.md.
+- Builder now writes root cards.json as a compatibility mirror; --check and mirror regression checks prevent drift. No runtime model or save version change. Other root JSON/editor/backup files are preserved outside this milestone.
+- Added exactly twelve original bilingual one-shot events in tools/content/inheritance-events.mjs, four per first-three era. Local count 52 → 64 (21 Paleolithic, 21 Neolithic, 22 Bronze). All 52 old IDs retained. 136 choices; 32 statically detected cross-era flag requirements (previous 17). These counts are not completed-chain certification.
+- New arcs: mantle privilege/rotating mandate → council cord → succession seal; shared/claimed quarry → road obligations → city arbitration; saved/eaten seed → seed guardianship → famine debt correction; old shelter → brick-drying practice → city roofs, with shared-hearth history unlocking joint maintenance. Delayed consequences gate downstream events; branch flags unlock optional recall, covenant, trial and guarantee decisions.
+- All twelve new disputes close on every possible outcome. Existing unseen-first selection, sorted weights, cooldown and RNG implementation are unchanged. Repetition diagnostics now identify the cards receiving repeats. Do not change weights to conceal content scarcity.
+- Local verification: 46 Swift tests and 27 Node tests passed; generation and --check passed; structural audit 0 errors / 0 warnings. Tests exercise production selection and delayed queues with controlled era/stat fixtures, branching options, closure, v1 save round-trips and the repaired apprentice. They do not prove every branch occurs in unrestricted human play.
+- Same-seed 10,000 × three-policy baseline recorded after normalizing the 52-card draft, then repeated for 64 cards. See BALANCE_REPORT.md. Native CI is pending; this group is not yet marked remotely verified.
+- Art: 2 existing generated candidates; 62 illustrations missing, including all twelve new briefs. All new cards use the existing prototype decision cue, normal/settlement animation definitions and localized risk text. No new production sound, illustration, music or settlement renderer is claimed. New buildings currently affect later flags/choices; they do not add unimplemented automatic production or visuals.
+
+### Next development group
+
+1. Verify this commit in macOS/iPhone CI, repair any failures, then continue toward 90 cards in distinct 10–15-card batches.
+2. Use repeat-by-card evidence to author recurring crises with finite costs and historically valid recurrence; expand remaining debt, hospitality and environmental branches. Complete editorial/branch review before counting a whole chain.
+3. Add generation-aware/active-alliance narrative gates only with save-compatible tests; these new arcs currently use durable historical flags rather than checking generation count or active pact status.
+4. Develop first-card artwork/audio and small-screen/large-text QA alongside content. Physical device, signing, Game Center console, weekly version pinning and full production assets remain open.
+
+## Historical checkpoints
 
 ## 48-card authored batch — 2026-11-10
 

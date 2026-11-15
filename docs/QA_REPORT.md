@@ -70,3 +70,7 @@ No stage is certified complete solely because source files exist. Core, native b
 - `node --test tools/validate-content.test.mjs` → 25/25 pass.
 - `swift test` → 38/38 pass, 0 failures (was 32/32; +6 new narrative tests: decode, requirements/exclusions, both choice branches, flag-gated follow-ups, one-shot non-repetition, save round-trip, deterministic replay). Swift verification executed on Windows with the toolchain plus MSVC linker on PATH; `.\tools\swift-windows.ps1 -Task Test` requires the MSVC `link.exe` path in the environment and is not itself a passed iOS build.
 - The 50-card iOS/simulator build has NOT been run through GitHub Actions and is NOT claimed as passed. Physical-device, signing/TestFlight, Game Center, accessibility and large-text QA remain open.
+
+## 2026-11-15 local Phase 2 checkpoint
+
+46 Swift tests and 27 Node tests passed, generation/--check and mirror equality passed, structural audit has zero errors/warnings. Runtime 64 IDs, all prior local 52 IDs preserved. New tests cover production card draws for four inheritance arcs, all branch-dependent optional choices, delayed gates, closure, v1 replay and repaired local apprentice outcomes. Era/stat fixtures isolate story predicates; they do not prove all branches are naturally drawn in one run. Same-seed 30,000 before and after simulations are documented in BALANCE_REPORT.md. iPhone CI for this group remains pending until a specific run is recorded. No new UI/device/art/audio acceptance claim.

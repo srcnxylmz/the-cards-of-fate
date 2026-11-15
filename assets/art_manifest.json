@@ -406,5 +406,109 @@
     "file": null,
     "brief": "Bronze civic courtyard, clay water-wheel beside a sealed tablet archive, night lanterns and stream water; turquoise, pale stone, workshop glow, portrait composition of a corrupt official.",
     "license": null
+  },
+  {
+    "id": "card_flint_apprentice",
+    "cardID": "flint_apprentice",
+    "status": "missing",
+    "file": null,
+    "brief": "Bronze Age workshop with flint cores, stone flakes and an apprentice demonstrating pressure flaking to an older craftsperson; clay walls, leather pads, warm daylight, portrait, no glowing writing.",
+    "license": null
+  },
+  {
+    "id": "card_winter_mantle",
+    "cardID": "winter_mantle",
+    "status": "missing",
+    "file": null,
+    "brief": "Paleolithic council, worn hide mantle between an older relative and a young adult hunt leader, bone pins and ember-lit shelter, ochre and blue winter light, portrait, no crown or metal.",
+    "license": null
+  },
+  {
+    "id": "card_shared_quarry",
+    "cardID": "shared_quarry",
+    "status": "missing",
+    "file": null,
+    "brief": "Paleolithic exposed flint seam, adults lifting soil with antler picks, knapper holding unworked core, grey stone and warm ochre afternoon, portrait, no metal mining tools.",
+    "license": null
+  },
+  {
+    "id": "card_reed_seed_cache",
+    "cardID": "reed_seed_cache",
+    "status": "missing",
+    "file": null,
+    "brief": "Paleolithic scout holding reed pouch of wild grain beside hungry adult travelers, river gravel and hide bags, muted green cold dawn, portrait, no cultivated fields.",
+    "license": null
+  },
+  {
+    "id": "card_ember_watch",
+    "cardID": "ember_watch",
+    "status": "missing",
+    "file": null,
+    "brief": "Paleolithic adults sheltering embers under a stone overhang, wet branches and separate dim hearths behind, orange against slate rain, portrait, no pottery or metal.",
+    "license": null
+  },
+  {
+    "id": "card_mandate_knots",
+    "cardID": "mandate_knots",
+    "status": "missing",
+    "file": null,
+    "brief": "Neolithic village council, knotted fiber cord between elder and irrigation worker, worn hide in background, clay walls and flax clothing, soft sage morning light, portrait.",
+    "license": null
+  },
+  {
+    "id": "card_quarry_dues",
+    "cardID": "quarry_dues",
+    "status": "missing",
+    "file": null,
+    "brief": "Neolithic porters with flint loads at eroded hillside track, antler tools and woven baskets, clay village below, grey overcast and earth green, portrait.",
+    "license": null
+  },
+  {
+    "id": "card_seed_witness",
+    "cardID": "seed_witness",
+    "status": "missing",
+    "file": null,
+    "brief": "Neolithic village elder comparing two small seed baskets before farmers, reed mat and clay storage vessel, amber harvest dusk, portrait, no written tablets.",
+    "license": null
+  },
+  {
+    "id": "card_kiln_shelter",
+    "cardID": "kiln_shelter",
+    "status": "missing",
+    "file": null,
+    "brief": "Neolithic builders sheltering wet mudbricks beneath unfinished reed roof, farmers carrying seed nearby, sage reeds and clay red, rainy side light, portrait.",
+    "license": null
+  },
+  {
+    "id": "card_succession_tablet",
+    "cardID": "succession_tablet",
+    "status": "missing",
+    "file": null,
+    "brief": "Bronze civic hall, knotted cord beside a clay seal between an adult heir and scribe, idle workshop doorway behind, bronze gold and cool ivory, portrait.",
+    "license": null
+  },
+  {
+    "id": "card_quarry_arbitration",
+    "cardID": "quarry_arbitration",
+    "status": "missing",
+    "file": null,
+    "brief": "Bronze Age metalworker and flint carrier examining clay tally tokens beside damaged hillside road, city wall beyond, teal and dusty copper light, portrait.",
+    "license": null
+  },
+  {
+    "id": "card_famine_receipts",
+    "cardID": "famine_receipts",
+    "status": "missing",
+    "file": null,
+    "brief": "Bronze granary court, anxious adult farmer holding empty seed bowl before clay receipts, scribe and artisan beside sealed jars, muted gold and deep blue, portrait.",
+    "license": null
+  },
+  {
+    "id": "card_roof_beams",
+    "cardID": "roof_beams",
+    "status": "missing",
+    "file": null,
+    "brief": "Bronze city storehouse under construction, builders carrying timber beside elder grove keeper and reed-roof model, warm amber dust and forest green, portrait.",
+    "license": null
   }
 ]
