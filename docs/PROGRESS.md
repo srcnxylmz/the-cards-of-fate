@@ -2,7 +2,7 @@
 
 ## Current status
 
-**Phase 2 active; 64 cards locally tested, native verification pending this development commit.** Original scope remains 12 eras, minimum 800 cards, 100 complete chains, 50 cross-era links and 30 endings. This milestone does not complete Phase 2 or release acceptance.
+**Phase 2 active; 64-card development group verified on Windows and GitHub macOS/iPhone at `00895b3`.** Original scope remains 12 eras, minimum 800 cards, 100 complete chains, 50 cross-era links and 30 endings. This milestone does not complete Phase 2 or release acceptance.
 
 ## 2026-11-15 — source consistency and inheritance batch
 
@@ -13,12 +13,12 @@
 - New arcs: mantle privilege/rotating mandate → council cord → succession seal; shared/claimed quarry → road obligations → city arbitration; saved/eaten seed → seed guardianship → famine debt correction; old shelter → brick-drying practice → city roofs, with shared-hearth history unlocking joint maintenance. Delayed consequences gate downstream events; branch flags unlock optional recall, covenant, trial and guarantee decisions.
 - All twelve new disputes close on every possible outcome. Existing unseen-first selection, sorted weights, cooldown and RNG implementation are unchanged. Repetition diagnostics now identify the cards receiving repeats. Do not change weights to conceal content scarcity.
 - Local verification: 46 Swift tests and 27 Node tests passed; generation and --check passed; structural audit 0 errors / 0 warnings. Tests exercise production selection and delayed queues with controlled era/stat fixtures, branching options, closure, v1 save round-trips and the repaired apprentice. They do not prove every branch occurs in unrestricted human play.
-- Same-seed 10,000 × three-policy baseline recorded after normalizing the 52-card draft, then repeated for 64 cards. See BALANCE_REPORT.md. Native CI is pending; this group is not yet marked remotely verified.
+- Same-seed 10,000 × three-policy baseline recorded after normalizing the 52-card draft, then repeated for 64 cards. See BALANCE_REPORT.md. Native CI passed: [run 43705065924](https://github.com/srcnxylmz/the-cards-of-fate/actions/runs/43705065924) at `00895b38c8140213271423bb56748d2f9de4f788` passed every step: 27 Node tests, generation --check, structural validation, 46 Swift tests, 10,000 runs each for random/survival/knowledge plus the separate managed-council policy, Xcode project generation, iPhone build/install/launch and 3 UI tests (122.552 seconds, zero failures).
 - Art: 2 existing generated candidates; 62 illustrations missing, including all twelve new briefs. All new cards use the existing prototype decision cue, normal/settlement animation definitions and localized risk text. No new production sound, illustration, music or settlement renderer is claimed. New buildings currently affect later flags/choices; they do not add unimplemented automatic production or visuals.
 
 ### Next development group
 
-1. Verify this commit in macOS/iPhone CI, repair any failures, then continue toward 90 cards in distinct 10–15-card batches.
+1. Continue from verified 00895b3 toward 90 cards in distinct 10–15-card batches; investigate lower era access and recurring-pool scarcity using the new reports.
 2. Use repeat-by-card evidence to author recurring crises with finite costs and historically valid recurrence; expand remaining debt, hospitality and environmental branches. Complete editorial/branch review before counting a whole chain.
 3. Add generation-aware/active-alliance narrative gates only with save-compatible tests; these new arcs currently use durable historical flags rather than checking generation count or active pact status.
 4. Develop first-card artwork/audio and small-screen/large-text QA alongside content. Physical device, signing, Game Center console, weekly version pinning and full production assets remain open.
@@ -112,22 +112,22 @@ The initial workspace was empty. The current repository is connected to `srcnxyl
 
 At this initial Windows checkpoint Apple-platform checks were unexecuted. The successful native build/UI evidence at the top of this document supersedes that limitation. Physical-device QA, Game Center and audiovisual performance remain open.
 
-## Scope ledger
+## Current scope ledger — 2026-11-15
 
 | Requirement | Actual | Outstanding |
 |---|---|---|
-| ≥800 original cards | 48 | 752 minimum, correctly distributed |
-| ≥60 per era | 16 each in eras 1–3; zero in 4–12 | 132 more for Phase 2, 540 for eras 4–12, 80 special |
+| ≥800 original cards | 64 | 736 minimum, correctly distributed |
+| ≥60 per era | 21 / 21 / 22 in eras 1–3; zero in 4–12 | 116 more for Phase 2, 540 for eras 4–12, 80 special |
 | ≥100 completed chains | No fully approved chains; 7 multi-card groups | Branching, closure, reachability and editorial completion |
-| ≥50 cross-era links | 15 explicit links detected | 35+ and full validation |
+| ≥50 cross-era links | 32 detected flag links | 18+ and full branch/editorial validation |
 | ≥30 endings | 2 collapse predicates | 28+ unique designed fates and narrative summaries |
-| Card illustrations | 2 generated candidates | 46 current + all future content; final visual approval |
+| Card illustrations | 2 generated candidates | 62 current + all future content; final visual approval |
 | Audio | 1 prototype cue | 12 music, 12 ambience, 40 production effects |
 | Animations | Basic transitions/flicker/haptics | 15 distinct coordinated presets, cinematic eras |
 | 10,000 simulations | 10,000 seeds × 3 policies executed; reports saved | High repetition and censored long runs; expand content and rebalance with human playtests |
 | Release | Scaffolding/checklist | Full acceptance, signing, console setup, TestFlight |
 
-## Next exact actions
+## Historical next actions (superseded by the current group above)
 
 1. Expand targeted decisions in eras 2–3 and design bounded faction support/coalitions. Investigate survival-policy exile increase before adding further pressure. Add native council-panel screenshot assertions; current smoke tests cover the main game/save flow, not detailed faction presentation. Keep existing saves compatible; reuse Simulator automation after each milestone.
 2. Use the 36-card comparison in `BALANCE_REPORT.md`. Strategic repetition remains 85–88%; 14.42% of knowledge-policy runs reach the 500-turn cap. Expand unique crises/legacy consequences and investigate sustainable loops. Do not equate heuristic results with human skill or pacing.
@@ -148,3 +148,7 @@ Run 42845432807 at ed6090b passed core/content tests, four simulation policies, 
 ### Completed-world event recurrence correction
 
 The 48-card candidate still reused completed smelting/writing discoveries and built city walls. Added optional technology/building predicates and world-state exclusions for river_tracks after observation, green_stone/kiln_crack after smelting, clay_archive after writing, and city_walls after construction. No weights or pressure-damage constants changed. Old saves already holding technologies/buildings are recognized; an already displayed card can finish normally. Pre-correction reports preserved in experiments/48-completed-events-repeat. 32 Swift tests / 25 content tests pass. Final same-seed comparison below BALANCE_REPORT.md supersedes the intermediate 48-card numbers.
+
+### Native evidence reviewed — 2026-11-15
+
+[run 43705065924](https://github.com/srcnxylmz/the-cards-of-fate/actions/runs/43705065924) at `00895b38c8140213271423bb56748d2f9de4f788` passed every step: 27 Node tests, generation --check, structural validation, 46 Swift tests, 10,000 runs each for random/survival/knowledge plus the separate managed-council policy, Xcode project generation, iPhone build/install/launch and 3 UI tests (122.552 seconds, zero failures). UI artifact `14158103245` downloaded to artifacts/run-43705065924; quality artifact `14158292920` is available remotely. Inspected TR first-card and EN council PNGs: the new shared_quarry text and both options render, and the council relation is 20 after joint work. Card art is visibly a placeholder; this is not production art approval or small-device/accessibility coverage. CI evidence is for the source commit 00895b3. This follow-up changes documentation only and uses [skip ci] to avoid rerunning identical builds.

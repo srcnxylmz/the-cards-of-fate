@@ -2,6 +2,8 @@
 
 ## 2026-11-15 — normalized 52-card baseline versus 64-card inheritance batch
 
+Native verification: [run 43705065924](https://github.com/srcnxylmz/the-cards-of-fate/actions/runs/43705065924) at `00895b38c8140213271423bb56748d2f9de4f788` passed every step: 27 Node tests, generation --check, structural validation, 46 Swift tests, 10,000 runs each for random/survival/knowledge plus the separate managed-council policy, Xcode project generation, iPhone build/install/launch and 3 UI tests (122.552 seconds, zero failures). CI artifacts retain its simulation outputs. The numerical before/after comparison below is from the executed local Windows runs.
+
 Both versions ran seeds 0..<10000 under each of the unchanged random/survival/knowledge policies, production Swift release engine, 500-decision cap. Baseline files: baselines/phase2-52. Final files: simulation-{policy}.json. The baseline includes the user's local bark_shelter consequence and repaired flint_apprentice helper/delayed-effect contract. It is a normalized local 52-card baseline, not the remote 51-card release. No selector, cooldown, weights, RNG, political rules or economy constants changed in this comparison.
 
 | Policy | Mean observed turns before → after | Repeat before → after | First-20 repeat before → after | Exile runs before → after | Capped runs before → after |
