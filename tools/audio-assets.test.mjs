@@ -1,0 +1,4 @@
+import {test} from 'node:test';import assert from 'node:assert/strict';import {readFileSync} from 'node:fs';import {cue} from './generate-feedback.mjs';
+for(const name of ['card-open','choice-soft'])test(name+' is original deterministic bounded PCM',()=>{
+ const b=readFileSync('App/Resources/'+name+'.wav');assert.equal(b.subarray(0,4).toString(),'RIFF');assert.equal(b.subarray(8,12).toString(),'WAVE');assert.equal(b.readUInt16LE(20),1);assert.equal(b.readUInt16LE(22),1);assert.equal(b.readUInt32LE(24),44100);assert.equal(b.readUInt16LE(34),16);assert.equal(b.readUInt32LE(40),b.length-44);assert.deepEqual(b,cue(name));let peak=0;for(let i=44;i<b.length;i+=2)peak=Math.max(peak,Math.abs(b.readInt16LE(i)));assert.ok(peak>100&&peak<6000);assert.equal(b.readInt16LE(44),0);assert.equal(b.readInt16LE(b.length-2),0);assert.ok((b.length-44)/88200<=0.25);
+});

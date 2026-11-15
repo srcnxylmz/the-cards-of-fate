@@ -1,3 +1,29 @@
+# 90-card milestone checkpoint — 2026-11-15
+
+## Current status
+
+**90 cards / 203 choices / eras 30-30-30; 61 local Swift and 31 Node tests passed. Native OCR/art/audio gate and final comparative report assembly pending.** 12 eras / 800 cards / 100 approved chains / 30 endings remain the original targets. Phase 2 is not complete.
+
+- Started from main 56aad88, synchronized with origin/main. Existing README, root technology, logs, council report and untracked user work preserved. Pre-edit working patch saved in artifacts/milestone90-before. No reset, clean, stash or force push.
+- Measured post-smelting loss stages using actual production choose observer. Original 76-card progression reproduced 9879/7034 era reach exactly. Of 2707 metal-owning runs ending before Bronze, 2706 lacked stability, 1277 lacked population, 667 had empty stores (overlapping final-state counts). Post-metal population losses: world/starvation 98929, delayed 21622, borrowed_ox.smaller 14429. These totals are not independent causal attributions.
+- Initial repair on 76 cards reached Bronze 7554/10000. Initial 90-card draft regressed to 6189; calendar/early-repayment correction alone reached 6520. These failed design trials are retained as evidence, not concealed as passing balance.
+- Root production problem: cultivation granted a technology/era gate but no food when a shared granary was not built. Production now separates fields (farmProduction), storage (+1 with fields), environment-scaled irrigation, work calendar (+1 on living land) and irrigated terrace (+1). Total world production is capped at ordinary consumption; hard extra consumption remains. No era threshold, event weight, cooldown or policy score changed. Old saves need no schema migration.
+- Original 76 IDs retained. New authored module milestone-events.mjs adds winter_guarantor, guest_path_watch, summer_pools, hide_rent, council_shelter; kin_repayment, guest_roofs, ditch_seed, terrace_stones, village_workdays; surety_release, harbor_residency, furnace_coop, gate_ward. Eight one-shot histories, six recurring crises. Debt and hospitality paths unlock branch-specific future decisions through real delayed queues; labels alone are not completed-chain certification.
+- Five recurring old events now use the latest decision from saved history to present a different third option after the relevant repeated choice. Other two choices remain usable; normal choices reopen after another decision. No new GameState fields; optional Condition fields decode old content and derive history from v1 saves. Learned sanitation offers paid maintenance. Tests verify gates, rotation, branch draws, costs and save/replay.
+- Some controlled delay tests assumed the same filler choice stayed available, and a story-draw fixture could accidentally hit cooldown after unrelated draws. Updated fixtures to use legal rotating choices and explicitly isolate target cooldown; existing narrative assertions were retained. All 61 Swift tests now pass. Negative Node tests reject invalid/contradictory decision references.
+- UI: one text run for a stat label/value, same contrast and adaptive columns; clip the scroll viewport at the safe-area boundary. A new UI test compares the old Debug-only stat layout and production layout at TR/EN normal/accessibility3 sizes, inspecting rendered pixel crops with Vision OCR. No fixed screenshot sleep added. Actual root-cause/reproduction and safe-area acceptance remain pending native artifacts.
+- Existing three illustrations preserved; added original green_stone and smoke_shift candidates with built-in imagegen. Exact prompts/provenance in assets/generation_prompts.json and assets/LICENSES.md. Five real candidates, 85 illustrations missing. Art test covers all five through real menu/decisions. Historical/commercial/physical-device approval remains open.
+- Original synthesized card-open.wav (240ms) and choice-soft.wav (120ms) integrated with sound toggle; existing decision.wav retained. Deterministic PCM structural/peak tests pass. Simulator audio logging records actual player start/failure; hearing/mix quality requires device listening.
+- Final progression 90-card result: Neolithic 9836, Bronze 9557, repeat 70.5572%, mean 114.4874 turns, 376 living caps. More successful progression also means a longer stay in the small Bronze deck; do not describe all-policy repetition as improved. Final four-policy same-seed comparison remains to be assembled after local runs finish.
+
+### Next actions for this checkpoint
+
+1. Finish comparative local report assembly and the single native checkpoint; inspect OCR A/B notes, whole screenshots and audio diagnostics. Fix actual failures before delivery.
+2. Record the verified source SHA/run and any remaining image/render limitations; preserve experimental failures.
+3. Next development group: purposeful recovery/long-session repetition, branch editorial approval and content toward 120/180 alongside art/audio. No release, physical-device, VoiceOver, signing or Game Center account acceptance yet.
+
+## Previous 76-card record (historical)
+
 # Progress checkpoint — 2026-11-15
 
 ## Current status

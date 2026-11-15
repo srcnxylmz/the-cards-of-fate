@@ -121,7 +121,20 @@ public struct GameEngine {
 
     private func simulate(_ state: inout GameState, observe: ((String, GameState) -> Void)?) {
         let balance = content.balance
-        let production = state.buildings.contains("granary") ? balance.farmProduction : 0
+        let hasGranary = state.buildings.contains("granary")
+        let hasFields = state.technologies.contains("cultivation")
+        // Learning cultivation must feed households even when they chose private stores.
+        // A granary preserves more of that harvest; it is not the source of farming itself.
+        let baseProduction = hasGranary || hasFields ? balance.farmProduction : 0
+        let storageYield = hasGranary && hasFields ? 1 : 0
+        // Stored harvest + irrigation is a real investment. Degraded land reduces its yield;
+        // world production alone never exceeds ordinary consumption (including old saves).
+        let irrigatedYield = baseProduction > 0 && state.technologies.contains("irrigation")
+            ? balance.farmProduction * state.stats["environment", default: 0] / 100 : 0
+        let coordinatedYield = baseProduction > 0 && state.stats["environment", default: 0] > 0
+            && state.buildings.contains("work_calendar") ? 1 : 0
+        let terraceYield = irrigatedYield > 0 && state.buildings.contains("terrace") ? 1 : 0
+        let production = min(balance.resourceConsumption, baseProduction + storageYield + irrigatedYield + coordinatedYield + terraceYield)
         let consumption = balance.resourceConsumption + (state.mode == .hard ? balance.hardExtraConsumption : 0)
         apply(.init(stats: ["resources": production - consumption], flags: [], technologies: [], buildings: [], rivalRelation: 0), to: &state)
         if state.stats["resources"] == 0 {

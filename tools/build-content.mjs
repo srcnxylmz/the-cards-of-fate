@@ -4,6 +4,8 @@ import { addLegacyEvents } from './content/legacy-events.mjs';
 import { addCouncilEvents } from './content/council-events.mjs';
 import { addInheritanceEvents } from './content/inheritance-events.mjs';
 import { addSeasonEvents } from './content/season-events.mjs';
+import { adaptRecurringEvents } from './content/adapt-events.mjs';
+import { addMilestoneEvents } from './content/milestone-events.mjs';
 
 // Authoring helpers normalize structure only. Every event below is individually authored.
 const root = resolve(import.meta.dirname, '..');
@@ -237,6 +239,8 @@ addLegacyEvents({ card, choice, outcome, delayed });
 addCouncilEvents({ card, choice, outcome, delayed });
 addInheritanceEvents({ card, choice, outcome, delayed });
 addSeasonEvents({ card, choice, outcome, delayed });
+adaptRecurringEvents({ cards, choice, outcome, delayed });
+addMilestoneEvents({ cards, card, choice, outcome, delayed });
 
 // Durable historical decisions close using existing flags, including older v1 saves.
 for (const id of ['sacred_fire', 'stranger_child', 'cave_marks', 'seed_debt', 'ancestor_field']) {
@@ -293,6 +297,6 @@ write('Sources/FateCore/Content/eras.json',eras);
 write('Sources/FateCore/Content/balance.json',balance);
 const previousArt = existsSync(resolve(root,'assets/art_manifest.json')) ? JSON.parse(readFileSync(resolve(root,'assets/art_manifest.json'),'utf8')) : [];
 write('assets/art_manifest.json', cards.map(c=>({...{id:c.artAsset,cardID:c.id,status:'missing',file:null,brief:c.artDirection,license:null}, ...previousArt.find(a=>a.id===c.artAsset), brief:c.artDirection})));
-write('assets/audio_manifest.json', { status:'production-incomplete', effects:[{id:'decision',status:existsSync(resolve(root,'App/Resources/decision.wav'))?'prototype':'missing',file:existsSync(resolve(root,'App/Resources/decision.wav'))?'App/Resources/decision.wav':null}], music:eras.map(e=>({id:`era_${e.id}`,status:'missing',file:null,brief:e.artDirection})), ambience:eras.map(e=>({id:`ambience_${e.id}`,status:'missing',file:null})) });
+write('assets/audio_manifest.json', { status:'production-incomplete', effects:['card-open','choice-soft'].map(id=>({id,status:existsSync(resolve(root,'App/Resources/'+id+'.wav'))?'prototype':'missing',file:existsSync(resolve(root,'App/Resources/'+id+'.wav'))?'App/Resources/'+id+'.wav':null})).concat([{id:'decision',status:existsSync(resolve(root,'App/Resources/decision.wav'))?'prototype':'missing',file:existsSync(resolve(root,'App/Resources/decision.wav'))?'App/Resources/decision.wav':null}]), music:eras.map(e=>({id:`era_${e.id}`,status:'missing',file:null,brief:e.artDirection})), ambience:eras.map(e=>({id:`ambience_${e.id}`,status:'missing',file:null})) });
 write('Sources/FateCore/Content/technologies.json', eras.map(e=>({id:e.requiredTechnology,era:e.id,unlockedBy:cards.filter(c=>c.choices.some(ch=>ch.outcomes.some(o=>o.effect.technologies.includes(e.requiredTechnology)))).map(c=>c.id),status:e.id<=3?'implemented':'planned'})));
 console.log(`Authored ${cards.length} cards, ${eras.length} era definitions. Production artwork/audio remain missing.`);

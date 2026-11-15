@@ -22,7 +22,17 @@ public struct Condition: Codable, Equatable {
     public var leadership: Leadership? = nil
     public var technology: String? = nil
     public var building: String? = nil
+    /// Latest decision on the named card (cardID.choiceID), derived from saved history.
+    public var lastDecision: String? = nil
+    public var notLastDecision: String? = nil
     public func matches(_ state: GameState) -> Bool {
+        func latest(_ reference: String) -> Bool {
+            let parts = reference.split(separator: ".", maxSplits: 1).map(String.init)
+            guard parts.count == 2 else { return false }
+            return state.history.last(where: { $0.cardID == parts[0] })?.choiceID == parts[1]
+        }
+        if let lastDecision, !latest(lastDecision) { return false }
+        if let notLastDecision, latest(notLastDecision) { return false }
         if let technology, !state.technologies.contains(technology) { return false }
         if let building, !state.buildings.contains(building) { return false }
         if let faction {

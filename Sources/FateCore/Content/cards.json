@@ -641,7 +641,11 @@
           "tr": "Orta risk · koşullara bağlı",
           "en": "Moderate risk · depends on conditions"
         },
-        "requirements": [],
+        "requirements": [
+          {
+            "notLastDecision": "red_mushrooms.feast"
+          }
+        ],
         "immediateEffects": {
           "stats": {},
           "flags": [],
@@ -691,6 +695,73 @@
             },
             "delayedEffects": [],
             "animationPreset": "failure"
+          }
+        ]
+      },
+      {
+        "id": "dry",
+        "text": {
+          "tr": "Önceki toplu yemekten sonra mantarları ayırıp kurut.",
+          "en": "After the last shared meal, sort and dry the mushrooms."
+        },
+        "risk": {
+          "tr": "Sonucu öngörülebilir",
+          "en": "Predictable outcome"
+        },
+        "requirements": [
+          {
+            "lastDecision": "red_mushrooms.feast"
+          }
+        ],
+        "immediateEffects": {
+          "stats": {},
+          "flags": [],
+          "technologies": [],
+          "buildings": [],
+          "rivalRelation": 0
+        },
+        "outcomes": [
+          {
+            "id": "result",
+            "probability": 1,
+            "affinity": null,
+            "text": {
+              "tr": "Şüpheli sepetler atıldı. Kuruyan küçük pay, taşıma için yeni deri istedi.",
+              "en": "Doubtful baskets were discarded. Drying the smaller share required fresh carrying hides."
+            },
+            "effect": {
+              "stats": {
+                "resources": 6,
+                "knowledge": 3,
+                "environment": -2
+              },
+              "flags": [
+                "dried_fungi"
+              ],
+              "technologies": [],
+              "buildings": [],
+              "rivalRelation": 0
+            },
+            "delayedEffects": [
+              {
+                "afterTurns": 4,
+                "minimumEra": 1,
+                "text": {
+                  "tr": "Kurutulan payın bir kısmı taşınırken bozuldu.",
+                  "en": "Part of the dried supply spoiled in transit."
+                },
+                "effect": {
+                  "stats": {
+                    "resources": -3
+                  },
+                  "flags": [],
+                  "technologies": [],
+                  "buildings": [],
+                  "rivalRelation": 0
+                }
+              }
+            ],
+            "animationPreset": "normal"
           }
         ]
       }
@@ -907,7 +978,11 @@
           "tr": "Orta risk · koşullara bağlı",
           "en": "Moderate risk · depends on conditions"
         },
-        "requirements": [],
+        "requirements": [
+          {
+            "notLastDecision": "ice_crossing.cross"
+          }
+        ],
         "immediateEffects": {
           "stats": {},
           "flags": [],
@@ -958,6 +1033,73 @@
             },
             "delayedEffects": [],
             "animationPreset": "failure"
+          }
+        ]
+      },
+      {
+        "id": "cache",
+        "text": {
+          "tr": "Son geçişin ardından kıyıda bir erzak durağı kur.",
+          "en": "After the last crossing, establish a supply stop on the bank."
+        },
+        "risk": {
+          "tr": "Sonucu öngörülebilir",
+          "en": "Predictable outcome"
+        },
+        "requirements": [
+          {
+            "lastDecision": "ice_crossing.cross"
+          }
+        ],
+        "immediateEffects": {
+          "stats": {},
+          "flags": [],
+          "technologies": [],
+          "buildings": [],
+          "rivalRelation": 0
+        },
+        "outcomes": [
+          {
+            "id": "result",
+            "probability": 1,
+            "affinity": null,
+            "text": {
+              "tr": "Kafile buz yerine duraklar arasında yürüdü. Küçük av için daha çok arazi tarandı.",
+              "en": "The travelers moved between stops instead of crossing ice. Small game required a wider search."
+            },
+            "effect": {
+              "stats": {
+                "resources": 7,
+                "environment": -3,
+                "authority": -2
+              },
+              "flags": [
+                "bank_supply_stops"
+              ],
+              "technologies": [],
+              "buildings": [],
+              "rivalRelation": 0
+            },
+            "delayedEffects": [
+              {
+                "afterTurns": 4,
+                "minimumEra": 1,
+                "text": {
+                  "tr": "Erzak durağını geri toplamak iş ve yiyecek gerektirdi.",
+                  "en": "Recovering the supply stop took labor and food."
+                },
+                "effect": {
+                  "stats": {
+                    "resources": -4
+                  },
+                  "flags": [],
+                  "technologies": [],
+                  "buildings": [],
+                  "rivalRelation": 0
+                }
+              }
+            ],
+            "animationPreset": "normal"
           }
         ]
       }
@@ -1866,6 +2008,78 @@
               "rivalRelation": 0
             },
             "delayedEffects": [],
+            "animationPreset": "normal"
+          }
+        ]
+      },
+      {
+        "id": "maintain",
+        "text": {
+          "tr": "Öğrenilen temiz su usulünü uygula; yeni yatağı küçük ekiplerle temizle.",
+          "en": "Use the learned clean-water practice and clear the new channel in small crews."
+        },
+        "risk": {
+          "tr": "Sonucu öngörülebilir",
+          "en": "Predictable outcome"
+        },
+        "requirements": [
+          {
+            "flag": "sanitation_practice"
+          }
+        ],
+        "immediateEffects": {
+          "stats": {},
+          "flags": [],
+          "technologies": [],
+          "buildings": [],
+          "rivalRelation": 0
+        },
+        "outcomes": [
+          {
+            "id": "result",
+            "probability": 1,
+            "affinity": null,
+            "text": {
+              "tr": "Önceki salgının bilgisi bütün köyü yeniden taşımadan iş gördü. Ekiplerin erzağı ayrıldı.",
+              "en": "Experience from the earlier outbreak helped without moving the whole village again. Supplies were set aside for the crews."
+            },
+            "effect": {
+              "stats": {
+                "resources": -4,
+                "population": 6,
+                "stability": 6,
+                "environment": 2
+              },
+              "flags": [
+                "sanitation_upkeep"
+              ],
+              "technologies": [],
+              "buildings": [],
+              "rivalRelation": 0,
+              "rivalRelations": {
+                "hunters": -3,
+                "keepers": 4
+              }
+            },
+            "delayedEffects": [
+              {
+                "afterTurns": 4,
+                "minimumEra": 2,
+                "text": {
+                  "tr": "Temizleme nöbetinin kapları ve aletleri yenilendi.",
+                  "en": "Containers and tools for the cleaning rota were renewed."
+                },
+                "effect": {
+                  "stats": {
+                    "resources": -2
+                  },
+                  "flags": [],
+                  "technologies": [],
+                  "buildings": [],
+                  "rivalRelation": 0
+                }
+              }
+            ],
             "animationPreset": "normal"
           }
         ]
@@ -3622,7 +3836,11 @@
           "tr": "Sonucu öngörülebilir",
           "en": "Predictable outcome"
         },
-        "requirements": [],
+        "requirements": [
+          {
+            "notLastDecision": "leaking_skin.repair"
+          }
+        ],
         "immediateEffects": {
           "stats": {},
           "flags": [],
@@ -3699,6 +3917,74 @@
             "animationPreset": "normal"
           }
         ]
+      },
+      {
+        "id": "relay",
+        "text": {
+          "tr": "Kesilmiş botu yeniden kullanma; suyu küçük kaplarla taşı.",
+          "en": "Spare the cut boot and relay water in small containers."
+        },
+        "risk": {
+          "tr": "Sonucu öngörülebilir",
+          "en": "Predictable outcome"
+        },
+        "requirements": [
+          {
+            "lastDecision": "leaking_skin.repair"
+          }
+        ],
+        "immediateEffects": {
+          "stats": {},
+          "flags": [],
+          "technologies": [],
+          "buildings": [],
+          "rivalRelation": 0
+        },
+        "outcomes": [
+          {
+            "id": "result",
+            "probability": 1,
+            "affinity": null,
+            "text": {
+              "tr": "Ağır tulum dinlendirildi. Sık gidip gelmek toplayıcıların işini aksattı.",
+              "en": "The heavy skin was rested. Repeated trips interrupted gathering."
+            },
+            "effect": {
+              "stats": {
+                "resources": -3,
+                "population": 3,
+                "stability": 4
+              },
+              "flags": [
+                "water_relay"
+              ],
+              "technologies": [],
+              "buildings": [],
+              "rivalRelation": 0
+            },
+            "delayedEffects": [
+              {
+                "afterTurns": 4,
+                "minimumEra": 1,
+                "text": {
+                  "tr": "Küçük kapların bağları yenilendi.",
+                  "en": "Bindings on the small containers were renewed."
+                },
+                "effect": {
+                  "stats": {
+                    "resources": -2,
+                    "knowledge": 2
+                  },
+                  "flags": [],
+                  "technologies": [],
+                  "buildings": [],
+                  "rivalRelation": 0
+                }
+              }
+            ],
+            "animationPreset": "normal"
+          }
+        ]
       }
     ],
     "worldFlags": [
@@ -3742,7 +4028,11 @@
           "tr": "Sonucu öngörülebilir",
           "en": "Predictable outcome"
         },
-        "requirements": [],
+        "requirements": [
+          {
+            "notLastDecision": "ochre_border.symbols"
+          }
+        ],
         "immediateEffects": {
           "stats": {},
           "flags": [],
@@ -3818,6 +4108,73 @@
               "rivalRelation": 0
             },
             "delayedEffects": [],
+            "animationPreset": "normal"
+          }
+        ]
+      },
+      {
+        "id": "renew",
+        "text": {
+          "tr": "Önceki işaret sözünü bu kışın av günlerine uyarla.",
+          "en": "Adapt the earlier sign agreement to this winter’s hunting days."
+        },
+        "risk": {
+          "tr": "Sonucu öngörülebilir",
+          "en": "Predictable outcome"
+        },
+        "requirements": [
+          {
+            "lastDecision": "ochre_border.symbols"
+          }
+        ],
+        "immediateEffects": {
+          "stats": {},
+          "flags": [],
+          "technologies": [],
+          "buildings": [],
+          "rivalRelation": 0
+        },
+        "outcomes": [
+          {
+            "id": "result",
+            "probability": 1,
+            "affinity": null,
+            "text": {
+              "tr": "İşaretlerin anlamı unutulmamıştı; bu kez geçit günleri bölüşüldü. Bir av fırsatı komşulara kaldı.",
+              "en": "The signs were remembered; this time the days at the pass were divided. One hunting opportunity went to the neighbors."
+            },
+            "effect": {
+              "stats": {
+                "resources": -3,
+                "stability": 5,
+                "environment": 2
+              },
+              "flags": [
+                "seasonal_pass_days"
+              ],
+              "technologies": [],
+              "buildings": [],
+              "rivalRelation": 0
+            },
+            "delayedEffects": [
+              {
+                "afterTurns": 4,
+                "minimumEra": 1,
+                "text": {
+                  "tr": "Komşular paylaşılan günün karşılığında yol bilgisini aktardı.",
+                  "en": "Neighbors shared route knowledge in return for the agreed day."
+                },
+                "effect": {
+                  "stats": {
+                    "knowledge": 3
+                  },
+                  "flags": [],
+                  "technologies": [],
+                  "buildings": [],
+                  "rivalRelation": 0
+                }
+              }
+            ],
             "animationPreset": "normal"
           }
         ]
@@ -10236,7 +10593,11 @@
           "tr": "Sonucu öngörülebilir",
           "en": "Predictable outcome"
         },
-        "requirements": [],
+        "requirements": [
+          {
+            "notLastDecision": "calving_herd.take"
+          }
+        ],
         "immediateEffects": {
           "stats": {},
           "flags": [],
@@ -10349,6 +10710,78 @@
                 "effect": {
                   "stats": {
                     "resources": 8
+                  },
+                  "flags": [],
+                  "technologies": [],
+                  "buildings": [],
+                  "rivalRelation": 0
+                }
+              }
+            ],
+            "animationPreset": "normal"
+          }
+        ]
+      },
+      {
+        "id": "range",
+        "text": {
+          "tr": "Önceki yoğun avdan sonra sürüyü başka vadide ara.",
+          "en": "After the last heavy hunt, search another valley."
+        },
+        "risk": {
+          "tr": "Sonucu öngörülebilir",
+          "en": "Predictable outcome"
+        },
+        "requirements": [
+          {
+            "lastDecision": "calving_herd.take"
+          }
+        ],
+        "immediateEffects": {
+          "stats": {},
+          "flags": [],
+          "technologies": [],
+          "buildings": [],
+          "rivalRelation": 0
+        },
+        "outcomes": [
+          {
+            "id": "result",
+            "probability": 1,
+            "affinity": null,
+            "text": {
+              "tr": "Eski geçitte av kalmadı. Yeni izlere ulaşmak yük taşıyan aileleri yordu.",
+              "en": "Game had left the old pass. Reaching fresh tracks exhausted the families carrying supplies."
+            },
+            "effect": {
+              "stats": {
+                "resources": 7,
+                "population": -2,
+                "knowledge": 3
+              },
+              "flags": [
+                "herd_range_shift"
+              ],
+              "technologies": [],
+              "buildings": [],
+              "rivalRelation": 0,
+              "rivalRelations": {
+                "hunters": -3,
+                "keepers": 3
+              }
+            },
+            "delayedEffects": [
+              {
+                "afterTurns": 4,
+                "minimumEra": 1,
+                "text": {
+                  "tr": "Avcılar yeni vadinin dönüş yolunu öğrendi.",
+                  "en": "Hunters learned the route back from the new valley."
+                },
+                "effect": {
+                  "stats": {
+                    "stability": 3,
+                    "resources": -3
                   },
                   "flags": [],
                   "technologies": [],
@@ -12430,6 +12863,3078 @@
     "localizationKeys": [
       "card.silt_charter.title",
       "card.silt_charter.description"
+    ]
+  },
+  {
+    "id": "winter_guarantor",
+    "era": 1,
+    "category": "legacy",
+    "title": {
+      "tr": "Kışın Kefili",
+      "en": "Winter’s Guarantor"
+    },
+    "description": {
+      "tr": "Göçte yükünü paylaştığınız ailenin avcısı hâlâ yürüyemiyor. Yakınları gelecek avdan pay sözü veriyor. Çocuklarının da bu sözü borç sayıp saymayacağını şimdi belirlemelisin.",
+      "en": "The hunter from the family whose load you shared still cannot walk. Relatives promise a share of the next hunt. You must decide whether their children will inherit that promise as a debt."
+    },
+    "artAsset": "card_winter_guarantor",
+    "artDirection": "Paleolithic families dividing dried meat beside hide packs, injured adult seated safely, winter blue and hearth ochre, no writing or metal.",
+    "rarity": "uncommon",
+    "weight": 10,
+    "requirements": [
+      {
+        "flag": "migration_shared_load"
+      }
+    ],
+    "exclusionConditions": [
+      {
+        "flag": "resolved_winter_guarantor"
+      }
+    ],
+    "choices": [
+      {
+        "id": "limit",
+        "text": {
+          "tr": "Payı ver; sözü bu kışla sınırla.",
+          "en": "Give the share and limit the promise to this winter."
+        },
+        "risk": {
+          "tr": "Sonucu öngörülebilir",
+          "en": "Predictable outcome"
+        },
+        "requirements": [],
+        "immediateEffects": {
+          "stats": {},
+          "flags": [],
+          "technologies": [],
+          "buildings": [],
+          "rivalRelation": 0
+        },
+        "outcomes": [
+          {
+            "id": "result",
+            "probability": 1,
+            "affinity": null,
+            "text": {
+              "tr": "Erzak azaldı. Ailenin çocukları borcun dışında tutuldu.",
+              "en": "Supplies fell. The family’s children were kept outside the debt."
+            },
+            "effect": {
+              "stats": {
+                "resources": -7,
+                "population": 4,
+                "stability": 5
+              },
+              "flags": [
+                "winter_limited_promise",
+                "resolved_winter_guarantor"
+              ],
+              "technologies": [],
+              "buildings": [],
+              "rivalRelation": 0,
+              "rivalRelations": {
+                "keepers": 6,
+                "hunters": -4
+              }
+            },
+            "delayedEffects": [
+              {
+                "afterTurns": 6,
+                "minimumEra": 2,
+                "text": {
+                  "tr": "Kışlık kefaletin sınırı, ilk köyün tahıl anlaşmasında hatırlandı.",
+                  "en": "The limit on winter surety was remembered in the first village grain agreement."
+                },
+                "effect": {
+                  "stats": {
+                    "knowledge": 3
+                  },
+                  "flags": [
+                    "kin_grain_credit"
+                  ],
+                  "technologies": [],
+                  "buildings": [],
+                  "rivalRelation": 0
+                }
+              }
+            ],
+            "animationPreset": "normal"
+          }
+        ]
+      },
+      {
+        "id": "bind",
+        "text": {
+          "tr": "Payı ver; gelecek avları bütün haneden iste.",
+          "en": "Give the share and require future hunts from the whole household."
+        },
+        "risk": {
+          "tr": "Sonucu öngörülebilir",
+          "en": "Predictable outcome"
+        },
+        "requirements": [],
+        "immediateEffects": {
+          "stats": {},
+          "flags": [],
+          "technologies": [],
+          "buildings": [],
+          "rivalRelation": 0
+        },
+        "outcomes": [
+          {
+            "id": "result",
+            "probability": 1,
+            "affinity": null,
+            "text": {
+              "tr": "Avcılar sözü güvence saydı. Ailenin gençleri henüz yapmadıkları avın yükünü taşıdı.",
+              "en": "Hunters accepted the promise as security. Young relatives carried the burden of hunts they had not made."
+            },
+            "effect": {
+              "stats": {
+                "resources": -3,
+                "authority": 7,
+                "stability": -5
+              },
+              "flags": [
+                "winter_household_promise",
+                "resolved_winter_guarantor"
+              ],
+              "technologies": [],
+              "buildings": [],
+              "rivalRelation": 0,
+              "rivalRelations": {
+                "hunters": 7,
+                "keepers": -6
+              }
+            },
+            "delayedEffects": [
+              {
+                "afterTurns": 6,
+                "minimumEra": 2,
+                "text": {
+                  "tr": "Köye yerleşen aile av borcunun tahılla ödenip ödenmeyeceğini sordu.",
+                  "en": "The settled family asked whether a hunting debt could be repaid in grain."
+                },
+                "effect": {
+                  "stats": {
+                    "stability": -3
+                  },
+                  "flags": [
+                    "kin_grain_credit"
+                  ],
+                  "technologies": [],
+                  "buildings": [],
+                  "rivalRelation": 0
+                }
+              }
+            ],
+            "animationPreset": "normal"
+          }
+        ]
+      }
+    ],
+    "worldFlags": [
+      "winter_limited_promise",
+      "resolved_winter_guarantor",
+      "winter_household_promise"
+    ],
+    "storyChainId": "debt",
+    "animationPreset": "normal",
+    "soundCue": "decision",
+    "cooldown": 4,
+    "localizationKeys": [
+      "card.winter_guarantor.title",
+      "card.winter_guarantor.description"
+    ]
+  },
+  {
+    "id": "guest_path_watch",
+    "era": 1,
+    "category": "diplomacy",
+    "title": {
+      "tr": "Misafirin Bildiği Yol",
+      "en": "The Guest’s Route"
+    },
+    "description": {
+      "tr": "Kar altında barındırdığınız yabancılar artık kafileye yol gösteriyor. Geçidi beklemek için iki yetişkin bırakmak gerek. Bunun bir konukluk görevi mi, ortak sorumluluk mu olduğu tartışılıyor.",
+      "en": "The strangers you sheltered now guide the travelers. Two adults must stay behind to watch the pass. People disagree whether this is a guest’s duty or a shared responsibility."
+    },
+    "artAsset": "card_guest_path_watch",
+    "artDirection": "Paleolithic hosts and newcomers exchanging hide bundles at a misty mountain pass, open hands, slate and amber light, portrait.",
+    "rarity": "uncommon",
+    "weight": 10,
+    "requirements": [
+      {
+        "flag": "sheltered_strangers"
+      }
+    ],
+    "exclusionConditions": [
+      {
+        "flag": "resolved_guest_path_watch"
+      }
+    ],
+    "choices": [
+      {
+        "id": "joint",
+        "text": {
+          "tr": "Nöbeti ev sahibi ve misafir arasında böl.",
+          "en": "Share the watch between hosts and guests."
+        },
+        "risk": {
+          "tr": "Sonucu öngörülebilir",
+          "en": "Predictable outcome"
+        },
+        "requirements": [],
+        "immediateEffects": {
+          "stats": {},
+          "flags": [],
+          "technologies": [],
+          "buildings": [],
+          "rivalRelation": 0
+        },
+        "outcomes": [
+          {
+            "id": "result",
+            "probability": 1,
+            "affinity": null,
+            "text": {
+              "tr": "Toplayıcı sayısı azaldı; yeni gelenler emri bekleyen yabancılar olmaktan çıktı.",
+              "en": "Fewer people could gather; newcomers became participants rather than strangers awaiting orders."
+            },
+            "effect": {
+              "stats": {
+                "resources": -6,
+                "stability": 6,
+                "knowledge": 4
+              },
+              "flags": [
+                "shared_guest_watch",
+                "resolved_guest_path_watch"
+              ],
+              "technologies": [],
+              "buildings": [],
+              "rivalRelation": 0,
+              "rivalRelations": {
+                "hunters": -4,
+                "keepers": 6
+              }
+            },
+            "delayedEffects": [
+              {
+                "afterTurns": 5,
+                "minimumEra": 2,
+                "text": {
+                  "tr": "İlk köyde konuk nöbeti ortak çalışma hakkına örnek gösterildi.",
+                  "en": "In the first village, the guest watch became a precedent for shared work rights."
+                },
+                "effect": {
+                  "stats": {
+                    "stability": 3
+                  },
+                  "flags": [
+                    "guest_work_memory"
+                  ],
+                  "technologies": [],
+                  "buildings": [],
+                  "rivalRelation": 0
+                }
+              }
+            ],
+            "animationPreset": "normal"
+          }
+        ]
+      },
+      {
+        "id": "service",
+        "text": {
+          "tr": "Geçidi bilen konuklardan nöbet iste; ev sahipleri avlansın.",
+          "en": "Have the guests watch the pass while hosts hunt."
+        },
+        "risk": {
+          "tr": "Sonucu öngörülebilir",
+          "en": "Predictable outcome"
+        },
+        "requirements": [],
+        "immediateEffects": {
+          "stats": {},
+          "flags": [],
+          "technologies": [],
+          "buildings": [],
+          "rivalRelation": 0
+        },
+        "outcomes": [
+          {
+            "id": "result",
+            "probability": 1,
+            "affinity": null,
+            "text": {
+              "tr": "Av payı büyüdü. Konuklar, yardımlarının kalıcı bir yükümlülük sayılmasından korktu.",
+              "en": "The catch grew. Guests feared their help would become a permanent obligation."
+            },
+            "effect": {
+              "stats": {
+                "resources": 8,
+                "authority": 4,
+                "stability": -5
+              },
+              "flags": [
+                "guest_watch_service",
+                "resolved_guest_path_watch"
+              ],
+              "technologies": [],
+              "buildings": [],
+              "rivalRelation": 0,
+              "rivalRelations": {
+                "hunters": 6,
+                "keepers": -5
+              }
+            },
+            "delayedEffects": [
+              {
+                "afterTurns": 5,
+                "minimumEra": 2,
+                "text": {
+                  "tr": "Köy kurulurken konukların hangi işlerden sorumlu olduğu yeniden soruldu.",
+                  "en": "When the village formed, the duties of its guests were questioned again."
+                },
+                "effect": {
+                  "stats": {
+                    "population": -2
+                  },
+                  "flags": [
+                    "guest_work_memory"
+                  ],
+                  "technologies": [],
+                  "buildings": [],
+                  "rivalRelation": 0
+                }
+              }
+            ],
+            "animationPreset": "normal"
+          }
+        ]
+      }
+    ],
+    "worldFlags": [
+      "shared_guest_watch",
+      "resolved_guest_path_watch",
+      "guest_watch_service"
+    ],
+    "storyChainId": "hospitality",
+    "animationPreset": "normal",
+    "soundCue": "decision",
+    "cooldown": 4,
+    "localizationKeys": [
+      "card.guest_path_watch.title",
+      "card.guest_path_watch.description"
+    ]
+  },
+  {
+    "id": "summer_pools",
+    "era": 1,
+    "category": "survival",
+    "title": {
+      "tr": "Yazın Son Göleti",
+      "en": "Summer’s Last Pool"
+    },
+    "description": {
+      "tr": "Bu yaz hayvanlar ve insanlar aynı küçülen gölete geliyor. Uzak su yolu av zamanını azaltacak; kıyıda kalmak ise suyu daha çabuk kirletecek.",
+      "en": "This summer animals and people share a shrinking pool. The distant water route costs hunting time; staying on the bank will foul the water faster."
+    },
+    "artAsset": "card_summer_pools",
+    "artDirection": "Paleolithic water carriers watching deer at shrinking pool, cracked mud, woven containers and hide bags, hard ochre sun, portrait.",
+    "rarity": "common",
+    "weight": 10,
+    "requirements": [
+      {
+        "stat": "environment",
+        "maximum": 65
+      }
+    ],
+    "exclusionConditions": [],
+    "choices": [
+      {
+        "id": "carry",
+        "text": {
+          "tr": "Kampı uzak tut; suyu dönüşümlü taşı.",
+          "en": "Keep camp away and carry water in turns."
+        },
+        "risk": {
+          "tr": "Sonucu öngörülebilir",
+          "en": "Predictable outcome"
+        },
+        "requirements": [],
+        "immediateEffects": {
+          "stats": {},
+          "flags": [],
+          "technologies": [],
+          "buildings": [],
+          "rivalRelation": 0
+        },
+        "outcomes": [
+          {
+            "id": "result",
+            "probability": 1,
+            "affinity": null,
+            "text": {
+              "tr": "Kıyı dinlendi. Su taşıyanlar günlük av payından vazgeçti.",
+              "en": "The bank recovered. Water carriers gave up their daily share of hunting."
+            },
+            "effect": {
+              "stats": {
+                "resources": -5,
+                "environment": 6,
+                "population": 3
+              },
+              "flags": [
+                "summer_water_rota"
+              ],
+              "technologies": [],
+              "buildings": [],
+              "rivalRelation": 0
+            },
+            "delayedEffects": [
+              {
+                "afterTurns": 4,
+                "minimumEra": 1,
+                "text": {
+                  "tr": "Dinlenen kıyının izleri daha temiz bir su yolunu gösterdi.",
+                  "en": "Tracks on the rested bank revealed a cleaner water route."
+                },
+                "effect": {
+                  "stats": {
+                    "knowledge": 3,
+                    "resources": 2
+                  },
+                  "flags": [],
+                  "technologies": [],
+                  "buildings": [],
+                  "rivalRelation": 0
+                }
+              }
+            ],
+            "animationPreset": "normal"
+          }
+        ]
+      },
+      {
+        "id": "bank",
+        "text": {
+          "tr": "Kıyıda kal; küçük avı ve suyu aynı yerden topla.",
+          "en": "Stay on the bank and gather water and small game together."
+        },
+        "risk": {
+          "tr": "Sonucu öngörülebilir",
+          "en": "Predictable outcome"
+        },
+        "requirements": [],
+        "immediateEffects": {
+          "stats": {},
+          "flags": [],
+          "technologies": [],
+          "buildings": [],
+          "rivalRelation": 0
+        },
+        "outcomes": [
+          {
+            "id": "result",
+            "probability": 1,
+            "affinity": null,
+            "text": {
+              "tr": "Erzak hemen bulundu. Çamurlanan kıyıda çocukların içeceği su azaldı.",
+              "en": "Supplies were found quickly. The muddied bank left less drinking water for children."
+            },
+            "effect": {
+              "stats": {
+                "resources": 10,
+                "environment": -8,
+                "population": -2
+              },
+              "flags": [
+                "crowded_pool"
+              ],
+              "technologies": [],
+              "buildings": [],
+              "rivalRelation": 0
+            },
+            "delayedEffects": [
+              {
+                "afterTurns": 4,
+                "minimumEra": 1,
+                "text": {
+                  "tr": "Göletten ayrılmak için erzak harcandı.",
+                  "en": "Leaving the pool required supplies."
+                },
+                "effect": {
+                  "stats": {
+                    "resources": -6,
+                    "stability": -3
+                  },
+                  "flags": [],
+                  "technologies": [],
+                  "buildings": [],
+                  "rivalRelation": 0
+                }
+              }
+            ],
+            "animationPreset": "normal"
+          }
+        ]
+      },
+      {
+        "id": "boiled",
+        "text": {
+          "tr": "Eski kaynatma usulünü küçük su nöbetiyle birleştir.",
+          "en": "Combine the earlier boiling practice with a small water rota."
+        },
+        "risk": {
+          "tr": "Sonucu öngörülebilir",
+          "en": "Predictable outcome"
+        },
+        "requirements": [
+          {
+            "flag": "boiled_water"
+          }
+        ],
+        "immediateEffects": {
+          "stats": {},
+          "flags": [],
+          "technologies": [],
+          "buildings": [],
+          "rivalRelation": 0
+        },
+        "outcomes": [
+          {
+            "id": "result",
+            "probability": 1,
+            "affinity": null,
+            "text": {
+              "tr": "Daha az insan su taşıdı; ateş için kuru dal ayrıldı.",
+              "en": "Fewer people carried water; dry branches were reserved for the fire."
+            },
+            "effect": {
+              "stats": {
+                "resources": -3,
+                "population": 4,
+                "environment": -2
+              },
+              "flags": [
+                "summer_boiled_supply"
+              ],
+              "technologies": [],
+              "buildings": [],
+              "rivalRelation": 0
+            },
+            "delayedEffects": [
+              {
+                "afterTurns": 4,
+                "minimumEra": 1,
+                "text": {
+                  "tr": "Kaynatma kaplarının bağları yenilendi.",
+                  "en": "Bindings on the boiling containers were replaced."
+                },
+                "effect": {
+                  "stats": {
+                    "resources": -2,
+                    "knowledge": 2
+                  },
+                  "flags": [],
+                  "technologies": [],
+                  "buildings": [],
+                  "rivalRelation": 0
+                }
+              }
+            ],
+            "animationPreset": "normal"
+          }
+        ]
+      }
+    ],
+    "worldFlags": [
+      "summer_water_rota",
+      "crowded_pool",
+      "summer_boiled_supply"
+    ],
+    "storyChainId": null,
+    "animationPreset": "normal",
+    "soundCue": "decision",
+    "cooldown": 4,
+    "localizationKeys": [
+      "card.summer_pools.title",
+      "card.summer_pools.description"
+    ]
+  },
+  {
+    "id": "hide_rent",
+    "era": 1,
+    "category": "economy",
+    "title": {
+      "tr": "Ödünç Deri",
+      "en": "A Borrowed Hide"
+    },
+    "description": {
+      "tr": "Bu mevsim tabaklanmış deriler yetişmedi. Avcılar sağlam örtülerini genç ailelere verebilir, fakat sonraki avda ilk payı istiyor. Yağmurda kim bekleyecek?",
+      "en": "Prepared hides are short this season. Hunters can lend sound covers to young families but demand the first share of the next hunt. Who will wait in the rain?"
+    },
+    "artAsset": "card_hide_rent",
+    "artDirection": "Paleolithic adults stretching repaired hide over low shelter, lender and young family, rain and muted warm fire, portrait.",
+    "rarity": "common",
+    "weight": 10,
+    "requirements": [
+      {
+        "stat": "resources",
+        "maximum": 60
+      }
+    ],
+    "exclusionConditions": [],
+    "choices": [
+      {
+        "id": "mend",
+        "text": {
+          "tr": "Küçük derileri birleştir; ortak erzakla onar.",
+          "en": "Join smaller hides and pay for repairs from shared supplies."
+        },
+        "risk": {
+          "tr": "Sonucu öngörülebilir",
+          "en": "Predictable outcome"
+        },
+        "requirements": [],
+        "immediateEffects": {
+          "stats": {},
+          "flags": [],
+          "technologies": [],
+          "buildings": [],
+          "rivalRelation": 0
+        },
+        "outcomes": [
+          {
+            "id": "result",
+            "probability": 1,
+            "affinity": null,
+            "text": {
+              "tr": "Örtü hafifti. Borç doğmadı; dikiş işi av zamanını aldı.",
+              "en": "The cover was thin. No debt arose, but sewing took time from hunting."
+            },
+            "effect": {
+              "stats": {
+                "resources": -5,
+                "population": 4,
+                "stability": 4
+              },
+              "flags": [
+                "patched_shared_hides"
+              ],
+              "technologies": [],
+              "buildings": [],
+              "rivalRelation": 0,
+              "rivalRelations": {
+                "hunters": -5,
+                "keepers": 6
+              }
+            },
+            "delayedEffects": [
+              {
+                "afterTurns": 4,
+                "minimumEra": 1,
+                "text": {
+                  "tr": "Eski dikişler yeniden açıldı; küçük bir bakım payı ayrıldı.",
+                  "en": "Old seams opened again; a small maintenance share was reserved."
+                },
+                "effect": {
+                  "stats": {
+                    "resources": -2
+                  },
+                  "flags": [],
+                  "technologies": [],
+                  "buildings": [],
+                  "rivalRelation": 0
+                }
+              }
+            ],
+            "animationPreset": "normal"
+          }
+        ]
+      },
+      {
+        "id": "pledge",
+        "text": {
+          "tr": "Sağlam örtüyü al; yalnız gelecek avın payını söz ver.",
+          "en": "Take the sound cover and pledge only the next hunt’s share."
+        },
+        "risk": {
+          "tr": "Sonucu öngörülebilir",
+          "en": "Predictable outcome"
+        },
+        "requirements": [],
+        "immediateEffects": {
+          "stats": {},
+          "flags": [],
+          "technologies": [],
+          "buildings": [],
+          "rivalRelation": 0
+        },
+        "outcomes": [
+          {
+            "id": "result",
+            "probability": 1,
+            "affinity": null,
+            "text": {
+              "tr": "Aile kuru kaldı. Sonraki avın erzağı daha gelmeden bölündü.",
+              "en": "The family stayed dry. The next catch was divided before it arrived."
+            },
+            "effect": {
+              "stats": {
+                "population": 6,
+                "authority": 4,
+                "resources": -2
+              },
+              "flags": [
+                "hide_single_pledge"
+              ],
+              "technologies": [],
+              "buildings": [],
+              "rivalRelation": 0,
+              "rivalRelations": {
+                "hunters": 6,
+                "keepers": -3
+              }
+            },
+            "delayedEffects": [
+              {
+                "afterTurns": 4,
+                "minimumEra": 1,
+                "text": {
+                  "tr": "Örtünün karşılığı av payından ödendi.",
+                  "en": "The cover was repaid from the catch."
+                },
+                "effect": {
+                  "stats": {
+                    "resources": -6,
+                    "stability": -2
+                  },
+                  "flags": [],
+                  "technologies": [],
+                  "buildings": [],
+                  "rivalRelation": 0
+                }
+              }
+            ],
+            "animationPreset": "normal"
+          }
+        ]
+      }
+    ],
+    "worldFlags": [
+      "patched_shared_hides",
+      "hide_single_pledge"
+    ],
+    "storyChainId": null,
+    "animationPreset": "normal",
+    "soundCue": "decision",
+    "cooldown": 4,
+    "localizationKeys": [
+      "card.hide_rent.title",
+      "card.hide_rent.description"
+    ]
+  },
+  {
+    "id": "council_shelter",
+    "era": 1,
+    "category": "leadership",
+    "title": {
+      "tr": "Rüzgârdaki Toplantı",
+      "en": "A Council in the Wind"
+    },
+    "description": {
+      "tr": "Kafile bu kış nereye sığınacağını seçemiyor. İki av grubu farklı yerler istiyor. Herkesin konuşması fırtına öncesindeki son hazırlık gününü tüketecek.",
+      "en": "The travelers cannot agree on winter shelter. Two hunting groups favor different sites. Hearing everyone will use the last preparation day before the storm."
+    },
+    "artAsset": "card_council_shelter",
+    "artDirection": "Paleolithic adults debating two shelter routes with stones on bare ground, approaching clouds, ochre and charcoal, portrait.",
+    "rarity": "common",
+    "weight": 10,
+    "requirements": [
+      {
+        "stat": "stability",
+        "maximum": 65
+      }
+    ],
+    "exclusionConditions": [],
+    "choices": [
+      {
+        "id": "hear",
+        "text": {
+          "tr": "Her grubun kaygısını dinle; nöbetleri birlikte böl.",
+          "en": "Hear each group’s concern and divide the watches together."
+        },
+        "risk": {
+          "tr": "Sonucu öngörülebilir",
+          "en": "Predictable outcome"
+        },
+        "requirements": [],
+        "immediateEffects": {
+          "stats": {},
+          "flags": [],
+          "technologies": [],
+          "buildings": [],
+          "rivalRelation": 0
+        },
+        "outcomes": [
+          {
+            "id": "result",
+            "probability": 1,
+            "affinity": null,
+            "text": {
+              "tr": "Gün kısa kaldı. Kararı kabul edenler gece işini de paylaştı.",
+              "en": "Little daylight remained. Those accepting the decision also shared the night work."
+            },
+            "effect": {
+              "stats": {
+                "resources": -5,
+                "stability": 7,
+                "authority": 3
+              },
+              "flags": [
+                "winter_open_council"
+              ],
+              "technologies": [],
+              "buildings": [],
+              "rivalRelation": 0,
+              "rivalRelations": {
+                "hunters": 3,
+                "keepers": 4
+              }
+            },
+            "delayedEffects": [
+              {
+                "afterTurns": 5,
+                "minimumEra": 1,
+                "text": {
+                  "tr": "Ortak nöbet yeni kafilenin de söz almasına örnek oldu.",
+                  "en": "The shared watch became a precedent for the next arrivals to speak."
+                },
+                "effect": {
+                  "stats": {
+                    "knowledge": 3
+                  },
+                  "flags": [],
+                  "technologies": [],
+                  "buildings": [],
+                  "rivalRelation": 0
+                }
+              }
+            ],
+            "animationPreset": "normal"
+          }
+        ]
+      },
+      {
+        "id": "lead",
+        "text": {
+          "tr": "Hazırlığı durdurma; yeri sen seç ve sorumluluğu üstlen.",
+          "en": "Keep preparation moving; choose the site and accept responsibility."
+        },
+        "risk": {
+          "tr": "Sonucu öngörülebilir",
+          "en": "Predictable outcome"
+        },
+        "requirements": [],
+        "immediateEffects": {
+          "stats": {},
+          "flags": [],
+          "technologies": [],
+          "buildings": [],
+          "rivalRelation": 0
+        },
+        "outcomes": [
+          {
+            "id": "result",
+            "probability": 1,
+            "affinity": null,
+            "text": {
+              "tr": "Sığınak hazırlandı. Diğer yeri isteyenler riskin kendilerine sorulmadan alındığını söyledi.",
+              "en": "Shelter was prepared. Those favoring the other site said the risk had been taken without consulting them."
+            },
+            "effect": {
+              "stats": {
+                "resources": 7,
+                "authority": 7,
+                "stability": -6
+              },
+              "flags": [
+                "winter_directed_camp"
+              ],
+              "technologies": [],
+              "buildings": [],
+              "rivalRelation": 0,
+              "rivalRelations": {
+                "hunters": 7,
+                "keepers": -7
+              }
+            },
+            "delayedEffects": [
+              {
+                "afterTurns": 5,
+                "minimumEra": 1,
+                "text": {
+                  "tr": "Seçilmeyen yolun avcıları ayrı bir keşif için erzak istedi.",
+                  "en": "Hunters from the rejected route requested supplies for a separate survey."
+                },
+                "effect": {
+                  "stats": {
+                    "resources": -5
+                  },
+                  "flags": [],
+                  "technologies": [],
+                  "buildings": [],
+                  "rivalRelation": 0
+                }
+              }
+            ],
+            "animationPreset": "normal"
+          }
+        ]
+      }
+    ],
+    "worldFlags": [
+      "winter_open_council",
+      "winter_directed_camp"
+    ],
+    "storyChainId": null,
+    "animationPreset": "normal",
+    "soundCue": "decision",
+    "cooldown": 4,
+    "localizationKeys": [
+      "card.council_shelter.title",
+      "card.council_shelter.description"
+    ]
+  },
+  {
+    "id": "kin_repayment",
+    "era": 2,
+    "category": "legacy",
+    "title": {
+      "tr": "Kefaletin Hasadı",
+      "en": "The Harvest of Surety"
+    },
+    "description": {
+      "tr": "Kışın verilen av sözü köyde tahıl borcuna dönüştü. Eski kefilin torunu, kendi hasadından neden pay kesildiğini soruyor. Sözün sınırı arşivden değil, yaşayan tanıklardan öğrenilecek.",
+      "en": "A winter hunting promise has become a village grain debt. The old guarantor’s grandchild asks why their harvest is being withheld. Living witnesses must establish the promise’s limit."
+    },
+    "artAsset": "card_kin_repayment",
+    "artDirection": "Neolithic family and older witnesses comparing baskets of harvest, clay courtyard, no written tablets or metal, sage morning light.",
+    "rarity": "uncommon",
+    "weight": 10,
+    "requirements": [
+      {
+        "flag": "kin_grain_credit"
+      }
+    ],
+    "exclusionConditions": [
+      {
+        "flag": "resolved_kin_repayment"
+      }
+    ],
+    "choices": [
+      {
+        "id": "limit",
+        "text": {
+          "tr": "Tanıkları çağır; borcu ilk hanenin payıyla sınırla.",
+          "en": "Call witnesses and limit the debt to the original household’s share."
+        },
+        "risk": {
+          "tr": "Sonucu öngörülebilir",
+          "en": "Predictable outcome"
+        },
+        "requirements": [],
+        "immediateEffects": {
+          "stats": {},
+          "flags": [],
+          "technologies": [],
+          "buildings": [],
+          "rivalRelation": 0
+        },
+        "outcomes": [
+          {
+            "id": "result",
+            "probability": 1,
+            "affinity": null,
+            "text": {
+              "tr": "Ambara beklenen tahılın bir kısmı gelmedi. Çocukların payı ayrıldı.",
+              "en": "Some expected grain did not reach the stores. Children’s shares were protected."
+            },
+            "effect": {
+              "stats": {
+                "resources": -8,
+                "population": 4,
+                "stability": 7
+              },
+              "flags": [
+                "limited_surety",
+                "resolved_kin_repayment"
+              ],
+              "technologies": [],
+              "buildings": [],
+              "rivalRelation": 0,
+              "rivalRelations": {
+                "hunters": -5,
+                "keepers": 7
+              }
+            },
+            "delayedEffects": [
+              {
+                "afterTurns": 5,
+                "minimumEra": 3,
+                "text": {
+                  "tr": "Köy kefaletinin sınırı kentin borç yazıcılarına ulaştı.",
+                  "en": "The limit on village surety reached the city’s debt scribes."
+                },
+                "effect": {
+                  "stats": {
+                    "knowledge": 4
+                  },
+                  "flags": [
+                    "surety_witness_record"
+                  ],
+                  "technologies": [],
+                  "buildings": [],
+                  "rivalRelation": 0
+                }
+              },
+              {
+                "afterTurns": 4,
+                "minimumEra": 2,
+                "text": {
+                  "tr": "Borç dışında kalan haneler ilk köy hasadından ortak erzağa pay ayırdı.",
+                  "en": "Households released from inherited debt contributed supplies from the first village harvest."
+                },
+                "effect": {
+                  "stats": {
+                    "resources": 5
+                  },
+                  "flags": [],
+                  "technologies": [],
+                  "buildings": [],
+                  "rivalRelation": 0
+                }
+              }
+            ],
+            "animationPreset": "normal"
+          }
+        ]
+      },
+      {
+        "id": "collect",
+        "text": {
+          "tr": "Tahılı al; geçim payını gelecek hasada ertele.",
+          "en": "Collect the grain and defer the family’s subsistence share to the next harvest."
+        },
+        "risk": {
+          "tr": "Sonucu öngörülebilir",
+          "en": "Predictable outcome"
+        },
+        "requirements": [],
+        "immediateEffects": {
+          "stats": {},
+          "flags": [],
+          "technologies": [],
+          "buildings": [],
+          "rivalRelation": 0
+        },
+        "outcomes": [
+          {
+            "id": "result",
+            "probability": 1,
+            "affinity": null,
+            "text": {
+              "tr": "Ambar doldu. Aile bu yılın açığını da yeni borç olarak taşıdı.",
+              "en": "The stores filled. The family carried this year’s shortfall as another debt."
+            },
+            "effect": {
+              "stats": {
+                "resources": 10,
+                "authority": 5,
+                "stability": -7
+              },
+              "flags": [
+                "extended_surety",
+                "resolved_kin_repayment"
+              ],
+              "technologies": [],
+              "buildings": [],
+              "rivalRelation": 0,
+              "rivalRelations": {
+                "hunters": 7,
+                "keepers": -6
+              }
+            },
+            "delayedEffects": [
+              {
+                "afterTurns": 5,
+                "minimumEra": 3,
+                "text": {
+                  "tr": "Biriken kefalet hesabı kentte yeniden tartışılmak üzere saklandı.",
+                  "en": "The accumulated surety account was retained for reconsideration in the city."
+                },
+                "effect": {
+                  "stats": {
+                    "population": -3
+                  },
+                  "flags": [
+                    "surety_witness_record"
+                  ],
+                  "technologies": [],
+                  "buildings": [],
+                  "rivalRelation": 0
+                }
+              }
+            ],
+            "animationPreset": "normal"
+          }
+        ]
+      },
+      {
+        "id": "witness_limit",
+        "text": {
+          "tr": "Kışta verilen sınır sözünü tanıklarla uygula.",
+          "en": "Enforce the winter limit in front of its witnesses."
+        },
+        "risk": {
+          "tr": "Sonucu öngörülebilir",
+          "en": "Predictable outcome"
+        },
+        "requirements": [
+          {
+            "flag": "winter_limited_promise"
+          }
+        ],
+        "immediateEffects": {
+          "stats": {},
+          "flags": [],
+          "technologies": [],
+          "buildings": [],
+          "rivalRelation": 0
+        },
+        "outcomes": [
+          {
+            "id": "result",
+            "probability": 1,
+            "affinity": null,
+            "text": {
+              "tr": "Yeni bir af ilan edilmedi; eski sözün sınırı korundu. Tahılın bir kısmı haneye bırakıldı.",
+              "en": "No new pardon was declared; the old promise’s limit was honored. Part of the grain remained with the household."
+            },
+            "effect": {
+              "stats": {
+                "resources": -5,
+                "stability": 8,
+                "population": 3,
+                "authority": -2
+              },
+              "flags": [
+                "limited_surety",
+                "resolved_kin_repayment"
+              ],
+              "technologies": [],
+              "buildings": [],
+              "rivalRelation": 0
+            },
+            "delayedEffects": [
+              {
+                "afterTurns": 5,
+                "minimumEra": 3,
+                "text": {
+                  "tr": "Sınırı doğrulayan tanık hesabı kentin ilk borç kaydına taşındı.",
+                  "en": "The witnesses’ account of the limit reached the city’s first debt record."
+                },
+                "effect": {
+                  "stats": {
+                    "knowledge": 3
+                  },
+                  "flags": [
+                    "surety_witness_record"
+                  ],
+                  "technologies": [],
+                  "buildings": [],
+                  "rivalRelation": 0
+                }
+              },
+              {
+                "afterTurns": 4,
+                "minimumEra": 2,
+                "text": {
+                  "tr": "Borç dışında kalan haneler ilk köy hasadından ortak erzağa pay ayırdı.",
+                  "en": "Households released from inherited debt contributed supplies from the first village harvest."
+                },
+                "effect": {
+                  "stats": {
+                    "resources": 5
+                  },
+                  "flags": [],
+                  "technologies": [],
+                  "buildings": [],
+                  "rivalRelation": 0
+                }
+              }
+            ],
+            "animationPreset": "normal"
+          }
+        ]
+      }
+    ],
+    "worldFlags": [
+      "limited_surety",
+      "resolved_kin_repayment",
+      "extended_surety"
+    ],
+    "storyChainId": "debt",
+    "animationPreset": "normal",
+    "soundCue": "decision",
+    "cooldown": 4,
+    "localizationKeys": [
+      "card.kin_repayment.title",
+      "card.kin_repayment.description"
+    ]
+  },
+  {
+    "id": "guest_roofs",
+    "era": 2,
+    "category": "diplomacy",
+    "title": {
+      "tr": "Aynı Çatının İşçileri",
+      "en": "Workers under One Roof"
+    },
+    "description": {
+      "tr": "Geçitteki konuk nöbetinin torunları köyde yeni evler yapıyor. Ortak iş günü karşılığında ev kurma hakkı istiyorlar. Eski ev sahipleri saz ve toprak paylarının azalacağını söylüyor.",
+      "en": "Descendants of the guest watch are building new village homes. They ask for building rights in return for shared workdays. Established households fear losing their reed and land shares."
+    },
+    "artAsset": "card_guest_roofs",
+    "artDirection": "Neolithic hosts and newcomers raising reed roof on clay house, adults measuring space with rope, muted sage and clay gold.",
+    "rarity": "uncommon",
+    "weight": 10,
+    "requirements": [
+      {
+        "flag": "guest_work_memory"
+      }
+    ],
+    "exclusionConditions": [
+      {
+        "flag": "resolved_guest_roofs"
+      }
+    ],
+    "choices": [
+      {
+        "id": "rights",
+        "text": {
+          "tr": "Ortak iş gününü kabul et; ev hakkını kalıcı tanı.",
+          "en": "Accept shared workdays and recognize lasting home rights."
+        },
+        "risk": {
+          "tr": "Sonucu öngörülebilir",
+          "en": "Predictable outcome"
+        },
+        "requirements": [],
+        "immediateEffects": {
+          "stats": {},
+          "flags": [],
+          "technologies": [],
+          "buildings": [],
+          "rivalRelation": 0
+        },
+        "outcomes": [
+          {
+            "id": "result",
+            "probability": 1,
+            "affinity": null,
+            "text": {
+              "tr": "Saz payı bölündü. Yeni evler, konukların yardım için çağrıldığı kulübeler olmaktan çıktı.",
+              "en": "Reeds were divided. New homes became more than huts whose residents were summoned to help."
+            },
+            "effect": {
+              "stats": {
+                "resources": -9,
+                "population": 6,
+                "stability": 6
+              },
+              "flags": [
+                "guest_work_right",
+                "resolved_guest_roofs"
+              ],
+              "technologies": [],
+              "buildings": [],
+              "rivalRelation": 0,
+              "rivalRelations": {
+                "hunters": -5,
+                "keepers": 7
+              }
+            },
+            "delayedEffects": [
+              {
+                "afterTurns": 6,
+                "minimumEra": 3,
+                "text": {
+                  "tr": "Kentin liman işçileri eski çatı hakkını yerleşme isteğine dayanak yaptı.",
+                  "en": "City dockworkers cited the old roof rights in their request to settle."
+                },
+                "effect": {
+                  "stats": {
+                    "knowledge": 3
+                  },
+                  "flags": [
+                    "guest_roof_record"
+                  ],
+                  "technologies": [],
+                  "buildings": [],
+                  "rivalRelation": 0
+                }
+              },
+              {
+                "afterTurns": 4,
+                "minimumEra": 2,
+                "text": {
+                  "tr": "Yeni çatılarda korunan hasadın bir kısmı ortak yapı erzağına döndü.",
+                  "en": "Part of the harvest protected under the new roofs returned to the common building supplies."
+                },
+                "effect": {
+                  "stats": {
+                    "resources": 6
+                  },
+                  "flags": [],
+                  "technologies": [],
+                  "buildings": [],
+                  "rivalRelation": 0
+                }
+              }
+            ],
+            "animationPreset": "normal"
+          }
+        ]
+      },
+      {
+        "id": "lease",
+        "text": {
+          "tr": "Sazı ortak ambardan ver; her hasatta hizmet iste.",
+          "en": "Supply reeds from common stores and require service each harvest."
+        },
+        "risk": {
+          "tr": "Sonucu öngörülebilir",
+          "en": "Predictable outcome"
+        },
+        "requirements": [],
+        "immediateEffects": {
+          "stats": {},
+          "flags": [],
+          "technologies": [],
+          "buildings": [],
+          "rivalRelation": 0
+        },
+        "outcomes": [
+          {
+            "id": "result",
+            "probability": 1,
+            "affinity": null,
+            "text": {
+              "tr": "Evler kuruldu. Oturma hakkının her yıl yeniden kazanılması gerekecek.",
+              "en": "Homes were built. Residence would have to be earned again each year."
+            },
+            "effect": {
+              "stats": {
+                "resources": 5,
+                "authority": 7,
+                "stability": -5
+              },
+              "flags": [
+                "guest_work_debt",
+                "resolved_guest_roofs"
+              ],
+              "technologies": [],
+              "buildings": [],
+              "rivalRelation": 0,
+              "rivalRelations": {
+                "hunters": 7,
+                "keepers": -6
+              }
+            },
+            "delayedEffects": [
+              {
+                "afterTurns": 6,
+                "minimumEra": 3,
+                "text": {
+                  "tr": "Eski hizmet borcu limana gelen ailelerin peşinden kente taşındı.",
+                  "en": "The old service debt followed families into the city harbor."
+                },
+                "effect": {
+                  "stats": {
+                    "population": -3
+                  },
+                  "flags": [
+                    "guest_roof_record"
+                  ],
+                  "technologies": [],
+                  "buildings": [],
+                  "rivalRelation": 0
+                }
+              }
+            ],
+            "animationPreset": "normal"
+          }
+        ]
+      },
+      {
+        "id": "watch_right",
+        "text": {
+          "tr": "Ortak geçit nöbetini ev hakkına dayanak say.",
+          "en": "Recognize the shared pass watch as grounds for home rights."
+        },
+        "risk": {
+          "tr": "Sonucu öngörülebilir",
+          "en": "Predictable outcome"
+        },
+        "requirements": [
+          {
+            "flag": "shared_guest_watch"
+          }
+        ],
+        "immediateEffects": {
+          "stats": {},
+          "flags": [],
+          "technologies": [],
+          "buildings": [],
+          "rivalRelation": 0
+        },
+        "outcomes": [
+          {
+            "id": "result",
+            "probability": 1,
+            "affinity": null,
+            "text": {
+              "tr": "Konuklar ev hakkını yeniden hizmet vererek satın almadı. Eski ortak yük, yeni yükümlülüklerin sınırını belirledi.",
+              "en": "Guests did not buy home rights with another term of service. The old shared burden set a limit on new obligations."
+            },
+            "effect": {
+              "stats": {
+                "resources": -7,
+                "stability": 8,
+                "population": 5,
+                "authority": -2
+              },
+              "flags": [
+                "guest_work_right",
+                "resolved_guest_roofs"
+              ],
+              "technologies": [],
+              "buildings": [],
+              "rivalRelation": 0
+            },
+            "delayedEffects": [
+              {
+                "afterTurns": 6,
+                "minimumEra": 3,
+                "text": {
+                  "tr": "Nöbetten doğan ev hakkı kente taşınan ailelerin tanıklarıyla korundu.",
+                  "en": "Witnesses preserved the watch-based home right when families moved to the city."
+                },
+                "effect": {
+                  "stats": {
+                    "knowledge": 4
+                  },
+                  "flags": [
+                    "guest_roof_record"
+                  ],
+                  "technologies": [],
+                  "buildings": [],
+                  "rivalRelation": 0
+                }
+              },
+              {
+                "afterTurns": 4,
+                "minimumEra": 2,
+                "text": {
+                  "tr": "Yeni çatılarda korunan hasadın bir kısmı ortak yapı erzağına döndü.",
+                  "en": "Part of the harvest protected under the new roofs returned to the common building supplies."
+                },
+                "effect": {
+                  "stats": {
+                    "resources": 6
+                  },
+                  "flags": [],
+                  "technologies": [],
+                  "buildings": [],
+                  "rivalRelation": 0
+                }
+              }
+            ],
+            "animationPreset": "normal"
+          }
+        ]
+      }
+    ],
+    "worldFlags": [
+      "guest_work_right",
+      "resolved_guest_roofs",
+      "guest_work_debt"
+    ],
+    "storyChainId": "hospitality",
+    "animationPreset": "normal",
+    "soundCue": "decision",
+    "cooldown": 4,
+    "localizationKeys": [
+      "card.guest_roofs.title",
+      "card.guest_roofs.description"
+    ]
+  },
+  {
+    "id": "ditch_seed",
+    "era": 2,
+    "category": "survival",
+    "title": {
+      "tr": "Kanalda Kalan Tohum",
+      "en": "Seed in the Ditch"
+    },
+    "description": {
+      "tr": "Bu ekimde su kolunun kenarı çöktü. Çuvaldaki tohum hem onarım işçisini beslemeye hem yeniden ekime yetmiyor. İlk suyu almak isteyen haneler sıraya itiraz ediyor.",
+      "en": "A water branch has collapsed during sowing. The seed reserve cannot both feed repair workers and resow the beds. Households demanding the first water dispute the queue."
+    },
+    "artAsset": "card_ditch_seed",
+    "artDirection": "Neolithic farmers lifting woven seed bags beside collapsed earthen ditch, wooden spades, cloudy green light, no metal.",
+    "rarity": "common",
+    "weight": 10,
+    "requirements": [
+      {
+        "technology": "irrigation"
+      },
+      {
+        "stat": "resources",
+        "maximum": 65
+      }
+    ],
+    "exclusionConditions": [],
+    "choices": [
+      {
+        "id": "repair",
+        "text": {
+          "tr": "Önce kolu onar; küçük alanı geç ek.",
+          "en": "Repair the branch first and sow the smaller area late."
+        },
+        "risk": {
+          "tr": "Sonucu öngörülebilir",
+          "en": "Predictable outcome"
+        },
+        "requirements": [],
+        "immediateEffects": {
+          "stats": {},
+          "flags": [],
+          "technologies": [],
+          "buildings": [],
+          "rivalRelation": 0
+        },
+        "outcomes": [
+          {
+            "id": "result",
+            "probability": 1,
+            "affinity": null,
+            "text": {
+              "tr": "Tohumun bir kısmı erzak oldu. Onarılan kolun suyu bütün sıraya ulaştı.",
+              "en": "Some seed became food. Water from the repaired branch reached the entire queue."
+            },
+            "effect": {
+              "stats": {
+                "resources": -6,
+                "environment": 5,
+                "stability": 6
+              },
+              "flags": [
+                "ditch_repaired_first"
+              ],
+              "technologies": [],
+              "buildings": [],
+              "rivalRelation": 0
+            },
+            "delayedEffects": [
+              {
+                "afterTurns": 5,
+                "minimumEra": 2,
+                "text": {
+                  "tr": "Geç ekilen küçük alan bir miktar tohumu geri verdi.",
+                  "en": "The smaller late-sown bed returned some seed."
+                },
+                "effect": {
+                  "stats": {
+                    "resources": 5,
+                    "knowledge": 2
+                  },
+                  "flags": [],
+                  "technologies": [],
+                  "buildings": [],
+                  "rivalRelation": 0
+                }
+              }
+            ],
+            "animationPreset": "normal"
+          }
+        ]
+      },
+      {
+        "id": "ration",
+        "text": {
+          "tr": "Kolu daralt; eldeki tahılı bugün dağıt.",
+          "en": "Narrow the branch and distribute the grain today."
+        },
+        "risk": {
+          "tr": "Sonucu öngörülebilir",
+          "en": "Predictable outcome"
+        },
+        "requirements": [],
+        "immediateEffects": {
+          "stats": {},
+          "flags": [],
+          "technologies": [],
+          "buildings": [],
+          "rivalRelation": 0
+        },
+        "outcomes": [
+          {
+            "id": "result",
+            "probability": 1,
+            "affinity": null,
+            "text": {
+              "tr": "Aç hanelere pay verildi. Alt sıradaki ekim daha az su aldı.",
+              "en": "Hungry households received grain. Lower beds received less water."
+            },
+            "effect": {
+              "stats": {
+                "resources": 10,
+                "stability": -4,
+                "environment": -5
+              },
+              "flags": [
+                "narrowed_water_branch"
+              ],
+              "technologies": [],
+              "buildings": [],
+              "rivalRelation": 0
+            },
+            "delayedEffects": [
+              {
+                "afterTurns": 5,
+                "minimumEra": 2,
+                "text": {
+                  "tr": "Alt sıranın zayıf ürünü yeni avans istedi.",
+                  "en": "The weaker lower crop required another advance."
+                },
+                "effect": {
+                  "stats": {
+                    "resources": -7,
+                    "population": -2
+                  },
+                  "flags": [],
+                  "technologies": [],
+                  "buildings": [],
+                  "rivalRelation": 0
+                }
+              }
+            ],
+            "animationPreset": "normal"
+          }
+        ]
+      }
+    ],
+    "worldFlags": [
+      "ditch_repaired_first",
+      "narrowed_water_branch"
+    ],
+    "storyChainId": null,
+    "animationPreset": "normal",
+    "soundCue": "decision",
+    "cooldown": 4,
+    "localizationKeys": [
+      "card.ditch_seed.title",
+      "card.ditch_seed.description"
+    ]
+  },
+  {
+    "id": "terrace_stones",
+    "era": 2,
+    "category": "settlement",
+    "title": {
+      "tr": "Dinlenen Yamacın Taşları",
+      "en": "Stones on the Rested Slope"
+    },
+    "description": {
+      "tr": "Dinlendirdiğiniz şerit yeniden yeşerdi, fakat aşağıdaki evlere toprak akıyor. Taş setler kurmak ekim günlerinden alacak. Bir hane setin kendi sınırı sayılmasını istiyor.",
+      "en": "The strip you rested has grown green again, but soil washes toward the houses below. Building stone terraces takes sowing days. One household wants the wall treated as its boundary."
+    },
+    "artAsset": "card_terrace_stones",
+    "artDirection": "Neolithic workers placing low dry-stone terrace above clay homes, green regrowth, baskets and stone tools, soft sage light.",
+    "rarity": "uncommon",
+    "weight": 10,
+    "requirements": [
+      {
+        "flag": "fallow_rotation"
+      }
+    ],
+    "exclusionConditions": [
+      {
+        "flag": "resolved_terrace_stones"
+      }
+    ],
+    "choices": [
+      {
+        "id": "common",
+        "text": {
+          "tr": "Seti ortak emekle kur; geçiş yolunu açık bırak.",
+          "en": "Build the terrace together and keep the access path open."
+        },
+        "risk": {
+          "tr": "Sonucu öngörülebilir",
+          "en": "Predictable outcome"
+        },
+        "requirements": [],
+        "immediateEffects": {
+          "stats": {},
+          "flags": [],
+          "technologies": [],
+          "buildings": [],
+          "rivalRelation": 0
+        },
+        "outcomes": [
+          {
+            "id": "result",
+            "probability": 1,
+            "affinity": null,
+            "text": {
+              "tr": "Ekim küçüldü. Toprak tutuldu; set bir evin kapısına dönüşmedi.",
+              "en": "Less was sown. Soil was held and the terrace did not become one household’s gate."
+            },
+            "effect": {
+              "stats": {
+                "resources": -10,
+                "environment": 8,
+                "population": 3,
+                "stability": 7
+              },
+              "flags": [
+                "common_terrace",
+                "resolved_terrace_stones"
+              ],
+              "technologies": [],
+              "buildings": [
+                "terrace"
+              ],
+              "rivalRelation": 0,
+              "rivalRelations": {
+                "hunters": -4,
+                "keepers": 6
+              }
+            },
+            "delayedEffects": [
+              {
+                "afterTurns": 6,
+                "minimumEra": 3,
+                "text": {
+                  "tr": "Ortak setin bakım kuralı büyüyen yerleşimin dış yollarında hatırlandı.",
+                  "en": "The shared terrace’s maintenance rule was remembered on the growing settlement’s outer roads."
+                },
+                "effect": {
+                  "stats": {
+                    "stability": 3,
+                    "resources": -3
+                  },
+                  "flags": [],
+                  "technologies": [],
+                  "buildings": [],
+                  "rivalRelation": 0
+                }
+              },
+              {
+                "afterTurns": 4,
+                "minimumEra": 2,
+                "text": {
+                  "tr": "Setin tuttuğu toprak küçük ilk hasatta bakım erzağının bir kısmını karşıladı.",
+                  "en": "Soil held by the terrace covered part of its upkeep supplies in the first small harvest."
+                },
+                "effect": {
+                  "stats": {
+                    "resources": 6
+                  },
+                  "flags": [],
+                  "technologies": [],
+                  "buildings": [],
+                  "rivalRelation": 0
+                }
+              }
+            ],
+            "animationPreset": "normal"
+          }
+        ]
+      },
+      {
+        "id": "household",
+        "text": {
+          "tr": "Taşı haneye bırak; karşılığında ürün payı al.",
+          "en": "Let the household build and take a share of its crop."
+        },
+        "risk": {
+          "tr": "Sonucu öngörülebilir",
+          "en": "Predictable outcome"
+        },
+        "requirements": [],
+        "immediateEffects": {
+          "stats": {},
+          "flags": [],
+          "technologies": [],
+          "buildings": [],
+          "rivalRelation": 0
+        },
+        "outcomes": [
+          {
+            "id": "result",
+            "probability": 1,
+            "affinity": null,
+            "text": {
+              "tr": "Ambar pay aldı. Açık yol, hanenin izin verdiği bir geçide dönüştü.",
+              "en": "The stores received a share. The public path became a passage by permission."
+            },
+            "effect": {
+              "stats": {
+                "resources": 8,
+                "authority": 6,
+                "stability": -5
+              },
+              "flags": [
+                "private_terrace",
+                "resolved_terrace_stones"
+              ],
+              "technologies": [],
+              "buildings": [
+                "terrace"
+              ],
+              "rivalRelation": 0,
+              "rivalRelations": {
+                "hunters": 6,
+                "keepers": -5
+              }
+            },
+            "delayedEffects": [
+              {
+                "afterTurns": 6,
+                "minimumEra": 3,
+                "text": {
+                  "tr": "Kentin dışına taşınan aileler eski geçiş izni için yeniden pay ödedi.",
+                  "en": "Families moving beyond the city paid again for the old access permission."
+                },
+                "effect": {
+                  "stats": {
+                    "resources": -5,
+                    "population": -2
+                  },
+                  "flags": [],
+                  "technologies": [],
+                  "buildings": [],
+                  "rivalRelation": 0
+                }
+              }
+            ],
+            "animationPreset": "normal"
+          }
+        ]
+      }
+    ],
+    "worldFlags": [
+      "common_terrace",
+      "resolved_terrace_stones",
+      "private_terrace"
+    ],
+    "storyChainId": "river_memory",
+    "animationPreset": "normal",
+    "soundCue": "decision",
+    "cooldown": 4,
+    "localizationKeys": [
+      "card.terrace_stones.title",
+      "card.terrace_stones.description"
+    ]
+  },
+  {
+    "id": "village_workdays",
+    "era": 2,
+    "category": "leadership",
+    "title": {
+      "tr": "Köyün İş Takvimi",
+      "en": "The Village Work Calendar"
+    },
+    "description": {
+      "tr": "Büyüyen köy aynı hafta hem çatı hem kanal işi istiyor. Her haneden aynı sayıda işçi istemek küçük aileleri zorlayacak. Sıralama yapılmazsa iki iş de yarım kalabilir.",
+      "en": "The growing village needs roof and canal work in the same week. Equal worker quotas would burden small families. Without a schedule both jobs may remain unfinished."
+    },
+    "artAsset": "card_village_workdays",
+    "artDirection": "Neolithic village meeting with pebbles marking workdays, clay roofs and earthen canal, adult families and reed tools, warm sage shade.",
+    "rarity": "common",
+    "weight": 10,
+    "requirements": [
+      {
+        "stat": "population",
+        "minimum": 40
+      },
+      {
+        "stat": "stability",
+        "maximum": 70
+      }
+    ],
+    "exclusionConditions": [],
+    "choices": [
+      {
+        "id": "schedule",
+        "text": {
+          "tr": "İşi hane gücüne göre sırala; ekiplere ortak erzak ayır.",
+          "en": "Schedule work by household capacity and feed crews from shared stores."
+        },
+        "risk": {
+          "tr": "Sonucu öngörülebilir",
+          "en": "Predictable outcome"
+        },
+        "requirements": [],
+        "immediateEffects": {
+          "stats": {},
+          "flags": [],
+          "technologies": [],
+          "buildings": [],
+          "rivalRelation": 0
+        },
+        "outcomes": [
+          {
+            "id": "result",
+            "probability": 1,
+            "affinity": null,
+            "text": {
+              "tr": "Ambar küçüldü. Küçük haneler hem kendi ekimine hem ortak işe yetişti. Ortak iş takvimi ekim ve bakım günlerini de düzenledi.",
+              "en": "The stores shrank. Small households could tend their own beds and join the common work. The shared work calendar also coordinated sowing and upkeep days."
+            },
+            "effect": {
+              "stats": {
+                "resources": -5,
+                "population": 4,
+                "stability": 8
+              },
+              "flags": [
+                "capacity_work_rota"
+              ],
+              "technologies": [],
+              "buildings": [
+                "work_calendar"
+              ],
+              "rivalRelation": 0,
+              "rivalRelations": {
+                "hunters": -3,
+                "keepers": 5
+              }
+            },
+            "delayedEffects": [
+              {
+                "afterTurns": 4,
+                "minimumEra": 2,
+                "text": {
+                  "tr": "Bakımın küçük ama düzenli erzak payı yeniden ayrıldı.",
+                  "en": "A small regular supply share was reserved for upkeep."
+                },
+                "effect": {
+                  "stats": {
+                    "resources": -2,
+                    "environment": 3
+                  },
+                  "flags": [],
+                  "technologies": [],
+                  "buildings": [],
+                  "rivalRelation": 0
+                }
+              }
+            ],
+            "animationPreset": "normal"
+          }
+        ]
+      },
+      {
+        "id": "levy",
+        "text": {
+          "tr": "Her haneden aynı payı al; işi büyük ekiplere ver.",
+          "en": "Levy the same share from every household and hire larger crews."
+        },
+        "risk": {
+          "tr": "Sonucu öngörülebilir",
+          "en": "Predictable outcome"
+        },
+        "requirements": [],
+        "immediateEffects": {
+          "stats": {},
+          "flags": [],
+          "technologies": [],
+          "buildings": [],
+          "rivalRelation": 0
+        },
+        "outcomes": [
+          {
+            "id": "result",
+            "probability": 1,
+            "affinity": null,
+            "text": {
+              "tr": "İş hızlandı. Küçük haneler kendi tarlasına daha az el ayırdı.",
+              "en": "Work moved faster. Small households had fewer hands for their own fields."
+            },
+            "effect": {
+              "stats": {
+                "resources": 8,
+                "authority": 6,
+                "population": -4,
+                "stability": -6
+              },
+              "flags": [
+                "equal_work_levy"
+              ],
+              "technologies": [],
+              "buildings": [],
+              "rivalRelation": 0,
+              "rivalRelations": {
+                "hunters": 7,
+                "keepers": -6
+              }
+            },
+            "delayedEffects": [
+              {
+                "afterTurns": 4,
+                "minimumEra": 2,
+                "text": {
+                  "tr": "Geride kalan küçük ekimlere tahıl avansı gerekti.",
+                  "en": "Lagging small plots needed grain advances."
+                },
+                "effect": {
+                  "stats": {
+                    "resources": -6
+                  },
+                  "flags": [],
+                  "technologies": [],
+                  "buildings": [],
+                  "rivalRelation": 0
+                }
+              }
+            ],
+            "animationPreset": "normal"
+          }
+        ]
+      },
+      {
+        "id": "recall",
+        "text": {
+          "tr": "Eski geri çağırma hakkıyla iş sorumlularını yeniden seç.",
+          "en": "Use the earlier recall right to choose new work stewards."
+        },
+        "risk": {
+          "tr": "Sonucu öngörülebilir",
+          "en": "Predictable outcome"
+        },
+        "requirements": [
+          {
+            "flag": "recall_mandate"
+          }
+        ],
+        "immediateEffects": {
+          "stats": {},
+          "flags": [],
+          "technologies": [],
+          "buildings": [],
+          "rivalRelation": 0
+        },
+        "outcomes": [
+          {
+            "id": "result",
+            "probability": 1,
+            "affinity": null,
+            "text": {
+              "tr": "Görüşme zaman aldı. Sorumluların işi hane gücüne göre yeniden bölündü. Ortak iş takvimi ekim ve bakım günlerini de düzenledi.",
+              "en": "The hearing took time. Stewards reassigned work by household capacity. The shared work calendar also coordinated sowing and upkeep days."
+            },
+            "effect": {
+              "stats": {
+                "resources": -7,
+                "stability": 10,
+                "authority": -3,
+                "knowledge": 4
+              },
+              "flags": [
+                "recalled_work_stewards"
+              ],
+              "technologies": [],
+              "buildings": [
+                "work_calendar"
+              ],
+              "rivalRelation": 0
+            },
+            "delayedEffects": [
+              {
+                "afterTurns": 4,
+                "minimumEra": 2,
+                "text": {
+                  "tr": "Yeni sorumlular bakım payını açıkça topladı.",
+                  "en": "The new stewards openly collected the upkeep share."
+                },
+                "effect": {
+                  "stats": {
+                    "resources": -2
+                  },
+                  "flags": [],
+                  "technologies": [],
+                  "buildings": [],
+                  "rivalRelation": 0
+                }
+              }
+            ],
+            "animationPreset": "normal"
+          }
+        ]
+      }
+    ],
+    "worldFlags": [
+      "capacity_work_rota",
+      "equal_work_levy",
+      "recalled_work_stewards"
+    ],
+    "storyChainId": null,
+    "animationPreset": "normal",
+    "soundCue": "decision",
+    "cooldown": 4,
+    "localizationKeys": [
+      "card.village_workdays.title",
+      "card.village_workdays.description"
+    ]
+  },
+  {
+    "id": "surety_release",
+    "era": 3,
+    "category": "legacy",
+    "title": {
+      "tr": "Borcu Taşıyan İsim",
+      "en": "The Name Carrying the Debt"
+    },
+    "description": {
+      "tr": "Yazıcılar eski köy kefaletini aynı adı taşıyan kentli bir ailenin hesabına ekledi. Tanık kaydı var, fakat düzeltme başka alacaklıların da yeniden hesap istemesine yol açacak.",
+      "en": "Scribes attached the old village surety to a city family with the same name. A witness record survives, but correcting it may lead other creditors to demand revised accounts."
+    },
+    "artAsset": "card_surety_release",
+    "artDirection": "Bronze city debt hearing, scribe comparing clay tokens and tablet beside adult witnesses, restrained bronze gold and teal, no readable text.",
+    "rarity": "uncommon",
+    "weight": 10,
+    "requirements": [
+      {
+        "flag": "surety_witness_record"
+      }
+    ],
+    "exclusionConditions": [
+      {
+        "flag": "resolved_surety_release"
+      }
+    ],
+    "choices": [
+      {
+        "id": "review",
+        "text": {
+          "tr": "Tanık kaydını aç; yanlış hanenin borcunu kaldır.",
+          "en": "Open the witness record and release the wrongly charged household."
+        },
+        "risk": {
+          "tr": "Sonucu öngörülebilir",
+          "en": "Predictable outcome"
+        },
+        "requirements": [],
+        "immediateEffects": {
+          "stats": {},
+          "flags": [],
+          "technologies": [],
+          "buildings": [],
+          "rivalRelation": 0
+        },
+        "outcomes": [
+          {
+            "id": "result",
+            "probability": 1,
+            "affinity": null,
+            "text": {
+              "tr": "Tahsilat durdu. İsim benzerliği borç sayılmadı; başka hesaplar için emek ayrıldı.",
+              "en": "Collection paused. A matching name was not treated as a debt; workers were assigned to other accounts."
+            },
+            "effect": {
+              "stats": {
+                "resources": -10,
+                "population": 5,
+                "stability": 8
+              },
+              "flags": [
+                "surety_identity_review",
+                "resolved_surety_release"
+              ],
+              "technologies": [],
+              "buildings": [],
+              "rivalRelation": 0,
+              "rivalRelations": {
+                "hunters": -5,
+                "keepers": 7
+              }
+            },
+            "delayedEffects": [
+              {
+                "afterTurns": 5,
+                "minimumEra": 3,
+                "text": {
+                  "tr": "Düzeltilen hane işine döndü; arşiv bakımının payı ödendi.",
+                  "en": "The corrected household returned to work and archive upkeep was paid."
+                },
+                "effect": {
+                  "stats": {
+                    "resources": 5,
+                    "knowledge": 3
+                  },
+                  "flags": [],
+                  "technologies": [],
+                  "buildings": [],
+                  "rivalRelation": 0
+                }
+              }
+            ],
+            "animationPreset": "normal"
+          }
+        ]
+      },
+      {
+        "id": "escrow",
+        "text": {
+          "tr": "Tahılı geçici ayır; bütün hesabı açmadan tanık çağır.",
+          "en": "Hold the grain aside and summon witnesses before opening the whole account."
+        },
+        "risk": {
+          "tr": "Sonucu öngörülebilir",
+          "en": "Predictable outcome"
+        },
+        "requirements": [],
+        "immediateEffects": {
+          "stats": {},
+          "flags": [],
+          "technologies": [],
+          "buildings": [],
+          "rivalRelation": 0
+        },
+        "outcomes": [
+          {
+            "id": "result",
+            "probability": 1,
+            "affinity": null,
+            "text": {
+              "tr": "Alacaklılar bekledi. Aile bu hasatta kendi tahılını kullanamadı.",
+              "en": "Creditors waited. The household could not use its grain this harvest."
+            },
+            "effect": {
+              "stats": {
+                "resources": 5,
+                "authority": 6,
+                "stability": -5
+              },
+              "flags": [
+                "surety_escrow",
+                "resolved_surety_release"
+              ],
+              "technologies": [],
+              "buildings": [],
+              "rivalRelation": 0,
+              "rivalRelations": {
+                "hunters": 6,
+                "keepers": -5
+              }
+            },
+            "delayedEffects": [
+              {
+                "afterTurns": 5,
+                "minimumEra": 3,
+                "text": {
+                  "tr": "Geçici tutulan tahılın korunması beklenenden pahalı oldu.",
+                  "en": "Preserving the held grain cost more than expected."
+                },
+                "effect": {
+                  "stats": {
+                    "resources": -8,
+                    "population": -2
+                  },
+                  "flags": [],
+                  "technologies": [],
+                  "buildings": [],
+                  "rivalRelation": 0
+                }
+              }
+            ],
+            "animationPreset": "normal"
+          }
+        ]
+      },
+      {
+        "id": "limit",
+        "text": {
+          "tr": "Köyde tanınan sınırı uygula; yeni kefaletleri haneyle sınırla.",
+          "en": "Apply the village limit and confine new sureties to the household."
+        },
+        "risk": {
+          "tr": "Sonucu öngörülebilir",
+          "en": "Predictable outcome"
+        },
+        "requirements": [
+          {
+            "flag": "limited_surety"
+          }
+        ],
+        "immediateEffects": {
+          "stats": {},
+          "flags": [],
+          "technologies": [],
+          "buildings": [],
+          "rivalRelation": 0
+        },
+        "outcomes": [
+          {
+            "id": "result",
+            "probability": 1,
+            "affinity": null,
+            "text": {
+              "tr": "Eski sınır genel kurala dönüştü. Geçişte bazı alacaklardan vazgeçildi.",
+              "en": "The old limit became a general rule. Some claims were relinquished during the change."
+            },
+            "effect": {
+              "stats": {
+                "resources": -8,
+                "stability": 10,
+                "knowledge": 5
+              },
+              "flags": [
+                "bounded_city_surety",
+                "resolved_surety_release"
+              ],
+              "technologies": [],
+              "buildings": [],
+              "rivalRelation": 0
+            },
+            "delayedEffects": [
+              {
+                "afterTurns": 5,
+                "minimumEra": 3,
+                "text": {
+                  "tr": "Çocukları borç dışında kalan haneler işe döndü.",
+                  "en": "Households whose children were released from debt returned to work."
+                },
+                "effect": {
+                  "stats": {
+                    "population": 5,
+                    "resources": -2
+                  },
+                  "flags": [],
+                  "technologies": [],
+                  "buildings": [],
+                  "rivalRelation": 0
+                }
+              }
+            ],
+            "animationPreset": "normal"
+          }
+        ]
+      }
+    ],
+    "worldFlags": [
+      "surety_identity_review",
+      "resolved_surety_release",
+      "surety_escrow",
+      "bounded_city_surety"
+    ],
+    "storyChainId": "debt",
+    "animationPreset": "normal",
+    "soundCue": "decision",
+    "cooldown": 4,
+    "localizationKeys": [
+      "card.surety_release.title",
+      "card.surety_release.description"
+    ]
+  },
+  {
+    "id": "harbor_residency",
+    "era": 3,
+    "category": "diplomacy",
+    "title": {
+      "tr": "Limanın Ev Adresi",
+      "en": "A Home Address for the Harbor"
+    },
+    "description": {
+      "tr": "Köyde çatı kuran konukların torunları limanda yük boşaltıyor. Taşkın çizgisinin üstünde ev istiyorlar. Kentin kapısından giren mallar kabul edilirken taşıyanların nerede yaşayacağı belirsiz.",
+      "en": "Descendants of the guests who built village roofs unload ships. They seek homes above the flood line. The city admits their cargo but has not decided where its carriers may live."
+    },
+    "artAsset": "card_harbor_residency",
+    "artDirection": "Bronze harbor families meeting city stewards above flood-marked docks, clay homes and wooden ship, teal mist and bronze dawn.",
+    "rarity": "uncommon",
+    "weight": 10,
+    "requirements": [
+      {
+        "flag": "guest_roof_record"
+      }
+    ],
+    "exclusionConditions": [
+      {
+        "flag": "resolved_harbor_residency"
+      }
+    ],
+    "choices": [
+      {
+        "id": "settle",
+        "text": {
+          "tr": "Güvenli arsayı ayır; mahalle işini bütün sakinlerle paylaş.",
+          "en": "Reserve safe ground and share ward duties among all residents."
+        },
+        "risk": {
+          "tr": "Sonucu öngörülebilir",
+          "en": "Predictable outcome"
+        },
+        "requirements": [],
+        "immediateEffects": {
+          "stats": {},
+          "flags": [],
+          "technologies": [],
+          "buildings": [],
+          "rivalRelation": 0
+        },
+        "outcomes": [
+          {
+            "id": "result",
+            "probability": 1,
+            "affinity": null,
+            "text": {
+              "tr": "Kent arsa gelirinden vazgeçti. Yük taşıyanlar ilk kez kendi mahallesinin bakımını sözleştirdi.",
+              "en": "The city gave up land income. Cargo workers negotiated upkeep of their own ward."
+            },
+            "effect": {
+              "stats": {
+                "resources": -11,
+                "population": 7,
+                "stability": 7
+              },
+              "flags": [
+                "harbor_resident_ward",
+                "resolved_harbor_residency"
+              ],
+              "technologies": [],
+              "buildings": [],
+              "rivalRelation": 0,
+              "rivalRelations": {
+                "hunters": -5,
+                "keepers": 7
+              }
+            },
+            "delayedEffects": [
+              {
+                "afterTurns": 6,
+                "minimumEra": 3,
+                "text": {
+                  "tr": "Yeni mahalle liman bakımına katıldı; araç payı yenilendi.",
+                  "en": "The new ward joined harbor upkeep and renewed its tool share."
+                },
+                "effect": {
+                  "stats": {
+                    "resources": 6,
+                    "environment": 3
+                  },
+                  "flags": [],
+                  "technologies": [],
+                  "buildings": [],
+                  "rivalRelation": 0
+                }
+              }
+            ],
+            "animationPreset": "normal"
+          }
+        ]
+      },
+      {
+        "id": "camp",
+        "text": {
+          "tr": "Liman kampını genişlet; yük mevsimi boyunca barınma ver.",
+          "en": "Expand the dock camp and offer lodging for the cargo season."
+        },
+        "risk": {
+          "tr": "Sonucu öngörülebilir",
+          "en": "Predictable outcome"
+        },
+        "requirements": [],
+        "immediateEffects": {
+          "stats": {},
+          "flags": [],
+          "technologies": [],
+          "buildings": [],
+          "rivalRelation": 0
+        },
+        "outcomes": [
+          {
+            "id": "result",
+            "probability": 1,
+            "affinity": null,
+            "text": {
+              "tr": "Boşaltma hızlandı. İş bitince ailelerin yeniden yer araması gerekecek.",
+              "en": "Unloading accelerated. Families would need another home when the work ended."
+            },
+            "effect": {
+              "stats": {
+                "resources": 10,
+                "authority": 5,
+                "stability": -6
+              },
+              "flags": [
+                "seasonal_harbor_camp",
+                "resolved_harbor_residency"
+              ],
+              "technologies": [],
+              "buildings": [],
+              "rivalRelation": 0,
+              "rivalRelations": {
+                "hunters": 7,
+                "keepers": -6
+              }
+            },
+            "delayedEffects": [
+              {
+                "afterTurns": 6,
+                "minimumEra": 3,
+                "text": {
+                  "tr": "Mevsim sonunda ayrılan işçilerin yerini bulmak yeni erzak istedi.",
+                  "en": "Replacing workers who left at season’s end required more supplies."
+                },
+                "effect": {
+                  "stats": {
+                    "resources": -8,
+                    "population": -3
+                  },
+                  "flags": [],
+                  "technologies": [],
+                  "buildings": [],
+                  "rivalRelation": 0
+                }
+              }
+            ],
+            "animationPreset": "normal"
+          }
+        ]
+      },
+      {
+        "id": "honor",
+        "text": {
+          "tr": "Köydeki kalıcı ev hakkını tanı; taşınma işini ortak üstlen.",
+          "en": "Honor the village’s lasting home right and share the relocation work."
+        },
+        "risk": {
+          "tr": "Sonucu öngörülebilir",
+          "en": "Predictable outcome"
+        },
+        "requirements": [
+          {
+            "flag": "guest_work_right"
+          }
+        ],
+        "immediateEffects": {
+          "stats": {},
+          "flags": [],
+          "technologies": [],
+          "buildings": [],
+          "rivalRelation": 0
+        },
+        "outcomes": [
+          {
+            "id": "result",
+            "probability": 1,
+            "affinity": null,
+            "text": {
+              "tr": "Hak yeni bir konuk iznine çevrilmedi. Güvenli mahalleyi kurmak için kent erzak ayırdı.",
+              "en": "The right was not reduced to a new guest permit. The city reserved supplies to build a safe ward."
+            },
+            "effect": {
+              "stats": {
+                "resources": -9,
+                "population": 6,
+                "stability": 9,
+                "authority": -2
+              },
+              "flags": [
+                "harbor_inherited_right",
+                "resolved_harbor_residency"
+              ],
+              "technologies": [],
+              "buildings": [],
+              "rivalRelation": 0
+            },
+            "delayedEffects": [
+              {
+                "afterTurns": 5,
+                "minimumEra": 3,
+                "text": {
+                  "tr": "Mahalle sakinleri önceki çatı sözünün gerektirdiği bakım payını karşıladı.",
+                  "en": "Ward residents supplied the upkeep share required by the earlier roof promise."
+                },
+                "effect": {
+                  "stats": {
+                    "resources": 4,
+                    "knowledge": 3
+                  },
+                  "flags": [],
+                  "technologies": [],
+                  "buildings": [],
+                  "rivalRelation": 0
+                }
+              }
+            ],
+            "animationPreset": "normal"
+          }
+        ]
+      }
+    ],
+    "worldFlags": [
+      "harbor_resident_ward",
+      "resolved_harbor_residency",
+      "seasonal_harbor_camp"
+    ],
+    "storyChainId": "hospitality",
+    "animationPreset": "normal",
+    "soundCue": "decision",
+    "cooldown": 4,
+    "localizationKeys": [
+      "card.harbor_residency.title",
+      "card.harbor_residency.description"
+    ]
+  },
+  {
+    "id": "furnace_coop",
+    "era": 3,
+    "category": "economy",
+    "title": {
+      "tr": "Ocağın Ortak Payı",
+      "en": "A Shared Stake in the Furnace"
+    },
+    "description": {
+      "tr": "Metal bilgisi kente yayıldı, ama körük ve kalıp birkaç evin elinde. Ustalar ortak bakım karşılığında çırak yetiştirebilir. Siparişi hemen kiraya vermek daha çabuk gelir getirecek.",
+      "en": "Metalworking has spread, but a few households own the bellows and molds. Craftspeople offer apprenticeships in return for shared upkeep. Leasing the order would bring faster income."
+    },
+    "artAsset": "card_furnace_coop",
+    "artDirection": "Bronze craftspeople sharing bellows and clay molds in open workshop, apprentices observing, natural adults, cool teal and small amber furnace glow.",
+    "rarity": "uncommon",
+    "weight": 10,
+    "requirements": [
+      {
+        "technology": "smelting"
+      }
+    ],
+    "exclusionConditions": [
+      {
+        "flag": "resolved_furnace_coop"
+      }
+    ],
+    "choices": [
+      {
+        "id": "cooperate",
+        "text": {
+          "tr": "Bakım payını üstlen; alet kullanımını ortaklaştır.",
+          "en": "Fund upkeep and share access to the tools."
+        },
+        "risk": {
+          "tr": "Sonucu öngörülebilir",
+          "en": "Predictable outcome"
+        },
+        "requirements": [],
+        "immediateEffects": {
+          "stats": {},
+          "flags": [],
+          "technologies": [],
+          "buildings": [],
+          "rivalRelation": 0
+        },
+        "outcomes": [
+          {
+            "id": "result",
+            "probability": 1,
+            "affinity": null,
+            "text": {
+              "tr": "Erzak eğitime ayrıldı. Kalıp sahibi olmak işi öğrenmenin tek yolu olmaktan çıktı.",
+              "en": "Supplies went to training. Owning a mold was no longer the only route to learning the work."
+            },
+            "effect": {
+              "stats": {
+                "resources": -10,
+                "knowledge": 7,
+                "population": 4,
+                "stability": 6
+              },
+              "flags": [
+                "shared_furnace_access",
+                "resolved_furnace_coop"
+              ],
+              "technologies": [],
+              "buildings": [],
+              "rivalRelation": 0,
+              "rivalRelations": {
+                "hunters": -4,
+                "keepers": 6
+              }
+            },
+            "delayedEffects": [
+              {
+                "afterTurns": 5,
+                "minimumEra": 3,
+                "text": {
+                  "tr": "Yeni ustaların küçük siparişi bakımın bir kısmını karşıladı.",
+                  "en": "A small order by new craftspeople covered part of the upkeep."
+                },
+                "effect": {
+                  "stats": {
+                    "resources": 6
+                  },
+                  "flags": [],
+                  "technologies": [],
+                  "buildings": [],
+                  "rivalRelation": 0
+                }
+              }
+            ],
+            "animationPreset": "normal"
+          }
+        ]
+      },
+      {
+        "id": "lease",
+        "text": {
+          "tr": "Siparişi alet sahiplerine ver; bugün pay al.",
+          "en": "Lease the order to tool owners and collect a share today."
+        },
+        "risk": {
+          "tr": "Sonucu öngörülebilir",
+          "en": "Predictable outcome"
+        },
+        "requirements": [],
+        "immediateEffects": {
+          "stats": {},
+          "flags": [],
+          "technologies": [],
+          "buildings": [],
+          "rivalRelation": 0
+        },
+        "outcomes": [
+          {
+            "id": "result",
+            "probability": 1,
+            "affinity": null,
+            "text": {
+              "tr": "Kent payını aldı. Ustalığa giriş yine birkaç hanenin iznine bağlandı.",
+              "en": "The city collected its share. Entry to the craft still depended on a few households’ permission."
+            },
+            "effect": {
+              "stats": {
+                "resources": 11,
+                "authority": 6,
+                "stability": -7
+              },
+              "flags": [
+                "leased_furnace_order",
+                "resolved_furnace_coop"
+              ],
+              "technologies": [],
+              "buildings": [],
+              "rivalRelation": 0,
+              "rivalRelations": {
+                "hunters": 7,
+                "keepers": -6
+              }
+            },
+            "delayedEffects": [
+              {
+                "afterTurns": 5,
+                "minimumEra": 3,
+                "text": {
+                  "tr": "Sonraki siparişte yükselen kira ilk payı tüketti.",
+                  "en": "A higher lease charge on the next order consumed the initial share."
+                },
+                "effect": {
+                  "stats": {
+                    "resources": -12,
+                    "knowledge": -2
+                  },
+                  "flags": [],
+                  "technologies": [],
+                  "buildings": [],
+                  "rivalRelation": 0
+                }
+              }
+            ],
+            "animationPreset": "normal"
+          }
+        ]
+      }
+    ],
+    "worldFlags": [
+      "shared_furnace_access",
+      "resolved_furnace_coop",
+      "leased_furnace_order"
+    ],
+    "storyChainId": "embers",
+    "animationPreset": "normal",
+    "soundCue": "decision",
+    "cooldown": 4,
+    "localizationKeys": [
+      "card.furnace_coop.title",
+      "card.furnace_coop.description"
+    ]
+  },
+  {
+    "id": "gate_ward",
+    "era": 3,
+    "category": "leadership",
+    "title": {
+      "tr": "Kapının Gece Nöbeti",
+      "en": "The Gate’s Night Watch"
+    },
+    "description": {
+      "tr": "Yeni mahalleler gece nöbetine yetişemiyor. Tüccarlar kapının geç kapanmasını, aileler daha az iş günü kaybetmeyi istiyor. Bir grubun nöbeti bütün kentin yasası sayılabilir mi?",
+      "en": "New wards cannot fill the night watch. Merchants want later gate hours; families want fewer lost workdays. Can one faction’s watch become a rule for the entire city?"
+    },
+    "artAsset": "card_gate_ward",
+    "artDirection": "Bronze city gate at blue dusk, adult merchants and household stewards dividing clay watch tokens, modest torchlight, no readable script.",
+    "rarity": "common",
+    "weight": 10,
+    "requirements": [
+      {
+        "stat": "population",
+        "minimum": 35
+      }
+    ],
+    "exclusionConditions": [],
+    "choices": [
+      {
+        "id": "wards",
+        "text": {
+          "tr": "Mahallelerin nöbetini dönüşümlü kur; ortak erzak ver.",
+          "en": "Rotate the watch among wards and supply it from shared stores."
+        },
+        "risk": {
+          "tr": "Sonucu öngörülebilir",
+          "en": "Predictable outcome"
+        },
+        "requirements": [],
+        "immediateEffects": {
+          "stats": {},
+          "flags": [],
+          "technologies": [],
+          "buildings": [],
+          "rivalRelation": 0
+        },
+        "outcomes": [
+          {
+            "id": "result",
+            "probability": 1,
+            "affinity": null,
+            "text": {
+              "tr": "Hazine harcadı. Nöbet, kapıyı tutan grubun ayrıcalığı olmaktan çıktı.",
+              "en": "The treasury paid. The watch ceased to be the gatekeepers’ privilege."
+            },
+            "effect": {
+              "stats": {
+                "resources": -6,
+                "stability": 7,
+                "authority": 2
+              },
+              "flags": [
+                "rotating_gate_wards"
+              ],
+              "technologies": [],
+              "buildings": [],
+              "rivalRelation": 0,
+              "rivalRelations": {
+                "hunters": -3,
+                "keepers": 5
+              }
+            },
+            "delayedEffects": [
+              {
+                "afterTurns": 5,
+                "minimumEra": 3,
+                "text": {
+                  "tr": "Ortak nöbetin kandil ve erzak payı yenilendi.",
+                  "en": "Lamp and supply shares for the common watch were renewed."
+                },
+                "effect": {
+                  "stats": {
+                    "resources": -3,
+                    "knowledge": 2
+                  },
+                  "flags": [],
+                  "technologies": [],
+                  "buildings": [],
+                  "rivalRelation": 0
+                }
+              }
+            ],
+            "animationPreset": "normal"
+          }
+        ]
+      },
+      {
+        "id": "contract",
+        "text": {
+          "tr": "Nöbeti tek gruba bırak; geçiş payıyla öde.",
+          "en": "Contract the watch to one faction and pay it from gate fees."
+        },
+        "risk": {
+          "tr": "Sonucu öngörülebilir",
+          "en": "Predictable outcome"
+        },
+        "requirements": [],
+        "immediateEffects": {
+          "stats": {},
+          "flags": [],
+          "technologies": [],
+          "buildings": [],
+          "rivalRelation": 0
+        },
+        "outcomes": [
+          {
+            "id": "result",
+            "probability": 1,
+            "affinity": null,
+            "text": {
+              "tr": "Kapı açık kaldı. Küçük yük sahipleri nöbetin bedelini daha ağır ödedi.",
+              "en": "The gate stayed open. Small cargo owners bore a heavier share of the watch’s cost."
+            },
+            "effect": {
+              "stats": {
+                "resources": 8,
+                "authority": 7,
+                "stability": -6
+              },
+              "flags": [
+                "contracted_gate_watch"
+              ],
+              "technologies": [],
+              "buildings": [],
+              "rivalRelation": 0,
+              "rivalRelations": {
+                "hunters": 8,
+                "keepers": -7
+              }
+            },
+            "delayedEffects": [
+              {
+                "afterTurns": 5,
+                "minimumEra": 3,
+                "text": {
+                  "tr": "Yükselen geçiş payı bazı küçük yükleri başka yola itti.",
+                  "en": "Higher gate fees sent some small cargoes to another route."
+                },
+                "effect": {
+                  "stats": {
+                    "resources": -7,
+                    "population": -2
+                  },
+                  "flags": [],
+                  "technologies": [],
+                  "buildings": [],
+                  "rivalRelation": 0
+                }
+              }
+            ],
+            "animationPreset": "normal"
+          }
+        ]
+      },
+      {
+        "id": "pact",
+        "text": {
+          "tr": "İki grubun desteğiyle ortak denetimli nöbet kur.",
+          "en": "Use both factions’ support to establish a jointly supervised watch."
+        },
+        "risk": {
+          "tr": "Sonucu öngörülebilir",
+          "en": "Predictable outcome"
+        },
+        "requirements": [
+          {
+            "faction": "hunters",
+            "relationMinimum": 35
+          },
+          {
+            "faction": "keepers",
+            "relationMinimum": 35
+          }
+        ],
+        "immediateEffects": {
+          "stats": {},
+          "flags": [],
+          "technologies": [],
+          "buildings": [],
+          "rivalRelation": 0
+        },
+        "outcomes": [
+          {
+            "id": "result",
+            "probability": 1,
+            "affinity": null,
+            "text": {
+              "tr": "Görüşme erzak istedi. Hiçbir grup tek başına kapı kuralını değiştiremedi.",
+              "en": "Negotiation required supplies. Neither faction could change the gate rule alone."
+            },
+            "effect": {
+              "stats": {
+                "resources": -9,
+                "stability": 10,
+                "knowledge": 4
+              },
+              "flags": [
+                "joint_gate_oversight"
+              ],
+              "technologies": [],
+              "buildings": [],
+              "rivalRelation": 0,
+              "rivalRelations": {
+                "hunters": 3,
+                "keepers": 3
+              }
+            },
+            "delayedEffects": [
+              {
+                "afterTurns": 5,
+                "minimumEra": 3,
+                "text": {
+                  "tr": "Ortak denetim nöbet giderinin bir kısmını görünür kıldı.",
+                  "en": "Joint oversight made part of the watch expenditure accountable."
+                },
+                "effect": {
+                  "stats": {
+                    "resources": 4,
+                    "authority": 3
+                  },
+                  "flags": [],
+                  "technologies": [],
+                  "buildings": [],
+                  "rivalRelation": 0
+                }
+              }
+            ],
+            "animationPreset": "normal"
+          }
+        ]
+      }
+    ],
+    "worldFlags": [
+      "rotating_gate_wards",
+      "contracted_gate_watch",
+      "joint_gate_oversight"
+    ],
+    "storyChainId": null,
+    "animationPreset": "normal",
+    "soundCue": "decision",
+    "cooldown": 4,
+    "localizationKeys": [
+      "card.gate_ward.title",
+      "card.gate_ward.description"
     ]
   }
 ]

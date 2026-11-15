@@ -2,6 +2,16 @@
   "status": "production-incomplete",
   "effects": [
     {
+      "id": "card-open",
+      "status": "prototype",
+      "file": "App/Resources/card-open.wav"
+    },
+    {
+      "id": "choice-soft",
+      "status": "prototype",
+      "file": "App/Resources/choice-soft.wav"
+    },
+    {
       "id": "decision",
       "status": "prototype",
       "file": "App/Resources/decision.wav"

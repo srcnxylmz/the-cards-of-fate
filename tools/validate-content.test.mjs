@@ -29,6 +29,8 @@ const mutations=[
   ['unrecognized condition',c=>c[0].requirements=[{stat:'resources',min:40}],'unknown condition key'],
   ['combined impossible bounds',c=>{c[0].requirements=[{stat:'resources',minimum:80}];c[0].choices[0].requirements=[{stat:'resources',maximum:20}];},'mutually impossible bounds'],
   ['identical strategic outcomes',c=>c[0].choices[1].outcomes=structuredClone(c[0].choices[0].outcomes),'strategically identical choices'],
+  ['unknown decision reference',c=>c[0].requirements=[{lastDecision:'missing.choice'}],'unknown decision reference'],
+  ['contradictory decision reference',c=>c[0].requirements=[{lastDecision:'sacred_fire.burn',notLastDecision:'sacred_fire.burn'}],'contradictory decision reference'],
   ['unknown affinity',c=>c[0].choices[0].outcomes[0].affinity='luck','unknown affinity']
 ];
 for(const [name,mutate,message] of mutations) test(`rejects ${name}`,()=>{

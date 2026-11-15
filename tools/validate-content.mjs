@@ -24,8 +24,14 @@ export function validate(cards, eras) {
     assert(Array.isArray(list),`${label}: conditions must be array`);
     if(!Array.isArray(list)) return;
     for(const condition of list) {
-      assert(Object.keys(condition).every(k=>['stat','minimum','maximum','flag','absentFlag','faction','relationMinimum','relationMaximum','leadership','technology','building'].includes(k)),`${label}: unknown condition key`);
-      assert(condition.stat||condition.flag||condition.absentFlag||condition.faction||condition.leadership||condition.technology||condition.building,`${label}: empty condition`);
+      assert(Object.keys(condition).every(k=>['stat','minimum','maximum','flag','absentFlag','faction','relationMinimum','relationMaximum','leadership','technology','building','lastDecision','notLastDecision'].includes(k)),`${label}: unknown condition key`);
+      assert(condition.stat||condition.flag||condition.absentFlag||condition.faction||condition.leadership||condition.technology||condition.building||condition.lastDecision||condition.notLastDecision,`${label}: empty condition`);
+      for(const field of ['lastDecision','notLastDecision']) if(condition[field]!==undefined) {
+        const [id,choice,...extra]=String(condition[field]).split('.');
+        const source=cards.find(c=>c.id===id);
+        assert(extra.length===0&&source?.choices?.some(c=>c.id===choice),`${label}: unknown decision reference`);
+      }
+      assert(!condition.lastDecision||condition.lastDecision!==condition.notLastDecision,`${label}: contradictory decision reference`);
       if(condition.technology!==undefined) assert(technologies.has(condition.technology),`${label}: unknown technology condition`);
       if(condition.building!==undefined) assert(buildings.has(condition.building),`${label}: unknown building condition`);
       if(condition.faction!==undefined) assert(['hunters','keepers'].includes(condition.faction),`${label}: unknown faction`);

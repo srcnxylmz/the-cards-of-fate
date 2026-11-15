@@ -90,10 +90,10 @@
   {
     "id": "card_green_stone",
     "cardID": "green_stone",
-    "status": "missing",
-    "file": null,
+    "status": "generated-candidate",
+    "file": "App/Assets.xcassets/card_green_stone.imageset/card_green_stone.png",
     "brief": "Potter holding copper droplet near clay kiln, malachite fragments, warm furnace light, smoke overhead.",
-    "license": null
+    "license": "Original AI-generated candidate; built-in imagegen, prompt in generation_prompts.json"
   },
   {
     "id": "card_seed_debt",
@@ -594,10 +594,10 @@
   {
     "id": "card_smoke_shift",
     "cardID": "smoke_shift",
-    "status": "missing",
-    "file": null,
+    "status": "generated-candidate",
+    "file": "App/Assets.xcassets/card_smoke_shift.imageset/card_smoke_shift.png",
     "brief": "Bronze foundry workers stepping from smoke toward roof vents, clay furnace and unfinished tools, restrained ember orange and cool daylight, portrait, no modern machinery.",
-    "license": null
+    "license": "Original AI-generated candidate; built-in imagegen, prompt in generation_prompts.json"
   },
   {
     "id": "card_silt_charter",
@@ -605,6 +605,118 @@
     "status": "missing",
     "file": null,
     "brief": "Bronze envoys beside silted outer waterway, clay work tokens and wooden dredging tools, distant city walls in teal haze, pale morning gold, portrait.",
+    "license": null
+  },
+  {
+    "id": "card_winter_guarantor",
+    "cardID": "winter_guarantor",
+    "status": "missing",
+    "file": null,
+    "brief": "Paleolithic families dividing dried meat beside hide packs, injured adult seated safely, winter blue and hearth ochre, no writing or metal.",
+    "license": null
+  },
+  {
+    "id": "card_guest_path_watch",
+    "cardID": "guest_path_watch",
+    "status": "missing",
+    "file": null,
+    "brief": "Paleolithic hosts and newcomers exchanging hide bundles at a misty mountain pass, open hands, slate and amber light, portrait.",
+    "license": null
+  },
+  {
+    "id": "card_summer_pools",
+    "cardID": "summer_pools",
+    "status": "missing",
+    "file": null,
+    "brief": "Paleolithic water carriers watching deer at shrinking pool, cracked mud, woven containers and hide bags, hard ochre sun, portrait.",
+    "license": null
+  },
+  {
+    "id": "card_hide_rent",
+    "cardID": "hide_rent",
+    "status": "missing",
+    "file": null,
+    "brief": "Paleolithic adults stretching repaired hide over low shelter, lender and young family, rain and muted warm fire, portrait.",
+    "license": null
+  },
+  {
+    "id": "card_council_shelter",
+    "cardID": "council_shelter",
+    "status": "missing",
+    "file": null,
+    "brief": "Paleolithic adults debating two shelter routes with stones on bare ground, approaching clouds, ochre and charcoal, portrait.",
+    "license": null
+  },
+  {
+    "id": "card_kin_repayment",
+    "cardID": "kin_repayment",
+    "status": "missing",
+    "file": null,
+    "brief": "Neolithic family and older witnesses comparing baskets of harvest, clay courtyard, no written tablets or metal, sage morning light.",
+    "license": null
+  },
+  {
+    "id": "card_guest_roofs",
+    "cardID": "guest_roofs",
+    "status": "missing",
+    "file": null,
+    "brief": "Neolithic hosts and newcomers raising reed roof on clay house, adults measuring space with rope, muted sage and clay gold.",
+    "license": null
+  },
+  {
+    "id": "card_ditch_seed",
+    "cardID": "ditch_seed",
+    "status": "missing",
+    "file": null,
+    "brief": "Neolithic farmers lifting woven seed bags beside collapsed earthen ditch, wooden spades, cloudy green light, no metal.",
+    "license": null
+  },
+  {
+    "id": "card_terrace_stones",
+    "cardID": "terrace_stones",
+    "status": "missing",
+    "file": null,
+    "brief": "Neolithic workers placing low dry-stone terrace above clay homes, green regrowth, baskets and stone tools, soft sage light.",
+    "license": null
+  },
+  {
+    "id": "card_village_workdays",
+    "cardID": "village_workdays",
+    "status": "missing",
+    "file": null,
+    "brief": "Neolithic village meeting with pebbles marking workdays, clay roofs and earthen canal, adult families and reed tools, warm sage shade.",
+    "license": null
+  },
+  {
+    "id": "card_surety_release",
+    "cardID": "surety_release",
+    "status": "missing",
+    "file": null,
+    "brief": "Bronze city debt hearing, scribe comparing clay tokens and tablet beside adult witnesses, restrained bronze gold and teal, no readable text.",
+    "license": null
+  },
+  {
+    "id": "card_harbor_residency",
+    "cardID": "harbor_residency",
+    "status": "missing",
+    "file": null,
+    "brief": "Bronze harbor families meeting city stewards above flood-marked docks, clay homes and wooden ship, teal mist and bronze dawn.",
+    "license": null
+  },
+  {
+    "id": "card_furnace_coop",
+    "cardID": "furnace_coop",
+    "status": "missing",
+    "file": null,
+    "brief": "Bronze craftspeople sharing bellows and clay molds in open workshop, apprentices observing, natural adults, cool teal and small amber furnace glow.",
+    "license": null
+  },
+  {
+    "id": "card_gate_ward",
+    "cardID": "gate_ward",
+    "status": "missing",
+    "file": null,
+    "brief": "Bronze city gate at blue dusk, adult merchants and household stewards dividing clay watch tokens, modest torchlight, no readable script.",
     "license": null
   }
 ]

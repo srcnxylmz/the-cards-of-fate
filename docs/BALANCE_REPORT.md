@@ -1,3 +1,7 @@
+# 90-card study — local checkpoint
+
+Production/cost changes and failed intermediate trials are described in PROGRESS.md. Comparative tables will be finalized after the same-seed local runs. Native gate is pending; prior sections below are historical 76-card evidence.
+
 # Measured balance baseline — 2026-11-09
 
 ## 76-card progression and recurrence group — 2026-11-15

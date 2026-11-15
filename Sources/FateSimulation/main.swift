@@ -49,6 +49,10 @@ var firstEligibleCounts: [String: Int] = [:]
 var firstSelectedTurnSums: [String: Int] = [:]
 var firstSelectedCounts: [String: Int] = [:]
 var firstEraDecisionCosts: [String: Int] = [:]
+var metalLoss: [String: Int] = [:]
+var metalDecisionCounts: [String: Int] = [:]
+var metalAcquisitionStats: [String: Int] = [:]
+var metalBlockedRuns: [String: Int] = [:]
 for seed in 0..<count {
     var state = engine.start(seed: UInt64(seed))
     var policy = SeededRandom(state: UInt64(seed) ^ 0xD00D)
@@ -101,7 +105,17 @@ for seed in 0..<count {
         let previousEra = state.era
         let resourcesBefore = state.stats["resources", default: 0]
         var preTransition = state
+        var stageStats = state.stats
+        let trackingMetal = previousEra == 2 && previousTechnologies.contains("smelting")
+        if trackingMetal { metalDecisionCounts[decisionKey, default: 0] += 1 }
         state = try engine.choose(choice.id, in: state) { stage, snapshot in
+            if trackingMetal {
+                for stat in ["population", "stability", "resources"] {
+                    let loss = stageStats[stat, default: 0] - snapshot.stats[stat, default: 0]
+                    if loss > 0 { metalLoss["\(stage == "card" ? decisionKey : stage).\(stat)", default: 0] += loss }
+                }
+            }
+            stageStats = snapshot.stats
             if stage == "card" && previousEra == 1 {
                 firstEraDecisionCosts[card.id, default: 0] += resourcesBefore - snapshot.stats["resources", default: 0]
             }
@@ -117,6 +131,11 @@ for seed in 0..<count {
         for technology in state.technologies.subtracting(previousTechnologies) {
             technologyGains[technology, default: 0] += 1
             technologyTurnSums[technology, default: 0] += state.turn
+            if technology == "smelting" {
+                for stat in ["resources", "population", "stability", "knowledge"] {
+                    metalAcquisitionStats[stat, default: 0] += state.stats[stat, default: 0]
+                }
+            }
         }
         if previousEra < 3, let era = content.eras.first(where: { $0.id == previousEra }) {
             let key = String(previousEra)
@@ -143,6 +162,13 @@ for seed in 0..<count {
         state = engine.acknowledge(state)
     }
     if state.ending == nil { capped += 1 }
+    if state.era == 2 && state.technologies.contains("smelting"), let era = content.eras.first(where: { $0.id == 2 }) {
+        metalBlockedRuns["total", default: 0] += 1
+        for (stat, threshold) in [("knowledge", era.knowledgeThreshold), ("population", era.populationThreshold), ("stability", era.stabilityThreshold)] {
+            if state.stats[stat, default: 0] < threshold { metalBlockedRuns[stat, default: 0] += 1 }
+        }
+        if state.stats["resources"] == 0 { metalBlockedRuns["emptyStores", default: 0] += 1 }
+    }
     turns.append(state.turn)
     totalLeaderTurns += state.leaderTurns
     if hadExile { exileRuns += 1 }
@@ -172,6 +198,8 @@ let report: [String: Any] = [
     "firstEligibleCounts": firstEligibleCounts, "firstEligibleTurnSums": firstEligibleTurnSums,
     "firstSelectedCounts": firstSelectedCounts, "firstSelectedTurnSums": firstSelectedTurnSums,
     "era1NetImmediateResourceCostsByCard": firstEraDecisionCosts,
+    "postSmeltingLossBySource": metalLoss, "postSmeltingDecisionCounts": metalDecisionCounts,
+    "smeltingAcquisitionStatSums": metalAcquisitionStats, "smeltingWithoutBronzeFinalBlockers": metalBlockedRuns,
     "limitation": "Small development deck; capped runs are censored observations, not confirmed endings. Heuristic policies do not establish human skill balance or session duration."
 ]
 let data = try JSONSerialization.data(withJSONObject: report, options: [.prettyPrinted, .sortedKeys])

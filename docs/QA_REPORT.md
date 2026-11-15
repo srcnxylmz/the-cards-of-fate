@@ -1,3 +1,7 @@
+# 90-card QA checkpoint
+
+61 Swift and 31 Node tests passed locally; generation/check/mirror/audio synthesis/audit passed. Five UI tests are implemented (original three flows, five-art fixture and TR/EN normal/large pixel-OCR comparison). They have NOT yet run natively for this revision. No pixel, audio playback or safe-area success claim until actual artifacts are reviewed. Prior 76-card checkpoints below remain historical.
+
 # QA report — 2026-11-09
 
 ## Current 76-card milestone

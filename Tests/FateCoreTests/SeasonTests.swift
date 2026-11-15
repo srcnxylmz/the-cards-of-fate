@@ -14,6 +14,7 @@ final class SeasonTests: XCTestCase {
         var state = original
         state.era = try XCTUnwrap(engine.content.card(id)).era
         state.discovered = Set(engine.content.cards.map(\.id).filter { $0 != id })
+        state.lastSeen[id] = -10000 // Isolate story predicates from incidental fixture draws.
         let drawn = engine.acknowledge(state)
         XCTAssertEqual(drawn.currentCardID, id)
         return drawn
@@ -24,7 +25,8 @@ final class SeasonTests: XCTestCase {
             state = engine.acknowledge(state)
             state.currentCardID = "ochre_border" // controlled turn fixture, no injected delayed flag
             state.stats = Dictionary(uniqueKeysWithValues: Stat.allCases.map { ($0.rawValue, 60) })
-            state = try engine.choose("symbols", in: state)
+            let filler = engine.content.card("ochre_border")!.choices.first { $0.id == "symbols" }!.available(in: state) ? "symbols" : "renew"
+            state = try engine.choose(filler, in: state)
         }
         return state
     }

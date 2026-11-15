@@ -1,0 +1,17 @@
+{
+  "source": "Original deterministic synthesis; tools/generate-feedback.mjs",
+  "license": "Original project source, no third-party recordings",
+  "cues": [
+    {
+      "id": "card-open",
+      "seconds": 0.24,
+      "design": "Soft 330/495 Hz resonant opening; squared sine envelope and exponential decay"
+    },
+    {
+      "id": "choice-soft",
+      "seconds": 0.12,
+      "design": "Seeded low-pass noise plus 660 Hz; bounded envelope"
+    }
+  ],
+  "physicalListeningQA": "pending"
+}

@@ -9,6 +9,7 @@ struct EventCardView: View {
     let language: String
     let reduceMotion: Bool
     let available: (Choice) -> Bool
+    let onReveal: () -> Void
     let onChoose: (Choice) -> Bool
     @Environment(\.dynamicTypeSize) private var typeSize
     @State private var entered = false
@@ -92,12 +93,19 @@ struct EventCardView: View {
             .rotation3DEffect(.degrees(reduceMotion || selected == nil ? 0 : (card.choices.first?.id == selected ? -3 : 3)), axis: (x: 0, y: 1, z: 0))
             .animation(reduceMotion ? nil : .easeInOut(duration: 0.18), value: selected)
             .animation(reduceMotion ? nil : .easeOut(duration: 0.22), value: entered)
-            .onAppear { entered = true }
+            .onAppear { entered = true; onReveal() }
             .onDisappear { pending?.cancel() }
     }
 }
 
 struct UITestAccessibility: ViewModifier {
+    static var usesLegacyStats: Bool {
+        #if DEBUG
+        return ProcessInfo.processInfo.arguments.contains("--ui-testing") && ProcessInfo.processInfo.arguments.contains("--legacy-stat-layout")
+        #else
+        return false
+        #endif
+    }
     static var usesLargeReduced: Bool {
         #if DEBUG
         return ProcessInfo.processInfo.arguments.contains("--ui-testing") && ProcessInfo.processInfo.arguments.contains("--large-text-reduced-motion")

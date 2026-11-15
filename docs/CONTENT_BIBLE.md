@@ -1,8 +1,12 @@
 # Content bible
 
-Editorial principle: each card needs a specific human conflict, an observable cost, competing reasonable values, and consequences that fit the era. Neither option should simply be the same reward in different wording. Turkish is authored naturally, with a complete English counterpart for the current 76-card set.
+Editorial principle: each card needs a specific human conflict, an observable cost, competing reasonable values, and consequences that fit the era. Neither option should simply be the same reward in different wording. Turkish is authored naturally, with a complete English counterpart for the current 90-card set.
 
 ## Current inventory — 2026-11-15
+
+90 events, 30 in each first-three era, 203 choices; all previous 76 IDs preserved. Eight new one-shot histories and six recurring crises deepen debt, guest settlement, agricultural upkeep and city work. Winter promises → village grain surety → city identity review and guest watch → home rights → harbor residence use actual delayed gates and optional branch-dependent decisions, tested in the production selector with controlled era fixtures. Complete-chain editorial approval remains pending.
+
+### Historical 76-card inventory
 
 76 events: 25 Paleolithic, 25 Neolithic, 26 Bronze. All 64 prior IDs retained. 162 choices, four probabilistic decisions, seven thematic chain groups and 35 detected cross-era flag links. Chain grouping is not completed-chain acceptance.
 

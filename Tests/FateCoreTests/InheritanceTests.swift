@@ -36,7 +36,8 @@ final class InheritanceTests: XCTestCase {
             state = engine.acknowledge(state)
             state.currentCardID = "ochre_border" // recurring maintenance decision, no progression technology
             state.stats = Dictionary(uniqueKeysWithValues: Stat.allCases.map { ($0.rawValue, 70) })
-            state = try engine.choose("symbols", in: state)
+            let filler = engine.content.card("ochre_border")!.choices.first { $0.id == "symbols" }!.available(in: state) ? "symbols" : "renew"
+            state = try engine.choose(filler, in: state)
         }
         XCTFail("Delayed history never fired: \(flag)")
         return state

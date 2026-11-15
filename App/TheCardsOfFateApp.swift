@@ -74,7 +74,7 @@ final class GameStore: ObservableObject {
         #if DEBUG
         let arguments = ProcessInfo.processInfo.arguments
         if arguments.contains("--ui-testing"), let index = arguments.firstIndex(of: "--ui-test-card"), index + 1 < arguments.count,
-           ["sacred_fire", "river_tracks", "first_granary"].contains(arguments[index + 1]),
+           ["sacred_fire", "river_tracks", "first_granary", "green_stone", "smoke_shift"].contains(arguments[index + 1]),
            let card = content?.card(arguments[index + 1]) {
             initial.era = card.era; initial.currentCardID = card.id
             initial.discovered.insert(card.id); initial.lastSeen[card.id] = initial.turn
@@ -229,7 +229,14 @@ struct RootView: View {
                 LazyVGrid(columns: typeSize.isAccessibilitySize ? [GridItem(.flexible())] : [GridItem(.adaptive(minimum: 150))], spacing: 12) {
                     ForEach(Stat.allCases, id: \.self) { stat in
                         VStack(alignment: .leading, spacing: 5) {
-                            HStack { Text(statName(stat)).font(.caption); Spacer(); Text("\(state.stats[stat.rawValue, default: 0])").font(.caption.monospacedDigit()) }
+                            if UITestAccessibility.usesLegacyStats {
+                                HStack { Text(statName(stat)); Spacer(); Text("\(state.stats[stat.rawValue, default: 0])") }.font(.caption.monospacedDigit())
+                            } else {
+                                // One text run keeps the label/value in the same layout and first paint.
+                                Text(statName(stat) + "  " + String(state.stats[stat.rawValue, default: 0]))
+                                    .font(.caption.monospacedDigit()).fixedSize(horizontal: false, vertical: true)
+                                    .frame(maxWidth: .infinity, alignment: .leading)
+                            }
                             ProgressView(value: Double(state.stats[stat.rawValue, default: 0]), total: 100).tint(state.stats[stat.rawValue, default: 0] < 20 ? .orange : gold)
                         }.accessibilityElement(children: .ignore).accessibilityLabel("\(statName(stat)), \(state.stats[stat.rawValue, default: 0]) / 100")
                             .accessibilityIdentifier("stat.\(stat.rawValue)").accessibilityValue(String(state.stats[stat.rawValue, default: 0]))
@@ -255,13 +262,13 @@ struct RootView: View {
                         Button(t("Yeni uygarlık", "New civilization")) { begin(.story) }.buttonStyle(.borderedProminent)
                     }.padding(24)
                 } else if let card = store.content?.card(state.currentCardID) {
-                    EventCardView(card: card, era: state.era, buildings: state.buildings, language: language, reduceMotion: reduceMotion, available: { $0.available(in: state) }) { choice in
+                    EventCardView(card: card, era: state.era, buildings: state.buildings, language: language, reduceMotion: reduceMotion, available: { $0.available(in: state) }, onReveal: { store.feedback.openCard(sound: sound) }) { choice in
                         store.choose(choice, sound: sound, haptics: haptics)
                     }.id(card.id)
                 }
                 councilView(state)
             }.padding(.horizontal, 18).padding(.bottom, 28).frame(maxWidth: 550)
-        }
+        }.clipped() // Clip the scrolling viewport at its safe-area boundary.
     }
 
     private func councilView(_ state: GameState) -> some View {
