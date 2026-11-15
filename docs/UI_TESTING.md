@@ -42,3 +42,9 @@ Adds a fifth UI test with TR/EN × normal/accessibility3 and Debug-only legacy/n
 ### Same-frame OCR and economical native reruns
 
 The first image is now captured once and reused for all six numeric crops; OCR processing cannot let later screenshots substitute for the first frame. No delay was added. A manual ui_only workflow input skips Swift unit/simulation repetitions only after a validated_source full SHA is supplied. The job fetches that SHA and rejects changes to App, Sources, Tests, package/project, assets, canonical cards or runtime content/audio/validation tooling. Ordinary pushes and default dispatches retain all checks. A UI-only success must cite the earlier core/simulation evidence separately; skipped steps are never reported as rerun.
+
+## 90-card acceptance result
+
+Successful run 43731255529 at 0be976a: five tests / zero failures, 289.474 seconds; runtime guard passed against ee15f32. Both languages and normal/accessibility3 first frames show all six values in pixels (missing=[]), and scroll/status-bar checks pass. Legacy controls also showed values, so the historical intermittent first-paint cause remains unconfirmed. Two earlier OCR runs falsely missed visibly present TR 55; original crops proved it and recognition resolution/boundaries were corrected without expected-digit hints or removing assertions. Details and source-separated core evidence are in QA_REPORT.md. Audio starts were not recoverable from postmortem logs; do not claim audible playback acceptance.
+
+UI-only jobs skip heavy simulations. Their historical quality-reports upload in run 43731255529 is not fresh simulation evidence; use full-run artifact 14167434373 instead. Follow-up workflow housekeeping disables that stale upload for future UI-only runs while always retaining UI evidence. This artifact-only condition changes no tested runtime or UI behavior.
