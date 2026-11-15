@@ -71,34 +71,34 @@ Sampled after world/council/succession effects, immediately before the real tran
 
 ## Blocked transition observations
 
-Counts are per decision, not per run. Conditions overlap; a single decision may be blocked by several gates. Ending is a separate blocker. Era 3→4 is excluded because era 4 has no authored playable deck.
+Counts are per decision, not per run. Conditions overlap; a single decision may be blocked by several gates. Terminal status is not reported here: the snapshot precedes terminal predicates, so its ending field is not a valid end-state measurement. Actual endings are counted in the JSON endings distribution; terminal conditions also fail population or stability gates. Era 3→4 is excluded because era 4 has no authored playable deck.
 
-| Deck | Policy | Era | Checks | Missing technology | Low knowledge | Low population | Low stability | Ended |
-|---|---|---|---:|---:|---:|---:|---:|---:|
-| 52 | random | 1 | 164262 | 145945 | 79773 | 25926 | 135 | 0 |
-| 52 | random | 2 | 70998 | 48805 | 12346 | 22235 | 12044 | 0 |
-| 52 | survival | 1 | 1234700 | 1234700 | 107456 | 225836 | 1 | 0 |
-| 52 | survival | 2 | 0 | 0 | 0 | 0 | 0 | 0 |
-| 52 | knowledge | 1 | 351254 | 339499 | 39454 | 73132 | 0 | 0 |
-| 52 | knowledge | 2 | 841097 | 822969 | 12516 | 706 | 745096 | 0 |
-| 52 | progression | 1 | 142654 | 124477 | 39459 | 10383 | 4 | 0 |
-| 52 | progression | 2 | 139190 | 73035 | 10528 | 5810 | 63974 | 0 |
-| 64 | random | 1 | 177034 | 159062 | 81261 | 31036 | 682 | 0 |
-| 64 | random | 2 | 70807 | 48077 | 9666 | 23815 | 16969 | 0 |
-| 64 | survival | 1 | 1242805 | 1242805 | 118305 | 220945 | 362 | 0 |
-| 64 | survival | 2 | 0 | 0 | 0 | 0 | 0 | 0 |
-| 64 | knowledge | 1 | 428342 | 418076 | 41818 | 93484 | 12 | 0 |
-| 64 | knowledge | 2 | 745006 | 727392 | 10527 | 1154 | 665633 | 0 |
-| 64 | progression | 1 | 171773 | 150962 | 42779 | 16008 | 133 | 0 |
-| 64 | progression | 2 | 227843 | 87121 | 8577 | 14761 | 155244 | 0 |
-| 76 | random | 1 | 160108 | 136224 | 86099 | 23759 | 2526 | 0 |
-| 76 | random | 2 | 102973 | 73777 | 15904 | 35658 | 28138 | 0 |
-| 76 | survival | 1 | 1360397 | 1360397 | 160253 | 711801 | 33994 | 0 |
-| 76 | survival | 2 | 0 | 0 | 0 | 0 | 0 | 0 |
-| 76 | knowledge | 1 | 217988 | 200049 | 47124 | 72099 | 3709 | 0 |
-| 76 | knowledge | 2 | 235491 | 216337 | 18214 | 3603 | 155579 | 0 |
-| 76 | progression | 1 | 90812 | 71964 | 44371 | 2482 | 681 | 0 |
-| 76 | progression | 2 | 152965 | 87857 | 15579 | 18227 | 85178 | 0 |
+| Deck | Policy | Era | Checks | Missing technology | Low knowledge | Low population | Low stability |
+|---|---|---|---:|---:|---:|---:|---:|
+| 52 | random | 1 | 164262 | 145945 | 79773 | 25926 | 135 |
+| 52 | random | 2 | 70998 | 48805 | 12346 | 22235 | 12044 |
+| 52 | survival | 1 | 1234700 | 1234700 | 107456 | 225836 | 1 |
+| 52 | survival | 2 | 0 | 0 | 0 | 0 | 0 |
+| 52 | knowledge | 1 | 351254 | 339499 | 39454 | 73132 | 0 |
+| 52 | knowledge | 2 | 841097 | 822969 | 12516 | 706 | 745096 |
+| 52 | progression | 1 | 142654 | 124477 | 39459 | 10383 | 4 |
+| 52 | progression | 2 | 139190 | 73035 | 10528 | 5810 | 63974 |
+| 64 | random | 1 | 177034 | 159062 | 81261 | 31036 | 682 |
+| 64 | random | 2 | 70807 | 48077 | 9666 | 23815 | 16969 |
+| 64 | survival | 1 | 1242805 | 1242805 | 118305 | 220945 | 362 |
+| 64 | survival | 2 | 0 | 0 | 0 | 0 | 0 |
+| 64 | knowledge | 1 | 428342 | 418076 | 41818 | 93484 | 12 |
+| 64 | knowledge | 2 | 745006 | 727392 | 10527 | 1154 | 665633 |
+| 64 | progression | 1 | 171773 | 150962 | 42779 | 16008 | 133 |
+| 64 | progression | 2 | 227843 | 87121 | 8577 | 14761 | 155244 |
+| 76 | random | 1 | 160108 | 136224 | 86099 | 23759 | 2526 |
+| 76 | random | 2 | 102973 | 73777 | 15904 | 35658 | 28138 |
+| 76 | survival | 1 | 1360397 | 1360397 | 160253 | 711801 | 33994 |
+| 76 | survival | 2 | 0 | 0 | 0 | 0 | 0 |
+| 76 | knowledge | 1 | 217988 | 200049 | 47124 | 72099 | 3709 |
+| 76 | knowledge | 2 | 235491 | 216337 | 18214 | 3603 | 155579 |
+| 76 | progression | 1 | 90812 | 71964 | 44371 | 2482 | 681 |
+| 76 | progression | 2 | 152965 | 87857 | 15579 | 18227 | 85178 |
 
 ## Eligible but unselected discovery events
 

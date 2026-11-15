@@ -180,3 +180,7 @@ The 48-card candidate still reused completed smelting/writing discoveries and bu
 ### Native compilation correction
 
 Run 43708295663 at 3f8ae37 passed content/check, 53 Swift tests and all five simulation runs, then failed iOS compilation: accessibilityReduceMotion is a read-only EnvironmentValues key in Xcode. Removed environment writes; production still reads the real system setting, while Debug-only test flags can additionally disable motion. Dynamic Type uses its supported view modifier. No game rules/content or simulation scores changed, so full local simulations were not repeated. Corrected native run is pending.
+
+### UI evidence lifecycle correction
+
+Run 43708816346 at a63ae44 passed content/check, 53 Swift tests, five simulations, iPhone SE (3rd generation) iOS 18.5 build/install/launch and all three existing UI tests. The new illustrated-card test completed its assertions but failed during teardown: the last fixture terminated the app before final screenshot capture. Moved fixture termination before each launch, leaving the final app running for teardown evidence. This is a test lifecycle correction, not a gameplay change. The report formatter also removes an invalid all-zero terminal-blocker column: its snapshot precedes terminal predicates. The four gate counters and actual ending distributions remain usable; no simulation rerun is needed for this report-only clarification. Corrected native run remains pending.

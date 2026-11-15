@@ -25,6 +25,7 @@ final class FateSmokeTests: XCTestCase {
 
     func testIllustratedCardsAndLargeTextReducedMotion() throws {
         for (id, language, large) in [("sacred_fire", "tr", false), ("river_tracks", "en", false), ("first_granary", "tr", true)] {
+            app.terminate()
             launch(language: language, reset: true, extra: ["--ui-test-card", id] + (large ? ["--large-text-reduced-motion"] : []))
             tap(element("menu.newGame"))
             XCTAssertEqual(element("card.title").value as? String, id)
@@ -37,7 +38,6 @@ final class FateSmokeTests: XCTestCase {
             XCTAssertTrue(element("result.title").waitForExistence(timeout: 10))
             XCTAssertEqual(element("game.turn").value as? String, "1")
             capture("\(language)-art-\(id)-result")
-            app.terminate()
         }
     }
 
