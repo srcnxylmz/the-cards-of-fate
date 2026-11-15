@@ -232,3 +232,7 @@ Remaining: progression Bronze access regression (74.80% → 70.34%), high surviv
 ### Survival lifetime correction before native acceptance
 
 The pre-food 90 draft reduced survival repetition to 63.39% largely alongside a shorter mean lifetime (68.641 vs 136.0397). A same-seed 10,000-run isolated food study raised the new dry/cache alternatives to 12 immediate supplies while preserving ecological costs and delayed spoilage. Their return stays below the risky feast/cross alternatives (17/18). Survival then reached mean 101.5947, repeat 75.2792%, 51 living caps, still era 1. Adopted this measured tradeoff; no claim that duration is fully balanced. Pre-food reports/deck retained separately. Native run e9d9e95 is obsolete and will be cancelled before publishing the corrected source.
+
+### Fixed-frame OCR verification
+
+Review found that the initial OCR helper could take a new screenshot for each stat. It now reuses one first-frame image for all visible values. Only the UI test and workflow change; runtime identity is guarded against ee15f32710c51b8e8148ebcbd4440aba3cfaa6ef before any UI-only rerun. Ordinary pushes/default dispatch still run full validation. Native acceptance is pending.

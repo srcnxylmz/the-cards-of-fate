@@ -55,7 +55,7 @@ final class FateSmokeTests: XCTestCase {
                 launch(language:language,reset:true,extra:options)
                 tap(element("menu.newGame"))
                 XCTAssertTrue(element("card.title").waitForExistence(timeout:10))
-                capture("stats-first-\(language)-\(large)-legacy-\(legacy)")
+                let firstFrame = capture("stats-first-\(language)-\(large)-legacy-\(legacy)")
                 var visible=0, missing:[String]=[]
                 for stat in stats {
                     let row=element("stat."+stat)
@@ -63,7 +63,7 @@ final class FateSmokeTests: XCTestCase {
                     if frame.minY >= 24 && frame.maxY <= app.frame.maxY-4 {
                         visible += 1
                         let expected=String(stat == "authority" ? 40 : stat == "knowledge" ? 28 : stat == "environment" ? 70 : 55)
-                        let text=try pixels(row,name:"first-\(language)-\(large)-\(legacy)-\(stat)")
+                        let text=try pixels(row,name:"first-\(language)-\(large)-\(legacy)-\(stat)", screenshot:firstFrame)
                         if !numbers(text).contains(expected) { missing.append(stat+":"+text) }
                     }
                 }
@@ -106,8 +106,8 @@ final class FateSmokeTests: XCTestCase {
         try VNImageRequestHandler(cgImage:image,options:[:]).perform([request])
         return (request.results ?? []).compactMap { $0.topCandidates(1).first?.string }.joined(separator:" ")
     }
-    private func pixels(_ element:XCUIElement,name:String) throws -> String {
-        let shot=app.screenshot().image
+    private func pixels(_ element:XCUIElement,name:String, screenshot:UIImage? = nil) throws -> String {
+        let shot=screenshot ?? app.screenshot().image
         let cg=try XCTUnwrap(shot.cgImage)
         let scale=CGFloat(cg.width)/app.frame.width
         let rect=element.frame.offsetBy(dx:-app.frame.minX,dy:-app.frame.minY)
@@ -148,11 +148,13 @@ final class FateSmokeTests: XCTestCase {
     private func element(_ id: String) -> XCUIElement {
         app.descendants(matching: .any).matching(identifier: id).firstMatch
     }
-    private func capture(_ name: String) {
-        let attachment = XCTAttachment(screenshot: app.screenshot())
+    @discardableResult private func capture(_ name: String) -> UIImage {
+        let snapshot = app.screenshot().image
+        let attachment = XCTAttachment(image: snapshot)
         attachment.name = name
         attachment.lifetime = .keepAlways
         add(attachment)
+        return snapshot
     }
     private func top() {
         for _ in 0..<5 { app.swipeDown() }

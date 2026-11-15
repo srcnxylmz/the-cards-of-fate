@@ -38,3 +38,7 @@ Original three flows remain. A fourth test displays sacred_fire, river_tracks an
 ## 90-card pixel and sound checkpoint (pending execution)
 
 Adds a fifth UI test with TR/EN × normal/accessibility3 and Debug-only legacy/new stat layout controls. Vision OCR reads actual screenshot crops, checks the first visible numbers before scrolling and every number after reachability scrolling; a separate status-strip OCR guard rejects game text behind the status bar. Legacy observations are retained for diagnosis; all production cases must pass. No fixed wait was introduced. Five illustrated card fixtures now include green_stone/smoke_shift with sound enabled. Debug unified logs report AVAudioPlayer start/duration/errors. Existing persistence/council assertions remain. Actual A/B findings, images and audio results must be recorded after the native run.
+
+### Same-frame OCR and economical native reruns
+
+The first image is now captured once and reused for all six numeric crops; OCR processing cannot let later screenshots substitute for the first frame. No delay was added. A manual ui_only workflow input skips Swift unit/simulation repetitions only after a validated_source full SHA is supplied. The job fetches that SHA and rejects changes to App, Sources, Tests, package/project, assets, canonical cards or runtime content/audio/validation tooling. Ordinary pushes and default dispatches retain all checks. A UI-only success must cite the earlier core/simulation evidence separately; skipped steps are never reported as rerun.
