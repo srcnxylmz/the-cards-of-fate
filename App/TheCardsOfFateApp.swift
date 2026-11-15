@@ -226,7 +226,7 @@ struct RootView: View {
                     Spacer()
                     Button { panel = .history } label: { Image(systemName: "book.closed").frame(width: 44, height: 44) }.accessibilityLabel(t("Uygarlık tarihim", "My civilization history"))
                 }
-                LazyVGrid(columns: Array(repeating: GridItem(.flexible()), count: typeSize.isAccessibilitySize ? 1 : 3), spacing: 12) {
+                LazyVGrid(columns: typeSize.isAccessibilitySize ? [GridItem(.flexible())] : [GridItem(.adaptive(minimum: 150))], spacing: 12) {
                     ForEach(Stat.allCases, id: \.self) { stat in
                         VStack(alignment: .leading, spacing: 5) {
                             HStack { Text(statName(stat)).font(.caption); Spacer(); Text("\(state.stats[stat.rawValue, default: 0])").font(.caption.monospacedDigit()) }

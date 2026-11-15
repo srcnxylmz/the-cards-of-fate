@@ -41,10 +41,15 @@ struct EventCardView: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 16) {
             if UIImage(named: card.artAsset) != nil {
-                ZStack {
-                    accent.opacity(0.08)
-                    Image(card.artAsset).resizable().scaledToFill().blur(radius: 20).opacity(0.18)
-                    Image(card.artAsset).resizable().scaledToFit()
+                GeometryReader { geometry in
+                    ZStack {
+                        accent.opacity(0.08)
+                        Image(card.artAsset).resizable().scaledToFill()
+                            .frame(width: geometry.size.width, height: geometry.size.height)
+                            .clipped().blur(radius: 20).opacity(0.18)
+                        Image(card.artAsset).resizable().scaledToFit()
+                            .frame(width: geometry.size.width, height: geometry.size.height)
+                    }
                 }
                 .frame(height: typeSize.isAccessibilitySize ? 140 : 210).clipped()
                 .clipShape(RoundedRectangle(cornerRadius: 14))

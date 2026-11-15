@@ -30,6 +30,7 @@ final class FateSmokeTests: XCTestCase {
             tap(element("menu.newGame"))
             XCTAssertEqual(element("card.title").value as? String, id)
             XCTAssertEqual(element("card.art").value as? String, "card_\(id)")
+            if large { app.swipeUp() }
             capture("\(language)-art-\(id)-\(large ? "large-reduced-motion" : "standard")")
             let second = app.buttons.matching(NSPredicate(format: "identifier BEGINSWITH %@", "choice.")).element(boundBy: 1)
             reveal(second)
