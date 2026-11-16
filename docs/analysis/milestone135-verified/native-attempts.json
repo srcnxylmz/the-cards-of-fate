@@ -1,0 +1,35 @@
+{
+  "source": "80a7bf55253ee5b16350ca973ecdd6a0e9da8bc0",
+  "runID": 43908707917,
+  "url": "https://github.com/srcnxylmz/the-cards-of-fate/actions/runs/43908707917",
+  "nativeAccepted": false,
+  "artifacts": 0,
+  "attempts": [
+    {
+      "attempt": 1,
+      "jobID": 133444441298,
+      "conclusion": "failure",
+      "runnerID": 0,
+      "executedSteps": 0,
+      "reason": "Account payment/spending-limit block before runner allocation; separately an informational macOS arm64 capacity notice"
+    },
+    {
+      "attempt": 2,
+      "jobID": 133446009124,
+      "conclusion": "failure",
+      "runnerID": 0,
+      "executedSteps": 0,
+      "reason": "Account payment/spending-limit block before runner allocation; separately an informational macOS arm64 capacity notice"
+    },
+    {
+      "attempt": 3,
+      "jobID": 133447509389,
+      "conclusion": "failure",
+      "runnerID": 0,
+      "executedSteps": 0,
+      "reason": "Account payment/spending-limit block before runner allocation; separately an informational macOS arm64 capacity notice"
+    }
+  ],
+  "userReportedBillingFixedAfterAttempt1": true,
+  "note": "Attempts2 and3 retain the same account-block annotation. Do not claim any macOS/iOS/UI execution for this source. Retry the same source run after owner Actions billing access is restored."
+}

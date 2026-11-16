@@ -1,5 +1,5 @@
 {
-  "status": "local six cohorts complete; native pending",
+  "status": "local six cohorts complete; native account-blocked before execution",
   "baseline": "0592d02fdc47a368e5cb340c92f5b478e4b2df3e",
   "runsPerPolicy": 10000,
   "seeds": "0..<10000",
@@ -24,5 +24,8 @@
     "tools/content/stewardship-events.mjs": "28f2f7d25bf4a21a4b95d4aff94081039d1722cb66a2a73c90294a72a47072f3"
   },
   "measuredDeckSHA256": "0a4420fbf988708de918c1e8994dc26d18969c609404be9c1434d0229413cb8d",
-  "descriptionOnlyClarification": "After the measured build, sowing_crews description changed from shared-store repairs to grain-store cover repairs, supporting both actual public/private storage histories. Deep comparison after removing description fields is identical. No requirements, effects, outcomes, RNG, score or reported field changed; full native reports must match every field."
+  "descriptionOnlyClarification": "After the measured build, sowing_crews description changed from shared-store repairs to grain-store cover repairs, supporting both actual public/private storage histories. Deep comparison after removing description fields is identical. No requirements, effects, outcomes, RNG, score or reported field changed; full native reports must match every field.",
+  "nativeRun": 43908707917,
+  "nativeSource": "80a7bf55253ee5b16350ca973ecdd6a0e9da8bc0",
+  "nativeAttemptsFile": "native-attempts.json"
 }
