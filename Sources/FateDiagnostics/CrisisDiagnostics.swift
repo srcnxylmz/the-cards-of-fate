@@ -132,6 +132,8 @@ public struct CrisisDiagnostics {
             return index == steps.count
         }
         let paths: [String: [(String, Set<String>)]] = [
+            "pasture.shared": [("herd_truce",["share"]),("pasture_pledge",["honor","rotate"]),("grazing_appeal",["rotation","credit"])],
+            "pasture.private": [("herd_truce",["guard"]),("pasture_pledge",["enclose"]),("grazing_appeal",["lease"])],
             "repair.shared": [("flint_fragments",["stock"]),("potter_lease",["commons"]),("copper_recast",["common"]),("mold_audit",["partners","charter"])],
             "repair.private": [("flint_fragments",["barter"]),("potter_lease",["trial","repairers"]),("copper_recast",["repair","trial"]),("mold_audit",["lease","charter"])],
             "water.preserved": [("salmon_weir",["open"]),("reed_bank",["buffer"]),("roof_cistern",["reeds"]),("cistern_account",["inherited","audit"])],

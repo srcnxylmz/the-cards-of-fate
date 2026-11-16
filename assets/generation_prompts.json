@@ -210,5 +210,103 @@
       "source": "exec-cb81f7af-70eb-4080-a6c7-b019d4dcd67e.png",
       "sha256": "66f90e6fa32def7451771a497df24464d7b7a6b1350b66eef392ce22323af043"
     }
+  },
+  {
+    "asset": "card_herd_truce",
+    "tool": "built-in imagegen",
+    "prompt": "Use case: historical-scene. Original premium portrait event-card illustration for The Cards of Fate, herd_truce. Human conflict: The migrating herd passes between two camps’ hunting grounds. Neighbors propose leaving animals with young alone. The chief hunter asks why those who went hungry before should wait again this year. Scene: Paleolithic adult hunters negotiating beside distant migrating deer with young, lowered flint spears, hide cloaks, ochre grass and cold dawn; no fences, metal or writing. Era: Paleolithic: stone, bone and hide only; ochre/charcoal and winter or dawn light. Cinematic painterly historical realism consistent with the existing hearth, river, granary and copper-workshop collection; natural anatomy, expressive adult faces/hands, tactile materials, restrained emotion. Portrait 2:3, comfortably framed central silhouettes readable on iPhone. Original composition. No text, readable lettering, logo, border, watermark, modern objects or copied game designs.",
+    "status": "generated-candidate; historical and device QA pending",
+    "generation": {
+      "type": "generated",
+      "tool": "built-in imagegen",
+      "model": "not exposed by built-in tool",
+      "generatedAt": null,
+      "registeredAt": "2026-11-16T16:01:50.547Z",
+      "mode": "generation",
+      "source": "exec-28304511-5e28-43d7-a404-595264450ce9.png",
+      "sha256": "96e5550a4daa487e56f6b18dc843243a0bb9b4b2749e071cd2a799db755a0e77"
+    }
+  },
+  {
+    "asset": "card_ore_wash",
+    "tool": "built-in imagegen",
+    "prompt": "Use case: historical-scene. Original premium portrait event-card illustration for The Cards of Fate, ore_wash. Human conflict: A glint shows in waste stone from the repaired kiln. A stone sorter requests grinding supplies and fuel for a trial. A pigment trader can buy it today; the trial may yield no metal. Scene: Late Neolithic adult craftspeople examining a tiny copper bead in crushed green ore beside a low clay crucible hearth, stone grinding slab and clay bowls, sage dusk, no iron, coins or finished bronze weapons. Era: Neolithic: clay, reed, wood and stone; sage/clay light, no finished bronze equipment unless explicitly discovered in the brief. Cinematic painterly historical realism consistent with the existing hearth, river, granary and copper-workshop collection; natural anatomy, expressive adult faces/hands, tactile materials, restrained emotion. Portrait 2:3, comfortably framed central silhouettes readable on iPhone. Original composition. No text, readable lettering, logo, border, watermark, modern objects or copied game designs.",
+    "status": "generated-candidate; historical and device QA pending",
+    "generation": {
+      "type": "generated",
+      "tool": "built-in imagegen",
+      "model": "not exposed by built-in tool",
+      "generatedAt": null,
+      "registeredAt": "2026-11-16T16:01:50.611Z",
+      "mode": "generation",
+      "source": "exec-309878ef-693b-49ce-a699-9c43b86e66e9.png",
+      "sha256": "9bb7804056f213622142466092f18af91290f7ccabcbe89e2cf7bba81a0c5730"
+    }
+  },
+  {
+    "asset": "card_pasture_pledge",
+    "tool": "built-in imagegen",
+    "prompt": "Use case: historical-scene. Original premium portrait event-card illustration for The Cards of Fate, pasture_pledge. Human conflict: The old hunting agreement now concerns village herds. On drying pasture, one household claims the well and another the guarded crossing. Shared grazing now requires sharing upkeep too. Scene: Neolithic adult herders disputing a dry communal pasture beside cattle and small hand-dug well, wooden staffs and clay water bowls, sage afternoon, no fences of wire or writing. Era: Neolithic: clay, reed, wood and stone; sage/clay light, no finished bronze equipment unless explicitly discovered in the brief. Cinematic painterly historical realism consistent with the existing hearth, river, granary and copper-workshop collection; natural anatomy, expressive adult faces/hands, tactile materials, restrained emotion. Portrait 2:3, comfortably framed central silhouettes readable on iPhone. Original composition. No text, readable lettering, logo, border, watermark, modern objects or copied game designs.",
+    "status": "generated-candidate; historical and device QA pending",
+    "generation": {
+      "type": "generated",
+      "tool": "built-in imagegen",
+      "model": "not exposed by built-in tool",
+      "generatedAt": null,
+      "registeredAt": "2026-11-16T16:01:50.662Z",
+      "mode": "generation",
+      "source": "exec-44305e2b-7981-481b-b919-04b7a73e63db.png",
+      "sha256": "3d41de445fd02bb2997f7445980b0a8d43c0cc430888dda027c43227bc775a90"
+    }
+  },
+  {
+    "asset": "card_slag_basin",
+    "tool": "built-in imagegen",
+    "prompt": "Use case: historical-scene. Original premium portrait event-card illustration for The Cards of Fate, slag_basin. Human conflict: Rain has filled the pit receiving casting waste. Water runs cloudy below. Craftspeople want another pit without stopping production; water carriers want the old one emptied first. Scene: Bronze adult foundry workers lining a small slag settling basin with clay while water carriers wait below, low mudbrick furnaces and simple bronze tools, gold and teal, no industrial chimneys. Era: Bronze Age: clay-brick, timber, bronze and woven textiles; bronze gold and cool teal daylight. Cinematic painterly historical realism consistent with the existing hearth, river, granary and copper-workshop collection; natural anatomy, expressive adult faces/hands, tactile materials, restrained emotion. Portrait 2:3, comfortably framed central silhouettes readable on iPhone. Original composition. No text, readable lettering, logo, border, watermark, modern objects or copied game designs.",
+    "status": "generated-candidate; historical and device QA pending",
+    "generation": {
+      "type": "generated",
+      "tool": "built-in imagegen",
+      "model": "not exposed by built-in tool",
+      "generatedAt": null,
+      "registeredAt": "2026-11-16T16:01:50.714Z",
+      "mode": "generation",
+      "source": "exec-d7ccce6b-e30c-461b-88e6-04b6350e3a69.png",
+      "sha256": "6a74fc92063b0939eb016fae4ec6be75fb5e5415da46337e3573607dfb6a251e"
+    }
+  },
+  {
+    "asset": "card_grazing_appeal",
+    "tool": "built-in imagegen",
+    "prompt": "Use case: historical-scene. Original premium portrait event-card illustration for The Cards of Fate, grazing_appeal. Human conflict: When the old pasture households bring herds to the city, the gatekeeper asks for a second share. Well workers and crossing guards refuse to pay twice. The scribe notes that past contributions do not erase today’s gate work. Scene: Bronze city gate hearing with adult herders, gate workers and civic scribe comparing clay counters beside cattle, bronze gold and teal shade, no coins or readable text. Era: Bronze Age: clay-brick, timber, bronze and woven textiles; bronze gold and cool teal daylight. Cinematic painterly historical realism consistent with the existing hearth, river, granary and copper-workshop collection; natural anatomy, expressive adult faces/hands, tactile materials, restrained emotion. Portrait 2:3, comfortably framed central silhouettes readable on iPhone. Original composition. No text, readable lettering, logo, border, watermark, modern objects or copied game designs.",
+    "status": "superseded: coin-like disks replaced by clay counters before registration",
+    "generation": {
+      "type": "generated",
+      "tool": "built-in imagegen",
+      "model": "not exposed by built-in tool",
+      "generatedAt": null,
+      "source": "exec-f660ab9f-163d-473b-8017-eccbfc09aa2d.png",
+      "sha256": "563834a78f088cf519c0b46454aaacd69e55a6c9b53dfff45343039bcb036f1b"
+    }
+  },
+  {
+    "asset": "card_grazing_appeal",
+    "tool": "built-in imagegen",
+    "prompt": "Edit only this Bronze Age city-gate hearing illustration. Preserve all people, faces, cattle, city gate, clothing, lighting, composition, portrait 2:3 framing and painterly style. Correct the anachronistic payment props: replace the two shiny round coin-like disks in the standing official's raised hand with two clearly thick, matte terracotta clay accounting tokens, one small cone and one irregular square, pinched clay texture, no metallic surfaces or coin rims. Replace the uniform flat round pieces on the table with assorted thick small clay cones, cubes and ovals used as accounting counters; matte unglazed earth red, clearly not coins, no inscriptions. The seated scribe's tablet must remain clay without readable writing. No money, coins, lettering, logos or new modern objects. Do not change anything else.",
+    "status": "generated-candidate; historical and device QA pending",
+    "generation": {
+      "type": "generated",
+      "tool": "built-in imagegen",
+      "model": "not exposed by built-in tool",
+      "generatedAt": null,
+      "registeredAt": "2026-11-16T16:03:10.562Z",
+      "mode": "edit",
+      "reference": {
+        "file": "exec-f660ab9f-163d-473b-8017-eccbfc09aa2d.png",
+        "sha256": "563834a78f088cf519c0b46454aaacd69e55a6c9b53dfff45343039bcb036f1b"
+      },
+      "source": "exec-5347e266-37ed-479e-8c3b-0eb757b120d1.png",
+      "sha256": "fa0a2697ef313b930bd1fea5b09f5c7b93e10b5ca8c49146ace9549d9581ccb8"
+    }
   }
 ]

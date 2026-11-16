@@ -1,0 +1,28 @@
+{
+  "status": "local six cohorts complete; native pending",
+  "baseline": "0592d02fdc47a368e5cb340c92f5b478e4b2df3e",
+  "runsPerPolicy": 10000,
+  "seeds": "0..<10000",
+  "cap": 500,
+  "policies": [
+    "random",
+    "survival",
+    "knowledge",
+    "progression",
+    "recovery",
+    "survival-council"
+  ],
+  "hashes": {
+    "Sources/FateCore/GameEngine.swift": "f1e17cf8444f412e4e57ec0c0576cb8a0583f8bd05c080972ea8f729a5261c25",
+    "Sources/FateCore/Models.swift": "364f0756e2a9de59e25fc8e04805ce614d124a952a7855bf01dd9024b846e211",
+    "Sources/FateCore/SimulationPolicy.swift": "f505d5bae8e657b04c079af86862810b4115873a66f9cb30d7baa0618b930af0",
+    "Sources/FateCore/RecoveryPolicy.swift": "058a6be9d66ac16ce7a212f0e38e95454af108b404947b7572568309aeca7767",
+    "Sources/FateCore/Content/cards.json": "3c9d8730ebc6d7c8a7707f5b7914dd2fd9c97c40f1f14b048466e61cd05542b8",
+    "Sources/FateDiagnostics/DevelopmentDiagnostics.swift": "5338f16d4c5bd01d2813b3871c82fe8eb718db0754d0d1b0ce7b9831123d38ae",
+    "Sources/FateDiagnostics/CrisisDiagnostics.swift": "b1e7990c0cb5f44840b008f468a6f24bdf651c2b3c429366dd0aa1bcabb1eb4a",
+    "Sources/FateSimulation/main.swift": "09b4734185050d7dc17bb0b7147ba25fa1753e092cc1fcd58d318fe262dd3911",
+    "tools/content/stewardship-events.mjs": "28f2f7d25bf4a21a4b95d4aff94081039d1722cb66a2a73c90294a72a47072f3"
+  },
+  "measuredDeckSHA256": "0a4420fbf988708de918c1e8994dc26d18969c609404be9c1434d0229413cb8d",
+  "descriptionOnlyClarification": "After the measured build, sowing_crews description changed from shared-store repairs to grain-store cover repairs, supporting both actual public/private storage histories. Deep comparison after removing description fields is identical. No requirements, effects, outcomes, RNG, score or reported field changed; full native reports must match every field."
+}

@@ -1,3 +1,7 @@
+# 135-card local quality gate — native pending (2026-11-16)
+
+92 Swift tests (84 Core + eight diagnostics), 51 Node passed; 135 unique cards / 324 choices / 45 per era, zero content errors/warnings. Generation, feedback and art audit passed:20 actual candidates / 115 missing. Every new decision is tested with actual gates, selector, save/replay; stochastic ore trial covers success/failure, paid-history follow-up cannot close before repayment, later loans remain intact, ecological inputs cannot be spent at zero. Both old complete chains retain their regressions; both new pasture paths cover real queues, era gates and closure. Fixtures are controlled tests; natural coverage is separately measured. Full final six-policy cohorts and native build/install/launch, six UI tests, twenty illustration fixtures, audio/mute and four production OCR notes remain pending. See NATIVE_135_EVIDENCE.md for acceptance; historical evidence below does not validate new code.
+
 # Verified 120-card quality gate — 2026-11-16
 
 Current local source: 120 cards / 288 choices / 40-40-40, 15 real candidates / 105 missing. 83 Swift tests (78 Core plus five diagnostics) and 48 Node passed. Content has zero structural errors/warnings; generation, feedback and art audits pass. Full native run 43766155674 at source 0592d02 passed: 83 Swift, 48 Node, six UI tests, six 10,000-seed runs and iOS build/install/launch. All six downloaded reports exactly match local final JSONs. Actual artifact review, IDs and remaining limits: [NATIVE_120_EVIDENCE.md](NATIVE_120_EVIDENCE.md). The 105-card evidence below is historical.
@@ -131,7 +135,7 @@ Remaining: progression Bronze access regression (74.80% → 70.34%), high surviv
 
 ### Remaining work and next group
 
-90 cards (30/30/30), 203 decisions, 51 statically detected cross-era links; these are not 100 editorially approved completed chains. Progression Bronze 70.34% → 95.94%; survival repeat 84.36% → 75.28%, but mean lifetime 136.0397 → 101.5947. Random/knowledge Neolithic access fell; long Bronze runs repeat more and knowledge has 1889 living caps. Prioritize purposeful recovery/ecology and long-session Bronze variety before the next distinct 120/180-card group. Keep 12-era/800-card/100-chain/30-ending scope. Physical device, actual OS accessibility, audio listening, signing, Game Center account/weekly version pinning and final assets remain open.
+90 cards (30/30/30), 203 decisions, 51 statically detected cross-era links; these are not 100 editorially approved completed chains. Progression Bronze 70.34% → 95.94%; survival repeat 84.36% → 75.28%, but mean lifetime 136.0397 → 101.5947. Random/knowledge Neolithic access fell; long Bronze runs repeat more and knowledge has 1889 living caps. Prioritize purposeful recovery/ecology and long-session Bronze variety before the next distinct 120/180-card group. Keep 12-era/ 800-card/100-chain/30-ending scope. Physical device, actual OS accessibility, audio listening, signing, Game Center account/weekly version pinning and final assets remain open.
 
 
 ## 105-card validation in progress

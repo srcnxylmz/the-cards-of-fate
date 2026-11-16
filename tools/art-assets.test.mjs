@@ -1,6 +1,6 @@
 import {test} from 'node:test';import assert from 'node:assert/strict';import {readFileSync} from 'node:fs';import {spawnSync} from 'node:child_process';import {auditArt} from './art-pipeline.mjs';
 const cards=JSON.parse(readFileSync('cards.json')),art=JSON.parse(readFileSync('assets/art_manifest.json'));
-test('every card has a prompt; actual portrait files have matching hashes and catalogs',()=>{assert.deepEqual(auditArt(cards,art),[]);const fixtures=JSON.parse(readFileSync('UITests/ArtFixtures.json'));assert.equal(fixtures.length,art.filter(a=>a.file).length);assert.ok(fixtures.length>=15);assert.deepEqual(new Set(fixtures.map(f=>f.id)),new Set(art.filter(a=>a.file).map(a=>a.cardID)));});
+test('every card has a prompt; actual portrait files have matching hashes and catalogs',()=>{assert.deepEqual(auditArt(cards,art),[]);const fixtures=JSON.parse(readFileSync('UITests/ArtFixtures.json'));assert.equal(fixtures.length,art.filter(a=>a.file).length);assert.ok(fixtures.length>=20);assert.deepEqual(new Set(fixtures.map(f=>f.id)),new Set(art.filter(a=>a.file).map(a=>a.cardID)));});
 for(const [name,change,expected] of [
  ['missing prompt',a=>delete a[0].modelPrompt,'incomplete brief'],
  ['invented generated file',a=>a[0].file='App/Assets.xcassets/nonexistent.png','claimed file absent'],

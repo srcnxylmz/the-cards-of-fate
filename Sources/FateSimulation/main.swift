@@ -18,6 +18,7 @@ if let path = option("--cards") {
     guard !content.cards.isEmpty, Set(content.cards.map(\.id)).count == content.cards.count else { throw UsageError.invalidArguments }
 }
 let engine = GameEngine(content: content)
+var developmentTotals: [String:Int] = [:]
 var crisisTotals: [String:Int] = [:]
 var resolvedOutcomes: [String:Int] = [:]
 var turns: [Int] = []
@@ -64,6 +65,7 @@ var capDistinctCards = 0, capPendingConsequences = 0, reaches100 = 0
 
 for seed in 0..<count {
     var crisis = CrisisDiagnostics()
+    var development = DevelopmentDiagnostics()
     var state = engine.start(seed: UInt64(seed))
     var policy = SeededRandom(state: UInt64(seed) ^ 0xD00D)
     var hadExile = false
@@ -116,6 +118,7 @@ for seed in 0..<count {
         let choices = card.choices.filter { $0.available(in: state) }
         let choice = policyName == "recovery" ? engine.selectRecovery(choices,state:state) : engine.select(choices, state: state, policyName: policyName, random: &policy)
         crisis.begin(state,card:card,choice:choice)
+        development.begin(state,card:card,choice:choice)
         let decisionKey = "\(card.id).\(choice.id)"
         decisionCounts[decisionKey, default: 0] += 1
         var lastAuthority = state.stats["authority", default: 0]
@@ -130,6 +133,7 @@ for seed in 0..<count {
         if trackingMetal { metalDecisionCounts[decisionKey, default: 0] += 1 }
         state = try engine.choose(choice.id, in: state) { stage, snapshot in
             crisis.observe(stage,state:snapshot,era:previousEra)
+            development.observe(stage,state:snapshot,era:previousEra)
             if trackingMetal {
                 for stat in ["population", "stability", "resources"] {
                     let loss = stageStats[stat, default: 0] - snapshot.stats[stat, default: 0]
@@ -214,6 +218,8 @@ for seed in 0..<count {
         if state.stats["resources"] == 0 { metalBlockedRuns["emptyStores", default: 0] += 1 }
     }
     crisis.finish(state)
+    development.finish(state)
+    for (key,value) in development.counts { developmentTotals[key,default:0] += value }
     for (key,value) in crisis.counts { crisisTotals[key,default:0] += value }
     turns.append(state.turn)
     totalLeaderTurns += state.leaderTurns
@@ -224,6 +230,7 @@ for seed in 0..<count {
 }
 let sortedTurns=turns.sorted()
 let report: [String: Any] = [
+    "developmentDiagnostics":developmentTotals,
     "crisisDiagnostics":crisisTotals,"resolvedOutcomeCounts":resolvedOutcomes,
     "eraDecisionCounts":eraDecisions,"eraRepeatCounts":eraRepeats,"lateEraDecisions":lateDecisions,"lateEraRepeats":lateRepeats,
     "eraStatSums":eraStatSums,"stageStatGains":stageGains,"stageStatLosses":stageLosses,

@@ -1,0 +1,13 @@
+{
+  "status": "superseded draft; six complete 10000-seed cohorts",
+  "reason": "A new permanent route teaching and public work-account founding had been classified as repeatable. Their repeated household losses were an avoidable semantic/design burden. Final deck closes these two histories; ordinary seasonal extraction/maintenance remains recurring.",
+  "reports": [
+    "simulation-knowledge.json",
+    "simulation-progression.json",
+    "simulation-random.json",
+    "simulation-recovery.json",
+    "simulation-survival-council.json",
+    "simulation-survival.json"
+  ],
+  "note": "A stop was requested for the remaining recovery process, but its valid 10000-run JSON completed before the request took effect. All six reports here are complete, not pooled with final results."
+}

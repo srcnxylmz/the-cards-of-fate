@@ -1,0 +1,8 @@
+{
+  "status": "rejected draft; six complete 10000-seed runs, not final",
+  "reason": [
+    "Natural bond_workwatch.receipt count was zero because follow-up closed before actual repayment",
+    "Random mean 81.3203 versus 99.8261; Bronze starvation loss per100 62.8504 versus 50.2473"
+  ],
+  "note": "Archive has identical gameplay fields to the measured deck. A text-only receipt clarification was made after the draft launched; it does not change gates, effects, RNG or any reported metric. Final reserve/repayment gates are not in this draft."
+}

@@ -1,0 +1,8 @@
+{
+  "status": "partial rejected observation, not final",
+  "reason": "Five active owned simulations were stopped when exhausted-ecology extraction lacked an input availability gate. Only existing completed JSONs are valid partial cohorts. No native CI used.",
+  "deck": "Reconstructed from final authored JSON by removing exactly the four new extraction environment minimum conditions; all other fields identical.",
+  "completeReports": [
+    "simulation-survival-council.json"
+  ]
+}

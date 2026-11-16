@@ -14,7 +14,9 @@
     "unlockedBy": [
       "green_stone",
       "kiln_crack",
-      "potter_lease"
+      "potter_lease",
+      "ore_wash",
+      "bellows_exchange"
     ],
     "status": "implemented"
   },

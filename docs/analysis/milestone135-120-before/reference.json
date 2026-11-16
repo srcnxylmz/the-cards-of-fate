@@ -1,0 +1,11 @@
+{
+  "code": "0592d02fdc47a368e5cb340c92f5b478e4b2df3e",
+  "documentation": "0adf8e032bfb02097f5e80c3371834621066d51a",
+  "runsPerPolicy": 10000,
+  "seeds": "0..<10000",
+  "cap": 500,
+  "policyScores": "unchanged",
+  "rules": "same FateCore code as final135; only authored pool differs",
+  "reports": "Original six verified120 reports copied before development. Random enriched in place after copying; every original field matched. Knowledge enriched output kept separately under milestone135-120-observed after automatic-review protection; every original field matched. Other four reports are unchanged verified references, not rerun merely for new telemetry.",
+  "contentSHA256": "31564993d6a2be8d65e895b5be22ebcfa5b4850b0033a5334bf3250c4910d9d5"
+}

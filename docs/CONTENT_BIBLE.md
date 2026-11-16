@@ -1,8 +1,12 @@
 # Content bible
 
-Editorial principle: each card needs a specific human conflict, an observable cost, competing reasonable values, and consequences that fit the era. Neither option should simply be the same reward in different wording. Turkish is authored naturally, with a complete English counterpart for the current 120-card set.
+Editorial principle: each card needs a specific human conflict, an observable cost, competing reasonable values, and consequences that fit the era. Neither option should simply be the same reward in different wording. Turkish is authored naturally, with a complete English counterpart for the current 135-card set.
 
-## Current 120-card inventory
+## Current 135-card inventory
+
+135 distinct events,45 per era, 324 choices. stewardship-events.mjs adds 15 individually authored problems without changing any of the previous 120 definitions. Twenty real illustration candidates / 115 missing. Seven new one-shot conclusions and eight recurring decisions include paid ecological inputs; no fourth era is playable. STORY_REVIEW_135.md documents the new hunting/pasture/gate chain and preserves both previous chains. Natural policy counts and editorial fixture tests are separate. Native acceptance pending.
+
+## Historical 120-card inventory
 
 120 unique events, 40 per authored era, 288 choices; all 105 previous definitions remain intact. New city-events module adds five Paleolithic, five Neolithic and five Bronze conflicts. Five current-state outcome partitions are separately counted from five genuinely stochastic decisions. Eight new events close once resolved; seven are recurring work/resource crises. Two closed chains have author/editor self-review and end-to-end tests; ninety static cross-era references do not mean ninety complete chains. See STORY_REVIEW_120.md. Full native acceptance passed at source 0592d02 / run 43766155674; see NATIVE_120_EVIDENCE.md. Independent historical/translation review remains open.
 

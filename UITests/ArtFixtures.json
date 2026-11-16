@@ -73,5 +73,30 @@
     "id": "mine_shoring",
     "language": "tr",
     "large": false
+  },
+  {
+    "id": "herd_truce",
+    "language": "en",
+    "large": false
+  },
+  {
+    "id": "ore_wash",
+    "language": "tr",
+    "large": false
+  },
+  {
+    "id": "pasture_pledge",
+    "language": "en",
+    "large": false
+  },
+  {
+    "id": "grazing_appeal",
+    "language": "tr",
+    "large": false
+  },
+  {
+    "id": "slag_basin",
+    "language": "en",
+    "large": false
   }
 ]
