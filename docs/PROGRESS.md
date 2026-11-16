@@ -1,6 +1,6 @@
-# 120-card milestone — local validation in progress (2026-11-16)
+# Verified 120-card milestone — 2026-11-16
 
-Current source: 120 unique cards, 40/40/40, 288 choices, 15 real illustration candidates and 105 missing images. 83 Swift tests (78 Core + five diagnostics) / 48 Node passed; final six-policy comparison and its reference are complete; all game fields were unchanged by the classifier correction. Native acceptance is pending; do not reuse the historical 105-card CI below as proof for this source. New food/invoice rules, conditional outcomes and open-bond closure are scoped changes; all 105 older authored definitions and five old policy score functions remain unchanged.
+Current source: 120 unique cards, 40/40/40, 288 choices, 15 real illustration candidates and 105 missing images. 83 Swift tests (78 Core + five diagnostics) / 48 Node passed; final six-policy comparison and its reference are complete; all game fields were unchanged by the classifier correction. Native acceptance passed at source 0592d02 / full run 43766155674: 83 Swift, 48 Node, six UI tests and six 10,000-seed runs. All six downloaded reports match local final JSONs in every field; actual image/audio/OCR artifacts were inspected. See [NATIVE_120_EVIDENCE.md](NATIVE_120_EVIDENCE.md). New food/invoice rules, conditional outcomes and open-bond closure are scoped changes; all 105 older authored definitions and five old policy score functions remain unchanged.
 
 # 105-card quality/content checkpoint — 2026-11-15
 
@@ -328,3 +328,17 @@ Found and fixed a measurement bug before CI: zero additional world population lo
 83 Swift tests passed (78 Core plus five diagnostics), 48 Node passed, content 120/288/40-40-40 with zero errors/warnings, generation/feedback/art audits passed. All 105 older card definitions and the five score policies remain unchanged. Corrected live end-of-turn recovery diagnostics were replayed for both references and final source using prebuilt binaries; all non-diagnostic fields match the earlier same-source outputs exactly. The observer has a separate small package target/test target, while the app still depends only on FateCore.
 
 Final comparisons and negative findings are in MILESTONE_120_ANALYSIS.md / milestone120-metrics.json. Canonical five base-policy reports are updated; the user-owned root council JSON remains untouched and the new council data is separate under analysis/milestone120-final. Source fingerprints are recorded in its reference.json. Card/delay costs that exceed reserves consume current-turn supplies before feeding; production itself remains capped. No fourth-era card or transition unlock was added. Two closed chains have self-review and controlled/natural ordered-history evidence. Fifteen actual illustration candidates exist, 105 remain missing. Full native build/UI/images/audio/OCR acceptance is still pending; do not mark the 120 checkpoint complete until that gate and artifacts are reviewed.
+
+
+### Published source; native gate running
+
+Code commit 0592d02fdc47a368e5cb340c92f5b478e4b2df3e is pushed normally to origin/main. First push hit a transient github.com DNS resolution error; normal retry succeeded without network-setting changes or force push. Full native run: https://github.com/srcnxylmz/the-cards-of-fate/actions/runs/43766155674 (job 132971592356). Node/content/assets passed; macOS Swift/build/sim/UI acceptance must be checked before completion. Do not create another native run just for documentation.
+
+
+### 120-card checkpoint accepted — native and artifact review
+
+Full source 0592d02 passed run 43766155674: 83 Swift, 48 Node, six UI tests, six 10,000-seed engine runs, XcodeGen and iPhone SE 3 iOS 18.5 build/install/launch. Downloaded artifacts 14183661408 and 14183327642; all six JSONs match local final reports in every field. Inspected five new actual illustrations, stable choices, large/normal scroll frames, all four production OCR notes (six visible / none missing), three-cue API-start/mute JSON. No exported app crash or attachment-export error. Entry frames have partial animation opacity; hearing/device accessibility/performance remain unverified. Full provenance: NATIVE_120_EVIDENCE.md.
+
+Final 120 unique cards / 288 choices / 40 per era; 15 real illustration candidates, 105 missing. Ten old PNGs and all 105 older definitions preserved. README/root technologies/root council user work byte-checked unchanged; unrelated edits/logs stay unstaged. No final test failure, force push, reset, clean or policy-score change. Native success does not resolve the reported ecological/long-game repeat regressions, censored caps, missing assets or release gates.
+
+Next proposed group: 120 → 135. Address Neolithic technology opportunity costs and random ecological recovery, deepen recurring city workforce/trade states and further explicitly reviewed closed chains; then five original events per era and more actual art. Keep Era 4 closed and physical-device/account gates separate. Stop this session after evidence publication; do not start 135.

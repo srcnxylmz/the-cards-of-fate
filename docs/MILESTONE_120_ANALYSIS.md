@@ -148,7 +148,7 @@ Fifteen distinct events are in tools/content/city-events.mjs. All 105 older auth
 
 Five new actual portrait candidates (marsh_raft, well_roster, quay_exchange, bread_bond, mine_shoring) join the preserved ten; 105 illustrations remain missing. The mine candidate was edited to replace modern-looking picks/tall stacks; exact generation/edit prompts, reference hashes and final file hashes are recorded. Three existing prototype WAVs and their API-start/mute test are retained; no new music or listening approval is claimed.
 
-Native acceptance is pending until the complete new CI gate, artifact download and real image/audio/OCR inspection. Windows tests alone are not iPhone evidence. Physical device, actual OS accessibility, audio mix, historical/legal approval, signing and Game Center version/account work remain open. Fourth-era requirements are documented in [ERA4_READINESS.md](ERA4_READINESS.md); no Era 4 content or transition gate was opened.
+Native acceptance passed at source 0592d02 / full run 43766155674. All six native 10,000-seed reports match local final JSONs in every field. Build/install/launch, 83 Swift, 48 Node and six UI tests passed; actual image/audio/OCR artifacts were inspected. See [NATIVE_120_EVIDENCE.md](NATIVE_120_EVIDENCE.md). This acceptance note follows the generated measurements; retain the separate evidence ledger when regenerating. Physical device, actual OS accessibility, audio mix, historical/legal approval, signing and Game Center version/account work remain open. Fourth-era requirements are documented in [ERA4_READINESS.md](ERA4_READINESS.md); no Era 4 content or transition gate was opened.
 
 
 ## Findings, regressions and next group

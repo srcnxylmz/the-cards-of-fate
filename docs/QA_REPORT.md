@@ -1,6 +1,6 @@
-# 120-card quality gate — native acceptance pending (2026-11-16)
+# Verified 120-card quality gate — 2026-11-16
 
-Current local source: 120 cards / 288 choices / 40-40-40, 15 real candidates / 105 missing. 83 Swift tests (78 Core plus five diagnostics) and 48 Node passed. Content has zero structural errors/warnings; generation, feedback and art audits pass. Final same-seed measurements are complete; a new native run remains pending. The 105-card evidence below is historical.
+Current local source: 120 cards / 288 choices / 40-40-40, 15 real candidates / 105 missing. 83 Swift tests (78 Core plus five diagnostics) and 48 Node passed. Content has zero structural errors/warnings; generation, feedback and art audits pass. Full native run 43766155674 at source 0592d02 passed: 83 Swift, 48 Node, six UI tests, six 10,000-seed runs and iOS build/install/launch. All six downloaded reports exactly match local final JSONs. Actual artifact review, IDs and remaining limits: [NATIVE_120_EVIDENCE.md](NATIVE_120_EVIDENCE.md). The 105-card evidence below is historical.
 
 New tests cover actual food coverage versus empty reserves, partial/full/hard deficits, funding upkeep from current supplies, conditional outcome boundaries at every 0–100 value, persistent open bonds and real payment/default, both closed story chains, old optional-field decoding and save/replay. The old 105 authored definitions are deeply compared unchanged. Existing five policy functions and all ten old PNGs are retained.
 

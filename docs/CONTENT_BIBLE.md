@@ -4,7 +4,7 @@ Editorial principle: each card needs a specific human conflict, an observable co
 
 ## Current 120-card inventory
 
-120 unique events, 40 per authored era, 288 choices; all 105 previous definitions remain intact. New city-events module adds five Paleolithic, five Neolithic and five Bronze conflicts. Five current-state outcome partitions are separately counted from five genuinely stochastic decisions. Eight new events close once resolved; seven are recurring work/resource crises. Two closed chains have author/editor self-review and end-to-end tests; ninety static cross-era references do not mean ninety complete chains. See STORY_REVIEW_120.md. Native acceptance is pending.
+120 unique events, 40 per authored era, 288 choices; all 105 previous definitions remain intact. New city-events module adds five Paleolithic, five Neolithic and five Bronze conflicts. Five current-state outcome partitions are separately counted from five genuinely stochastic decisions. Eight new events close once resolved; seven are recurring work/resource crises. Two closed chains have author/editor self-review and end-to-end tests; ninety static cross-era references do not mean ninety complete chains. See STORY_REVIEW_120.md. Full native acceptance passed at source 0592d02 / run 43766155674; see NATIVE_120_EVIDENCE.md. Independent historical/translation review remains open.
 
 ## Historical 105-card inventory
 

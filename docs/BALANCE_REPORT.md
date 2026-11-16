@@ -1,6 +1,6 @@
 # 120-card balance checkpoint — 2026-11-16
 
-Latest local comparison: 120 cards / 288 choices / 40-40-40. Five fixed policies plus separate managed council, same 10,000 seeds each; references use archived 3d589af rules. Corrected live recovery and 20/40/80/local-after100 metrics: [MILESTONE_120_ANALYSIS.md](MILESTONE_120_ANALYSIS.md), [structured metrics](milestone120-metrics.json). Native acceptance is pending.
+Latest local comparison: 120 cards / 288 choices / 40-40-40. Five fixed policies plus separate managed council, same 10,000 seeds each; references use archived 3d589af rules. Corrected live recovery and 20/40/80/local-after100 metrics: [MILESTONE_120_ANALYSIS.md](MILESTONE_120_ANALYSIS.md), [structured metrics](milestone120-metrics.json). Native acceptance passed at [full run 43766155674](https://github.com/srcnxylmz/the-cards-of-fate/actions/runs/43766155674), source 0592d02. All six downloaded macOS reports match local final JSONs in every field, including recovery diagnostics. See [native evidence](NATIVE_120_EVIDENCE.md).
 
 Mean turns: random 50.88 → 99.83; survival 122.31 → 172.01; knowledge 122.95 → 294.06; progression 97.22 → 340.07; recovery 159.75 → 450.22. Progression Bronze starvation loss /100 decisions 41.80 → 6.31; recovery 25.19 → 2.41. Whole-run repetition rises with longer lives. Random ecology worsens, random reserve/hunger recovery takes longer, and knowledge Neolithic caps rise; these remain visible. Living caps are not wins. No 4th era, policy-score, weight or cooldown change.
 
