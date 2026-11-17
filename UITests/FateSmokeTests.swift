@@ -29,7 +29,7 @@ final class FateSmokeTests: XCTestCase {
         struct Fixture: Decodable { var id: String; var language: String; var large: Bool }
         let url = try XCTUnwrap(Bundle(for: FateSmokeTests.self).url(forResource: "ArtFixtures", withExtension: "json"))
         let fixtures = try JSONDecoder().decode([Fixture].self, from: Data(contentsOf: url))
-        XCTAssertGreaterThanOrEqual(fixtures.count, 20)
+        XCTAssertGreaterThanOrEqual(fixtures.count, 25)
         for fixture in fixtures {
             let (id, language, large) = (fixture.id, fixture.language, fixture.large)
             app.terminate()

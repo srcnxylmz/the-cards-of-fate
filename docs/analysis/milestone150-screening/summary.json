@@ -1,0 +1,62 @@
+{
+  "interventions": {
+    "draft": "Original 150 draft; controlled reference",
+    "pack": "Replace strap ecology loss with stability loss; rejected",
+    "net": "Reduce trap catch9->6 and ecology4->2; rejected",
+    "both": "Both reductions; rejected",
+    "restore-pack": "Paid hide reuse adds ecology3; old extraction/cost retained",
+    "restore-net": "Paid selective mesh adds ecology3; old extraction/cost retained",
+    "restore-both": "Both funded maintenance corrections; candidate full gate"
+  },
+  "rows": [
+    {
+      "name": "draft",
+      "mean": 157.004,
+      "caps": 59,
+      "runs": 1000,
+      "seedRange": "0..<1000"
+    },
+    {
+      "name": "pack",
+      "mean": 151.153,
+      "caps": 51,
+      "runs": 1000,
+      "seedRange": "0..<1000"
+    },
+    {
+      "name": "net",
+      "mean": 136.366,
+      "caps": 21,
+      "runs": 1000,
+      "seedRange": "0..<1000"
+    },
+    {
+      "name": "both",
+      "mean": 130.265,
+      "caps": 19,
+      "runs": 1000,
+      "seedRange": "0..<1000"
+    },
+    {
+      "name": "restore-pack",
+      "mean": 180.276,
+      "caps": 95,
+      "runs": 1000,
+      "seedRange": "0..<1000"
+    },
+    {
+      "name": "restore-net",
+      "mean": 187.571,
+      "caps": 94,
+      "runs": 1000,
+      "seedRange": "0..<1000"
+    },
+    {
+      "name": "restore-both",
+      "mean": 209.316,
+      "caps": 135,
+      "runs": 1000,
+      "seedRange": "0..<1000"
+    }
+  ]
+}

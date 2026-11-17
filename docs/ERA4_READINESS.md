@@ -1,8 +1,8 @@
-# Era 4 boundary and future dependencies — 135-card group
+# Era 4 boundary and future dependencies — 150-card group
 
 This milestone adds no Era 4 cards and does not open the fourth era. MASTER_SPEC section 3 defines Ancient Empires as governing large kingdoms/empires; section 4 requires knowledge, discoveries, stability and key historical events rather than an elapsed-turn gate. The first-three-era Phase 2 target remains 180 original events. Existing 12-era metadata is not playable content.
 
-The current Bronze → Ancient boundary requires writing, knowledge ≥78, stability ≥35, population ≥25, a living civilization, and authored next-era content. `advanceEra` still refuses an unauthored era. Current content has 45/45/45 cards and zero in 4–12. The Era 4 metadata describes Stone Capital / Empire, civil_law and knowledge 82 for its own eventual exit; it is not an implemented law/imperial economy.
+The current Bronze → Ancient boundary requires writing, knowledge ≥78, stability ≥35, population ≥25, a living civilization, and authored next-era content. `advanceEra` still refuses an unauthored era. Current content has 50/50/50 cards and zero in 4–12. The Era 4 metadata describes Stone Capital / Empire, civil_law and knowledge 82 for its own eventual exit; it is not an implemented law/imperial economy.
 
 Before a future phase enables that boundary:
 
@@ -28,4 +28,4 @@ Commercial targets remain 12 eras, at least 800 original cards, 100 editorially 
 | coppice_memory and maintained fuel quota | Surveyed rotation concessions with paid guards and soil/water constraints; historical boundary is knowledge, not infinite timber |
 | guest representation and route_school_memory | Residency/citizenship and guide service disputes; adult consent, inheritance scope and new work compensation |
 
-Opening Era 4 still requires completion of the first-three-era 180-card phase, a substantial verified Era 4 recurring/content inventory, an explicit readiness gate and migration/replay tests for each conversion. No conversion code, fourth-era event, threshold adjustment or transition unlock is added in the 135 group.
+Opening Era 4 still requires completion of the first-three-era 180-card phase, a substantial verified Era 4 recurring/content inventory, an explicit readiness gate and migration/replay tests for each conversion. No conversion code, fourth-era event, threshold adjustment or transition unlock is added in the 150 group. New public/private alarm settlements, vented-bin practice and paid street-watch/guest representation must also be carried as bounded precedents, never free provincial rights.

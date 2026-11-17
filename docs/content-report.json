@@ -1,14 +1,14 @@
 {
   "errors": [],
   "warnings": [],
-  "cards": 135,
-  "choices": 324,
+  "cards": 150,
+  "choices": 361,
   "stochasticChoices": 7,
-  "conditionalOutcomeChoices": 5,
+  "conditionalOutcomeChoices": 21,
   "eras": {
-    "1": 45,
-    "2": 45,
-    "3": 45,
+    "1": 50,
+    "2": 50,
+    "3": 50,
     "4": 0,
     "5": 0,
     "6": 0,
@@ -19,9 +19,9 @@
     "11": 0,
     "12": 0
   },
-  "authoredChainGroups": 8,
-  "multiCardChainGroups": 8,
-  "crossEraLinks": 103,
+  "authoredChainGroups": 9,
+  "multiCardChainGroups": 9,
+  "crossEraLinks": 120,
   "missingArt": [
     "card_broken_spear",
     "card_stranger_child",
@@ -137,7 +137,17 @@
     "card_sowing_crews",
     "card_quay_levy",
     "card_charcoal_lots",
-    "card_bond_workwatch"
+    "card_bond_workwatch",
+    "card_pack_exchange",
+    "card_burial_path",
+    "card_guest_tongue",
+    "card_net_menders",
+    "card_bank_alarm",
+    "card_threshing_floor",
+    "card_millstones",
+    "card_quay_schedule",
+    "card_grain_rotation",
+    "card_night_patrol"
   ],
   "missingAudio": [
     "era_1",
@@ -167,7 +177,7 @@
   ],
   "releaseReady": false,
   "releaseBlockers": [
-    "800 original cards required; current 135",
+    "800 original cards required; current 150",
     "At least 60 cards per era and 80 special events required",
     "100 completed chains / 50 cross-era links required",
     "30 distinct endings required",

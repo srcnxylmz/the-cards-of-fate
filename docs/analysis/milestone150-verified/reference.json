@@ -1,0 +1,12 @@
+{
+  "seeds": "0..<10000",
+  "cap": 500,
+  "sourceHashes": {
+    "Sources/FateCore/GameEngine.swift": "f1e17cf8444f412e4e57ec0c0576cb8a0583f8bd05c080972ea8f729a5261c25",
+    "Sources/FateCore/SimulationPolicy.swift": "f505d5bae8e657b04c079af86862810b4115873a66f9cb30d7baa0618b930af0",
+    "Sources/FateCore/RecoveryPolicy.swift": "058a6be9d66ac16ce7a212f0e38e95454af108b404947b7572568309aeca7767",
+    "Sources/FateCore/FoodBudget.swift": "b5ef7c452b43be3173917365070e4ccb61ef429b9b5fe145a0b96c3b2423bf42",
+    "Sources/FateCore/Models.swift": "364f0756e2a9de59e25fc8e04805ce614d124a952a7855bf01dd9024b846e211",
+    "cards.json": "53501cf07c9d7ca986f952ff5ed3137736c7421bce7c29b6ea4c6560731b2153"
+  }
+}

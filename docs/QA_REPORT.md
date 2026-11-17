@@ -1,3 +1,11 @@
+# 150-card full local simulation gate
+
+All six final10000-seed cohorts exit0; final frozen deck matches runtime150 JSON.100 Swift/56 Node checks pass. Native CI/artifact review remains pending. Exact metrics and negative access findings: MILESTONE_150_ANALYSIS.md.
+
+# 150-card local gate —2026-11-17
+
+100 Windows Swift(90 Core+10 diagnostics),56 Node, structural content/generation/equality, feedback and25-image hash/catalog checks pass. New37 decisions,0...100 workforce partitions, paid capital/ecology guards, both opposed warning paths, old chains, JSON save/replay and legacy queued debits are covered.20 earlier PNG bytes, native135 rules/policy/schema and three user document backups match. Seven new scenes close; eight recur. Rejected draft/screening results remain explicit; final six-policy gate is running. Native150 build/UI/artifact/audio/OCR acceptance is pending;135 evidence below remains historical.
+
 # Verified 135-card native quality gate — 2026-11-17
 
 92 Swift tests (84 Core + eight diagnostics), 51 Node passed; 135 unique cards / 324 choices / 45 per era, zero content errors/warnings. Generation, feedback and art audit passed:20 actual candidates / 115 missing. Every new decision is tested with actual gates, selector, save/replay; stochastic ore trial covers success/failure, paid-history follow-up cannot close before repayment, later loans remain intact, ecological inputs cannot be spent at zero. Both old complete chains retain their regressions; both new pasture paths cover real queues, era gates and closure. Fixtures are controlled tests; natural coverage is separately measured. Full native source80a7bf5 / run43908707917 attempt4 passed92 Swift,51 Node,six UI tests,60,000 simulations and iPhone build/install/launch. All six downloaded reports match local final JSONs in every field. Twenty fixture flows, four production OCR notes, three-cue API-start/mute and actual images were reviewed; no export error or collected app crash. First three account-blocked attempts remain historical. See NATIVE_135_EVIDENCE.md for acceptance; historical evidence below does not validate new code.

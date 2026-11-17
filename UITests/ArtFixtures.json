@@ -98,5 +98,30 @@
     "id": "slag_basin",
     "language": "en",
     "large": false
+  },
+  {
+    "id": "smoke_code",
+    "language": "tr",
+    "large": false
+  },
+  {
+    "id": "loom_shares",
+    "language": "en",
+    "large": false
+  },
+  {
+    "id": "clay_lids",
+    "language": "tr",
+    "large": false
+  },
+  {
+    "id": "alarm_inquest",
+    "language": "en",
+    "large": false
+  },
+  {
+    "id": "mine_water",
+    "language": "tr",
+    "large": false
   }
 ]

@@ -1,8 +1,12 @@
 # Content bible
 
-Editorial principle: each card needs a specific human conflict, an observable cost, competing reasonable values, and consequences that fit the era. Neither option should simply be the same reward in different wording. Turkish is authored naturally, with a complete English counterpart for the current 135-card set.
+Editorial principle: each card needs a specific human conflict, an observable cost, competing reasonable values, and consequences that fit the era. Neither option should simply be the same reward in different wording. Turkish is authored naturally, with a complete English counterpart for the current 150-card set.
 
-## Current 135-card inventory
+## Current150-card inventory
+
+150 unique events,50 per era,361 choices. continuity-events.mjs adds15 distinct human conflicts, seven one-shot histories/conclusions and eight recurring work crises. All balanced135 definitions are unchanged. The separate four-event balance repair is documented in BALANCE_REPAIR_150.md. Twenty-five real illustration candidates,125 missing; no new finished sound/music. Shared signal → village watch → city alarm hearing adds the fourth complete authored/tested chain with opposed branches, actual delayed memories and a writing gate. Natural path counts are measured separately in MILESTONE_150_ANALYSIS.md. Paid hide reuse and selective-mesh upkeep address the rejected draft’s ecology regression; no population healing or policy/threshold change. Local100 Swift/56 Node pass; native150 acceptance is pending a real CI/artifact gate. Independent editorial/historical/device approval remains open.
+
+## Historical 135-card inventory
 
 135 distinct events,45 per era, 324 choices. stewardship-events.mjs adds 15 individually authored problems without changing any of the previous 120 definitions. Twenty real illustration candidates / 115 missing. Seven new one-shot conclusions and eight recurring decisions include paid ecological inputs; no fourth era is playable. STORY_REVIEW_135.md documents the new hunting/pasture/gate chain and preserves both previous chains. Natural policy counts and editorial fixture tests are separate. Native acceptance passed at80a7bf5 / run43908707917 attempt4, including20 actual illustration fixtures; natural story counts remain separate. See NATIVE_135_EVIDENCE.md.
 

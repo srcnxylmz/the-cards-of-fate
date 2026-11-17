@@ -15,13 +15,13 @@ on:
 jobs:
   verify:
     runs-on: macos-15
-    timeout-minutes: 45
+    timeout-minutes: 65
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
-      - run: node --test tools/validate-content.test.mjs tools/content-sync.test.mjs tools/audio-assets.test.mjs tools/art-assets.test.mjs tools/recovery-content.test.mjs tools/city-content.test.mjs tools/stewardship-content.test.mjs
+      - run: node --test tools/validate-content.test.mjs tools/content-sync.test.mjs tools/audio-assets.test.mjs tools/art-assets.test.mjs tools/recovery-content.test.mjs tools/city-content.test.mjs tools/stewardship-content.test.mjs tools/balance-content.test.mjs tools/continuity-content.test.mjs
       - run: node tools/art-audit.mjs
       - run: node tools/generate-feedback.mjs --check
       - run: node tools/build-content.mjs --check
@@ -40,12 +40,20 @@ jobs:
       - name: Compare five strategies and optional council management over 10000 seeds each
         if: inputs.ui_only != true
         run: |
-          swift run -c release FateSimulation 10000 --policy random --output docs/simulation-random.json
-          swift run -c release FateSimulation 10000 --policy survival --output docs/simulation-survival.json
-          swift run -c release FateSimulation 10000 --policy knowledge --output docs/simulation-knowledge.json
-          swift run -c release FateSimulation 10000 --policy progression --output docs/simulation-progression.json
-          swift run -c release FateSimulation 10000 --policy recovery --output docs/simulation-recovery.json
-          swift run -c release FateSimulation 10000 --policy survival --manage-council --output docs/simulation-survival-council.json
+          swift build -c release --product FateSimulation
+          # Independent processes share a read-only executable, not RNG or report files.
+          # Limit concurrency to three; check every process before starting UI work.
+          .build/release/FateSimulation 10000 --policy random --output docs/simulation-random.json & random_pid=$!
+          .build/release/FateSimulation 10000 --policy survival --output docs/simulation-survival.json & survival_pid=$!
+          .build/release/FateSimulation 10000 --policy survival --manage-council --output docs/simulation-survival-council.json & council_pid=$!
+          failed=0
+          for pid in "$random_pid" "$survival_pid" "$council_pid"; do wait "$pid" || failed=1; done
+          [ "$failed" -eq 0 ] || exit 1
+          .build/release/FateSimulation 10000 --policy knowledge --output docs/simulation-knowledge.json & knowledge_pid=$!
+          .build/release/FateSimulation 10000 --policy progression --output docs/simulation-progression.json & progression_pid=$!
+          .build/release/FateSimulation 10000 --policy recovery --output docs/simulation-recovery.json & recovery_pid=$!
+          for pid in "$knowledge_pid" "$progression_pid" "$recovery_pid"; do wait "$pid" || failed=1; done
+          [ "$failed" -eq 0 ] || exit 1
       - name: Generate Xcode project
         run: |
           brew install xcodegen
