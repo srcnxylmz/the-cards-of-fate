@@ -132,4 +132,27 @@ export function addStewardshipEvents({cards,card,choice,outcome,delayed}) {
  for(const [id,decision,minimum] of [['coppice_boundary','cut',10],['sluice_silt','upper',7],['slag_basin','shift',8],['charcoal_lots','overcut',13]])
   cards.find(c=>c.id===id).choices.find(c=>c.id===decision).requirements.push({stat:'environment',minimum});
 
+ // Founding a named boundary/watch is historical, not another permanent migration cost.
+ // Actual completed history also closes saves written before these exclusions existed.
+ for(const id of ['coppice_boundary','spring_pool'])
+  cards.find(c=>c.id===id).exclusionConditions.push({completedCard:id});
+
+ // Paid containment/rotation restarts a small commissioned production run. Returns are
+ // net of upkeep, arrive later and depend on the current crew; empty stores cannot fund it.
+ for(const [id,decision,full,small,tr,en] of [
+  ['slag_basin','line',9,4,'Astar denetlendi; yeniden açılan küçük sipariş, bakım payı çıktıktan sonra erzak getirdi.','The lining was inspected; the restarted small order brought supplies after upkeep.'],
+  ['slag_basin','runoff',7,2,'Ortak kanalın bakımı ödendi; ayrılan atık yoluyla süren küçük siparişin net payı geldi.','Shared-channel upkeep was paid; the small order using the separated waste route delivered its net share.'],
+  ['charcoal_lots','rotate',10,5,'Dönüşümlü kesimin sınırlı yakacağı teslim edildi; nöbet ve taşıma payından sonra erzak kaldı.','Limited rotational fuel was delivered; supplies remained after watches and hauling.'],
+  ['charcoal_lots','inherit',8,4,'Eski sınırda üretilen sınırlı yakacak teslim edildi; bakım çıktıktan sonra küçük pay geldi.','Limited fuel from the inherited boundary was delivered, leaving a small share after upkeep.']
+ ]) {
+  const ch=cards.find(c=>c.id===id).choices.find(c=>c.id===decision),base=ch.outcomes[0];
+  ch.outcomes=[['crewed',full,{stat:'population',minimum:25}],['thin',small,{stat:'population',maximum:24}]].map(([suffix,resources,requirement])=>{
+   const result=structuredClone(base);result.id=suffix;result.probability=0.5;result.requirements=[requirement];
+   result.delayedEffects[0].effect.stats.resources=resources;
+   result.delayedEffects[0].text={tr:suffix==='thin'?'Az sayıdaki ekip daha küçük yükü tamamladı. '+tr:tr,en:suffix==='thin'?'The smaller crew completed a reduced load. '+en:en};
+   return result;
+  });
+  ch.risk={tr:'Sonuç mevcut koşullara bağlı; kura içermez.',en:'Determined by current conditions; no random draw affects the result.'};
+ }
+
 }

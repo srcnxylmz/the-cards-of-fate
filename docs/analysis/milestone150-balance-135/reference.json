@@ -1,0 +1,22 @@
+{
+  "status": "local balance gate accepted; native deferred to final150 group",
+  "parent": "e510eb7198c9c09a0bb584cd94c7aea6a9662097",
+  "baselineNative": "80a7bf55253ee5b16350ca973ecdd6a0e9da8bc0",
+  "seeds": "0..<10000",
+  "cap": 500,
+  "cardCount": 135,
+  "changedCardIDs": [
+    "coppice_boundary",
+    "spring_pool",
+    "slag_basin",
+    "charcoal_lots"
+  ],
+  "cardSHA256": "31489ec8770829585ef90daf289b13d02e844e30df4441e797ed9984b6694579",
+  "ruleAndPolicyFiles": "byte-normalized identical to80a7bf5; passive diagnostic fields added only",
+  "testCounts": {
+    "swift": 97,
+    "node": 53
+  },
+  "reproduce": "tools/study-balance150.mjs --prepare/--analyze; tools/report-balance150.mjs; production FateSimulation --cards snapshot",
+  "limitation": "random mean98.6726 remains1.1535 below120 reference99.8261; no score/cap/threshold tuning to hide it. Living caps censored."
+}

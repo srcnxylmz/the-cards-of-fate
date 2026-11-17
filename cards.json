@@ -23593,7 +23593,11 @@
         "flag": "forest_stewards"
       }
     ],
-    "exclusionConditions": [],
+    "exclusionConditions": [
+      {
+        "completedCard": "coppice_boundary"
+      }
+    ],
     "choices": [
       {
         "id": "mark",
@@ -24121,7 +24125,11 @@
         "completedCard": "guest_scouts"
       }
     ],
-    "exclusionConditions": [],
+    "exclusionConditions": [
+      {
+        "completedCard": "spring_pool"
+      }
+    ],
     "choices": [
       {
         "id": "separate",
@@ -25779,8 +25787,8 @@
           "en": "Reduce production, empty the old pit and lay a clay lining."
         },
         "risk": {
-          "tr": "Sonucu öngörülebilir",
-          "en": "Predictable outcome"
+          "tr": "Sonuç mevcut koşullara bağlı; kura içermez.",
+          "en": "Determined by current conditions; no random draw affects the result."
         },
         "requirements": [
           {
@@ -25797,8 +25805,8 @@
         },
         "outcomes": [
           {
-            "id": "result",
-            "probability": 1,
+            "id": "crewed",
+            "probability": 0.5,
             "affinity": null,
             "text": {
               "tr": "Sipariş ertelendi. Yağmur suyu atıkla aynı yoldan akmadı; astar için malzeme harcandı.",
@@ -25820,12 +25828,12 @@
                 "afterTurns": 5,
                 "minimumEra": 3,
                 "text": {
-                  "tr": "Cüruf astarı denetlendi, bozulan bölüm yenilendi.",
-                  "en": "The slag lining was inspected and its damaged section renewed."
+                  "tr": "Astar denetlendi; yeniden açılan küçük sipariş, bakım payı çıktıktan sonra erzak getirdi.",
+                  "en": "The lining was inspected; the restarted small order brought supplies after upkeep."
                 },
                 "effect": {
                   "stats": {
-                    "resources": -3,
+                    "resources": 9,
                     "knowledge": 3
                   },
                   "flags": [],
@@ -25835,7 +25843,60 @@
                 }
               }
             ],
-            "animationPreset": "normal"
+            "animationPreset": "normal",
+            "requirements": [
+              {
+                "stat": "population",
+                "minimum": 25
+              }
+            ]
+          },
+          {
+            "id": "thin",
+            "probability": 0.5,
+            "affinity": null,
+            "text": {
+              "tr": "Sipariş ertelendi. Yağmur suyu atıkla aynı yoldan akmadı; astar için malzeme harcandı.",
+              "en": "An order was delayed. Rainwater no longer followed the waste channel; lining consumed materials."
+            },
+            "effect": {
+              "stats": {
+                "resources": -7,
+                "environment": 11,
+                "stability": 4
+              },
+              "flags": [],
+              "technologies": [],
+              "buildings": [],
+              "rivalRelation": 0
+            },
+            "delayedEffects": [
+              {
+                "afterTurns": 5,
+                "minimumEra": 3,
+                "text": {
+                  "tr": "Az sayıdaki ekip daha küçük yükü tamamladı. Astar denetlendi; yeniden açılan küçük sipariş, bakım payı çıktıktan sonra erzak getirdi.",
+                  "en": "The smaller crew completed a reduced load. The lining was inspected; the restarted small order brought supplies after upkeep."
+                },
+                "effect": {
+                  "stats": {
+                    "resources": 4,
+                    "knowledge": 3
+                  },
+                  "flags": [],
+                  "technologies": [],
+                  "buildings": [],
+                  "rivalRelation": 0
+                }
+              }
+            ],
+            "animationPreset": "normal",
+            "requirements": [
+              {
+                "stat": "population",
+                "maximum": 24
+              }
+            ]
           }
         ]
       },
@@ -25912,8 +25973,8 @@
           "en": "Build a small lined channel under the earlier shared runoff rule."
         },
         "risk": {
-          "tr": "Sonucu öngörülebilir",
-          "en": "Predictable outcome"
+          "tr": "Sonuç mevcut koşullara bağlı; kura içermez.",
+          "en": "Determined by current conditions; no random draw affects the result."
         },
         "requirements": [
           {
@@ -25933,8 +25994,8 @@
         },
         "outcomes": [
           {
-            "id": "result",
-            "probability": 1,
+            "id": "crewed",
+            "probability": 0.5,
             "affinity": null,
             "text": {
               "tr": "Eski katkı sayımı taşıma işini azalttı. Kil ve yeni emek yine ödendi; atık su yolundan ayrıldı.",
@@ -25956,12 +26017,12 @@
                 "afterTurns": 5,
                 "minimumEra": 3,
                 "text": {
-                  "tr": "Küçük kanalın astar ve temizlik payı ödendi.",
-                  "en": "A lining and cleaning share maintained the small channel."
+                  "tr": "Ortak kanalın bakımı ödendi; ayrılan atık yoluyla süren küçük siparişin net payı geldi.",
+                  "en": "Shared-channel upkeep was paid; the small order using the separated waste route delivered its net share."
                 },
                 "effect": {
                   "stats": {
-                    "resources": -3,
+                    "resources": 7,
                     "knowledge": 2
                   },
                   "flags": [],
@@ -25971,7 +26032,60 @@
                 }
               }
             ],
-            "animationPreset": "normal"
+            "animationPreset": "normal",
+            "requirements": [
+              {
+                "stat": "population",
+                "minimum": 25
+              }
+            ]
+          },
+          {
+            "id": "thin",
+            "probability": 0.5,
+            "affinity": null,
+            "text": {
+              "tr": "Eski katkı sayımı taşıma işini azalttı. Kil ve yeni emek yine ödendi; atık su yolundan ayrıldı.",
+              "en": "The earlier contribution account reduced hauling. Clay and new labor were still paid; waste was separated from water."
+            },
+            "effect": {
+              "stats": {
+                "resources": -5,
+                "environment": 12,
+                "stability": 5
+              },
+              "flags": [],
+              "technologies": [],
+              "buildings": [],
+              "rivalRelation": 0
+            },
+            "delayedEffects": [
+              {
+                "afterTurns": 5,
+                "minimumEra": 3,
+                "text": {
+                  "tr": "Az sayıdaki ekip daha küçük yükü tamamladı. Ortak kanalın bakımı ödendi; ayrılan atık yoluyla süren küçük siparişin net payı geldi.",
+                  "en": "The smaller crew completed a reduced load. Shared-channel upkeep was paid; the small order using the separated waste route delivered its net share."
+                },
+                "effect": {
+                  "stats": {
+                    "resources": 2,
+                    "knowledge": 2
+                  },
+                  "flags": [],
+                  "technologies": [],
+                  "buildings": [],
+                  "rivalRelation": 0
+                }
+              }
+            ],
+            "animationPreset": "normal",
+            "requirements": [
+              {
+                "stat": "population",
+                "maximum": 24
+              }
+            ]
           }
         ]
       }
@@ -26016,8 +26130,8 @@
           "en": "Reserve eight shares and rotate cutting while leaving young trunks."
         },
         "risk": {
-          "tr": "Sonucu öngörülebilir",
-          "en": "Predictable outcome"
+          "tr": "Sonuç mevcut koşullara bağlı; kura içermez.",
+          "en": "Determined by current conditions; no random draw affects the result."
         },
         "requirements": [
           {
@@ -26034,8 +26148,8 @@
         },
         "outcomes": [
           {
-            "id": "result",
-            "probability": 1,
+            "id": "crewed",
+            "probability": 0.5,
             "affinity": null,
             "text": {
               "tr": "Sipariş küçüldü. Kesimle bakımın sınırı ayrıldı; bu sınırın tutulması emek istedi.",
@@ -26057,8 +26171,55 @@
                 "afterTurns": 5,
                 "minimumEra": 3,
                 "text": {
-                  "tr": "Sınırlı kesimin küçük yakacak payı bakım çıktıktan sonra geldi.",
-                  "en": "The limited cutting supplied a small fuel share after upkeep."
+                  "tr": "Dönüşümlü kesimin sınırlı yakacağı teslim edildi; nöbet ve taşıma payından sonra erzak kaldı.",
+                  "en": "Limited rotational fuel was delivered; supplies remained after watches and hauling."
+                },
+                "effect": {
+                  "stats": {
+                    "resources": 10,
+                    "environment": -2
+                  },
+                  "flags": [],
+                  "technologies": [],
+                  "buildings": [],
+                  "rivalRelation": 0
+                }
+              }
+            ],
+            "animationPreset": "normal",
+            "requirements": [
+              {
+                "stat": "population",
+                "minimum": 25
+              }
+            ]
+          },
+          {
+            "id": "thin",
+            "probability": 0.5,
+            "affinity": null,
+            "text": {
+              "tr": "Sipariş küçüldü. Kesimle bakımın sınırı ayrıldı; bu sınırın tutulması emek istedi.",
+              "en": "The order shrank. Cutting and upkeep boundaries were separated and required labor to maintain."
+            },
+            "effect": {
+              "stats": {
+                "resources": -8,
+                "environment": 12,
+                "stability": 3
+              },
+              "flags": [],
+              "technologies": [],
+              "buildings": [],
+              "rivalRelation": 0
+            },
+            "delayedEffects": [
+              {
+                "afterTurns": 5,
+                "minimumEra": 3,
+                "text": {
+                  "tr": "Az sayıdaki ekip daha küçük yükü tamamladı. Dönüşümlü kesimin sınırlı yakacağı teslim edildi; nöbet ve taşıma payından sonra erzak kaldı.",
+                  "en": "The smaller crew completed a reduced load. Limited rotational fuel was delivered; supplies remained after watches and hauling."
                 },
                 "effect": {
                   "stats": {
@@ -26072,7 +26233,13 @@
                 }
               }
             ],
-            "animationPreset": "normal"
+            "animationPreset": "normal",
+            "requirements": [
+              {
+                "stat": "population",
+                "maximum": 24
+              }
+            ]
           }
         ]
       },
@@ -26150,8 +26317,8 @@
           "en": "Use the inherited shoot boundary and fund an upkeep watch with five shares."
         },
         "risk": {
-          "tr": "Sonucu öngörülebilir",
-          "en": "Predictable outcome"
+          "tr": "Sonuç mevcut koşullara bağlı; kura içermez.",
+          "en": "Determined by current conditions; no random draw affects the result."
         },
         "requirements": [
           {
@@ -26171,8 +26338,8 @@
         },
         "outcomes": [
           {
-            "id": "result",
-            "probability": 1,
+            "id": "crewed",
+            "probability": 0.5,
             "affinity": null,
             "text": {
               "tr": "Sınırı yeniden bulmak gerekmedi. Yetişkin nöbeti ve bağlar ödendi; genç kökler korundu.",
@@ -26194,8 +26361,55 @@
                 "afterTurns": 5,
                 "minimumEra": 3,
                 "text": {
-                  "tr": "Eski sınırdaki sınırlı kesim küçük bakım sonrası pay bıraktı.",
-                  "en": "Limited cutting at the inherited boundary left a small share after upkeep."
+                  "tr": "Eski sınırda üretilen sınırlı yakacak teslim edildi; bakım çıktıktan sonra küçük pay geldi.",
+                  "en": "Limited fuel from the inherited boundary was delivered, leaving a small share after upkeep."
+                },
+                "effect": {
+                  "stats": {
+                    "resources": 8,
+                    "environment": -2
+                  },
+                  "flags": [],
+                  "technologies": [],
+                  "buildings": [],
+                  "rivalRelation": 0
+                }
+              }
+            ],
+            "animationPreset": "normal",
+            "requirements": [
+              {
+                "stat": "population",
+                "minimum": 25
+              }
+            ]
+          },
+          {
+            "id": "thin",
+            "probability": 0.5,
+            "affinity": null,
+            "text": {
+              "tr": "Sınırı yeniden bulmak gerekmedi. Yetişkin nöbeti ve bağlar ödendi; genç kökler korundu.",
+              "en": "The boundary did not need rediscovery. Adult watches and bindings were paid, protecting young roots."
+            },
+            "effect": {
+              "stats": {
+                "resources": -5,
+                "environment": 12,
+                "knowledge": 3
+              },
+              "flags": [],
+              "technologies": [],
+              "buildings": [],
+              "rivalRelation": 0
+            },
+            "delayedEffects": [
+              {
+                "afterTurns": 5,
+                "minimumEra": 3,
+                "text": {
+                  "tr": "Az sayıdaki ekip daha küçük yükü tamamladı. Eski sınırda üretilen sınırlı yakacak teslim edildi; bakım çıktıktan sonra küçük pay geldi.",
+                  "en": "The smaller crew completed a reduced load. Limited fuel from the inherited boundary was delivered, leaving a small share after upkeep."
                 },
                 "effect": {
                   "stats": {
@@ -26209,7 +26423,13 @@
                 }
               }
             ],
-            "animationPreset": "normal"
+            "animationPreset": "normal",
+            "requirements": [
+              {
+                "stat": "population",
+                "maximum": 24
+              }
+            ]
           }
         ]
       }

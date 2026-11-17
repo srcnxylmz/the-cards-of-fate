@@ -1,3 +1,11 @@
+# 150-card development — balance prerequisite accepted locally (2026-11-17)
+
+Current source still135 cards/45 per era. Completed27 isolated1000-seed screens,97 Swift(87 Core+10 diagnostics)/53 Node and six full10000-seed repaired135 cohorts. Only four events change: permanent coppice/spring founding disputes close by actual history, and paid slag/fuel work delivers commissioned production after upkeep with workforce-dependent net returns. No engine rule, score,500 cap, era threshold, RNG or save schema changed. Native135 evidence remains historical at80a7bf5; new native verification is deferred to the complete150 group to avoid intermediate CI quota.
+
+Full means135→repaired: random82.01→98.67; survival115.05→190.32; knowledge230.62→309.57; progression270.16→378.19; recovery389.57→464.68; council63.42→76.50. Random Bronze starvation63.95→46.64 per100 decisions, below120 reference50.25. Random mean remains below120 by1.15 decisions; progression Bronze9632 remains below120’s9697, despite better sustainability. Knowledge Bronze7072 versus6840 and missing-metal caps2 retained. All costs/negative findings and live caps are in BALANCE_REPAIR_150.md / balance150-repair.json.
+
+Next: make the required separate local balance commit, then author15 distinct events(5/era), one complete new chain, at least5 real images and final comparisons against both native135 and repaired135. No150 content has been authored yet. User README/root technologies/root council and unrelated logs/experiments stay untouched. Original12 eras/800 cards/100 complete chains/30 endings and Era4 closure remain.
+
 # Verified 135-card native milestone — 2026-11-17
 
 135 unique events, 45/ 45/ 45, 324 choices; exactly fifteen new stewardship events. All 120 prior definitions/IDs/choice effects are deep-identical, including the 105 baseline. FateCore rules, five policy scores and save schema are unchanged. 92 Swift tests (84 Core, eight diagnostics) and 51 Node passed. The old two closed chains remain tested; hunting turns → pasture → gate adds two opposed end-to-end fixture paths, with natural counts measured separately. Twenty actual illustration candidates exist, 115 missing. All old fifteen files remain; no new WAV or listening claim.

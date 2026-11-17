@@ -3,6 +3,22 @@ import XCTest
 @testable import FateDiagnostics
 
 final class DevelopmentDiagnosticsTests:XCTestCase {
+    func testTerminalPopulationRecordsActualPhaseRatherThanGenericEndingText()throws {
+        let e=GameEngine(content:try .bundled());let c=e.content.card("river_tracks")!;var s=e.start(seed:150)
+        s.stats["population"]=1;var d=DevelopmentDiagnostics();d.begin(s,card:c,choice:c.choices[0])
+        s.stats["population"]=0;d.observe("card",state:s,era:1);s.ending = .init(tr:"Son",en:"Hunger")
+        d.finish(s);XCTAssertEqual(d.counts["1.terminalPopulation.river_tracks.observe"],1)
+        XCTAssertEqual(d.counts["1.card.river_tracks.observe.population.loss"],1)
+    }
+    func testRevivedCardLossIsNotAttributedAsTheFinalWorldDeath()throws {
+        let e=GameEngine(content:try .bundled());let c=e.content.card("river_tracks")!;var s=e.start(seed:150)
+        s.stats["population"]=1;var d=DevelopmentDiagnostics();d.begin(s,card:c,choice:c.choices[0])
+        s.stats["population"]=0;d.observe("card",state:s,era:1)
+        s.stats["population"]=2;d.observe("delayed",state:s,era:1)
+        s.stats["population"]=0;d.observe("world",state:s,era:1);s.ending = .init(tr:"Son",en:"Hunger")
+        d.finish(s);XCTAssertEqual(d.counts["1.terminalPopulation.world"],1)
+        XCTAssertNil(d.counts["1.terminalPopulation.river_tracks.observe"])
+    }
     func testOfferedInvestmentDistinguishesUnavailableAndDeclinedWithoutChangingState()throws {
         let e=GameEngine(content:try .bundled());let c=e.content.card("ore_wash")!
         var s=e.start(seed:135);s.era=2;s.stats["resources"]=5;s.stats["knowledge"]=100

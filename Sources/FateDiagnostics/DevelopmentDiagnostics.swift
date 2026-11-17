@@ -7,6 +7,7 @@ public struct DevelopmentDiagnostics {
     private var prior: [String:Int] = [:]
     private var decision = ""
     private var bronzeAge = 0
+    private var zeroPopulationStage: String?
     public mutating func begin(_ s: GameState, card: CardEvent, choice: Choice) {
         prior = s.stats; decision = card.id+"."+choice.id
         if s.era == 3 { bronzeAge += 1 }
@@ -36,7 +37,9 @@ public struct DevelopmentDiagnostics {
         }
     }
     public mutating func observe(_ stage:String, state s:GameState, era:Int) {
-        for stat in ["environment","stability","resources"] {
+        if prior["population",default:0] > 0 && s.stats["population"] == 0 { zeroPopulationStage = stage == "card" ? decision : stage }
+        if s.stats["population",default:0] > 0 { zeroPopulationStage = nil }
+        for stat in ["environment","stability","resources","population"] {
             let delta = s.stats[stat,default:0]-prior[stat,default:0]
             if delta != 0 {
                 let key = "\(era).\(stage).\(stage == "card" ? decision : "all").\(stat).\(delta < 0 ? "loss" : "gain")"
@@ -46,6 +49,11 @@ public struct DevelopmentDiagnostics {
         prior = s.stats
     }
     public mutating func finish(_ s:GameState) {
+        if s.ending != nil {
+            let era = String(s.era)
+            if s.stats["population"] == 0 { counts[era+".terminalPopulation."+(zeroPopulationStage ?? "unknown"),default:0] += 1 }
+            else if s.stats["environment"] == 0 && s.stats["stability",default:0] < 15 { counts[era+".terminalEcology",default:0] += 1 }
+        }
         if s.ending == nil && s.era == 2 {
             counts["neo.caps",default:0] += 1
             counts[s.technologies.contains("smelting") ? "neo.caps.withMetal" : "neo.caps.withoutMetal",default:0] += 1
