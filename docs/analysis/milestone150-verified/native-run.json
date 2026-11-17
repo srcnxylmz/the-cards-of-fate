@@ -1,0 +1,205 @@
+{
+  "id": 44163156728,
+  "sourceSHA": "fd91dab53876cd7404ac02eab366fb8b44a1fd0d",
+  "status": "completed",
+  "conclusion": "success",
+  "attempt": 1,
+  "started": "2026-11-17T19:51:57Z",
+  "updated": "2026-11-17T20:36:11Z",
+  "url": "https://github.com/srcnxylmz/the-cards-of-fate/actions/runs/44163156728",
+  "job": 134322072590,
+  "artifacts": [
+    {
+      "id": 14368301146,
+      "name": "iphone-ui-evidence",
+      "size_in_bytes": 62264157,
+      "url": "https://api.github.com/repos/srcnxylmz/the-cards-of-fate/actions/artifacts/14368301146",
+      "archive_download_url": "https://api.github.com/repos/srcnxylmz/the-cards-of-fate/actions/artifacts/14368301146/zip",
+      "expired": false,
+      "created_at": "2026-11-17T20:35:49Z",
+      "expires_at": "2026-12-01T20:35:39Z",
+      "updated_at": "2026-11-17T20:35:49Z",
+      "digest": "sha256:8449dfd8b3d71b8d78701dc5e3c5cc0054d37940e4ba072166ab0b26136a3c92",
+      "workflow_run": {
+        "id": 44163156728,
+        "repository_id": 1451666261,
+        "head_repository_id": 1451666261,
+        "head_branch": "main",
+        "head_sha": "fd91dab53876cd7404ac02eab366fb8b44a1fd0d"
+      }
+    },
+    {
+      "id": 14366468718,
+      "name": "quality-reports",
+      "size_in_bytes": 128467,
+      "url": "https://api.github.com/repos/srcnxylmz/the-cards-of-fate/actions/artifacts/14366468718",
+      "archive_download_url": "https://api.github.com/repos/srcnxylmz/the-cards-of-fate/actions/artifacts/14366468718/zip",
+      "expired": false,
+      "created_at": "2026-11-17T20:35:51Z",
+      "expires_at": "2027-02-15T19:51:57Z",
+      "updated_at": "2026-11-17T20:35:51Z",
+      "digest": "sha256:db9a5b1dda059b51791ae5fb2f874a6833bf82c6807b345e39ed9226d8c41028",
+      "workflow_run": {
+        "id": 44163156728,
+        "repository_id": 1451666261,
+        "head_repository_id": 1451666261,
+        "head_branch": "main",
+        "head_sha": "fd91dab53876cd7404ac02eab366fb8b44a1fd0d"
+      }
+    }
+  ],
+  "accepted": true,
+  "local": {
+    "swift": 100,
+    "node": 56,
+    "simulationRuns": 60000,
+    "cards": 150,
+    "choices": 361,
+    "actualArt": 25
+  },
+  "native": {
+    "swift": 100,
+    "node": 56,
+    "uiTests": 6,
+    "uiSeconds": 737.859,
+    "simulationReportsAllFieldsMatch": true,
+    "fixtures": 25,
+    "attachments": 195,
+    "ocr": [
+      {
+        "name": "stat-first-paint-comparison-en-true-false_0_E9349B0D-7BD1-4020-B3B8-02879C41F221.txt",
+        "file": "B61D8D5A-D399-48F2-A709-24C9AFFF3298.txt",
+        "text": "legacy=false, visible=6, missing=[]"
+      },
+      {
+        "name": "stat-first-paint-comparison-tr-true-false_0_2F668065-4F63-4C64-AFD7-DA876C2AE6CD.txt",
+        "file": "82EF0388-FFF7-4134-A6CA-43B1CC53BF37.txt",
+        "text": "legacy=false, visible=6, missing=[]"
+      },
+      {
+        "name": "stat-first-paint-comparison-en-false-false_0_E662FD30-9FC2-4C47-81F6-E1F2F817F0BC.txt",
+        "file": "D2DDAC2F-5F80-4411-9B18-B14A77577742.txt",
+        "text": "legacy=false, visible=6, missing=[]"
+      },
+      {
+        "name": "stat-first-paint-comparison-tr-false-false_0_8127D773-F9BF-41F2-9E0A-26F664CD8C82.txt",
+        "file": "D3A4B182-51BF-4143-AB54-BC1D8A7A5BC4.txt",
+        "text": "legacy=false, visible=6, missing=[]"
+      }
+    ],
+    "audio": {
+      "events": 74,
+      "cues": [
+        "card-open",
+        "choice-soft",
+        "decision"
+      ],
+      "missingCues": [],
+      "invalid": [],
+      "writeError": null,
+      "startedDurations": [
+        "card-open:0.24",
+        "choice-soft:0.12",
+        "decision:0.22"
+      ]
+    },
+    "exportErrors": null,
+    "crashes": [],
+    "xcode": "Xcode 16.4\nBuild version 16F6\n"
+  },
+  "visualReview": [
+    {
+      "id": "smoke_code",
+      "captures": [
+        {
+          "name": "tr-art-smoke_code-result_0_64E0D4D9-3CF3-4E04-9A3C-1435212907C6.png",
+          "file": "7D715816-DF4D-4240-B6DC-43768D3AC5FD.png"
+        },
+        {
+          "name": "tr-art-smoke_code-reachable-options_0_5E9C1E05-7358-48E4-8BF1-AEA06B8D2C98.png",
+          "file": "06588425-5651-4B91-BAF0-3B5D8F1DEEE2.png"
+        },
+        {
+          "name": "tr-art-smoke_code-standard_0_BB798038-D654-4275-8BD0-DC17F995966B.png",
+          "file": "FBA740E1-184A-4161-9263-BE3250FEBE52.png"
+        }
+      ]
+    },
+    {
+      "id": "loom_shares",
+      "captures": [
+        {
+          "name": "en-art-loom_shares-result_0_A6EEAEAC-2503-44A8-99A9-3692999CD87A.png",
+          "file": "ED2EA664-7B41-4030-98D5-28DA7C31A44E.png"
+        },
+        {
+          "name": "en-art-loom_shares-reachable-options_0_CC5B3409-7A58-43FC-8F8D-A5F6B2E6AD5B.png",
+          "file": "90892A17-F1B0-4016-AA91-13D45B3E5BA0.png"
+        },
+        {
+          "name": "en-art-loom_shares-standard_0_DB24E855-17B9-4850-9E03-42F0A91D1763.png",
+          "file": "6890A28D-49C9-4B67-945A-063E38048FD9.png"
+        }
+      ]
+    },
+    {
+      "id": "clay_lids",
+      "captures": [
+        {
+          "name": "tr-art-clay_lids-result_0_D1E23CD5-184B-4D3A-80EA-74346F8124D6.png",
+          "file": "1ACD8322-33B2-49B0-B012-53634EB6CEE8.png"
+        },
+        {
+          "name": "tr-art-clay_lids-reachable-options_0_FCB4F8AF-BEF9-4ACA-9169-33D7A6C3441B.png",
+          "file": "EE250227-E7E2-442B-8304-04BBD4793647.png"
+        },
+        {
+          "name": "tr-art-clay_lids-standard_0_84D4C450-3D0A-4B6F-8C16-C026A411D0A7.png",
+          "file": "113314FD-8316-469E-B0D1-9A393FB2754B.png"
+        }
+      ]
+    },
+    {
+      "id": "alarm_inquest",
+      "captures": [
+        {
+          "name": "en-art-alarm_inquest-result_0_1D8B04DE-E2BE-4E92-BD5F-AE3EA7CB3B2E.png",
+          "file": "FE09E5E3-5231-416B-AD24-5E7A0C3A080C.png"
+        },
+        {
+          "name": "en-art-alarm_inquest-reachable-options_0_83B4AADA-9510-4C79-A9A9-23515B5B9A88.png",
+          "file": "5442AB40-A2CE-4276-A583-3879C32D88C1.png"
+        },
+        {
+          "name": "en-art-alarm_inquest-standard_0_D786034C-D29A-4E72-978C-D9BFDFE174FD.png",
+          "file": "32EAD3BD-7B01-4151-B05D-D14EBBD3B515.png"
+        }
+      ]
+    },
+    {
+      "id": "mine_water",
+      "captures": [
+        {
+          "name": "tr-art-mine_water-result_0_DD1DB0BA-62B6-4EF8-ABBC-B9FFA9BB4134.png",
+          "file": "7F2156C4-BC2E-4FF4-84CE-8001DC1DCDAF.png"
+        },
+        {
+          "name": "tr-art-mine_water-reachable-options_0_729E426A-F9F4-44A8-9412-B15FEDA4BA4B.png",
+          "file": "26F1647F-F626-4653-B329-C22940B0DE9C.png"
+        },
+        {
+          "name": "tr-art-mine_water-standard_0_94D1814B-8D67-45A3-9F23-32924F1977FD.png",
+          "file": "B65B7D3F-CF90-4224-8BB1-E4FC2153B217.png"
+        }
+      ]
+    }
+  ],
+  "localArtifactRoot": "artifacts/run-44163156728-attempt1",
+  "limits": [
+    "expert historical/art/legal approval",
+    "physical-device color/memory/FPS/accessibility/listening",
+    "production branding and music",
+    "signing/Game Center/online weekly leaderboard"
+  ],
+  "next": "150 to165 after this accepted milestone; keep Era4 closed."
+}
