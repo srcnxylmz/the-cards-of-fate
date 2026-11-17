@@ -4,7 +4,7 @@ Editorial principle: each card needs a specific human conflict, an observable co
 
 ## Current 135-card inventory
 
-135 distinct events,45 per era, 324 choices. stewardship-events.mjs adds 15 individually authored problems without changing any of the previous 120 definitions. Twenty real illustration candidates / 115 missing. Seven new one-shot conclusions and eight recurring decisions include paid ecological inputs; no fourth era is playable. STORY_REVIEW_135.md documents the new hunting/pasture/gate chain and preserves both previous chains. Natural policy counts and editorial fixture tests are separate. Native acceptance pending.
+135 distinct events,45 per era, 324 choices. stewardship-events.mjs adds 15 individually authored problems without changing any of the previous 120 definitions. Twenty real illustration candidates / 115 missing. Seven new one-shot conclusions and eight recurring decisions include paid ecological inputs; no fourth era is playable. STORY_REVIEW_135.md documents the new hunting/pasture/gate chain and preserves both previous chains. Natural policy counts and editorial fixture tests are separate. Native acceptance passed at80a7bf5 / run43908707917 attempt4, including20 actual illustration fixtures; natural story counts remain separate. See NATIVE_135_EVIDENCE.md.
 
 ## Historical 120-card inventory
 

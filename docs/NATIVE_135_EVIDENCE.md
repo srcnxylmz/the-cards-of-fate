@@ -1,27 +1,46 @@
-# 135-card native gate — account blocked (2026-11-16)
+# Verified 135-card native checkpoint — 2026-11-17
 
-Source:80a7bf55253ee5b16350ca973ecdd6a0e9da8bc0, main. [Run43908707917](https://github.com/srcnxylmz/the-cards-of-fate/actions/runs/43908707917) has failed three attempts before runner allocation. **No native validation is accepted for this source.**
+Source: 80a7bf55253ee5b16350ca973ecdd6a0e9da8bc0. [Successful run 43908707917, attempt 4](https://github.com/srcnxylmz/the-cards-of-fate/actions/runs/43908707917/attempts/4), job 133456946700. The original source was rerun after the user restored account access. No game code, workflow or card count changed. Required gates passed; the optional UI-only guard was inapplicable. No 150-card work started.
 
-| Attempt | Job | Runner | Executed steps | Result |
-|---|---|---|---|---|
-|1|133444441298|0|0|GitHub account payment/spending-limit block|
-|2|133446009124|0|0|Same block after user reported billing fixed|
-|3|133447509389|0|0|Same block after a short propagation wait|
+## Executed gates
 
-Actual GitHub annotations were read for all three jobs. Primary failure: recent account payment failure or spending limit requires action in Billing & plans. Additional macOS arm64 capacity notice is informational, not evidence of a source/compiler/test failure. The repository is private, owned by user srcnxylmz. No runner was assigned, no job log exists, and the workflow artifact API returns an empty list. Do not rerun repeatedly until account Actions access is restored. No billing setting, payment or repository visibility was changed by the agent.
+- 51 Node tests passed; generation, feedback and art audits passed. Actual content report: 135 unique cards / 324 choices / 45 per era, zero errors/warnings.
+- 92 macOS Swift tests passed, zero failures, 75.416 seconds: 84 Core and eight diagnostics, including saves/replay and old/new chain regressions.
+- Six actual 10,000-seed engine runs passed: random, survival, knowledge, progression, recovery and separate managed council. Seeds 0..<10000, cap 500. Every field of all six downloaded JSONs matches the local final reports. Living caps remain censored, not wins.
+- XcodeGen, boot, Simulator build, actual install and launch passed: Xcode 16.4 (16F6), iPhone SE third generation, iOS 18.5.
+- Six UI tests passed individually, zero failures, 567.229 seconds: audio/mute; council/cooldown persistence; English decision/resume; twenty illustrated fixtures and large text/Reduce Motion; Turkish decision/resume; statistics in both languages/text sizes.
 
-## Evidence that exists locally
+## Artifact provenance
 
-- 92 Swift tests passed on Windows:84 Core plus eight diagnostics;51 Node passed. Content135 unique cards /324 choices /45 per era; zero errors/warnings. Generation/feedback/art audits passed.
-- Six final10,000-seed engine cohorts complete, same0..<10000 seeds,500 cap: five unchanged policy scores plus separate managed council. Full outputs are in analysis/milestone135-verified; baseline/drafts are separate. MILESTONE_135_ANALYSIS.md retains both positive and negative findings.
-- Every new36 decision branch occurs in natural random play. New pasture chain shared/private31/27; old repair30/324 and water15/24. Paid receipt58. Fixtures separately prove all decisions, old/new chains, history gates, save/replay, closure and ecology inputs; no natural count is replaced with a fixture count.
-- Twenty real illustration candidates,115 missing. Fifteen old PNG/catalogs and all120 old manifest rows are preserved. Five new outputs were inspected locally before registration; gate-scene coins were replaced with clay counters. Prompt/reference/output hashes and superseded record exist. New135 Simulator integration/visual acceptance has not run.
-- Three old prototype WAVs are retained and their Node container/waveform checks pass. Native start/mute regressions are preserved but not executed for135. No hearing/mix or finished music claim.
+| Artifact | ID | Downloaded ZIP SHA-256 |
+|---|---|---|
+| iphone-ui-evidence | 14254632513 | a99c220446ebff69922047b3d9e18f5a05d776cfe1cd9b4d7d7d81e4a5dd79d7 |
+| quality-reports | 14253252942 | e3eb5622e3e676568056102f4100aae5adec7260079d65b5acc025b96180b745 |
 
-## Gates still pending
+Both hashes match GitHub's digests; both artifacts identify source 80a7bf5. Local ignored extraction: artifacts/run-43908707917-attempt4/{ui,quality}. Remote UI retention expires 2026-11-30; local copies remain. There are 180 exported attachments and three captures per illustrated fixture. No export error or collected application crash report. Machine evidence: analysis/milestone135-verified/native-attempts.json.
 
-macOS Swift, six native simulation outputs/all-field comparison, XcodeGen, iPhone Simulator build/install/launch, six UI tests with20 art fixtures, TR/EN normal/large frozen-pixel OCR, API playback/mute and actual screenshot/crash/export review must still run. The120 source run43766155674 is historical and cannot certify these new files. Physical device, OS accessibility settings, color/memory/FPS, historical/legal review, signing and Game Center account/device work remain open beyond Simulator acceptance.
+## Actual visual review
 
-## Next action
+| New card | Standard capture |
+|---|---|
+| herd_truce | F9520396-A359-4A5E-B442-21EF714F3DBD.png |
+| ore_wash | A08C3315-A1AE-4A3D-B15C-6D2D7042868F.png |
+| pasture_pledge | 9638DB3E-70E4-4BC6-8071-0EE32CFAB984.png |
+| grazing_appeal | D51F01A7-ED9E-4503-918A-0D63C5F78401.png |
+| slag_basin | D7651B33-E3CF-4A40-A1E1-82F34A673607.png |
 
-Owner restores Actions account payment/budget access, then rerun failed jobs on run43908707917 at the same source. If successful, download both artifacts, compare every field of all six JSONs, inspect the five new actual game captures and existing audio/OCR evidence, then replace this pending gate with verified provenance. Until then the135 milestone remains locally verified but native-incomplete; do not start150. No new source push is needed to retry.
+All five actual game captures were visually reviewed. Full portrait scenes fit the shared well. Entry captures have variable partial entrance-animation opacity; they are not final contrast/color measurements. Stable scrolled ore/gate/slag choices are readable and reachable; unavailable inherited choices are correctly disabled. Granary large-text/Reduce Motion and reachable choices, English normal/large scrolled frames and installed-launch main menu were also inspected. Long text needs scrolling; content clips to the safe viewport without painting through the status bar.
+
+Fixtures force card/era for presentation while retaining real choice availability. Natural history access is separately established by engine regressions and seeded ordered histories.
+
+All four production first-paint OCR notes (TR/EN × normal/large) report "legacy=false, visible=6, missing=[]". Exact-value/confidence/status-bar assertions remain unchanged. Legacy-layout diagnostic comparisons are not production acceptance.
+
+## Audio and remaining limits
+
+Actual audio JSON contains 64 events. All three cues have API start/playing success: card-open 0.24s, choice-soft 0.12s, decision 0.22s. Muted events report no playback. No missing cue, invalid/error record or write error. This verifies functional API playback/mute, not hearing, mixing or production music quality.
+
+Twenty generated illustration candidates exist; 115 remain missing. Physical-device listening, real OS accessibility, color/memory/FPS, historical/legal review, signing and Game Center account/device acceptance remain open. CI success does not resolve the documented survival, starvation, ecology or pacing regressions. Era 4 stays closed; original product targets remain unfinished.
+
+## Historical account failures
+
+Attempts 1/2/3 (jobs 133444441298, 133446009124, 133447509389) failed before any runner/step because of account payment/spending limits, with no logs/artifacts. The separate arm64 capacity notice was informational. Attempt 4 queued and then ran successfully after user confirmation. The agent changed no payment setting, billing amount or repository visibility. Historical failures remain recorded rather than relabeled as passed.

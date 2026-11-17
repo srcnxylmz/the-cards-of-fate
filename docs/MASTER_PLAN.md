@@ -5,7 +5,7 @@ Full requirements: `MASTER_SPEC.md`. Target: commercially polished, offline-firs
 | Phase | Deliverables and acceptance | Current status |
 |---|---|---|
 | 0 | Architecture, 12-era guide, schema, acceptance ledger, real source | Initial documents and source exist; design needs further depth |
-| 1 | iPhone build; deterministic decisions; result acknowledgment; atomic save; start/end tests | 120-card source 0592d02 verified: 83 Swift (78 Core, five diagnostics), six UI tests; full run 43766155674, evidence in NATIVE_120_EVIDENCE.md |
+| 1 | iPhone build; deterministic decisions; result acknowledgment; atomic save; start/end tests | 135-card source80a7bf5 verified:92 Swift (84 Core,eight diagnostics),six UI tests; full run43908707917 attempt4, evidence in NATIVE_135_EVIDENCE.md |
 | 2 | 180 distinct first-three-era events, rivals, settlements, legacy, artwork and transitions | 135 events (45/ 45/ 45); 102 static cross-era references, two preserved chains and one new self-reviewed/tested closed chain; tested debt/hospitality branches; faction support/pacts and initial opposition coalition implemented; richer politics, content and production art remain |
 | 3 | 300 era 4–8 events, diplomacy/trade/war/science, visual/audio integration | Planned; era metadata only |
 | 4 | 240 era 9–12 events, modern/AI/space systems, endings | Planned; era metadata only |
@@ -39,4 +39,4 @@ Every checkpoint must record files, implemented behavior, commands actually exec
 
 ## 135 boundary
 
-92 local Swift / 51 Node passed. Same-seed six-policy local measurement is complete; native run43908707917 attempts1–3 were account-blocked before execution. No checkpoint-complete claim until actual native artifacts are reviewed. Maintain Era 4 closure through the 180-card phase and sufficient later inventory. New conversion ledger covers past mold/water/pasture/toll/bond/guest histories without active fourth-era rules. After acceptance, design 135 → 150 from measured ecology, workforce, technology opportunity costs and distinct narrative conflicts; add five per era, deepen further closed chains and actual art.
+92 local Swift / 51 Node passed. Same-seed local/native six-policy measurement is complete. Source80a7bf5 / run43908707917 attempt4 passed92 Swift,51 Node,six UI tests and full build/install/launch. All native fields match local final reports and actual artifacts were reviewed; first three account failures remain historical. Native checkpoint accepted; balance and production/device gates remain open. Maintain Era 4 closure through the 180-card phase and sufficient later inventory. New conversion ledger covers past mold/water/pasture/toll/bond/guest histories without active fourth-era rules. After acceptance, design 135 → 150 from measured ecology, workforce, technology opportunity costs and distinct narrative conflicts; add five per era, deepen further closed chains and actual art.

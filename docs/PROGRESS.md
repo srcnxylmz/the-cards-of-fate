@@ -1,4 +1,4 @@
-# 135-card milestone — local measurements passed, native pending (2026-11-16)
+# Verified 135-card native milestone — 2026-11-17
 
 135 unique events, 45/ 45/ 45, 324 choices; exactly fifteen new stewardship events. All 120 prior definitions/IDs/choice effects are deep-identical, including the 105 baseline. FateCore rules, five policy scores and save schema are unchanged. 92 Swift tests (84 Core, eight diagnostics) and 51 Node passed. The old two closed chains remain tested; hunting turns → pasture → gate adds two opposed end-to-end fixture paths, with natural counts measured separately. Twenty actual illustration candidates exist, 115 missing. All old fifteen files remain; no new WAV or listening claim.
 
@@ -8,7 +8,7 @@ Rejected first 135 draft is archived under analysis/milestone135-draft-unfunded 
 
 Initial authoring validation found a duplicate draft ID and an incorrect repayment flag name; both were corrected before measurements. Later local errors were in new test fixtures: wrong RNG property, missing testable access, missing result acknowledgment and an unavailable repeated fixture choice. Corrected fixtures use the real model, selector, availability and waits; full suite passes. One Windows PowerShell5 stderr-handling launch failed before measurement and was rerun with the existing PowerShell7 helper. Automatic review rejected overwriting the copied knowledge reference; the enriched replay uses the new separate milestone135-120-observed directory and verifies all original fields unchanged. No user approval or destructive operation was needed.
 
-Native acceptance, actual screenshot/OCR/audio evidence and final metric review are pending. Era 4 remains closed; conversion plans are documented only. Next group after acceptance: 135 → 150, driven by remaining measured technology/ecology/repetition issues, distinct crises, further closed chains and actual art. Original 12 eras / 800 cards / 100 complete chains / 30 endings remain open targets. User README/root technologies/root council and unrelated logs/experiments are preserved and must remain unstaged.
+Native acceptance and actual screenshot/OCR/audio review passed for original source80a7bf5 / run43908707917 attempt4. 92 macOS Swift,51 Node,six UI tests and60,000 simulations passed; all six downloaded JSONs match local final reports in every field. Exact artifacts, captures and limits: NATIVE_135_EVIDENCE.md. Known balance regressions remain open. Era 4 remains closed; conversion plans are documented only. Next group after acceptance: 135 → 150, driven by remaining measured technology/ecology/repetition issues, distinct crises, further closed chains and actual art. Original 12 eras / 800 cards / 100 complete chains / 30 endings remain open targets. User README/root technologies/root council and unrelated logs/experiments are preserved and must remain unstaged.
 
 # Verified 120-card milestone — 2026-11-16
 
@@ -373,3 +373,17 @@ Code80a7bf55253ee5b16350ca973ecdd6a0e9da8bc0 pushed normally to main; source run
 Run43908707917 source80a7bf5 attempts1/2/3 all failed before runner allocation (jobs133444441298 /133446009124 /133447509389). Same account payment/spending-limit failure; secondary arm64 capacity message is informational. After user reported billing fixed, same-source retries still got this block. Zero executed steps, no logs, zero artifacts. No native Swift, simulations, build, UI, OCR or audio-start test ran for135. Full evidence and recovery procedure: NATIVE_135_EVIDENCE.md and analysis/milestone135-verified/native-attempts.json. Local code/data/tests are complete; native acceptance is explicitly incomplete. Do not publish acceptance or begin150 until real artifacts are reviewed.
 
 Next135 →150 record: first study the observed survival/food regressions and restored resource-flow pacing without changing old score policies or forcing deaths. Preserve the three closed chains, examine remaining older zero-ecology extraction semantics with save compatibility, then author five distinct events per era and another reviewed chain. Continue real art and physical/audio/accessibility QA. Keep Era4 closed through180 and sufficient later content. This is a future record, not started work.
+
+
+### Same-source native retry after restored account access
+
+User confirmed the GitHub payment/limit issue fixed again. Re-ran failed jobs on existing run43908707917, exact source80a7bf55253ee5b16350ca973ecdd6a0e9da8bc0, attempt4/job133456946700. It remains queued for a macOS runner instead of failing immediately with the earlier billing error. No build/test/artifact result exists yet; do not mark native accepted or start150. Ignored local review helpers are under artifacts/milestone135-native; compare-native.mjs targets the six final milestone135-verified JSONs, inspect-artifacts.mjs checks the actual UI/audio/OCR manifest after download. No source or workflow mutation was made.
+
+
+### Native135 acceptance completed —2026-11-17
+
+Original80a7bf55253ee5b16350ca973ecdd6a0e9da8bc0 passed run43908707917 attempt4/job133456946700 after user restored account access. 92 macOS Swift,51 Node,six UI tests,60,000 native simulations, XcodeGen and actual iPhone SE3/iOS18.5 build/install/launch passed. Downloaded artifacts14254632513(UI) and14253252942(quality); both ZIP hashes match GitHub digests. All six native JSON reports are deeply identical to local final reports in every field.
+
+Reviewed180 exported attachments through manifest checks:20 illustration fixtures with three captures each; visually inspected five new standard scenes, stable ore/gate/slag choices, granary large-text/Reduce Motion plus reachable choices, English normal/large scroll frames and main menu. Four production OCR notes each report six visible/no missing stats. Audio64 events show all three cue starts and correct mute, no invalid or write error. No export-error file or collected app crash. Partial entry opacity is from the entrance animation; physical hearing/device/color/performance and expert art approval remain open. Exact provenance: NATIVE_135_EVIDENCE.md.
+
+No game code, workflow or card count changed in this verification task; runtime identity against80a7bf5 must remain clean. Earlier account failures are retained. Known survival/food/ecology/pacing regressions remain open despite successful CI.135 now has native acceptance;150-card work has not started. The next-group task record remains a proposal.

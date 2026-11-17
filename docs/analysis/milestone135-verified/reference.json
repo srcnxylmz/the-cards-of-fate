@@ -1,5 +1,5 @@
 {
-  "status": "local six cohorts complete; native account-blocked before execution",
+  "status": "local and native six cohorts complete; actual artifacts reviewed",
   "baseline": "0592d02fdc47a368e5cb340c92f5b478e4b2df3e",
   "runsPerPolicy": 10000,
   "seeds": "0..<10000",
@@ -27,5 +27,8 @@
   "descriptionOnlyClarification": "After the measured build, sowing_crews description changed from shared-store repairs to grain-store cover repairs, supporting both actual public/private storage histories. Deep comparison after removing description fields is identical. No requirements, effects, outcomes, RNG, score or reported field changed; full native reports must match every field.",
   "nativeRun": 43908707917,
   "nativeSource": "80a7bf55253ee5b16350ca973ecdd6a0e9da8bc0",
-  "nativeAttemptsFile": "native-attempts.json"
+  "nativeAttemptsFile": "native-attempts.json",
+  "nativeAttempt": 4,
+  "nativeAccepted": true,
+  "nativeReviewedOn": "2026-11-17"
 }

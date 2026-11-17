@@ -2,8 +2,8 @@
   "source": "80a7bf55253ee5b16350ca973ecdd6a0e9da8bc0",
   "runID": 43908707917,
   "url": "https://github.com/srcnxylmz/the-cards-of-fate/actions/runs/43908707917",
-  "nativeAccepted": false,
-  "artifacts": 0,
+  "nativeAccepted": true,
+  "artifacts": 2,
   "attempts": [
     {
       "attempt": 1,
@@ -28,8 +28,90 @@
       "runnerID": 0,
       "executedSteps": 0,
       "reason": "Account payment/spending-limit block before runner allocation; separately an informational macOS arm64 capacity notice"
+    },
+    {
+      "attempt": 4,
+      "jobID": 133456946700,
+      "status": "completed",
+      "conclusion": "success",
+      "executedRequiredGates": true,
+      "reason": "Original source rerun passed all required gates. Optional UI-only guard skipped as inapplicable."
     }
   ],
   "userReportedBillingFixedAfterAttempt1": true,
-  "note": "Attempts2 and3 retain the same account-block annotation. Do not claim any macOS/iOS/UI execution for this source. Retry the same source run after owner Actions billing access is restored."
+  "note": "Artifacts downloaded and visually reviewed. Every field of six native JSON reports matches the local final reports. First three account failures remain historical; no source/workflow change or next development group.",
+  "verifiedOn": "2026-11-17",
+  "tests": {
+    "node": 51,
+    "swift": 92,
+    "swiftSeconds": 75.416,
+    "ui": 6,
+    "uiSeconds": 567.229,
+    "simulations": 60000
+  },
+  "environment": {
+    "device": "iPhone SE (3rd generation)",
+    "runtime": "iOS 18.5",
+    "xcode": "16.4",
+    "xcodeBuild": "16F6"
+  },
+  "downloadedArtifacts": [
+    {
+      "id": 14254632513,
+      "name": "iphone-ui-evidence",
+      "sha256": "a99c220446ebff69922047b3d9e18f5a05d776cfe1cd9b4d7d7d81e4a5dd79d7"
+    },
+    {
+      "id": 14253252942,
+      "name": "quality-reports",
+      "sha256": "e3eb5622e3e676568056102f4100aae5adec7260079d65b5acc025b96180b745"
+    }
+  ],
+  "artifactReview": {
+    "attachments": 180,
+    "fixtures": 20,
+    "capturesPerFixture": 3,
+    "productionOCR": [
+      {
+        "name": "stat-first-paint-comparison-en-true-false_0_B15ABFF8-4CBB-4386-95A6-AC45713F5F4F.txt",
+        "file": "DE7324DB-F894-44CE-8AF0-B5ACA7CA2715.txt",
+        "text": "legacy=false, visible=6, missing=[]"
+      },
+      {
+        "name": "stat-first-paint-comparison-tr-true-false_0_F9C62898-AC00-45D7-920E-BAF846355B55.txt",
+        "file": "6A894350-F0D0-48A5-972D-9897B403E179.txt",
+        "text": "legacy=false, visible=6, missing=[]"
+      },
+      {
+        "name": "stat-first-paint-comparison-en-false-false_0_662B9E56-8B87-4ED0-8038-7CEDB44468ED.txt",
+        "file": "9CFFC5A1-DC6D-47B0-A885-EA0D860CCDAD.txt",
+        "text": "legacy=false, visible=6, missing=[]"
+      },
+      {
+        "name": "stat-first-paint-comparison-tr-false-false_0_D362EB28-6A59-4097-8A89-B2A0A7D782BB.txt",
+        "file": "427C6237-0088-48FA-A17B-C120C4CF99B0.txt",
+        "text": "legacy=false, visible=6, missing=[]"
+      }
+    ],
+    "audio": {
+      "events": 64,
+      "cues": [
+        "card-open",
+        "choice-soft",
+        "decision"
+      ],
+      "missingCues": [],
+      "invalid": [],
+      "writeError": null,
+      "startedDurations": [
+        "card-open:0.24",
+        "choice-soft:0.12",
+        "decision:0.22"
+      ]
+    },
+    "exportErrors": null,
+    "collectedCrashes": [],
+    "allSixSimulationFieldsMatch": true,
+    "visualReview": "Five new standard scenes; stable ore/gate/slag choices; granary large-text/Reduce Motion and reachable choices; English normal/large scrolled frames; installed-launch main menu. See NATIVE_135_EVIDENCE.md for exact filenames."
+  }
 }
