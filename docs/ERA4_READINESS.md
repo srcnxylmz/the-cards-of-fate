@@ -1,8 +1,8 @@
-# Era 4 boundary and future dependencies — 150-card group
+# Era 4 boundary and future dependencies — 165-card group
 
 This milestone adds no Era 4 cards and does not open the fourth era. MASTER_SPEC section 3 defines Ancient Empires as governing large kingdoms/empires; section 4 requires knowledge, discoveries, stability and key historical events rather than an elapsed-turn gate. The first-three-era Phase 2 target remains 180 original events. Existing 12-era metadata is not playable content.
 
-The current Bronze → Ancient boundary requires writing, knowledge ≥78, stability ≥35, population ≥25, a living civilization, and authored next-era content. `advanceEra` still refuses an unauthored era. Current content has 50/50/50 cards and zero in 4–12. The Era 4 metadata describes Stone Capital / Empire, civil_law and knowledge 82 for its own eventual exit; it is not an implemented law/imperial economy.
+The current Bronze → Ancient boundary requires writing, knowledge ≥78, stability ≥35, population ≥25, a living civilization, and authored next-era content. `advanceEra` still refuses an unauthored era. Current draft content has 55/55/55 cards and zero in 4–12; native165 acceptance is a separate gate. The Era 4 metadata describes Stone Capital / Empire, civil_law and knowledge 82 for its own eventual exit; it is not an implemented law/imperial economy.
 
 Before a future phase enables that boundary:
 
@@ -29,3 +29,19 @@ Commercial targets remain 12 eras, at least 800 original cards, 100 editorially 
 | guest representation and route_school_memory | Residency/citizenship and guide service disputes; adult consent, inheritance scope and new work compensation |
 
 Opening Era 4 still requires completion of the first-three-era 180-card phase, a substantial verified Era 4 recurring/content inventory, an explicit readiness gate and migration/replay tests for each conversion. No conversion code, fourth-era event, threshold adjustment or transition unlock is added in the 150 group. New public/private alarm settlements, vented-bin practice and paid street-watch/guest representation must also be carried as bounded precedents, never free provincial rights.
+
+## Concrete entry contract after180 — proposed, not implemented
+
+Before authoring the first enabled fourth-era card, introduce an explicit content-readiness switch, default false. A single experimental event must not satisfy readiness. Proposed minimum:40 original Era4 events, including at least24 repeatable crises and eight independently reviewed chain conclusions; these categories may overlap only where editorially justified, not to inflate counts. At least six distinct recurring conflicts each cover provincial logistics/taxation, water/land obligations, work/production access and citizenship/legitimacy. No fixed-turn unlock and no lowering the existing knowledge78/stability35/population25/writing requirements.
+
+| Existing record | Entry conversion | First imperial dispute and acceptance condition |
+|---|---|---|
+| Open/paid/defaulted bread bond | Keep each actual obligation and its identity; no blanket amnesty on entry | Provincial levy competes with grain repayment. Paid old claims remain closed; a different new loan survives settlement of an old claim. |
+| Cistern/runoff/public water accounts | Carry contribution evidence, not ownership of all water | Province proposes a maintenance levy; drought quotas distinguish paid old construction from new labor. No free water or ecology grant. |
+| Guest/roof household voice | Preserve the actual representation precedent | Residency hearing distinguishes lodging, contribution and political voice; provincial officials cannot silently revoke old rights. Both negotiated citizenship and restricted residency have explicit costs/closure. |
+| Public/private mold ownership | Preserve equipment access and current production contract separately | Imperial requisition requires new paid labor/materials; no retroactive confiscation hidden in a flag rename. Low-workforce output and depleted reserves remain constrained. |
+| Alarm/private watch settlement | Carry liability terms and who controlled messages | Provincial guard levy distinguishes error from fraud and public accountability from a private service contract. New watch wages remain payable. |
+| Public/private care settlement | Carry credited care work or the separate household contract | Census/levy dispute counts care, tax and current service separately. Old recognition grants a documented hearing advantage, never tax-free production. |
+| Earlier leadership/mandate and faction relations | Preserve actual ruler, opposition, exile and consent history | Appointment of a governor tests local mandate versus central authority. A ruler cannot acquire legitimacy merely by changing era. |
+
+Acceptance requires v1 save/reload and deterministic replay across entry, current displayed cards and queued effects preserved, no reopened paid debt, and both opposed outcomes for each conversion. Full same-seed comparisons must report deaths, starvation, ecology, lost access and living caps. Measure complete20/40/80 Era4 residence windows and after100 active choices; no empty deck or forced death to improve repeats. Add period art/UI/OCR/audio evidence before enabling entry. Physical-device/signing/Game Center remains a separate account/device gate. The165→180 group should complete first-three-era60/60/60 and refine this contract; it must not automatically open Era4.

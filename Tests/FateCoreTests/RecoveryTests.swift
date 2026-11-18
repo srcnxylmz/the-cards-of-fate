@@ -46,9 +46,9 @@ final class RecoveryTests: XCTestCase {
     }
     func testAllFifteenEventsAndEveryChoiceAreSelectableAndReplayable() throws {
         let e = try engine()
-        XCTAssertEqual(e.content.cards.count,150)
-        XCTAssertEqual(Set(e.content.cards.map(\.id)).count, 150)
-        for era in 1...3 { XCTAssertEqual(e.content.cards.filter { $0.era == era }.count,50) }
+        XCTAssertEqual(e.content.cards.count,165)
+        XCTAssertEqual(Set(e.content.cards.map(\.id)).count, 165)
+        for era in 1...3 { XCTAssertEqual(e.content.cards.filter { $0.era == era }.count,55) }
         for id in ids {
             let card = e.content.card(id)!
             for choice in card.choices {

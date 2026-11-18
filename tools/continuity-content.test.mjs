@@ -1,10 +1,10 @@
 import {test} from 'node:test';import assert from 'node:assert/strict';import {readFileSync} from 'node:fs';
-const cards=JSON.parse(readFileSync('cards.json')),prior=JSON.parse(readFileSync('docs/analysis/milestone150-balance-135/cards.json')),added=cards.filter(c=>!prior.some(x=>x.id===c.id));
+const cards=JSON.parse(readFileSync('cards.json')),prior=JSON.parse(readFileSync('docs/analysis/milestone150-balance-135/cards.json')),native150=JSON.parse(readFileSync('docs/analysis/milestone150-verified/cards.json')),added=cards.filter(c=>!prior.some(x=>x.id===c.id)&&native150.some(x=>x.id===c.id));
 test('150 unique events preserve all balanced 135 definitions and stay in three eras',()=>{
- assert.equal(cards.length,150);assert.equal(new Set(cards.map(c=>c.id)).size,150);
+ assert.equal(cards.length,165);assert.equal(new Set(cards.map(c=>c.id)).size,165);
  for(const c of prior)assert.deepEqual(cards.find(x=>x.id===c.id),c,c.id);
  assert.equal(added.length,15);for(const era of [1,2,3])assert.equal(added.filter(c=>c.era===era).length,5);
- for(const lang of ['tr','en'])for(const field of ['title','description'])assert.equal(new Set(cards.map(c=>c[field][lang])).size,150);
+ for(const lang of ['tr','en'])for(const field of ['title','description'])assert.equal(new Set(cards.map(c=>c[field][lang])).size,165);
 });
 test('new authored conflicts carry paid choices, consequences and real history prerequisites',()=>{
  assert.equal(new Set(added.map(c=>c.artDirection)).size,15);

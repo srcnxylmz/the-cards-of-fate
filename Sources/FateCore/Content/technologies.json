@@ -4,7 +4,8 @@
     "era": 1,
     "unlockedBy": [
       "river_tracks",
-      "spring_seedbed"
+      "spring_seedbed",
+      "wild_plots"
     ],
     "status": "implemented"
   },
@@ -24,7 +25,8 @@
     "id": "writing",
     "era": 3,
     "unlockedBy": [
-      "clay_archive"
+      "clay_archive",
+      "tally_school"
     ],
     "status": "implemented"
   },

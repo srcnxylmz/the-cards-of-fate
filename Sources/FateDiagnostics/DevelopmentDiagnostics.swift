@@ -8,8 +8,34 @@ public struct DevelopmentDiagnostics {
     private var decision = ""
     private var bronzeAge = 0
     private var zeroPopulationStage: String?
+    private var technologyOffers: Set<String> = []
+    private var technologySelections: Set<String> = []
     public mutating func begin(_ s: GameState, card: CardEvent, choice: Choice) {
         prior = s.stats; decision = card.id+"."+choice.id
+        // Observe current offers only; never inspect future draws or change policy utility.
+        for c in card.choices {
+            let technologies = Set(c.outcomes.flatMap { $0.effect.technologies })
+            for technology in technologies where !s.technologies.contains(technology) {
+                let key = "technologyOffer."+technology+"."+card.id+"."+c.id
+                counts[key+".presented", default:0] += 1
+                if technologyOffers.insert(technology).inserted {
+                    counts["technologyFirstOffer."+technology+".runs", default:0] += 1
+                    counts["technologyFirstOffer."+technology+".turnSum", default:0] += s.turn
+                }
+                guard c.available(in:s) else { counts[key+".unavailable", default:0] += 1; continue }
+                counts[key+".available", default:0] += 1
+                let selected = choice.id == c.id
+                counts[key+(selected ? ".chosen" : ".declined"), default:0] += 1
+                if s.stats["knowledge"] == 100 {
+                    counts[key+".atKnowledge100", default:0] += 1
+                    counts[key+(selected ? ".chosenAtKnowledge100" : ".declinedAtKnowledge100"), default:0] += 1
+                }
+                if selected && technologySelections.insert(technology).inserted {
+                    counts["technologyFirstInvestment."+technology+".runs", default:0] += 1
+                    counts["technologyFirstInvestment."+technology+".turnSum", default:0] += s.turn
+                }
+            }
+        }
         if s.era == 3 { bronzeAge += 1 }
         if s.era == 2 && !s.technologies.contains("smelting") {
             counts["neo.beforeMetal.decisions",default:0] += 1

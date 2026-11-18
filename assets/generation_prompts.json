@@ -406,5 +406,103 @@
       "source": "exec-22b85746-1283-4950-b203-281712ef45bd.png",
       "sha256": "a7f013606d3e2a3d93b2cad7f74f3a6b898f4adfd910f270b5215889b08247c8"
     }
+  },
+  {
+    "asset": "card_flint_fragments",
+    "tool": "built-in imagegen",
+    "prompt": "Use case: historical-scene. Original premium portrait event-card illustration for The Cards of Fate, flint_fragments. Human conflict: The knapping place has accumulated pieces too small for sound blades. Young people want a repair stock. Hunters propose trading them for food rather than carrying extra weight. Scene: Paleolithic knappers sorting small flint fragments on hide, adult carrier with light pack, ochre dust and cool cave light, no metal. Era: Paleolithic: stone, bone and hide only; ochre/charcoal and winter or dawn light. Cinematic painterly historical realism consistent with the existing hearth, river, granary and copper-workshop collection; natural anatomy, expressive adult faces/hands, tactile materials, restrained emotion. Portrait 2:3, comfortably framed central silhouettes readable on iPhone. Original composition. No text, readable lettering, logo, border, watermark, modern objects or copied game designs.",
+    "status": "generated-candidate; historical and device QA pending",
+    "generation": {
+      "type": "generated",
+      "tool": "built-in imagegen",
+      "model": "not exposed by built-in tool",
+      "generatedAt": null,
+      "registeredAt": "2026-11-17T20:59:45.337Z",
+      "mode": "generation",
+      "source": "exec-3f0fa1ea-4984-4508-8579-102e2ddb8a62.png",
+      "sha256": "681cb3269951838360e07d97edb86a215868fa323fb1165f82ee6fbf383f3ac4"
+    }
+  },
+  {
+    "asset": "card_potter_lease",
+    "tool": "built-in imagegen",
+    "prompt": "Use case: historical-scene. Original premium portrait event-card illustration for The Cards of Fate, potter_lease. Human conflict: The repaired pottery kiln stands idle in the evening. Neighboring craftspeople want a small trial with green stone. Its owner can share work for upkeep supplies or lease the hours for immediate pottery income. Scene: Neolithic potter and neighboring adults negotiating evening use of small clay kiln, green copper ore and ceramic bowls, sage dusk and restrained glow, no finished bronze tools. Era: Neolithic: clay, reed, wood and stone; sage/clay light, no finished bronze equipment unless explicitly discovered in the brief. Cinematic painterly historical realism consistent with the existing hearth, river, granary and copper-workshop collection; natural anatomy, expressive adult faces/hands, tactile materials, restrained emotion. Portrait 2:3, comfortably framed central silhouettes readable on iPhone. Original composition. No text, readable lettering, logo, border, watermark, modern objects or copied game designs.",
+    "status": "generated-candidate; historical and device QA pending",
+    "generation": {
+      "type": "generated",
+      "tool": "built-in imagegen",
+      "model": "not exposed by built-in tool",
+      "generatedAt": null,
+      "registeredAt": "2026-11-17T20:59:45.385Z",
+      "mode": "generation",
+      "source": "exec-d45858ab-2e73-4a4d-8b2a-da519422ab05.png",
+      "sha256": "b302cf7acf901efa0602615a4bcc374f342c0b7d4b0b697e2a068b256b405346"
+    }
+  },
+  {
+    "asset": "card_copper_recast",
+    "tool": "built-in imagegen",
+    "prompt": "Use case: historical-scene. Original premium portrait event-card illustration for The Cards of Fate, copper_recast. Human conflict: Broken bronze tools have accumulated this production cycle. Craftspeople want to remelt the metal; rushing the mixture could make new edges brittle. Collecting sound tools would also interrupt work. Scene: Bronze founders sorting broken tool heads beside clay molds and small furnace, adult craft workers, bronze gold and teal shade, no modern equipment. Era: Bronze Age: clay-brick, timber, bronze and woven textiles; bronze gold and cool teal daylight. Cinematic painterly historical realism consistent with the existing hearth, river, granary and copper-workshop collection; natural anatomy, expressive adult faces/hands, tactile materials, restrained emotion. Portrait 2:3, comfortably framed central silhouettes readable on iPhone. Original composition. No text, readable lettering, logo, border, watermark, modern objects or copied game designs.",
+    "status": "generated-candidate; historical and device QA pending",
+    "generation": {
+      "type": "generated",
+      "tool": "built-in imagegen",
+      "model": "not exposed by built-in tool",
+      "generatedAt": null,
+      "registeredAt": "2026-11-17T20:59:45.432Z",
+      "mode": "generation",
+      "source": "exec-027fbe38-989a-4914-9554-6add900f4203.png",
+      "sha256": "b116ca5a99093b2f291b9fb276e54ace6c53338dcec0c68d7e314929c334fcd5"
+    }
+  },
+  {
+    "asset": "card_bank_alarm",
+    "tool": "built-in imagegen",
+    "prompt": "Use case: historical-scene. Original premium portrait event-card illustration for The Cards of Fate, bank_alarm. Human conflict: The old smoke signal will now warn of rising village water. Bank households value night watches; upper-field households value daytime sowing. Hearing the signal is not enough: people must agree which work to leave. Scene: Neolithic adult farmers and bank watchers negotiating a flood warning beside reed homes, a small smoke beacon and seed baskets, sage dawn, no written law or metal sirens. Era: Neolithic: clay, reed, wood and stone; sage/clay light, no finished bronze equipment unless explicitly discovered in the brief. Cinematic painterly historical realism consistent with the existing hearth, river, granary and copper-workshop collection; natural anatomy, expressive adult faces/hands, tactile materials, restrained emotion. Portrait 2:3, comfortably framed central silhouettes readable on iPhone. Original composition. No text, readable lettering, logo, border, watermark, modern objects or copied game designs.",
+    "status": "generated-candidate; historical and device QA pending",
+    "generation": {
+      "type": "generated",
+      "tool": "built-in imagegen",
+      "model": "not exposed by built-in tool",
+      "generatedAt": null,
+      "registeredAt": "2026-11-17T20:59:45.481Z",
+      "mode": "generation",
+      "source": "exec-9715d69a-51a8-4be4-b04d-b88a177edb32.png",
+      "sha256": "8f1a893f6e67f1a40c7d0bf7861b62fb1ce91402befcaa79fedbdc147cbe25ff"
+    }
+  },
+  {
+    "asset": "card_mold_audit",
+    "tool": "built-in imagegen",
+    "prompt": "Use case: historical-scene. Original premium portrait event-card illustration for The Cards of Fate, mold_audit. Human conflict: The old fragment stock and kiln right are now cited as grounds for access to bronze molds. The workshop owner claims the new mold as personal labor. Repairers argue that shared knowledge cannot be locked outside. Scene: Bronze adult mold maker and repairers examining plain clay casting mold and small bronze tools, simple workshop and shared key, warm gold and teal shade, no modern lock or readable script. Era: Bronze Age: clay-brick, timber, bronze and woven textiles; bronze gold and cool teal daylight. Cinematic painterly historical realism consistent with the existing hearth, river, granary and copper-workshop collection; natural anatomy, expressive adult faces/hands, tactile materials, restrained emotion. Portrait 2:3, comfortably framed central silhouettes readable on iPhone. Original composition. No text, readable lettering, logo, border, watermark, modern objects or copied game designs.",
+    "status": "superseded: later metal lock key replaced by clay seals",
+    "generation": {
+      "type": "generated",
+      "tool": "built-in imagegen",
+      "model": "not exposed by built-in tool",
+      "generatedAt": null,
+      "source": "exec-1eb97706-2103-4a26-9fc1-032d301d5b96.png",
+      "sha256": "1bce1c851c70161b27717549d20a6a2c1af3258c90b59ebb1c0cdb68634d32f8"
+    }
+  },
+  {
+    "asset": "card_mold_audit",
+    "tool": "built-in imagegen",
+    "prompt": "Edit only the foreground access prop in this Bronze Age mold-workshop illustration. Preserve all adults, faces, hands, clothing, held casting mold, tools, kiln, lighting, portrait composition and painterly style. Replace the shiny toothed metal lock key and its metal ring on the center foreground table with two irregular matte terracotta clay sealing lumps tied together with a short plain flax cord. No metal key, key ring or later lock hardware should remain. The clay seals have simple abstract impressions, not readable writing. Change nothing else.",
+    "status": "generated-candidate; historical and device QA pending",
+    "generation": {
+      "type": "generated",
+      "tool": "built-in imagegen",
+      "model": "not exposed by built-in tool",
+      "generatedAt": null,
+      "registeredAt": "2026-11-17T20:59:45.535Z",
+      "mode": "edit",
+      "reference": {
+        "file": "exec-1eb97706-2103-4a26-9fc1-032d301d5b96.png",
+        "sha256": "1bce1c851c70161b27717549d20a6a2c1af3258c90b59ebb1c0cdb68634d32f8"
+      },
+      "source": "exec-078460fd-a1db-40b1-8aa9-8049af6dcca7.png",
+      "sha256": "2ffe1746ad61c19b303d6950c7aa2d883db1326d08aefebff19bfc0674089df1"
+    }
   }
 ]

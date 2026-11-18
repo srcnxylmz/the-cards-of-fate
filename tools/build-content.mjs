@@ -7,6 +7,7 @@ import { addSeasonEvents } from './content/season-events.mjs';
 import { adaptRecurringEvents } from './content/adapt-events.mjs';
 import { addMilestoneEvents } from './content/milestone-events.mjs';
 import { addRecoveryEvents } from './content/recovery-events.mjs';
+import { addCivicWorkEvents } from './content/civic-work-events.mjs';
 import { addContinuityEvents } from './content/continuity-events.mjs';
 import { addStewardshipEvents } from './content/stewardship-events.mjs';
 import { addCityEvents } from './content/city-events.mjs';
@@ -250,6 +251,7 @@ addRecoveryEvents({ cards, card, choice, outcome, delayed });
 addCityEvents({ cards, card, choice, outcome, delayed });
 addStewardshipEvents({ cards, card, choice, outcome, delayed });
 addContinuityEvents({ cards, card, choice, outcome, delayed });
+addCivicWorkEvents({ cards, card, choice, outcome, delayed });
 
 // Durable historical decisions close using existing flags, including older v1 saves.
 for (const id of ['sacred_fire', 'stranger_child', 'cave_marks', 'seed_debt', 'ancestor_field']) {

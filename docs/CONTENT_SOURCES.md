@@ -39,3 +39,8 @@ Stewardship events add exactly 15, five per era; the package and root generated 
 ## 150-card source extension —2026-11-17
 
 continuity-events.mjs composes15 original scenes onto the repaired135 source, maintaining50/50/50 and361 choices. All balanced135 objects are deep-compared, while balance-content.test.mjs separately whitelists the four measured changes from native135. Canonical package and generated root mirror remain byte-identical. User root technology, README and council report remain untouched. Frozen decks/reports in milestone150-135-before, milestone150-balance-135, milestone150-draft-unrestored, milestone150-screening and milestone150-verified are diagnostic inputs only. Rejected draft and reduced-catch candidates are not accepted content. No score, runtime rule or save-schema replacement.
+
+
+## 165-card source extension —2026-11-18
+
+civic-work-events.mjs adds15 original events with55/55/55 and394 decisions. Canonical bundled cards and root generated mirror remain identical. All150 native definitions are deeply compared unchanged by civic-work-content.test.mjs. New technology metadata only adds paid cultivation/writing sources; root user technologies.json remains untouched. Passive technology offers/investments/K100 observers preserve every old150 field over six full reference replays; no RNG/score/threshold/save change. Current separate council report is analysis/milestone165-verified/simulation-survival-council.json, not the user-owned root council file.

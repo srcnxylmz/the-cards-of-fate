@@ -1,8 +1,12 @@
 # Content bible
 
-Editorial principle: each card needs a specific human conflict, an observable cost, competing reasonable values, and consequences that fit the era. Neither option should simply be the same reward in different wording. Turkish is authored naturally, with a complete English counterpart for the current 150-card set.
+Editorial principle: each card needs a specific human conflict, an observable cost, competing reasonable values, and consequences that fit the era. Neither option should simply be the same reward in different wording. Turkish is authored naturally, with a complete English counterpart for the current 165-card set.
 
-## Current150-card inventory
+## Current165-card inventory
+
+165 unique events,55 per era,394 decisions. Fifteen civic-work conflicts preserve all150 definitions. Care watches→sowing relief→city labor account adds the fifth authored/tested chain; independent human historical/translation approval remains open. Conditional paid cultivation and writing lessons keep old metal discoveries intact.33 choices,crew/thin funded deliveries,care representation and convoy history are covered by engine/save/replay tests.30 real image candidates,135 missing; no new finished music.104 local Swift/59 Node pass; native165 acceptance is still pending. See STORY_REVIEW_165.md and MILESTONE_165_ANALYSIS.md.
+
+## Historical150-card inventory
 
 150 unique events,50 per era,361 choices. continuity-events.mjs adds15 distinct human conflicts, seven one-shot histories/conclusions and eight recurring work crises. All balanced135 definitions are unchanged. The separate four-event balance repair is documented in BALANCE_REPAIR_150.md. Twenty-five real illustration candidates,125 missing; no new finished sound/music. Shared signal → village watch → city alarm hearing adds the fourth complete authored/tested chain with opposed branches, actual delayed memories and a writing gate. Natural path counts are measured separately in MILESTONE_150_ANALYSIS.md. Paid hide reuse and selective-mesh upkeep address the rejected draft’s ecology regression; no population healing or policy/threshold change. Local and native100 Swift/56 Node plus six UI tests and six10000-seed cohorts pass. Native150 acceptance, actual25-fixture/artifact/OCR/audio proof: NATIVE_150_EVIDENCE.md. Independent editorial/historical/device approval remains open.
 
