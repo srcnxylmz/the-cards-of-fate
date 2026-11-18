@@ -32,7 +32,7 @@ Opening Era 4 still requires completion of the first-three-era 180-card phase, a
 
 ## Concrete entry contract after180 — proposed, not implemented
 
-Before authoring the first enabled fourth-era card, introduce an explicit content-readiness switch, default false. A single experimental event must not satisfy readiness. Proposed minimum:40 original Era4 events, including at least24 repeatable crises and eight independently reviewed chain conclusions; these categories may overlap only where editorially justified, not to inflate counts. At least six distinct recurring conflicts each cover provincial logistics/taxation, water/land obligations, work/production access and citizenship/legitimacy. No fixed-turn unlock and no lowering the existing knowledge78/stability35/population25/writing requirements.
+Before authoring the first enabled fourth-era card, introduce an explicit content-readiness switch, default false. A single experimental event must not satisfy readiness. Proposed minimum:40 original Era4 events, including at least24 repeatable crises, eight independently reviewed one-shot chain conclusions and eight distinct entry/bridge events. These inventory groups are disjoint; do not count one event twice. At least six distinct recurring conflicts each cover provincial logistics/taxation, water/land obligations, work/production access and citizenship/legitimacy. No fixed-turn unlock and no lowering the existing knowledge78/stability35/population25/writing requirements.
 
 | Existing record | Entry conversion | First imperial dispute and acceptance condition |
 |---|---|---|

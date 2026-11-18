@@ -1,0 +1,621 @@
+{
+  "id": 44327962308,
+  "sourceSHA": "ee0bd37d68e6c4e0204fae8f601e4993e664744f",
+  "status": "completed",
+  "conclusion": "success",
+  "attempt": 1,
+  "url": "https://github.com/srcnxylmz/the-cards-of-fate/actions/runs/44327962308",
+  "job": 134884254516,
+  "artifacts": [
+    {
+      "id": 14442866092,
+      "name": "quality-reports",
+      "size_in_bytes": 145436,
+      "url": "https://api.github.com/repos/srcnxylmz/the-cards-of-fate/actions/artifacts/14442866092",
+      "archive_download_url": "https://api.github.com/repos/srcnxylmz/the-cards-of-fate/actions/artifacts/14442866092/zip",
+      "expired": false,
+      "created_at": "2026-11-18T15:37:07Z",
+      "expires_at": "2027-02-16T14:46:28Z",
+      "updated_at": "2026-11-18T15:37:07Z",
+      "digest": "sha256:beb21f48787b1e68179d21b723aaabb813b06783c39c28865e5f336f6ec6bc06",
+      "workflow_run": {
+        "id": 44327962308,
+        "repository_id": 1451666261,
+        "head_repository_id": 1451666261,
+        "head_branch": "main",
+        "head_sha": "ee0bd37d68e6c4e0204fae8f601e4993e664744f"
+      }
+    },
+    {
+      "id": 14442581428,
+      "name": "iphone-ui-evidence",
+      "size_in_bytes": 70019413,
+      "url": "https://api.github.com/repos/srcnxylmz/the-cards-of-fate/actions/artifacts/14442581428",
+      "archive_download_url": "https://api.github.com/repos/srcnxylmz/the-cards-of-fate/actions/artifacts/14442581428/zip",
+      "expired": false,
+      "created_at": "2026-11-18T15:37:06Z",
+      "expires_at": "2026-12-02T15:36:58Z",
+      "updated_at": "2026-11-18T15:37:06Z",
+      "digest": "sha256:a06b1e1bd3add6fcc1552e4ef77f9152b6f124b53b96691fa987fcded7feff61",
+      "workflow_run": {
+        "id": 44327962308,
+        "repository_id": 1451666261,
+        "head_repository_id": 1451666261,
+        "head_branch": "main",
+        "head_sha": "ee0bd37d68e6c4e0204fae8f601e4993e664744f"
+      }
+    }
+  ],
+  "accepted": true,
+  "counts": {
+    "cards": 165,
+    "choices": 394,
+    "swift": 104,
+    "node": 59,
+    "ui": 6,
+    "simulations": 60000,
+    "actualArt": 30,
+    "missingArt": 135
+  },
+  "allSixNativeReportsIdentical": true,
+  "artifactReview": {
+    "attachments": 210,
+    "fixtures": 30,
+    "fixtureEvidence": [
+      {
+        "id": "sacred_fire",
+        "captures": [
+          {
+            "name": "tr-art-sacred_fire-result_0_FE807A0B-EB51-42F3-B65E-3D847CC0A1CD.png",
+            "file": "E8E057FB-7CA3-43B8-9AB0-D7D67EECEE42.png"
+          },
+          {
+            "name": "tr-art-sacred_fire-reachable-options_0_91E7BB4C-0688-4192-AA15-34D374A30018.png",
+            "file": "5BCA5E89-C837-4FEB-86F4-1E1537DEA7C3.png"
+          },
+          {
+            "name": "tr-art-sacred_fire-standard_0_D0083E2A-12ED-4A23-83FD-84B6DC1C991D.png",
+            "file": "4B872D34-616A-4ABF-B596-540D42E7684A.png"
+          }
+        ]
+      },
+      {
+        "id": "river_tracks",
+        "captures": [
+          {
+            "name": "en-art-river_tracks-result_0_9505A5AD-6BD0-458A-B331-CBE61FBF6343.png",
+            "file": "AA5886F7-2E6E-464A-8C96-2F43AED06B83.png"
+          },
+          {
+            "name": "en-art-river_tracks-reachable-options_0_79544DB8-6B6C-405A-BB98-D5F0411F6BA5.png",
+            "file": "2D41670F-BEE7-4627-8BCE-6A406E087755.png"
+          },
+          {
+            "name": "en-art-river_tracks-standard_0_2CEC4CA9-ED38-4F92-9E2D-5B0557BFD414.png",
+            "file": "2E2D610C-9178-401B-8B1A-8FF2DF660927.png"
+          }
+        ]
+      },
+      {
+        "id": "first_granary",
+        "captures": [
+          {
+            "name": "tr-art-first_granary-result_0_EDBA8018-30C8-4EC8-AEF4-74C6EE0F6EF4.png",
+            "file": "C8012719-1EF1-4D50-8778-A42D39159A56.png"
+          },
+          {
+            "name": "tr-art-first_granary-reachable-options_0_0F6B01FE-AAD2-4570-AAFC-D1D17074F8DF.png",
+            "file": "E1997255-F13F-483D-A543-702354E0CA9C.png"
+          },
+          {
+            "name": "tr-art-first_granary-large-reduced-motion_0_20D76A15-C887-491A-80CE-BCD2C26961EE.png",
+            "file": "08BD132B-6845-4C2E-8C89-E12D4DB8C450.png"
+          }
+        ]
+      },
+      {
+        "id": "green_stone",
+        "captures": [
+          {
+            "name": "en-art-green_stone-result_0_B97C770D-252C-481B-ADFD-DF37C4DDBAEF.png",
+            "file": "CB57744D-B7D8-40AB-B1B1-C9DFDCD7F5C6.png"
+          },
+          {
+            "name": "en-art-green_stone-reachable-options_0_D5A7DB81-6B76-4DD3-8C85-259101A4A788.png",
+            "file": "990AA2D8-8E9D-49E7-ADEA-5B693C8A5204.png"
+          },
+          {
+            "name": "en-art-green_stone-standard_0_30EF7543-4651-4D64-A61D-206096A2B324.png",
+            "file": "1C932D68-434B-4E61-8AED-31B341CD2799.png"
+          }
+        ]
+      },
+      {
+        "id": "reed_fever",
+        "captures": [
+          {
+            "name": "tr-art-reed_fever-result_0_53E8B12E-0341-4D91-8AC7-477D930A5EB7.png",
+            "file": "A565006E-14CC-4736-965D-FE9D4939FBC5.png"
+          },
+          {
+            "name": "tr-art-reed_fever-reachable-options_0_D24172D7-4970-419D-9A0A-5FB9D87DF4A6.png",
+            "file": "5E0039EA-8918-436C-ADED-BD540F573683.png"
+          },
+          {
+            "name": "tr-art-reed_fever-standard_0_EDE62F12-0C77-422E-A76B-F86E2E5300B7.png",
+            "file": "FC63ED34-9E66-4E24-A2EA-06DA10B12F1E.png"
+          }
+        ]
+      },
+      {
+        "id": "furnace_wood",
+        "captures": [
+          {
+            "name": "en-art-furnace_wood-result_0_81231BB2-B1DC-41A5-BD41-66F7A6961252.png",
+            "file": "480CA26D-C65D-4FDD-B096-AFE6729B4EFD.png"
+          },
+          {
+            "name": "en-art-furnace_wood-reachable-options_0_9CCB0718-A98A-48E5-9DB5-6A32F0192239.png",
+            "file": "F39C4333-1B03-46EE-A33C-F4014F82E046.png"
+          },
+          {
+            "name": "en-art-furnace_wood-standard_0_65F594D0-932C-46C3-BCE8-BA096A69D0E9.png",
+            "file": "CB58A98E-35BD-4E5C-83C2-ADAA71ADE80D.png"
+          }
+        ]
+      },
+      {
+        "id": "salt_ship",
+        "captures": [
+          {
+            "name": "tr-art-salt_ship-result_0_237A80AC-C003-4A23-ACFD-69A8D67AD797.png",
+            "file": "075C71C5-B814-4483-8372-D10F8AB1428E.png"
+          },
+          {
+            "name": "tr-art-salt_ship-reachable-options_0_27922646-FADB-4828-8288-E50BBF2553A2.png",
+            "file": "6D4C200F-040A-4BCE-95CA-5BDECC21DF9F.png"
+          },
+          {
+            "name": "tr-art-salt_ship-standard_0_2539BA74-85C9-4F38-8A72-8D9A2B4EE84E.png",
+            "file": "44B771CB-E5B3-4C24-AB33-E2641B32FEA4.png"
+          }
+        ]
+      },
+      {
+        "id": "winter_porters",
+        "captures": [
+          {
+            "name": "en-art-winter_porters-result_0_99ECB9E5-1172-49E3-B30E-6ED9A36B04E5.png",
+            "file": "8F25260D-15C7-4044-AA2C-FF91CFA7CA39.png"
+          },
+          {
+            "name": "en-art-winter_porters-reachable-options_0_433DB228-6E85-4540-8F88-713F94EAFF11.png",
+            "file": "19226795-318C-418A-BDAF-2980FD79DC44.png"
+          },
+          {
+            "name": "en-art-winter_porters-standard_0_7C522164-5018-4010-B284-0B42D856FFE3.png",
+            "file": "E2DA6B3A-0A11-4EEF-A2FA-D083B76B1D0B.png"
+          }
+        ]
+      },
+      {
+        "id": "fallow_strips",
+        "captures": [
+          {
+            "name": "tr-art-fallow_strips-result_0_F731D528-4572-4E21-A15E-C3579F12F569.png",
+            "file": "67C05E33-A0AB-43C3-A0E5-55FE9E55A8FD.png"
+          },
+          {
+            "name": "tr-art-fallow_strips-reachable-options_0_94618C3E-B980-4DFF-A08D-87ED83D7C46C.png",
+            "file": "A073CDC6-9D1E-4C4E-B74F-CF2D8FFF8A02.png"
+          },
+          {
+            "name": "tr-art-fallow_strips-standard_0_1E5A9F79-58DC-4F57-AB0E-0646A64D8E1A.png",
+            "file": "D72C0E34-B350-4383-BE54-4D60414B1088.png"
+          }
+        ]
+      },
+      {
+        "id": "smoke_shift",
+        "captures": [
+          {
+            "name": "en-art-smoke_shift-result_0_D8D7FD06-6EA2-4318-9776-260A7EACD088.png",
+            "file": "8334D6F9-9F98-48A7-B597-A19739079506.png"
+          },
+          {
+            "name": "en-art-smoke_shift-reachable-options_0_675F4DAE-4B3F-4DF5-98AE-D1DB389408B2.png",
+            "file": "31CC8621-C692-432F-8CC1-BB65FE7238CB.png"
+          },
+          {
+            "name": "en-art-smoke_shift-standard_0_6DDC6A86-A7A3-499D-B4F5-9A803B975061.png",
+            "file": "C7E27307-D186-4BE5-AE69-F5F8F86751D6.png"
+          }
+        ]
+      },
+      {
+        "id": "flint_fragments",
+        "captures": [
+          {
+            "name": "tr-art-flint_fragments-result_0_368FF26D-921C-4858-B044-764056377226.png",
+            "file": "BE93DB65-941C-40B8-9FFA-6F919F48FB6F.png"
+          },
+          {
+            "name": "tr-art-flint_fragments-reachable-options_0_38AFC135-D6BE-4DFC-96EB-4570EBCD2AC8.png",
+            "file": "F3EA6259-C7A1-432F-B340-16E647473E6E.png"
+          },
+          {
+            "name": "tr-art-flint_fragments-standard_0_753C3E39-8652-478A-B001-8E5368885FDA.png",
+            "file": "E1E359BD-A576-4E49-8173-6AE939D7B75E.png"
+          }
+        ]
+      },
+      {
+        "id": "potter_lease",
+        "captures": [
+          {
+            "name": "en-art-potter_lease-result_0_57C7D045-8D22-401D-99D8-EF3CA60D636B.png",
+            "file": "4E30F15F-5496-401E-8E61-2B03026FE3CC.png"
+          },
+          {
+            "name": "en-art-potter_lease-reachable-options_0_CCD2CAE9-B47B-4C96-979A-A0F199CFF84E.png",
+            "file": "8A0A14B3-2D29-46FF-A88E-2E3CCDDF495D.png"
+          },
+          {
+            "name": "en-art-potter_lease-standard_0_B9C367F7-EB2F-4CFD-9EEB-C2AF03FD0533.png",
+            "file": "A865C79E-4653-4F8E-985D-9581EBBE3736.png"
+          }
+        ]
+      },
+      {
+        "id": "copper_recast",
+        "captures": [
+          {
+            "name": "tr-art-copper_recast-result_0_49F7C029-BEEF-4CD7-97EF-578C00CA341E.png",
+            "file": "950F45A7-A673-40E9-BD20-E99001304293.png"
+          },
+          {
+            "name": "tr-art-copper_recast-reachable-options_0_0AE02597-FE55-4F89-BC61-6ED8510B8B5B.png",
+            "file": "E4D747DD-5530-4EF5-86B6-AB88D631CE9A.png"
+          },
+          {
+            "name": "tr-art-copper_recast-standard_0_D0174253-3219-43AA-BC5E-4FC4C39D94B2.png",
+            "file": "F04B7643-E07A-4400-806C-981F0E83CC46.png"
+          }
+        ]
+      },
+      {
+        "id": "marsh_raft",
+        "captures": [
+          {
+            "name": "en-art-marsh_raft-result_0_C3452405-F8DA-4692-A962-404285B56CEB.png",
+            "file": "DEDB3024-32E4-437A-9D41-9AC454D4B9C7.png"
+          },
+          {
+            "name": "en-art-marsh_raft-reachable-options_0_C6CE1FFA-A6BC-4C7B-ADD8-2C0B74BB8C8D.png",
+            "file": "07B921D8-71C3-4DEC-8814-83A95D662047.png"
+          },
+          {
+            "name": "en-art-marsh_raft-standard_0_EEDE29A7-88F0-495B-AE7A-BC3B2EFAF1DC.png",
+            "file": "48D2F51B-268C-4CAD-A1C1-9701F8807081.png"
+          }
+        ]
+      },
+      {
+        "id": "well_roster",
+        "captures": [
+          {
+            "name": "tr-art-well_roster-result_0_812D2E45-16B6-4AB9-B34B-3AAB78277C97.png",
+            "file": "7A11870F-B630-49D7-9A93-A13AFD0F412A.png"
+          },
+          {
+            "name": "tr-art-well_roster-reachable-options_0_12BD767D-846D-4FE9-8FC8-DA62321A2195.png",
+            "file": "45259695-CAA6-4BA9-AA66-F250F387F821.png"
+          },
+          {
+            "name": "tr-art-well_roster-standard_0_0BBA3714-EDA6-4A15-98AF-DBADCE283A27.png",
+            "file": "CD907903-DCD8-4B50-A39A-A49FEB61124C.png"
+          }
+        ]
+      },
+      {
+        "id": "quay_exchange",
+        "captures": [
+          {
+            "name": "en-art-quay_exchange-result_0_023FD8C6-4E1B-49F9-8BF3-69C9AA8028E9.png",
+            "file": "C647159E-9FBE-407F-8F27-55421BED6C9A.png"
+          },
+          {
+            "name": "en-art-quay_exchange-reachable-options_0_62EF1A54-06D2-4370-8F5C-E7D57F71ADCC.png",
+            "file": "6EE0E1C1-8A87-4C9C-A2D8-C921C229E34A.png"
+          },
+          {
+            "name": "en-art-quay_exchange-standard_0_B119C69E-9023-46A9-AE41-B1A5C1750856.png",
+            "file": "9DC05018-15F6-41E7-81F0-978A4E992C94.png"
+          }
+        ]
+      },
+      {
+        "id": "bread_bond",
+        "captures": [
+          {
+            "name": "tr-art-bread_bond-result_0_CC85A2F2-CC20-4C0E-98A3-3C6D588A0A3D.png",
+            "file": "34372067-BFC3-4856-A866-58119369B692.png"
+          },
+          {
+            "name": "tr-art-bread_bond-reachable-options_0_E4D56C54-BB75-4C61-8B57-1C6D89DA9BED.png",
+            "file": "E600CBA6-8148-4BDB-ACB3-1C665469816B.png"
+          },
+          {
+            "name": "tr-art-bread_bond-standard_0_CCDA8299-EE99-48D2-86A5-A74435383AD2.png",
+            "file": "D2C4D83E-60DB-4718-868D-80963B76395F.png"
+          }
+        ]
+      },
+      {
+        "id": "mold_audit",
+        "captures": [
+          {
+            "name": "en-art-mold_audit-result_0_4F60801F-A319-474E-B51C-DA3664267C6B.png",
+            "file": "4E7952DA-3172-432B-AB03-CE4F59D513ED.png"
+          },
+          {
+            "name": "en-art-mold_audit-reachable-options_0_38DFA832-1049-486A-B669-4C21D97742C0.png",
+            "file": "40A4FA9F-084A-4D8C-B617-4E6E96A731AA.png"
+          },
+          {
+            "name": "en-art-mold_audit-standard_0_074388F2-3F08-48FE-9063-D8423EB8AF99.png",
+            "file": "8BE07FFC-2CC7-4330-A009-59A759FB86D5.png"
+          }
+        ]
+      },
+      {
+        "id": "mine_shoring",
+        "captures": [
+          {
+            "name": "tr-art-mine_shoring-result_0_4C002DF1-18E2-4929-85A1-120BD9F7D91E.png",
+            "file": "7105621D-2049-4480-A08A-DBF2DB52431A.png"
+          },
+          {
+            "name": "tr-art-mine_shoring-reachable-options_0_B3664C6D-7366-485C-AC80-8F545A3FF49D.png",
+            "file": "79B40E0B-B6D4-42F5-8679-74158F0A1E35.png"
+          },
+          {
+            "name": "tr-art-mine_shoring-standard_0_90E37C45-2E72-42A2-8A3F-4F2844B4AD7C.png",
+            "file": "A5B94418-64C9-4CA7-ABCD-E6D426F122AE.png"
+          }
+        ]
+      },
+      {
+        "id": "herd_truce",
+        "captures": [
+          {
+            "name": "en-art-herd_truce-result_0_A7A2AADE-6820-4AB6-B055-8461E98D67C5.png",
+            "file": "A1B90A5F-DDEC-4A90-A732-5804AA4A56E1.png"
+          },
+          {
+            "name": "en-art-herd_truce-reachable-options_0_4F5B2BF6-E44F-4E77-A018-416691F57B95.png",
+            "file": "7747207C-AB1F-425D-86C2-812FC7AE5644.png"
+          },
+          {
+            "name": "en-art-herd_truce-standard_0_C84AD416-1EBC-48A0-8E00-A044718F9201.png",
+            "file": "E04D83EF-4447-4CC8-A278-560FA62902C2.png"
+          }
+        ]
+      },
+      {
+        "id": "ore_wash",
+        "captures": [
+          {
+            "name": "tr-art-ore_wash-result_0_92779FE6-C44D-4C74-ABE5-2986A03F9C65.png",
+            "file": "4333296D-0DCA-4F5F-9739-21F538FCB20E.png"
+          },
+          {
+            "name": "tr-art-ore_wash-reachable-options_0_0DF44934-6591-4485-AAB9-F745A5B1C9BB.png",
+            "file": "341AFF92-BE8F-4BA0-A02B-1F3AAFCCCF46.png"
+          },
+          {
+            "name": "tr-art-ore_wash-standard_0_8179ED9E-C3C7-448B-9C65-AFBD7514CF4F.png",
+            "file": "8736088F-3A76-4584-8322-C54017A73688.png"
+          }
+        ]
+      },
+      {
+        "id": "pasture_pledge",
+        "captures": [
+          {
+            "name": "en-art-pasture_pledge-result_0_9372CCED-9163-4FFB-9AE6-734C7E4DB3AC.png",
+            "file": "B61A9C22-5163-45DC-BCD6-15F25D770C61.png"
+          },
+          {
+            "name": "en-art-pasture_pledge-reachable-options_0_3FE5743E-DE17-4DD4-9DCD-1378A95F7309.png",
+            "file": "423C4DAF-9CE5-42CA-9A7A-A89B151D902C.png"
+          },
+          {
+            "name": "en-art-pasture_pledge-standard_0_4D60770E-1059-4EFE-9128-D9285ED4A196.png",
+            "file": "B4BC9594-857C-4CF2-9AD5-56BCA731A206.png"
+          }
+        ]
+      },
+      {
+        "id": "grazing_appeal",
+        "captures": [
+          {
+            "name": "tr-art-grazing_appeal-result_0_E45DF518-6DE1-4986-98C8-5D036F01A111.png",
+            "file": "5E459348-2E57-4D25-BF7D-26DD088293C8.png"
+          },
+          {
+            "name": "tr-art-grazing_appeal-reachable-options_0_713C3688-35D5-466B-86A3-AFDD7905CE74.png",
+            "file": "057267FE-F29C-4EE2-8B8E-051B3CC54A07.png"
+          },
+          {
+            "name": "tr-art-grazing_appeal-standard_0_49F0B51F-455C-428A-94CF-7DADF0F83801.png",
+            "file": "EE92BED3-7DEC-4BB5-9C86-4C5E0E6187F4.png"
+          }
+        ]
+      },
+      {
+        "id": "slag_basin",
+        "captures": [
+          {
+            "name": "en-art-slag_basin-result_0_108D11D8-C857-4AE4-86C3-23076DA62E27.png",
+            "file": "FE795614-E60E-4929-B258-4A931BEA5133.png"
+          },
+          {
+            "name": "en-art-slag_basin-reachable-options_0_1F7BBED7-225F-4E35-9A56-1E9F5CAB1973.png",
+            "file": "1BCAAB40-B80E-4907-A6C4-647D3773EC4C.png"
+          },
+          {
+            "name": "en-art-slag_basin-standard_0_B759F6C5-74BB-4BD9-BAF5-5F2FA35707F3.png",
+            "file": "2B24A289-C436-41F7-960D-71639B1DB986.png"
+          }
+        ]
+      },
+      {
+        "id": "smoke_code",
+        "captures": [
+          {
+            "name": "tr-art-smoke_code-result_0_B25C1472-0A95-4C42-BC91-A1A1B90E273F.png",
+            "file": "DF25369F-1D04-46DF-84CA-25963930EA9F.png"
+          },
+          {
+            "name": "tr-art-smoke_code-reachable-options_0_B553A7E0-47EA-4283-B544-29482E854996.png",
+            "file": "8C907622-4ABB-458E-AB31-4DCF767FAD05.png"
+          },
+          {
+            "name": "tr-art-smoke_code-standard_0_31AEEEA3-4B70-45C6-8A0B-AC5CDABEEC71.png",
+            "file": "55BF816E-605F-46DD-ACC0-ACF24BFF118F.png"
+          }
+        ]
+      },
+      {
+        "id": "bank_alarm",
+        "captures": [
+          {
+            "name": "en-art-bank_alarm-result_0_79B4146F-CE52-4CF6-BE2A-67D8AC8122A3.png",
+            "file": "92B9ADA7-8099-443A-853D-6364FA35E40C.png"
+          },
+          {
+            "name": "en-art-bank_alarm-reachable-options_0_87A8198B-D5DF-45ED-BAC3-68898C4FB573.png",
+            "file": "42ED124B-9A9A-4117-A712-1C794A3FFC29.png"
+          },
+          {
+            "name": "en-art-bank_alarm-standard_0_7F99CDDB-E831-4E9C-95A6-12096EDCA16B.png",
+            "file": "2B0D4B8D-9D5A-40B3-9F46-D8883601243E.png"
+          }
+        ]
+      },
+      {
+        "id": "loom_shares",
+        "captures": [
+          {
+            "name": "tr-art-loom_shares-result_0_28FC8171-5320-4111-8692-13C0241B4B61.png",
+            "file": "1A68BA71-496D-4CB5-A515-C58028924FED.png"
+          },
+          {
+            "name": "tr-art-loom_shares-reachable-options_0_D28870F8-6C41-4B1F-B8D0-787075CD678E.png",
+            "file": "C02FB869-4EC8-4A0E-ACBA-D1B08B80789D.png"
+          },
+          {
+            "name": "tr-art-loom_shares-standard_0_4E222B17-962B-49E5-9609-9891B835908E.png",
+            "file": "1D24CE1E-81B5-410E-8876-1EBD36AAE12D.png"
+          }
+        ]
+      },
+      {
+        "id": "clay_lids",
+        "captures": [
+          {
+            "name": "en-art-clay_lids-result_0_17751D5F-A271-45D1-985E-AB4D88D84F82.png",
+            "file": "326FFD54-E07B-4314-BBF5-39D27FBFBBD4.png"
+          },
+          {
+            "name": "en-art-clay_lids-reachable-options_0_FDE673A4-3865-47E0-B022-276C58BAE4AF.png",
+            "file": "DFBC0434-BA9C-4D5A-A021-38E8767AB585.png"
+          },
+          {
+            "name": "en-art-clay_lids-standard_0_C20F0D06-10DA-4D8D-BBA3-BDC38D143BAD.png",
+            "file": "4549B04D-40F5-4CEA-B18F-6B34B6EA1587.png"
+          }
+        ]
+      },
+      {
+        "id": "alarm_inquest",
+        "captures": [
+          {
+            "name": "tr-art-alarm_inquest-result_0_445867C2-A20E-452F-B746-3A260B83EC38.png",
+            "file": "94DE269C-4B58-4537-8C42-CD4A6367EAC3.png"
+          },
+          {
+            "name": "tr-art-alarm_inquest-reachable-options_0_538FE4DE-F04A-4089-9BC6-7192D01CF8D9.png",
+            "file": "C99F9779-03F5-4D8F-AEF6-E495A82DCA75.png"
+          },
+          {
+            "name": "tr-art-alarm_inquest-standard_0_912CAC3C-ABC6-42E3-8F17-B0DBBDC4B121.png",
+            "file": "06634502-C40C-474A-AA35-0A38511D2158.png"
+          }
+        ]
+      },
+      {
+        "id": "mine_water",
+        "captures": [
+          {
+            "name": "en-art-mine_water-result_0_AD229540-8461-4275-9DFE-826137F03953.png",
+            "file": "1ED6559A-D330-42C8-B8E3-ADB9165AEBDC.png"
+          },
+          {
+            "name": "en-art-mine_water-reachable-options_0_10F9CE57-2636-452A-852E-B647DFFF4E6D.png",
+            "file": "689722F3-985A-4EEB-B4FC-2953753A84BB.png"
+          },
+          {
+            "name": "en-art-mine_water-standard_0_0BD172C2-D72F-4C8C-98AD-ED04EA6C0468.png",
+            "file": "8525DA46-B567-4A58-96C6-B55431FDFDDA.png"
+          }
+        ]
+      }
+    ],
+    "productionOCR": [
+      {
+        "name": "stat-first-paint-comparison-en-true-false_0_ABA3840C-08C9-4B37-BFA8-EE3EB5551883.txt",
+        "file": "4EC6C1DE-2FEE-406A-B041-47D2D91CBCDD.txt",
+        "text": "legacy=false, visible=6, missing=[]"
+      },
+      {
+        "name": "stat-first-paint-comparison-tr-true-false_0_9D907BAC-C966-4621-8083-682AE74F6395.txt",
+        "file": "820CE7BA-0983-4251-9A44-D66A2DDAD879.txt",
+        "text": "legacy=false, visible=6, missing=[]"
+      },
+      {
+        "name": "stat-first-paint-comparison-en-false-false_0_670F94F3-C7C0-4E37-9250-4FC42049E377.txt",
+        "file": "7D4DEAB7-E5D5-47F2-8EA1-5B1D1DDF2AD2.txt",
+        "text": "legacy=false, visible=6, missing=[]"
+      },
+      {
+        "name": "stat-first-paint-comparison-tr-false-false_0_BBF62087-B4DC-47EC-8733-DE5265492FA3.txt",
+        "file": "5A1B28F0-0E10-462C-B79D-43D3AA78C452.txt",
+        "text": "legacy=false, visible=6, missing=[]"
+      }
+    ],
+    "audio": {
+      "events": 84,
+      "cues": [
+        "card-open",
+        "choice-soft",
+        "decision"
+      ],
+      "missingCues": [],
+      "invalid": [],
+      "writeError": null,
+      "startedDurations": [
+        "card-open:0.24",
+        "choice-soft:0.12",
+        "decision:0.22"
+      ]
+    },
+    "exportErrors": null,
+    "crashes": [],
+    "xcode": "Xcode 16.4\nBuild version 16F6\n",
+    "checksPassed": true
+  },
+  "localArtifactRoot": "artifacts/run-44327962308-attempt1",
+  "next": "165 to180 after acceptance; Era4 remains closed."
+}

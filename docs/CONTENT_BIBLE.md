@@ -4,7 +4,7 @@ Editorial principle: each card needs a specific human conflict, an observable co
 
 ## Current165-card inventory
 
-165 unique events,55 per era,394 decisions. Fifteen civic-work conflicts preserve all150 definitions. Care watches→sowing relief→city labor account adds the fifth authored/tested chain; independent human historical/translation approval remains open. Conditional paid cultivation and writing lessons keep old metal discoveries intact.33 choices,crew/thin funded deliveries,care representation and convoy history are covered by engine/save/replay tests.30 real image candidates,135 missing; no new finished music.104 local Swift/59 Node pass; native165 acceptance is still pending. See STORY_REVIEW_165.md and MILESTONE_165_ANALYSIS.md.
+165 unique events,55 per era,394 decisions. Fifteen civic-work conflicts preserve all150 definitions. Care watches→sowing relief→city labor account adds the fifth authored/tested chain; independent human historical/translation approval remains open. Conditional paid cultivation and writing lessons keep old metal discoveries intact.33 choices,crew/thin funded deliveries,care representation and convoy history are covered by engine/save/replay tests.30 real image candidates,135 missing; no new finished music.104 local/native Swift,59 Node,six UI tests and60000 native simulations pass. All30 actual-image flows,OCR/audio and actual screenshots were reviewed; source ee0bd37/run44327962308. Exact proof: NATIVE_165_EVIDENCE.md. See STORY_REVIEW_165.md and MILESTONE_165_ANALYSIS.md.
 
 ## Historical150-card inventory
 
