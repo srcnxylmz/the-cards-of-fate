@@ -14,7 +14,7 @@ on:
         default: ''
 jobs:
   verify:
-    runs-on: macos-15
+    runs-on: macos-15-intel
     timeout-minutes: 80
     steps:
       - uses: actions/checkout@v4
