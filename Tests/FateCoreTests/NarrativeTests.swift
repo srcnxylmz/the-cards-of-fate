@@ -138,7 +138,7 @@ final class NarrativeTests: XCTestCase {
 
     func testNewCardsDecodeAndAreReachableByFlag() throws {
         let engine = try GameEngine(content: .bundled())
-        XCTAssertEqual(engine.content.cards.count,165, "All 150 previous events plus fifteen civic-work events")
+        XCTAssertEqual(engine.content.cards.count,180, "All 165 previous events plus fifteen watershed events")
         for id in ["granary_pledge", "water_apportion", "bark_shelter", "flint_apprentice"] {
             let card = try XCTUnwrap(engine.content.card(id), id)
             XCTAssertFalse(card.title.tr.isEmpty, "\(id) Turkish title missing")

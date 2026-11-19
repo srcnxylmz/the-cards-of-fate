@@ -8,6 +8,7 @@ import { adaptRecurringEvents } from './content/adapt-events.mjs';
 import { addMilestoneEvents } from './content/milestone-events.mjs';
 import { addRecoveryEvents } from './content/recovery-events.mjs';
 import { withProductionInputs } from './content/production-inputs.mjs';
+import { addWatershedEvents } from './content/watershed-events.mjs';
 import { addCivicWorkEvents } from './content/civic-work-events.mjs';
 import { addContinuityEvents } from './content/continuity-events.mjs';
 import { addStewardshipEvents } from './content/stewardship-events.mjs';
@@ -253,6 +254,7 @@ addCityEvents({ cards, card, choice, outcome, delayed });
 addStewardshipEvents({ cards, card, choice, outcome, delayed });
 addContinuityEvents({ cards, card, choice, outcome, delayed });
 addCivicWorkEvents({ cards, card, choice, outcome, delayed });
+addWatershedEvents({ card, choice, outcome, delayed });
 for(let i=0;i<cards.length;i++)cards[i]=withProductionInputs(cards[i]);
 
 // Durable historical decisions close using existing flags, including older v1 saves.

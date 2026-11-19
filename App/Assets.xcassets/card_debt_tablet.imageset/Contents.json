@@ -1,0 +1,12 @@
+{
+  "images": [
+    {
+      "filename": "card_debt_tablet.png",
+      "idiom": "universal"
+    }
+  ],
+  "info": {
+    "author": "xcode",
+    "version": 1
+  }
+}

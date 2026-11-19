@@ -1,3 +1,7 @@
+# 180 kart yerel doğrulama aşaması — 2026-11-19
+
+180 kart, 60/60/60, 434 karar. Ayrı denge commit’i 7c5c903 dört eski Tunç üretimine gerçek girdi kapısı ve gelir vermeyen durdurma kararı ekledi. Yerel 109 Swift ve 63 Node geçti. Yeni zincir sırt patikası → köy basamakları → kent yol hesabı. İki karşıt kapanış, gerçek selector, gecikmeli bellek ve kayıt/replay testleri geçti. 43 gerçek görsel adayı, 137 eksik. Altı yerel 10.000 seed kohortu tamamlandı. MILESTONE_180_ANALYSIS.md sonuçları, erişim ve yaşam süresi düşüşlerini içerir. Native kabul için başarılı CI ve gerçek artifact incelemesi gerekiyor. 4. çağ kapalı.
+
 # Verified 165-card native milestone — 2026-11-18
 
 165 unique cards/55-55-55/394 decisions,30 real illustration candidates,135 missing. Source ee0bd37d68e6c4e0204fae8f601e4993e664744f is pushed. Full CI44327962308 attempt1 passed104 macOS Swift,59 Node,60000 native simulations,iPhone SE3/iOS18.5 build/install/launch and six UI tests. Both downloaded ZIP hashes match GitHub. All six native JSONs match local verified165 in every field.210 attachments/30 illustration flows/four production OCR notes/three cue start+mute checks passed; no export error or collected app crash. Five new real game images,stable choices/result,main menu,large-text/Reduce Motion and normal/large captures were inspected. Some entry captures retain partial animation opacity; no final device color/contrast claim. Exact proof: NATIVE_165_EVIDENCE.md / analysis/milestone165-verified/native-run.json.

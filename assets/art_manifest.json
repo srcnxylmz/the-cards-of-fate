@@ -239,12 +239,23 @@
   {
     "id": "card_debt_tablet",
     "cardID": "debt_tablet",
-    "status": "missing",
-    "file": null,
-    "license": null,
+    "status": "generated-candidate",
+    "file": "App/Assets.xcassets/card_debt_tablet.imageset/card_debt_tablet.png",
+    "license": "Original built-in imagegen candidate; human review pending",
     "brief": "Worn debt tablet held by farm worker before seated scribe, severe side lighting, dusty clay palette.",
     "modelPrompt": "Use case: historical-scene. Original premium portrait event-card illustration for The Cards of Fate, debt_tablet. Human conflict: A family still works the same field for their grandfather’s seed debt. The scribe says the tablet is correct. Nobody recorded when the debt should end. Scene: Worn debt tablet held by farm worker before seated scribe, severe side lighting, dusty clay palette. Era: Bronze Age: clay-brick, timber, bronze and woven textiles; bronze gold and cool teal daylight. Cinematic painterly historical realism consistent with the existing hearth, river, granary and copper-workshop collection; natural anatomy, expressive adult faces/hands, tactile materials, restrained emotion. Portrait 2:3, comfortably framed central silhouettes readable on iPhone. Original composition. No text, readable lettering, logo, border, watermark, modern objects or copied game designs.",
-    "generationRecords": []
+    "generationRecords": [
+      {
+        "type": "generated",
+        "tool": "built-in imagegen",
+        "model": "not exposed by built-in tool",
+        "generatedAt": null,
+        "registeredAt": "2026-11-19T15:22:37.105Z",
+        "mode": "generation",
+        "source": "exec-71c0a68f-9ace-4ad8-b0cc-2695fe741054.png",
+        "sha256": "2245472bfc61e0abe9b6e487eb7706df65c8358a559358575c160a0b6ec2225c"
+      }
+    ]
   },
   {
     "id": "card_city_walls",
@@ -575,12 +586,23 @@
   {
     "id": "card_water_apportion",
     "cardID": "water_apportion",
-    "status": "missing",
-    "file": null,
-    "license": null,
+    "status": "generated-candidate",
+    "file": "App/Assets.xcassets/card_water_apportion.imageset/card_water_apportion.png",
+    "license": "Original built-in imagegen candidate; human review pending",
     "brief": "Bronze civic courtyard, clay water-wheel beside a sealed tablet archive, night lanterns and stream water; turquoise, pale stone, workshop glow, portrait composition of a corrupt official.",
-    "modelPrompt": "Use case: historical-scene. Original premium portrait event-card illustration for The Cards of Fate, water_apportion. Human conflict: Drought is reducing the water available to the city. The written water law remains in force, but some allocations on the distribution tablets have been inflated. These entries give several households and workshops extra water. Exposing the fraud now could disrupt order; postponing the investigation would preserve unfair shares. Scene: Bronze civic courtyard, clay water-wheel beside a sealed tablet archive, night lanterns and stream water; turquoise, pale stone, workshop glow, portrait composition of a corrupt official. Era: Bronze Age: clay-brick, timber, bronze and woven textiles; bronze gold and cool teal daylight. Cinematic painterly historical realism consistent with the existing hearth, river, granary and copper-workshop collection; natural anatomy, expressive adult faces/hands, tactile materials, restrained emotion. Portrait 2:3, comfortably framed central silhouettes readable on iPhone. Original composition. No text, readable lettering, logo, border, watermark, modern objects or copied game designs.",
-    "generationRecords": []
+    "modelPrompt": "Use case: historical-scene. Original premium portrait event-card illustration for The Cards of Fate, water_apportion. Human conflict: Drought is reducing the water available to the city. The written water law remains in force, but some allocations on the distribution tablets have been inflated. These entries give several households and workshops extra water. Exposing the fraud now could disrupt order; postponing the investigation would preserve unfair shares. Scene: Bronze Age courtyard in daylight, adult scribe and residents compare tactile clay quota tablets beside a receding cistern. Hand-carried clay jars and timber shade, no water wheel, no advanced machinery, no readable text. Era: Bronze Age: clay-brick, timber, bronze and woven textiles; bronze gold and cool teal daylight. Cinematic painterly historical realism consistent with the existing hearth, river, granary and copper-workshop collection; natural anatomy, expressive adult faces/hands, tactile materials, restrained emotion. Portrait 2:3, comfortably framed central silhouettes readable on iPhone. Original composition. No text, readable lettering, logo, border, watermark, modern objects or copied game designs.",
+    "generationRecords": [
+      {
+        "type": "generated",
+        "tool": "built-in imagegen",
+        "model": "not exposed by built-in tool",
+        "generatedAt": null,
+        "registeredAt": "2026-11-19T15:26:29.939Z",
+        "mode": "generation",
+        "source": "exec-6cc36e4e-5af5-4ac1-b14c-e0296eeba853.png",
+        "sha256": "77bc9fedee73fc1ab99de7f3570d842e7e7bb0922a3f9b00f213f82dd32c15fc"
+      }
+    ]
   },
   {
     "id": "card_flint_apprentice",
@@ -1002,12 +1024,23 @@
   {
     "id": "card_salmon_weir",
     "cardID": "salmon_weir",
-    "status": "missing",
-    "file": null,
-    "license": null,
+    "status": "generated-candidate",
+    "file": "App/Assets.xcassets/card_salmon_weir.imageset/card_salmon_weir.png",
+    "license": "Original built-in imagegen candidate; human review pending",
     "brief": "Paleolithic adults adjusting low stone fish weir, fish silhouettes in clear stream, woven baskets and flint, cold green water and ochre dawn, no metal.",
     "modelPrompt": "Use case: historical-scene. Original premium portrait event-card illustration for The Cards of Fate, salmon_weir. Human conflict: Fish crowd the shallow branch this season. Closing the stone weir could feed hungry families but would block the spawning route. Workers at the weir ask why they must bear the cost of waiting. Scene: Paleolithic adults adjusting low stone fish weir, fish silhouettes in clear stream, woven baskets and flint, cold green water and ochre dawn, no metal. Era: Paleolithic: stone, bone and hide only; ochre/charcoal and winter or dawn light. Cinematic painterly historical realism consistent with the existing hearth, river, granary and copper-workshop collection; natural anatomy, expressive adult faces/hands, tactile materials, restrained emotion. Portrait 2:3, comfortably framed central silhouettes readable on iPhone. Original composition. No text, readable lettering, logo, border, watermark, modern objects or copied game designs.",
-    "generationRecords": []
+    "generationRecords": [
+      {
+        "type": "generated",
+        "tool": "built-in imagegen",
+        "model": "not exposed by built-in tool",
+        "generatedAt": null,
+        "registeredAt": "2026-11-19T15:22:36.709Z",
+        "mode": "generation",
+        "source": "exec-a3e350fe-9fc2-4816-9528-7b63049c84f8.png",
+        "sha256": "3bfb85fdc17f53f3dd11bab33e91bb757953cd9da112daf662dd4151bd2175e8"
+      }
+    ]
   },
   {
     "id": "card_windbreak_camp",
@@ -1073,12 +1106,23 @@
   {
     "id": "card_reed_bank",
     "cardID": "reed_bank",
-    "status": "missing",
-    "file": null,
-    "license": null,
+    "status": "generated-candidate",
+    "file": "App/Assets.xcassets/card_reed_bank.imageset/card_reed_bank.png",
+    "license": "Original built-in imagegen candidate; human review pending",
     "brief": "Neolithic village survey beside living reed margin and old low stone fish passage, adult builders with rope and baskets, sage and clay morning.",
     "modelPrompt": "Use case: historical-scene. Original premium portrait event-card illustration for The Cards of Fate, reed_bank. Human conflict: A village has grown below the old fish passage. Reeds slow the water, but households want dry building ground. The old rule now takes up space in the new settlement. Scene: Neolithic village survey beside living reed margin and old low stone fish passage, adult builders with rope and baskets, sage and clay morning. Era: Neolithic: clay, reed, wood and stone; sage/clay light, no finished bronze equipment unless explicitly discovered in the brief. Cinematic painterly historical realism consistent with the existing hearth, river, granary and copper-workshop collection; natural anatomy, expressive adult faces/hands, tactile materials, restrained emotion. Portrait 2:3, comfortably framed central silhouettes readable on iPhone. Original composition. No text, readable lettering, logo, border, watermark, modern objects or copied game designs.",
-    "generationRecords": []
+    "generationRecords": [
+      {
+        "type": "generated",
+        "tool": "built-in imagegen",
+        "model": "not exposed by built-in tool",
+        "generatedAt": null,
+        "registeredAt": "2026-11-19T15:22:36.624Z",
+        "mode": "generation",
+        "source": "exec-beaca8e3-5d4d-4614-bbbf-73853ede8478.png",
+        "sha256": "e410f071cfbae102f70423e3725199f99406c64a52491f8ed6f3ba6ad9ab55d7"
+      }
+    ]
   },
   {
     "id": "card_canal_widows",
@@ -1175,12 +1219,23 @@
   {
     "id": "card_roof_cistern",
     "cardID": "roof_cistern",
-    "status": "missing",
-    "file": null,
-    "license": null,
+    "status": "generated-candidate",
+    "file": "App/Assets.xcassets/card_roof_cistern.imageset/card_roof_cistern.png",
+    "license": "Original built-in imagegen candidate; human review pending",
     "brief": "Bronze city roof channels leading to clay-lined cistern, adult workers replacing reed filter beside muddy jars, teal rain and warm clay reflection.",
     "modelPrompt": "Use case: historical-scene. Original premium portrait event-card illustration for The Cards of Fate, roof_cistern. Human conflict: This city rain carried roof mud into the cistern. Workers want to renew the small filter bed. Workshop owners propose reserving the remaining clean water for their work first. Scene: Bronze city roof channels leading to clay-lined cistern, adult workers replacing reed filter beside muddy jars, teal rain and warm clay reflection. Era: Bronze Age: clay-brick, timber, bronze and woven textiles; bronze gold and cool teal daylight. Cinematic painterly historical realism consistent with the existing hearth, river, granary and copper-workshop collection; natural anatomy, expressive adult faces/hands, tactile materials, restrained emotion. Portrait 2:3, comfortably framed central silhouettes readable on iPhone. Original composition. No text, readable lettering, logo, border, watermark, modern objects or copied game designs.",
-    "generationRecords": []
+    "generationRecords": [
+      {
+        "type": "generated",
+        "tool": "built-in imagegen",
+        "model": "not exposed by built-in tool",
+        "generatedAt": null,
+        "registeredAt": "2026-11-19T15:22:37.049Z",
+        "mode": "generation",
+        "source": "exec-f2368da3-1acd-48c3-8f21-0bf97041e4b0.png",
+        "sha256": "eb3339883a0d90f03c2bb74ff8d2d0e6b36625f7d27edeee096a66fbdf77f5ea"
+      }
+    ]
   },
   {
     "id": "card_marsh_raft",
@@ -1374,12 +1429,23 @@
   {
     "id": "card_cistern_account",
     "cardID": "cistern_account",
-    "status": "missing",
-    "file": null,
-    "license": null,
+    "status": "generated-candidate",
+    "file": "App/Assets.xcassets/card_cistern_account.imageset/card_cistern_account.png",
+    "license": "Original built-in imagegen candidate; human review pending",
     "brief": "Bronze civic water hearing beside clay cistern and reed filter, adult household and scribe comparing clay tokens, teal reflected water and bronze light, no readable tablet text.",
     "modelPrompt": "Use case: historical-scene. Original premium portrait event-card illustration for The Cards of Fate, cistern_account. Human conflict: After the roof cistern’s latest upkeep, a household asks that land once given to the reed margin be recognized. The scribe counted only today’s workdays. The repair is done, but who carries its burden remains disputed. Scene: Bronze civic water hearing beside clay cistern and reed filter, adult household and scribe comparing clay tokens, teal reflected water and bronze light, no readable tablet text. Era: Bronze Age: clay-brick, timber, bronze and woven textiles; bronze gold and cool teal daylight. Cinematic painterly historical realism consistent with the existing hearth, river, granary and copper-workshop collection; natural anatomy, expressive adult faces/hands, tactile materials, restrained emotion. Portrait 2:3, comfortably framed central silhouettes readable on iPhone. Original composition. No text, readable lettering, logo, border, watermark, modern objects or copied game designs.",
-    "generationRecords": []
+    "generationRecords": [
+      {
+        "type": "generated",
+        "tool": "built-in imagegen",
+        "model": "not exposed by built-in tool",
+        "generatedAt": null,
+        "registeredAt": "2026-11-19T15:22:36.847Z",
+        "mode": "generation",
+        "source": "exec-c69f6067-730a-412e-a565-0aeb8921cc7c.png",
+        "sha256": "774b96d2399b0c1e2419388edd3e3f6ddc3803b0844bb179b84210d836fe5d2a"
+      }
+    ]
   },
   {
     "id": "card_mine_shoring",
@@ -1659,12 +1725,23 @@
   {
     "id": "card_guest_tongue",
     "cardID": "guest_tongue",
-    "status": "missing",
-    "file": null,
-    "license": null,
+    "status": "generated-candidate",
+    "file": "App/Assets.xcassets/card_guest_tongue.imageset/card_guest_tongue.png",
+    "license": "Original built-in imagegen candidate; human review pending",
     "brief": "Paleolithic adult interpreter teaching gestures and words to younger adults between two hide camps, shared food parcels, ochre dusk, no written alphabet, parchment or metal.",
     "modelPrompt": "Use case: historical-scene. Original premium portrait event-card illustration for The Cards of Fate, guest_tongue. Human conflict: At the guest guides’ next meeting, only one adult understands both camps’ speech. Younger people want time away from hunting to learn. The interpreting household fears losing its meeting share. Scene: Paleolithic adult interpreter teaching gestures and words to younger adults between two hide camps, shared food parcels, ochre dusk, no written alphabet, parchment or metal. Era: Paleolithic: stone, bone and hide only; ochre/charcoal and winter or dawn light. Cinematic painterly historical realism consistent with the existing hearth, river, granary and copper-workshop collection; natural anatomy, expressive adult faces/hands, tactile materials, restrained emotion. Portrait 2:3, comfortably framed central silhouettes readable on iPhone. Original composition. No text, readable lettering, logo, border, watermark, modern objects or copied game designs.",
-    "generationRecords": []
+    "generationRecords": [
+      {
+        "type": "generated",
+        "tool": "built-in imagegen",
+        "model": "not exposed by built-in tool",
+        "generatedAt": null,
+        "registeredAt": "2026-11-19T15:22:36.921Z",
+        "mode": "generation",
+        "source": "exec-54a22a90-9c35-4dcf-83ed-a0a07510791f.png",
+        "sha256": "314a911a61ce090b7a340e5e425ca6eb6423f1c7fa6fb1c215d8fde96721dfe7"
+      }
+    ]
   },
   {
     "id": "card_net_menders",
@@ -1838,12 +1915,23 @@
   {
     "id": "card_shade_duty",
     "cardID": "shade_duty",
-    "status": "missing",
-    "file": null,
-    "license": null,
+    "status": "generated-candidate",
+    "file": "App/Assets.xcassets/card_shade_duty.imageset/card_shade_duty.png",
+    "license": "Original built-in imagegen candidate; human review pending",
     "brief": "Paleolithic adult caregivers and hunters negotiating beside a resting injured adult under a hide shade, bone bowls, ochre light, no pottery or metal.",
     "modelPrompt": "Use case: historical-scene. Original premium portrait event-card illustration for The Cards of Fate, shade_duty. Human conflict: Those staying with an injured hunter cannot gather food. The chief calls care a household duty; caregivers claim a share of the common hunt. The dispute is whether time spent in the shade counts as work. Scene: Paleolithic adult caregivers and hunters negotiating beside a resting injured adult under a hide shade, bone bowls, ochre light, no pottery or metal. Era: Paleolithic: stone, bone and hide only; ochre/charcoal and winter or dawn light. Cinematic painterly historical realism consistent with the existing hearth, river, granary and copper-workshop collection; natural anatomy, expressive adult faces/hands, tactile materials, restrained emotion. Portrait 2:3, comfortably framed central silhouettes readable on iPhone. Original composition. No text, readable lettering, logo, border, watermark, modern objects or copied game designs.",
-    "generationRecords": []
+    "generationRecords": [
+      {
+        "type": "generated",
+        "tool": "built-in imagegen",
+        "model": "not exposed by built-in tool",
+        "generatedAt": null,
+        "registeredAt": "2026-11-19T15:22:36.784Z",
+        "mode": "generation",
+        "source": "exec-1fab98f2-6a87-4d15-86da-9a0771cc15d5.png",
+        "sha256": "1c51e111c59a5bc9fe71b140529dd182a3b983a9d034e7ebc1b0407714fad9b5"
+      }
+    ]
   },
   {
     "id": "card_wild_plots",
@@ -1888,12 +1976,23 @@
   {
     "id": "card_sowing_relief",
     "cardID": "sowing_relief",
-    "status": "missing",
-    "file": null,
-    "license": null,
+    "status": "generated-candidate",
+    "file": "App/Assets.xcassets/card_sowing_relief.imageset/card_sowing_relief.png",
+    "license": "Original built-in imagegen candidate; human review pending",
     "brief": "Neolithic adult seed stewards and caregivers negotiating work baskets beside reed homes, clay counters, sage light, no coins or writing.",
     "modelPrompt": "Use case: historical-scene. Original premium portrait event-card illustration for The Cards of Fate, sowing_relief. Human conflict: Households recalling the old care agreement cannot leave sick relatives on sowing day. Seed distributors count only hours in the fields. The dispute is now who belongs in the village’s common labor account. Scene: Neolithic adult seed stewards and caregivers negotiating work baskets beside reed homes, clay counters, sage light, no coins or writing. Era: Neolithic: clay, reed, wood and stone; sage/clay light, no finished bronze equipment unless explicitly discovered in the brief. Cinematic painterly historical realism consistent with the existing hearth, river, granary and copper-workshop collection; natural anatomy, expressive adult faces/hands, tactile materials, restrained emotion. Portrait 2:3, comfortably framed central silhouettes readable on iPhone. Original composition. No text, readable lettering, logo, border, watermark, modern objects or copied game designs.",
-    "generationRecords": []
+    "generationRecords": [
+      {
+        "type": "generated",
+        "tool": "built-in imagegen",
+        "model": "not exposed by built-in tool",
+        "generatedAt": null,
+        "registeredAt": "2026-11-19T15:22:37.167Z",
+        "mode": "generation",
+        "source": "exec-94249da6-6b85-45fb-9bb8-f483f3ff2443.png",
+        "sha256": "17ca2a7ddded3d3732b3a2fd7e2167e873edb586efb0cf851bb6ef40b103e64d"
+      }
+    ]
   },
   {
     "id": "card_seed_lesson",
@@ -1938,12 +2037,23 @@
   {
     "id": "card_ward_charter",
     "cardID": "ward_charter",
-    "status": "missing",
-    "file": null,
-    "license": null,
+    "status": "generated-candidate",
+    "file": "App/Assets.xcassets/card_ward_charter.imageset/card_ward_charter.png",
+    "license": "Original built-in imagegen candidate; human review pending",
     "brief": "Bronze city adult neighborhood representatives, caregivers and scribe comparing clay work counters in a courtyard, gold teal, no coins or readable text.",
     "modelPrompt": "Use case: historical-scene. Original premium portrait event-card illustration for The Cards of Fate, ward_charter. Human conflict: Families carrying the village care account find only carriers named on city work lists. A neighborhood representative wants care watches counted too. Store owners argue that earlier contributions do not erase current tax and security work. Scene: Bronze city adult neighborhood representatives, caregivers and scribe comparing clay work counters in a courtyard, gold teal, no coins or readable text. Era: Bronze Age: clay-brick, timber, bronze and woven textiles; bronze gold and cool teal daylight. Cinematic painterly historical realism consistent with the existing hearth, river, granary and copper-workshop collection; natural anatomy, expressive adult faces/hands, tactile materials, restrained emotion. Portrait 2:3, comfortably framed central silhouettes readable on iPhone. Original composition. No text, readable lettering, logo, border, watermark, modern objects or copied game designs.",
-    "generationRecords": []
+    "generationRecords": [
+      {
+        "type": "generated",
+        "tool": "built-in imagegen",
+        "model": "not exposed by built-in tool",
+        "generatedAt": null,
+        "registeredAt": "2026-11-19T15:22:36.987Z",
+        "mode": "generation",
+        "source": "exec-8b8252fe-db20-44d6-a94a-d71bf3446298.png",
+        "sha256": "dbac1d775c6004393774f3d344cb426f2c1eb0c410fb136c222d47547c7bc002"
+      }
+    ]
   },
   {
     "id": "card_tally_school",
@@ -1983,6 +2093,189 @@
     "license": null,
     "brief": "Bronze adult carriers and boatwright sorting irregular broken bronze fittings beside a timber boat, clay counters, teal harbor, no coins or modern fasteners.",
     "modelPrompt": "Use case: historical-scene. Original premium portrait event-card illustration for The Cards of Fate, harbor_scrap. Human conflict: Carriers collecting broken bronze fittings call the scrap ownerless. A boatwright claims it. Recasting would reduce demand for ore; selling it before resolving ownership brings faster income. Scene: Bronze adult carriers and boatwright sorting irregular broken bronze fittings beside a timber boat, clay counters, teal harbor, no coins or modern fasteners. Era: Bronze Age: clay-brick, timber, bronze and woven textiles; bronze gold and cool teal daylight. Cinematic painterly historical realism consistent with the existing hearth, river, granary and copper-workshop collection; natural anatomy, expressive adult faces/hands, tactile materials, restrained emotion. Portrait 2:3, comfortably framed central silhouettes readable on iPhone. Original composition. No text, readable lettering, logo, border, watermark, modern objects or copied game designs.",
+    "generationRecords": []
+  },
+  {
+    "id": "card_ridge_shelter",
+    "cardID": "ridge_shelter",
+    "status": "generated-candidate",
+    "file": "App/Assets.xcassets/card_ridge_shelter.imageset/card_ridge_shelter.png",
+    "license": "Original built-in imagegen candidate; human review pending",
+    "brief": "Paleolithic adults weighing a steep shortcut against a stony contour path above a spring, hide bundles and stone tools, ochre morning.",
+    "modelPrompt": "Use case: historical-scene. Original premium portrait event-card illustration for The Cards of Fate, ridge_shelter. Human conflict: The path below the winter shelter carries loose soil into the spring. Carriers resist giving up the short slope. The people drawing water below offer to carry stones for a longer route. Scene: Paleolithic adults weighing a steep shortcut against a stony contour path above a spring, hide bundles and stone tools, ochre morning. Era: Paleolithic: stone, bone and hide only; ochre/charcoal and winter or dawn light. Cinematic painterly historical realism consistent with the existing hearth, river, granary and copper-workshop collection; natural anatomy, expressive adult faces/hands, tactile materials, restrained emotion. Portrait 2:3, comfortably framed central silhouettes readable on iPhone. Original composition. No text, readable lettering, logo, border, watermark, modern objects or copied game designs.",
+    "generationRecords": [
+      {
+        "type": "generated",
+        "tool": "built-in imagegen",
+        "model": "not exposed by built-in tool",
+        "generatedAt": null,
+        "registeredAt": "2026-11-19T15:26:29.997Z",
+        "mode": "generation",
+        "source": "exec-f2ddf36a-d7e3-4958-9df0-f691c204a3a8.png",
+        "sha256": "51309c3bdf0e161602c5cf2cbb7280e21f2640a0e2f471574ff64ebb290bda38"
+      }
+    ]
+  },
+  {
+    "id": "card_windbreak_mats",
+    "cardID": "windbreak_mats",
+    "status": "missing",
+    "file": null,
+    "license": null,
+    "brief": "Paleolithic adult weavers repairing plant-fiber mats at a drying rack, reused branches and hide shelters, no metal.",
+    "modelPrompt": "Use case: historical-scene. Original premium portrait event-card illustration for The Cards of Fate, windbreak_mats. Human conflict: Wind scatters the drying provisions. Weavers want to patch old mats. Hunters suggest bringing fresh branches from the grove to secure today’s food. Scene: Paleolithic adult weavers repairing plant-fiber mats at a drying rack, reused branches and hide shelters, no metal. Era: Paleolithic: stone, bone and hide only; ochre/charcoal and winter or dawn light. Cinematic painterly historical realism consistent with the existing hearth, river, granary and copper-workshop collection; natural anatomy, expressive adult faces/hands, tactile materials, restrained emotion. Portrait 2:3, comfortably framed central silhouettes readable on iPhone. Original composition. No text, readable lettering, logo, border, watermark, modern objects or copied game designs.",
+    "generationRecords": []
+  },
+  {
+    "id": "card_meltwater_porters",
+    "cardID": "meltwater_porters",
+    "status": "missing",
+    "file": null,
+    "license": null,
+    "brief": "Paleolithic adult porters resting beside hide packs and thawing rocks along a shaded pass.",
+    "modelPrompt": "Use case: historical-scene. Original premium portrait event-card illustration for The Cards of Fate, meltwater_porters. Human conflict: The thaw traps heavy packs in a narrow pass. Carriers could make two small trips in the shade. The group in front wants to cross once and leave the remaining provisions behind. Scene: Paleolithic adult porters resting beside hide packs and thawing rocks along a shaded pass. Era: Paleolithic: stone, bone and hide only; ochre/charcoal and winter or dawn light. Cinematic painterly historical realism consistent with the existing hearth, river, granary and copper-workshop collection; natural anatomy, expressive adult faces/hands, tactile materials, restrained emotion. Portrait 2:3, comfortably framed central silhouettes readable on iPhone. Original composition. No text, readable lettering, logo, border, watermark, modern objects or copied game designs.",
+    "generationRecords": []
+  },
+  {
+    "id": "card_quiet_hearth_vote",
+    "cardID": "quiet_hearth_vote",
+    "status": "missing",
+    "file": null,
+    "license": null,
+    "brief": "Paleolithic adult elders and hunters debating beside a sheltered low hearth, bundles ready to move.",
+    "modelPrompt": "Use case: historical-scene. Original premium portrait event-card illustration for The Cards of Fate, quiet_hearth_vote. Human conflict: A household that came back empty-handed is ignored at the camp meeting. Its elders noticed a shift in the wind. The chief hunter wants a decision on moving without delay. Scene: Paleolithic adult elders and hunters debating beside a sheltered low hearth, bundles ready to move. Era: Paleolithic: stone, bone and hide only; ochre/charcoal and winter or dawn light. Cinematic painterly historical realism consistent with the existing hearth, river, granary and copper-workshop collection; natural anatomy, expressive adult faces/hands, tactile materials, restrained emotion. Portrait 2:3, comfortably framed central silhouettes readable on iPhone. Original composition. No text, readable lettering, logo, border, watermark, modern objects or copied game designs.",
+    "generationRecords": []
+  },
+  {
+    "id": "card_nut_cache",
+    "cardID": "nut_cache",
+    "status": "missing",
+    "file": null,
+    "license": null,
+    "brief": "Paleolithic adult gatherers sharing flat cracking stones, heaps of nuts in hide pouches and autumn woodland.",
+    "modelPrompt": "Use case: historical-scene. Original premium portrait event-card illustration for The Cards of Fate, nut_cache. Human conflict: Hard-shelled nuts have piled up, but two households control the cracking stones. Gatherers want today’s food. The stone owners ask for labor to repair the worn surfaces. Scene: Paleolithic adult gatherers sharing flat cracking stones, heaps of nuts in hide pouches and autumn woodland. Era: Paleolithic: stone, bone and hide only; ochre/charcoal and winter or dawn light. Cinematic painterly historical realism consistent with the existing hearth, river, granary and copper-workshop collection; natural anatomy, expressive adult faces/hands, tactile materials, restrained emotion. Portrait 2:3, comfortably framed central silhouettes readable on iPhone. Original composition. No text, readable lettering, logo, border, watermark, modern objects or copied game designs.",
+    "generationRecords": []
+  },
+  {
+    "id": "card_terrace_path",
+    "cardID": "terrace_path",
+    "status": "generated-candidate",
+    "file": "App/Assets.xcassets/card_terrace_path.imageset/card_terrace_path.png",
+    "license": "Original built-in imagegen candidate; human review pending",
+    "brief": "Neolithic adult farmers debating a field path over runoff, small stone steps, reed homes and muted green light.",
+    "modelPrompt": "Use case: historical-scene. Original premium portrait event-card illustration for The Cards of Fate, terrace_path. Human conflict: The new village road runs below the fields. Rain sweeps soil from the old path onto it. Landholders defend the shortcut and water carriers ask who will maintain it. Scene: Neolithic adult farmers debating a field path over runoff, small stone steps, reed homes and muted green light. Era: Neolithic: clay, reed, wood and stone; sage/clay light, no finished bronze equipment unless explicitly discovered in the brief. Cinematic painterly historical realism consistent with the existing hearth, river, granary and copper-workshop collection; natural anatomy, expressive adult faces/hands, tactile materials, restrained emotion. Portrait 2:3, comfortably framed central silhouettes readable on iPhone. Original composition. No text, readable lettering, logo, border, watermark, modern objects or copied game designs.",
+    "generationRecords": [
+      {
+        "type": "generated",
+        "tool": "built-in imagegen",
+        "model": "not exposed by built-in tool",
+        "generatedAt": null,
+        "registeredAt": "2026-11-19T15:26:29.885Z",
+        "mode": "generation",
+        "source": "exec-61d2a6b6-cda4-40f5-89c5-46a5a7aaf612.png",
+        "sha256": "9df09e3412f5422c8de6f64cba78602a66f7f4e359456ecbda0ef1e5203fca43"
+      }
+    ]
+  },
+  {
+    "id": "card_winnowing_turn",
+    "cardID": "winnowing_turn",
+    "status": "missing",
+    "file": null,
+    "license": null,
+    "brief": "Neolithic adult grain winnowers and basket repairers at a windy field edge, flax and reeds.",
+    "modelPrompt": "Use case: historical-scene. Original premium portrait event-card illustration for The Cards of Fate, winnowing_turn. Human conflict: The wind suitable for winnowing lasts only briefly. Seed keepers demand the first turn. Basket makers say the harvest cannot wait indefinitely while repairs go unpaid. Scene: Neolithic adult grain winnowers and basket repairers at a windy field edge, flax and reeds. Era: Neolithic: clay, reed, wood and stone; sage/clay light, no finished bronze equipment unless explicitly discovered in the brief. Cinematic painterly historical realism consistent with the existing hearth, river, granary and copper-workshop collection; natural anatomy, expressive adult faces/hands, tactile materials, restrained emotion. Portrait 2:3, comfortably framed central silhouettes readable on iPhone. Original composition. No text, readable lettering, logo, border, watermark, modern objects or copied game designs.",
+    "generationRecords": []
+  },
+  {
+    "id": "card_pond_clay",
+    "cardID": "pond_clay",
+    "status": "missing",
+    "file": null,
+    "license": null,
+    "brief": "Neolithic adult potters and irrigators studying a clay pit and a shallow settling hollow with wooden tools.",
+    "modelPrompt": "Use case: historical-scene. Original premium portrait event-card illustration for The Cards of Fate, pond_clay. Human conflict: An overflowing clay pit clouds the irrigation water. One group wants a separate settling hollow. Diggers ask who will pay for delaying their small output. Scene: Neolithic adult potters and irrigators studying a clay pit and a shallow settling hollow with wooden tools. Era: Neolithic: clay, reed, wood and stone; sage/clay light, no finished bronze equipment unless explicitly discovered in the brief. Cinematic painterly historical realism consistent with the existing hearth, river, granary and copper-workshop collection; natural anatomy, expressive adult faces/hands, tactile materials, restrained emotion. Portrait 2:3, comfortably framed central silhouettes readable on iPhone. Original composition. No text, readable lettering, logo, border, watermark, modern objects or copied game designs.",
+    "generationRecords": []
+  },
+  {
+    "id": "card_reed_ties",
+    "cardID": "reed_ties",
+    "status": "missing",
+    "file": null,
+    "license": null,
+    "brief": "Neolithic adult basket weavers demonstrating a repair knot, worn baskets and reeds in a clay courtyard.",
+    "modelPrompt": "Use case: historical-scene. Original premium portrait event-card illustration for The Cards of Fate, reed_ties. Human conflict: The bottoms of the carrying baskets are failing. The maker wants to teach the knot to the younger workers, but a lesson will reduce the households’ daily share. Scene: Neolithic adult basket weavers demonstrating a repair knot, worn baskets and reeds in a clay courtyard. Era: Neolithic: clay, reed, wood and stone; sage/clay light, no finished bronze equipment unless explicitly discovered in the brief. Cinematic painterly historical realism consistent with the existing hearth, river, granary and copper-workshop collection; natural anatomy, expressive adult faces/hands, tactile materials, restrained emotion. Portrait 2:3, comfortably framed central silhouettes readable on iPhone. Original composition. No text, readable lettering, logo, border, watermark, modern objects or copied game designs.",
+    "generationRecords": []
+  },
+  {
+    "id": "card_threshing_witness",
+    "cardID": "threshing_witness",
+    "status": "missing",
+    "file": null,
+    "license": null,
+    "brief": "Neolithic adult household representatives beside a flat stone and threshing floor, straw bundles and reed mats.",
+    "modelPrompt": "Use case: historical-scene. Original premium portrait event-card illustration for The Cards of Fate, threshing_witness. Human conflict: Two households shared turns at the threshing stone. A third says it carried straw all day and received no share. The regular users fear a new witness will change the order. Scene: Neolithic adult household representatives beside a flat stone and threshing floor, straw bundles and reed mats. Era: Neolithic: clay, reed, wood and stone; sage/clay light, no finished bronze equipment unless explicitly discovered in the brief. Cinematic painterly historical realism consistent with the existing hearth, river, granary and copper-workshop collection; natural anatomy, expressive adult faces/hands, tactile materials, restrained emotion. Portrait 2:3, comfortably framed central silhouettes readable on iPhone. Original composition. No text, readable lettering, logo, border, watermark, modern objects or copied game designs.",
+    "generationRecords": []
+  },
+  {
+    "id": "card_ridge_account",
+    "cardID": "ridge_account",
+    "status": "generated-candidate",
+    "file": "App/Assets.xcassets/card_ridge_account.imageset/card_ridge_account.png",
+    "license": "Original built-in imagegen candidate; human review pending",
+    "brief": "Bronze Age adults and a scribe examining erosion along stone steps by a mudbrick city road, clay tokens, no coins.",
+    "modelPrompt": "Use case: historical-scene. Original premium portrait event-card illustration for The Cards of Fate, ridge_account. Human conflict: Widening the city road will remove the old village steps. Carriers want to see the stonework account. Passage holders argue that past upkeep cannot pay today’s stoneworkers. Scene: Bronze Age adults and a scribe examining erosion along stone steps by a mudbrick city road, clay tokens, no coins. Era: Bronze Age: clay-brick, timber, bronze and woven textiles; bronze gold and cool teal daylight. Cinematic painterly historical realism consistent with the existing hearth, river, granary and copper-workshop collection; natural anatomy, expressive adult faces/hands, tactile materials, restrained emotion. Portrait 2:3, comfortably framed central silhouettes readable on iPhone. Original composition. No text, readable lettering, logo, border, watermark, modern objects or copied game designs.",
+    "generationRecords": [
+      {
+        "type": "generated",
+        "tool": "built-in imagegen",
+        "model": "not exposed by built-in tool",
+        "generatedAt": null,
+        "registeredAt": "2026-11-19T15:26:30.051Z",
+        "mode": "generation",
+        "source": "exec-13fa8e53-b05d-43bc-9730-9f6e124017d3.png",
+        "sha256": "d3d5d204d0a9cbebbe6d236f8bfd89e02d18416591c693576fb2b1c8f10622bc"
+      }
+    ]
+  },
+  {
+    "id": "card_tailings_pond",
+    "cardID": "tailings_pond",
+    "status": "missing",
+    "file": null,
+    "license": null,
+    "brief": "Bronze Age adult ore washers and clay workers at shallow settling beds, wooden channels and woven baskets.",
+    "modelPrompt": "Use case: historical-scene. Original premium portrait event-card illustration for The Cards of Fate, tailings_pond. Human conflict: Ore-washing water spills toward the clay pits. Workers could build a small settling bed. Customers want today’s ore without paying for a second day of work. Scene: Bronze Age adult ore washers and clay workers at shallow settling beds, wooden channels and woven baskets. Era: Bronze Age: clay-brick, timber, bronze and woven textiles; bronze gold and cool teal daylight. Cinematic painterly historical realism consistent with the existing hearth, river, granary and copper-workshop collection; natural anatomy, expressive adult faces/hands, tactile materials, restrained emotion. Portrait 2:3, comfortably framed central silhouettes readable on iPhone. Original composition. No text, readable lettering, logo, border, watermark, modern objects or copied game designs.",
+    "generationRecords": []
+  },
+  {
+    "id": "card_quay_baskets",
+    "cardID": "quay_baskets",
+    "status": "missing",
+    "file": null,
+    "license": null,
+    "brief": "Bronze Age adult quay workers examining torn cargo baskets and spilled grain by a wooden boat.",
+    "modelPrompt": "Use case: historical-scene. Original premium portrait event-card illustration for The Cards of Fate, quay_baskets. Human conflict: Sailors charge porters for lost grain. Porters say the baskets arrived wet. Makers can reuse sound reeds, but part of the order will have to wait. Scene: Bronze Age adult quay workers examining torn cargo baskets and spilled grain by a wooden boat. Era: Bronze Age: clay-brick, timber, bronze and woven textiles; bronze gold and cool teal daylight. Cinematic painterly historical realism consistent with the existing hearth, river, granary and copper-workshop collection; natural anatomy, expressive adult faces/hands, tactile materials, restrained emotion. Portrait 2:3, comfortably framed central silhouettes readable on iPhone. Original composition. No text, readable lettering, logo, border, watermark, modern objects or copied game designs.",
+    "generationRecords": []
+  },
+  {
+    "id": "card_kiln_returns",
+    "cardID": "kiln_returns",
+    "status": "missing",
+    "file": null,
+    "license": null,
+    "brief": "Bronze Age adult potters inspecting half-fired clay vessels beside a small cooled kiln and clay-brick walls.",
+    "modelPrompt": "Use case: historical-scene. Original premium portrait event-card illustration for The Cards of Fate, kiln_returns. Human conflict: A firing stopped halfway. Customers demand a second fire. Potters can separate the sound pieces for a smaller delivery without burning fresh fuel. Scene: Bronze Age adult potters inspecting half-fired clay vessels beside a small cooled kiln and clay-brick walls. Era: Bronze Age: clay-brick, timber, bronze and woven textiles; bronze gold and cool teal daylight. Cinematic painterly historical realism consistent with the existing hearth, river, granary and copper-workshop collection; natural anatomy, expressive adult faces/hands, tactile materials, restrained emotion. Portrait 2:3, comfortably framed central silhouettes readable on iPhone. Original composition. No text, readable lettering, logo, border, watermark, modern objects or copied game designs.",
+    "generationRecords": []
+  },
+  {
+    "id": "card_market_surety",
+    "cardID": "market_surety",
+    "status": "missing",
+    "file": null,
+    "license": null,
+    "brief": "Bronze Age adult foreign merchant and porters negotiating witnessed cargo shares at a timber quay, clay seals.",
+    "modelPrompt": "Use case: historical-scene. Original premium portrait event-card illustration for The Cards of Fate, market_surety. Human conflict: A foreign trader promises goods on the next crossing. The harbor representative wants a witness. The city’s porters refuse to cover the trader’s obligation from their own shares. Scene: Bronze Age adult foreign merchant and porters negotiating witnessed cargo shares at a timber quay, clay seals. Era: Bronze Age: clay-brick, timber, bronze and woven textiles; bronze gold and cool teal daylight. Cinematic painterly historical realism consistent with the existing hearth, river, granary and copper-workshop collection; natural anatomy, expressive adult faces/hands, tactile materials, restrained emotion. Portrait 2:3, comfortably framed central silhouettes readable on iPhone. Original composition. No text, readable lettering, logo, border, watermark, modern objects or copied game designs.",
     "generationRecords": []
   }
 ]

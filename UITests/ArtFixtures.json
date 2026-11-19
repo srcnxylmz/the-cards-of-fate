@@ -25,12 +25,22 @@
     "large": false
   },
   {
-    "id": "furnace_wood",
+    "id": "debt_tablet",
     "language": "en",
     "large": false
   },
   {
+    "id": "furnace_wood",
+    "language": "tr",
+    "large": false
+  },
+  {
     "id": "salt_ship",
+    "language": "en",
+    "large": false
+  },
+  {
+    "id": "water_apportion",
     "language": "tr",
     "large": false
   },
@@ -50,7 +60,17 @@
     "large": false
   },
   {
+    "id": "salmon_weir",
+    "language": "tr",
+    "large": false
+  },
+  {
     "id": "flint_fragments",
+    "language": "en",
+    "large": false
+  },
+  {
+    "id": "reed_bank",
     "language": "tr",
     "large": false
   },
@@ -65,27 +85,37 @@
     "large": false
   },
   {
-    "id": "marsh_raft",
+    "id": "roof_cistern",
     "language": "en",
+    "large": false
+  },
+  {
+    "id": "marsh_raft",
+    "language": "tr",
     "large": false
   },
   {
     "id": "well_roster",
-    "language": "tr",
-    "large": false
-  },
-  {
-    "id": "quay_exchange",
     "language": "en",
     "large": false
   },
   {
-    "id": "bread_bond",
+    "id": "quay_exchange",
     "language": "tr",
     "large": false
   },
   {
+    "id": "bread_bond",
+    "language": "en",
+    "large": false
+  },
+  {
     "id": "mold_audit",
+    "language": "tr",
+    "large": false
+  },
+  {
+    "id": "cistern_account",
     "language": "en",
     "large": false
   },
@@ -125,28 +155,63 @@
     "large": false
   },
   {
-    "id": "bank_alarm",
+    "id": "guest_tongue",
     "language": "en",
+    "large": false
+  },
+  {
+    "id": "bank_alarm",
+    "language": "tr",
     "large": false
   },
   {
     "id": "loom_shares",
-    "language": "tr",
+    "language": "en",
     "large": false
   },
   {
     "id": "clay_lids",
-    "language": "en",
-    "large": false
-  },
-  {
-    "id": "alarm_inquest",
     "language": "tr",
     "large": false
   },
   {
-    "id": "mine_water",
+    "id": "alarm_inquest",
     "language": "en",
+    "large": false
+  },
+  {
+    "id": "mine_water",
+    "language": "tr",
+    "large": false
+  },
+  {
+    "id": "shade_duty",
+    "language": "en",
+    "large": false
+  },
+  {
+    "id": "sowing_relief",
+    "language": "tr",
+    "large": false
+  },
+  {
+    "id": "ward_charter",
+    "language": "en",
+    "large": false
+  },
+  {
+    "id": "ridge_shelter",
+    "language": "tr",
+    "large": false
+  },
+  {
+    "id": "terrace_path",
+    "language": "en",
+    "large": false
+  },
+  {
+    "id": "ridge_account",
+    "language": "tr",
     "large": false
   }
 ]

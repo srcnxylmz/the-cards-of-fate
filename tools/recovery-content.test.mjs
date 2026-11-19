@@ -6,7 +6,7 @@ import {readFileSync} from 'node:fs';
 const before=JSON.parse(readFileSync('docs/analysis/milestone105-90-before/cards.json'));
 const after=JSON.parse(readFileSync('Sources/FateCore/Content/cards.json'));
 test('all ninety original events retain IDs and effects except declared production-input requirements',()=>{
-  assert.equal(before.length,90);assert.equal(after.length,165);
+  assert.equal(before.length,90);assert.equal(after.length,180);
   for(const original of before){
     const actual=after.find(c=>c.id===original.id);
     assert.ok(actual,original.id);
@@ -25,7 +25,7 @@ test('original recovery group retains five distinct events per era',()=>{
   assert.equal(added.length,15);
   for(const era of [1,2,3])assert.equal(added.filter(c=>c.era===era).length,5);
   for(const language of ['tr','en']){
-    assert.equal(new Set(after.map(c=>c.title[language])).size,165);
-    assert.equal(new Set(after.map(c=>c.description[language])).size,165);
+    assert.equal(new Set(after.map(c=>c.title[language])).size,180);
+    assert.equal(new Set(after.map(c=>c.description[language])).size,180);
   }
 });

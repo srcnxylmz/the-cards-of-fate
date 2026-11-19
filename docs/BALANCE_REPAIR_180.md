@@ -11,3 +11,5 @@ Random Tunç çevre ortalaması 38,15 → 33,70 ve açlık kaybı 38,08 → 28,0
 Dört eski üretim seçeneği, tanımlı çevre gideri kadar gerçek girdi gerektiriyor. Girdi kapısından başka değişiklik içermeyen ilk aday random ortalamasını 139,70 → 123,25 düşürdü ve yerel seçici testinde üç seed'de desteyi tüketti. Eski iki yasal seçenek kuralı korundu. Her olaya teslimatı aksatan, gelir vermeyen ve gecikmiş tazminat yaratan bir durdurma seçeneği eklendi. Depo olayında durdurma projeyi kapatır ve bina vermez. Eski kimlikler, diğer seçenek etkileri ve kaydedilmiş gecikmiş yükümlülükler korunur. Gelir niteliği farklı olan harç, ruhsat ve su kaydı incelemesi bu doğal girdi kuralının dışında.
 
 Erken adaylar arşivde. Son dar değişiklik için 106 Swift ve 61 Node testi geçti. Tam 180 kart dengesi ve native denetim ayrı yapılacak.
+
+Son durdurma adayı 1.000 random seed’de 152,39 ortalama karar ve 155 yaşayan sınır verdi. Aynı seed’li 165 referansı 139,70 ve 106 idi. Adayın raporu analysis/milestone180-repair-165 altında. Üç yasal havuz hatası giderildi. Depo iptali binayı kurmadan tek seferlik kararı kapattığı için eski kapanış testleri bu somut sonucu da kapsıyor.

@@ -44,3 +44,8 @@ continuity-events.mjs composes15 original scenes onto the repaired135 source, ma
 ## 165-card source extension —2026-11-18
 
 civic-work-events.mjs adds15 original events with55/55/55 and394 decisions. Canonical bundled cards and root generated mirror remain identical. All150 native definitions are deeply compared unchanged by civic-work-content.test.mjs. New technology metadata only adds paid cultivation/writing sources; root user technologies.json remains untouched. Passive technology offers/investments/K100 observers preserve every old150 field over six full reference replays; no RNG/score/threshold/save change. Current separate council report is analysis/milestone165-verified/simulation-survival-council.json, not the user-owned root council file.
+
+
+## 180 kart kaynak grubu
+
+Son 15 olay tools/content/watershed-events.mjs içinde. Ayrı üretim filtresi dört eski kartın girdi kapısını ekler. Paket ve kök kart JSON’u birlikte üretilir. Dondurulmuş 165 ve 180 kaynakları analysis altında. Kullanıcıya ait kök technologies.json ve meclis raporu sürüm çıktısı olarak kullanılmıyor.

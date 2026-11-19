@@ -1,8 +1,12 @@
 # Content bible
 
-Editorial principle: each card needs a specific human conflict, an observable cost, competing reasonable values, and consequences that fit the era. Neither option should simply be the same reward in different wording. Turkish is authored naturally, with a complete English counterpart for the current 165-card set.
+Editorial principle: each card needs a specific human conflict, an observable cost, competing reasonable values, and consequences that fit the era. Neither option should simply be the same reward in different wording. Turkish is authored naturally, with a complete English counterpart for the current 180-card set.
 
-## Current165-card inventory
+## Current 180-card inventory
+
+180 özgün olay, 60/60/60 ve 434 karar. Son 15 olayın köy ve kent bağlantıları STORY_REVIEW_180.md içinde. Altıncı zincir iki karşıt yol hesabını kapatır. Altı zincirin kapsamı, açık anlatılar ve üretim eksikleri PHASE2_FINAL_REVIEW.md içinde.
+
+## Historical165-card inventory
 
 165 unique events,55 per era,394 decisions. Fifteen civic-work conflicts preserve all150 definitions. Care watches→sowing relief→city labor account adds the fifth authored/tested chain; independent human historical/translation approval remains open. Conditional paid cultivation and writing lessons keep old metal discoveries intact.33 choices,crew/thin funded deliveries,care representation and convoy history are covered by engine/save/replay tests.30 real image candidates,135 missing; no new finished music.104 local/native Swift,59 Node,six UI tests and60000 native simulations pass. All30 actual-image flows,OCR/audio and actual screenshots were reviewed; source ee0bd37/run44327962308. Exact proof: NATIVE_165_EVIDENCE.md. See STORY_REVIEW_165.md and MILESTONE_165_ANALYSIS.md.
 

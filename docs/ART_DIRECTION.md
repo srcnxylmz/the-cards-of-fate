@@ -80,3 +80,8 @@ The shared portrait frame/choices/motion behavior is unchanged. All25 actual-ima
 ## 165-card actual-art ledger
 
 Five real new portraits fill earlier complete-chain gaps: flint_fragments,potter_lease,copper_recast,mold_audit,bank_alarm. Old25 PNG hashes are preserved;30 actual candidates,135 missing. Mold foreground later-looking lock key was edited to clay seals before registration. Initial/edit prompts,reference/output hashes and real asset catalog paths are recorded in assets/generation_prompts.json and assets/art_manifest.json. All outputs were visually inspected; expert historical/anatomical/legal approval remains open. All30 real-image fixture flows passed at ee0bd37/run44327962308; five new native images,stable choices/result,main menu,normal/large and Reduce Motion captures were reviewed.210 attachments,four production OCR notes and three-cue start/mute passed; no export error or collected app crash. Exact captures/hashes/limits: NATIVE_165_EVIDENCE.md. Three prototype cues unchanged; no finished production music or physical listening claim.
+
+
+## 180 kart görsel envanteri
+
+43 gerçek aday, 137 eksik. Yeni adaylar: reed_bank, salmon_weir, sowing_relief, roof_cistern, debt_tablet, ward_charter, shade_duty, guest_tongue, cistern_account, ridge_shelter, terrace_path, ridge_account, water_apportion. Önceki 30 PNG korunur. Su kotası sahnesinin ilk üretimindeki çark yerine elde taşınan testiler ve kil tablet görüşmesi için ayrı bir prompt kullanıldı. Seçilen dosyaların prompt, kayıt ve SHA-256 verileri varlık dizininde. Dönem uzmanı, insan görsel onayı ve fiziksel cihaz incelemesi açık.
