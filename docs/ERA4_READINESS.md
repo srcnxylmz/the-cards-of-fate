@@ -1,5 +1,16 @@
 # Era 4 boundary and future dependencies — 180-card group
 
+## Durum — 195 paketi (Claude, dal `phase3-era4-groundwork`)
+
+Aşağıdaki "proposed, not implemented" bölümlerinin bir kısmı artık uygulandı; Era 4 **hâlâ kapalı**.
+
+- **Uygulandı:** açık içerik hazırlık kapısı (`EraDefinition.contentGate`, `enabled:false`), ayrık envanter sayımı (`CardEvent.eraRole`), `advanceEra` artık `eraContentReady` ister. Yalnızca kart eklemek de, yalnızca anahtarı açmak da çağı açmaz; doğrulayıcı envanter eksikken `enabled:true`'yu hata sayar. Mevcut writing / knowledge78 / stability35 / population25 eşikleri değişmedi.
+- **Uygulandı:** 15 Era 4 olayı (9 tekrarlanabilir, 3 köprü, 3 sonuç) ve bayrak tabanlı eyalet defteri (özerklik, iki kademeli haraç borcu, yol, garnizon, su, atölye, ikamet, meşruiyet, eyalet senet sicili). Yeni kalıcı state yok; v1 şema anahtarları aynı.
+- **Uygulandı (dönüşüm tablosundan):** ekmek senedi (açık/ödenmiş/temerrüt/hiç), kalıp beratı (kamu/özel), sırt yolu (kamu/özel), sarnıç (kamu/özel, kredi bir kez), alarm (kamu/özel), bakım (kamu/özel), konuk vatandaşlığı ve mera kaydı (tanıklık). Gece nöbeti, liman ikameti ve iskele vergisi dönüşümleri henüz yok.
+- **Envanter:** 15/40 · 9/24 · 3/8 · 3/8; sekiz kriz alanı temsil ediliyor.
+- **Doğrulama:** Node 70/70. Swift testleri yazıldı ama bu ortamda çalıştırılamadı; native/simülasyon kanıtı yok. Ayrıntı: [PHASE3_195_REPORT.md](PHASE3_195_REPORT.md), devir: [HANDOFF_195_CODEX.md](HANDOFF_195_CODEX.md).
+
+
 This milestone adds no Era 4 cards and does not open the fourth era. MASTER_SPEC section 3 defines Ancient Empires as governing large kingdoms/empires; section 4 requires knowledge, discoveries, stability and key historical events rather than an elapsed-turn gate. The first-three-era Phase 2 target remains 180 original events. Existing 12-era metadata is not playable content.
 
 The current Bronze → Ancient boundary requires writing, knowledge ≥78, stability ≥35, population ≥25, a living civilization, and authored next-era content. `advanceEra` refuses an unauthored era. The native-verified Phase 2 release has 60 cards per era in eras 1–3 and zero in eras 4–12. Era 4 metadata lists Stone Capital / Empire, civil_law and knowledge 82 for the eventual next transition. [Native Phase 2 evidence](NATIVE_180_EVIDENCE.md)

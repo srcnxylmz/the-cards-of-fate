@@ -1,5 +1,10 @@
 # 180 kart kalite doğrulaması — 2026-11-19
 
+# 195 kart yerel içerik kontrolü — 2026-11-19 (native yok)
+
+195 benzersiz kart (60/60/60 + 15 kapalı Era 4), 486 karar. `node --test tools/*.test.mjs` 70/70 geçti, `build-content --check` güncel, doğrulayıcı 0 hata/0 uyarı, eski 180 tanım derin eşit. **Swift testleri (109 eski + 16 yeni) bu ortamda çalıştırılmadı; 60.000 simülasyon, iPhone build/UI/OCR/ses de çalıştırılmadı.** Native kabul ilan edilmez. Era 4 kapısı kapalı (`enabled:false`, envanter 15/40). Yeni görsel yok: 43 aday, 152 eksik. Ayrıntı: [PHASE3_195_REPORT.md](PHASE3_195_REPORT.md).
+
+
 109 Swift ve 63 Node geçti. İçerik 180 benzersiz kart, 434 karar, 43 illüstrasyon ve 137 eksikle doğrulandı. v1 kayıt, replay ve altı hikâye zincirinin regresyonları geçti. 60.000 macOS simülasyonu yerel raporla birebir eşleşti. iPhone SE 3/iOS 18.5 derleme, kurulum, başlatma ve altı UI testi geçti. Başarılı ZIP'in kaynak SHA'sı ve özeti doğrulandı. 43 görsel akışı, 13 yeni gerçek ekran, dört OCR kaydı, büyük metin/Reduce Motion ve üç cue API/mute gözlemi incelendi. Fiziksel cihaz çalışması açık. [CI 44601815107](https://github.com/srcnxylmz/the-cards-of-fate/actions/runs/44601815107) · [Native kanıt ve önceki başarısız denemeler](NATIVE_180_EVIDENCE.md)
 
 # Verified 165-card native milestone — 2026-11-18
