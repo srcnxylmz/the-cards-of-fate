@@ -134,7 +134,7 @@ final class InheritanceTests: XCTestCase {
                     for end in card.choices.filter({ $0.available(in: city) }) {
                         let final = try engine.choose(end.id, in: city)
                         XCTAssertTrue(final.flags.contains("resolved_roof_beams"))
-                        XCTAssertEqual(final.buildings.contains("distributed_storehouses"), end.id != "timber")
+                        XCTAssertEqual(final.buildings.contains("distributed_storehouses"), ["reeds", "roster"].contains(end.id))
                     }
                 }
             }

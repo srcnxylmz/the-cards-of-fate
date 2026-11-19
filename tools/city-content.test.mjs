@@ -1,6 +1,7 @@
+import {withProductionInputs} from './content/production-inputs.mjs';
 import {test} from 'node:test';import assert from 'node:assert/strict';import {readFileSync} from 'node:fs';import {validate} from './validate-content.mjs';import {composeArtManifest,promptFor} from './art-pipeline.mjs';
 const cards=JSON.parse(readFileSync('cards.json')),before=JSON.parse(readFileSync('docs/analysis/milestone120-105-before/cards.json')),eras=JSON.parse(readFileSync('Sources/FateCore/Content/eras.json'));
-test('all 105 existing cards are preserved without any authored definition change',()=>{assert.equal(cards.length,165);for(const c of before)assert.deepEqual(cards.find(x=>x.id===c.id),c,c.id);for(const era of [1,2,3])assert.equal(cards.filter(c=>c.era===era).length,55);});
+test('all 105 existing cards are preserved except declared production-input requirements',()=>{assert.equal(cards.length,165);for(const c of before)assert.deepEqual(cards.find(x=>x.id===c.id),withProductionInputs(c),c.id);for(const era of [1,2,3])assert.equal(cards.filter(c=>c.era===era).length,55);});
 test('new fifteen scenes and bilingual conflicts are unique',()=>{const old=new Set(before.map(c=>c.id)),added=cards.filter(c=>!old.has(c.id)&&JSON.parse(readFileSync('docs/analysis/milestone135-120-before/cards.json')).some(x=>x.id===c.id));assert.equal(added.length,15);for(const lang of ['tr','en']){assert.equal(new Set(cards.map(c=>c.title[lang])).size,165);assert.equal(new Set(cards.map(c=>c.description[lang])).size,165);}assert.equal(new Set(added.map(c=>c.artDirection)).size,15);});
 for(const [name,mutate,error] of [
  ['future completed history',c=>c[0].requirements=[{completedCard:'mine_shoring'}],'history only completed in future era'],

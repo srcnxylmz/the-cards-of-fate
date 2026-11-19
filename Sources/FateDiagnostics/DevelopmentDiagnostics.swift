@@ -70,6 +70,11 @@ public struct DevelopmentDiagnostics {
             if delta != 0 {
                 let key = "\(era).\(stage).\(stage == "card" ? decision : "all").\(stat).\(delta < 0 ? "loss" : "gain")"
                 counts[key,default:0] += abs(delta)
+                if era == 3 {
+                    for limit in [20,40,80] where bronzeAge <= limit {
+                        counts["bronze.actual.first\(limit).\(stage).\(stage == "card" ? decision : "all").\(stat).\(delta < 0 ? "loss" : "gain")",default:0] += abs(delta)
+                    }
+                }
             }
         }
         prior = s.stats

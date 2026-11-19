@@ -3,6 +3,7 @@ param(
     [ValidateRange(1, 1000000)][int]$Runs = 10000,
     [ValidateSet('random', 'survival', 'knowledge', 'progression', 'recovery')][string]$Policy = 'random',
     [switch]$ManageCouncil,
+    [switch]$SeedObservations,
     [switch]$SkipBuild,
     [string]$CardsPath,
     [string]$OutputDirectory = 'docs',
@@ -58,6 +59,7 @@ try {
             $councilArgs = @()
             $reportName = $Policy
             if ($ManageCouncil) { $councilArgs = @('--manage-council'); $reportName = "$Policy-council" }
+            if ($SeedObservations) { $councilArgs += @('--seed-observations') }
             if ($CardsPath) { $councilArgs += @('--cards', $CardsPath) }
             if ($SkipBuild) {
                 $taskExecutable = Get-ChildItem -LiteralPath (Join-Path $projectRoot '.build') -Filter FateSimulation.exe -File -Recurse | Where-Object { $_.Directory.Name -eq 'release' -or $_.Directory.Name -like 'Release-*' } | Sort-Object LastWriteTime -Descending | Select-Object -First 1

@@ -1,0 +1,134 @@
+{
+  "seeds": "0..<1000",
+  "cap": 500,
+  "limits": [
+    "Earlier/later are observed durations, not true lifetimes when capped.",
+    "Both-capped durations remain censored; gained/lost caps are separate.",
+    "Per-seed selection paths differ after content changes; no additive causality."
+  ],
+  "rows": {
+    "survival": {
+      "paired": {
+        "earlierDeath": 516,
+        "laterDeath": 447,
+        "sameTurns": 37,
+        "bothCapped": 27,
+        "lostCap": 108,
+        "gainedCap": 93,
+        "mechanismPairs": {
+          "1.terminalEcology → 1.terminalEcology": 654,
+          "1.terminalPopulation.summer_pools.bank → 1.terminalEcology": 4,
+          "1.terminalEcology → cap": 82,
+          "cap → 1.terminalEcology": 98,
+          "1.terminalPopulation.world → 1.terminalEcology": 31,
+          "1.terminalPopulation.world → cap": 2,
+          "cap → cap": 27,
+          "1.terminalEcology → 1.terminalPopulation.world": 21,
+          "1.terminalPopulation.red_mushrooms.feast → 1.terminalEcology": 8,
+          "1.terminalPopulation.ice_crossing.cross → cap": 1,
+          "1.terminalPopulation.winter_porters.priority → 1.terminalEcology": 8,
+          "1.terminalPopulation.ice_crossing.cross → 1.terminalPopulation.red_mushrooms.feast": 1,
+          "1.terminalPopulation.ochre_border.move → 1.terminalEcology": 5,
+          "1.terminalPopulation.ochre_border.move → 1.terminalPopulation.world": 2,
+          "1.terminalPopulation.ice_crossing.cross → 1.terminalEcology": 6,
+          "cap → 1.terminalPopulation.world": 3,
+          "1.terminalPopulation.calving_herd.range → 1.terminalEcology": 3,
+          "1.terminalPopulation.red_mushrooms.feast → cap": 3,
+          "1.terminalEcology → 1.terminalPopulation.winter_porters.priority": 7,
+          "cap → 1.terminalPopulation.ice_crossing.cross": 2,
+          "cap → 1.terminalPopulation.summer_pools.bank": 3,
+          "1.terminalEcology → 1.terminalPopulation.calving_herd.range": 1,
+          "1.terminalPopulation.winter_porters.priority → cap": 2,
+          "1.terminalEcology → 1.terminalPopulation.red_mushrooms.feast": 4,
+          "1.terminalPopulation.red_mushrooms.feast → 1.terminalPopulation.red_mushrooms.feast": 1,
+          "1.terminalEcology → 1.terminalPopulation.summer_pools.bank": 3,
+          "1.terminalEcology → 1.terminalPopulation.calving_herd.take": 4,
+          "1.terminalPopulation.summer_pools.bank → cap": 2,
+          "1.terminalEcology → 1.terminalPopulation.ice_crossing.cross": 3,
+          "1.terminalPopulation.world → 1.terminalPopulation.world": 2,
+          "cap → 1.terminalPopulation.ochre_border.move": 2,
+          "1.terminalPopulation.calving_herd.take → 1.terminalEcology": 2,
+          "1.terminalPopulation.calving_herd.take → 1.terminalPopulation.ice_crossing.cross": 1,
+          "1.terminalPopulation.winter_porters.priority → 1.terminalPopulation.summer_pools.bank": 1,
+          "1.terminalPopulation.ochre_border.move → cap": 1
+        }
+      },
+      "mean": [
+        209.316,
+        199.502
+      ],
+      "caps": [
+        135,
+        120
+      ],
+      "politicalActions": [
+        0,
+        0
+      ],
+      "actualCouncilChanges": [
+        {},
+        {}
+      ]
+    },
+    "survival-council": {
+      "paired": {
+        "earlierDeath": 499,
+        "laterDeath": 475,
+        "sameTurns": 26,
+        "bothCapped": 0,
+        "lostCap": 5,
+        "gainedCap": 3,
+        "mechanismPairs": {
+          "1.terminalEcology → 1.terminalEcology": 879,
+          "1.terminalEcology → 1.terminalPopulation.winter_porters.priority": 9,
+          "1.terminalPopulation.world → 1.terminalEcology": 35,
+          "1.terminalPopulation.ice_crossing.cross → 1.terminalEcology": 7,
+          "1.terminalPopulation.ice_crossing.cross → 1.terminalPopulation.ochre_border.move": 1,
+          "1.terminalPopulation.ochre_border.move → 1.terminalEcology": 3,
+          "1.terminalPopulation.red_mushrooms.feast → 1.terminalPopulation.calving_herd.range": 1,
+          "1.terminalEcology → 1.terminalPopulation.red_mushrooms.feast": 3,
+          "1.terminalEcology → cap": 3,
+          "1.terminalPopulation.winter_porters.priority → 1.terminalEcology": 6,
+          "1.terminalEcology → 1.terminalPopulation.calving_herd.range": 1,
+          "1.terminalEcology → 1.terminalPopulation.world": 24,
+          "1.terminalPopulation.summer_pools.bank → 1.terminalEcology": 4,
+          "1.terminalPopulation.red_mushrooms.feast → 1.terminalPopulation.world": 1,
+          "1.terminalPopulation.calving_herd.range → 1.terminalEcology": 1,
+          "1.terminalEcology → 1.terminalPopulation.ochre_border.move": 1,
+          "1.terminalEcology → 1.terminalPopulation.summer_pools.bank": 2,
+          "1.terminalEcology → 1.terminalPopulation.ice_crossing.cross": 4,
+          "cap → 1.terminalPopulation.calving_herd.range": 1,
+          "cap → 1.terminalEcology": 4,
+          "1.terminalPopulation.red_mushrooms.feast → 1.terminalEcology": 3,
+          "1.terminalPopulation.ash_return.cut → 1.terminalEcology": 1,
+          "1.terminalPopulation.calving_herd.take → 1.terminalEcology": 2,
+          "1.terminalPopulation.world → 1.terminalPopulation.ice_crossing.cross": 1,
+          "1.terminalEcology → 1.terminalPopulation.calving_herd.take": 2,
+          "1.terminalPopulation.world → 1.terminalPopulation.winter_porters.priority": 1
+        }
+      },
+      "mean": [
+        80.197,
+        72.714
+      ],
+      "caps": [
+        5,
+        3
+      ],
+      "politicalActions": [
+        5705,
+        5249
+      ],
+      "actualCouncilChanges": [
+        {
+          "1.alliance.resources.loss": 7992,
+          "1.negotiate.resources.loss": 40312
+        },
+        {
+          "1.alliance.resources.loss": 7464,
+          "1.negotiate.resources.loss": 37016
+        }
+      ]
+    }
+  }
+}

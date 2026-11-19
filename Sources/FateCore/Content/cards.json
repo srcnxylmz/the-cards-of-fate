@@ -3087,7 +3087,12 @@
           "tr": "Sonucu öngörülebilir",
           "en": "Predictable outcome"
         },
-        "requirements": [],
+        "requirements": [
+          {
+            "stat": "environment",
+            "minimum": 15
+          }
+        ],
         "immediateEffects": {
           "stats": {},
           "flags": [],
@@ -3129,6 +3134,71 @@
                   "stats": {
                     "resources": -10,
                     "population": -3
+                  },
+                  "flags": [],
+                  "technologies": [],
+                  "buildings": [],
+                  "rivalRelation": 0
+                }
+              }
+            ],
+            "animationPreset": "normal"
+          }
+        ]
+      },
+      {
+        "id": "suspend",
+        "text": {
+          "tr": "Bu nöbet ocağı durdur; teslimatı ertele.",
+          "en": "Stop the furnace for this watch and postpone delivery."
+        },
+        "risk": {
+          "tr": "Sonucu öngörülebilir",
+          "en": "Predictable outcome"
+        },
+        "requirements": [],
+        "immediateEffects": {
+          "stats": {},
+          "flags": [],
+          "technologies": [],
+          "buildings": [],
+          "rivalRelation": 0
+        },
+        "outcomes": [
+          {
+            "id": "result",
+            "probability": 1,
+            "affinity": null,
+            "text": {
+              "tr": "Odun kesilmedi, ürün çıkmadı. Ustalar kaybedilen sipariş için itiraz etti.",
+              "en": "No wood was cut and no output left the furnace. Craftspeople disputed the lost order."
+            },
+            "effect": {
+              "stats": {
+                "environment": 2,
+                "stability": -4,
+                "authority": -2
+              },
+              "flags": [],
+              "technologies": [],
+              "buildings": [],
+              "rivalRelation": 0,
+              "rivalRelations": {
+                "hunters": -4,
+                "keepers": 3
+              }
+            },
+            "delayedEffects": [
+              {
+                "afterTurns": 4,
+                "minimumEra": 3,
+                "text": {
+                  "tr": "Ertelenen siparişin yeni taşıma payı istendi.",
+                  "en": "The deferred order required another hauling share."
+                },
+                "effect": {
+                  "stats": {
+                    "resources": -3
                   },
                   "flags": [],
                   "technologies": [],
@@ -10393,7 +10463,12 @@
           "tr": "Sonucu öngörülebilir",
           "en": "Predictable outcome"
         },
-        "requirements": [],
+        "requirements": [
+          {
+            "stat": "environment",
+            "minimum": 12
+          }
+        ],
         "immediateEffects": {
           "stats": {},
           "flags": [],
@@ -10596,6 +10671,73 @@
               }
             ],
             "animationPreset": "settlement"
+          }
+        ]
+      },
+      {
+        "id": "suspend",
+        "text": {
+          "tr": "İnşaatı beklet; bitmemiş depoyu kullanıma açma.",
+          "en": "Suspend construction and keep the unfinished store closed."
+        },
+        "risk": {
+          "tr": "Sonucu öngörülebilir",
+          "en": "Predictable outcome"
+        },
+        "requirements": [],
+        "immediateEffects": {
+          "stats": {},
+          "flags": [],
+          "technologies": [],
+          "buildings": [],
+          "rivalRelation": 0
+        },
+        "outcomes": [
+          {
+            "id": "result",
+            "probability": 1,
+            "affinity": null,
+            "text": {
+              "tr": "Yeni kiriş kesilmedi. Meclis depo projesini kapattı; haneler ürünü kendi damlarında tuttu.",
+              "en": "No new beams were cut. The council shelved the storehouse project; households kept produce under their own roofs."
+            },
+            "effect": {
+              "stats": {
+                "environment": 1,
+                "stability": -3,
+                "authority": -3
+              },
+              "flags": [
+                "resolved_roof_beams"
+              ],
+              "technologies": [],
+              "buildings": [],
+              "rivalRelation": 0,
+              "rivalRelations": {
+                "hunters": -4,
+                "keepers": 3
+              }
+            },
+            "delayedEffects": [
+              {
+                "afterTurns": 4,
+                "minimumEra": 3,
+                "text": {
+                  "tr": "Bekleyen ürünün yeniden taşıma payı ödendi.",
+                  "en": "Waiting produce required another hauling share."
+                },
+                "effect": {
+                  "stats": {
+                    "resources": -2
+                  },
+                  "flags": [],
+                  "technologies": [],
+                  "buildings": [],
+                  "rivalRelation": 0
+                }
+              }
+            ],
+            "animationPreset": "normal"
           }
         ]
       }
@@ -12597,7 +12739,12 @@
           "tr": "Sonucu öngörülebilir",
           "en": "Predictable outcome"
         },
-        "requirements": [],
+        "requirements": [
+          {
+            "stat": "environment",
+            "minimum": 6
+          }
+        ],
         "immediateEffects": {
           "stats": {},
           "flags": [],
@@ -12715,6 +12862,71 @@
                 "effect": {
                   "stats": {
                     "resources": 6
+                  },
+                  "flags": [],
+                  "technologies": [],
+                  "buildings": [],
+                  "rivalRelation": 0
+                }
+              }
+            ],
+            "animationPreset": "normal"
+          }
+        ]
+      },
+      {
+        "id": "suspend",
+        "text": {
+          "tr": "Ateşi söndür; bu siparişi zamanında teslim etme.",
+          "en": "Extinguish the fire and miss this order’s deadline."
+        },
+        "risk": {
+          "tr": "Sonucu öngörülebilir",
+          "en": "Predictable outcome"
+        },
+        "requirements": [],
+        "immediateEffects": {
+          "stats": {},
+          "flags": [],
+          "technologies": [],
+          "buildings": [],
+          "rivalRelation": 0
+        },
+        "outcomes": [
+          {
+            "id": "result",
+            "probability": 1,
+            "affinity": null,
+            "text": {
+              "tr": "Duman azaldı ama işçilere yeni ürün payı dağıtılamadı. Sipariş sahibinin itirazı kaldı.",
+              "en": "Smoke abated but workers received no new output share. The customer’s claim remained."
+            },
+            "effect": {
+              "stats": {
+                "environment": 3,
+                "stability": -4,
+                "authority": -3
+              },
+              "flags": [],
+              "technologies": [],
+              "buildings": [],
+              "rivalRelation": 0,
+              "rivalRelations": {
+                "hunters": -4,
+                "keepers": 3
+              }
+            },
+            "delayedEffects": [
+              {
+                "afterTurns": 4,
+                "minimumEra": 3,
+                "text": {
+                  "tr": "Durdurulan siparişin depolama payı istendi.",
+                  "en": "Storage for the stopped order required payment."
+                },
+                "effect": {
+                  "stats": {
+                    "resources": -4
                   },
                   "flags": [],
                   "technologies": [],
@@ -19394,6 +19606,10 @@
           {
             "stat": "population",
             "minimum": 3
+          },
+          {
+            "stat": "environment",
+            "minimum": 5
           }
         ],
         "immediateEffects": {
@@ -19509,6 +19725,71 @@
                 "effect": {
                   "stats": {
                     "resources": -2
+                  },
+                  "flags": [],
+                  "technologies": [],
+                  "buildings": [],
+                  "rivalRelation": 0
+                }
+              }
+            ],
+            "animationPreset": "normal"
+          }
+        ]
+      },
+      {
+        "id": "suspend",
+        "text": {
+          "tr": "Atölye suyu tahsisini durdur; üretim sırasını ertele.",
+          "en": "Suspend the workshop allocation and defer its production turn."
+        },
+        "risk": {
+          "tr": "Sonucu öngörülebilir",
+          "en": "Predictable outcome"
+        },
+        "requirements": [],
+        "immediateEffects": {
+          "stats": {},
+          "flags": [],
+          "technologies": [],
+          "buildings": [],
+          "rivalRelation": 0
+        },
+        "outcomes": [
+          {
+            "id": "result",
+            "probability": 1,
+            "affinity": null,
+            "text": {
+              "tr": "Bu nöbet su üretime ayrılmadı. Atölyelerin geliri durdu; mahalle itirazları sürdü.",
+              "en": "No water went to production this watch. Workshop income stopped and neighborhood objections remained."
+            },
+            "effect": {
+              "stats": {
+                "environment": 2,
+                "stability": -3,
+                "authority": -2
+              },
+              "flags": [],
+              "technologies": [],
+              "buildings": [],
+              "rivalRelation": 0,
+              "rivalRelations": {
+                "hunters": -4,
+                "keepers": 3
+              }
+            },
+            "delayedEffects": [
+              {
+                "afterTurns": 4,
+                "minimumEra": 3,
+                "text": {
+                  "tr": "Geciken işin yeni teslimat payı istendi.",
+                  "en": "The delayed work required a new delivery share."
+                },
+                "effect": {
+                  "stats": {
+                    "resources": -3
                   },
                   "flags": [],
                   "technologies": [],

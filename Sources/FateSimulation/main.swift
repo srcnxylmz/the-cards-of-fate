@@ -11,6 +11,9 @@ enum UsageError: Error { case invalidArguments }
 guard let count = Int(arguments.first ?? "10000"), (1...1_000_000).contains(count) else { throw UsageError.invalidArguments }
 let policyName = option("--policy") ?? "random"
 let manageCouncil = arguments.contains("--manage-council")
+let collectSeeds = arguments.contains("--seed-observations")
+var seedObservations:[[String:Any]]=[]
+var managedCouncilChanges:[String:Int]=[:]
 guard ["random", "survival", "knowledge", "progression", "recovery"].contains(policyName) else { throw UsageError.invalidArguments }
 var content = try ContentDatabase.bundled()
 if let path = option("--cards") {
@@ -106,15 +109,18 @@ for seed in 0..<count {
             if isRepeat { earlyRepeated += 1 }
         }
         // Optional experiment, kept separate from unchanged baseline policies.
+        let councilStatsBefore=state.stats
+        var actionKind:String?
         if manageCouncil && state.stats["resources", default: 0] >= 35 {
             if engine.councilActionAvailable(.alliance, in: state) {
-                state = try engine.council(.alliance, in: state); politicalActions += 1
+                state = try engine.council(.alliance, in: state); politicalActions += 1; actionKind="alliance"
             } else if let rival = state.rivals.sorted(by: { $0.relation == $1.relation ? $0.id < $1.id : $0.relation < $1.relation }).first,
                       rival.relation < content.politics.supportRelation,
                       engine.councilActionAvailable(.negotiate(rival.id), in: state) {
-                state = try engine.council(.negotiate(rival.id), in: state); politicalActions += 1
+                state = try engine.council(.negotiate(rival.id), in: state); politicalActions += 1; actionKind="negotiate"
             }
         }
+        if let action=actionKind { for stat in Stat.allCases { let change=state.stats[stat.rawValue,default:0]-councilStatsBefore[stat.rawValue,default:0]; if change != 0 { managedCouncilChanges[eraKey+"."+action+"."+stat.rawValue+"."+(change<0 ? "loss":"gain"),default:0] += abs(change) } } }
         let choices = card.choices.filter { $0.available(in: state) }
         let choice = policyName == "recovery" ? engine.selectRecovery(choices,state:state) : engine.select(choices, state: state, policyName: policyName, random: &policy)
         crisis.begin(state,card:card,choice:choice)
@@ -160,7 +166,7 @@ for seed in 0..<count {
             lastAuthority = current
         }
         crisis.endDecision(state)
-        if let text = state.resolution?.text, let outcome = choice.outcomes.first(where: { $0.text == text }) { resolvedOutcomes[decisionKey+"."+outcome.id,default:0] += 1 }
+        if let text = state.resolution?.text, let outcome = choice.outcomes.first(where: { $0.text == text }) { resolvedOutcomes[decisionKey+"."+outcome.id,default:0] += 1; crisis.recordOutcome(key:decisionKey+"."+outcome.id) }
         for technology in state.technologies.subtracting(previousTechnologies) {
             technologyGains[technology, default: 0] += 1
             technologyTurnSums[technology, default: 0] += state.turn
@@ -219,6 +225,7 @@ for seed in 0..<count {
     }
     crisis.finish(state)
     development.finish(state)
+    if collectSeeds { seedObservations.append(["seed":seed,"decisions":state.turn,"era":state.era,"capped":state.ending == nil,"stats":state.stats,"mechanism":development.counts.keys.sorted().first{$0.contains(".terminal")} ?? (state.ending == nil ? "cap":"other")]) }
     for (key,value) in development.counts { developmentTotals[key,default:0] += value }
     for (key,value) in crisis.counts { crisisTotals[key,default:0] += value }
     turns.append(state.turn)
@@ -238,6 +245,7 @@ let report: [String: Any] = [
     "cappedLast80DistinctCardSum":capDistinctCards,"cappedPendingConsequences":capPendingConsequences,
     "runsReaching100":reaches100,"turnQuantiles":["p50":sortedTurns[count/2],"p90":sortedTurns[min(count-1,count*9/10)],"p99":sortedTurns[min(count-1,count*99/100)]],
     "runs": count, "policy": policyName, "engine": "FateCore Swift (production core)",
+    "managedCouncilChanges":managedCouncilChanges,"seedObservations":seedObservations,
     "managesCouncil": manageCouncil, "politicalActions": politicalActions,
     "seedRange": "0..<\(count)", "turnCap": 500, "contentCardCount": content.cards.count,
     "averageTurns": Double(turns.reduce(0,+))/Double(count), "minTurns": turns.min()!, "maxTurns": turns.max()!,

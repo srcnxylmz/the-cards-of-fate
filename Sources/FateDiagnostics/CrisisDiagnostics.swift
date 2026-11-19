@@ -19,9 +19,15 @@ public struct CrisisDiagnostics {
     var reserveEpisodes: [String: Int] = [:]
     var hungerRecoveryTurn: Int?
     var reserveRecoveryTurn: Int?
+    private var currentDecisionInBronze = false
+
+    public mutating func recordOutcome(key:String) {
+        if currentDecisionInBronze && bronzeTurn > 100 { counts["bronze.after100.outcome."+key,default:0] += 1 }
+    }
 
     public mutating func begin(_ s: GameState, card: CardEvent, choice: Choice) {
         priorStats = s.stats
+        currentDecisionInBronze = s.era == 3
         hungerRecoveryTurn = nil; reserveRecoveryTurn = nil
         let era = String(s.era)
         if s.stats["resources"] == 0 { counts[era+".emptyAtDecision", default: 0] += 1 }
@@ -44,6 +50,8 @@ public struct CrisisDiagnostics {
                 counts["bronze.after100.decisions", default: 0] += 1
                 if repeated { counts["bronze.after100.repeats", default: 0] += 1 }
                 lateCards.insert(card.id); lateChoices.insert(card.id+"."+choice.id)
+                counts["bronze.after100.card."+card.id,default:0] += 1
+                counts["bronze.after100.choice."+card.id+"."+choice.id,default:0] += 1
             }
             let band = s.stats["environment", default: 0] / 25
             counts["bronze.ecologyBand\(band).decisions", default: 0] += 1

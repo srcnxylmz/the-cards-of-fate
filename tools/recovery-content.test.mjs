@@ -1,10 +1,11 @@
+import {withProductionInputs} from './content/production-inputs.mjs';
 import {test} from 'node:test';
 import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
 
 const before=JSON.parse(readFileSync('docs/analysis/milestone105-90-before/cards.json'));
 const after=JSON.parse(readFileSync('Sources/FateCore/Content/cards.json'));
-test('all ninety original events retain their authored choices and gameplay effects',()=>{
+test('all ninety original events retain IDs and effects except declared production-input requirements',()=>{
   assert.equal(before.length,90);assert.equal(after.length,165);
   for(const original of before){
     const actual=after.find(c=>c.id===original.id);
@@ -16,7 +17,7 @@ test('all ninety original events retain their authored choices and gameplay effe
       assert.ok(next.exclusionConditions.length>old.exclusionConditions.length);
       next.exclusionConditions=old.exclusionConditions;
     }
-    assert.deepEqual(next,old,original.id);
+    assert.deepEqual(next,withProductionInputs(old),original.id);
   }
 });
 test('original recovery group retains five distinct events per era',()=>{

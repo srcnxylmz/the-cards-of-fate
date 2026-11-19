@@ -1,0 +1,13 @@
+# 180 kart öncesi denge düzeltmesi
+
+165 kart referansı `ee0bd37`. Altı 10.000 seed tekrarında mevcut rapor alanlarının tümü eşleşti. Yeni sayaçlar ilk 20, 40 ve 80 Tunç kararında gerçekleşen ve 0–100 aralığında kırpılan kayıpları aşama ve karar bazında ölçüyor. Tunç'taki 100. karardan sonraki seçim ve sonuç sayaçları, önceki toplamları değiştirmeden eklendi.
+
+150 → 165 tam kohortlarında ekoloji ve istikrar kaynaklı Paleolitik sonlar survival için 8.126 → 8.301, meclisli survival için 9.223 → 9.430 oldu. Dünya aşamasındaki açlık kaybı sırasıyla 29.939 → 21.660 ve 45.693 → 40.017. Medyan karar sayıları 132 → 121 ve 53 → 52. Tam kohortta yaşayan 500 sınırları 1.090 → 1.199 ve 50 → 71. Uzayan kuyruk daha önce ölen oyunları telafi etmiyor.
+
+1.000 eşli seed'de survival oyunlarının 516'sı daha erken, 447'si daha geç sona erdi veya sınıra ulaştı. Meclisli kohortta bu sayılar 499 ve 475. Meclisin fiili erzak harcaması 48.304 → 44.480, karar başına ise 0,60 → 0,61. Dolayısıyla toplam meclis maliyetinin arttığı sonucuna varılamaz. Ekolojik sonlarla istikrar kayıpları daha belirgin. Beş yeni Paleolitik kart çıkarılınca iki politika da 150 kart kontrolüyle içerik sayısı dışında birebir eşleşti. Tek başına deri işini çıkarmak iki ortalamayı artırdı. Kızağı çıkarmak survival ortalamasını düşürüp meclisli ortalamayı artırdı. Bunlar seçilen diğer olayları ve RNG yolunu da değiştirir. İki farklı politika için tek bir kıtlık nedeni veya bağımsız kart katkısı çıkarılamaz. Ham özetler STUDY_180_SCREENING.json ve PAIRED_180_SCREENING.json dosyalarında. Bu aşamada Paleolitik karta mekanik müdahale yapılmadı.
+
+Random Tunç çevre ortalaması 38,15 → 33,70 ve açlık kaybı 38,08 → 28,05. İlk20/40/80 çevre ortalamaları sırasıyla 61,14 → 60,12 / 56,81 → 55,72 / 49,91 → 47,92. Fark erken pencerelerde de var. İlk80 fiili kayıpta ocak büyütme 127.421, aşırı kömür kesimi 68.133, tüm gecikmiş çevre kayıpları 66.159 ve cüruf vardiyası 55.296 puan. Bu pencereler farklı hayatta kalma bileşimlerini içeriyor.
+
+Dört eski üretim seçeneği, tanımlı çevre gideri kadar gerçek girdi gerektiriyor. Girdi kapısından başka değişiklik içermeyen ilk aday random ortalamasını 139,70 → 123,25 düşürdü ve yerel seçici testinde üç seed'de desteyi tüketti. Eski iki yasal seçenek kuralı korundu. Her olaya teslimatı aksatan, gelir vermeyen ve gecikmiş tazminat yaratan bir durdurma seçeneği eklendi. Depo olayında durdurma projeyi kapatır ve bina vermez. Eski kimlikler, diğer seçenek etkileri ve kaydedilmiş gecikmiş yükümlülükler korunur. Gelir niteliği farklı olan harç, ruhsat ve su kaydı incelemesi bu doğal girdi kuralının dışında.
+
+Erken adaylar arşivde. Son dar değişiklik için 106 Swift ve 61 Node testi geçti. Tam 180 kart dengesi ve native denetim ayrı yapılacak.

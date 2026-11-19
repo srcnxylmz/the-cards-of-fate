@@ -1,0 +1,3 @@
+import fs from'node:fs';import{isDeepStrictEqual}from'node:util';
+const ps=['random','survival','knowledge','progression','recovery','survival-council'];
+for(const p of ps){const a=JSON.parse(fs.readFileSync('docs/analysis/milestone165-verified/simulation-'+p+'.json')),b=JSON.parse(fs.readFileSync('docs/analysis/milestone180-165-observed/simulation-'+p+'.json'));if(b.runs!==10000)throw Error('Incomplete '+p);for(const k of Object.keys(a)){if(['developmentDiagnostics','crisisDiagnostics'].includes(k)){for(const [key,v]of Object.entries(a[k]))if(b[k][key]!==v)throw Error('Changed '+p+':'+k+'.'+key);}else if(!isDeepStrictEqual(a[k],b[k]))throw Error('Changed '+p+':'+k);}console.log(p+': all old fields identical');}
