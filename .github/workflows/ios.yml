@@ -18,7 +18,7 @@ on:
         default: false
 jobs:
   verify:
-    runs-on: macos-15-intel
+    runs-on: macos-15
     timeout-minutes: 80
     steps:
       - uses: actions/checkout@v4
@@ -73,7 +73,7 @@ jobs:
       - name: Export screenshots and simulator diagnostics
         if: always()
         run: |
-          mkdir -p artifacts/screenshots artifacts/crashes
+          mkdir -p artifacts/screenshots artifacts/crashes artifacts/test-runner-crashes
           if [ -d artifacts/UITests.xcresult ]; then
             xcrun xcresulttool export attachments --path artifacts/UITests.xcresult --output-path artifacts/screenshots || echo "Attachment export failed; inspect full xcresult" >> artifacts/export-errors.txt
           fi
@@ -88,6 +88,7 @@ jobs:
             xcrun simctl spawn "$SIMULATOR_UDID" log show --last 15m --info --style compact --predicate 'process == "TheCardsOfFate"' > artifacts/app-system.log 2>&1 || true
           fi
           find "$HOME/Library/Logs/DiagnosticReports" -type f -name '*TheCardsOfFate*' -exec cp {} artifacts/crashes/ \; 2>/dev/null || true
+          find "$HOME/Library/Logs/DiagnosticReports" -type f -name '*FateUITests*' -exec cp {} artifacts/test-runner-crashes/ \; 2>/dev/null || true
       - uses: actions/upload-artifact@v4
         if: always()
         with:
