@@ -85,3 +85,5 @@ Five real new portraits fill earlier complete-chain gaps: flint_fragments,potter
 ## 180 kart görsel envanteri
 
 43 gerçek aday, 137 eksik. Yeni adaylar: reed_bank, salmon_weir, sowing_relief, roof_cistern, debt_tablet, ward_charter, shade_duty, guest_tongue, cistern_account, ridge_shelter, terrace_path, ridge_account, water_apportion. Önceki 30 PNG korunur. Su kotası sahnesinin ilk üretimindeki çark yerine elde taşınan testiler ve kil tablet görüşmesi için ayrı bir prompt kullanıldı. Seçilen dosyaların prompt, kayıt ve SHA-256 verileri varlık dizininde. Dönem uzmanı, insan görsel onayı ve fiziksel cihaz incelemesi açık.
+
+iPhone SE 3 Simulator'da 43 görselin akışı geçti. Başarılı ZIP'teki 13 yeni portre, ana menü, satıra yayılan seçenekler ve sonuç, büyük yazı/Reduce Motion, normal/büyük İngilizce kaydırma ekranları incelendi. Portreler çerçevede tamamen görünür. Giriş animasyonu kareleri değişken opaklık gösterebilir. Uzun metinler kaydırma gerektirir. [Ekran dosyaları ve ZIP özeti](NATIVE_180_EVIDENCE.md)

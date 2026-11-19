@@ -1,6 +1,6 @@
-# 180 kart yerel doğrulama aşaması — 2026-11-19
+# 180 kart kalite doğrulaması — 2026-11-19
 
-180 kart, 60/60/60, 434 karar. Ayrı denge commit’i 7c5c903 dört eski Tunç üretimine gerçek girdi kapısı ve gelir vermeyen durdurma kararı ekledi. Yerel 109 Swift ve 63 Node geçti. Yeni zincir sırt patikası → köy basamakları → kent yol hesabı. İki karşıt kapanış, gerçek selector, gecikmeli bellek ve kayıt/replay testleri geçti. 43 gerçek görsel adayı, 137 eksik. Altı yerel 10.000 seed kohortu tamamlandı. MILESTONE_180_ANALYSIS.md sonuçları, erişim ve yaşam süresi düşüşlerini içerir. Native kabul için başarılı CI ve gerçek artifact incelemesi gerekiyor. 4. çağ kapalı.
+109 Swift ve 63 Node geçti. İçerik 180 benzersiz kart, 434 karar, 43 illüstrasyon ve 137 eksikle doğrulandı. v1 kayıt, replay ve altı hikâye zincirinin regresyonları geçti. 60.000 macOS simülasyonu yerel raporla birebir eşleşti. iPhone SE 3/iOS 18.5 derleme, kurulum, başlatma ve altı UI testi geçti. Başarılı ZIP'in kaynak SHA'sı ve özeti doğrulandı. 43 görsel akışı, 13 yeni gerçek ekran, dört OCR kaydı, büyük metin/Reduce Motion ve üç cue API/mute gözlemi incelendi. Fiziksel cihaz çalışması açık. [CI 44601815107](https://github.com/srcnxylmz/the-cards-of-fate/actions/runs/44601815107) · [Native kanıt ve önceki başarısız denemeler](NATIVE_180_EVIDENCE.md)
 
 # Verified 165-card native milestone — 2026-11-18
 

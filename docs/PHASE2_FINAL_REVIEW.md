@@ -1,6 +1,8 @@
 # Phase 2 içerik ve kalite denetimi
 
-180 özgün TR/EN olay ilk üç çağa eşit dağılır. Paket kaynağı ile kök çıktı aynı içeriği taşır. 434 kararın 36'sı son 15 kartta bulunur. Dört eski üretim olayı girdi yokken uygulanabilecek durdurma kararları da kazanır. Eski kart ve seçim kimlikleri ile v1 kayıt şeması korunur. Tunç son oynanabilir çağdır. Native doğrulama ve artifact incelemesi ayrı kanıt kaydında izlenir.
+180 özgün TR/EN olay ilk üç çağa eşit dağılır. Paket kaynağı ile kök çıktı aynı içeriği taşır. 434 kararın 36'sı son 15 kartta bulunur. Dört eski üretim olayı girdi yokken uygulanabilecek durdurma kararları da kazanır. Eski kart ve seçim kimlikleri ile v1 kayıt şeması korunur. Tunç son oynanabilir çağdır.
+
+109 macOS Swift ve 63 Node testi, altı politikanın 60.000 macOS oyunu ve altı iPhone Simulator UI testi geçti. Mac ve Windows simülasyonları bütün alanlarda eşleşti. Başarılı arm64 koşusunun iOS artifact'ı SHA-256 ve kaynak SHA ile doğrulandı. 43 görsel akışı, dört üretim OCR kaydı, Reduce Motion ve ses API/mute kanıtı incelendi. [Native kanıt](NATIVE_180_EVIDENCE.md)
 
 | Çağ | Kapsam | Kalan oyuncu deneyimi sorusu |
 |---|---|---|

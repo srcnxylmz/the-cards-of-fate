@@ -1,6 +1,8 @@
-# 180 kart yerel doğrulama aşaması — 2026-11-19
+# 180 kart denge doğrulaması — 2026-11-19
 
-180 kart, 60/60/60, 434 karar. Ayrı denge commit’i 7c5c903 dört eski Tunç üretimine gerçek girdi kapısı ve gelir vermeyen durdurma kararı ekledi. Yerel 109 Swift ve 63 Node geçti. Yeni zincir sırt patikası → köy basamakları → kent yol hesabı. İki karşıt kapanış, gerçek selector, gecikmeli bellek ve kayıt/replay testleri geçti. 43 gerçek görsel adayı, 137 eksik. Altı yerel 10.000 seed kohortu tamamlandı. MILESTONE_180_ANALYSIS.md sonuçları, erişim ve yaşam süresi düşüşlerini içerir. Native kabul için başarılı CI ve gerçek artifact incelemesi gerekiyor. 4. çağ kapalı.
+180 kart, 60/60/60, 434 karar. Ayrı denge commit’i `7c5c903` dört Tunç üretimine doğal girdi koşulu ve gelir vermeyen durdurma kararı getirdi. Altı politika, 10.000'er aynı seed ve 500 karar sınırıyla Windows ve macOS'ta çalıştı. İndirilen bütün macOS alanları yerel raporlarla eşleşti. [Native kanıt kaydı](NATIVE_180_EVIDENCE.md)
+
+Random Tunç'ta çevre 33,70 → 47,94 ve 100 karar başına açlık kaybı 28,05 → 18,82. İlk 40 karar tekrarı %24,97 → %16,68. Tunç'a ulaşan random oyun 5.503 → 5.353, tüm oyun tekrarı %66,87 → %69,89. Survival 198,93 → 197,59 ve meclisli survival 74,25 → 70,30. Yaşayan 500 karar sınırları, Tunç pencereleri ve bütün politikalar [MILESTONE_180_ANALYSIS.md](MILESTONE_180_ANALYSIS.md) içinde. [Denge incelemesi ve düzeltme](BALANCE_REPAIR_180.md)
 
 # Verified 165-card native milestone — 2026-11-18
 

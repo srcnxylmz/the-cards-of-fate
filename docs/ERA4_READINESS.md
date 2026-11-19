@@ -2,7 +2,7 @@
 
 This milestone adds no Era 4 cards and does not open the fourth era. MASTER_SPEC section 3 defines Ancient Empires as governing large kingdoms/empires; section 4 requires knowledge, discoveries, stability and key historical events rather than an elapsed-turn gate. The first-three-era Phase 2 target remains 180 original events. Existing 12-era metadata is not playable content.
 
-The current Bronze → Ancient boundary requires writing, knowledge ≥78, stability ≥35, population ≥25, a living civilization, and authored next-era content. `advanceEra` still refuses an unauthored era. Current Phase 2 content has 60/60/60 cards and zero in 4–12; native180 acceptance is a separate gate. The Era 4 metadata describes Stone Capital / Empire, civil_law and knowledge 82 for its own eventual exit; it is not an implemented law/imperial economy.
+The current Bronze → Ancient boundary requires writing, knowledge ≥78, stability ≥35, population ≥25, a living civilization, and authored next-era content. `advanceEra` refuses an unauthored era. The native-verified Phase 2 release has 60 cards per era in eras 1–3 and zero in eras 4–12. Era 4 metadata lists Stone Capital / Empire, civil_law and knowledge 82 for the eventual next transition. [Native Phase 2 evidence](NATIVE_180_EVIDENCE.md)
 
 Before a future phase enables that boundary:
 
@@ -46,19 +46,18 @@ Before authoring the first enabled fourth-era card, introduce an explicit conten
 
 Acceptance requires v1 save/reload and deterministic replay across entry, current displayed cards and queued effects preserved, no reopened paid debt, and both opposed outcomes for each conversion. Full same-seed comparisons must report deaths, starvation, ecology, lost access and living caps. Measure complete20/40/80 Era4 residence windows and after100 active choices; no empty deck or forced death to improve repeats. Add period art/UI/OCR/audio evidence before enabling entry. Physical-device/signing/Game Center remains a separate account/device gate. The165→180 group should complete first-three-era60/60/60 and refine this contract; it must not automatically open Era4.
 
-+
-+## Proposed playable systems after the Phase 2 gate
-+
-+The future prototype uses a bounded ledger per province with grain due, paid service, arrears, road condition and local consent. Each value needs a defined domain, named source and maintenance cost. Persist each contract identity. Credit a prior contribution once to the matching obligation. An unrelated debt survives that credit. Implement a dry-run entry conversion before enabling the readiness switch.
-+
-+| System | Decision and consequence | Acceptance example |
-+|---|---|---|
-+| Provincial autonomy | Elect a local steward or appoint a central receiver. The local route trades immediate revenue for consent. The central route collects current tribute and owes wages plus a hearing. | Weak authority and hostile representation make the appointment costly without erasing prior opposition or revoking resident status. |
-+| Citizenship and opposition | Recognize named work and residence as hearing evidence. Pay witnesses and decide eligibility for a specific local duty. A dissenting faction can pursue a later review with a preserved record. | The earlier public care and rooftop participation histories change available testimony. Private contracts keep their terms without granting citizenship automatically. |
-+| Taxes and old grain debt | Compute tribute from assessed current output. Let a town pay part now, negotiate a new dated invoice or decline and face an appeal. | A paid old debt stays closed. Unpaid debt survives entry. Repeated credit cannot produce positive free grain. |
-+| Roads, water and trade | Fund stonework and downstream protection separately. Apply shared/private ridge settlement to testimony and prior toll liability. New work still consumes capital. Track wear with a fixed upper bound. | Dry reservoirs block new allocations. A maintained route reduces haul cost only while the road remains usable. Old water and passage rights remain distinct. |
-+| Military logistics and civil oversight | Maintain capped garrison supply obligations. Route supplies by funded roads, delay a deployment or renegotiate with local councils. A choice can leave a town with less grain or less consent. | Depleted reserves cannot supply a garrison without a funded agreement. New guard wages do not discharge earlier watch or work obligations. |
-+| Workshop ownership | Commission from an established guild or an open workshop. Compare capital, maintenance and representation costs with each order. | A recorded mold license changes who can bid. No order draws output from an exhausted input or bypasses payment for new labor. |
-+
-+Inventory proposal uses forty disjoint authored IDs. Twenty-four repeatable crises, eight story conclusions and eight transition bridges. The gate also requires actual natural exposure, an adequate legal recurring pool at low reserves and depleted ecology, v1 migration/replay regressions, all six seeded comparisons, and native UI and artifact checks. Era 4 remains closed in the 180-card package.
-+
+
+## Proposed playable systems after the Phase 2 gate
+
+The future prototype uses a bounded ledger per province with grain due, paid service, arrears, road condition and local consent. Each value needs a defined domain, named source and maintenance cost. Persist each contract identity. Credit a prior contribution once to the matching obligation. An unrelated debt survives that credit. Implement a dry-run entry conversion before enabling the readiness switch.
+
+| System | Decision and consequence | Acceptance example |
+|---|---|---|
+| Provincial autonomy | Elect a local steward or appoint a central receiver. The local route trades immediate revenue for consent. The central route collects current tribute and owes wages plus a hearing. | Weak authority and hostile representation make the appointment costly without erasing prior opposition or revoking resident status. |
+| Citizenship and opposition | Recognize named work and residence as hearing evidence. Pay witnesses and decide eligibility for a specific local duty. A dissenting faction can pursue a later review with a preserved record. | The earlier public care and rooftop participation histories change available testimony. Private contracts keep their terms without granting citizenship automatically. |
+| Taxes and old grain debt | Compute tribute from assessed current output. Let a town pay part now, negotiate a new dated invoice or decline and face an appeal. | A paid old debt stays closed. Unpaid debt survives entry. Repeated credit cannot produce positive free grain. |
+| Roads, water and trade | Fund stonework and downstream protection separately. Apply shared/private ridge settlement to testimony and prior toll liability. New work still consumes capital. Track wear with a fixed upper bound. | Dry reservoirs block new allocations. A maintained route reduces haul cost only while the road remains usable. Old water and passage rights remain distinct. |
+| Military logistics and civil oversight | Maintain capped garrison supply obligations. Route supplies by funded roads, delay a deployment or renegotiate with local councils. A choice can leave a town with less grain or less consent. | Depleted reserves cannot supply a garrison without a funded agreement. New guard wages do not discharge earlier watch or work obligations. |
+| Workshop ownership | Commission from an established guild or an open workshop. Compare capital, maintenance and representation costs with each order. | A recorded mold license changes who can bid. No order draws output from an exhausted input or bypasses payment for new labor. |
+
+Inventory proposal uses forty disjoint authored IDs. Twenty-four repeatable crises, eight story conclusions and eight transition bridges. The gate also requires actual natural exposure, an adequate legal recurring pool at low reserves and depleted ecology, v1 migration/replay regressions, all six seeded comparisons, and native UI and artifact checks. Era 4 remains closed in the 180-card package.

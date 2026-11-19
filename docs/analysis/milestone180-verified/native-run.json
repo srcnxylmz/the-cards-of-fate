@@ -1,0 +1,246 @@
+{
+  "accepted": true,
+  "contentSource": "8fcab04bd3415dbda50ad991a4fa0c3d97dfff5f",
+  "attempts": [
+    {
+      "id": 44556885858,
+      "source": "8fcab04bd3415dbda50ad991a4fa0c3d97dfff5f",
+      "runner": "macos-15",
+      "jobs": [
+        135675232832,
+        135686343335
+      ],
+      "status": "cancelled",
+      "reason": "Hosted runner not acquired"
+    },
+    {
+      "id": 44563303267,
+      "source": "fa99181fa17daef6a64a411601601ae5af9d6990",
+      "runner": "macos-15-intel",
+      "job": 135698174875,
+      "status": "cancelled",
+      "reason": "80-minute job timeout",
+      "verifiedPolicies": [
+        "random",
+        "survival",
+        "survival-council"
+      ],
+      "swiftTests": 109,
+      "nodeTests": 63,
+      "artifact": {
+        "id": 14556288423,
+        "sha256": "9ec0ba55a2cb72a731841457b331f6ceac77ff8dd7d7cb3948a34db1b1b38e1c"
+      }
+    },
+    {
+      "id": 44578728588,
+      "source": "c1fed81ec91de2696ce9c14d55bb05efe51c513a",
+      "runner": "macos-15-intel",
+      "jobs": [
+        {
+          "id": 135753234320,
+          "policy": "knowledge",
+          "artifact": 14561443166,
+          "sha256": "0fad3e9e18955b9402df727b6782711b75977cbf69498f1151aa20a4592935b6"
+        },
+        {
+          "id": 135753234410,
+          "policy": "progression",
+          "artifact": 14562001724,
+          "sha256": "3e5456820f4fde5492b3470ff2d45bc5465a556671102f9c522fad81fe0e3708"
+        },
+        {
+          "id": 135753234401,
+          "policy": "recovery",
+          "artifact": 14561239325,
+          "sha256": "31cd57064d84dc72168803375f1f04c577a56c469ed96132ee15157a523ea6b3"
+        }
+      ],
+      "ui": [
+        {
+          "job": 135753233778,
+          "reason": "GitHub connection and artifact service timeout"
+        },
+        {
+          "job": 135787862209,
+          "reason": "XCTest XPCReplyCheck crash during OCR",
+          "testsPassed": 5,
+          "artifact": {
+            "id": 14565331919,
+            "sha256": "f25c9a2fb59c8c1973f1b67818eac66369a94732c3e2174bfb5af5ec3912bbb2",
+            "attachments": 178,
+            "reviewedNewScreens": 13,
+            "fixturesPassed": 43,
+            "audioEvents": 104,
+            "productionOCRRecords": 1
+          }
+        },
+        {
+          "job": 135815939906,
+          "reason": "Same XCTest XPCReplyCheck crash during OCR",
+          "testsPassed": 5
+        }
+      ]
+    },
+    {
+      "id": 44601815107,
+      "source": "ae42a0e6d446110dff2dac31ab18e150ec9ecaf1",
+      "runner": "macos-15",
+      "job": 135834933259,
+      "status": "success",
+      "scope": "UI-only with same-runtime guard",
+      "conclusion": "success",
+      "url": "https://github.com/srcnxylmz/the-cards-of-fate/actions/runs/44601815107",
+      "uiTests": 6,
+      "uiSeconds": 1058.184,
+      "nodeTests": 63,
+      "artifact": {
+        "id": 14571280341,
+        "sha256": "7a47d40d34d815995d65c10bd3902f7081a4b55d760f783e73136ab1816a616f",
+        "expiresAt": "2026-12-03T20:18:26Z",
+        "bytes": 92804511,
+        "source": "ae42a0e6d446110dff2dac31ab18e150ec9ecaf1"
+      },
+      "review": {
+        "attachments": 249,
+        "fixtures": 43,
+        "productionOCR": [
+          {
+            "name": "stat-first-paint-comparison-en-true-false_0_F0F11DCA-1B3A-4936-82F5-80A58DE13724.txt",
+            "file": "F87E8C08-9E15-4E37-BDDB-7EE4CE433588.txt",
+            "text": "legacy=false, visible=6, missing=[]"
+          },
+          {
+            "name": "stat-first-paint-comparison-tr-true-false_0_74007EB6-B088-42AA-B720-D22AF4BF9003.txt",
+            "file": "1653D34D-1CA1-4880-885E-6180F8B7B9BB.txt",
+            "text": "legacy=false, visible=6, missing=[]"
+          },
+          {
+            "name": "stat-first-paint-comparison-en-false-false_0_D2FC2ACB-CDF0-41BF-AA25-B8E78EBFF614.txt",
+            "file": "01F3B0C8-E9EC-4053-95D0-F69D5F635FF7.txt",
+            "text": "legacy=false, visible=6, missing=[]"
+          },
+          {
+            "name": "stat-first-paint-comparison-tr-false-false_0_1A3B3403-D6C0-4120-A2BD-DEC621AC2FB8.txt",
+            "file": "6472A505-567B-4D4C-93D6-321CE1EC9173.txt",
+            "text": "legacy=false, visible=6, missing=[]"
+          }
+        ],
+        "audio": {
+          "events": 110,
+          "cues": [
+            "card-open",
+            "choice-soft",
+            "decision"
+          ],
+          "missingCues": [],
+          "invalid": [],
+          "writeError": null,
+          "startedDurations": [
+            "card-open:0.24",
+            "choice-soft:0.12",
+            "decision:0.22"
+          ]
+        },
+        "checksPassed": true,
+        "xcode": "Xcode 16.4\nBuild version 16F6\n",
+        "device": "iPhone SE (3rd generation)",
+        "runtime": "com.apple.CoreSimulator.SimRuntime.iOS-18-5",
+        "exampleScreens": [
+          {
+            "suggestedHumanReadableName": "tr-art-ridge_account-result_0_206AF176-E1D8-4E2B-947A-7DC551C653AA.png",
+            "exportedFileName": "C9F7A7B0-77FF-475F-8BCB-1A40585AFFCB.png"
+          },
+          {
+            "suggestedHumanReadableName": "tr-art-ridge_account-reachable-options_0_47FAB60E-BF81-4A04-81DE-7E4747DCEB97.png",
+            "exportedFileName": "D939B909-4765-4687-BF4D-2E5FAD08664B.png"
+          },
+          {
+            "suggestedHumanReadableName": "tr-art-first_granary-reachable-options_0_27D7C412-433E-4EA7-B243-7C32FB6D2490.png",
+            "exportedFileName": "F38C7572-3902-4FFE-A8CD-DEFE129C2ED5.png"
+          },
+          {
+            "suggestedHumanReadableName": "tr-art-first_granary-large-reduced-motion_0_3290557D-718E-4C84-82A1-79C56DE053A8.png",
+            "exportedFileName": "C67168EC-D1BE-434C-B1FE-829149DA29C8.png"
+          },
+          {
+            "suggestedHumanReadableName": "stats-scrolled-en-true_0_29A2CFFF-4AB8-4FC8-BD8D-1BB74610AEBE.png",
+            "exportedFileName": "7947676A-C5C3-42C7-A1F7-D8F4BDCD3317.png"
+          },
+          {
+            "suggestedHumanReadableName": "stats-scrolled-en-false_0_897BFBB9-B8B5-43C4-A8A9-EA89DD2F985D.png",
+            "exportedFileName": "9F07D9C2-8313-447E-9AD0-38A998CA9A87.png"
+          }
+        ],
+        "testRunnerCrashes": [],
+        "appCrashReports": [],
+        "exportErrors": null,
+        "reviewedStandardScreens": [
+          {
+            "id": "debt_tablet",
+            "file": "E4418F8C-6A25-4FD0-BD02-686DBDA62345.png"
+          },
+          {
+            "id": "water_apportion",
+            "file": "0ED88461-75A3-4232-9DF3-C890D85B7C39.png"
+          },
+          {
+            "id": "salmon_weir",
+            "file": "5C2E531E-90AF-4EE5-9E18-DBAA2F8AFB2B.png"
+          },
+          {
+            "id": "reed_bank",
+            "file": "F545164F-F335-412B-B6A7-545B15A23ABB.png"
+          },
+          {
+            "id": "roof_cistern",
+            "file": "FCE9941D-FC83-4EBD-986A-8E8764617A96.png"
+          },
+          {
+            "id": "cistern_account",
+            "file": "8D297771-EBF5-4575-BB99-26057FB7165A.png"
+          },
+          {
+            "id": "guest_tongue",
+            "file": "483D163D-C296-4C74-9D16-20CCA301664F.png"
+          },
+          {
+            "id": "shade_duty",
+            "file": "8E3F056C-227D-4D72-9624-BB109C80C8A2.png"
+          },
+          {
+            "id": "sowing_relief",
+            "file": "15EFA8B4-7FAB-405E-AFC5-0071423E2850.png"
+          },
+          {
+            "id": "ward_charter",
+            "file": "CE8A6576-EF9E-4785-85EA-B5D3A6A4ACB8.png"
+          },
+          {
+            "id": "ridge_shelter",
+            "file": "6FB86742-C132-40B9-986E-82D6CCE74988.png"
+          },
+          {
+            "id": "terrace_path",
+            "file": "026A5237-6546-4BF0-A1F3-A34A11D4FC44.png"
+          },
+          {
+            "id": "ridge_account",
+            "file": "6A4ADDA4-FA0B-4C8B-8107-4586C5CCFF69.png"
+          }
+        ],
+        "alsoReviewed": [
+          "installed-launch.png"
+        ]
+      }
+    }
+  ],
+  "nativeSimulations": 60000,
+  "everySimulationFieldMatchesLocal": true,
+  "count": {
+    "cards": 180,
+    "choices": 434,
+    "illustrations": 43,
+    "missingIllustrations": 137
+  }
+}

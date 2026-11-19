@@ -1,6 +1,10 @@
-# 180 kart yerel doğrulama aşaması — 2026-11-19
+# 180 kart native doğrulaması — 2026-11-19
 
-180 kart, 60/60/60, 434 karar. Ayrı denge commit’i 7c5c903 dört eski Tunç üretimine gerçek girdi kapısı ve gelir vermeyen durdurma kararı ekledi. Yerel 109 Swift ve 63 Node geçti. Yeni zincir sırt patikası → köy basamakları → kent yol hesabı. İki karşıt kapanış, gerçek selector, gecikmeli bellek ve kayıt/replay testleri geçti. 43 gerçek görsel adayı, 137 eksik. Altı yerel 10.000 seed kohortu tamamlandı. MILESTONE_180_ANALYSIS.md sonuçları, erişim ve yaşam süresi düşüşlerini içerir. Native kabul için başarılı CI ve gerçek artifact incelemesi gerekiyor. 4. çağ kapalı.
+180 özgün kart, 60/60/60, 434 karar. Ayrı denge commit’i `7c5c903` dört eski Tunç üretimine girdi koşulu ve üretim vermeyen durdurma kararı ekledi. İçerik commit’i `8fcab04`. Altıncı zincir sırt patikası → köy basamakları → kent yol hesabı. İki karşıt kapanış, gerçek selector, gecikmeli bellek ve kayıt/replay testleri geçti. Random politikasında zincir doğal sırayla 28 ortak ve 14 özel kapanış gördü. 43 gerçek görsel adayı var, 137 eksik.
+
+Windows/macOS 109 Swift, 63 Node ve içerik doğrulaması geçti. Aynı 60.000 seed çalıştırmasının altı macOS raporu yereldeki her alanla eşleşti. `ae42a0e` üzerinde iPhone SE 3/iOS 18.5 derleme, yükleme, açılış ve altı UI testi geçti. ZIP özeti ve kaynak SHA doğrulandı. 13 yeni görselin gerçek Simulator ekranları, normal/büyük metin, Reduce Motion, dört OCR kaydı ve ses API/mute kanıtı incelendi. İlk arm64 atama hataları, Intel süre sınırı ve XCTest XPC hataları kanıt kaydında. [Başarılı Simulator koşusu](https://github.com/srcnxylmz/the-cards-of-fate/actions/runs/44601815107) · [Native kanıt kaydı](NATIVE_180_EVIDENCE.md)
+
+Random Tunç ekolojisi 33,70 → 47,94. İlk 40 Tunç kararında tekrar %24,97 → %16,68. Random Tunç erişimi 5.503 → 5.353, survival ortalaması 198,93 → 197,59 ve meclisli survival 74,25 → 70,30. Tüm oyun tekrarı, hayatta kalan sınırlar ve altı politika [denge raporunda](MILESTONE_180_ANALYSIS.md). Phase 2 içerik denetimi tamamlandı. 4. çağ kapalı. Sonraki grup için 24 tekrarlanabilir kriz, sekiz hikâye sonucu, sekiz çağ bağlantısı ve açılış koşulları [ERA4_READINESS.md](ERA4_READINESS.md) içinde. Fiziksel cihaz, nihai sanat/ses/marka, Game Center ve çevrimiçi liderlik tablosu açık.
 
 # Verified 165-card native milestone — 2026-11-18
 
