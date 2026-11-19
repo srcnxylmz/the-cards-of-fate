@@ -143,7 +143,44 @@ export function validate(cards, eras) {
     const overlap=[...a].filter(t=>b.has(t)).length / new Set([...a,...b]).size;
     if(overlap>0.55) warnings.push(`Editorial similarity: ${cards[i].id}, ${cards[j].id} (${overlap.toFixed(2)})`);
   }
-  return {errors,warnings,cards:cards.length,choices:choicesCount,stochasticChoices,conditionalOutcomeChoices,eras:Object.fromEntries(eras.map(e=>[e.id,cards.filter(c=>c.era===e.id).length])),authoredChainGroups:chains.size,multiCardChainGroups:[...chains.values()].filter(v=>v.length>=2).length,crossEraLinks};
+  // Era content gates: authored cards never open an era by themselves.
+  const roles=new Set(['recurring','conclusion','bridge']);
+  for(const card of cards) if(card.eraRole!==undefined) {
+    assert(roles.has(card.eraRole),`${card.id}: unknown eraRole`);
+    if(card.eraRole==='recurring') assert(!(card.exclusionConditions??[]).some(c=>c.flag===`resolved_${card.id}`),`${card.id}: recurring event closes itself`);
+    if(card.eraRole==='conclusion') assert(!!card.storyChainId,`${card.id}: conclusion without story chain`);
+    if(card.eraRole==='bridge') assert((card.requirements??[]).length>0,`${card.id}: bridge without historical requirement`);
+  }
+  const eraInventory={};
+  for(const era of eras) {
+    const gate=era.contentGate;
+    if(gate===undefined) continue;
+    assert(typeof gate.enabled==='boolean',`era ${era.id}: gate enabled must be boolean`);
+    for(const field of ['minimumCards','minimumRecurring','minimumConclusions','minimumBridges']) assert(Number.isInteger(gate[field])&&gate[field]>=1,`era ${era.id}: invalid gate ${field}`);
+    assert(Array.isArray(gate.requiredRecurringCategories)&&gate.requiredRecurringCategories.every(c=>typeof c==='string'&&c.length>0),`era ${era.id}: invalid gate categories`);
+    const inv=inventory(cards,era.id);
+    const missing=(gate.requiredRecurringCategories??[]).filter(c=>!inv.recurringCategories.includes(c));
+    const satisfied=inv.total>=gate.minimumCards&&inv.recurring>=gate.minimumRecurring&&inv.conclusions>=gate.minimumConclusions&&inv.bridges>=gate.minimumBridges&&missing.length===0;
+    eraInventory[era.id]={...inv,missingCategories:missing,enabled:gate.enabled,satisfied,open:gate.enabled&&satisfied};
+    assert(!gate.enabled||satisfied,`era ${era.id}: gate enabled before inventory minimums are met`);
+  }
+  for(const card of cards) if(card.era>1) {
+    const gate=eras.find(e=>e.id===card.era)?.contentGate;
+    if(gate) assert(card.eraRole!==undefined,`${card.id}: gated-era event needs eraRole`);
+  }
+  return {errors,warnings,cards:cards.length,eraInventory,choices:choicesCount,stochasticChoices,conditionalOutcomeChoices,eras:Object.fromEntries(eras.map(e=>[e.id,cards.filter(c=>c.era===e.id).length])),authoredChainGroups:chains.size,multiCardChainGroups:[...chains.values()].filter(v=>v.length>=2).length,crossEraLinks};
+}
+
+export function inventory(cards,era) {
+  const inv={total:0,recurring:0,conclusions:0,bridges:0,recurringCategories:[]};
+  for(const card of cards.filter(c=>c.era===era)) {
+    inv.total++;
+    if(card.eraRole==='recurring'&&!(card.exclusionConditions??[]).some(c=>c.flag===`resolved_${card.id}`)) { inv.recurring++; if(!inv.recurringCategories.includes(card.category)) inv.recurringCategories.push(card.category); }
+    else if(card.eraRole==='conclusion'&&card.storyChainId) inv.conclusions++;
+    else if(card.eraRole==='bridge'&&(card.requirements??[]).length) inv.bridges++;
+  }
+  inv.recurringCategories.sort();
+  return inv;
 }
 
 export function report() {
@@ -153,7 +190,7 @@ export function report() {
   result.missingArt=art.filter(a=>!a.file||!existsSync(resolve(root,a.file))).map(a=>a.id);
   result.missingAudio=[...audio.effects,...audio.music,...audio.ambience].filter(a=>!a.file||!existsSync(resolve(root,a.file))).map(a=>a.id);
   result.releaseReady=false;
-  result.releaseBlockers=['800 original cards required; current '+result.cards,'At least 60 cards per era and 80 special events required','100 completed chains / 50 cross-era links required','30 distinct endings required','Full asset, localization, accessibility, device and Game Center QA pending','Physical-device and release/signing evidence pending; simulator build and TR/EN smoke flows verified separately'];
+  result.releaseBlockers=['800 original cards required; current '+result.cards,'Era 4 content gate closed (enabled:false; 40/24/8/8 inventory not met)','At least 60 cards per era and 80 special events required','100 completed chains / 50 cross-era links required','30 distinct endings required','Full asset, localization, accessibility, device and Game Center QA pending','Physical-device and release/signing evidence pending; simulator build and TR/EN smoke flows verified separately'];
   const destination=resolve(root,'docs/content-report.json');mkdirSync(dirname(destination),{recursive:true});writeFileSync(destination,JSON.stringify(result,null,2)+'\n');
   console.log(JSON.stringify(result,null,2));
   return result;

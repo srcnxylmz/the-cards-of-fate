@@ -13,6 +13,7 @@ import { addCivicWorkEvents } from './content/civic-work-events.mjs';
 import { addContinuityEvents } from './content/continuity-events.mjs';
 import { addStewardshipEvents } from './content/stewardship-events.mjs';
 import { addCityEvents } from './content/city-events.mjs';
+import { addEmpireEvents, ERA4_GATE, FUTURE_ERA_GATE } from './content/empire-events.mjs';
 import { composeArtManifest } from './art-pipeline.mjs';
 
 // Authoring helpers normalize structure only. Every event below is individually authored.
@@ -40,7 +41,7 @@ function card(id, era, category, titleTR, titleEN, descriptionTR, descriptionEN,
     requirements: options.requirements ?? [], exclusionConditions: options.exclusions ?? [], choices,
     worldFlags: [...new Set(choices.flatMap(c => c.outcomes.flatMap(o => o.effect.flags)))],
     storyChainId: options.chain ?? null, animationPreset: 'normal', soundCue: 'decision', cooldown: 4,
-    localizationKeys: [`card.${id}.title`, `card.${id}.description`] });
+    localizationKeys: [`card.${id}.title`, `card.${id}.description`], ...(options.eraRole ? { eraRole: options.eraRole } : {}) });
 }
 
 card('sacred_fire', 1, 'ecology', 'Ateşin Bedeli', 'The Price of Fire',
@@ -255,6 +256,8 @@ addStewardshipEvents({ cards, card, choice, outcome, delayed });
 addContinuityEvents({ cards, card, choice, outcome, delayed });
 addCivicWorkEvents({ cards, card, choice, outcome, delayed });
 addWatershedEvents({ card, choice, outcome, delayed });
+// Phase 3 groundwork: authored Era 4 events stay behind the disabled readiness gate below.
+addEmpireEvents({ cards, card, choice, outcome, delayed });
 for(let i=0;i<cards.length;i++)cards[i]=withProductionInputs(cards[i]);
 
 // Durable historical decisions close using existing flags, including older v1 saves.
@@ -294,7 +297,7 @@ const eraRows = [
   ['Yapay Zekâ ve Uzay Çağı','AI and Space Age','Yörünge İstasyonu','Orbital Station','Gezegen Konseyi','Planetary Council','stellar_drive',96,'#9791D0','Hologram, seramik; violet white; habitat hum and synthesis.'],
   ['Yıldızlararası Çağ','Interstellar Age','Yıldız Başkenti','Stellar Capital','Yıldızlar Birliği','Stellar Union','continuity',100,'#D6B781','Kozmik ışık; indigo gold; stellar ambience and spacious harmonics.']
 ];
-const eras = eraRows.map((r,i) => ({ id:i+1, name:text(r[0],r[1]), settlement:text(r[2],r[3]), government:text(r[4],r[5]), requiredTechnology:r[6], knowledgeThreshold:r[7], stabilityThreshold:35, populationThreshold:25, palette:r[8], artDirection:r[9] }));
+const eras = eraRows.map((r,i) => ({ id:i+1, name:text(r[0],r[1]), settlement:text(r[2],r[3]), government:text(r[4],r[5]), requiredTechnology:r[6], knowledgeThreshold:r[7], stabilityThreshold:35, populationThreshold:25, palette:r[8], artDirection:r[9], ...(i===3 ? { contentGate:ERA4_GATE } : i>3 ? { contentGate:FUTURE_ERA_GATE } : {}) }));
 const balance = { startingStats:{population:55,resources:55,authority:40,knowledge:28,stability:55,environment:70}, resourceConsumption:4, hardExtraConsumption:2, farmProduction:2, starvationLoss:8, successionTurns:24, rivalPressure:5 };
 function write(relative, data) {
   const destination=resolve(root,relative), serialized=JSON.stringify(data,null,2)+'\n';

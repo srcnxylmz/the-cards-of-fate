@@ -4,7 +4,7 @@ import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
 
 const before=JSON.parse(readFileSync('docs/analysis/milestone105-90-before/cards.json'));
-const after=JSON.parse(readFileSync('Sources/FateCore/Content/cards.json'));
+const after=JSON.parse(readFileSync('Sources/FateCore/Content/cards.json')).filter(c=>c.era<=3);
 test('all ninety original events retain IDs and effects except declared production-input requirements',()=>{
   assert.equal(before.length,90);assert.equal(after.length,180);
   for(const original of before){

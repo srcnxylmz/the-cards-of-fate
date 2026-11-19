@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
 
 const read = path => JSON.parse(readFileSync(path));
-const cards = read('cards.json');
+const cards = read('cards.json').filter(c => c.era <= 3);
 const prior = read('docs/analysis/milestone180-repair-165/cards.json');
 const existing = new Map(cards.map(card => [card.id, card]));
 const added = cards.filter(card => !prior.some(old => old.id === card.id));

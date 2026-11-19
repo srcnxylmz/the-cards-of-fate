@@ -3,7 +3,7 @@ import {createHash} from 'node:crypto';
 import {resolve} from 'node:path';
 export const projectRoot=resolve(import.meta.dirname,'..');
 export function promptFor(card) {
- const era=['','Paleolithic: stone, bone and hide only; ochre/charcoal and winter or dawn light.','Neolithic: clay, reed, wood and stone; sage/clay light, no finished bronze equipment unless explicitly discovered in the brief.','Bronze Age: clay-brick, timber, bronze and woven textiles; bronze gold and cool teal daylight.'][card.era] ?? 'Follow the authored historical era.';
+ const era=['','Paleolithic: stone, bone and hide only; ochre/charcoal and winter or dawn light.','Neolithic: clay, reed, wood and stone; sage/clay light, no finished bronze equipment unless explicitly discovered in the brief.','Bronze Age: clay-brick, timber, bronze and woven textiles; bronze gold and cool teal daylight.','Ancient Empires: cut stone, marble, wax tablets/papyrus, bronze and iron tools, wool tunics; ivory gold and terracotta light; no stirrups, paper books or gunpowder.'][card.era] ?? 'Follow the authored historical era.';
  return 'Use case: historical-scene. Original premium portrait event-card illustration for The Cards of Fate, '+card.id+'. Human conflict: '+card.description.en+' Scene: '+card.artDirection+' Era: '+era+' Cinematic painterly historical realism consistent with the existing hearth, river, granary and copper-workshop collection; natural anatomy, expressive adult faces/hands, tactile materials, restrained emotion. Portrait 2:3, comfortably framed central silhouettes readable on iPhone. Original composition. No text, readable lettering, logo, border, watermark, modern objects or copied game designs.';
 }
 export function composeArtManifest(cards,previous,history) {

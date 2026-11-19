@@ -1,6 +1,6 @@
 import {withProductionInputs} from './content/production-inputs.mjs';
 import {test} from 'node:test';import assert from 'node:assert/strict';import {readFileSync} from 'node:fs';
-const cards=JSON.parse(readFileSync('cards.json')),prior=JSON.parse(readFileSync('docs/analysis/milestone150-balance-135/cards.json')),native150=JSON.parse(readFileSync('docs/analysis/milestone150-verified/cards.json')),added=cards.filter(c=>!prior.some(x=>x.id===c.id)&&native150.some(x=>x.id===c.id));
+const cards=JSON.parse(readFileSync('cards.json')).filter(c=>c.era<=3),prior=JSON.parse(readFileSync('docs/analysis/milestone150-balance-135/cards.json')),native150=JSON.parse(readFileSync('docs/analysis/milestone150-verified/cards.json')),added=cards.filter(c=>!prior.some(x=>x.id===c.id)&&native150.some(x=>x.id===c.id));
 test('150 unique events preserve all balanced 135 definitions and stay in three eras',()=>{
  assert.equal(cards.length,180);assert.equal(new Set(cards.map(c=>c.id)).size,180);
  for(const c of prior)assert.deepEqual(cards.find(x=>x.id===c.id),withProductionInputs(c),c.id);

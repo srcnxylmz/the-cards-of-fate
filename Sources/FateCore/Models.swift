@@ -118,6 +118,8 @@ public struct CardEvent: Codable, Equatable, Identifiable {
     public var soundCue: String
     public var cooldown: Int
     public var localizationKeys: [String]
+    /// Inventory group for gated eras: "recurring", "conclusion" or "bridge". Absent on earlier content.
+    public var eraRole: String? = nil
 }
 
 public struct EraDefinition: Codable, Identifiable {
@@ -131,6 +133,8 @@ public struct EraDefinition: Codable, Identifiable {
     public var populationThreshold: Int
     public var palette: String
     public var artDirection: String
+    /// Absent on eras 1–3; present and disabled for unopened eras.
+    public var contentGate: EraContentGate? = nil
 }
 
 public struct Balance: Codable {
