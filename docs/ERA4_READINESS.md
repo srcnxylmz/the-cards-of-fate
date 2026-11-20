@@ -1,5 +1,12 @@
 # Era 4 boundary and future dependencies — 180-card group
 
+## Durum — 225 paketi (Claude, dal `phase3-era4-225`)
+
+- **Envanter:** 45 · 28 · 8 · 8 (+1 reform); 40/24/8/8 asgari ölçütü ve sekiz alan karşılandı. Kapı yine `enabled:false`. Yeni şart `balanceEvidence:null`: doğrulayıcı, denge kanıtı kaydedilmeden `enabled:true`'yu hata sayar.
+- **Yiyecek döngüsü:** Era 4'e özgü üretim kapasiteleri (`balance.provincialProduction`): çiftlik, kanal, liman balıkçılığı, ambar kaydı. Bedelli kurulur, nüfusa ve çevreye bağlıdır, bakım yapılmazsa geriler; toplam üretim tüketimi geçmez.
+- **Teşhis (2.000 seed, kapı zorla açık):** deste tükenmesi %22–41 → %0. Era 4'te karar/koşu 2–4 kat arttı. Ancak açlık sonu %87–100 (hedef < %25) ve progression/knowledge istikrarı 9–12 (hedef ≥ 30). **Açılmamalı.** Ayrıntı: [PHASE3_225_REPORT.md](PHASE3_225_REPORT.md), devir: [HANDOFF_225.md](HANDOFF_225.md).
+- Native CI: **henüz çalıştırılmadı** (PR açıldıktan sonra tek tam koşu yapılacak).
+
 ## Durum — 210 paketi (Claude, dal `phase3-era4-210`)
 
 - **Envanter:** 30/40 · 17/24 · 6/8 · 6/8; sekiz alan tam. Kapı `enabled:false`. Gece nöbeti, liman ikameti ve iskele vergisi dönüşümleri artık var (`watch_guild_charter`, `harbor_ward_roll`, `customs_house_ledger`). `civil_law` yalnız `civil_code_draft` ile, koşullu ve bedelli; Era 5'te kart olmadığı için çağ açmaz.

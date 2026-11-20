@@ -145,6 +145,17 @@ public struct Balance: Codable {
     public var starvationLoss: Int
     public var successionTurns: Int
     public var rivalPressure: Int
+    /// Optional, era-bound production capacities built by paid decisions (Phase 3, Era 4 economy).
+    /// Absent in older content; each source needs its flag, labour and a living environment.
+    public var provincialProduction: [ProductionSource]?
+}
+
+public struct ProductionSource: Codable, Equatable {
+    public var flag: String
+    public var minimumEra: Int
+    public var minimumPopulation: Int
+    public var minimumEnvironment: Int
+    public var yield: Int
 }
 
 public struct HistoryEntry: Codable, Equatable, Identifiable {

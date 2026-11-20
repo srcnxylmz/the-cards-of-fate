@@ -475,6 +475,17 @@ Gerçek sonuçlar: Node 70/70 (7 yeni), doğrulayıcı 0/0, eski 180 tanım deri
 
 Era 4 kapalı: envanter 15/40, anahtar kapalı, native kanıt yok. Sonraki: HANDOFF_195_CODEX.md'deki doğrulama sırası, ardından 195 → 210 kapsamı. Rapor: PHASE3_195_REPORT.md.
 
+### Phase 3 — 210 → 225: Antik İmparatorluklarda yiyecek ve üretim (Claude, 2026-11-20, dal `phase3-era4-225`)
+
+15 yeni Era 4 olayı:
+- 11 tekrarlanabilir: eyalet çiftlikleri, kiracı payı, hasat öşrü, kıtlık deposu, kanal, liman balıkçılığı, tahıl kafilesi, kurak yıl, salgın, yangın, feribot.
+- 2 köprü: `ward_charter` → darüşşifa, `clay_archive` → ambar kayıt dairesi.
+- 2 sonuç: `stored_power`, `embers`.
+
+Era 4 envanteri 45 · 28 · 8 · 8 (+1 reform). Motora yalnız Era 4'te çalışan, bedelli ve kaybedilebilir üretim kapasiteleri eklendi; üretim tüketimi geçmiyor. Kapı kapalı; `balanceEvidence` boş.
+
+Gerçek sonuçlar: Node 84/84, doğrulayıcı 0/0, Swift 135/135 (Windows), altı × 10.000 seed aynı-seed karşılaştırması 210 → 225 birebir (yalnız `contentCardCount`). Teşhis (2.000 seed): deste tükenmesi %0. Era 4'te yaşam 2–4 kat uzadı, ama açlık sonu %87–100 ve iki politikada istikrar hedefin altında. Hedefler tutmadı, kapı kapalı. Native CI: **henüz çalıştırılmadı** (PR açıldıktan sonra tek tam koşu yapılacak). Görsel üretilmedi (araç yok). Rapor: PHASE3_225_REPORT.md; devir: HANDOFF_225.md.
+
 ### Phase 3 — 195 → 210 (Claude, 2026-11-20, dal `phase3-era4-210`)
 
 15 yeni Era 4 olayı: 8 tekrarlanabilir kriz (garnizon nöbeti/ücret borcu, yol haydutları/kervan sigortası, tahıl tavanı/kıtlık deposu, nehir gümrüğü, sulama mahkemesi, taş ocağı göçüğü, sikke ayarı, valiye dilekçe), 3 köprü (`quay_levy`, `harbor_residency`, `night_patrol`), 3 sonuç (pasture, hospitality, public_voice), 1 yasal reform (`civil_code_draft` → `civil_law`, koşullu ve bedelli; yeni `reform` rolü yalnız toplama sayılır). Envanter 30/40 · 17/24 · 6/8 · 6/8; kapı `enabled:false`. Teşhis için `--diagnostic-open-era` ve `diagnosticallyOpened(era:)` eklendi.

@@ -170,6 +170,8 @@ export function validate(cards, eras) {
     const satisfied=inv.total>=gate.minimumCards&&inv.recurring>=gate.minimumRecurring&&inv.conclusions>=gate.minimumConclusions&&inv.bridges>=gate.minimumBridges&&missing.length===0;
     eraInventory[era.id]={...inv,missingCategories:missing,enabled:gate.enabled,satisfied,open:gate.enabled&&satisfied};
     assert(!gate.enabled||satisfied,`era ${era.id}: gate enabled before inventory minimums are met`);
+    // An inventory is not a balance: a gate that tracks balance evidence cannot open without it.
+    if('balanceEvidence' in gate) assert(!gate.enabled||(gate.balanceEvidence!==null&&typeof gate.balanceEvidence==='object'),`era ${era.id}: gate enabled without recorded balance evidence`);
   }
   for(const card of cards) if(card.era>1) {
     const gate=eras.find(e=>e.id===card.era)?.contentGate;

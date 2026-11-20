@@ -21,7 +21,14 @@ extension GameEngine {
             ? balance.farmProduction * state.stats["environment", default: 0] / 100 : 0
         let calendar = base > 0 && state.stats["environment", default: 0] > 0 && state.buildings.contains("work_calendar") ? 1 : 0
         let terrace = irrigation > 0 && state.buildings.contains("terrace") ? 1 : 0
-        let production = min(balance.resourceConsumption, base + storage + irrigation + calendar + terrace)
+        // Provincial capacities only work while their flag stands, enough hands remain and the land still bears.
+        let provincial = base == 0 ? 0 : (balance.provincialProduction ?? []).filter {
+            state.era >= $0.minimumEra && state.flags.contains($0.flag)
+            && state.stats["population", default: 0] >= $0.minimumPopulation
+            && state.stats["environment", default: 0] >= $0.minimumEnvironment
+        }.reduce(0) { $0 + $1.yield }
+        // Total production never exceeds ordinary consumption: capacity can end hunger, never print reserves.
+        let production = min(balance.resourceConsumption, base + storage + irrigation + calendar + terrace + provincial)
         let consumption = balance.resourceConsumption + (state.mode == .hard ? balance.hardExtraConsumption : 0)
         // Outlays that could not be paid from reserves use this turn's supplies first.
         // This prevents clamped maintenance costs becoming free healing at zero reserves.

@@ -21,21 +21,22 @@ final class EraReadinessTests: XCTestCase {
         return content
     }
 
-    func testBundledEraFourGateIsDisabledAndInventoryIsShort() throws {
+    func testBundledEraFourGateIsDisabledAlthoughTheInventoryIsMet() throws {
         let content = try ContentDatabase.bundled()
         let gate = try XCTUnwrap(content.eras.first { $0.id == 4 }?.contentGate)
         XCTAssertFalse(gate.enabled)
         XCTAssertEqual([gate.minimumCards, gate.minimumRecurring, gate.minimumConclusions, gate.minimumBridges], [40, 24, 8, 8])
         let inventory = content.inventory(era: 4)
-        XCTAssertEqual([inventory.total, inventory.recurring, inventory.conclusions, inventory.bridges], [30, 17, 6, 6])
+        XCTAssertEqual([inventory.total, inventory.recurring, inventory.conclusions, inventory.bridges], [45, 28, 8, 8])
         XCTAssertTrue(inventory.missingCategories(for: gate).isEmpty)
-        XCTAssertFalse(inventory.satisfies(gate))
+        // 45 authored cards meet the minimums; the switch (and, in the validator, balance evidence) keeps it shut.
+        XCTAssertTrue(inventory.satisfies(gate))
         XCTAssertTrue(content.eraContentReady(2))
         XCTAssertTrue(content.eraContentReady(3))
         XCTAssertFalse(content.eraContentReady(4))
         XCTAssertFalse(content.eraContentReady(5))
         XCTAssertEqual(content.playableCards.count, 180)
-        XCTAssertEqual(content.cards.count, 210)
+        XCTAssertEqual(content.cards.count, 225)
         for era in 1...3 { XCTAssertNil(content.eras.first { $0.id == era }?.contentGate) }
         for era in 5...12 { XCTAssertEqual(content.eras.first { $0.id == era }?.contentGate?.enabled, false) }
         let bronze = try XCTUnwrap(content.eras.first { $0.id == 3 })
@@ -51,22 +52,22 @@ final class EraReadinessTests: XCTestCase {
         XCTAssertGreaterThanOrEqual(after.stats["stability", default: 0], 35)
         XCTAssertGreaterThanOrEqual(after.stats["population", default: 0], 25)
         XCTAssertNil(after.ending)
-        XCTAssertEqual(after.era, 3, "Thirty authored Era 4 cards must not open the era")
+        XCTAssertEqual(after.era, 3, "Forty-five authored Era 4 cards must not open the era")
         XCTAssertEqual(e.acknowledge(after).era, 3)
         XCTAssertEqual(e.content.card(e.acknowledge(after).currentCardID)?.era, 3)
     }
 
     func testEnablingTheSwitchAloneCannotOpenAShortInventory() throws {
-        let content = try gated { $0.enabled = true }
+        // The 210-card deck (thirty Era 4 cards) is short; the switch alone cannot open it.
+        var content = try gated { $0.enabled = true }
+        content.cards = Array(content.cards.prefix(210))
         XCTAssertFalse(content.eraContentReady(4))
         let e = GameEngine(content: content)
         XCTAssertEqual(try e.choose("toll", in: readyBronze(e)).era, 3)
     }
 
     func testCompleteInventoryAloneCannotOpenWithoutApproval() throws {
-        let content = try gated { gate in
-            gate.minimumCards = 30; gate.minimumRecurring = 17; gate.minimumConclusions = 6; gate.minimumBridges = 6
-        }
+        let content = try ContentDatabase.bundled()
         XCTAssertTrue(content.inventory(era: 4).satisfies(content.eras[3].contentGate!))
         XCTAssertFalse(content.eraContentReady(4))
         let e = GameEngine(content: content)
@@ -74,12 +75,9 @@ final class EraReadinessTests: XCTestCase {
     }
 
     func testControlledFixtureOpensOnlyWithApprovalInventoryAndThresholds() throws {
-        let content = try gated { gate in
-            gate.enabled = true
-            gate.minimumCards = 30; gate.minimumRecurring = 17; gate.minimumConclusions = 6; gate.minimumBridges = 6
-        }
+        let content = try gated { $0.enabled = true }
         XCTAssertTrue(content.eraContentReady(4))
-        XCTAssertEqual(content.playableCards.count, 210)
+        XCTAssertEqual(content.playableCards.count, 225)
         let e = GameEngine(content: content)
         let start = readyBronze(e)
         let entered = try e.choose("toll", in: start)
@@ -111,12 +109,12 @@ final class EraReadinessTests: XCTestCase {
         let index = try XCTUnwrap(content.cards.firstIndex { $0.id == "road_wear" })
         content.cards[index].exclusionConditions.append(.init(flag: "resolved_road_wear"))
         let inventory = content.inventory(era: 4)
-        XCTAssertEqual(inventory.recurring, 16)
+        XCTAssertEqual(inventory.recurring, 27)
         // Another recurring roads crisis (caravan_bandits) still covers the category.
         XCTAssertTrue(inventory.recurringCategories.contains("roads"))
-        XCTAssertEqual(inventory.recurring + inventory.conclusions + inventory.bridges, 28)
+        XCTAssertEqual(inventory.recurring + inventory.conclusions + inventory.bridges, 43)
         // The closed crisis and the one legal reform count only toward the total.
-        XCTAssertEqual(inventory.total, 30)
+        XCTAssertEqual(inventory.total, 45)
     }
 
     func testOlderContentWithoutGateOrRoleStillDecodes() throws {
@@ -138,7 +136,7 @@ final class EraReadinessTests: XCTestCase {
         XCTAssertTrue(opened.eraContentReady(4))
         XCTAssertFalse(opened.eraContentReady(5), "Era 5 has no authored cards")
         XCTAssertEqual(bundled.playableCards.count, 180)
-        XCTAssertEqual(opened.playableCards.count, 210)
+        XCTAssertEqual(opened.playableCards.count, 225)
         // Eras without a gate are returned unchanged.
         XCTAssertEqual(bundled.diagnosticallyOpened(era: 2).eras.map { $0.contentGate }, bundled.eras.map { $0.contentGate })
         let e = GameEngine(content: opened)
