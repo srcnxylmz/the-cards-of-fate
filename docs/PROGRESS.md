@@ -474,3 +474,13 @@ Yapılan: açık Era içerik kapısı (`EraContentGate`, Era 4 `enabled:false`, 
 Gerçek sonuçlar: Node 70/70 (7 yeni), doğrulayıcı 0/0, eski 180 tanım derin eşit. Swift 16 yeni test yazıldı, **çalıştırılmadı** (ortamda Swift yok). Simülasyon, native CI, UI/OCR/ses **çalıştırılmadı**. Yeni görsel üretilmedi (araç yok): 43 aday, 152 eksik. GitHub push izni reddedildi; dal bundle/patch olarak kullanıcıya teslim edildi.
 
 Era 4 kapalı: envanter 15/40, anahtar kapalı, native kanıt yok. Sonraki: HANDOFF_195_CODEX.md'deki doğrulama sırası, ardından 195 → 210 kapsamı. Rapor: PHASE3_195_REPORT.md.
+
+### 195 paketinin yerel doğrulaması (Claude, Windows, 2026-11-20)
+
+Bundle doğrulandı (`a76aa65`, ön koşul `c405ac2`), dal içeri alındı, push edildi; PR: https://github.com/srcnxylmz/the-cards-of-fate/pull/1. Kaynak `8a2924b`.
+
+- Node 70/70, doğrulayıcı 0/0, `build-content --check` geçti.
+- Swift 6.4.2 Windows: 125/125 (113 FateCore + 12 Diagnostics). Derleme hatası çıkmadı.
+- Düzeltme: `EraReadinessTests.testControlledFixtureOpensOnlyWithApprovalInventoryAndThresholds` liderliği tur öncesi durumla karşılaştırıyordu; fikstür otorite 60 ile `contender` başlıyor ve tur çözümü her çağda otorite ≥ 60'ta `ruler` yapıyor (`GameEngine.swift` ~175). Test artık aynı turun kapalı kapıdaki sonucuyla liderlik, bayrak, teknoloji ve kuşak eşitliği ister (daha sıkı). Motor değişmedi.
+- Altı politika × 10.000 seed release simülasyonu: `compare-reference195.mjs` altısı "identical except contentCardCount 180 → 195". Era 4 kartları ilk üç çağın seçimine sızmıyor.
+- Native CI: [run 44734293652](https://github.com/srcnxylmz/the-cards-of-fate/actions/runs/44734293652) (#33, workflow_dispatch, kaynak `8a2924bd541962b49fe768586dca37fabea237d9`) **başarılı**, beş işin beşi de geçti. `verify` (macos-15 arm64, Xcode 16.4): Node 70/70, içerik kontrolleri ve doğrulayıcı 0 hata/0 uyarı, Swift 125/125, iPhone SE (3. nesil)/iOS 18.5 simülatöründe derleme, kurulum, başlatma ve 6/6 UI testi (`** TEST SUCCEEDED **`: TR/EN karar ve kaldığı yerden devam, meclis müzakeresi, görünür istatistikler, illüstrasyonlu kartlar + büyük metin/Reduce Motion, ses cue/mute). Dört simülasyon işi (short, knowledge, progression, recovery; macos-15-intel) 10.000 seed ile başarıyla bitti. Artefaktlar: `iphone-ui-evidence`, `quality-reports`, `native-simulations-{short,knowledge,progression,recovery}`. macOS simülasyon raporları `compare-reference195.mjs` ile ayrıca karşılaştırılmadı (artefaktlar indirilmedi); aynı-seed kanıtı yukarıdaki Windows karşılaştırmasıdır. Ekran görüntüleri incelenmedi.

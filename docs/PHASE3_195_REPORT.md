@@ -66,12 +66,13 @@ Altı tamamlanmış zincirin altısı da en az bir Era 4 devamı aldı (mera zin
 | `node tools/validate-content.mjs` | 0 hata, 0 uyarı |
 | `node --test tools/*.test.mjs` | **70/70 geçti** (63 eski + 7 yeni `empire-content.test.mjs`) |
 | Eski 180 kart | `docs/analysis/milestone195-180-before/cards.json` ile derin eşit, sıra korunmuş |
-| `swift test` | **çalıştırılmadı** — ortamda Swift yok. Swift dosyaları yalnızca tree-sitter sözdizimi taramasından geçti (tip denetimi değil). |
-| 60.000 simülasyon / native iPhone UI | **çalıştırılmadı** |
+| `swift test` (Swift 6.4.2, Windows, `8a2924b`) | **125/125 geçti** (FateCoreTests 113 + FateDiagnosticsTests 12). İlk koşuda 1 hata: test iddiası düzeltildi, motor değişmedi (bkz. PROGRESS). |
+| Altı politika × 10.000 seed, release `FateSimulation` (Windows) | `compare-reference195.mjs`: altısı "identical except contentCardCount 180 → 195". Raporlar `docs/analysis/milestone195-windows/` |
+| Native iPhone Simulator CI (#33, `8a2924b`) | [run 44734293652](https://github.com/srcnxylmz/the-cards-of-fate/actions/runs/44734293652) **başarılı**: Node 70/70, Swift 125/125, iPhone SE 3/iOS 18.5 derleme/kurulum/başlatma + 6/6 UI testi, dört 10.000 seed simülasyon işi geçti. macOS raporları ayrıca karşılaştırılmadı; ekran görüntüleri incelenmedi. |
 
-Yazılan, çalıştırılmamış Swift testleri: `EraReadinessTests` (8), `EmpireGroundworkTests` (8, aynı seed'de 195 ve 180 desteleriyle 2 politika × 30 seed × 300 karar birebir eşitlik dahil). Dört eski testteki toplam kart sayısı iddiası "ilk üç çağ = 180" olarak daraltıldı.
+Swift testleri (2026-11-20 Windows'ta çalıştırıldı, geçti): `EraReadinessTests` (8), `EmpireGroundworkTests` (8, aynı seed'de 195 ve 180 desteleriyle 2 politika × 30 seed × 300 karar birebir eşitlik dahil). Dört eski testteki toplam kart sayısı iddiası "ilk üç çağ = 180" olarak daraltıldı.
 
-İlk üç çağ değişmezliği yapısal olarak da korunur: `selectCard` çağ filtresini RNG'den önce uygular, Era 4 kartları Era ≤3 durumunda aday listesine hiç girmez; geçiş, önceden "kart yok" kuralıyla durduğu noktada şimdi kapı ile durur. Bu bir akıl yürütmedir; kanıt Swift testi ve `tools/compare-reference195.mjs` ile yapılacak native karşılaştırmadır.
+İlk üç çağ değişmezliği yapısal olarak da korunur: `selectCard` çağ filtresini RNG'den önce uygular, Era 4 kartları Era ≤3 durumunda aday listesine hiç girmez; geçiş, önceden "kart yok" kuralıyla durduğu noktada şimdi kapı ile durur. Bu akıl yürütme artık ölçümle de destekleniyor: Swift testleri geçti ve Windows release simülasyonunun altı raporu 180 referansıyla `contentCardCount` dışında birebir aynı.
 
 ## 5. Denge
 
