@@ -4,7 +4,7 @@ Geçmiş sohbet olmadan okunabilir. Ayrıntı ve tablolar: `docs/PHASE3_210_REPO
 
 ## Kaynak
 
-- Dal: `phase3-era4-210`. Tabanı `phase3-era4-groundwork` (PR #1, 195 paketi; native CI 44734293652 ile kabul aldı, henüz `main`'e birleşmedi). 210 PR'ı bu dalın üzerine açıldı; önce PR #1 birleşmeli.
+- Dal: `phase3-era4-210` (PR #2). Doğrulanan kaynak: `0521f6f`. Tabanı `phase3-era4-groundwork` (PR #1, 195 paketi; native CI 44734293652 ile kabul aldı, henüz `main`'e birleşmedi). 210 PR'ı bu dalın üzerine açıldı; önce PR #1 birleşmeli.
 - 210 kod/içerik/belge commit'i bu dalın HEAD'idir (`git log -1`; bu belge kendi SHA'sını içeremez). Doğrulamaların çalıştığı kaynak, belge güncellemesinden önceki ağaçla aynıdır: belgeler dışında dosya değişmedi.
 
 ## Yapılanlar
@@ -22,7 +22,7 @@ Geçmiş sohbet olmadan okunabilir. Ayrıntı ve tablolar: `docs/PHASE3_210_REPO
 - Swift 6.4.2 (Windows): `swift test` 127/127 (115 FateCore + 12 Diagnostics). İlk denemede bir test derlenmedi (`EraDefinition` `Equatable` değil); karşılaştırma `contentGate` üzerinden yapıldı. Başka hata yok.
 - Aynı seed: altı politika × 10.000 seed, release. `node tools/compare-reference.mjs docs/analysis/milestone195-windows docs/analysis/milestone210-windows 195 210` → altısı "identical except contentCardCount 195 → 210".
 - Teşhis (kapı zorla açık, 2000 seed): progression %97 Era 4'e ulaşıyor, 2000'in 1202'si açlıkla bitiyor, 775'i deste tükenmesiyle; tekrar oranı %59; Era 4 ortalama istikrar 16. Tablolar raporda.
-- Native iPhone CI: PR açıldıktan sonra tek tam koşu; sonucu PROGRESS/QA_REPORT'a işlenir.
+- Native CI [run 44748860814](https://github.com/srcnxylmz/the-cards-of-fate/actions/runs/44748860814) (`0521f6f`, workflow_dispatch) **başarılı**: Node 77/77, macOS Swift 127/127, iPhone SE 3 / iOS 18.5 derleme + 6/6 UI testi, 4 simülasyon işi (short, knowledge, progression, recovery). Era 4 kapalı olduğu için bu bir 210 içerik kabulüdür, Era 4 açılış kabulü değildir.
 
 ## Bilinen sorunlar
 

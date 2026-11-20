@@ -52,7 +52,7 @@ Toplam: 210 kart, 541 karar (+55), 50 bağlam-bölümlü karar, 183 statik çağ
 | `node tools/art-audit.mjs`, `generate-feedback.mjs --check` | geçti |
 | `swift test` | **127/127** (FateCoreTests 115 + FateDiagnosticsTests 12; 2 yeni: teşhis kopyası, civil_law reformu). `EmpireGroundworkTests` 30 Era 4 kartının her seçimini ve bağlam sonucunu gerçek seçiciyle çekip replay ediyor |
 | Release `FateSimulation`, altı politika × 10.000 seed | `node tools/compare-reference.mjs docs/analysis/milestone195-windows docs/analysis/milestone210-windows 195 210`: altısı "identical except contentCardCount 195 → 210" |
-| Native iPhone CI | devir notunda (tek tam koşu, PR açıldıktan sonra) |
+| Native iPhone CI | [run 44748860814](https://github.com/srcnxylmz/the-cards-of-fate/actions/runs/44748860814), kaynak `0521f6f`: **başarılı** — Node 77/77, macOS Swift 127/127, iPhone SE 3 / iOS 18.5 6/6 UI, 4 simülasyon işi |
 
 ## 5. Era 4 dengesi — teşhis ölçümü (kapı zorla açık, oyuncuya kapalı)
 
