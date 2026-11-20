@@ -83,13 +83,21 @@ final class EraReadinessTests: XCTestCase {
         let e = GameEngine(content: content)
         let start = readyBronze(e)
         let entered = try e.choose("toll", in: start)
+        // Same turn with the bundled (closed) gate: the only difference may be the era itself.
+        let closed = try GameEngine(content: try .bundled()).choose("toll", in: start)
+        XCTAssertEqual(closed.era, 3)
         XCTAssertEqual(entered.era, 4)
         XCTAssertEqual(entered.resolution?.previousEra, 3)
         // Political rights and old records survive the transition unchanged.
         XCTAssertTrue(start.flags.isSubset(of: entered.flags))
         XCTAssertTrue(entered.flags.contains("bread_bond_repaid"))
         XCTAssertFalse(entered.flags.contains("bread_bond_open"))
-        XCTAssertEqual(entered.leadership, start.leadership)
+        // Turn resolution may promote a contender at authority ≥ 60; the era change itself must not
+        // alter leadership, flags or technologies relative to the closed-gate outcome of the same turn.
+        XCTAssertEqual(entered.leadership, closed.leadership)
+        XCTAssertEqual(entered.flags, closed.flags)
+        XCTAssertEqual(entered.technologies, closed.technologies)
+        XCTAssertEqual(entered.generation, closed.generation)
         XCTAssertEqual(e.content.card(e.acknowledge(entered).currentCardID)?.era, 4)
         // Existing social thresholds still apply once the gate is open.
         var lowKnowledge = readyBronze(e); lowKnowledge.stats["knowledge"] = 60
