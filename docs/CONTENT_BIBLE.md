@@ -2,7 +2,11 @@
 
 Editorial principle: each card needs a specific human conflict, an observable cost, competing reasonable values, and consequences that fit the era. Neither option should simply be the same reward in different wording. Turkish is authored naturally, with a complete English counterpart for the current 180-card set.
 
-## Current 195-card inventory (Era 4 closed)
+## Current 210-card inventory (Era 4 closed)
+
+180 first-three-era events and the first 15 Era 4 events unchanged, plus 15 more Ancient Empires events (8 recurring, 3 bridges, 3 conclusions, 1 legal reform); 541 decisions. A legal reform grants a technology only with a written precedent, sufficient knowledge and a paid drafting, and leaves the deck once adopted. New one-tier debts (garrison wages, debased coin) close only through payment. Card list and rules: PHASE3_210_REPORT.md.
+
+## Earlier 195-card inventory (Era 4 closed)
 
 180 first-three-era events unchanged plus 15 Ancient Empires events authored behind a disabled readiness gate; 486 decisions. Era 4 editorial rules: the conflict is between province and centre, payer and receiver, old record and new labor. Every paying decision needs the reserve up front; an old right buys a hearing, a precedent or a discount, never free output; paid debts stay closed and open debts are neither forgiven nor enlarged at entry; officials cannot silently revoke earlier citizenship or care records. Material culture is a fictional composite (cut stone, marble, wax tablets/papyrus, bronze and iron tools, wool tunics; no stirrups, paper books or gunpowder). Inventory, ledger flags and card list: PHASE3_195_REPORT.md.
 

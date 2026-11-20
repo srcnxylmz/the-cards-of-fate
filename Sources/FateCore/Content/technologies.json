@@ -33,7 +33,9 @@
   {
     "id": "civil_law",
     "era": 4,
-    "unlockedBy": [],
+    "unlockedBy": [
+      "civil_code_draft"
+    ],
     "status": "planned"
   },
   {

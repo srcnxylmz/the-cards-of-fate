@@ -50,7 +50,7 @@ final class EmpireGroundworkTests: XCTestCase {
 
     func testEveryEraFourChoiceAndContextOutcomeIsSelectableAndReplayable() throws {
         let e = try engine()
-        XCTAssertEqual(empireIDs.count, 15)
+        XCTAssertEqual(empireIDs.count, 30)
         for id in empireIDs {
             let card = try XCTUnwrap(e.content.card(id))
             for choice in card.choices {

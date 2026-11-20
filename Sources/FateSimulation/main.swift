@@ -20,6 +20,14 @@ if let path = option("--cards") {
     content.cards = try JSONDecoder().decode([CardEvent].self, from: Data(contentsOf: URL(fileURLWithPath: path)))
     guard !content.cards.isEmpty, Set(content.cards.map(\.id)).count == content.cards.count else { throw UsageError.invalidArguments }
 }
+// Diagnostic only: force one gated era open to measure unfinished content. Not player-reachable;
+// reports produced this way are marked and must not be compared with baseline reports.
+let diagnosticOpenEra = option("--diagnostic-open-era").flatMap(Int.init)
+if arguments.contains("--diagnostic-open-era") {
+    guard let era = diagnosticOpenEra, (2...12).contains(era),
+          content.eras.first(where: { $0.id == era })?.contentGate != nil else { throw UsageError.invalidArguments }
+    content = content.diagnosticallyOpened(era: era)
+}
 let engine = GameEngine(content: content)
 var developmentTotals: [String:Int] = [:]
 var crisisTotals: [String:Int] = [:]
@@ -236,7 +244,7 @@ for seed in 0..<count {
     seen.formUnion(state.discovered)
 }
 let sortedTurns=turns.sorted()
-let report: [String: Any] = [
+var report: [String: Any] = [
     "developmentDiagnostics":developmentTotals,
     "crisisDiagnostics":crisisTotals,"resolvedOutcomeCounts":resolvedOutcomes,
     "eraDecisionCounts":eraDecisions,"eraRepeatCounts":eraRepeats,"lateEraDecisions":lateDecisions,"lateEraRepeats":lateRepeats,
@@ -270,6 +278,11 @@ let report: [String: Any] = [
     "smeltingAcquisitionStatSums": metalAcquisitionStats, "smeltingWithoutBronzeFinalBlockers": metalBlockedRuns,
     "limitation": "Small development deck; capped runs are censored observations, not confirmed endings. Heuristic policies do not establish human skill balance or session duration."
 ]
+// Keys are added only in diagnostic mode, so baseline reports keep their exact shape.
+if let era = diagnosticOpenEra {
+    report["diagnosticOpenEra"] = era
+    report["diagnosticNotice"] = "Era \(era) gate forced open for measurement only; not player-reachable. Do not compare with baseline reports."
+}
 let data = try JSONSerialization.data(withJSONObject: report, options: [.prettyPrinted, .sortedKeys])
 if let output = option("--output") {
     try data.write(to: URL(fileURLWithPath: output), options: .atomic)

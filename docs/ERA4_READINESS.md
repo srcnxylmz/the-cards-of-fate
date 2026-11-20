@@ -1,5 +1,10 @@
 # Era 4 boundary and future dependencies — 180-card group
 
+## Durum — 210 paketi (Claude, dal `phase3-era4-210`)
+
+- **Envanter:** 30/40 · 17/24 · 6/8 · 6/8; sekiz alan tam. Kapı `enabled:false`. Gece nöbeti, liman ikameti ve iskele vergisi dönüşümleri artık var (`watch_guild_charter`, `harbor_ward_roll`, `customs_house_ledger`). `civil_law` yalnız `civil_code_draft` ile, koşullu ve bedelli; Era 5'te kart olmadığı için çağ açmaz.
+- **Teşhis (kapı zorla açık, yalnız ölçüm):** Era 4 şu haliyle sürdürülemez — progression'da 2000 koşunun 1202'si açlık, 775'i deste tükenmesiyle bitiyor. Envanter tamamlansa bile denge düzelmeden açılmamalı. Ayrıntı: [PHASE3_210_REPORT.md](PHASE3_210_REPORT.md), devir: [HANDOFF_210.md](HANDOFF_210.md).
+
 ## Durum — 195 paketi (Claude, dal `phase3-era4-groundwork`)
 
 Aşağıdaki "proposed, not implemented" bölümlerinin bir kısmı artık uygulandı; Era 4 **hâlâ kapalı**.

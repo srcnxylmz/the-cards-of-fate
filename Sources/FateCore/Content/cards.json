@@ -41612,5 +41612,3587 @@
       "card.care_census_hearing.description"
     ],
     "eraRole": "conclusion"
+  },
+  {
+    "id": "garrison_rotation",
+    "era": 4,
+    "category": "logistics",
+    "title": {
+      "tr": "Nöbet Değişimi",
+      "en": "The Changing of the Garrison"
+    },
+    "description": {
+      "tr": "Sınır garnizonunun nöbet süresi doldu. Yeni birlik yola çıkmadan önce eski askerler birikmiş üç aylık ücretlerini istiyor. Komutan, ödenmeyen askerlerin kasaba kapısında bekleyeceğini söylüyor.",
+      "en": "The frontier garrison’s tour has ended. Before the relief column marches, the outgoing soldiers demand three months of back pay. The commander says unpaid men will wait at the town gate."
+    },
+    "artAsset": "card_garrison_rotation",
+    "artDirection": "Fictional composite ancient empire, cut limestone and marble, wax tablets and papyrus rolls, bronze and iron hand tools, wool tunics and cloaks, no stirrups, no paper books, no gunpowder; ivory, gold and dusty terracotta palette, portrait composition. Two files of soldiers passing each other at a stone frontier gate, paymaster’s table with bronze scales and coin bags, tired veterans with rolled cloaks, grey dawn light.",
+    "rarity": "common",
+    "weight": 10,
+    "requirements": [],
+    "exclusionConditions": [],
+    "choices": [
+      {
+        "id": "pay",
+        "text": {
+          "tr": "Birikmiş ücreti öde; nöbeti zamanında değiştir.",
+          "en": "Pay the back wages and change the watch on time."
+        },
+        "risk": {
+          "tr": "Sonucu öngörülebilir",
+          "en": "Predictable outcome"
+        },
+        "requirements": [
+          {
+            "stat": "resources",
+            "minimum": 8
+          }
+        ],
+        "immediateEffects": {
+          "stats": {},
+          "flags": [],
+          "technologies": [],
+          "buildings": [],
+          "rivalRelation": 0
+        },
+        "outcomes": [
+          {
+            "id": "result",
+            "probability": 1,
+            "affinity": null,
+            "text": {
+              "tr": "Askerler ücretlerini sayıp yürüdü. Kasa hafifledi; yeni birlik kapıyı boş buldu.",
+              "en": "The soldiers counted their pay and marched off. The treasury thinned; the relief column found the gate clear."
+            },
+            "effect": {
+              "stats": {
+                "resources": -8,
+                "authority": 4,
+                "stability": 3
+              },
+              "flags": [],
+              "technologies": [],
+              "buildings": [],
+              "rivalRelation": 0,
+              "removeFlags": [
+                "garrison_pay_arrears"
+              ]
+            },
+            "delayedEffects": [],
+            "animationPreset": "normal"
+          }
+        ]
+      },
+      {
+        "id": "note",
+        "text": {
+          "tr": "Ücreti tarihli bir senede bağla.",
+          "en": "Bind the wages to a dated note."
+        },
+        "risk": {
+          "tr": "Orta risk · koşullara bağlı",
+          "en": "Moderate risk · depends on conditions"
+        },
+        "requirements": [],
+        "immediateEffects": {
+          "stats": {},
+          "flags": [],
+          "technologies": [],
+          "buildings": [],
+          "rivalRelation": 0
+        },
+        "outcomes": [
+          {
+            "id": "first",
+            "probability": 0.5,
+            "affinity": null,
+            "text": {
+              "tr": "Askerler senedi kabul etti ve ayrıldı. Ücret borcu valilik defterinde açık duruyor.",
+              "en": "The soldiers accepted the note and left. The wage debt stands open in the governorate ledger."
+            },
+            "effect": {
+              "stats": {
+                "authority": -2,
+                "stability": -3
+              },
+              "flags": [
+                "garrison_pay_arrears"
+              ],
+              "technologies": [],
+              "buildings": [],
+              "rivalRelation": 0
+            },
+            "delayedEffects": [],
+            "animationPreset": "normal",
+            "requirements": [
+              {
+                "absentFlag": "garrison_pay_arrears"
+              }
+            ]
+          },
+          {
+            "id": "refused",
+            "probability": 0.5,
+            "affinity": null,
+            "text": {
+              "tr": "İkinci senet geri çevrildi. Askerler kapıyı tuttu; kasabalılar pazar gününü evde geçirdi.",
+              "en": "A second note was refused. The soldiers held the gate; townspeople spent market day indoors."
+            },
+            "effect": {
+              "stats": {
+                "authority": -5,
+                "stability": -8,
+                "population": -1
+              },
+              "flags": [
+                "recorded_provincial_dissent"
+              ],
+              "technologies": [],
+              "buildings": [],
+              "rivalRelation": 0
+            },
+            "delayedEffects": [],
+            "animationPreset": "normal",
+            "requirements": [
+              {
+                "flag": "garrison_pay_arrears"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "militia",
+        "text": {
+          "tr": "Yerel gençleri ücretli yedek olarak yaz; eski birliği eve gönder.",
+          "en": "Enlist local youths as paid reserves and send the old unit home."
+        },
+        "risk": {
+          "tr": "Sonucu öngörülebilir",
+          "en": "Predictable outcome"
+        },
+        "requirements": [
+          {
+            "stat": "resources",
+            "minimum": 5
+          },
+          {
+            "stat": "population",
+            "minimum": 10
+          }
+        ],
+        "immediateEffects": {
+          "stats": {},
+          "flags": [],
+          "technologies": [],
+          "buildings": [],
+          "rivalRelation": 0
+        },
+        "outcomes": [
+          {
+            "id": "result",
+            "probability": 1,
+            "affinity": null,
+            "text": {
+              "tr": "Gençler nöbeti devraldı. Tarlalar iki çift el kaybetti; ücretleri kasabadan ödendi.",
+              "en": "The youths took over the watch. The fields lost hands; their pay came from the town."
+            },
+            "effect": {
+              "stats": {
+                "resources": -5,
+                "population": -2,
+                "authority": 3,
+                "stability": 2
+              },
+              "flags": [],
+              "technologies": [],
+              "buildings": [],
+              "rivalRelation": 0
+            },
+            "delayedEffects": [],
+            "animationPreset": "normal"
+          }
+        ]
+      },
+      {
+        "id": "contract",
+        "text": {
+          "tr": "İkmal sözleşmesinin taksit takvimine ücreti de ekle.",
+          "en": "Add the wages to the supply contract’s installment calendar."
+        },
+        "risk": {
+          "tr": "Sonucu öngörülebilir",
+          "en": "Predictable outcome"
+        },
+        "requirements": [
+          {
+            "flag": "garrison_supply_contract"
+          },
+          {
+            "stat": "resources",
+            "minimum": 6
+          }
+        ],
+        "immediateEffects": {
+          "stats": {},
+          "flags": [],
+          "technologies": [],
+          "buildings": [],
+          "rivalRelation": 0
+        },
+        "outcomes": [
+          {
+            "id": "result",
+            "probability": 1,
+            "affinity": null,
+            "text": {
+              "tr": "Ücretler taksitlere bağlandı. Muhasebeci iki defteri tek takvimde birleştirdi.",
+              "en": "The wages were tied to the installments. The accountant merged two ledgers into one calendar."
+            },
+            "effect": {
+              "stats": {
+                "resources": -6,
+                "authority": 3,
+                "stability": 4,
+                "knowledge": 1
+              },
+              "flags": [],
+              "technologies": [],
+              "buildings": [],
+              "rivalRelation": 0,
+              "removeFlags": [
+                "garrison_pay_arrears"
+              ]
+            },
+            "delayedEffects": [],
+            "animationPreset": "normal"
+          }
+        ]
+      }
+    ],
+    "worldFlags": [
+      "garrison_pay_arrears",
+      "recorded_provincial_dissent"
+    ],
+    "storyChainId": null,
+    "animationPreset": "normal",
+    "soundCue": "decision",
+    "cooldown": 4,
+    "localizationKeys": [
+      "card.garrison_rotation.title",
+      "card.garrison_rotation.description"
+    ],
+    "eraRole": "recurring"
+  },
+  {
+    "id": "caravan_bandits",
+    "era": 4,
+    "category": "roads",
+    "title": {
+      "tr": "Yol Haydutları",
+      "en": "Bandits on the Highway"
+    },
+    "description": {
+      "tr": "Doğu yolunda iki kervan soyuldu. Tüccarlar ya ücretli muhafız ya da ortak bir kervan sigortası istiyor. Sigorta sandığına her kervan pay koyacak; yağmalanan yük o sandıktan ödenecek.",
+      "en": "Two caravans were robbed on the eastern road. Merchants want either paid guards or a shared caravan insurance. Every caravan would pay into the chest, and plundered cargo would be paid out of it."
+    },
+    "artAsset": "card_caravan_bandits",
+    "artDirection": "Fictional composite ancient empire, cut limestone and marble, wax tablets and papyrus rolls, bronze and iron hand tools, wool tunics and cloaks, no stirrups, no paper books, no gunpowder; ivory, gold and dusty terracotta palette, portrait composition. Plundered ox cart on a hillside road with scattered amphorae, merchants and a magistrate counting losses on a wax tablet, distant rocky pass, harsh afternoon light.",
+    "rarity": "common",
+    "weight": 10,
+    "requirements": [],
+    "exclusionConditions": [],
+    "choices": [
+      {
+        "id": "insurance",
+        "text": {
+          "tr": "Ortak sigorta sandığı kur; ilk katkıyı kamu koysun.",
+          "en": "Found a shared insurance chest and make the first contribution from the treasury."
+        },
+        "risk": {
+          "tr": "Sonucu öngörülebilir",
+          "en": "Predictable outcome"
+        },
+        "requirements": [
+          {
+            "stat": "resources",
+            "minimum": 7
+          }
+        ],
+        "immediateEffects": {
+          "stats": {},
+          "flags": [],
+          "technologies": [],
+          "buildings": [],
+          "rivalRelation": 0
+        },
+        "outcomes": [
+          {
+            "id": "result",
+            "probability": 1,
+            "affinity": null,
+            "text": {
+              "tr": "Sandık mühürlendi. Tüccarlar pay yazdı; ilk kayıp sandıktan ödendi.",
+              "en": "The chest was sealed. Merchants pledged shares; the first loss was paid from the chest."
+            },
+            "effect": {
+              "stats": {
+                "resources": -7,
+                "stability": 4,
+                "knowledge": 2
+              },
+              "flags": [
+                "caravan_insurance_pool"
+              ],
+              "technologies": [],
+              "buildings": [],
+              "rivalRelation": 0,
+              "removeFlags": [
+                "caravan_escort_contract"
+              ]
+            },
+            "delayedEffects": [
+              {
+                "afterTurns": 5,
+                "minimumEra": 4,
+                "text": {
+                  "tr": "Kervan payları sandığa girdi; kamu katkısının bir kısmı geri döndü.",
+                  "en": "Caravan shares entered the chest; part of the public contribution came back."
+                },
+                "effect": {
+                  "stats": {
+                    "resources": 3
+                  },
+                  "flags": [],
+                  "technologies": [],
+                  "buildings": [],
+                  "rivalRelation": 0
+                }
+              }
+            ],
+            "animationPreset": "normal"
+          }
+        ]
+      },
+      {
+        "id": "escort",
+        "text": {
+          "tr": "Kervanlara ücretli silahlı muhafız ver.",
+          "en": "Give the caravans paid armed escorts."
+        },
+        "risk": {
+          "tr": "Sonucu öngörülebilir",
+          "en": "Predictable outcome"
+        },
+        "requirements": [
+          {
+            "stat": "resources",
+            "minimum": 9
+          }
+        ],
+        "immediateEffects": {
+          "stats": {},
+          "flags": [],
+          "technologies": [],
+          "buildings": [],
+          "rivalRelation": 0
+        },
+        "outcomes": [
+          {
+            "id": "result",
+            "probability": 1,
+            "affinity": null,
+            "text": {
+              "tr": "Muhafızlar kafilelerle yürüdü. Haydutlar geri çekildi; ücret bordrosu kabardı.",
+              "en": "Guards marched with the convoys. The bandits fell back; the payroll swelled."
+            },
+            "effect": {
+              "stats": {
+                "resources": -9,
+                "authority": 4,
+                "stability": 2
+              },
+              "flags": [
+                "caravan_escort_contract"
+              ],
+              "technologies": [],
+              "buildings": [],
+              "rivalRelation": 0,
+              "removeFlags": [
+                "caravan_insurance_pool"
+              ]
+            },
+            "delayedEffects": [],
+            "animationPreset": "normal"
+          }
+        ]
+      },
+      {
+        "id": "towers",
+        "text": {
+          "tr": "Bakımlı yolda gözcü kuleleri kur.",
+          "en": "Build watch posts along the maintained road."
+        },
+        "risk": {
+          "tr": "Sonucu öngörülebilir",
+          "en": "Predictable outcome"
+        },
+        "requirements": [
+          {
+            "flag": "imperial_road_maintained"
+          },
+          {
+            "stat": "resources",
+            "minimum": 5
+          }
+        ],
+        "immediateEffects": {
+          "stats": {},
+          "flags": [],
+          "technologies": [],
+          "buildings": [],
+          "rivalRelation": 0
+        },
+        "outcomes": [
+          {
+            "id": "result",
+            "probability": 1,
+            "affinity": null,
+            "text": {
+              "tr": "Kuleler taşla yükseldi. Bakımlı yol işaret ateşleriyle birbirine bağlandı.",
+              "en": "The posts rose in stone. Signal fires linked the maintained road from end to end."
+            },
+            "effect": {
+              "stats": {
+                "resources": -5,
+                "authority": 2,
+                "stability": 3,
+                "environment": -1
+              },
+              "flags": [],
+              "technologies": [],
+              "buildings": [],
+              "rivalRelation": 0
+            },
+            "delayedEffects": [],
+            "animationPreset": "normal"
+          }
+        ]
+      },
+      {
+        "id": "ignore",
+        "text": {
+          "tr": "Tüccarları kendi başlarına bırak.",
+          "en": "Leave the merchants to fend for themselves."
+        },
+        "risk": {
+          "tr": "Sonucu öngörülebilir",
+          "en": "Predictable outcome"
+        },
+        "requirements": [],
+        "immediateEffects": {
+          "stats": {},
+          "flags": [],
+          "technologies": [],
+          "buildings": [],
+          "rivalRelation": 0
+        },
+        "outcomes": [
+          {
+            "id": "result",
+            "probability": 1,
+            "affinity": null,
+            "text": {
+              "tr": "Kasa ödemedi. Kervanlar yolu terk etti; pazar vergisi azaldı.",
+              "en": "The treasury paid nothing. Caravans abandoned the road; market tolls shrank."
+            },
+            "effect": {
+              "stats": {
+                "authority": -3,
+                "stability": -5
+              },
+              "flags": [],
+              "technologies": [],
+              "buildings": [],
+              "rivalRelation": 0
+            },
+            "delayedEffects": [
+              {
+                "afterTurns": 4,
+                "minimumEra": 4,
+                "text": {
+                  "tr": "Yolu terk eden kervanlar yüzünden pazar geliri düştü.",
+                  "en": "Market revenue fell as caravans avoided the road."
+                },
+                "effect": {
+                  "stats": {
+                    "resources": -5
+                  },
+                  "flags": [],
+                  "technologies": [],
+                  "buildings": [],
+                  "rivalRelation": 0
+                }
+              }
+            ],
+            "animationPreset": "normal"
+          }
+        ]
+      }
+    ],
+    "worldFlags": [
+      "caravan_insurance_pool",
+      "caravan_escort_contract"
+    ],
+    "storyChainId": null,
+    "animationPreset": "normal",
+    "soundCue": "decision",
+    "cooldown": 4,
+    "localizationKeys": [
+      "card.caravan_bandits.title",
+      "card.caravan_bandits.description"
+    ],
+    "eraRole": "recurring"
+  },
+  {
+    "id": "grain_ceiling",
+    "era": 4,
+    "category": "economy",
+    "title": {
+      "tr": "Tahıl Fiyatının Tavanı",
+      "en": "A Ceiling on Grain"
+    },
+    "description": {
+      "tr": "Kıtlık söylentisiyle tahıl fiyatı bir haftada iki katına çıktı. Halk fiyat tavanı istiyor; tüccarlar tavan konursa ambarlarını kapatacaklarını söylüyor. Valilik ayrıca bir kıtlık deposu kurmayı düşünüyor.",
+      "en": "On rumors of famine the price of grain doubled in a week. The people want a price ceiling; merchants say they will shut their granaries if one is imposed. The governorate is also weighing a famine store."
+    },
+    "artAsset": "card_grain_ceiling",
+    "artDirection": "Fictional composite ancient empire, cut limestone and marble, wax tablets and papyrus rolls, bronze and iron hand tools, wool tunics and cloaks, no stirrups, no paper books, no gunpowder; ivory, gold and dusty terracotta palette, portrait composition. Crowded grain market under a stone portico, price tablet chalked twice over, merchants guarding sacks, magistrate with a bronze grain measure, dusty yellow light.",
+    "rarity": "common",
+    "weight": 10,
+    "requirements": [],
+    "exclusionConditions": [],
+    "choices": [
+      {
+        "id": "store",
+        "text": {
+          "tr": "Kıtlık deposu kur; tahılı piyasa fiyatından satın al.",
+          "en": "Found a famine store and buy grain at market price."
+        },
+        "risk": {
+          "tr": "Sonucu öngörülebilir",
+          "en": "Predictable outcome"
+        },
+        "requirements": [
+          {
+            "stat": "resources",
+            "minimum": 10
+          }
+        ],
+        "immediateEffects": {
+          "stats": {},
+          "flags": [],
+          "technologies": [],
+          "buildings": [],
+          "rivalRelation": 0
+        },
+        "outcomes": [
+          {
+            "id": "result",
+            "probability": 1,
+            "affinity": null,
+            "text": {
+              "tr": "Depo doldu ve kapısı mühürlendi. Kasa boşaldı; fiyat yavaşça geriledi.",
+              "en": "The store filled and its door was sealed. The treasury emptied; prices slowly eased."
+            },
+            "effect": {
+              "stats": {
+                "resources": -10,
+                "stability": 5,
+                "population": 1
+              },
+              "flags": [
+                "grain_famine_store"
+              ],
+              "technologies": [],
+              "buildings": [],
+              "rivalRelation": 0,
+              "removeFlags": [
+                "grain_price_ceiling"
+              ]
+            },
+            "delayedEffects": [
+              {
+                "afterTurns": 6,
+                "minimumEra": 4,
+                "text": {
+                  "tr": "Depodaki tahıl kıtlıkta maliyetine satıldı.",
+                  "en": "The stored grain was sold at cost during the shortage."
+                },
+                "effect": {
+                  "stats": {
+                    "resources": 4,
+                    "stability": 2
+                  },
+                  "flags": [],
+                  "technologies": [],
+                  "buildings": [],
+                  "rivalRelation": 0
+                }
+              }
+            ],
+            "animationPreset": "normal"
+          }
+        ]
+      },
+      {
+        "id": "ceiling",
+        "text": {
+          "tr": "Fiyat tavanı ilan et.",
+          "en": "Proclaim a price ceiling."
+        },
+        "risk": {
+          "tr": "Sonucu öngörülebilir",
+          "en": "Predictable outcome"
+        },
+        "requirements": [],
+        "immediateEffects": {
+          "stats": {},
+          "flags": [],
+          "technologies": [],
+          "buildings": [],
+          "rivalRelation": 0
+        },
+        "outcomes": [
+          {
+            "id": "result",
+            "probability": 1,
+            "affinity": null,
+            "text": {
+              "tr": "Tavan meydanda okundu. Halk rahatladı; tüccarlar ambar kapılarını yarı kapattı.",
+              "en": "The ceiling was read in the forum. People were relieved; merchants half-closed their granary doors."
+            },
+            "effect": {
+              "stats": {
+                "stability": 4,
+                "authority": -2
+              },
+              "flags": [
+                "grain_price_ceiling"
+              ],
+              "technologies": [],
+              "buildings": [],
+              "rivalRelation": 0,
+              "removeFlags": [
+                "grain_famine_store"
+              ]
+            },
+            "delayedEffects": [
+              {
+                "afterTurns": 4,
+                "minimumEra": 4,
+                "text": {
+                  "tr": "Tavanın altında satmayan tüccarlar ambarlarını kapattı; pazar boşaldı.",
+                  "en": "Merchants unwilling to sell under the ceiling shut their stores; the market emptied."
+                },
+                "effect": {
+                  "stats": {
+                    "resources": -4,
+                    "stability": -5
+                  },
+                  "flags": [],
+                  "technologies": [],
+                  "buildings": [],
+                  "rivalRelation": 0
+                }
+              }
+            ],
+            "animationPreset": "normal"
+          }
+        ]
+      },
+      {
+        "id": "free",
+        "text": {
+          "tr": "Fiyatı serbest bırak; tüccarlardan pazar vergisi al.",
+          "en": "Leave prices free and tax the merchants’ sales."
+        },
+        "risk": {
+          "tr": "Sonucu öngörülebilir",
+          "en": "Predictable outcome"
+        },
+        "requirements": [],
+        "immediateEffects": {
+          "stats": {},
+          "flags": [],
+          "technologies": [],
+          "buildings": [],
+          "rivalRelation": 0
+        },
+        "outcomes": [
+          {
+            "id": "result",
+            "probability": 1,
+            "affinity": null,
+            "text": {
+              "tr": "Vergi geldi. Yoksul haneler ekmeği yarıya böldü; birkaç aile göç yoluna çıktı.",
+              "en": "The tax came in. Poor households halved their bread; a few families took the road out."
+            },
+            "effect": {
+              "stats": {
+                "resources": 5,
+                "stability": -6,
+                "population": -2
+              },
+              "flags": [],
+              "technologies": [],
+              "buildings": [],
+              "rivalRelation": 0
+            },
+            "delayedEffects": [],
+            "animationPreset": "normal"
+          }
+        ]
+      },
+      {
+        "id": "measure",
+        "text": {
+          "tr": "Ortak ölçü kabıyla tartıları denetlet; hileli tüccarı cezalandır.",
+          "en": "Check the scales against the common measure and fine cheating merchants."
+        },
+        "risk": {
+          "tr": "Sonucu öngörülebilir",
+          "en": "Predictable outcome"
+        },
+        "requirements": [
+          {
+            "flag": "common_measure"
+          },
+          {
+            "stat": "resources",
+            "minimum": 4
+          }
+        ],
+        "immediateEffects": {
+          "stats": {},
+          "flags": [],
+          "technologies": [],
+          "buildings": [],
+          "rivalRelation": 0
+        },
+        "outcomes": [
+          {
+            "id": "result",
+            "probability": 1,
+            "affinity": null,
+            "text": {
+              "tr": "Ölçü kabı pazara getirildi. Hileli tartılar kırıldı; denetçiler ücretlerini aldı.",
+              "en": "The common measure was brought to market. False scales were broken; the inspectors were paid."
+            },
+            "effect": {
+              "stats": {
+                "resources": -4,
+                "knowledge": 3,
+                "stability": 5
+              },
+              "flags": [],
+              "technologies": [],
+              "buildings": [],
+              "rivalRelation": 0
+            },
+            "delayedEffects": [],
+            "animationPreset": "normal"
+          }
+        ]
+      }
+    ],
+    "worldFlags": [
+      "grain_famine_store",
+      "grain_price_ceiling"
+    ],
+    "storyChainId": null,
+    "animationPreset": "normal",
+    "soundCue": "decision",
+    "cooldown": 4,
+    "localizationKeys": [
+      "card.grain_ceiling.title",
+      "card.grain_ceiling.description"
+    ],
+    "eraRole": "recurring"
+  },
+  {
+    "id": "river_customs",
+    "era": 4,
+    "category": "taxation",
+    "title": {
+      "tr": "Nehir Gümrüğü",
+      "en": "The River Customs"
+    },
+    "description": {
+      "tr": "Nehirden inen mavnalar artık eyalet sınırını geçiyor. Valilik her yükten gümrük almak istiyor. Gümrüğü kamu memurları da toplayabilir, en yüksek teklifi veren bir mültezime de kiralanabilir.",
+      "en": "Barges coming downriver now cross the provincial border. The governorate wants customs on every cargo. Public officers could collect it, or it could be leased to the highest-bidding tax farmer."
+    },
+    "artAsset": "card_river_customs",
+    "artDirection": "Fictional composite ancient empire, cut limestone and marble, wax tablets and papyrus rolls, bronze and iron hand tools, wool tunics and cloaks, no stirrups, no paper books, no gunpowder; ivory, gold and dusty terracotta palette, portrait composition. River customs post on a stone jetty, flat-bottomed barges with jars and timber, customs officer weighing cargo on bronze balance, boatmen arguing, bright water reflections.",
+    "rarity": "common",
+    "weight": 10,
+    "requirements": [],
+    "exclusionConditions": [],
+    "choices": [
+      {
+        "id": "public",
+        "text": {
+          "tr": "Kamu gümrükçüsü ata; ücretini ve terazisini öde.",
+          "en": "Appoint a public customs officer and pay for his wage and scales."
+        },
+        "risk": {
+          "tr": "Sonucu öngörülebilir",
+          "en": "Predictable outcome"
+        },
+        "requirements": [
+          {
+            "stat": "resources",
+            "minimum": 6
+          }
+        ],
+        "immediateEffects": {
+          "stats": {},
+          "flags": [],
+          "technologies": [],
+          "buildings": [],
+          "rivalRelation": 0
+        },
+        "outcomes": [
+          {
+            "id": "result",
+            "probability": 1,
+            "affinity": null,
+            "text": {
+              "tr": "Gümrükçü yemin etti. Terazi damgalandı; ilk mavnalar sırayla tartıldı.",
+              "en": "The officer took his oath. The scales were stamped; the first barges were weighed in turn."
+            },
+            "effect": {
+              "stats": {
+                "resources": -6,
+                "knowledge": 3,
+                "stability": 3
+              },
+              "flags": [
+                "river_customs_public"
+              ],
+              "technologies": [],
+              "buildings": [],
+              "rivalRelation": 0,
+              "removeFlags": [
+                "river_customs_farmed"
+              ]
+            },
+            "delayedEffects": [
+              {
+                "afterTurns": 4,
+                "minimumEra": 4,
+                "text": {
+                  "tr": "İlk gümrük geliri kasaya girdi.",
+                  "en": "The first customs revenue entered the treasury."
+                },
+                "effect": {
+                  "stats": {
+                    "resources": 5
+                  },
+                  "flags": [],
+                  "technologies": [],
+                  "buildings": [],
+                  "rivalRelation": 0
+                }
+              }
+            ],
+            "animationPreset": "normal"
+          }
+        ]
+      },
+      {
+        "id": "farm",
+        "text": {
+          "tr": "Gümrüğü mültezime kirala.",
+          "en": "Lease the customs to a tax farmer."
+        },
+        "risk": {
+          "tr": "Sonucu öngörülebilir",
+          "en": "Predictable outcome"
+        },
+        "requirements": [],
+        "immediateEffects": {
+          "stats": {},
+          "flags": [],
+          "technologies": [],
+          "buildings": [],
+          "rivalRelation": 0
+        },
+        "outcomes": [
+          {
+            "id": "result",
+            "probability": 1,
+            "affinity": null,
+            "text": {
+              "tr": "Mültezim peşin ödedi. Mavnacılar her yük için pazarlık etmek zorunda kaldı.",
+              "en": "The tax farmer paid in advance. Boatmen had to haggle over every cargo."
+            },
+            "effect": {
+              "stats": {
+                "resources": 6,
+                "authority": 2,
+                "stability": -5
+              },
+              "flags": [
+                "river_customs_farmed"
+              ],
+              "technologies": [],
+              "buildings": [],
+              "rivalRelation": 0,
+              "removeFlags": [
+                "river_customs_public"
+              ]
+            },
+            "delayedEffects": [
+              {
+                "afterTurns": 5,
+                "minimumEra": 4,
+                "text": {
+                  "tr": "Mültezimin baskısından kaçan mavnalar başka nehir koluna döndü.",
+                  "en": "Barges fleeing the farmer’s squeeze turned to another branch of the river."
+                },
+                "effect": {
+                  "stats": {
+                    "resources": -3,
+                    "stability": -2
+                  },
+                  "flags": [],
+                  "technologies": [],
+                  "buildings": [],
+                  "rivalRelation": 0
+                }
+              }
+            ],
+            "animationPreset": "normal"
+          }
+        ]
+      },
+      {
+        "id": "waive",
+        "text": {
+          "tr": "Gümrük alma; nehir ticaretini serbest bırak.",
+          "en": "Levy no customs and leave river trade free."
+        },
+        "risk": {
+          "tr": "Sonucu öngörülebilir",
+          "en": "Predictable outcome"
+        },
+        "requirements": [],
+        "immediateEffects": {
+          "stats": {},
+          "flags": [],
+          "technologies": [],
+          "buildings": [],
+          "rivalRelation": 0
+        },
+        "outcomes": [
+          {
+            "id": "result",
+            "probability": 1,
+            "affinity": null,
+            "text": {
+              "tr": "Mavnalar durmadan geçti. Valilik, kasabanın payını vermediğini kaydetti.",
+              "en": "Barges passed without stopping. The governorate recorded that the town had withheld its share."
+            },
+            "effect": {
+              "stats": {
+                "authority": -4,
+                "stability": 2,
+                "knowledge": -1
+              },
+              "flags": [],
+              "technologies": [],
+              "buildings": [],
+              "rivalRelation": 0
+            },
+            "delayedEffects": [],
+            "animationPreset": "normal"
+          }
+        ]
+      },
+      {
+        "id": "quay",
+        "text": {
+          "tr": "Rıhtım hesabının kayıt usulünü gümrüğe uygula.",
+          "en": "Apply the quay account’s recording method to the customs."
+        },
+        "risk": {
+          "tr": "Sonucu öngörülebilir",
+          "en": "Predictable outcome"
+        },
+        "requirements": [
+          {
+            "flag": "quay_public_account"
+          },
+          {
+            "stat": "resources",
+            "minimum": 4
+          }
+        ],
+        "immediateEffects": {
+          "stats": {},
+          "flags": [],
+          "technologies": [],
+          "buildings": [],
+          "rivalRelation": 0
+        },
+        "outcomes": [
+          {
+            "id": "result",
+            "probability": 1,
+            "affinity": null,
+            "text": {
+              "tr": "Rıhtım kâtipleri gümrük defterini aynı usulle açtı. Kurulum ucuzladı; yeni bir hak doğmadı.",
+              "en": "Quay clerks opened the customs ledger with the same method. Setup was cheaper; no new privilege arose."
+            },
+            "effect": {
+              "stats": {
+                "resources": -4,
+                "knowledge": 4,
+                "stability": 4
+              },
+              "flags": [
+                "river_customs_public"
+              ],
+              "technologies": [],
+              "buildings": [],
+              "rivalRelation": 0,
+              "removeFlags": [
+                "river_customs_farmed"
+              ]
+            },
+            "delayedEffects": [
+              {
+                "afterTurns": 4,
+                "minimumEra": 4,
+                "text": {
+                  "tr": "Gümrük geliri kurulum masrafını karşıladı.",
+                  "en": "Customs revenue covered the setup cost."
+                },
+                "effect": {
+                  "stats": {
+                    "resources": 4
+                  },
+                  "flags": [],
+                  "technologies": [],
+                  "buildings": [],
+                  "rivalRelation": 0
+                }
+              }
+            ],
+            "animationPreset": "normal"
+          }
+        ]
+      }
+    ],
+    "worldFlags": [
+      "river_customs_public",
+      "river_customs_farmed"
+    ],
+    "storyChainId": null,
+    "animationPreset": "normal",
+    "soundCue": "decision",
+    "cooldown": 4,
+    "localizationKeys": [
+      "card.river_customs.title",
+      "card.river_customs.description"
+    ],
+    "eraRole": "recurring"
+  },
+  {
+    "id": "irrigation_court",
+    "era": 4,
+    "category": "water",
+    "title": {
+      "tr": "Sulama Mahkemesi",
+      "en": "The Irrigation Court"
+    },
+    "description": {
+      "tr": "Kurak bir yazda yukarı köyler su arkını erken kapattı; aşağıdaki tarlalar çatladı. İki taraf valilik mahkemesine geldi. Yargıç su saatlerini yeniden bölebilir, ama ölçüm, tanık ve bekçi ücretli.",
+      "en": "In a dry summer the upper villages closed the channel early and the lower fields cracked. Both sides came to the governorate court. The judge can redivide the water hours, but measuring, witnesses and watchmen must be paid."
+    },
+    "artAsset": "card_irrigation_court",
+    "artDirection": "Fictional composite ancient empire, cut limestone and marble, wax tablets and papyrus rolls, bronze and iron hand tools, wool tunics and cloaks, no stirrups, no paper books, no gunpowder; ivory, gold and dusty terracotta palette, portrait composition. Open-air court beside an irrigation sluice, judge on a stone bench, farmers from upper and lower villages with clay water-hour tablets, cracked fields beyond, white summer glare.",
+    "rarity": "common",
+    "weight": 10,
+    "requirements": [],
+    "exclusionConditions": [],
+    "choices": [
+      {
+        "id": "hours",
+        "text": {
+          "tr": "Su saatlerini mahkemede yeniden böl; ark bekçisi tut.",
+          "en": "Redivide the water hours in court and hire a channel watchman."
+        },
+        "risk": {
+          "tr": "Sonucu öngörülebilir",
+          "en": "Predictable outcome"
+        },
+        "requirements": [
+          {
+            "stat": "resources",
+            "minimum": 7
+          }
+        ],
+        "immediateEffects": {
+          "stats": {},
+          "flags": [],
+          "technologies": [],
+          "buildings": [],
+          "rivalRelation": 0
+        },
+        "outcomes": [
+          {
+            "id": "result",
+            "probability": 1,
+            "affinity": null,
+            "text": {
+              "tr": "Saatler taş levhaya kazındı. Bekçi ücretini aldı; aşağı tarlalar yeniden sulandı.",
+              "en": "The hours were carved on a stone tablet. The watchman was paid; the lower fields were watered again."
+            },
+            "effect": {
+              "stats": {
+                "resources": -7,
+                "environment": 3,
+                "stability": 5,
+                "knowledge": 2
+              },
+              "flags": [],
+              "technologies": [],
+              "buildings": [],
+              "rivalRelation": 0
+            },
+            "delayedEffects": [],
+            "animationPreset": "normal"
+          }
+        ]
+      },
+      {
+        "id": "upstream",
+        "text": {
+          "tr": "Yukarı köylerin eski önceliğini onayla.",
+          "en": "Confirm the upper villages’ old priority."
+        },
+        "risk": {
+          "tr": "Sonucu öngörülebilir",
+          "en": "Predictable outcome"
+        },
+        "requirements": [],
+        "immediateEffects": {
+          "stats": {},
+          "flags": [],
+          "technologies": [],
+          "buildings": [],
+          "rivalRelation": 0
+        },
+        "outcomes": [
+          {
+            "id": "result",
+            "probability": 1,
+            "affinity": null,
+            "text": {
+              "tr": "Yukarı köyler kazandı. Aşağıdaki aileler hasat beklemeden şehre indi.",
+              "en": "The upper villages won. Lower families went down to the city without waiting for harvest."
+            },
+            "effect": {
+              "stats": {
+                "authority": 3,
+                "stability": -6,
+                "population": -2
+              },
+              "flags": [],
+              "technologies": [],
+              "buildings": [],
+              "rivalRelation": 0
+            },
+            "delayedEffects": [],
+            "animationPreset": "normal"
+          }
+        ]
+      },
+      {
+        "id": "levy",
+        "text": {
+          "tr": "Ortak su vergisi kaydını delil say.",
+          "en": "Accept the shared water-levy record as evidence."
+        },
+        "risk": {
+          "tr": "Sonucu öngörülebilir",
+          "en": "Predictable outcome"
+        },
+        "requirements": [
+          {
+            "flag": "provincial_water_levy_shared"
+          },
+          {
+            "stat": "resources",
+            "minimum": 4
+          }
+        ],
+        "immediateEffects": {
+          "stats": {},
+          "flags": [],
+          "technologies": [],
+          "buildings": [],
+          "rivalRelation": 0
+        },
+        "outcomes": [
+          {
+            "id": "result",
+            "probability": 1,
+            "affinity": null,
+            "text": {
+              "tr": "Vergiyi birlikte ödeyenler suyu da birlikte aldı. Karar emsal olarak yazıldı.",
+              "en": "Those who paid the levy together received the water together. The ruling was written as precedent."
+            },
+            "effect": {
+              "stats": {
+                "resources": -4,
+                "stability": 6,
+                "environment": 3
+              },
+              "flags": [
+                "lawful_review_precedent"
+              ],
+              "technologies": [],
+              "buildings": [],
+              "rivalRelation": 0
+            },
+            "delayedEffects": [],
+            "animationPreset": "normal"
+          }
+        ]
+      },
+      {
+        "id": "compact",
+        "text": {
+          "tr": "Eski su günleri anlaşmasını emsal göster.",
+          "en": "Cite the old water-day compact as precedent."
+        },
+        "risk": {
+          "tr": "Sonucu öngörülebilir",
+          "en": "Predictable outcome"
+        },
+        "requirements": [
+          {
+            "flag": "water_compact"
+          },
+          {
+            "stat": "resources",
+            "minimum": 3
+          }
+        ],
+        "immediateEffects": {
+          "stats": {},
+          "flags": [],
+          "technologies": [],
+          "buildings": [],
+          "rivalRelation": 0
+        },
+        "outcomes": [
+          {
+            "id": "result",
+            "probability": 1,
+            "affinity": null,
+            "text": {
+              "tr": "Eski anlaşma okundu. Duruşma kısaldı; bekçi yine ücretle tutuldu.",
+              "en": "The old compact was read. The hearing was shorter; the watchman was still hired for a wage."
+            },
+            "effect": {
+              "stats": {
+                "resources": -3,
+                "stability": 7,
+                "knowledge": 3
+              },
+              "flags": [],
+              "technologies": [],
+              "buildings": [],
+              "rivalRelation": 0
+            },
+            "delayedEffects": [],
+            "animationPreset": "normal"
+          }
+        ]
+      }
+    ],
+    "worldFlags": [
+      "lawful_review_precedent"
+    ],
+    "storyChainId": null,
+    "animationPreset": "normal",
+    "soundCue": "decision",
+    "cooldown": 4,
+    "localizationKeys": [
+      "card.irrigation_court.title",
+      "card.irrigation_court.description"
+    ],
+    "eraRole": "recurring"
+  },
+  {
+    "id": "quarry_collapse",
+    "era": 4,
+    "category": "production",
+    "title": {
+      "tr": "Taş Ocağında Göçük",
+      "en": "Collapse at the Quarry"
+    },
+    "description": {
+      "tr": "Su kemeri ve yol için taş kesilen ocakta bir galeri çöktü; iki işçi yaralandı. Ocak kâhyası kazıya hemen devam etmek istiyor. İşçiler destek kirişi, su pompası ve yaralılar için tazminat bekliyor.",
+      "en": "A gallery collapsed in the quarry cutting stone for the aqueduct and road; two workers were injured. The quarry steward wants to resume at once. The workers expect timber props, a water lift and compensation for the injured."
+    },
+    "artAsset": "card_quarry_collapse",
+    "artDirection": "Fictional composite ancient empire, cut limestone and marble, wax tablets and papyrus rolls, bronze and iron hand tools, wool tunics and cloaks, no stirrups, no paper books, no gunpowder; ivory, gold and dusty terracotta palette, portrait composition. Limestone quarry face with a collapsed gallery, workers carrying an injured man on a plank, timber props stacked nearby, steward with tally stick, choking pale dust.",
+    "rarity": "common",
+    "weight": 10,
+    "requirements": [],
+    "exclusionConditions": [],
+    "choices": [
+      {
+        "id": "props",
+        "text": {
+          "tr": "Destek kirişi ve tazminat öde; kazıyı yavaşlat.",
+          "en": "Pay for props and compensation and slow the cutting."
+        },
+        "risk": {
+          "tr": "Sonucu öngörülebilir",
+          "en": "Predictable outcome"
+        },
+        "requirements": [
+          {
+            "stat": "resources",
+            "minimum": 8
+          }
+        ],
+        "immediateEffects": {
+          "stats": {},
+          "flags": [],
+          "technologies": [],
+          "buildings": [],
+          "rivalRelation": 0
+        },
+        "outcomes": [
+          {
+            "id": "result",
+            "probability": 1,
+            "affinity": null,
+            "text": {
+              "tr": "Kirişler yerine çakıldı. Yaralıların ailesi tazminatını aldı; taş daha yavaş geldi.",
+              "en": "The props were wedged in place. The injured men’s families were compensated; stone came more slowly."
+            },
+            "effect": {
+              "stats": {
+                "resources": -8,
+                "stability": 5,
+                "environment": -2
+              },
+              "flags": [
+                "quarry_safety_rule"
+              ],
+              "technologies": [],
+              "buildings": [],
+              "rivalRelation": 0
+            },
+            "delayedEffects": [],
+            "animationPreset": "normal"
+          }
+        ]
+      },
+      {
+        "id": "push",
+        "text": {
+          "tr": "Kazıya devam et; yaralıları ailelerine gönder.",
+          "en": "Keep cutting and send the injured home to their families."
+        },
+        "risk": {
+          "tr": "Sonucu öngörülebilir",
+          "en": "Predictable outcome"
+        },
+        "requirements": [],
+        "immediateEffects": {
+          "stats": {},
+          "flags": [],
+          "technologies": [],
+          "buildings": [],
+          "rivalRelation": 0
+        },
+        "outcomes": [
+          {
+            "id": "result",
+            "probability": 1,
+            "affinity": null,
+            "text": {
+              "tr": "Taş zamanında çıktı. İşçiler ertesi sabah ocağa yarım ekiple geldi.",
+              "en": "The stone came out on time. The next morning the workers came to the quarry at half strength."
+            },
+            "effect": {
+              "stats": {
+                "resources": 4,
+                "population": -2,
+                "stability": -6
+              },
+              "flags": [
+                "recorded_provincial_dissent"
+              ],
+              "technologies": [],
+              "buildings": [],
+              "rivalRelation": 0,
+              "rivalRelations": {
+                "keepers": -4
+              }
+            },
+            "delayedEffects": [],
+            "animationPreset": "normal"
+          }
+        ]
+      },
+      {
+        "id": "close",
+        "text": {
+          "tr": "Galeriyi kapat; taşı uzaktaki ocaktan taşı.",
+          "en": "Close the gallery and haul stone from a distant quarry."
+        },
+        "risk": {
+          "tr": "Sonucu öngörülebilir",
+          "en": "Predictable outcome"
+        },
+        "requirements": [
+          {
+            "stat": "resources",
+            "minimum": 5
+          }
+        ],
+        "immediateEffects": {
+          "stats": {},
+          "flags": [],
+          "technologies": [],
+          "buildings": [],
+          "rivalRelation": 0
+        },
+        "outcomes": [
+          {
+            "id": "result",
+            "probability": 1,
+            "affinity": null,
+            "text": {
+              "tr": "Galeri mühürlendi. Uzak ocağın taşı pahalı ama sağlamdı.",
+              "en": "The gallery was sealed. Stone from the distant quarry was costly but sound."
+            },
+            "effect": {
+              "stats": {
+                "resources": -5,
+                "authority": -2,
+                "environment": 3
+              },
+              "flags": [],
+              "technologies": [],
+              "buildings": [],
+              "rivalRelation": 0
+            },
+            "delayedEffects": [
+              {
+                "afterTurns": 4,
+                "minimumEra": 4,
+                "text": {
+                  "tr": "Uzak ocaktan gelen taşın taşıma bedeli ödendi.",
+                  "en": "The haulage for stone from the distant quarry was paid."
+                },
+                "effect": {
+                  "stats": {
+                    "resources": -3
+                  },
+                  "flags": [],
+                  "technologies": [],
+                  "buildings": [],
+                  "rivalRelation": 0
+                }
+              }
+            ],
+            "animationPreset": "normal"
+          }
+        ]
+      },
+      {
+        "id": "care",
+        "text": {
+          "tr": "Mahalle bakım hesabıyla yaralılara bakım ve tazminat düzenle.",
+          "en": "Use the ward care account to arrange care and compensation."
+        },
+        "risk": {
+          "tr": "Sonucu öngörülebilir",
+          "en": "Predictable outcome"
+        },
+        "requirements": [
+          {
+            "flag": "public_care_settlement"
+          },
+          {
+            "stat": "resources",
+            "minimum": 4
+          }
+        ],
+        "immediateEffects": {
+          "stats": {},
+          "flags": [],
+          "technologies": [],
+          "buildings": [],
+          "rivalRelation": 0
+        },
+        "outcomes": [
+          {
+            "id": "result",
+            "probability": 1,
+            "affinity": null,
+            "text": {
+              "tr": "Bakımcılar yaralıları kayıtlı sırayla gördü. Tazminat ödendi; kazı bir hafta durdu.",
+              "en": "Carers saw the injured in their recorded order. Compensation was paid; cutting paused for a week."
+            },
+            "effect": {
+              "stats": {
+                "resources": -4,
+                "stability": 6,
+                "population": 1
+              },
+              "flags": [
+                "quarry_safety_rule"
+              ],
+              "technologies": [],
+              "buildings": [],
+              "rivalRelation": 0
+            },
+            "delayedEffects": [],
+            "animationPreset": "normal"
+          }
+        ]
+      }
+    ],
+    "worldFlags": [
+      "quarry_safety_rule",
+      "recorded_provincial_dissent"
+    ],
+    "storyChainId": null,
+    "animationPreset": "normal",
+    "soundCue": "decision",
+    "cooldown": 4,
+    "localizationKeys": [
+      "card.quarry_collapse.title",
+      "card.quarry_collapse.description"
+    ],
+    "eraRole": "recurring"
+  },
+  {
+    "id": "coin_assay",
+    "era": 4,
+    "category": "law",
+    "title": {
+      "tr": "Sikkenin Ayarı",
+      "en": "The Weight of the Coin"
+    },
+    "description": {
+      "tr": "Pazarda gümüşü az, bakırı çok sikkeler dolaşıyor. Darphane ustası ayarı düşürmenin kasayı rahatlatacağını söylüyor. Tüccarlar ise sahte paranın kimin damgasıyla basıldığının bulunmasını istiyor.",
+      "en": "Coins thin in silver and heavy in copper circulate in the market. The mint master says lowering the standard would ease the treasury. Merchants want to know whose die struck the false money."
+    },
+    "artAsset": "card_coin_assay",
+    "artDirection": "Fictional composite ancient empire, cut limestone and marble, wax tablets and papyrus rolls, bronze and iron hand tools, wool tunics and cloaks, no stirrups, no paper books, no gunpowder; ivory, gold and dusty terracotta palette, portrait composition. Small provincial mint with anvil and coin dies, assayer cutting a suspect coin on a touchstone, merchants leaning over a table of silver and copper pieces, lamp and furnace light.",
+    "rarity": "common",
+    "weight": 10,
+    "requirements": [],
+    "exclusionConditions": [],
+    "choices": [
+      {
+        "id": "assay",
+        "text": {
+          "tr": "Sikkeleri tarttır; sahte damgayı bulmak için ayarcı tut.",
+          "en": "Weigh the coins and hire an assayer to trace the false die."
+        },
+        "risk": {
+          "tr": "Sonucu öngörülebilir",
+          "en": "Predictable outcome"
+        },
+        "requirements": [
+          {
+            "stat": "resources",
+            "minimum": 6
+          }
+        ],
+        "immediateEffects": {
+          "stats": {},
+          "flags": [],
+          "technologies": [],
+          "buildings": [],
+          "rivalRelation": 0
+        },
+        "outcomes": [
+          {
+            "id": "result",
+            "probability": 1,
+            "affinity": null,
+            "text": {
+              "tr": "Ayarcı sahte kalıbı bir kuyumcu atölyesinde buldu. Güven döndü; ücreti kasadan çıktı.",
+              "en": "The assayer found the false die in a goldsmith’s shop. Trust returned; his fee came from the treasury."
+            },
+            "effect": {
+              "stats": {
+                "resources": -6,
+                "knowledge": 4,
+                "stability": 4,
+                "authority": 2
+              },
+              "flags": [],
+              "technologies": [],
+              "buildings": [],
+              "rivalRelation": 0
+            },
+            "delayedEffects": [],
+            "animationPreset": "normal"
+          }
+        ]
+      },
+      {
+        "id": "debase",
+        "text": {
+          "tr": "Ayarı düşür; aynı gümüşten daha çok sikke bas.",
+          "en": "Lower the standard and strike more coins from the same silver."
+        },
+        "risk": {
+          "tr": "Sonucu öngörülebilir",
+          "en": "Predictable outcome"
+        },
+        "requirements": [
+          {
+            "absentFlag": "debased_coinage"
+          }
+        ],
+        "immediateEffects": {
+          "stats": {},
+          "flags": [],
+          "technologies": [],
+          "buildings": [],
+          "rivalRelation": 0
+        },
+        "outcomes": [
+          {
+            "id": "result",
+            "probability": 1,
+            "affinity": null,
+            "text": {
+              "tr": "Kasa sikkeyle doldu. Pazarda fiyat etiketleri aynı hafta yeniden yazıldı.",
+              "en": "The treasury filled with coin. Market prices were rewritten that same week."
+            },
+            "effect": {
+              "stats": {
+                "resources": 7,
+                "stability": -6,
+                "knowledge": -1
+              },
+              "flags": [
+                "debased_coinage"
+              ],
+              "technologies": [],
+              "buildings": [],
+              "rivalRelation": 0
+            },
+            "delayedEffects": [
+              {
+                "afterTurns": 5,
+                "minimumEra": 4,
+                "text": {
+                  "tr": "Fiyatlar yükseldi; garnizon ücretini eski ayarla istedi.",
+                  "en": "Prices rose; the garrison demanded its pay at the old standard."
+                },
+                "effect": {
+                  "stats": {
+                    "resources": -5,
+                    "stability": -3
+                  },
+                  "flags": [],
+                  "technologies": [],
+                  "buildings": [],
+                  "rivalRelation": 0
+                }
+              }
+            ],
+            "animationPreset": "normal"
+          }
+        ]
+      },
+      {
+        "id": "recoin",
+        "text": {
+          "tr": "Bozuk sikkeleri topla; tam ayarla yeniden bas.",
+          "en": "Call in the debased coins and reissue them at full standard."
+        },
+        "risk": {
+          "tr": "Sonucu öngörülebilir",
+          "en": "Predictable outcome"
+        },
+        "requirements": [
+          {
+            "flag": "debased_coinage"
+          },
+          {
+            "stat": "resources",
+            "minimum": 10
+          }
+        ],
+        "immediateEffects": {
+          "stats": {},
+          "flags": [],
+          "technologies": [],
+          "buildings": [],
+          "rivalRelation": 0
+        },
+        "outcomes": [
+          {
+            "id": "result",
+            "probability": 1,
+            "affinity": null,
+            "text": {
+              "tr": "Eski sikkeler eritildi. Gümüş açığı kasadan kapatıldı; pazar yeniden tartıyla güvendi.",
+              "en": "The old coins were melted. The silver shortfall was made good from the treasury; the market trusted the scales again."
+            },
+            "effect": {
+              "stats": {
+                "resources": -10,
+                "stability": 6,
+                "authority": 3
+              },
+              "flags": [],
+              "technologies": [],
+              "buildings": [],
+              "rivalRelation": 0,
+              "removeFlags": [
+                "debased_coinage"
+              ]
+            },
+            "delayedEffects": [],
+            "animationPreset": "normal"
+          }
+        ]
+      },
+      {
+        "id": "measure",
+        "text": {
+          "tr": "Ortak ölçü kabını sikke tartısına emsal yap.",
+          "en": "Make the common measure the precedent for weighing coin."
+        },
+        "risk": {
+          "tr": "Sonucu öngörülebilir",
+          "en": "Predictable outcome"
+        },
+        "requirements": [
+          {
+            "flag": "common_measure"
+          },
+          {
+            "stat": "resources",
+            "minimum": 4
+          }
+        ],
+        "immediateEffects": {
+          "stats": {},
+          "flags": [],
+          "technologies": [],
+          "buildings": [],
+          "rivalRelation": 0
+        },
+        "outcomes": [
+          {
+            "id": "result",
+            "probability": 1,
+            "affinity": null,
+            "text": {
+              "tr": "Ölçü kabının kuralı sikkeye uygulandı. Tartı ustası ücretini aldı; hileli sikke pazardan çekildi.",
+              "en": "The measure’s rule was applied to coin. The weigh master was paid; false coin was pulled from the market."
+            },
+            "effect": {
+              "stats": {
+                "resources": -4,
+                "knowledge": 5,
+                "stability": 5
+              },
+              "flags": [],
+              "technologies": [],
+              "buildings": [],
+              "rivalRelation": 0
+            },
+            "delayedEffects": [],
+            "animationPreset": "normal"
+          }
+        ]
+      }
+    ],
+    "worldFlags": [
+      "debased_coinage"
+    ],
+    "storyChainId": null,
+    "animationPreset": "normal",
+    "soundCue": "decision",
+    "cooldown": 4,
+    "localizationKeys": [
+      "card.coin_assay.title",
+      "card.coin_assay.description"
+    ],
+    "eraRole": "recurring"
+  },
+  {
+    "id": "governor_petition",
+    "era": 4,
+    "category": "province",
+    "title": {
+      "tr": "Valiye Karşı Dilekçe",
+      "en": "A Petition Against the Governor"
+    },
+    "description": {
+      "tr": "Kasabanın itiraz kayıtları tek bir dilekçede toplandı: zorla alınan tahıl, sayılmayan emek, tanınmayan berat. Dilekçe imparatorluk müfettişine gidebilir. Vali ise dilekçe sahiplerinin adlarını istiyor.",
+      "en": "The town’s recorded objections were gathered into a single petition: grain taken by force, labor left uncounted, charters ignored. The petition could go to the imperial inspector. The governor wants the petitioners’ names."
+    },
+    "artAsset": "card_governor_petition",
+    "artDirection": "Fictional composite ancient empire, cut limestone and marble, wax tablets and papyrus rolls, bronze and iron hand tools, wool tunics and cloaks, no stirrups, no paper books, no gunpowder; ivory, gold and dusty terracotta palette, portrait composition. Ward representatives sealing a long papyrus petition in a dim colonnade, governor’s messenger waiting at the steps, wax seals and a courier’s satchel, cool evening shadows.",
+    "rarity": "common",
+    "weight": 10,
+    "requirements": [
+      {
+        "flag": "recorded_provincial_dissent"
+      }
+    ],
+    "exclusionConditions": [],
+    "choices": [
+      {
+        "id": "inspector",
+        "text": {
+          "tr": "Dilekçeyi ücretli bir haberciyle müfettişe gönder.",
+          "en": "Send the petition to the inspector with a paid courier."
+        },
+        "risk": {
+          "tr": "Sonucu öngörülebilir",
+          "en": "Predictable outcome"
+        },
+        "requirements": [
+          {
+            "stat": "resources",
+            "minimum": 6
+          }
+        ],
+        "immediateEffects": {
+          "stats": {},
+          "flags": [],
+          "technologies": [],
+          "buildings": [],
+          "rivalRelation": 0
+        },
+        "outcomes": [
+          {
+            "id": "result",
+            "probability": 1,
+            "affinity": null,
+            "text": {
+              "tr": "Müfettiş dilekçeyi kabul etti ve duruşma tarihi verdi. Vali kasabaya soğuk davrandı.",
+              "en": "The inspector accepted the petition and set a hearing date. The governor turned cold toward the town."
+            },
+            "effect": {
+              "stats": {
+                "resources": -6,
+                "stability": 6,
+                "authority": -4,
+                "knowledge": 2
+              },
+              "flags": [
+                "lawful_review_precedent",
+                "governor_petition_heard"
+              ],
+              "technologies": [],
+              "buildings": [],
+              "rivalRelation": 0
+            },
+            "delayedEffects": [],
+            "animationPreset": "normal"
+          }
+        ]
+      },
+      {
+        "id": "names",
+        "text": {
+          "tr": "Valiye adları ver; dilekçeyi geri çek.",
+          "en": "Give the governor the names and withdraw the petition."
+        },
+        "risk": {
+          "tr": "Sonucu öngörülebilir",
+          "en": "Predictable outcome"
+        },
+        "requirements": [],
+        "immediateEffects": {
+          "stats": {},
+          "flags": [],
+          "technologies": [],
+          "buildings": [],
+          "rivalRelation": 0
+        },
+        "outcomes": [
+          {
+            "id": "result",
+            "probability": 1,
+            "affinity": null,
+            "text": {
+              "tr": "Vali memnun kaldı. Dilekçeyi imzalayanlar kapıda sorgulandı; itiraz kayıtları yerinde duruyor.",
+              "en": "The governor was satisfied. The signatories were questioned at the gate; the records of objection still stand."
+            },
+            "effect": {
+              "stats": {
+                "authority": 4,
+                "stability": -9
+              },
+              "flags": [],
+              "technologies": [],
+              "buildings": [],
+              "rivalRelation": 0,
+              "rivalRelations": {
+                "keepers": -6
+              }
+            },
+            "delayedEffects": [],
+            "animationPreset": "normal"
+          }
+        ]
+      },
+      {
+        "id": "mediate",
+        "text": {
+          "tr": "Valiyle mahalle temsilcilerini ortak bir duruşmada yüzleştir.",
+          "en": "Bring the governor and ward representatives to a joint hearing."
+        },
+        "risk": {
+          "tr": "Sonucu öngörülebilir",
+          "en": "Predictable outcome"
+        },
+        "requirements": [
+          {
+            "stat": "resources",
+            "minimum": 4
+          }
+        ],
+        "immediateEffects": {
+          "stats": {},
+          "flags": [],
+          "technologies": [],
+          "buildings": [],
+          "rivalRelation": 0
+        },
+        "outcomes": [
+          {
+            "id": "result",
+            "probability": 1,
+            "affinity": null,
+            "text": {
+              "tr": "Duruşma uzun ve masraflıydı. İki taraf da kendi defterini masaya koydu.",
+              "en": "The hearing was long and costly. Both sides laid their ledgers on the table."
+            },
+            "effect": {
+              "stats": {
+                "resources": -4,
+                "stability": 4,
+                "authority": -1,
+                "knowledge": 2
+              },
+              "flags": [],
+              "technologies": [],
+              "buildings": [],
+              "rivalRelation": 0
+            },
+            "delayedEffects": [],
+            "animationPreset": "normal"
+          }
+        ]
+      },
+      {
+        "id": "precedent",
+        "text": {
+          "tr": "Önceki duruşma emsalini göster; dilekçeyi hızlı yola al.",
+          "en": "Cite the earlier hearing’s precedent and put the petition on the quick track."
+        },
+        "risk": {
+          "tr": "Sonucu öngörülebilir",
+          "en": "Predictable outcome"
+        },
+        "requirements": [
+          {
+            "flag": "lawful_review_precedent"
+          },
+          {
+            "stat": "resources",
+            "minimum": 3
+          }
+        ],
+        "immediateEffects": {
+          "stats": {},
+          "flags": [],
+          "technologies": [],
+          "buildings": [],
+          "rivalRelation": 0
+        },
+        "outcomes": [
+          {
+            "id": "result",
+            "probability": 1,
+            "affinity": null,
+            "text": {
+              "tr": "Emsal sayesinde dilekçe sıraya girmeden okundu. Kâtip ücreti yine ödendi.",
+              "en": "Thanks to the precedent the petition was read without waiting its turn. The clerk’s fee was still paid."
+            },
+            "effect": {
+              "stats": {
+                "resources": -3,
+                "stability": 7,
+                "knowledge": 2
+              },
+              "flags": [
+                "governor_petition_heard"
+              ],
+              "technologies": [],
+              "buildings": [],
+              "rivalRelation": 0
+            },
+            "delayedEffects": [],
+            "animationPreset": "normal"
+          }
+        ]
+      }
+    ],
+    "worldFlags": [
+      "lawful_review_precedent",
+      "governor_petition_heard"
+    ],
+    "storyChainId": null,
+    "animationPreset": "normal",
+    "soundCue": "decision",
+    "cooldown": 4,
+    "localizationKeys": [
+      "card.governor_petition.title",
+      "card.governor_petition.description"
+    ],
+    "eraRole": "recurring"
+  },
+  {
+    "id": "customs_house_ledger",
+    "era": 4,
+    "category": "legacy",
+    "title": {
+      "tr": "Rıhtımdan Gümrük Evine",
+      "en": "From Quay to Customs House"
+    },
+    "description": {
+      "tr": "Eski rıhtım vergisi artık bir imparatorluk gümrük evine dönüşüyor. Rıhtım hesabını tutan kâtipler aynı defterin gümrükte de açık tutulmasını istiyor. Valilik ise yeni bir mültezim getirmeyi düşünüyor.",
+      "en": "The old quay levy is becoming an imperial customs house. The clerks who kept the quay account want the same ledger kept open at customs. The governorate is considering bringing in a new tax farmer."
+    },
+    "artAsset": "card_customs_house_ledger",
+    "artDirection": "Fictional composite ancient empire, cut limestone and marble, wax tablets and papyrus rolls, bronze and iron hand tools, wool tunics and cloaks, no stirrups, no paper books, no gunpowder; ivory, gold and dusty terracotta palette, portrait composition. New customs house with a marble threshold beside an older wooden quay, quay clerks carrying clay tablets into the hall, tax farmer with sealed bid, morning mist on the river.",
+    "rarity": "uncommon",
+    "weight": 10,
+    "requirements": [
+      {
+        "completedCard": "quay_levy"
+      }
+    ],
+    "exclusionConditions": [
+      {
+        "flag": "resolved_customs_house_ledger"
+      }
+    ],
+    "choices": [
+      {
+        "id": "account",
+        "text": {
+          "tr": "Rıhtım hesabını gümrük defterine taşı; kâtiplere öde.",
+          "en": "Carry the quay account into the customs ledger and pay the clerks."
+        },
+        "risk": {
+          "tr": "Sonucu öngörülebilir",
+          "en": "Predictable outcome"
+        },
+        "requirements": [
+          {
+            "flag": "quay_public_account"
+          },
+          {
+            "stat": "resources",
+            "minimum": 5
+          }
+        ],
+        "immediateEffects": {
+          "stats": {},
+          "flags": [],
+          "technologies": [],
+          "buildings": [],
+          "rivalRelation": 0
+        },
+        "outcomes": [
+          {
+            "id": "result",
+            "probability": 1,
+            "affinity": null,
+            "text": {
+              "tr": "Eski hesap gümrük defterinin ilk sayfası oldu. Kâtipler ücretini aldı; her yük görünür kaldı.",
+              "en": "The old account became the first page of the customs ledger. The clerks were paid; every cargo stayed visible."
+            },
+            "effect": {
+              "stats": {
+                "resources": -5,
+                "knowledge": 4,
+                "stability": 5
+              },
+              "flags": [
+                "river_customs_public",
+                "resolved_customs_house_ledger"
+              ],
+              "technologies": [],
+              "buildings": [],
+              "rivalRelation": 0,
+              "removeFlags": [
+                "river_customs_farmed"
+              ]
+            },
+            "delayedEffects": [],
+            "animationPreset": "normal"
+          }
+        ]
+      },
+      {
+        "id": "clerks",
+        "text": {
+          "tr": "Yeni kamu kâtipleri ata; eski kaydı yalnız danış.",
+          "en": "Appoint new public clerks and consult the old record only."
+        },
+        "risk": {
+          "tr": "Sonucu öngörülebilir",
+          "en": "Predictable outcome"
+        },
+        "requirements": [
+          {
+            "stat": "resources",
+            "minimum": 7
+          }
+        ],
+        "immediateEffects": {
+          "stats": {},
+          "flags": [],
+          "technologies": [],
+          "buildings": [],
+          "rivalRelation": 0
+        },
+        "outcomes": [
+          {
+            "id": "result",
+            "probability": 1,
+            "affinity": null,
+            "text": {
+              "tr": "Yeni kâtipler deftere baştan başladı. Kurulum pahalıydı ama gümrük kamuda kaldı.",
+              "en": "The new clerks started the ledger afresh. Setup was costly, but customs stayed public."
+            },
+            "effect": {
+              "stats": {
+                "resources": -7,
+                "knowledge": 3,
+                "stability": 3
+              },
+              "flags": [
+                "river_customs_public",
+                "resolved_customs_house_ledger"
+              ],
+              "technologies": [],
+              "buildings": [],
+              "rivalRelation": 0,
+              "removeFlags": [
+                "river_customs_farmed"
+              ]
+            },
+            "delayedEffects": [],
+            "animationPreset": "normal"
+          }
+        ]
+      },
+      {
+        "id": "farm",
+        "text": {
+          "tr": "Gümrüğü mültezime kirala; rıhtım hesabı kentte kalsın.",
+          "en": "Lease the customs to a tax farmer and leave the quay account in the city."
+        },
+        "risk": {
+          "tr": "Sonucu öngörülebilir",
+          "en": "Predictable outcome"
+        },
+        "requirements": [],
+        "immediateEffects": {
+          "stats": {},
+          "flags": [],
+          "technologies": [],
+          "buildings": [],
+          "rivalRelation": 0
+        },
+        "outcomes": [
+          {
+            "id": "result",
+            "probability": 1,
+            "affinity": null,
+            "text": {
+              "tr": "Mültezim peşin ödedi. Rıhtım kâtipleri eski defteri kent arşivine kaldırdı.",
+              "en": "The tax farmer paid in advance. The quay clerks moved the old ledger to the city archive."
+            },
+            "effect": {
+              "stats": {
+                "resources": 5,
+                "authority": 2,
+                "stability": -5
+              },
+              "flags": [
+                "river_customs_farmed",
+                "resolved_customs_house_ledger"
+              ],
+              "technologies": [],
+              "buildings": [],
+              "rivalRelation": 0,
+              "removeFlags": [
+                "river_customs_public"
+              ]
+            },
+            "delayedEffects": [],
+            "animationPreset": "normal"
+          }
+        ]
+      }
+    ],
+    "worldFlags": [
+      "river_customs_public",
+      "resolved_customs_house_ledger",
+      "river_customs_farmed"
+    ],
+    "storyChainId": "river_memory",
+    "animationPreset": "normal",
+    "soundCue": "decision",
+    "cooldown": 4,
+    "localizationKeys": [
+      "card.customs_house_ledger.title",
+      "card.customs_house_ledger.description"
+    ],
+    "eraRole": "bridge"
+  },
+  {
+    "id": "harbor_ward_roll",
+    "era": 4,
+    "category": "legacy",
+    "title": {
+      "tr": "Liman Mahallesinin Vatandaşları",
+      "en": "Citizens of the Harbor Ward"
+    },
+    "description": {
+      "tr": "Liman mahallesinde doğan çocuklar eyalet vatandaşlık defterine yazılmak istiyor. Eski liman ikamet kaydı kimin hangi mevsim kaldığını gösteriyor. Valilik mevsimlik kampları vatandaş saymak istemiyor.",
+      "en": "Children born in the harbor ward want to be entered in the provincial citizens’ roll. The old harbor residency record shows who stayed in which season. The governorate does not want to count the seasonal camps as citizens."
+    },
+    "artAsset": "card_harbor_ward_roll",
+    "artDirection": "Fictional composite ancient empire, cut limestone and marble, wax tablets and papyrus rolls, bronze and iron hand tools, wool tunics and cloaks, no stirrups, no paper books, no gunpowder; ivory, gold and dusty terracotta palette, portrait composition. Harbor ward street with fishing nets and storehouses, families presenting household tokens to a provincial registrar, old residency tablets on a crate, gulls and salt light.",
+    "rarity": "uncommon",
+    "weight": 10,
+    "requirements": [
+      {
+        "completedCard": "harbor_residency"
+      }
+    ],
+    "exclusionConditions": [
+      {
+        "flag": "resolved_harbor_ward_roll"
+      }
+    ],
+    "choices": [
+      {
+        "id": "ward",
+        "text": {
+          "tr": "Kalıcı mahalle kaydını vatandaşlık duruşmasında delil say.",
+          "en": "Accept the permanent ward record as evidence in a citizenship hearing."
+        },
+        "risk": {
+          "tr": "Sonucu öngörülebilir",
+          "en": "Predictable outcome"
+        },
+        "requirements": [
+          {
+            "flag": "harbor_resident_ward"
+          },
+          {
+            "stat": "resources",
+            "minimum": 5
+          }
+        ],
+        "immediateEffects": {
+          "stats": {},
+          "flags": [],
+          "technologies": [],
+          "buildings": [],
+          "rivalRelation": 0
+        },
+        "outcomes": [
+          {
+            "id": "result",
+            "probability": 1,
+            "affinity": null,
+            "text": {
+              "tr": "Kayıt okundu ve aileler deftere yazıldı. Tanık ücretleri ödendi; vergi de birlikte geldi.",
+              "en": "The record was read and the families entered the roll. Witness fees were paid; taxes came with it."
+            },
+            "effect": {
+              "stats": {
+                "resources": -5,
+                "stability": 7,
+                "population": 3,
+                "knowledge": 2
+              },
+              "flags": [
+                "provincial_residency_hearing",
+                "resolved_harbor_ward_roll"
+              ],
+              "technologies": [],
+              "buildings": [],
+              "rivalRelation": 0,
+              "removeFlags": [
+                "restricted_provincial_residency"
+              ]
+            },
+            "delayedEffects": [],
+            "animationPreset": "normal"
+          }
+        ]
+      },
+      {
+        "id": "gate",
+        "text": {
+          "tr": "Eski kent kapısı vatandaşlığını limana da uygula.",
+          "en": "Extend the old city-gate citizenship to the harbor."
+        },
+        "risk": {
+          "tr": "Sonucu öngörülebilir",
+          "en": "Predictable outcome"
+        },
+        "requirements": [
+          {
+            "flag": "guest_citizenship"
+          },
+          {
+            "stat": "resources",
+            "minimum": 4
+          }
+        ],
+        "immediateEffects": {
+          "stats": {},
+          "flags": [],
+          "technologies": [],
+          "buildings": [],
+          "rivalRelation": 0
+        },
+        "outcomes": [
+          {
+            "id": "result",
+            "probability": 1,
+            "affinity": null,
+            "text": {
+              "tr": "Kapı emsali limana taşındı. Duruşma kısaldı; kâtip ve tanık yine ödendi.",
+              "en": "The gate precedent was carried to the harbor. The hearing was short; clerk and witnesses were still paid."
+            },
+            "effect": {
+              "stats": {
+                "resources": -4,
+                "stability": 6,
+                "population": 2
+              },
+              "flags": [
+                "provincial_residency_hearing",
+                "resolved_harbor_ward_roll"
+              ],
+              "technologies": [],
+              "buildings": [],
+              "rivalRelation": 0,
+              "removeFlags": [
+                "restricted_provincial_residency"
+              ]
+            },
+            "delayedEffects": [],
+            "animationPreset": "normal"
+          }
+        ]
+      },
+      {
+        "id": "hearing",
+        "text": {
+          "tr": "Ücretli tanıklarla genel bir duruşma aç.",
+          "en": "Open a general hearing with paid witnesses."
+        },
+        "risk": {
+          "tr": "Sonucu öngörülebilir",
+          "en": "Predictable outcome"
+        },
+        "requirements": [
+          {
+            "stat": "resources",
+            "minimum": 8
+          }
+        ],
+        "immediateEffects": {
+          "stats": {},
+          "flags": [],
+          "technologies": [],
+          "buildings": [],
+          "rivalRelation": 0
+        },
+        "outcomes": [
+          {
+            "id": "result",
+            "probability": 1,
+            "affinity": null,
+            "text": {
+              "tr": "Her aile tek tek dinlendi. Duruşma haftalarca sürdü; sonunda çoğu deftere girdi.",
+              "en": "Every family was heard one by one. The hearing ran for weeks; in the end most entered the roll."
+            },
+            "effect": {
+              "stats": {
+                "resources": -8,
+                "stability": 4,
+                "population": 2,
+                "authority": -2
+              },
+              "flags": [
+                "provincial_residency_hearing",
+                "resolved_harbor_ward_roll"
+              ],
+              "technologies": [],
+              "buildings": [],
+              "rivalRelation": 0,
+              "removeFlags": [
+                "restricted_provincial_residency"
+              ]
+            },
+            "delayedEffects": [],
+            "animationPreset": "normal"
+          }
+        ]
+      },
+      {
+        "id": "permits",
+        "text": {
+          "tr": "Yalnız ikamet izni ver; oy hakkını sonraya bırak.",
+          "en": "Grant residence permits only and leave the vote for later."
+        },
+        "risk": {
+          "tr": "Sonucu öngörülebilir",
+          "en": "Predictable outcome"
+        },
+        "requirements": [],
+        "immediateEffects": {
+          "stats": {},
+          "flags": [],
+          "technologies": [],
+          "buildings": [],
+          "rivalRelation": 0
+        },
+        "outcomes": [
+          {
+            "id": "result",
+            "probability": 1,
+            "affinity": null,
+            "text": {
+              "tr": "İzin harcı kasaya girdi. Liman aileleri kaldı, ama meclis kapısı onlara kapalı.",
+              "en": "Permit fees entered the treasury. The harbor families stayed, but the assembly door is closed to them."
+            },
+            "effect": {
+              "stats": {
+                "resources": 4,
+                "stability": -6
+              },
+              "flags": [
+                "restricted_provincial_residency",
+                "resolved_harbor_ward_roll"
+              ],
+              "technologies": [],
+              "buildings": [],
+              "rivalRelation": 0,
+              "removeFlags": [
+                "provincial_residency_hearing"
+              ]
+            },
+            "delayedEffects": [],
+            "animationPreset": "normal"
+          }
+        ]
+      }
+    ],
+    "worldFlags": [
+      "provincial_residency_hearing",
+      "resolved_harbor_ward_roll",
+      "restricted_provincial_residency"
+    ],
+    "storyChainId": "hospitality",
+    "animationPreset": "normal",
+    "soundCue": "decision",
+    "cooldown": 4,
+    "localizationKeys": [
+      "card.harbor_ward_roll.title",
+      "card.harbor_ward_roll.description"
+    ],
+    "eraRole": "bridge"
+  },
+  {
+    "id": "watch_guild_charter",
+    "era": 4,
+    "category": "legacy",
+    "title": {
+      "tr": "Muhafız Loncasının Sözleşmesi",
+      "en": "The Watch Guild’s Contract"
+    },
+    "description": {
+      "tr": "Kentin eski gece devriyesi eyalet muhafız loncasına bağlanmak istiyor. Lonca ücretli nöbet, yemin ve hesap defteri teklif ediyor. Gece nöbetini kamunun mu tüccarların mı ödediği eski kayıtta yazılı.",
+      "en": "The city’s old night patrol wants to join the provincial watch guild. The guild offers paid watches, an oath and an account book. The old record states whether the public or the merchants paid for the night watch."
+    },
+    "artAsset": "card_watch_guild_charter",
+    "artDirection": "Fictional composite ancient empire, cut limestone and marble, wax tablets and papyrus rolls, bronze and iron hand tools, wool tunics and cloaks, no stirrups, no paper books, no gunpowder; ivory, gold and dusty terracotta palette, portrait composition. Guildhall courtyard at dusk, night watchmen with lanterns and bronze-tipped staves taking an oath, guild scribe with account book, old patrol tablet on a lectern.",
+    "rarity": "uncommon",
+    "weight": 10,
+    "requirements": [
+      {
+        "completedCard": "night_patrol"
+      }
+    ],
+    "exclusionConditions": [
+      {
+        "flag": "resolved_watch_guild_charter"
+      }
+    ],
+    "choices": [
+      {
+        "id": "public",
+        "text": {
+          "tr": "Kamu nöbetini loncaya taşı; ücreti vergi defterinden öde.",
+          "en": "Carry the public watch into the guild and pay it from the tax ledger."
+        },
+        "risk": {
+          "tr": "Sonucu öngörülebilir",
+          "en": "Predictable outcome"
+        },
+        "requirements": [
+          {
+            "flag": "public_night_watch"
+          },
+          {
+            "stat": "resources",
+            "minimum": 6
+          }
+        ],
+        "immediateEffects": {
+          "stats": {},
+          "flags": [],
+          "technologies": [],
+          "buildings": [],
+          "rivalRelation": 0
+        },
+        "outcomes": [
+          {
+            "id": "result",
+            "probability": 1,
+            "affinity": null,
+            "text": {
+              "tr": "Nöbetçiler loncaya yemin etti. Ücret vergiden çıktı; her mahalle aynı devriyeyi aldı.",
+              "en": "The watchmen swore to the guild. Pay came from taxes; every ward got the same patrol."
+            },
+            "effect": {
+              "stats": {
+                "resources": -6,
+                "stability": 7,
+                "authority": -1,
+                "knowledge": 2
+              },
+              "flags": [
+                "watch_guild_public",
+                "resolved_watch_guild_charter"
+              ],
+              "technologies": [],
+              "buildings": [],
+              "rivalRelation": 0,
+              "removeFlags": [
+                "watch_guild_private"
+              ]
+            },
+            "delayedEffects": [],
+            "animationPreset": "normal"
+          }
+        ]
+      },
+      {
+        "id": "private",
+        "text": {
+          "tr": "Özel nöbeti sözleşmeye çevir; tüccarlar lonca payını ödesin.",
+          "en": "Turn the private watch into a contract and let merchants pay the guild share."
+        },
+        "risk": {
+          "tr": "Sonucu öngörülebilir",
+          "en": "Predictable outcome"
+        },
+        "requirements": [
+          {
+            "flag": "private_night_watch"
+          }
+        ],
+        "immediateEffects": {
+          "stats": {},
+          "flags": [],
+          "technologies": [],
+          "buildings": [],
+          "rivalRelation": 0
+        },
+        "outcomes": [
+          {
+            "id": "result",
+            "probability": 1,
+            "affinity": null,
+            "text": {
+              "tr": "Tüccarlar lonca payını ödedi. Devriye yine onların sokaklarında yoğunlaştı.",
+              "en": "The merchants paid the guild share. The patrol still crowded their own streets."
+            },
+            "effect": {
+              "stats": {
+                "authority": 3,
+                "stability": -4
+              },
+              "flags": [
+                "watch_guild_private",
+                "resolved_watch_guild_charter"
+              ],
+              "technologies": [],
+              "buildings": [],
+              "rivalRelation": 0,
+              "removeFlags": [
+                "watch_guild_public"
+              ]
+            },
+            "delayedEffects": [],
+            "animationPreset": "normal"
+          }
+        ]
+      },
+      {
+        "id": "oath",
+        "text": {
+          "tr": "Loncaya yemin ettir; ücreti valilikle yarı yarıya öde.",
+          "en": "Have the guild swear its oath and split the wages with the governorate."
+        },
+        "risk": {
+          "tr": "Sonucu öngörülebilir",
+          "en": "Predictable outcome"
+        },
+        "requirements": [
+          {
+            "stat": "resources",
+            "minimum": 5
+          }
+        ],
+        "immediateEffects": {
+          "stats": {},
+          "flags": [],
+          "technologies": [],
+          "buildings": [],
+          "rivalRelation": 0
+        },
+        "outcomes": [
+          {
+            "id": "result",
+            "probability": 1,
+            "affinity": null,
+            "text": {
+              "tr": "Valilik ücretin yarısını üstlendi. Lonca hem kente hem valiye hesap verir oldu.",
+              "en": "The governorate took on half the wages. The guild now answers to both city and governor."
+            },
+            "effect": {
+              "stats": {
+                "resources": -5,
+                "authority": 3,
+                "stability": 3
+              },
+              "flags": [
+                "watch_guild_public",
+                "resolved_watch_guild_charter"
+              ],
+              "technologies": [],
+              "buildings": [],
+              "rivalRelation": 0,
+              "removeFlags": [
+                "watch_guild_private"
+              ]
+            },
+            "delayedEffects": [],
+            "animationPreset": "normal"
+          }
+        ]
+      },
+      {
+        "id": "garrison",
+        "text": {
+          "tr": "Loncayı reddet; nöbeti garnizona bağla.",
+          "en": "Refuse the guild and attach the watch to the garrison."
+        },
+        "risk": {
+          "tr": "Sonucu öngörülebilir",
+          "en": "Predictable outcome"
+        },
+        "requirements": [],
+        "immediateEffects": {
+          "stats": {},
+          "flags": [],
+          "technologies": [],
+          "buildings": [],
+          "rivalRelation": 0
+        },
+        "outcomes": [
+          {
+            "id": "result",
+            "probability": 1,
+            "affinity": null,
+            "text": {
+              "tr": "Askerler nöbeti devraldı. Mahalleler kendi nöbetçilerini kaybettiklerini yazdı.",
+              "en": "Soldiers took over the watch. The wards recorded that they had lost their own watchmen."
+            },
+            "effect": {
+              "stats": {
+                "authority": 4,
+                "stability": -5,
+                "knowledge": -2
+              },
+              "flags": [
+                "recorded_provincial_dissent",
+                "resolved_watch_guild_charter"
+              ],
+              "technologies": [],
+              "buildings": [],
+              "rivalRelation": 0
+            },
+            "delayedEffects": [],
+            "animationPreset": "normal"
+          }
+        ]
+      }
+    ],
+    "worldFlags": [
+      "watch_guild_public",
+      "resolved_watch_guild_charter",
+      "watch_guild_private",
+      "recorded_provincial_dissent"
+    ],
+    "storyChainId": "public_voice",
+    "animationPreset": "normal",
+    "soundCue": "decision",
+    "cooldown": 4,
+    "localizationKeys": [
+      "card.watch_guild_charter.title",
+      "card.watch_guild_charter.description"
+    ],
+    "eraRole": "bridge"
+  },
+  {
+    "id": "pasture_gate_levy",
+    "era": 4,
+    "category": "legacy",
+    "title": {
+      "tr": "Meranın Eyalet Kapısı",
+      "en": "The Pasture at the Provincial Gate"
+    },
+    "description": {
+      "tr": "Sulama mahkemesinden sonra çobanlar da sürülerinin eyalet kapısından geçerken vergilendirileceğini öğrendi. Eski otlak uzlaşması mevsimlik geçişleri ve kuyu nöbetlerini kaydetmişti. Vergi memuru her başı aynı saymak istiyor.",
+      "en": "After the irrigation court, herders learned their flocks would be taxed at the provincial gate. The old grazing settlement had recorded seasonal crossings and well watches. The tax officer wants every head counted alike."
+    },
+    "artAsset": "card_pasture_gate_levy",
+    "artDirection": "Fictional composite ancient empire, cut limestone and marble, wax tablets and papyrus rolls, bronze and iron hand tools, wool tunics and cloaks, no stirrups, no paper books, no gunpowder; ivory, gold and dusty terracotta palette, portrait composition. Flocks of sheep and goats funneling through a stone provincial gate, herders with crooks and a clay grazing tablet, tax officer counting with tally sticks, dusty pastoral light.",
+    "rarity": "uncommon",
+    "weight": 10,
+    "requirements": [
+      {
+        "completedCard": "grazing_appeal"
+      },
+      {
+        "completedCard": "irrigation_court"
+      }
+    ],
+    "exclusionConditions": [
+      {
+        "flag": "resolved_pasture_gate_levy"
+      }
+    ],
+    "choices": [
+      {
+        "id": "season",
+        "text": {
+          "tr": "Ortak otlak uzlaşmasını emsal say; geçiş vergisini mevsime göre böl.",
+          "en": "Treat the shared grazing settlement as precedent and divide the crossing levy by season."
+        },
+        "risk": {
+          "tr": "Sonucu öngörülebilir",
+          "en": "Predictable outcome"
+        },
+        "requirements": [
+          {
+            "flag": "pasture_public_settlement"
+          },
+          {
+            "stat": "resources",
+            "minimum": 4
+          }
+        ],
+        "immediateEffects": {
+          "stats": {},
+          "flags": [],
+          "technologies": [],
+          "buildings": [],
+          "rivalRelation": 0
+        },
+        "outcomes": [
+          {
+            "id": "result",
+            "probability": 1,
+            "affinity": null,
+            "text": {
+              "tr": "Kuyu nöbeti tutanların payı mevsime göre hesaplandı. Vergi düşmedi, ama doğru zamana bölündü.",
+              "en": "Well watchers’ shares were reckoned by season. The levy was not reduced, but fell due at the right times."
+            },
+            "effect": {
+              "stats": {
+                "resources": -4,
+                "stability": 7,
+                "environment": 3,
+                "knowledge": 2
+              },
+              "flags": [
+                "pasture_gate_precedent",
+                "lawful_review_precedent",
+                "resolved_pasture_gate_levy"
+              ],
+              "technologies": [],
+              "buildings": [],
+              "rivalRelation": 0
+            },
+            "delayedEffects": [],
+            "animationPreset": "normal"
+          }
+        ]
+      },
+      {
+        "id": "lease",
+        "text": {
+          "tr": "Özel kira sözleşmelerini tanı; vergiyi kiracılar ödesin.",
+          "en": "Recognize the private leases and make the leaseholders pay the levy."
+        },
+        "risk": {
+          "tr": "Sonucu öngörülebilir",
+          "en": "Predictable outcome"
+        },
+        "requirements": [
+          {
+            "flag": "pasture_private_settlement"
+          }
+        ],
+        "immediateEffects": {
+          "stats": {},
+          "flags": [],
+          "technologies": [],
+          "buildings": [],
+          "rivalRelation": 0
+        },
+        "outcomes": [
+          {
+            "id": "result",
+            "probability": 1,
+            "affinity": null,
+            "text": {
+              "tr": "Kiracılar vergiyi ödedi ve sürüleri öne geçirdi. Küçük çobanlar kapıda bekledi.",
+              "en": "The leaseholders paid and moved their flocks to the front. Small herders waited at the gate."
+            },
+            "effect": {
+              "stats": {
+                "authority": 2,
+                "stability": -4
+              },
+              "flags": [
+                "pasture_gate_leasehold",
+                "resolved_pasture_gate_levy"
+              ],
+              "technologies": [],
+              "buildings": [],
+              "rivalRelation": 0
+            },
+            "delayedEffects": [],
+            "animationPreset": "normal"
+          }
+        ]
+      },
+      {
+        "id": "heads",
+        "text": {
+          "tr": "Her başı aynı say; tam vergi al.",
+          "en": "Count every head alike and take the full levy."
+        },
+        "risk": {
+          "tr": "Sonucu öngörülebilir",
+          "en": "Predictable outcome"
+        },
+        "requirements": [],
+        "immediateEffects": {
+          "stats": {},
+          "flags": [],
+          "technologies": [],
+          "buildings": [],
+          "rivalRelation": 0
+        },
+        "outcomes": [
+          {
+            "id": "result",
+            "probability": 1,
+            "affinity": null,
+            "text": {
+              "tr": "Kasa doldu. Çobanlar sürüleri yan vadilere sürdü; otlak aşırı yüklendi.",
+              "en": "The treasury filled. Herders drove their flocks into side valleys; the grazing was overloaded."
+            },
+            "effect": {
+              "stats": {
+                "resources": 6,
+                "stability": -7,
+                "environment": -3
+              },
+              "flags": [
+                "recorded_provincial_dissent",
+                "resolved_pasture_gate_levy"
+              ],
+              "technologies": [],
+              "buildings": [],
+              "rivalRelation": 0
+            },
+            "delayedEffects": [],
+            "animationPreset": "normal"
+          }
+        ]
+      }
+    ],
+    "worldFlags": [
+      "pasture_gate_precedent",
+      "lawful_review_precedent",
+      "resolved_pasture_gate_levy",
+      "pasture_gate_leasehold",
+      "recorded_provincial_dissent"
+    ],
+    "storyChainId": "pasture",
+    "animationPreset": "normal",
+    "soundCue": "decision",
+    "cooldown": 4,
+    "localizationKeys": [
+      "card.pasture_gate_levy.title",
+      "card.pasture_gate_levy.description"
+    ],
+    "eraRole": "conclusion"
+  },
+  {
+    "id": "guest_assembly_bench",
+    "era": 4,
+    "category": "legacy",
+    "title": {
+      "tr": "Konukların Meclisteki Sırası",
+      "en": "A Bench for the Guests"
+    },
+    "description": {
+      "tr": "Vatandaşlık duruşmalarından sonra kapı mahallesinin aileleri eyalet meclisinde bir sıra istiyor. Eski kapı vatandaşlığı onları kent defterine yazmıştı. Meclis, yeni sıranın bedelinin ve oy ağırlığının kimde olacağını tartışıyor.",
+      "en": "After the citizenship hearings, families of the gate ward ask for a bench in the provincial assembly. The old gate citizenship had entered them in the city roll. The assembly is arguing over who bears the new bench’s cost and voting weight."
+    },
+    "artAsset": "card_guest_assembly_bench",
+    "artDirection": "Fictional composite ancient empire, cut limestone and marble, wax tablets and papyrus rolls, bronze and iron hand tools, wool tunics and cloaks, no stirrups, no paper books, no gunpowder; ivory, gold and dusty terracotta palette, portrait composition. Provincial assembly hall with tiered stone benches, gate-ward delegates holding citizenship tokens at the threshold, presiding magistrate and seated councillors, shafts of high window light.",
+    "rarity": "uncommon",
+    "weight": 10,
+    "requirements": [
+      {
+        "completedCard": "guest_gate"
+      },
+      {
+        "completedCard": "residency_hearing"
+      }
+    ],
+    "exclusionConditions": [
+      {
+        "flag": "resolved_guest_assembly_bench"
+      }
+    ],
+    "choices": [
+      {
+        "id": "seat",
+        "text": {
+          "tr": "Kapı vatandaşlığını meclis temsiline çevir; seçim masrafını kamu ödesin.",
+          "en": "Turn gate citizenship into assembly representation and fund the election publicly."
+        },
+        "risk": {
+          "tr": "Sonucu öngörülebilir",
+          "en": "Predictable outcome"
+        },
+        "requirements": [
+          {
+            "flag": "guest_citizenship"
+          },
+          {
+            "stat": "resources",
+            "minimum": 5
+          }
+        ],
+        "immediateEffects": {
+          "stats": {},
+          "flags": [],
+          "technologies": [],
+          "buildings": [],
+          "rivalRelation": 0
+        },
+        "outcomes": [
+          {
+            "id": "result",
+            "probability": 1,
+            "affinity": null,
+            "text": {
+              "tr": "Kapı mahallesi ilk temsilcisini seçti. Seçim masrafı kamudan çıktı; vergi yükü değişmedi.",
+              "en": "The gate ward elected its first delegate. The election was publicly funded; the tax burden stayed the same."
+            },
+            "effect": {
+              "stats": {
+                "resources": -5,
+                "stability": 8,
+                "population": 2,
+                "authority": -2
+              },
+              "flags": [
+                "guest_assembly_seat",
+                "resolved_guest_assembly_bench"
+              ],
+              "technologies": [],
+              "buildings": [],
+              "rivalRelation": 0
+            },
+            "delayedEffects": [],
+            "animationPreset": "normal"
+          }
+        ]
+      },
+      {
+        "id": "advisory",
+        "text": {
+          "tr": "Dış pazar ailelerine yalnız danışma hakkı ver.",
+          "en": "Give the outer-market families advisory rights only."
+        },
+        "risk": {
+          "tr": "Sonucu öngörülebilir",
+          "en": "Predictable outcome"
+        },
+        "requirements": [
+          {
+            "flag": "guest_outer_market"
+          },
+          {
+            "stat": "resources",
+            "minimum": 2
+          }
+        ],
+        "immediateEffects": {
+          "stats": {},
+          "flags": [],
+          "technologies": [],
+          "buildings": [],
+          "rivalRelation": 0
+        },
+        "outcomes": [
+          {
+            "id": "result",
+            "probability": 1,
+            "affinity": null,
+            "text": {
+              "tr": "Pazar temsilcisi mecliste konuşabildi ama oy veremedi. Kâtip masrafı küçüktü.",
+              "en": "The market delegate could speak in the assembly but not vote. The clerk’s cost was small."
+            },
+            "effect": {
+              "stats": {
+                "resources": -2,
+                "stability": 2,
+                "authority": 1
+              },
+              "flags": [
+                "guest_market_advisory",
+                "resolved_guest_assembly_bench"
+              ],
+              "technologies": [],
+              "buildings": [],
+              "rivalRelation": 0
+            },
+            "delayedEffects": [],
+            "animationPreset": "normal"
+          }
+        ]
+      },
+      {
+        "id": "deny",
+        "text": {
+          "tr": "Sırayı reddet; temsil için yeniden vergi şartı koy.",
+          "en": "Refuse the bench and reimpose a tax test for representation."
+        },
+        "risk": {
+          "tr": "Sonucu öngörülebilir",
+          "en": "Predictable outcome"
+        },
+        "requirements": [],
+        "immediateEffects": {
+          "stats": {},
+          "flags": [],
+          "technologies": [],
+          "buildings": [],
+          "rivalRelation": 0
+        },
+        "outcomes": [
+          {
+            "id": "result",
+            "probability": 1,
+            "affinity": null,
+            "text": {
+              "tr": "Meclis kapısı kapandı. Eski vatandaşlık kaydı geçerli kaldı, fakat sesi meclise ulaşmadı.",
+              "en": "The assembly door closed. The old citizenship record stood, but its voice did not reach the assembly."
+            },
+            "effect": {
+              "stats": {
+                "authority": 3,
+                "stability": -7
+              },
+              "flags": [
+                "recorded_provincial_dissent",
+                "resolved_guest_assembly_bench"
+              ],
+              "technologies": [],
+              "buildings": [],
+              "rivalRelation": 0
+            },
+            "delayedEffects": [],
+            "animationPreset": "normal"
+          }
+        ]
+      }
+    ],
+    "worldFlags": [
+      "guest_assembly_seat",
+      "resolved_guest_assembly_bench",
+      "guest_market_advisory",
+      "recorded_provincial_dissent"
+    ],
+    "storyChainId": "hospitality",
+    "animationPreset": "normal",
+    "soundCue": "decision",
+    "cooldown": 4,
+    "localizationKeys": [
+      "card.guest_assembly_bench.title",
+      "card.guest_assembly_bench.description"
+    ],
+    "eraRole": "conclusion"
+  },
+  {
+    "id": "assembly_seal_appeal",
+    "era": 4,
+    "category": "legacy",
+    "title": {
+      "tr": "Eyalet Meclisinde Mühür",
+      "en": "The Seal in the Provincial Assembly"
+    },
+    "description": {
+      "tr": "Valiye karşı dilekçeden sonra kentin eski mühür itirazı yeniden okundu. Mühür kararlarına itiraz hakkı artık eyalet meclisine gelen her vergi kararında istenebilir. Valilik bu hakkın yalnızca kent içinde geçerli olduğunu söylüyor.",
+      "en": "After the petition against the governor, the city’s old seal appeal was read again. The right to appeal sealed decisions could now be claimed against every tax ruling before the provincial assembly. The governorate says the right holds only inside the city."
+    },
+    "artAsset": "card_assembly_seal_appeal",
+    "artDirection": "Fictional composite ancient empire, cut limestone and marble, wax tablets and papyrus rolls, bronze and iron hand tools, wool tunics and cloaks, no stirrups, no paper books, no gunpowder; ivory, gold and dusty terracotta palette, portrait composition. Assembly floor with an old clay seal tablet held aloft beside a governor’s bronze decree, scribes and councillors leaning in, red wax seals on a table, warm lamplight.",
+    "rarity": "uncommon",
+    "weight": 10,
+    "requirements": [
+      {
+        "completedCard": "seal_appeal"
+      },
+      {
+        "completedCard": "governor_petition"
+      }
+    ],
+    "exclusionConditions": [
+      {
+        "flag": "resolved_assembly_seal_appeal"
+      }
+    ],
+    "choices": [
+      {
+        "id": "appeal",
+        "text": {
+          "tr": "Kentin itiraz hakkını eyalet meclisine taşı; kâtip ve tanık masrafını öde.",
+          "en": "Carry the city’s right of appeal to the provincial assembly and pay clerk and witness costs."
+        },
+        "risk": {
+          "tr": "Sonucu öngörülebilir",
+          "en": "Predictable outcome"
+        },
+        "requirements": [
+          {
+            "flag": "civic_appeal"
+          },
+          {
+            "stat": "resources",
+            "minimum": 5
+          }
+        ],
+        "immediateEffects": {
+          "stats": {},
+          "flags": [],
+          "technologies": [],
+          "buildings": [],
+          "rivalRelation": 0
+        },
+        "outcomes": [
+          {
+            "id": "result",
+            "probability": 1,
+            "affinity": null,
+            "text": {
+              "tr": "Hak meclis kayıtlarına girdi. İlk itiraz duruşması ücretli kâtiplerle görüldü.",
+              "en": "The right entered the assembly records. The first appeal was heard with paid clerks."
+            },
+            "effect": {
+              "stats": {
+                "resources": -5,
+                "stability": 8,
+                "authority": -3,
+                "knowledge": 3
+              },
+              "flags": [
+                "provincial_appeal_right",
+                "lawful_review_precedent",
+                "resolved_assembly_seal_appeal"
+              ],
+              "technologies": [],
+              "buildings": [],
+              "rivalRelation": 0
+            },
+            "delayedEffects": [],
+            "animationPreset": "normal"
+          }
+        ]
+      },
+      {
+        "id": "precedence",
+        "text": {
+          "tr": "Mühür önceliğini koru; itirazı yalnız mühür sahiplerine aç.",
+          "en": "Keep seal precedence and open appeals only to seal holders."
+        },
+        "risk": {
+          "tr": "Sonucu öngörülebilir",
+          "en": "Predictable outcome"
+        },
+        "requirements": [
+          {
+            "flag": "sealed_precedence"
+          }
+        ],
+        "immediateEffects": {
+          "stats": {},
+          "flags": [],
+          "technologies": [],
+          "buildings": [],
+          "rivalRelation": 0
+        },
+        "outcomes": [
+          {
+            "id": "result",
+            "probability": 1,
+            "affinity": null,
+            "text": {
+              "tr": "Mühür sahipleri yeni hakkı kendilerine ayırdı. Diğer aileler itiraz kapısını kapalı buldu.",
+              "en": "Seal holders kept the new right for themselves. Other families found the appeal door shut."
+            },
+            "effect": {
+              "stats": {
+                "authority": 4,
+                "stability": -5
+              },
+              "flags": [
+                "provincial_seal_precedence",
+                "resolved_assembly_seal_appeal"
+              ],
+              "technologies": [],
+              "buildings": [],
+              "rivalRelation": 0
+            },
+            "delayedEffects": [],
+            "animationPreset": "normal"
+          }
+        ]
+      },
+      {
+        "id": "local",
+        "text": {
+          "tr": "Hakkı kent içinde bırak; meclise taşıma.",
+          "en": "Leave the right inside the city and do not carry it to the assembly."
+        },
+        "risk": {
+          "tr": "Sonucu öngörülebilir",
+          "en": "Predictable outcome"
+        },
+        "requirements": [],
+        "immediateEffects": {
+          "stats": {},
+          "flags": [],
+          "technologies": [],
+          "buildings": [],
+          "rivalRelation": 0
+        },
+        "outcomes": [
+          {
+            "id": "result",
+            "probability": 1,
+            "affinity": null,
+            "text": {
+              "tr": "Eski hak kent mahkemesinde geçerli kaldı. Eyalet vergilerine karşı kullanılamadı.",
+              "en": "The old right stayed valid in the city court. It could not be used against provincial taxes."
+            },
+            "effect": {
+              "stats": {
+                "authority": 2,
+                "stability": -3,
+                "knowledge": -1
+              },
+              "flags": [
+                "provincial_appeal_local",
+                "resolved_assembly_seal_appeal"
+              ],
+              "technologies": [],
+              "buildings": [],
+              "rivalRelation": 0
+            },
+            "delayedEffects": [],
+            "animationPreset": "normal"
+          }
+        ]
+      }
+    ],
+    "worldFlags": [
+      "provincial_appeal_right",
+      "lawful_review_precedent",
+      "resolved_assembly_seal_appeal",
+      "provincial_seal_precedence",
+      "provincial_appeal_local"
+    ],
+    "storyChainId": "public_voice",
+    "animationPreset": "normal",
+    "soundCue": "decision",
+    "cooldown": 4,
+    "localizationKeys": [
+      "card.assembly_seal_appeal.title",
+      "card.assembly_seal_appeal.description"
+    ],
+    "eraRole": "conclusion"
+  },
+  {
+    "id": "civil_code_draft",
+    "era": 4,
+    "category": "law",
+    "title": {
+      "tr": "Medeni Yasanın Taslağı",
+      "en": "Drafting the Civil Code"
+    },
+    "description": {
+      "tr": "Mahkemelerde biriken emsaller artık tek bir yasa metninde toplanabilir. Hukukçular yazım, kopya ve tanık kurulları için ücret istiyor. Yasa herkese aynı usulü verecek; vali ve tüccarlar ise kendi ayrıcalıklarının da yazılmasını bekliyor.",
+      "en": "The precedents piling up in the courts could now be gathered into a single code. Jurists want fees for drafting, copying and witness boards. The code would give everyone the same procedure; the governor and merchants expect their own privileges to be written in as well."
+    },
+    "artAsset": "card_civil_code_draft",
+    "artDirection": "Fictional composite ancient empire, cut limestone and marble, wax tablets and papyrus rolls, bronze and iron hand tools, wool tunics and cloaks, no stirrups, no paper books, no gunpowder; ivory, gold and dusty terracotta palette, portrait composition. Jurists at a long marble table compiling a code from stacks of wax tablets and papyrus rolls, copyists at side desks, governor’s envoy and merchants watching, clear morning light.",
+    "rarity": "common",
+    "weight": 10,
+    "requirements": [
+      {
+        "technology": "writing"
+      },
+      {
+        "flag": "lawful_review_precedent"
+      },
+      {
+        "stat": "knowledge",
+        "minimum": 70
+      }
+    ],
+    "exclusionConditions": [
+      {
+        "technology": "civil_law"
+      }
+    ],
+    "choices": [
+      {
+        "id": "codify",
+        "text": {
+          "tr": "Emsalleri tek yasada topla; yazıcıları ve kurulu öde.",
+          "en": "Gather the precedents into one code and pay the copyists and the board."
+        },
+        "risk": {
+          "tr": "Sonucu öngörülebilir",
+          "en": "Predictable outcome"
+        },
+        "requirements": [
+          {
+            "stat": "resources",
+            "minimum": 12
+          }
+        ],
+        "immediateEffects": {
+          "stats": {},
+          "flags": [],
+          "technologies": [],
+          "buildings": [],
+          "rivalRelation": 0
+        },
+        "outcomes": [
+          {
+            "id": "result",
+            "probability": 1,
+            "affinity": null,
+            "text": {
+              "tr": "Yasa meydanda okundu. Herkes aynı usule bağlandı; yazım masrafı kasayı derinden kesti.",
+              "en": "The code was read in the forum. Everyone was bound to the same procedure; drafting cut deep into the treasury."
+            },
+            "effect": {
+              "stats": {
+                "resources": -12,
+                "knowledge": 8,
+                "stability": 5,
+                "authority": -3
+              },
+              "flags": [
+                "civil_code_public"
+              ],
+              "technologies": [
+                "civil_law"
+              ],
+              "buildings": [],
+              "rivalRelation": 0
+            },
+            "delayedEffects": [],
+            "animationPreset": "technology"
+          }
+        ]
+      },
+      {
+        "id": "privileged",
+        "text": {
+          "tr": "Yasayı yaz ama ayrıcalıkları ayrı maddelere koy.",
+          "en": "Write the code but set privileges apart in separate articles."
+        },
+        "risk": {
+          "tr": "Sonucu öngörülebilir",
+          "en": "Predictable outcome"
+        },
+        "requirements": [
+          {
+            "stat": "resources",
+            "minimum": 9
+          }
+        ],
+        "immediateEffects": {
+          "stats": {},
+          "flags": [],
+          "technologies": [],
+          "buildings": [],
+          "rivalRelation": 0
+        },
+        "outcomes": [
+          {
+            "id": "result",
+            "probability": 1,
+            "affinity": null,
+            "text": {
+              "tr": "Yasa yürürlüğe girdi. Ayrıcalık maddeleri valiyi ve tüccarları memnun etti; mahallelerde itiraz yazıldı.",
+              "en": "The code came into force. The privilege articles pleased the governor and merchants; objections were written in the wards."
+            },
+            "effect": {
+              "stats": {
+                "resources": -9,
+                "knowledge": 5,
+                "authority": 4,
+                "stability": -5
+              },
+              "flags": [
+                "civil_code_privileged"
+              ],
+              "technologies": [
+                "civil_law"
+              ],
+              "buildings": [],
+              "rivalRelation": 0
+            },
+            "delayedEffects": [],
+            "animationPreset": "technology"
+          }
+        ]
+      },
+      {
+        "id": "defer",
+        "text": {
+          "tr": "Taslağı ertele; emsaller mahkemelerde kalsın.",
+          "en": "Postpone the draft and leave the precedents in the courts."
+        },
+        "risk": {
+          "tr": "Sonucu öngörülebilir",
+          "en": "Predictable outcome"
+        },
+        "requirements": [],
+        "immediateEffects": {
+          "stats": {},
+          "flags": [],
+          "technologies": [],
+          "buildings": [],
+          "rivalRelation": 0
+        },
+        "outcomes": [
+          {
+            "id": "result",
+            "probability": 1,
+            "affinity": null,
+            "text": {
+              "tr": "Hukukçular dağıldı. Her mahkeme kendi emsaline göre karar vermeye devam etti.",
+              "en": "The jurists dispersed. Each court kept ruling by its own precedent."
+            },
+            "effect": {
+              "stats": {
+                "knowledge": -2,
+                "authority": -2
+              },
+              "flags": [],
+              "technologies": [],
+              "buildings": [],
+              "rivalRelation": 0
+            },
+            "delayedEffects": [],
+            "animationPreset": "normal"
+          }
+        ]
+      }
+    ],
+    "worldFlags": [
+      "civil_code_public",
+      "civil_code_privileged"
+    ],
+    "storyChainId": null,
+    "animationPreset": "normal",
+    "soundCue": "decision",
+    "cooldown": 4,
+    "localizationKeys": [
+      "card.civil_code_draft.title",
+      "card.civil_code_draft.description"
+    ],
+    "eraRole": "reform"
   }
 ]

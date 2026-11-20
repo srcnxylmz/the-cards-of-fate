@@ -3,35 +3,40 @@ import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
 import { validate, inventory } from './validate-content.mjs';
 import { ERA4_GATE, LEDGER_EXCLUSIVE } from './content/empire-events.mjs';
+import { PROVINCE_LEDGER_EXCLUSIVE } from './content/empire-province-events.mjs';
 
-// Static content checks for the 180 → 195 Era 4 groundwork. Engine behavior is covered by
+// Static content checks for the Era 4 groundwork (180 → 195 → 210). Engine behavior is covered by
 // Tests/FateCoreTests/EraReadinessTests.swift and EmpireGroundworkTests.swift (Swift engine).
 const read = p => JSON.parse(readFileSync(p, 'utf8'));
 const cards = read('Sources/FateCore/Content/cards.json');
 const eras = read('Sources/FateCore/Content/eras.json');
 const before = read('docs/analysis/milestone195-180-before/cards.json');
 const beforeEras = read('docs/analysis/milestone195-180-before/eras.json');
+const before195 = read('docs/analysis/milestone210-195-before/cards.json');
 const empire = cards.filter(c => c.era === 4);
 const all = c => c.choices.flatMap(ch => [ch.immediateEffects, ...ch.outcomes.flatMap(o => [o.effect, ...o.delayedEffects.map(d => d.effect)])]);
 const earlyFlags = new Set(cards.filter(c => c.era <= 3).flatMap(c => all(c).flatMap(e => e.flags)));
 
-test('195 events: the 180 first-three-era definitions are byte-identical and fifteen new events are Era 4 only', () => {
-  assert.equal(cards.length, 195);
-  assert.equal(new Set(cards.map(c => c.id)).size, 195);
+test('210 events: the 180 first-three-era and first 15 Era 4 definitions are byte-identical; thirty events are Era 4 only', () => {
+  assert.equal(cards.length, 210);
+  assert.equal(new Set(cards.map(c => c.id)).size, 210);
+  assert.deepEqual(cards.slice(0, 195), before195, 'the 195-card package is preserved in order');
   assert.deepEqual(cards.filter(c => c.era <= 3), before);
   for (const e of [1, 2, 3]) assert.equal(cards.filter(c => c.era === e).length, 60);
-  assert.equal(empire.length, 15);
+  assert.equal(empire.length, 30);
   assert.equal(cards.filter(c => c.era > 4).length, 0);
   assert.deepEqual(read('cards.json'), cards, 'root compatibility mirror stays in sync');
-  for (const lang of ['tr', 'en']) for (const f of ['title', 'description']) assert.equal(new Set(cards.map(c => c[f][lang])).size, 195);
-  assert.equal(new Set(empire.map(c => c.artDirection)).size, 15);
+  for (const lang of ['tr', 'en']) for (const f of ['title', 'description']) assert.equal(new Set(cards.map(c => c[f][lang])).size, 210);
+  assert.equal(new Set(empire.map(c => c.artDirection)).size, 30);
 });
 
-test('package distribution: nine recurring crises, three Bronze bridges, three conditional conclusions', () => {
+test('package distribution: seventeen recurring crises, six Bronze bridges, six conditional conclusions, one reform', () => {
   const roles = r => empire.filter(c => c.eraRole === r);
-  assert.equal(roles('recurring').length, 9);
-  assert.equal(roles('bridge').length, 3);
-  assert.equal(roles('conclusion').length, 3);
+  assert.equal(roles('recurring').length, 17);
+  assert.equal(roles('bridge').length, 6);
+  assert.equal(roles('conclusion').length, 6);
+  assert.equal(roles('reform').length, 1);
+  assert.equal(empire.length, 17 + 6 + 6 + 1);
   for (const c of roles('recurring')) assert.ok(!c.exclusionConditions.some(x => x.flag === `resolved_${c.id}`), c.id + ' must stay repeatable');
   for (const c of [...roles('bridge'), ...roles('conclusion')]) {
     assert.ok(c.exclusionConditions.some(x => x.flag === `resolved_${c.id}`), c.id + ' is one-shot');
@@ -44,7 +49,7 @@ test('package distribution: nine recurring crises, three Bronze bridges, three c
     assert.ok(imperial.some(x => x.era === 4 && x.eraRole === 'recurring'), c.id + ' needs an imperial crisis first');
   }
   const chains = new Set([...roles('bridge'), ...roles('conclusion')].map(c => c.storyChainId));
-  for (const chain of ['debt', 'memory', 'ridge_route', 'river_memory', 'warning', 'care_work']) assert.ok(chains.has(chain), chain);
+  for (const chain of ['debt', 'memory', 'ridge_route', 'river_memory', 'warning', 'care_work', 'hospitality', 'public_voice', 'pasture']) assert.ok(chains.has(chain), chain);
 });
 
 test('Era 4 readiness gate is explicit, disabled and unmet; earlier transition thresholds are unchanged', () => {
@@ -53,8 +58,8 @@ test('Era 4 readiness gate is explicit, disabled and unmet; earlier transition t
   assert.equal(gate.enabled, false);
   assert.deepEqual([gate.minimumCards, gate.minimumRecurring, gate.minimumConclusions, gate.minimumBridges], [40, 24, 8, 8]);
   const inv = inventory(cards, 4);
-  assert.deepEqual([inv.total, inv.recurring, inv.conclusions, inv.bridges], [15, 9, 3, 3]);
-  assert.deepEqual(inv.recurringCategories, [...gate.requiredRecurringCategories].sort());
+  assert.deepEqual([inv.total, inv.recurring, inv.conclusions, inv.bridges], [30, 17, 6, 6]);
+  for (const category of gate.requiredRecurringCategories) assert.ok(inv.recurringCategories.includes(category), category);
   for (const e of eras.filter(e => e.id > 4)) assert.equal(e.contentGate.enabled, false);
   for (const e of eras.filter(e => e.id <= 3)) assert.equal(e.contentGate, undefined);
   eras.forEach((e, i) => { const { contentGate, ...rest } = e; assert.deepEqual(rest, beforeEras[i]); });
@@ -92,7 +97,7 @@ test('historical advantages in repeatable crises never print net resources', () 
 
 test('provincial ledger: exclusive states swap, arrears stay bounded, paid bonds stay closed, old rights are not erased', () => {
   const outcomes = empire.flatMap(c => c.choices.flatMap(ch => ch.outcomes.map(o => ({ c, ch, o }))));
-  for (const [a, b] of LEDGER_EXCLUSIVE) for (const { c, ch, o } of outcomes) {
+  for (const [a, b] of [...LEDGER_EXCLUSIVE, ...PROVINCE_LEDGER_EXCLUSIVE]) for (const { c, ch, o } of outcomes) {
     if (o.effect.flags.includes(a)) assert.ok(o.effect.removeFlags?.includes(b), `${c.id}.${ch.id} sets ${a} without clearing ${b}`);
     if (o.effect.flags.includes(b)) assert.ok(o.effect.removeFlags?.includes(a), `${c.id}.${ch.id} sets ${b} without clearing ${a}`);
   }

@@ -475,6 +475,12 @@ Gerçek sonuçlar: Node 70/70 (7 yeni), doğrulayıcı 0/0, eski 180 tanım deri
 
 Era 4 kapalı: envanter 15/40, anahtar kapalı, native kanıt yok. Sonraki: HANDOFF_195_CODEX.md'deki doğrulama sırası, ardından 195 → 210 kapsamı. Rapor: PHASE3_195_REPORT.md.
 
+### Phase 3 — 195 → 210 (Claude, 2026-11-20, dal `phase3-era4-210`)
+
+15 yeni Era 4 olayı: 8 tekrarlanabilir kriz (garnizon nöbeti/ücret borcu, yol haydutları/kervan sigortası, tahıl tavanı/kıtlık deposu, nehir gümrüğü, sulama mahkemesi, taş ocağı göçüğü, sikke ayarı, valiye dilekçe), 3 köprü (`quay_levy`, `harbor_residency`, `night_patrol`), 3 sonuç (pasture, hospitality, public_voice), 1 yasal reform (`civil_code_draft` → `civil_law`, koşullu ve bedelli; yeni `reform` rolü yalnız toplama sayılır). Envanter 30/40 · 17/24 · 6/8 · 6/8; kapı `enabled:false`. Teşhis için `--diagnostic-open-era` ve `diagnosticallyOpened(era:)` eklendi.
+
+Gerçek sonuçlar: Node 77/77, doğrulayıcı 0/0, Swift 127/127 (Windows), altı × 10.000 seed aynı-seed karşılaştırması 195 → 210 birebir (yalnız `contentCardCount`). Teşhis: kapı zorla açıkken progression koşularının %60'ı Era 4'te açlıkla, %39'u deste tükenmesiyle bitiyor; Era 4 tekrar oranı %59. Native CI: **çalıştırılmadı** (PR açıldıktan sonra tek tam koşu yapılacak). Görsel üretilmedi (araç yok). Rapor: PHASE3_210_REPORT.md; devir: HANDOFF_210.md.
+
 ### 195 paketinin yerel doğrulaması (Claude, Windows, 2026-11-20)
 
 Bundle doğrulandı (`a76aa65`, ön koşul `c405ac2`), dal içeri alındı, push edildi; PR: https://github.com/srcnxylmz/the-cards-of-fate/pull/1. Kaynak `8a2924b`.

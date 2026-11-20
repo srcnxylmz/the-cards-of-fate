@@ -61,6 +61,20 @@ extension ContentDatabase {
         return gate.enabled && inventory(era: era).satisfies(gate)
     }
 
+    /// Diagnostic only (FateSimulation `--diagnostic-open-era`). Returns a copy whose gate for `era`
+    /// is forced open regardless of approval and inventory, so an unfinished era can be measured
+    /// without shipping it. The receiver is unchanged; the app and saved games never call this.
+    public func diagnosticallyOpened(era: Int) -> ContentDatabase {
+        var copy = self
+        guard let index = copy.eras.firstIndex(where: { $0.id == era }),
+              var gate = copy.eras[index].contentGate else { return copy }
+        gate.enabled = true
+        gate.minimumCards = 0; gate.minimumRecurring = 0; gate.minimumConclusions = 0; gate.minimumBridges = 0
+        gate.requiredRecurringCategories = []
+        copy.eras[index].contentGate = gate
+        return copy
+    }
+
     /// Events a player can currently reach through normal era progression.
     public var playableCards: [CardEvent] {
         var open: Set<Int> = [1]
