@@ -42,5 +42,20 @@
       "minimumEnvironment": 0,
       "yield": 1
     }
-  ]
+  ],
+  "provincialStorage": {
+    "minimumEra": 4,
+    "flags": [
+      "granary_register_kept",
+      "grain_famine_store"
+    ],
+    "maximumPerTurn": 1,
+    "reserveCeiling": 40
+  },
+  "provincialGrowth": {
+    "minimumEra": 4,
+    "interval": 4,
+    "minimumStability": 25,
+    "populationCeiling": 60
+  }
 }

@@ -20,6 +20,9 @@ if let path = option("--cards") {
     content.cards = try JSONDecoder().decode([CardEvent].self, from: Data(contentsOf: URL(fileURLWithPath: path)))
     guard !content.cards.isEmpty, Set(content.cards.map(\.id)).count == content.cards.count else { throw UsageError.invalidArguments }
 }
+// Reference reconstruction: an earlier package's balance and political rules (used with --cards).
+if let path = option("--balance") { content.balance = try JSONDecoder().decode(Balance.self, from: Data(contentsOf: URL(fileURLWithPath: path))) }
+if let path = option("--politics") { content.politics = try JSONDecoder().decode(PoliticsRules.self, from: Data(contentsOf: URL(fileURLWithPath: path))) }
 // Diagnostic only: force one gated era open to measure unfinished content. Not player-reachable;
 // reports produced this way are marked and must not be compared with baseline reports.
 let diagnosticOpenEra = option("--diagnostic-open-era").flatMap(Int.init)
@@ -174,6 +177,10 @@ for seed in 0..<count {
                 if repeatHere { economy["window\(window).repeats", default: 0] += 1 }
             }
             if eraIndex > 100 { lateCards.insert(card.id); lateChoices.insert(card.id+"."+choice.id) }
+            if [20, 40, 80].contains(eraIndex) {
+                economy["at\(eraIndex).runs", default: 0] += 1
+                for stat in ["resources", "stability", "population"] { economy["at\(eraIndex).\(stat)", default: 0] += state.stats[stat, default: 0] }
+            }
             if !collapsed && state.stats["stability", default: 0] < 15 {
                 collapsed = true
                 economy["stabilityCollapse.runs", default: 0] += 1
@@ -212,6 +219,17 @@ for seed in 0..<count {
             if measuring && stage == "world" && snapshot.stats["population", default: 0] < stageStats["population", default: 0] {
                 economy["starvation.turns", default: 0] += 1
                 economy["starvation.populationLost", default: 0] += stageStats["population", default: 0] - snapshot.stats["population", default: 0]
+            }
+            if measuring {
+                // Separate demographic and political causes per engine stage (card, delayed, world, council, succession).
+                for stat in ["population", "stability", "resources"] {
+                    let delta = snapshot.stats[stat, default: 0] - stageStats[stat, default: 0]
+                    if delta < 0 { economy["flow.\(stage).\(stat).loss", default: 0] -= delta }
+                    if delta > 0 { economy["flow.\(stage).\(stat).gain", default: 0] += delta }
+                }
+                let popDelta = snapshot.stats["population", default: 0] - stageStats["population", default: 0]
+                if stage == "card" && popDelta < 0 { economy["cardPopulation.\(decisionKey)", default: 0] -= popDelta }
+                if stageStats["population", default: 0] > 0 && snapshot.stats["population", default: 0] == 0 { economy["death.\(stage)", default: 0] += 1 }
             }
             stageStats = snapshot.stats
             if stage == "card" && previousEra == 1 {

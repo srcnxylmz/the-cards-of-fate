@@ -127,10 +127,17 @@ public struct GameEngine {
     private func simulate(_ state: inout GameState, unfundedResources: Int, observe: ((String, GameState) -> Void)?) {
         let balance = content.balance
         let food = foodBudget(in: state, unfundedResources: unfundedResources)
-        apply(.init(stats: ["resources": food.production-food.consumption-unfundedResources], flags: [], technologies: [], buildings: [], rivalRelation: 0), to: &state)
+        apply(.init(stats: ["resources": food.production-food.consumption-unfundedResources+food.stored], flags: [], technologies: [], buildings: [], rivalRelation: 0), to: &state)
         if food.shortfall > 0 {
             apply(.init(stats: ["population": -food.populationLoss, "stability": -food.stabilityLoss], flags: [], technologies: [], buildings: [], rivalRelation: 0), to: &state)
             append(.init(tr: "Bu tur yiyecek ihtiyacının \(food.shortfall)/\(food.consumption) payı karşılanamadı; nüfus azaldı.", en: "Food fell short by \(food.shortfall) of \(food.consumption) shares this turn; population declined."), to: &state)
+        }
+        // Era 4 only: a fed, stable province regains a household at intervals, never past the ceiling.
+        if let rule = balance.provincialGrowth, state.era >= rule.minimumEra, food.shortfall == 0, unfundedResources <= 0,
+           food.production >= food.consumption, state.turn % rule.interval == 0, state.stats["stability", default: 0] >= rule.minimumStability,
+           (1..<rule.populationCeiling).contains(state.stats["population", default: 0]) {
+            apply(.init(stats: ["population": 1], flags: [], technologies: [], buildings: [], rivalRelation: 0), to: &state)
+            append(.init(tr: "Doyan ve huzurlu eyalete yeni haneler yerleşti.", en: "New households settled in the fed and orderly province."), to: &state)
         }
         let politics = content.politics
         updateFactionPower(&state)

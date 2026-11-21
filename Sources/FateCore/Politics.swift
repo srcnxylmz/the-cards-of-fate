@@ -25,6 +25,8 @@ public struct PoliticsRules: Codable {
     public var supportAuthority: Int
     public var supportAuthorityCeiling: Int
     public var powerStats: [String: [String: String]]
+    /// Optional (Phase 3, 240; Era 4 only): shared institutions lend the council a bounded legitimacy.
+    public var institutionDefense: InstitutionDefense?
 
     public func validate() throws {
         let positive = [meetingInterval, actionCooldown, negotiationCost, negotiationGain, allianceCost,
@@ -108,7 +110,11 @@ extension GameEngine {
         let rules = content.politics
         let support = state.rivals.filter { $0.relation >= rules.supportRelation }.reduce(0) { $0 + $1.power / rules.supportDivisor }
         let legitimacy = state.stats["stability", default: 0] >= rules.legitimacyThreshold ? rules.legitimacyDefense : 0
-        return state.stats["authority", default: 0] + min(rules.maximumSupport, support) + legitimacy
+        var institutions = 0
+        if let rule = rules.institutionDefense, state.era >= rule.minimumEra {
+            institutions = min(rule.maximumDefense, rule.flags.filter(state.flags.contains).count * rule.defensePerFlag)
+        }
+        return state.stats["authority", default: 0] + min(rules.maximumSupport, support) + legitimacy + institutions
     }
 
     func updateFactionPower(_ state: inout GameState) {
@@ -121,4 +127,12 @@ extension GameEngine {
             state.rivals[i].power += target == rival.power ? 0 : (target > rival.power ? 1 : -1)
         }
     }
+}
+
+public struct InstitutionDefense: Codable, Equatable {
+    public var minimumEra: Int
+    /// Records of shared power: each standing one adds defensePerFlag, up to maximumDefense.
+    public var flags: [String]
+    public var defensePerFlag: Int
+    public var maximumDefense: Int
 }

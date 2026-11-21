@@ -1,13 +1,13 @@
 {
   "errors": [],
   "warnings": [],
-  "cards": 225,
+  "cards": 240,
   "eraInventory": {
     "4": {
-      "total": 45,
-      "recurring": 28,
-      "conclusions": 8,
-      "bridges": 8,
+      "total": 60,
+      "recurring": 37,
+      "conclusions": 11,
+      "bridges": 11,
       "recurringCategories": [
         "citizenship",
         "ecology",
@@ -117,14 +117,14 @@
       "open": false
     }
   },
-  "choices": 600,
-  "stochasticChoices": 8,
-  "conditionalOutcomeChoices": 67,
+  "choices": 657,
+  "stochasticChoices": 9,
+  "conditionalOutcomeChoices": 68,
   "eras": {
     "1": 60,
     "2": 60,
     "3": 60,
-    "4": 45,
+    "4": 60,
     "5": 0,
     "6": 0,
     "7": 0,
@@ -136,7 +136,7 @@
   },
   "authoredChainGroups": 11,
   "multiCardChainGroups": 11,
-  "crossEraLinks": 199,
+  "crossEraLinks": 214,
   "missingArt": [
     "card_broken_spear",
     "card_stranger_child",
@@ -319,7 +319,22 @@
     "card_infirmary_ward",
     "card_granary_tally_office",
     "card_quarry_stone_granary",
-    "card_furnace_fire_law"
+    "card_furnace_fire_law",
+    "card_assembly_power_share",
+    "card_tax_deferral",
+    "card_governor_recall",
+    "card_garrison_oversight",
+    "card_duty_rota",
+    "card_refugee_settlement",
+    "card_surplus_harvest",
+    "card_grain_contract",
+    "card_well_sanitation",
+    "card_provincial_seal_charter",
+    "card_charcoal_forest_reserve",
+    "card_estate_bondage_record",
+    "card_tithe_measure_recall",
+    "card_governor_succession_rule",
+    "card_merchant_grain_rights"
   ],
   "missingAudio": [
     "era_1",
@@ -349,7 +364,7 @@
   ],
   "releaseReady": false,
   "releaseBlockers": [
-    "800 original cards required; current 225",
+    "800 original cards required; current 240",
     "Era 4 content gate closed (enabled:false; 40/24/8/8 inventory not met)",
     "At least 60 cards per era and 80 special events required",
     "100 completed chains / 50 cross-era links required",

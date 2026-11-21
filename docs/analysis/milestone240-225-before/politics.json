@@ -1,0 +1,30 @@
+{
+  "meetingInterval": 4,
+  "actionCooldown": 4,
+  "negotiationCost": 8,
+  "negotiationGain": 20,
+  "negotiationCeiling": 50,
+  "allianceCost": 12,
+  "allianceDuration": 12,
+  "allianceRelation": 20,
+  "supportRelation": 35,
+  "hostileRelation": -20,
+  "neutralRelation": 20,
+  "legitimacyThreshold": 50,
+  "legitimacyDefense": 10,
+  "basePower": 30,
+  "hostilePowerBonus": 15,
+  "powerStatDivisor": 2,
+  "supportDivisor": 4,
+  "maximumSupport": 25,
+  "coalitionBonus": 10,
+  "successionCost": 8,
+  "allianceSuccessionRelief": 4,
+  "supportAuthority": 2,
+  "supportAuthorityCeiling": 60,
+  "powerStats": {
+    "1": {"hunters": "resources", "keepers": "knowledge"},
+    "2": {"hunters": "population", "keepers": "stability"},
+    "3": {"hunters": "resources", "keepers": "knowledge"}
+  }
+}

@@ -148,6 +148,25 @@ public struct Balance: Codable {
     /// Optional, era-bound production capacities built by paid decisions (Phase 3, Era 4 economy).
     /// Absent in older content; each source needs its flag, labour and a living environment.
     public var provincialProduction: [ProductionSource]?
+    /// Optional (Phase 3, 240): part of a surplus harvest can be stored, never beyond a reserve ceiling.
+    public var provincialStorage: ProvincialStorage?
+    /// Optional (Phase 3, 240): fed, stable provinces regain households slowly, up to a ceiling.
+    public var provincialGrowth: ProvincialGrowth?
+}
+
+public struct ProvincialStorage: Codable, Equatable {
+    public var minimumEra: Int
+    /// Any one of these records (a weighed register, a sealed famine store) lets surplus be kept.
+    public var flags: [String]
+    public var maximumPerTurn: Int
+    public var reserveCeiling: Int
+}
+
+public struct ProvincialGrowth: Codable, Equatable {
+    public var minimumEra: Int
+    public var interval: Int
+    public var minimumStability: Int
+    public var populationCeiling: Int
 }
 
 public struct ProductionSource: Codable, Equatable {

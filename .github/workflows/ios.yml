@@ -25,7 +25,7 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
-      - run: node --test tools/validate-content.test.mjs tools/content-sync.test.mjs tools/audio-assets.test.mjs tools/art-assets.test.mjs tools/recovery-content.test.mjs tools/city-content.test.mjs tools/stewardship-content.test.mjs tools/balance-content.test.mjs tools/continuity-content.test.mjs tools/civic-work-content.test.mjs tools/production-inputs.test.mjs tools/watershed-content.test.mjs tools/empire-content.test.mjs tools/empire-province-content.test.mjs tools/empire-harvest-content.test.mjs
+      - run: node --test tools/validate-content.test.mjs tools/content-sync.test.mjs tools/audio-assets.test.mjs tools/art-assets.test.mjs tools/recovery-content.test.mjs tools/city-content.test.mjs tools/stewardship-content.test.mjs tools/balance-content.test.mjs tools/continuity-content.test.mjs tools/civic-work-content.test.mjs tools/production-inputs.test.mjs tools/watershed-content.test.mjs tools/empire-content.test.mjs tools/empire-province-content.test.mjs tools/empire-harvest-content.test.mjs tools/empire-governance-content.test.mjs
       - run: node tools/art-audit.mjs
       - run: node tools/generate-feedback.mjs --check
       - run: node tools/build-content.mjs --check

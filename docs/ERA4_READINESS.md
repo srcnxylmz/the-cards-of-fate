@@ -1,5 +1,14 @@
 # Era 4 boundary and future dependencies — 180-card group
 
+## Durum — 240 paketi (Claude, dal `phase3-era4-240`)
+
+- **Envanter:** 60 · 37 · 11 · 11 (+1 reform). Kapı `enabled:false`, `balanceEvidence:null`; Era 5 kapalı.
+- **Ölçüm** (2.000 seed, 210 → 225 → 240, aynı tanımlar):
+  - Kart kaynaklı nüfus kaybı 100 kararda 29–44'ten 15–23'e indi.
+  - 500 sınırına canlı ulaşan koşular: recovery %62, knowledge %46, progression %16. Deste tükenmesi %0.
+- **Hâlâ açılmamalı:** progression ve knowledge istikrarı 22 ve 14 (hedef ≈ 30); random'da koşuların %95'i nüfusun sıfırlanmasıyla bitiyor. Ayrıntı: [PHASE3_240_REPORT.md](PHASE3_240_REPORT.md), devir: [HANDOFF_240.md](HANDOFF_240.md).
+- Aynı-seed: altı politika × 10.000 seed, `node tools/compare-reference.mjs docs/analysis/milestone225-windows docs/analysis/milestone240-windows 225 240` → altısı "identical except contentCardCount 225 → 240" (`docs/analysis/milestone240-windows/`). Native CI: **henüz çalıştırılmadı** (PR açıldıktan sonra tek tam koşu yapılacak).
+
 ## Durum — 225 paketi (Claude, dal `phase3-era4-225`)
 
 - **Envanter:** 45 · 28 · 8 · 8 (+1 reform); 40/24/8/8 asgari ölçütü ve sekiz alan karşılandı. Kapı yine `enabled:false`. Yeni şart `balanceEvidence:null`: doğrulayıcı, denge kanıtı kaydedilmeden `enabled:true`'yu hata sayar.

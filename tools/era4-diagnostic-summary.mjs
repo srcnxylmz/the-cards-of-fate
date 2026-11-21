@@ -10,6 +10,7 @@ const policies = ['progression', 'knowledge', 'recovery', 'random', 'survival'];
 const pct = (a, b) => b ? `${(100 * a / b).toFixed(1)}%` : '–';
 const avg = (a, b, d = 1) => b ? (a / b).toFixed(d) : '–';
 
+const per = (e, d, k) => d ? (100 * (e[k] ?? 0) / d).toFixed(1) : '–';
 export function summarize(report) {
   const e = report.diagnosticEconomy;
   if (!e || !('diagnosticOpenEra' in report)) throw new Error('not a diagnostic report with economy metrics');
@@ -30,6 +31,13 @@ export function summarize(report) {
     zeroReserve: `${pct(e['zeroReserve.decisions'] ?? 0, d)} · ${avg(e['zeroReserve.eligibleCards'] ?? 0, e['zeroReserve.decisions'] ?? 0)} cards`,
     lowStress: ['lowStability', 'lowPopulation', 'lowEnvironment', 'hostileRival'].map(x => avg(e[x + '.eligibleCards'] ?? 0, e[x + '.decisions'] ?? 0)).join(' / '),
     repeats: `${w(20)} / ${w(40)} / ${w(80)}`,
+    popCard: `−${per(e, d, 'flow.card.population.loss')} / +${per(e, d, 'flow.card.population.gain')}`,
+    popDelayed: `−${per(e, d, 'flow.delayed.population.loss')} / +${per(e, d, 'flow.delayed.population.gain')}`,
+    popWorld: `−${per(e, d, 'flow.world.population.loss')} / +${per(e, d, 'flow.world.population.gain')}`,
+    stabFlows: `${per(e, d, 'flow.card.stability.gain')}−${per(e, d, 'flow.card.stability.loss')} / −${per(e, d, 'flow.delayed.stability.loss')} / −${per(e, d, 'flow.world.stability.loss')} / −${per(e, d, 'flow.council.stability.loss')}`,
+    at: [20, 40, 80].map(x => { const c = e[`at${x}.runs`] ?? 0; return c ? ['resources', 'stability', 'population'].map(s => ((e[`at${x}.${s}`] ?? 0) / c).toFixed(0)).join('/') : '–'; }).join(' · '),
+    stored: per(e, d, 'flow.world.resources.gain'),
+    death: ['world', 'card', 'delayed'].map(s => `${s} ${e['death.' + s] ?? 0}`).join(', '),
     after100: `${e['after100.runs'] ?? 0} runs · ${avg(e['after100.distinctCards'] ?? 0, e['after100.runs'] ?? 0)} cards · ${avg(e['after100.distinctChoices'] ?? 0, e['after100.runs'] ?? 0)} choices`,
     capacity: Object.keys(e).filter(x => x.startsWith('capacity.') && x.endsWith('.producing')).map(x => `${x.split('.')[1]} ${pct(e[x], d)}`).join(', ') || '–'
   };
@@ -41,7 +49,7 @@ const rows = [
   ['food', 'Yiyecek üretim/tüketim (tur)'], ['starvationTurns', 'Açlık turu oranı'], ['populationLostPerStarvedTurn', 'Açlık turunda nüfus kaybı'],
   ['stabilityCollapse', 'İstikrar <15 (koşu, tur)'], ['eligible', 'Uygun kart'], ['activeChoices', 'Aktif seçenek'],
   ['zeroReserve', 'Sıfır kaynak kararı · uygun kart'], ['lowStress', 'Uygun kart: düşük istikrar/nüfus/çevre/düşman'],
-  ['repeats', 'Tekrar: ilk 20/40/80 Era 4 kararı'], ['after100', '100. karardan sonra çeşitlilik'], ['capacity', 'Üreten kapasite (karar payı)']
+  ['repeats', 'Tekrar: ilk 20/40/80 Era 4 kararı'], ['popCard', 'Nüfus/100 karar: kart −kayıp/+kazanç'], ['popDelayed', 'Nüfus/100 karar: gecikmeli'], ['popWorld', 'Nüfus/100 karar: tur sonu (açlık −, büyüme +)'], ['stabFlows', 'İstikrar/100 karar: kart net · gecikmeli · tur sonu · meclis'], ['at', '20./40./80. Era 4 kararında kaynak/istikrar/nüfus'], ['death', 'Nüfusu sıfırlayan adım (koşu)'], ['stored', 'Ambara birikim/100 karar (tur sonu kaynak artışı)'], ['after100', '100. karardan sonra çeşitlilik'], ['capacity', 'Üreten kapasite (karar payı)']
 ];
 for (const policy of policies) {
   const cols = dirs.map(dir => { const p = resolve(dir, `simulation-${policy}.json`); return fs.existsSync(p) ? summarize(JSON.parse(fs.readFileSync(p, 'utf8'))) : null; });

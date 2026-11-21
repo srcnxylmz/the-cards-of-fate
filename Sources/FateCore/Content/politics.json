@@ -26,5 +26,6 @@
     "1": {"hunters": "resources", "keepers": "knowledge"},
     "2": {"hunters": "population", "keepers": "stability"},
     "3": {"hunters": "resources", "keepers": "knowledge"}
-  }
+  },
+  "institutionDefense": {"minimumEra": 4, "flags": ["provincial_assembly_seats", "garrison_civil_oversight", "provincial_delegated_seal", "elected_governorship", "recallable_governorship", "province_local_steward"], "defensePerFlag": 10, "maximumDefense": 30}
 }

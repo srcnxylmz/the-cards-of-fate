@@ -4,6 +4,8 @@ public struct FoodBudget: Equatable {
     public let production: Int
     public let consumption: Int
     public let shortfall: Int
+    /// Surplus actually stored this turn (Era 4 storage only; zero elsewhere).
+    public var stored: Int = 0
     public var populationLoss: Int { shortfall == 0 ? 0 : (maximumLoss * shortfall + consumption - 1) / consumption }
     public var stabilityLoss: Int { shortfall == 0 ? 0 : (4 * shortfall + consumption - 1) / consumption }
     let maximumLoss: Int
@@ -28,11 +30,20 @@ extension GameEngine {
             && state.stats["environment", default: 0] >= $0.minimumEnvironment
         }.reduce(0) { $0 + $1.yield }
         // Total production never exceeds ordinary consumption: capacity can end hunger, never print reserves.
-        let production = min(balance.resourceConsumption, base + storage + irrigation + calendar + terrace + provincial)
+        let capacity = base + storage + irrigation + calendar + terrace + provincial
+        let production = min(balance.resourceConsumption, capacity)
         let consumption = balance.resourceConsumption + (state.mode == .hard ? balance.hardExtraConsumption : 0)
         // Outlays that could not be paid from reserves use this turn's supplies first.
         // This prevents clamped maintenance costs becoming free healing at zero reserves.
         let shortfall = min(consumption, max(0, consumption + max(0,unfundedResources) - production - state.stats["resources", default: 0]))
-        return FoodBudget(production: production, consumption: consumption, shortfall: shortfall, maximumLoss: balance.starvationLoss)
+        var budget = FoodBudget(production: production, consumption: consumption, shortfall: shortfall, maximumLoss: balance.starvationLoss)
+        // Surplus capacity above ordinary consumption is kept only with a storage record, a little per turn,
+        // and never past the reserve ceiling: accumulation is real but bounded.
+        if let rule = balance.provincialStorage, state.era >= rule.minimumEra, shortfall == 0, unfundedResources <= 0,
+           rule.flags.contains(where: state.flags.contains) {
+            let room = max(0, rule.reserveCeiling - state.stats["resources", default: 0])
+            budget.stored = min(rule.maximumPerTurn, max(0, capacity - balance.resourceConsumption), room)
+        }
+        return budget
     }
 }
