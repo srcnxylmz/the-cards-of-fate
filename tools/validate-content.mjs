@@ -144,12 +144,19 @@ export function validate(cards, eras) {
     if(overlap>0.55) warnings.push(`Editorial similarity: ${cards[i].id}, ${cards[j].id} (${overlap.toFixed(2)})`);
   }
   // Era content gates: authored cards never open an era by themselves.
-  const roles=new Set(['recurring','conclusion','bridge']);
+  // 'reform' events are counted in the era total only (never as recurring, conclusion or bridge).
+  const roles=new Set(['recurring','conclusion','bridge','reform']);
   for(const card of cards) if(card.eraRole!==undefined) {
     assert(roles.has(card.eraRole),`${card.id}: unknown eraRole`);
     if(card.eraRole==='recurring') assert(!(card.exclusionConditions??[]).some(c=>c.flag===`resolved_${card.id}`),`${card.id}: recurring event closes itself`);
     if(card.eraRole==='conclusion') assert(!!card.storyChainId,`${card.id}: conclusion without story chain`);
     if(card.eraRole==='bridge') assert((card.requirements??[]).length>0,`${card.id}: bridge without historical requirement`);
+    if(card.eraRole==='reform') {
+      const granted=(card.choices??[]).flatMap(c=>(c.outcomes??[]).flatMap(o=>o.effect?.technologies??[]));
+      assert(granted.length>0,`${card.id}: reform grants no technology`);
+      assert(granted.every(t=>(card.exclusionConditions??[]).some(c=>c.technology===t)),`${card.id}: reform stays drawable after its technology is granted`);
+      assert((card.requirements??[]).some(c=>c.flag||c.technology||c.completedCard),`${card.id}: reform without historical condition`);
+    }
   }
   const eraInventory={};
   for(const era of eras) {

@@ -42,6 +42,10 @@ Every checkpoint must record files, implemented behavior, commands actually exec
 92 local Swift / 51 Node passed. Same-seed local/native six-policy measurement is complete. Source80a7bf5 / run43908707917 attempt4 passed92 Swift,51 Node,six UI tests and full build/install/launch. All native fields match local final reports and actual artifacts were reviewed; first three account failures remain historical. Native checkpoint accepted; balance and production/device gates remain open. Maintain Era 4 closure through the 180-card phase and sufficient later inventory. New conversion ledger covers past mold/water/pasture/toll/bond/guest histories without active fourth-era rules. After acceptance, design 135 → 150 from measured ecology, workforce, technology opportunity costs and distinct narrative conflicts; add five per era, deepen further closed chains and actual art.
 
 
+## 210 boundary (Phase 3, second package)
+
+Era 4 inventory 30/40 (17/24 recurring, 6/8 conclusions, 6/8 bridges, one civil_law reform); gate still disabled. Node 77/77, Swift 127/127 on Windows, six 10,000-seed policies identical to the 195 reports except contentCardCount. A diagnostic open-gate measurement shows Era 4 currently starves most runs and exhausts its deck, so opening also needs an Era 4 production/food loop. Next: HANDOFF_210.md (210 → 225 scope).
+
 ## 195 boundary (Phase 3 start)
 
 Era 4 groundwork is authored but unplayable: `EraContentGate.enabled=false` and inventory 15/40. Node 70/70 pass; Swift tests written, not executed (no toolchain in the authoring environment); no simulation or native run. First action for the next agent: run `swift test`, six 10,000-seed policies and `tools/compare-reference195.mjs`, then native CI. See HANDOFF_195_CODEX.md.

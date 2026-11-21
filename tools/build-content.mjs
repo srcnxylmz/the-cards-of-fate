@@ -14,6 +14,7 @@ import { addContinuityEvents } from './content/continuity-events.mjs';
 import { addStewardshipEvents } from './content/stewardship-events.mjs';
 import { addCityEvents } from './content/city-events.mjs';
 import { addEmpireEvents, ERA4_GATE, FUTURE_ERA_GATE } from './content/empire-events.mjs';
+import { addEmpireProvinceEvents } from './content/empire-province-events.mjs';
 import { composeArtManifest } from './art-pipeline.mjs';
 
 // Authoring helpers normalize structure only. Every event below is individually authored.
@@ -258,6 +259,8 @@ addCivicWorkEvents({ cards, card, choice, outcome, delayed });
 addWatershedEvents({ card, choice, outcome, delayed });
 // Phase 3 groundwork: authored Era 4 events stay behind the disabled readiness gate below.
 addEmpireEvents({ cards, card, choice, outcome, delayed });
+// Phase 3, 195 → 210: fifteen more Era 4 events; the gate stays disabled (inventory 30/40).
+addEmpireProvinceEvents({ cards, card, choice, outcome, delayed });
 for(let i=0;i<cards.length;i++)cards[i]=withProductionInputs(cards[i]);
 
 // Durable historical decisions close using existing flags, including older v1 saves.

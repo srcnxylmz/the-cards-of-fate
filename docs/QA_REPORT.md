@@ -1,5 +1,9 @@
 # 180 kart kalite doğrulaması — 2026-11-19
 
+# 210 kart yerel doğrulama — 2026-11-20 (dal `phase3-era4-210`, Era 4 kapalı)
+
+210 benzersiz kart (60/60/60 + 30 kapalı Era 4), 541 karar. Windows: `build-content --check` geçti, doğrulayıcı 0 hata/0 uyarı, `node --test tools/*.test.mjs` **77/77**, `swift test` **127/127** (115 FateCore + 12 Diagnostics). Altı politika × 10.000 seed: `compare-reference.mjs` altısı 195 Windows raporlarıyla "identical except contentCardCount 195 → 210" (`docs/analysis/milestone210-windows/`). Teşhis (kapı zorla açık, oyuncuya kapalı): Era 4 açlık ve deste tükenmesiyle bitiyor; ayrıntı [PHASE3_210_REPORT.md](PHASE3_210_REPORT.md). Native CI [run 44748860814](https://github.com/srcnxylmz/the-cards-of-fate/actions/runs/44748860814) (`0521f6f`, workflow_dispatch) **başarılı**: Node 77/77, macOS Swift 127/127, iPhone SE 3 / iOS 18.5 derleme + 6/6 UI testi, 4 simülasyon işi (short, knowledge, progression, recovery). Yeni görsel yok: 43 aday, 167 eksik.
+
 # 195 kart yerel doğrulama — 2026-11-20 (kaynak `8a2924b`, dal `phase3-era4-groundwork`, PR #1)
 
 195 benzersiz kart (60/60/60 + 15 kapalı Era 4), 486 karar. Windows 11 üzerinde çalıştırıldı:

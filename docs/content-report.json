@@ -1,15 +1,16 @@
 {
   "errors": [],
   "warnings": [],
-  "cards": 195,
+  "cards": 210,
   "eraInventory": {
     "4": {
-      "total": 15,
-      "recurring": 9,
-      "conclusions": 3,
-      "bridges": 3,
+      "total": 30,
+      "recurring": 17,
+      "conclusions": 6,
+      "bridges": 6,
       "recurringCategories": [
         "citizenship",
+        "economy",
         "law",
         "logistics",
         "production",
@@ -112,14 +113,14 @@
       "open": false
     }
   },
-  "choices": 486,
+  "choices": 541,
   "stochasticChoices": 7,
-  "conditionalOutcomeChoices": 49,
+  "conditionalOutcomeChoices": 50,
   "eras": {
     "1": 60,
     "2": 60,
     "3": 60,
-    "4": 15,
+    "4": 30,
     "5": 0,
     "6": 0,
     "7": 0,
@@ -131,7 +132,7 @@
   },
   "authoredChainGroups": 11,
   "multiCardChainGroups": 11,
-  "crossEraLinks": 167,
+  "crossEraLinks": 183,
   "missingArt": [
     "card_broken_spear",
     "card_stranger_child",
@@ -284,7 +285,22 @@
     "card_ridge_toll_audit",
     "card_cistern_precedent",
     "card_guard_levy_charter",
-    "card_care_census_hearing"
+    "card_care_census_hearing",
+    "card_garrison_rotation",
+    "card_caravan_bandits",
+    "card_grain_ceiling",
+    "card_river_customs",
+    "card_irrigation_court",
+    "card_quarry_collapse",
+    "card_coin_assay",
+    "card_governor_petition",
+    "card_customs_house_ledger",
+    "card_harbor_ward_roll",
+    "card_watch_guild_charter",
+    "card_pasture_gate_levy",
+    "card_guest_assembly_bench",
+    "card_assembly_seal_appeal",
+    "card_civil_code_draft"
   ],
   "missingAudio": [
     "era_1",
@@ -314,7 +330,7 @@
   ],
   "releaseReady": false,
   "releaseBlockers": [
-    "800 original cards required; current 195",
+    "800 original cards required; current 210",
     "Era 4 content gate closed (enabled:false; 40/24/8/8 inventory not met)",
     "At least 60 cards per era and 80 special events required",
     "100 completed chains / 50 cross-era links required",
