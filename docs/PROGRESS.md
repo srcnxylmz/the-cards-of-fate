@@ -483,7 +483,7 @@ Era 4 kapalı: envanter 15/40, anahtar kapalı, native kanıt yok. Sonraki: HAND
 - **15 yeni Era 4 kartı:** 9 yönetim ve toparlanma, 3 köprü, 3 sonuç. Toplam 240 kart (60/60/60/60), 657 karar.
 - **Gerçek sonuçlar:** Node 92/92, doğrulayıcı 0/0, Swift 142/142 (Windows). Aynı-seed: altı politika × 10.000 seed, `node tools/compare-reference.mjs docs/analysis/milestone225-windows docs/analysis/milestone240-windows 225 240` → altısı "identical except contentCardCount 225 → 240" (`docs/analysis/milestone240-windows/`).
 - **Teşhis (2.000 seed):** kart nüfus kaybı yarıya indi; 500 sınırına ulaşan koşular recovery %62, knowledge %46, progression %16. İstikrar hedefi (≈ 30) progression (22) ve knowledge (14) için tutmadı. Kapı kapalı.
-- Native CI: **henüz çalıştırılmadı** (PR açıldıktan sonra tek tam koşu yapılacak). Görsel üretilmedi (araç yok).
+- Native CI [run 44881478766](https://github.com/srcnxylmz/the-cards-of-fate/actions/runs/44881478766) (#36, `e4c11f6`, workflow_dispatch) **başarılı**: 5/5 iş. verify logunda Node **92/92**, macOS Swift **142/142**, iPhone SE (3. nesil) / iOS 18.5'te derleme, kurulum ve açılış ile **6/6** UI testi (`TEST SUCCEEDED`). Altı politika × 10.000 seed native simülasyonun JSON'ları, `docs/analysis/milestone240-windows/` raporlarıyla 63 üst düzey alanın hepsinde birebir aynı (kanonik JSON, alan başına SHA-256). Görsel üretilmedi (araç yok).
 - **Belgeler:** rapor PHASE3_240_REPORT.md; devir HANDOFF_240.md.
 
 ### Phase 3 — 210 → 225: Antik İmparatorluklarda yiyecek ve üretim (Claude, 2026-11-20, dal `phase3-era4-225`)

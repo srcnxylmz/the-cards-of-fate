@@ -8,7 +8,7 @@ Bu not geçmiş sohbetleri görmeden okunabilir. Ayrıntılar ve tablolar: `docs
   - PR #1 `phase3-era4-groundwork` (180 → 195, native CI 44734293652 başarılı)
   - PR #2 `phase3-era4-210` (195 → 210, native CI 44748860814 başarılı)
   - PR #3 `phase3-era4-225` (210 → 225, kaynak `89173de`, native CI 44813221092 başarılı, dal HEAD `8bc4648`)
-  - PR #4 `phase3-era4-240` (bu paket; tabanı `8bc4648`)
+  - [PR #4](https://github.com/srcnxylmz/the-cards-of-fate/pull/4) `phase3-era4-240` (bu paket; tabanı `8bc4648`; kod ve doğrulanan kaynak `e4c11f6`; belge HEAD için `git log -1`)
 - `main` hâlâ 180 kartlık Phase 2'de. Birleşmeler yapılmadıysa yeni işi `phase3-era4-240` HEAD'inden başlatın.
 - Kod commit'i, belge commit'i, PR bağlantısı ve native CI: aşağıdaki "Doğrulama" bölümü.
 
@@ -40,7 +40,7 @@ Bu not geçmiş sohbetleri görmeden okunabilir. Ayrıntılar ve tablolar: `docs
   - Ortalama istikrar: progression 22, knowledge 14 (hedef ≈ 30, **tutmadı**); recovery 55, random 32.
   - Deste tükenmesi %0. random hâlâ %95 nüfus sıfırlanması.
 - **Aynı-seed:** altı politika × 10.000 seed, `node tools/compare-reference.mjs docs/analysis/milestone225-windows docs/analysis/milestone240-windows 225 240` → altısı "identical except contentCardCount 225 → 240" (`docs/analysis/milestone240-windows/`). Normal oyuncu 180 kartlık oynanışı birebir yaşıyor.
-- **Native CI:** PR açıldıktan sonra tek tam koşu; sonuç bu bölüme ve PROGRESS/QA_REPORT'a işlenir.
+- **Native CI:** [run 44881478766](https://github.com/srcnxylmz/the-cards-of-fate/actions/runs/44881478766) (#36, `e4c11f6`, workflow_dispatch) **başarılı**: 5/5 iş. verify logunda Node **92/92**, macOS Swift **142/142**, iPhone SE (3. nesil) / iOS 18.5'te derleme, kurulum ve açılış ile **6/6** UI testi (`TEST SUCCEEDED`). Altı politika × 10.000 seed native simülasyonun JSON'ları, `docs/analysis/milestone240-windows/` raporlarıyla 63 üst düzey alanın hepsinde birebir aynı (kanonik JSON, alan başına SHA-256). Era 4 kapalı olduğu için bu, 240 içeriğinin kabulüdür; Era 4 açılış kabulü değildir.
 
 ## Era 4 neden kapalı
 

@@ -129,7 +129,7 @@ Olumsuz sonuçlar, açıkça:
 | `node --test tools/*.test.mjs` | **92/92** (84 + 8 yeni `empire-governance-content.test.mjs`) |
 | `swift test` | **142/142** (FateCoreTests 130 + FateDiagnosticsTests 12; 7 yeni `EmpireGovernanceTests`) |
 | Release `FateSimulation`, altı politika × 10.000 seed | `compare-reference.mjs … 225 240`: altısı "identical except contentCardCount 225 → 240" |
-| Native iPhone CI | [HANDOFF_240.md](HANDOFF_240.md) |
+| Native iPhone CI | [run 44881478766](https://github.com/srcnxylmz/the-cards-of-fate/actions/runs/44881478766), kaynak `e4c11f6`: **başarılı**. Node 92/92, macOS Swift 142/142, iPhone SE (3. nesil) / iOS 18.5 6/6 UI; altı × 10.000 native simülasyon Windows raporlarıyla 63/63 alanda aynı |
 
 ## 8. Görsel ve ses
 
