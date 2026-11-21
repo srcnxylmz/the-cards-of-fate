@@ -57,5 +57,10 @@
     "interval": 4,
     "minimumStability": 25,
     "populationCeiling": 60
+  },
+  "provincialFamineRelief": {
+    "minimumEra": 4,
+    "flag": "grain_famine_store",
+    "maximumShares": 4
   }
 }

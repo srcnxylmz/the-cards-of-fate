@@ -125,6 +125,7 @@ final class EmpireGovernanceTests: XCTestCase {
         previous.balance.provincialStorage = nil
         previous.balance.provincialGrowth = nil
         previous.politics.institutionDefense = nil
+        previous.balance.provincialFamineRelief = nil
         let now = GameEngine(content: current), then = GameEngine(content: previous)
         for seed in UInt64(40)..<52 {
             var a = now.start(seed: seed), b = then.start(seed: seed)

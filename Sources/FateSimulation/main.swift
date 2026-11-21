@@ -14,7 +14,8 @@ let manageCouncil = arguments.contains("--manage-council")
 let collectSeeds = arguments.contains("--seed-observations")
 var seedObservations:[[String:Any]]=[]
 var managedCouncilChanges:[String:Int]=[:]
-guard ["random", "survival", "knowledge", "progression", "recovery"].contains(policyName) else { throw UsageError.invalidArguments }
+// "investment" is a separate diagnostic policy (Phase 3, 255); the five baseline policies are unchanged.
+guard ["random", "survival", "knowledge", "progression", "recovery", "investment"].contains(policyName) else { throw UsageError.invalidArguments }
 var content = try ContentDatabase.bundled()
 if let path = option("--cards") {
     content.cards = try JSONDecoder().decode([CardEvent].self, from: Data(contentsOf: URL(fileURLWithPath: path)))
@@ -32,6 +33,56 @@ if arguments.contains("--diagnostic-open-era") {
     content = content.diagnosticallyOpened(era: era)
 }
 let engine = GameEngine(content: content)
+
+/// Investment-aware diagnostic policy. Before Era 4 it plays exactly like "progression" (same entry states).
+/// From Era 4 it scores only what a player can see: the current state, each choice's printed effects and
+/// delayed consequences, and the same expected outcome weights the baseline policies use. It never reads
+/// future random draws. It values standing production capacity, storage records, power-sharing institutions,
+/// debts and faction hostility, and weighs reserves, population and stability by need.
+func selectInvestment(_ choices: [Choice], state: GameState, random: inout SeededRandom) -> Choice {
+    guard state.era >= 4 else { return engine.select(choices, state: state, policyName: "progression", random: &random) }
+    let balance = engine.content.balance, politics = engine.content.politics
+    let stat = { (name: String) in state.stats[name, default: 0] }
+    func value(_ effect: Effect) -> Double {
+        var score = 0.0
+        let weights: [String: Double] = [
+            "resources": stat("resources") < 20 ? 2.0 : 1.0, "population": stat("population") < 30 ? 3.0 : 1.2,
+            "stability": stat("stability") < 30 ? 2.5 : 0.8, "environment": stat("environment") < 35 ? 1.5 : 0.4,
+            "authority": stat("authority") < 15 ? 1.0 : 0.4, "knowledge": 0.2]
+        for (name, weight) in weights {
+            let current = stat(name)
+            score += Double(min(100, max(0, current + effect.stats[name, default: 0])) - current) * weight
+        }
+        let removed = Set(effect.removeFlags ?? [])
+        for source in balance.provincialProduction ?? [] {
+            let usable = stat("population") >= source.minimumPopulation && stat("environment") >= source.minimumEnvironment
+            if usable && effect.flags.contains(source.flag) && !state.flags.contains(source.flag) { score += 12 }
+            if removed.contains(source.flag) && state.flags.contains(source.flag) { score -= 12 }
+        }
+        for flag in balance.provincialStorage?.flags ?? [] where effect.flags.contains(flag) && !state.flags.contains(flag) { score += 5 }
+        if let rule = politics.institutionDefense {
+            let held = rule.flags.filter(state.flags.contains).count
+            if held * rule.defensePerFlag < rule.maximumDefense {
+                score += Double(rule.flags.filter { effect.flags.contains($0) && !state.flags.contains($0) }.count) * 5
+            }
+        }
+        for debt in ["garrison_pay_arrears", "temple_grain_loan", "provincial_tax_deferred"] {
+            if effect.flags.contains(debt) && !state.flags.contains(debt) { score -= 4 }
+            if removed.contains(debt) && state.flags.contains(debt) { score += 3 }
+        }
+        if state.rivals.contains(where: { $0.relation < politics.neutralRelation }) { score += Double(effect.rivalRelation) * 0.3 }
+        return score
+    }
+    return choices.enumerated().max { lhs, rhs in
+        func score(_ choice: Choice) -> Double {
+            value(choice.immediateEffects) + zip(choice.outcomes, engine.outcomeProbabilities(for: choice, in: state)).reduce(0) { sum, pair in
+                sum + pair.1 * (value(pair.0.effect) + pair.0.delayedEffects.reduce(0) { $0 + 0.6 * value($1.effect) })
+            }
+        }
+        let a = score(lhs.element), b = score(rhs.element)
+        return a == b ? lhs.offset > rhs.offset : a < b
+    }!.element
+}
 var developmentTotals: [String:Int] = [:]
 var crisisTotals: [String:Int] = [:]
 var resolvedOutcomes: [String:Int] = [:]
@@ -139,7 +190,9 @@ for seed in 0..<count {
         }
         if let action=actionKind { for stat in Stat.allCases { let change=state.stats[stat.rawValue,default:0]-councilStatsBefore[stat.rawValue,default:0]; if change != 0 { managedCouncilChanges[eraKey+"."+action+"."+stat.rawValue+"."+(change<0 ? "loss":"gain"),default:0] += abs(change) } } }
         let choices = card.choices.filter { $0.available(in: state) }
-        let choice = policyName == "recovery" ? engine.selectRecovery(choices,state:state) : engine.select(choices, state: state, policyName: policyName, random: &policy)
+        let choice = policyName == "recovery" ? engine.selectRecovery(choices,state:state)
+            : policyName == "investment" ? selectInvestment(choices, state: state, random: &policy)
+            : engine.select(choices, state: state, policyName: policyName, random: &policy)
         let measuring = diagnosticOpenEra == state.era
         if measuring {
             if eraIndex == 0 {
@@ -177,6 +230,12 @@ for seed in 0..<count {
                 if repeatHere { economy["window\(window).repeats", default: 0] += 1 }
             }
             if eraIndex > 100 { lateCards.insert(card.id); lateChoices.insert(card.id+"."+choice.id) }
+            // Political balance: authority against the strongest faction, and whether council actions are open.
+            economy["politics.authority", default: 0] += state.stats["authority", default: 0]
+            economy["politics.defense", default: 0] += engine.councilDefense(state)
+            for rival in state.rivals { economy["politics.power.\(rival.id)", default: 0] += rival.power; economy["politics.relation.\(rival.id)", default: 0] += rival.relation }
+            if engine.councilActionAvailable(.alliance, in: state) { economy["politics.allianceOpen", default: 0] += 1 }
+            if state.rivals.contains(where: { engine.councilActionAvailable(.negotiate($0.id), in: state) }) { economy["politics.negotiateOpen", default: 0] += 1 }
             if [20, 40, 80].contains(eraIndex) {
                 economy["at\(eraIndex).runs", default: 0] += 1
                 for stat in ["resources", "stability", "population"] { economy["at\(eraIndex).\(stat)", default: 0] += state.stats[stat, default: 0] }
@@ -230,6 +289,10 @@ for seed in 0..<count {
                 let popDelta = snapshot.stats["population", default: 0] - stageStats["population", default: 0]
                 if stage == "card" && popDelta < 0 { economy["cardPopulation.\(decisionKey)", default: 0] -= popDelta }
                 if stageStats["population", default: 0] > 0 && snapshot.stats["population", default: 0] == 0 { economy["death.\(stage)", default: 0] += 1 }
+                if stage == "council" && (snapshot.stats["stability", default: 0] < stageStats["stability", default: 0] || snapshot.stats["authority", default: 0] < stageStats["authority", default: 0]) {
+                    economy["politics.challenges", default: 0] += 1
+                }
+                if stage == "council" && snapshot.turn % content.politics.meetingInterval == 0 { economy["politics.meetings", default: 0] += 1 }
             }
             stageStats = snapshot.stats
             if stage == "card" && previousEra == 1 {
@@ -362,6 +425,9 @@ var report: [String: Any] = [
     "limitation": "Small development deck; capped runs are censored observations, not confirmed endings. Heuristic policies do not establish human skill balance or session duration."
 ]
 // Keys are added only in diagnostic mode, so baseline reports keep their exact shape.
+if policyName == "investment" {
+    report["policyNote"] = "Investment-aware diagnostic policy (plays as progression before Era 4). Report it separately; not comparable with the five baseline policies."
+}
 if let era = diagnosticOpenEra {
     report["diagnosticOpenEra"] = era
     report["diagnosticEconomy"] = economy

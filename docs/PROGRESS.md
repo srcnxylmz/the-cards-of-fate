@@ -475,6 +475,17 @@ Gerçek sonuçlar: Node 70/70 (7 yeni), doğrulayıcı 0/0, eski 180 tanım deri
 
 Era 4 kapalı: envanter 15/40, anahtar kapalı, native kanıt yok. Sonraki: HANDOFF_195_CODEX.md'deki doğrulama sırası, ardından 195 → 210 kapsamı. Rapor: PHASE3_195_REPORT.md.
 
+### Phase 3 — 240 → 255: meclis dengesi, ekonomik kırılganlık, yatırım politikası (Claude, 2026-11-21, dal `phase3-era4-255`)
+
+- **Siyasi ölçüm:** meclis baskısının asıl nedeni rakip düşmanlığı. Era 4 `powerStats` eşlemeleri ölçüldü ve hepsi baskıyı artırdığı için eklenmedi.
+- **Düzeltme (yalnız Era 4):** kurumlar yoluyla yatıştırma, tarafsızlığın altında bir tavanla; ayrıca mühürlü depodan tek seferlik kıtlık yardımı.
+- **Yeni teşhis politikası:** `--policy investment`, ayrı raporlandı.
+- **15 yeni Era 4 kartı:** 255 kart (60/60/60/75), 715 karar. 240 paketi birebir korundu.
+- **Gerçek sonuçlar:** Node 99/99, doğrulayıcı 0/0, Swift 148/148 (Windows). Aynı-seed: altı politika × 10.000 seed, `compare-reference.mjs docs/analysis/milestone240-windows docs/analysis/milestone255-windows 240 255` → altısı "identical except contentCardCount 240 → 255".
+- **Teşhis:** meclis kaybı ve gerçek açlık kaybı belirgin düştü. İstikrar hedefi (30) progression (25) ve knowledge (17) için tutmadı. Yatırım politikasında istikrar 86.
+- Native CI [44893045378](https://github.com/srcnxylmz/the-cards-of-fate/actions/runs/44893045378) (#37, `3bc8a65`) **başarılı**: Node 99/99, Swift 148/148, iPhone UI 6/6 (`** TEST SUCCEEDED **`); dört simülasyon işi başarılı. Altı native rapor (`native-simulations-*` artifact) `docs/analysis/milestone255-windows` ile kanonik JSON alan özetlerinde karşılaştırıldı: altısında 63/63 alan aynı. Görsel üretilmedi (araç yok; 212 eksik).
+- **Belgeler:** rapor PHASE3_255_REPORT.md; devir HANDOFF_255.md.
+
 ### Phase 3 — 225 → 240: nüfus, istikrar ve sınırlı birikim (Claude, 2026-11-21, dal `phase3-era4-240`)
 
 - **Ölçüm:** ölüm nedenleri ayrıştırıldı. 225'te "açlık sonu"nun yaklaşık yarısı kart kararlarının biriken nüfus maliyetiydi.

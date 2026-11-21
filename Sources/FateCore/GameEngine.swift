@@ -128,6 +128,10 @@ public struct GameEngine {
         let balance = content.balance
         let food = foodBudget(in: state, unfundedResources: unfundedResources)
         apply(.init(stats: ["resources": food.production-food.consumption-unfundedResources+food.stored], flags: [], technologies: [], buildings: [], rivalRelation: 0), to: &state)
+        if food.relieved > 0, let relief = balance.provincialFamineRelief {
+            state.flags.remove(relief.flag)
+            append(.init(tr: "Kıtlıkta kamu ambarı açıldı; mühürlü tahıl (food.relieved) payı karşıladı ve depo boşaldı.", en: "The public store was opened against hunger; the sealed grain covered (food.relieved) shares and the store is now empty."), to: &state)
+        }
         if food.shortfall > 0 {
             apply(.init(stats: ["population": -food.populationLoss, "stability": -food.stabilityLoss], flags: [], technologies: [], buildings: [], rivalRelation: 0), to: &state)
             append(.init(tr: "Bu tur yiyecek ihtiyacının \(food.shortfall)/\(food.consumption) payı karşılanamadı; nüfus azaldı.", en: "Food fell short by \(food.shortfall) of \(food.consumption) shares this turn; population declined."), to: &state)
@@ -140,6 +144,7 @@ public struct GameEngine {
             append(.init(tr: "Doyan ve huzurlu eyalete yeni haneler yerleşti.", en: "New households settled in the fed and orderly province."), to: &state)
         }
         let politics = content.politics
+        reconcileFactions(&state)
         updateFactionPower(&state)
         if let until = state.politics?.allianceUntilTurn, !hasAlliance(state) {
             state.politics?.allianceUntilTurn = nil

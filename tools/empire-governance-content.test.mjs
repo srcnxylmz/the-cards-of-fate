@@ -14,7 +14,7 @@ const politics = read('Sources/FateCore/Content/politics.json');
 const before = read('docs/analysis/milestone240-225-before/cards.json');
 const beforePolitics = read('docs/analysis/milestone240-225-before/politics.json');
 const byId = id => cards.find(c => c.id === id);
-const fresh = cards.slice(225);
+const fresh = cards.slice(225, 240);
 const earlyFlags = new Set(cards.filter(c => c.era <= 3).flatMap(c => c.choices.flatMap(ch => ch.outcomes.flatMap(o => [...o.effect.flags, ...o.delayedEffects.flatMap(d => d.effect.flags)]))));
 const results = c => c.choices.flatMap(ch => ch.outcomes.map(o => ({ c, ch, o })));
 const RECURRING = ['assembly_power_share', 'tax_deferral', 'governor_recall', 'garrison_oversight', 'duty_rota', 'refugee_settlement', 'surplus_harvest', 'grain_contract', 'well_sanitation'];
@@ -27,8 +27,8 @@ test('fifteen new Era 4 events: nine recurring, three Bronze bridges, three cond
   assert.deepEqual(fresh.filter(c => c.eraRole === 'recurring').map(c => c.id), RECURRING);
   assert.deepEqual(fresh.filter(c => c.eraRole === 'bridge').map(c => c.id), ['provincial_seal_charter', 'charcoal_forest_reserve', 'estate_bondage_record']);
   assert.deepEqual(fresh.filter(c => c.eraRole === 'conclusion').map(c => c.id), ['tithe_measure_recall', 'governor_succession_rule', 'merchant_grain_rights']);
-  for (const e of [1, 2, 3, 4]) assert.equal(cards.filter(c => c.era === e).length, 60, `era ${e}`);
-  assert.equal(cards.length, 240);
+  for (const e of [1, 2, 3]) assert.equal(cards.filter(c => c.era === e).length, 60, `era ${e}`);
+  assert.equal(cards.slice(0, 240).filter(c => c.era === 4).length, 60, 'the 240 package brought Era 4 to sixty');
   for (const c of fresh) for (const lang of ['tr', 'en']) for (const ch of c.choices) assert.ok(ch.text[lang].length > 10 && ch.outcomes.every(o => o.text[lang].length > 30), `${c.id}.${ch.id} ${lang}`);
 });
 
@@ -81,6 +81,7 @@ test('bounded accumulation, growth and institutional defense are Era 4 data, not
   const rule = politics.institutionDefense;
   assert.equal(rule.minimumEra, 4); assert.ok(rule.maximumDefense <= 30);
   const { institutionDefense, ...rest } = politics;
+  // 255 adds only the reconciliation fields to the same rule (checked in empire-assembly-content.test.mjs).
   assert.deepEqual(rest, beforePolitics, 'no other political rule changed');
   // Every institution is bought with authority (or a once-only legacy choice), never handed out for free.
   for (const flag of rule.flags) {
@@ -132,12 +133,12 @@ test('ledger: the tax deferral and wage debts keep their identities and close on
   }
 });
 
-test('Era 4 stays closed at sixty cards; no balance evidence is recorded', () => {
+test('Era 4 stays closed at seventy-five cards; no balance evidence is recorded', () => {
   const gate = eras.find(e => e.id === 4).contentGate;
   assert.deepEqual([gate.enabled, gate.balanceEvidence], [false, null]);
   const result = validate(cards, eras);
   assert.deepEqual([result.errors, result.warnings], [[], []]);
   const inv = result.eraInventory[4];
-  assert.deepEqual([inv.total, inv.recurring, inv.conclusions, inv.bridges, inv.satisfied, inv.open], [60, 37, 11, 11, true, false]);
+  assert.deepEqual([inv.total, inv.recurring, inv.conclusions, inv.bridges, inv.satisfied, inv.open], [75, 46, 14, 14, true, false]);
   assert.equal(result.eraInventory[5].open, false);
 });

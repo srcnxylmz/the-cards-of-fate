@@ -1,5 +1,16 @@
 # Era 4 boundary and future dependencies — 180-card group
 
+## Durum — 255 paketi (Claude, dal `phase3-era4-255`)
+
+- **Envanter:** 75 · 46 · 14 · 14 (+1 reform). Kapı `enabled:false`, `balanceEvidence:null`; Era 5 kapalı.
+- **Ölçüm** (2.000 seed, 210 → 225 → 240 → 255):
+  - Kurumlar yoluyla yatıştırma, knowledge'da meclis baskısını 100 kararda −54'ten −31'e indirdi.
+  - 500 sınırına canlı ulaşan koşular: progression %42, knowledge %57, random %16.
+  - İstikrar hedefi tutmadı: progression 25, knowledge 17.
+  - Ayrı yatırım politikasında istikrar 86 ve %93'ü 500 sınırında; iyi oyuncu için fazla rahat olabilir.
+- **Açılış hazırlık değerlendirmesi:** [PHASE3_255_REPORT.md](PHASE3_255_REPORT.md) bölüm 6. Açılmamalı. Devir: [HANDOFF_255.md](HANDOFF_255.md).
+- Aynı-seed: altı politika × 10.000 seed, `compare-reference.mjs docs/analysis/milestone240-windows docs/analysis/milestone255-windows 240 255` → altısı "identical except contentCardCount 240 → 255". Native CI [44893045378](https://github.com/srcnxylmz/the-cards-of-fate/actions/runs/44893045378) (#37, `3bc8a65`) **başarılı**: Node 99/99, Swift 148/148, iPhone UI 6/6 (`** TEST SUCCEEDED **`); dört simülasyon işi başarılı. Altı native rapor (`native-simulations-*` artifact) `docs/analysis/milestone255-windows` ile kanonik JSON alan özetlerinde karşılaştırıldı: altısında 63/63 alan aynı.
+
 ## Durum — 240 paketi (Claude, dal `phase3-era4-240`)
 
 - **Envanter:** 60 · 37 · 11 · 11 (+1 reform). Kapı `enabled:false`, `balanceEvidence:null`; Era 5 kapalı.
