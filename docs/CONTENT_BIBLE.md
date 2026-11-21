@@ -2,7 +2,11 @@
 
 Editorial principle: each card needs a specific human conflict, an observable cost, competing reasonable values, and consequences that fit the era. Neither option should simply be the same reward in different wording. Turkish is authored naturally, with a complete English counterpart for the current 180-card set.
 
-## Current 180-card inventory
+## Current 195-card inventory (Era 4 closed)
+
+180 first-three-era events unchanged plus 15 Ancient Empires events authored behind a disabled readiness gate; 486 decisions. Era 4 editorial rules: the conflict is between province and centre, payer and receiver, old record and new labor. Every paying decision needs the reserve up front; an old right buys a hearing, a precedent or a discount, never free output; paid debts stay closed and open debts are neither forgiven nor enlarged at entry; officials cannot silently revoke earlier citizenship or care records. Material culture is a fictional composite (cut stone, marble, wax tablets/papyrus, bronze and iron tools, wool tunics; no stirrups, paper books or gunpowder). Inventory, ledger flags and card list: PHASE3_195_REPORT.md.
+
+## Historical 180-card inventory
 
 180 özgün olay, 60/60/60 ve 434 karar. Son 15 olayın köy ve kent bağlantıları STORY_REVIEW_180.md içinde. Altıncı zincir iki karşıt yol hesabını kapatır. Altı zincirin kapsamı, açık anlatılar ve üretim eksikleri PHASE2_FINAL_REVIEW.md içinde.
 

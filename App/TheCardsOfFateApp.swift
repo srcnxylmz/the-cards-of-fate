@@ -199,7 +199,7 @@ struct RootView: View {
                     }.frame(minHeight: 44)
                     Button(t("Haftalık sıralama", "Weekly standings")) { panel = .leaderboard }.frame(minHeight: 44)
                 }.padding(.top, 20)
-                Text(t("Geliştirme sürümü · \(store.content?.cards.count ?? 0) olay · İlk üç çağ\nGörseller ve müzik henüz tamamlanmadı.", "Development build · \(store.content?.cards.count ?? 0) events · First three eras\nIllustrations and music are not complete."))
+                Text(t("Geliştirme sürümü · \(store.content?.playableCards.count ?? 0) olay · İlk üç çağ\nGörseller ve müzik henüz tamamlanmadı.", "Development build · \(store.content?.playableCards.count ?? 0) events · First three eras\nIllustrations and music are not complete."))
                     .font(.caption).foregroundStyle(.secondary).multilineTextAlignment(.center)
             }.padding(26).frame(maxWidth: 550)
         }

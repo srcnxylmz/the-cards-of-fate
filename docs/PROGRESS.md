@@ -463,3 +463,24 @@ Original80a7bf55253ee5b16350ca973ecdd6a0e9da8bc0 passed run43908707917 attempt4/
 Reviewed180 exported attachments through manifest checks:20 illustration fixtures with three captures each; visually inspected five new standard scenes, stable ore/gate/slag choices, granary large-text/Reduce Motion plus reachable choices, English normal/large scroll frames and main menu. Four production OCR notes each report six visible/no missing stats. Audio64 events show all three cue starts and correct mute, no invalid or write error. No export-error file or collected app crash. Partial entry opacity is from the entrance animation; physical hearing/device/color/performance and expert art approval remain open. Exact provenance: NATIVE_135_EVIDENCE.md.
 
 No game code, workflow or card count changed in this verification task; runtime identity against80a7bf5 must remain clean. Earlier account failures are retained. Known survival/food/ecology/pacing regressions remain open despite successful CI.135 now has native acceptance;150-card work has not started. The next-group task record remains a proposal.
+
+
+### Phase 3 başlangıcı — 180 → 195 (Claude, 2026-11-19)
+
+Taban `c405ac2` doğrulandı: 63/63 Node, `build-content --check` güncel, 180 kart/434 karar. Dal `phase3-era4-groundwork`, kod commit'i `b2e904b`.
+
+Yapılan: açık Era içerik kapısı (`EraContentGate`, Era 4 `enabled:false`, 40/24/8/8 + sekiz alan; Era 5–12 kapalı); `advanceEra` kapıya bağlandı, eşikler aynı; `CardEvent.eraRole`; 15 Era 4 olayı (9 tekrarlanabilir, 3 Tunç köprüsü, 3 koşullu sonuç) ve bayrak tabanlı eyalet defteri; altı tamamlanmış zincirin her biri en az bir Era 4 devamı aldı; menü oynanabilir sayıyı (180) gösterir; doğrulayıcı kapı/rol/envanter denetimi; `compare-reference195.mjs`.
+
+Gerçek sonuçlar: Node 70/70 (7 yeni), doğrulayıcı 0/0, eski 180 tanım derin eşit. Swift 16 yeni test yazıldı, **çalıştırılmadı** (ortamda Swift yok). Simülasyon, native CI, UI/OCR/ses **çalıştırılmadı**. Yeni görsel üretilmedi (araç yok): 43 aday, 152 eksik. GitHub push izni reddedildi; dal bundle/patch olarak kullanıcıya teslim edildi.
+
+Era 4 kapalı: envanter 15/40, anahtar kapalı, native kanıt yok. Sonraki: HANDOFF_195_CODEX.md'deki doğrulama sırası, ardından 195 → 210 kapsamı. Rapor: PHASE3_195_REPORT.md.
+
+### 195 paketinin yerel doğrulaması (Claude, Windows, 2026-11-20)
+
+Bundle doğrulandı (`a76aa65`, ön koşul `c405ac2`), dal içeri alındı, push edildi; PR: https://github.com/srcnxylmz/the-cards-of-fate/pull/1. Kaynak `8a2924b`.
+
+- Node 70/70, doğrulayıcı 0/0, `build-content --check` geçti.
+- Swift 6.4.2 Windows: 125/125 (113 FateCore + 12 Diagnostics). Derleme hatası çıkmadı.
+- Düzeltme: `EraReadinessTests.testControlledFixtureOpensOnlyWithApprovalInventoryAndThresholds` liderliği tur öncesi durumla karşılaştırıyordu; fikstür otorite 60 ile `contender` başlıyor ve tur çözümü her çağda otorite ≥ 60'ta `ruler` yapıyor (`GameEngine.swift` ~175). Test artık aynı turun kapalı kapıdaki sonucuyla liderlik, bayrak, teknoloji ve kuşak eşitliği ister (daha sıkı). Motor değişmedi.
+- Altı politika × 10.000 seed release simülasyonu: `compare-reference195.mjs` altısı "identical except contentCardCount 180 → 195". Era 4 kartları ilk üç çağın seçimine sızmıyor.
+- Native CI: [run 44734293652](https://github.com/srcnxylmz/the-cards-of-fate/actions/runs/44734293652) (#33, workflow_dispatch, kaynak `8a2924bd541962b49fe768586dca37fabea237d9`) **başarılı**, beş işin beşi de geçti. `verify` (macos-15 arm64, Xcode 16.4): Node 70/70, içerik kontrolleri ve doğrulayıcı 0 hata/0 uyarı, Swift 125/125, iPhone SE (3. nesil)/iOS 18.5 simülatöründe derleme, kurulum, başlatma ve 6/6 UI testi (`** TEST SUCCEEDED **`: TR/EN karar ve kaldığı yerden devam, meclis müzakeresi, görünür istatistikler, illüstrasyonlu kartlar + büyük metin/Reduce Motion, ses cue/mute). Dört simülasyon işi (short, knowledge, progression, recovery; macos-15-intel) 10.000 seed ile başarıyla bitti. Artefaktlar: `iphone-ui-evidence`, `quality-reports`, `native-simulations-{short,knowledge,progression,recovery}`. macOS simülasyon raporları `compare-reference195.mjs` ile ayrıca karşılaştırılmadı (artefaktlar indirilmedi); aynı-seed kanıtı yukarıdaki Windows karşılaştırmasıdır. Ekran görüntüleri incelenmedi.

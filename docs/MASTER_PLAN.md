@@ -7,7 +7,7 @@ Full requirements: `MASTER_SPEC.md`. Target: commercially polished, offline-firs
 | 0 | Architecture, 12-era guide, schema, acceptance ledger, real source | Initial documents and source exist; design needs further depth |
 | 1 | iPhone build; deterministic decisions; result acknowledgment; atomic save; start/end tests | 135-card source80a7bf5 verified:92 Swift (84 Core,eight diagnostics),six UI tests; full run43908707917 attempt4, evidence in NATIVE_135_EVIDENCE.md |
 | 2 | 180 distinct first-three-era events, rivals, settlements, legacy, artwork and transitions | 135 events (45/ 45/ 45); 102 static cross-era references, two preserved chains and one new self-reviewed/tested closed chain; tested debt/hospitality branches; faction support/pacts and initial opposition coalition implemented; richer politics, content and production art remain |
-| 3 | 300 era 4–8 events, diplomacy/trade/war/science, visual/audio integration | Planned; era metadata only |
+| 3 | 300 era 4–8 events, diplomacy/trade/war/science, visual/audio integration | Started (195 package, branch phase3-era4-groundwork): explicit Era content gate (disabled), 15 Era 4 events (9 recurring / 3 bridges / 3 conclusions), flag-based provincial ledger; Era 4 closed until 40/24/8/8 inventory, explicit enablement and native evidence. Swift/native verification of this package pending |
 | 4 | 240 era 9–12 events, modern/AI/space systems, endings | Planned; era metadata only |
 | 5 | 80 extra events; 800 total; 100 complete chains; 50 cross-era links; 30 endings | Not met |
 | 6 | Original branding/icon, unique card art, 15 animation types, 12 scores/ambiences, 40 effects | Fifteen generated illustration candidates; three prototype cues; presentation prototypes |
@@ -40,3 +40,8 @@ Every checkpoint must record files, implemented behavior, commands actually exec
 ## 135 boundary
 
 92 local Swift / 51 Node passed. Same-seed local/native six-policy measurement is complete. Source80a7bf5 / run43908707917 attempt4 passed92 Swift,51 Node,six UI tests and full build/install/launch. All native fields match local final reports and actual artifacts were reviewed; first three account failures remain historical. Native checkpoint accepted; balance and production/device gates remain open. Maintain Era 4 closure through the 180-card phase and sufficient later inventory. New conversion ledger covers past mold/water/pasture/toll/bond/guest histories without active fourth-era rules. After acceptance, design 135 → 150 from measured ecology, workforce, technology opportunity costs and distinct narrative conflicts; add five per era, deepen further closed chains and actual art.
+
+
+## 195 boundary (Phase 3 start)
+
+Era 4 groundwork is authored but unplayable: `EraContentGate.enabled=false` and inventory 15/40. Node 70/70 pass; Swift tests written, not executed (no toolchain in the authoring environment); no simulation or native run. First action for the next agent: run `swift test`, six 10,000-seed policies and `tools/compare-reference195.mjs`, then native CI. See HANDOFF_195_CODEX.md.

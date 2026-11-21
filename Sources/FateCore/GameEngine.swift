@@ -193,8 +193,9 @@ public struct GameEngine {
               state.stats["knowledge", default: 0] >= era.knowledgeThreshold,
               state.stats["stability", default: 0] >= era.stabilityThreshold,
               state.stats["population", default: 0] >= era.populationThreshold else { return }
-        // Unauthored eras cannot masquerade as complete playable content.
-        guard content.cards.contains(where: { $0.era == state.era + 1 }) else { return }
+        // Unauthored or not-yet-approved eras cannot masquerade as complete playable content.
+        // Authored cards alone never open a gated era; see EraContentGate.
+        guard content.eraContentReady(state.era + 1) else { return }
         state.era += 1
         if let next = content.eras.first(where: { $0.id == state.era }) {
             append(next.name, to: &state)

@@ -81,7 +81,24 @@
     "stabilityThreshold": 35,
     "populationThreshold": 25,
     "palette": "#D8C3A1",
-    "artDirection": "Mermer, mozaik; ivory gold; crowds and ceremonial drums."
+    "artDirection": "Mermer, mozaik; ivory gold; crowds and ceremonial drums.",
+    "contentGate": {
+      "enabled": false,
+      "minimumCards": 40,
+      "minimumRecurring": 24,
+      "minimumConclusions": 8,
+      "minimumBridges": 8,
+      "requiredRecurringCategories": [
+        "province",
+        "taxation",
+        "logistics",
+        "roads",
+        "water",
+        "production",
+        "citizenship",
+        "law"
+      ]
+    }
   },
   {
     "id": 5,
@@ -102,7 +119,15 @@
     "stabilityThreshold": 35,
     "populationThreshold": 25,
     "palette": "#84617F",
-    "artDirection": "Parşömen, vitray; plum silver; rain bells and bowed strings."
+    "artDirection": "Parşömen, vitray; plum silver; rain bells and bowed strings.",
+    "contentGate": {
+      "enabled": false,
+      "minimumCards": 40,
+      "minimumRecurring": 24,
+      "minimumConclusions": 8,
+      "minimumBridges": 8,
+      "requiredRecurringCategories": []
+    }
   },
   {
     "id": 6,
@@ -123,7 +148,15 @@
     "stabilityThreshold": 35,
     "populationThreshold": 25,
     "palette": "#A67752",
-    "artDirection": "Yağlı boya, gravür; sienna gold; workshop lute."
+    "artDirection": "Yağlı boya, gravür; sienna gold; workshop lute.",
+    "contentGate": {
+      "enabled": false,
+      "minimumCards": 40,
+      "minimumRecurring": 24,
+      "minimumConclusions": 8,
+      "minimumBridges": 8,
+      "requiredRecurringCategories": []
+    }
   },
   {
     "id": 7,
@@ -144,7 +177,15 @@
     "stabilityThreshold": 35,
     "populationThreshold": 25,
     "palette": "#3F8192",
-    "artDirection": "Harita, pusula; ocean parchment; rigging and chamber ensemble."
+    "artDirection": "Harita, pusula; ocean parchment; rigging and chamber ensemble.",
+    "contentGate": {
+      "enabled": false,
+      "minimumCards": 40,
+      "minimumRecurring": 24,
+      "minimumConclusions": 8,
+      "minimumBridges": 8,
+      "requiredRecurringCategories": []
+    }
   },
   {
     "id": 8,
@@ -165,7 +206,15 @@
     "stabilityThreshold": 35,
     "populationThreshold": 25,
     "palette": "#9A7962",
-    "artDirection": "Çelik, buhar; rust charcoal; machinery and low pulse."
+    "artDirection": "Çelik, buhar; rust charcoal; machinery and low pulse.",
+    "contentGate": {
+      "enabled": false,
+      "minimumCards": 40,
+      "minimumRecurring": 24,
+      "minimumConclusions": 8,
+      "minimumBridges": 8,
+      "requiredRecurringCategories": []
+    }
   },
   {
     "id": 9,
@@ -186,7 +235,15 @@
     "stabilityThreshold": 35,
     "populationThreshold": 25,
     "palette": "#7F968B",
-    "artDirection": "Özgün fotoğrafik kolaj; muted green; radio texture and orchestra."
+    "artDirection": "Özgün fotoğrafik kolaj; muted green; radio texture and orchestra.",
+    "contentGate": {
+      "enabled": false,
+      "minimumCards": 40,
+      "minimumRecurring": 24,
+      "minimumConclusions": 8,
+      "minimumBridges": 8,
+      "requiredRecurringCategories": []
+    }
   },
   {
     "id": 10,
@@ -207,7 +264,15 @@
     "stabilityThreshold": 35,
     "populationThreshold": 25,
     "palette": "#4FA8BB",
-    "artDirection": "Cam, veri; cyan graphite; restrained electronic pulse."
+    "artDirection": "Cam, veri; cyan graphite; restrained electronic pulse.",
+    "contentGate": {
+      "enabled": false,
+      "minimumCards": 40,
+      "minimumRecurring": 24,
+      "minimumConclusions": 8,
+      "minimumBridges": 8,
+      "requiredRecurringCategories": []
+    }
   },
   {
     "id": 11,
@@ -228,7 +293,15 @@
     "stabilityThreshold": 35,
     "populationThreshold": 25,
     "palette": "#9791D0",
-    "artDirection": "Hologram, seramik; violet white; habitat hum and synthesis."
+    "artDirection": "Hologram, seramik; violet white; habitat hum and synthesis.",
+    "contentGate": {
+      "enabled": false,
+      "minimumCards": 40,
+      "minimumRecurring": 24,
+      "minimumConclusions": 8,
+      "minimumBridges": 8,
+      "requiredRecurringCategories": []
+    }
   },
   {
     "id": 12,
@@ -249,6 +322,14 @@
     "stabilityThreshold": 35,
     "populationThreshold": 25,
     "palette": "#D6B781",
-    "artDirection": "Kozmik ışık; indigo gold; stellar ambience and spacious harmonics."
+    "artDirection": "Kozmik ışık; indigo gold; stellar ambience and spacious harmonics.",
+    "contentGate": {
+      "enabled": false,
+      "minimumCards": 40,
+      "minimumRecurring": 24,
+      "minimumConclusions": 8,
+      "minimumBridges": 8,
+      "requiredRecurringCategories": []
+    }
   }
 ]
