@@ -166,7 +166,7 @@ Sonuç: `balanceEvidence` doldurulmadı. Açmadan önce şunlar tartışılmalı
 | `node --test tools/*.test.mjs` | **99/99** (92 + 7 yeni `empire-assembly-content.test.mjs`) |
 | `swift test` | **148/148** (FateCoreTests 136 + FateDiagnosticsTests 12; 6 yeni `EmpireAssemblyTests`) |
 | Release `FateSimulation`, altı politika × 10.000 seed | `compare-reference.mjs docs/analysis/milestone240-windows docs/analysis/milestone255-windows 240 255`: altısı "identical except contentCardCount 240 → 255" |
-| Native iPhone CI | [HANDOFF_255.md](HANDOFF_255.md) |
+| Native iPhone CI | Çalıştırma 44893045378 (#37, `3bc8a65`) başarılı: Node 99/99, Swift 148/148, UI 6/6; altı native rapor Windows raporlarıyla 63/63 alanda aynı ([HANDOFF_255.md](HANDOFF_255.md)) |
 
 ## 8. Görsel ve üretim eksikleri
 

@@ -9,7 +9,7 @@
   - İstikrar hedefi tutmadı: progression 25, knowledge 17.
   - Ayrı yatırım politikasında istikrar 86 ve %93'ü 500 sınırında; iyi oyuncu için fazla rahat olabilir.
 - **Açılış hazırlık değerlendirmesi:** [PHASE3_255_REPORT.md](PHASE3_255_REPORT.md) bölüm 6. Açılmamalı. Devir: [HANDOFF_255.md](HANDOFF_255.md).
-- Aynı-seed: altı politika × 10.000 seed, `compare-reference.mjs docs/analysis/milestone240-windows docs/analysis/milestone255-windows 240 255` → altısı "identical except contentCardCount 240 → 255". Native CI: **henüz çalıştırılmadı** (PR açıldıktan sonra tek tam koşu yapılacak).
+- Aynı-seed: altı politika × 10.000 seed, `compare-reference.mjs docs/analysis/milestone240-windows docs/analysis/milestone255-windows 240 255` → altısı "identical except contentCardCount 240 → 255". Native CI [44893045378](https://github.com/srcnxylmz/the-cards-of-fate/actions/runs/44893045378) (#37, `3bc8a65`) **başarılı**: Node 99/99, Swift 148/148, iPhone UI 6/6 (`** TEST SUCCEEDED **`); dört simülasyon işi başarılı. Altı native rapor (`native-simulations-*` artifact) `docs/analysis/milestone255-windows` ile kanonik JSON alan özetlerinde karşılaştırıldı: altısında 63/63 alan aynı.
 
 ## Durum — 240 paketi (Claude, dal `phase3-era4-240`)
 

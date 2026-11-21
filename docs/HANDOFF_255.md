@@ -9,7 +9,7 @@ Bu not geçmiş sohbetleri görmeden okunabilir. Ayrıntılar: `docs/PHASE3_255_
   - #2 `phase3-era4-210` (CI 44748860814)
   - #3 `phase3-era4-225` (CI 44813221092)
   - #4 `phase3-era4-240` (kaynak `e4c11f6`, CI 44881478766, HEAD `ad3ac27`)
-  - #5 `phase3-era4-255` (bu paket; tabanı `ad3ac27`)
+  - #5 `phase3-era4-255` (bu paket; tabanı `ad3ac27`, kaynak `3bc8a65`, CI 44893045378): https://github.com/srcnxylmz/the-cards-of-fate/pull/5
 - `main` hâlâ 180 kartlık Phase 2'de. Birleşmeler yapılmadıysa yeni işi `phase3-era4-255` HEAD'inden başlatın.
 - Kod SHA'sı, belge SHA'sı, PR bağlantısı ve native CI: "Doğrulama" bölümü.
 
@@ -46,7 +46,8 @@ Bu not geçmiş sohbetleri görmeden okunabilir. Ayrıntılar: `docs/PHASE3_255_
   - 500 sınırına canlı ulaşan koşular: progression %42, knowledge %57, recovery %65, random %16.
   - İstikrar: progression 25, knowledge 17 (hedef 30, **tutmadı**); random 29.
 - **Yatırım politikası** (ayrı): istikrar 86, %93'ü 500 sınırında, gerçek açlık kaybı 100 kararda 1,2.
-- **Native CI:** PR açıldıktan sonra tek tam koşu; sonuç bu bölüme ve PROGRESS/QA_REPORT'a işlenir.
+- **Kod SHA:** `3bc8a65`. **PR:** https://github.com/srcnxylmz/the-cards-of-fate/pull/5 (taban `phase3-era4-240`).
+- **Native CI:** native CI [44893045378](https://github.com/srcnxylmz/the-cards-of-fate/actions/runs/44893045378) (#37, `3bc8a65`) **başarılı**. Node 99/99, Swift 148/148, iPhone UI 6/6 (`** TEST SUCCEEDED **`); dört simülasyon işi başarılı. Altı native rapor (`native-simulations-*` artifact) `docs/analysis/milestone255-windows` ile kanonik JSON alan özetlerinde karşılaştırıldı: altısında 63/63 alan aynı. Belge kaydı bu commit'te (`[skip ci]`).
 
 ## Era 4 neden kapalı
 
