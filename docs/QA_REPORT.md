@@ -7,7 +7,7 @@
 - **Windows:** `build-content --check` geçti; doğrulayıcı 0 hata/0 uyarı; `node --test tools/*.test.mjs` **84/84**; `swift test` **135/135** (123 FateCore + 12 Diagnostics).
 - **Aynı seed:** altı politika × 10.000 seed; `compare-reference.mjs` altısı için 210 Windows raporlarıyla "identical except contentCardCount 210 → 225" (`docs/analysis/milestone225-windows/`).
 - **Teşhis** (kapı zorla açık, 2.000 seed; 210 referansı aynı ikiliyle): deste tükenmesi %0, Era 4'te karar/koşu 2–4 kat. Açlık sonu %87–100, progression/knowledge istikrarı 9–12; hedefler tutmadı. Tablolar: `docs/analysis/milestone225-era4-diagnostic/SUMMARY.md`.
-- Native CI: **henüz çalıştırılmadı** (PR açıldıktan sonra tek tam koşu yapılacak).
+- Native CI [run 44813221092](https://github.com/srcnxylmz/the-cards-of-fate/actions/runs/44813221092) (#35, `89173de`, workflow_dispatch) **başarılı**: 5/5 iş yeşil (verify; short, knowledge, progression ve recovery simülasyonları). verify işindeki her adım başarılı: Node testleri, art-audit, feedback, `build-content --check`, doğrulayıcı, macOS Swift testleri, Xcode projesi, iPhone simülatöründe derleme, kurulum ve açılış, TR/EN UI ve kalıcılık, ekran görüntüsü dışa aktarımı. Kaynak: GitHub API'deki iş ve adım durumları. Ayrıntılı log oturum istediği için test sayıları logdan okunmadı.
 - **Görsel:** yeni görsel yok; 43 aday, 182 eksik.
 
 # 210 kart yerel doğrulama — 2026-11-20 (dal `phase3-era4-210`, Era 4 kapalı)

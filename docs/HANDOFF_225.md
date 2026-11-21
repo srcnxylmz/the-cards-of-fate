@@ -7,7 +7,7 @@ Bu not geçmiş sohbetleri görmeden okunabilir. Ayrıntılar, tablolar ve kart 
 - PR yığını, birleşme sırası #1 → #2 → yeni PR (hiçbiri otomatik birleştirilmedi):
   - PR #1 `phase3-era4-groundwork` (180 → 195, native CI 44734293652 başarılı)
   - PR #2 `phase3-era4-210` (195 → 210, kod `0521f6f`, belge `f723b75`, native CI 44748860814 başarılı)
-  - `phase3-era4-225` (bu paket; tabanı `f723b75`)
+  - PR #3 `phase3-era4-225` (bu paket; tabanı `f723b75`; doğrulanan kaynak `89173de`)
 - `main` hâlâ 180 kartlık Phase 2'de. Yeni işi `main`'den değil, birleşmeler yapılmadıysa bu dalın HEAD'inden başlatın.
 - Kod/içerik commit'i bu dalın ilk 225 commit'idir. Native CI sonucu ve SHA: aşağıdaki "Native CI" satırı ve PROGRESS/QA_REPORT.
 
@@ -43,7 +43,7 @@ Bu not geçmiş sohbetleri görmeden okunabilir. Ayrıntılar, tablolar ve kart 
 - **Teşhis** (kapı zorla açık, 2.000 seed): `docs/analysis/milestone225-era4-diagnostic/SUMMARY.md`.
   - 210 → 225: deste tükenmesi %22–41 → %0. Era 4'te karar/koşu progression 42 → 116, knowledge 72 → 140, recovery 32 → 130. Üretim 2,5–3,1 → 3,6–3,8/tur. Açlık turu oranı ½–¼'e indi.
   - **Açlık sonu %87–100** (hedef < %25, tutmadı). Ortalama istikrar progression 12, knowledge 9 (hedef ≥ 30, tutmadı); recovery 46 ve random 36 tuttu.
-- **Native CI:** bu paket için PR açıldıktan sonra tek tam koşu; sonuç PROGRESS ve QA_REPORT'a işlenir.
+- **Native CI [run 44813221092](https://github.com/srcnxylmz/the-cards-of-fate/actions/runs/44813221092) (#35, `89173de`, workflow_dispatch) **başarılı**: 5/5 iş yeşil (verify; short, knowledge, progression ve recovery simülasyonları). verify işindeki her adım başarılı: Node testleri, art-audit, feedback, `build-content --check`, doğrulayıcı, macOS Swift testleri, Xcode projesi, iPhone simülatöründe derleme, kurulum ve açılış, TR/EN UI ve kalıcılık, ekran görüntüsü dışa aktarımı. Kaynak: GitHub API'deki iş ve adım durumları. Ayrıntılı log oturum istediği için test sayıları logdan okunmadı.** Era 4 kapalı olduğu için bu, 225 içeriğinin kabulüdür; Era 4 açılış kabulü değildir.
 
 ## Era 4 neden kapalı
 
