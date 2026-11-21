@@ -67,7 +67,7 @@ final class EmpireHarvestTests: XCTestCase {
 
     func testZeroReserveLeavesEveryNewRecurringEventDrawableWithRealChoices() throws {
         let e = try engine()
-        let recurring = e.content.cards.suffix(15).filter { $0.eraRole == "recurring" }
+        let recurring = e.content.cards[210..<225].filter { $0.eraRole == "recurring" }
         XCTAssertEqual(recurring.count, 11)
         for event in recurring {
             for flags: Set<String> in [[], ["estate_fields_worked", "canal_fields_open", "harbor_fishery_licensed", "granary_register_kept", "grain_famine_store"], ["garrison_pay_arrears", "debased_coinage", "temple_grain_loan", "grain_price_ceiling", "river_customs_farmed"]] {
@@ -164,6 +164,9 @@ final class EmpireHarvestTests: XCTestCase {
         var previous = current
         previous.cards = Array(current.cards.prefix(210))
         previous.balance.provincialProduction = nil
+        previous.balance.provincialStorage = nil
+        previous.balance.provincialGrowth = nil
+        previous.politics.institutionDefense = nil
         let now = GameEngine(content: current), then = GameEngine(content: previous)
         for seed in UInt64(0)..<12 {
             var a = now.start(seed: seed), b = then.start(seed: seed)

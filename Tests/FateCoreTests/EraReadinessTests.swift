@@ -27,16 +27,16 @@ final class EraReadinessTests: XCTestCase {
         XCTAssertFalse(gate.enabled)
         XCTAssertEqual([gate.minimumCards, gate.minimumRecurring, gate.minimumConclusions, gate.minimumBridges], [40, 24, 8, 8])
         let inventory = content.inventory(era: 4)
-        XCTAssertEqual([inventory.total, inventory.recurring, inventory.conclusions, inventory.bridges], [45, 28, 8, 8])
+        XCTAssertEqual([inventory.total, inventory.recurring, inventory.conclusions, inventory.bridges], [60, 37, 11, 11])
         XCTAssertTrue(inventory.missingCategories(for: gate).isEmpty)
-        // 45 authored cards meet the minimums; the switch (and, in the validator, balance evidence) keeps it shut.
+        // 60 authored cards meet the minimums; the switch (and, in the validator, balance evidence) keeps it shut.
         XCTAssertTrue(inventory.satisfies(gate))
         XCTAssertTrue(content.eraContentReady(2))
         XCTAssertTrue(content.eraContentReady(3))
         XCTAssertFalse(content.eraContentReady(4))
         XCTAssertFalse(content.eraContentReady(5))
         XCTAssertEqual(content.playableCards.count, 180)
-        XCTAssertEqual(content.cards.count, 225)
+        XCTAssertEqual(content.cards.count, 240)
         for era in 1...3 { XCTAssertNil(content.eras.first { $0.id == era }?.contentGate) }
         for era in 5...12 { XCTAssertEqual(content.eras.first { $0.id == era }?.contentGate?.enabled, false) }
         let bronze = try XCTUnwrap(content.eras.first { $0.id == 3 })
@@ -52,7 +52,7 @@ final class EraReadinessTests: XCTestCase {
         XCTAssertGreaterThanOrEqual(after.stats["stability", default: 0], 35)
         XCTAssertGreaterThanOrEqual(after.stats["population", default: 0], 25)
         XCTAssertNil(after.ending)
-        XCTAssertEqual(after.era, 3, "Forty-five authored Era 4 cards must not open the era")
+        XCTAssertEqual(after.era, 3, "Sixty authored Era 4 cards must not open the era")
         XCTAssertEqual(e.acknowledge(after).era, 3)
         XCTAssertEqual(e.content.card(e.acknowledge(after).currentCardID)?.era, 3)
     }
@@ -77,7 +77,7 @@ final class EraReadinessTests: XCTestCase {
     func testControlledFixtureOpensOnlyWithApprovalInventoryAndThresholds() throws {
         let content = try gated { $0.enabled = true }
         XCTAssertTrue(content.eraContentReady(4))
-        XCTAssertEqual(content.playableCards.count, 225)
+        XCTAssertEqual(content.playableCards.count, 240)
         let e = GameEngine(content: content)
         let start = readyBronze(e)
         let entered = try e.choose("toll", in: start)
@@ -109,12 +109,12 @@ final class EraReadinessTests: XCTestCase {
         let index = try XCTUnwrap(content.cards.firstIndex { $0.id == "road_wear" })
         content.cards[index].exclusionConditions.append(.init(flag: "resolved_road_wear"))
         let inventory = content.inventory(era: 4)
-        XCTAssertEqual(inventory.recurring, 27)
+        XCTAssertEqual(inventory.recurring, 36)
         // Another recurring roads crisis (caravan_bandits) still covers the category.
         XCTAssertTrue(inventory.recurringCategories.contains("roads"))
-        XCTAssertEqual(inventory.recurring + inventory.conclusions + inventory.bridges, 43)
+        XCTAssertEqual(inventory.recurring + inventory.conclusions + inventory.bridges, 58)
         // The closed crisis and the one legal reform count only toward the total.
-        XCTAssertEqual(inventory.total, 45)
+        XCTAssertEqual(inventory.total, 60)
     }
 
     func testOlderContentWithoutGateOrRoleStillDecodes() throws {
@@ -136,7 +136,7 @@ final class EraReadinessTests: XCTestCase {
         XCTAssertTrue(opened.eraContentReady(4))
         XCTAssertFalse(opened.eraContentReady(5), "Era 5 has no authored cards")
         XCTAssertEqual(bundled.playableCards.count, 180)
-        XCTAssertEqual(opened.playableCards.count, 225)
+        XCTAssertEqual(opened.playableCards.count, 240)
         // Eras without a gate are returned unchanged.
         XCTAssertEqual(bundled.diagnosticallyOpened(era: 2).eras.map { $0.contentGate }, bundled.eras.map { $0.contentGate })
         let e = GameEngine(content: opened)

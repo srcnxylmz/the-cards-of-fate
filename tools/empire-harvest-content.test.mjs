@@ -11,7 +11,7 @@ const cards = read('Sources/FateCore/Content/cards.json');
 const eras = read('Sources/FateCore/Content/eras.json');
 const balance = read('Sources/FateCore/Content/balance.json');
 const byId = id => cards.find(c => c.id === id);
-const fresh = cards.slice(210);
+const fresh = cards.slice(210, 225);
 const empire = cards.filter(c => c.era === 4);
 const earlyFlags = new Set(cards.filter(c => c.era <= 3).flatMap(c => c.choices.flatMap(ch => ch.outcomes.flatMap(o => [...o.effect.flags, ...o.delayedEffects.flatMap(d => d.effect.flags)]))));
 const results = c => c.choices.flatMap(ch => ch.outcomes.map(o => ({ c, ch, o })));
@@ -34,8 +34,8 @@ test('fifteen new Era 4 events: eleven recurring, two Bronze bridges, two condit
   assert.equal(fresh.length, 15);
   for (const [role, ids] of Object.entries(expected)) assert.deepEqual(fresh.filter(c => c.eraRole === role).map(c => c.id), ids, role);
   for (const c of fresh) assert.equal(c.era, 4, c.id);
-  assert.equal(cards.length, 225);
-  assert.deepEqual(['recurring', 'conclusion', 'bridge', 'reform'].map(r => empire.filter(c => c.eraRole === r).length), [28, 8, 8, 1]);
+  assert.equal(cards.length, 240);
+  assert.deepEqual(['recurring', 'conclusion', 'bridge', 'reform'].map(r => empire.filter(c => c.eraRole === r).length), [37, 11, 11, 1]);
   for (const c of fresh) for (const lang of ['tr', 'en']) for (const ch of c.choices) assert.ok(ch.text[lang].length > 10 && ch.outcomes.every(o => o.text[lang].length > 30), `${c.id}.${ch.id} ${lang}`);
 });
 
@@ -139,14 +139,14 @@ test('the earlier imperial ledger is read, debts keep separate identities, and p
   }
 });
 
-test('Era 4 stays closed: the 45-card inventory is met, but the switch is off and no balance evidence is recorded', () => {
+test('Era 4 stays closed: the 60-card inventory is met, but the switch is off and no balance evidence is recorded', () => {
   const gate = eras.find(e => e.id === 4).contentGate;
   assert.equal(gate.enabled, false);
   assert.equal(gate.balanceEvidence, null);
   const result = validate(cards, eras);
   assert.deepEqual([result.errors, result.warnings], [[], []]);
   const inv = result.eraInventory[4];
-  assert.deepEqual([inv.total, inv.recurring, inv.conclusions, inv.bridges, inv.satisfied, inv.open], [45, 28, 8, 8, true, false]);
+  assert.deepEqual([inv.total, inv.recurring, inv.conclusions, inv.bridges, inv.satisfied, inv.open], [60, 37, 11, 11, true, false]);
   const forced = structuredClone(eras); forced[3].contentGate.enabled = true;
   assert.ok(validate(cards, forced).errors.some(e => e.includes('without recorded balance evidence')));
 });

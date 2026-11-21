@@ -16,6 +16,7 @@ import { addCityEvents } from './content/city-events.mjs';
 import { addEmpireEvents, ERA4_GATE, FUTURE_ERA_GATE } from './content/empire-events.mjs';
 import { addEmpireProvinceEvents } from './content/empire-province-events.mjs';
 import { addEmpireHarvestEvents, PROVINCIAL_PRODUCTION } from './content/empire-harvest-events.mjs';
+import { addEmpireGovernanceEvents, rebalanceEmpireEvents, PROVINCIAL_STORAGE, PROVINCIAL_GROWTH } from './content/empire-governance-events.mjs';
 import { composeArtManifest } from './art-pipeline.mjs';
 
 // Authoring helpers normalize structure only. Every event below is individually authored.
@@ -263,6 +264,9 @@ addEmpireEvents({ cards, card, choice, outcome, delayed });
 // Phase 3, 195 → 210: fifteen more Era 4 events; the gate stays disabled (inventory 30/40).
 addEmpireProvinceEvents({ cards, card, choice, outcome, delayed });
 addEmpireHarvestEvents({ cards, card, choice, outcome, delayed });
+addEmpireGovernanceEvents({ cards, card, choice, outcome, delayed });
+// Measured, documented rebalance of earlier Era 4 decisions (see EMPIRE_REBALANCE).
+rebalanceEmpireEvents({ cards, delayed });
 for(let i=0;i<cards.length;i++)cards[i]=withProductionInputs(cards[i]);
 
 // Durable historical decisions close using existing flags, including older v1 saves.
@@ -303,7 +307,7 @@ const eraRows = [
   ['Yıldızlararası Çağ','Interstellar Age','Yıldız Başkenti','Stellar Capital','Yıldızlar Birliği','Stellar Union','continuity',100,'#D6B781','Kozmik ışık; indigo gold; stellar ambience and spacious harmonics.']
 ];
 const eras = eraRows.map((r,i) => ({ id:i+1, name:text(r[0],r[1]), settlement:text(r[2],r[3]), government:text(r[4],r[5]), requiredTechnology:r[6], knowledgeThreshold:r[7], stabilityThreshold:35, populationThreshold:25, palette:r[8], artDirection:r[9], ...(i===3 ? { contentGate:ERA4_GATE } : i>3 ? { contentGate:FUTURE_ERA_GATE } : {}) }));
-const balance = { startingStats:{population:55,resources:55,authority:40,knowledge:28,stability:55,environment:70}, resourceConsumption:4, hardExtraConsumption:2, farmProduction:2, starvationLoss:8, successionTurns:24, rivalPressure:5, provincialProduction:PROVINCIAL_PRODUCTION };
+const balance = { startingStats:{population:55,resources:55,authority:40,knowledge:28,stability:55,environment:70}, resourceConsumption:4, hardExtraConsumption:2, farmProduction:2, starvationLoss:8, successionTurns:24, rivalPressure:5, provincialProduction:PROVINCIAL_PRODUCTION, provincialStorage:PROVINCIAL_STORAGE, provincialGrowth:PROVINCIAL_GROWTH };
 function write(relative, data) {
   const destination=resolve(root,relative), serialized=JSON.stringify(data,null,2)+'\n';
   if (process.argv.includes('--check')) {
