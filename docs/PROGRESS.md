@@ -475,6 +475,22 @@ Gerçek sonuçlar: Node 70/70 (7 yeni), doğrulayıcı 0/0, eski 180 tanım deri
 
 Era 4 kapalı: envanter 15/40, anahtar kapalı, native kanıt yok. Sonraki: HANDOFF_195_CODEX.md'deki doğrulama sırası, ardından 195 → 210 kapsamı. Rapor: PHASE3_195_REPORT.md.
 
+### Phase 3 — main birleştirmesi ve 255 → 270: geç oyun krizleri ve tarihsel dönüm noktası (Claude, 2026-11-21, dal `phase3-era4-270`)
+
+- **Birleştirme:** PR #1–#5 merge commit ile `main`'e alındı. Son `main` `065e39a`; ağacı `c5ab913` ile aynı. `main` üzerinde Node 99/99 ve Swift 148/148 yeniden çalıştırıldı. Ayrıntı: PHASE3_MAIN_INTEGRATION.md.
+- **Zorluk araştırması:** baskın bileşim "dört kapasite + en az üç kurum". Kök neden otorite tabanı: Era 4'te otorite 1–3'e iniyor ve yetki paylaşımının bedeli işlemiyor. Ölçüldü; düzeltilmedi.
+- **15 yeni Era 4 kartı:**
+  - 9 geç oyun krizi (görünür neden, hazırlıklı cevap, 12 tur bekleme), 3 köprü, 3 sonuç.
+  - 270 kart (60/60/60/90), 775 karar. 255 paketi birebir korundu.
+- **Tarihsel dönüm noktası "Kalıcı imparatorluk":** `balance.eraMilestones`; yedi bağımsız koşul; kayda geçer, oyunu bitirmez.
+- **Gerçek sonuçlar:** Node 104/104, doğrulayıcı 0/0, Swift 156/156 (Windows). Aynı-seed: altı politika × 10.000 seed, `node tools/compare-reference.mjs docs/analysis/milestone255-windows docs/analysis/milestone270-windows 255 270` → altısı "identical except contentCardCount 255 → 270" (`docs/analysis/milestone270-windows/`).
+- **Teşhis** (olumsuz sonuçlar dahil):
+  - Krizler investment ile heuristik politikalar arasındaki farkı daraltmadı.
+  - 500 sınırı: progression −3, recovery −3,5, knowledge −2, random −7 puan.
+  - Dönüm noktası: investment %32, recovery %11.
+- Native CI: **henüz çalıştırılmadı** (PR açıldıktan sonra tek tam koşu yapılacak). Görsel üretilmedi (araç yok; 227 eksik).
+- **Belgeler:** PHASE3_270_REPORT.md, ERA4_LAUNCH_CANDIDATE.md, HANDOFF_270.md.
+
 ### Phase 3 — 240 → 255: meclis dengesi, ekonomik kırılganlık, yatırım politikası (Claude, 2026-11-21, dal `phase3-era4-255`)
 
 - **Siyasi ölçüm:** meclis baskısının asıl nedeni rakip düşmanlığı. Era 4 `powerStats` eşlemeleri ölçüldü ve hepsi baskıyı artırdığı için eklenmedi.

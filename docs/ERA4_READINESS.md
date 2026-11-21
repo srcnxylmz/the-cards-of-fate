@@ -1,5 +1,13 @@
 # Era 4 boundary and future dependencies — 180-card group
 
+## Durum — 270 paketi (Claude, dal `phase3-era4-270`, taban birleştirilmiş `main`)
+
+- **Envanter:** 90 · 55 · 17 · 17 (+1 reform). Kapı `enabled:false`, `balanceEvidence:null`; Era 5 kapalı.
+- **Yeni:** dokuz geç oyun krizi ve kayda geçen ama oyunu bitirmeyen "Kalıcı imparatorluk" dönüm noktası (`balance.eraMilestones`).
+- **Ölçüm:** krizler investment'ı etkilemedi (istikrar 85); heuristik politikalar hafif kötüleşti. Kök neden otorite tabanı; ölçüldü, düzeltilmedi.
+- **Açılış adayı değerlendirmesi:** [ERA4_LAUNCH_CANDIDATE.md](ERA4_LAUNCH_CANDIDATE.md). Sonuç: henüz açılmamalı. Devir: [HANDOFF_270.md](HANDOFF_270.md).
+- Aynı-seed: altı politika × 10.000 seed, `node tools/compare-reference.mjs docs/analysis/milestone255-windows docs/analysis/milestone270-windows 255 270` → altısı "identical except contentCardCount 255 → 270" (`docs/analysis/milestone270-windows/`). Native CI: **henüz çalıştırılmadı** (PR açıldıktan sonra tek tam koşu yapılacak).
+
 ## Durum — 255 paketi (Claude, dal `phase3-era4-255`)
 
 - **Envanter:** 75 · 46 · 14 · 14 (+1 reform). Kapı `enabled:false`, `balanceEvidence:null`; Era 5 kapalı.
