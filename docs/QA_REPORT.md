@@ -11,7 +11,7 @@
   - Investment (ayrı politika): istikrar 85, %92 500 sınırında.
   - Dönüm noktası: investment %32, recovery %11.
   - Tablolar: `docs/analysis/milestone270-era4-diagnostic/SUMMARY.md`.
-- Native CI: **henüz çalıştırılmadı** (PR açıldıktan sonra tek tam koşu yapılacak).
+- Native CI [44932483107](https://github.com/srcnxylmz/the-cards-of-fate/actions/runs/44932483107) (#43, `b0f628a`; kaynak `6edd524`, belgeler `b0f628a`; [PR #6](https://github.com/srcnxylmz/the-cards-of-fate/pull/6), `main`'e açık, birleştirilmedi) **başarılı**: Node 104/104, Swift 156/156, iPhone UI 6/6 (`** TEST SUCCEEDED **`); dört simülasyon işi başarılı. Altı native rapor (`native-simulations-*` artifact) `docs/analysis/milestone270-windows` ile kanonik JSON alan özetlerinde karşılaştırıldı: altısında 63/63 alan aynı.
 - **Görsel:** yeni görsel yok; 43 aday, 227 eksik.
 
 # 255 kart yerel doğrulama — 2026-11-21 (dal `phase3-era4-255`, Era 4 kapalı)

@@ -6,7 +6,7 @@
 - **Yeni:** dokuz geç oyun krizi ve kayda geçen ama oyunu bitirmeyen "Kalıcı imparatorluk" dönüm noktası (`balance.eraMilestones`).
 - **Ölçüm:** krizler investment'ı etkilemedi (istikrar 85); heuristik politikalar hafif kötüleşti. Kök neden otorite tabanı; ölçüldü, düzeltilmedi.
 - **Açılış adayı değerlendirmesi:** [ERA4_LAUNCH_CANDIDATE.md](ERA4_LAUNCH_CANDIDATE.md). Sonuç: henüz açılmamalı. Devir: [HANDOFF_270.md](HANDOFF_270.md).
-- Aynı-seed: altı politika × 10.000 seed, `node tools/compare-reference.mjs docs/analysis/milestone255-windows docs/analysis/milestone270-windows 255 270` → altısı "identical except contentCardCount 255 → 270" (`docs/analysis/milestone270-windows/`). Native CI: **henüz çalıştırılmadı** (PR açıldıktan sonra tek tam koşu yapılacak).
+- Aynı-seed: altı politika × 10.000 seed, `node tools/compare-reference.mjs docs/analysis/milestone255-windows docs/analysis/milestone270-windows 255 270` → altısı "identical except contentCardCount 255 → 270" (`docs/analysis/milestone270-windows/`). Native CI [44932483107](https://github.com/srcnxylmz/the-cards-of-fate/actions/runs/44932483107) (#43, `b0f628a`; kaynak `6edd524`, belgeler `b0f628a`; [PR #6](https://github.com/srcnxylmz/the-cards-of-fate/pull/6), `main`'e açık, birleştirilmedi) **başarılı**: Node 104/104, Swift 156/156, iPhone UI 6/6 (`** TEST SUCCEEDED **`); dört simülasyon işi başarılı. Altı native rapor (`native-simulations-*` artifact) `docs/analysis/milestone270-windows` ile kanonik JSON alan özetlerinde karşılaştırıldı: altısında 63/63 alan aynı. Kapı yine kapalı: teşhis dengesi yetersiz ve kullanıcı onayı yok.
 
 ## Durum — 255 paketi (Claude, dal `phase3-era4-255`)
 

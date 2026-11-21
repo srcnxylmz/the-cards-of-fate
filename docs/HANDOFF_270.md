@@ -42,7 +42,7 @@ Bu not geçmiş sohbetleri görmeden okunabilir. Ayrıntılar: [PHASE3_270_REPOR
   - Açlık sonu: progression %61, knowledge %45, recovery %38, random %90.
   - 500 sınırı: progression %39, knowledge %55, recovery %62, random %9.
   - Investment (ayrı politika): istikrar 85, %92 500 sınırında, dönüm noktası %32.
-- **Native CI:** PR açıldıktan sonra tek tam koşu yapılacak; sonuç bu bölüme ve PROGRESS/QA_REPORT'a işlenecek.
+- **Native CI:** [44932483107](https://github.com/srcnxylmz/the-cards-of-fate/actions/runs/44932483107) (#43, `b0f628a`; kaynak `6edd524`, belgeler `b0f628a`; [PR #6](https://github.com/srcnxylmz/the-cards-of-fate/pull/6), `main`'e açık, birleştirilmedi) başarılı: Node 104/104, Swift 156/156, iPhone UI 6/6 (`** TEST SUCCEEDED **`); dört simülasyon işi başarılı. Altı native rapor (`native-simulations-*` artifact) `docs/analysis/milestone270-windows` ile kanonik JSON alan özetlerinde karşılaştırıldı: altısında 63/63 alan aynı.
 
 ## Era 4 neden kapalı
 

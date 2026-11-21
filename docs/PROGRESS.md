@@ -488,7 +488,7 @@ Era 4 kapalı: envanter 15/40, anahtar kapalı, native kanıt yok. Sonraki: HAND
   - Krizler investment ile heuristik politikalar arasındaki farkı daraltmadı.
   - 500 sınırı: progression −3, recovery −3,5, knowledge −2, random −7 puan.
   - Dönüm noktası: investment %32, recovery %11.
-- Native CI: **henüz çalıştırılmadı** (PR açıldıktan sonra tek tam koşu yapılacak). Görsel üretilmedi (araç yok; 227 eksik).
+- Native CI [44932483107](https://github.com/srcnxylmz/the-cards-of-fate/actions/runs/44932483107) (#43, `b0f628a`; kaynak `6edd524`, belgeler `b0f628a`; [PR #6](https://github.com/srcnxylmz/the-cards-of-fate/pull/6), `main`'e açık, birleştirilmedi) **başarılı**: Node 104/104, Swift 156/156, iPhone UI 6/6 (`** TEST SUCCEEDED **`); dört simülasyon işi başarılı. Altı native rapor (`native-simulations-*` artifact) `docs/analysis/milestone270-windows` ile kanonik JSON alan özetlerinde karşılaştırıldı: altısında 63/63 alan aynı. Görsel üretilmedi (araç yok; 227 eksik).
 - **Belgeler:** PHASE3_270_REPORT.md, ERA4_LAUNCH_CANDIDATE.md, HANDOFF_270.md.
 
 ### Phase 3 — 240 → 255: meclis dengesi, ekonomik kırılganlık, yatırım politikası (Claude, 2026-11-21, dal `phase3-era4-255`)
