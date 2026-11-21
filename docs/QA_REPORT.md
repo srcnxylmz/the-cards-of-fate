@@ -1,5 +1,19 @@
 # 180 kart kalite doğrulaması — 2026-11-19
 
+# 270 kart yerel doğrulama — 2026-11-21 (dal `phase3-era4-270`, Era 4 kapalı)
+
+270 benzersiz kart (60/60/60/90; Era 4 kapalı), 775 karar. Taban: PR #1–#5'in birleştiği `main` (`065e39a`).
+
+- **Windows:** `build-content --check` geçti; doğrulayıcı 0 hata, 0 uyarı; `node --test tools/*.test.mjs` **104/104**; `swift test` **156/156** (144 FateCore + 12 Diagnostics).
+- Aynı-seed: altı politika × 10.000 seed, `node tools/compare-reference.mjs docs/analysis/milestone255-windows docs/analysis/milestone270-windows 255 270` → altısı "identical except contentCardCount 255 → 270" (`docs/analysis/milestone270-windows/`).
+- **Teşhis** (2.000 seed; 255 sütunu aynı ikiliyle yeniden üretildi):
+  - Açlık sonu: progression %61, knowledge %45, recovery %38, random %90.
+  - Investment (ayrı politika): istikrar 85, %92 500 sınırında.
+  - Dönüm noktası: investment %32, recovery %11.
+  - Tablolar: `docs/analysis/milestone270-era4-diagnostic/SUMMARY.md`.
+- Native CI [44932483107](https://github.com/srcnxylmz/the-cards-of-fate/actions/runs/44932483107) (#43, `b0f628a`; kaynak `6edd524`, belgeler `b0f628a`; [PR #6](https://github.com/srcnxylmz/the-cards-of-fate/pull/6), `main`'e açık, birleştirilmedi) **başarılı**: Node 104/104, Swift 156/156, iPhone UI 6/6 (`** TEST SUCCEEDED **`); dört simülasyon işi başarılı. Altı native rapor (`native-simulations-*` artifact) `docs/analysis/milestone270-windows` ile kanonik JSON alan özetlerinde karşılaştırıldı: altısında 63/63 alan aynı.
+- **Görsel:** yeni görsel yok; 43 aday, 227 eksik.
+
 # 255 kart yerel doğrulama — 2026-11-21 (dal `phase3-era4-255`, Era 4 kapalı)
 
 255 benzersiz kart (60/60/60/75; Era 4 kapalı), 715 karar.

@@ -141,6 +141,7 @@ for seed in 0..<count {
     var tailStates:[[String:Int]] = []
     var eraIndex = 0, eraEntryTurn = 0, collapsed = false
     var lateCards: Set<String> = [], lateChoices: Set<String> = []
+    var combo160: String? = nil, lowInvest160 = false, milestoneRecorded = false
     for _ in 0..<500 {
         guard state.ending == nil, let card = content.card(state.currentCardID) else { break }
         var eligibleNow = 0
@@ -240,6 +241,24 @@ for seed in 0..<count {
                 economy["at\(eraIndex).runs", default: 0] += 1
                 for stat in ["resources", "stability", "population"] { economy["at\(eraIndex).\(stat)", default: 0] += state.stats[stat, default: 0] }
             }
+            // Phase 3, 270: the balance of power through a long Era 4 (40/80/160/240 decisions) and which investments hold it.
+            let producing = (content.balance.provincialProduction ?? []).filter { state.flags.contains($0.flag) && state.stats["population", default: 0] >= $0.minimumPopulation && state.stats["environment", default: 0] >= $0.minimumEnvironment }.count
+            let institutions = (content.politics.institutionDefense?.flags ?? []).filter(state.flags.contains).count
+            if [40, 80, 160, 240].contains(eraIndex) {
+                economy["power\(eraIndex).runs", default: 0] += 1
+                for stat in ["authority", "knowledge", "environment"] { economy["power\(eraIndex).\(stat)", default: 0] += state.stats[stat, default: 0] }
+                economy["power\(eraIndex).defense", default: 0] += engine.councilDefense(state)
+                economy["power\(eraIndex).strongestRival", default: 0] += state.rivals.map(\.power).max() ?? 0
+                economy["power\(eraIndex).lowestRelation", default: 0] += state.rivals.map(\.relation).min() ?? 0
+                economy["power\(eraIndex).producing", default: 0] += producing
+                economy["power\(eraIndex).institutions", default: 0] += institutions
+            }
+            if eraIndex == 160 {
+                let combo = "combo160.cap\(producing).inst\(min(institutions, 3))"
+                combo160 = combo
+                economy[combo, default: 0] += 1
+                if producing <= 1 && state.stats["stability", default: 0] >= 40 { lowInvest160 = true; economy["lowInvest160.stableRuns", default: 0] += 1 }
+            }
             if !collapsed && state.stats["stability", default: 0] < 15 {
                 collapsed = true
                 economy["stabilityCollapse.runs", default: 0] += 1
@@ -308,6 +327,11 @@ for seed in 0..<count {
             lastAuthority = current
         }
         crisis.endDecision(state)
+        if diagnosticOpenEra == previousEra, !milestoneRecorded, let milestone = content.balance.eraMilestones?.first(where: { $0.era == previousEra }), state.flags.contains(milestone.flag) {
+            milestoneRecorded = true
+            economy["milestone.runs", default: 0] += 1
+            economy["milestone.atDecision", default: 0] += eraIndex
+        }
         if let text = state.resolution?.text, let outcome = choice.outcomes.first(where: { $0.text == text }) { resolvedOutcomes[decisionKey+"."+outcome.id,default:0] += 1; crisis.recordOutcome(key:decisionKey+"."+outcome.id) }
         for technology in state.technologies.subtracting(previousTechnologies) {
             technologyGains[technology, default: 0] += 1
@@ -351,6 +375,13 @@ for seed in 0..<count {
         let kind = ending.hasPrefix("The last hearth") ? "starvation" : ending.hasPrefix("This development build") ? "exhaustion" : ending.hasPrefix("The land") ? "land" : ending == "cap" ? "cap" : "other"
         economy["ending."+kind, default: 0] += 1
         for stat in Stat.allCases { economy["final."+stat.rawValue, default: 0] += state.stats[stat.rawValue, default: 0] }
+        if let combo = combo160, state.ending == nil { economy[combo + ".capped", default: 0] += 1 }
+        if lowInvest160 && state.ending == nil { economy["lowInvest160.capped", default: 0] += 1 }
+        if let milestone = content.balance.eraMilestones?.first(where: { $0.era == diagnosticOpenEra }), eraIndex >= milestone.minimumEraDecisions, !milestoneRecorded {
+            economy["milestone.missedRuns", default: 0] += 1
+            for (name, met) in engine.milestoneConditions(milestone, in: state) where !met { economy["milestone.blocked." + name, default: 0] += 1 }
+            for flag in milestone.obligationFlags where state.flags.contains(flag) { economy["milestone.openObligation." + flag, default: 0] += 1 }
+        }
         if eraIndex > 100 {
             economy["after100.runs", default: 0] += 1
             economy["after100.distinctCards", default: 0] += lateCards.count

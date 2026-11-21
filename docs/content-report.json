@@ -1,13 +1,13 @@
 {
   "errors": [],
   "warnings": [],
-  "cards": 255,
+  "cards": 270,
   "eraInventory": {
     "4": {
-      "total": 75,
-      "recurring": 46,
-      "conclusions": 14,
-      "bridges": 14,
+      "total": 90,
+      "recurring": 55,
+      "conclusions": 17,
+      "bridges": 17,
       "recurringCategories": [
         "citizenship",
         "ecology",
@@ -117,14 +117,14 @@
       "open": false
     }
   },
-  "choices": 715,
+  "choices": 775,
   "stochasticChoices": 9,
-  "conditionalOutcomeChoices": 69,
+  "conditionalOutcomeChoices": 70,
   "eras": {
     "1": 60,
     "2": 60,
     "3": 60,
-    "4": 75,
+    "4": 90,
     "5": 0,
     "6": 0,
     "7": 0,
@@ -134,9 +134,9 @@
     "11": 0,
     "12": 0
   },
-  "authoredChainGroups": 11,
-  "multiCardChainGroups": 11,
-  "crossEraLinks": 230,
+  "authoredChainGroups": 12,
+  "multiCardChainGroups": 12,
+  "crossEraLinks": 245,
   "missingArt": [
     "card_broken_spear",
     "card_stranger_child",
@@ -349,7 +349,22 @@
     "card_granary_roof_watch",
     "card_land_registry_record",
     "card_water_court_canal",
-    "card_fuel_trade_clause"
+    "card_fuel_trade_clause",
+    "card_provincial_secession",
+    "card_border_campaign",
+    "card_empire_epidemic",
+    "card_granary_graft",
+    "card_tax_farm_privilege",
+    "card_legion_loyalty",
+    "card_governor_ambition",
+    "card_succession_legitimacy",
+    "card_soil_exhaustion",
+    "card_frontier_wall_muster",
+    "card_hostage_envoy_return",
+    "card_seed_guarantee_audit",
+    "card_assembly_center_accord",
+    "card_veteran_land_charter",
+    "card_plague_relief_reckoning"
   ],
   "missingAudio": [
     "era_1",
@@ -379,7 +394,7 @@
   ],
   "releaseReady": false,
   "releaseBlockers": [
-    "800 original cards required; current 255",
+    "800 original cards required; current 270",
     "Era 4 content gate closed (enabled:false; 40/24/8/8 inventory not met)",
     "At least 60 cards per era and 80 special events required",
     "100 completed chains / 50 cross-era links required",
