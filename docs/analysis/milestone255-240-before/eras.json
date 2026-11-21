@@ -1,0 +1,336 @@
+[
+  {
+    "id": 1,
+    "name": {
+      "tr": "Paleolitik Çağ",
+      "en": "Paleolithic"
+    },
+    "settlement": {
+      "tr": "Mağara Kampı",
+      "en": "Cave Camp"
+    },
+    "government": {
+      "tr": "Kabile Meclisi",
+      "en": "Tribal Council"
+    },
+    "requiredTechnology": "cultivation",
+    "knowledgeThreshold": 55,
+    "stabilityThreshold": 35,
+    "populationThreshold": 25,
+    "palette": "#B07845",
+    "artDirection": "Kaya, kemik, ateş; ochre charcoal; cave wind and stone percussion."
+  },
+  {
+    "id": 2,
+    "name": {
+      "tr": "Neolitik Çağ",
+      "en": "Neolithic"
+    },
+    "settlement": {
+      "tr": "Tarım Köyü",
+      "en": "Farming Village"
+    },
+    "government": {
+      "tr": "Köy Meclisi",
+      "en": "Village Council"
+    },
+    "requiredTechnology": "smelting",
+    "knowledgeThreshold": 68,
+    "stabilityThreshold": 35,
+    "populationThreshold": 25,
+    "palette": "#9DAD74",
+    "artDirection": "Kil, keten, saz; sage clay; water and wooden rhythm."
+  },
+  {
+    "id": 3,
+    "name": {
+      "tr": "Tunç Çağı",
+      "en": "Bronze Age"
+    },
+    "settlement": {
+      "tr": "Surlu Kent",
+      "en": "Walled City"
+    },
+    "government": {
+      "tr": "Kent Devleti",
+      "en": "City State"
+    },
+    "requiredTechnology": "writing",
+    "knowledgeThreshold": 78,
+    "stabilityThreshold": 35,
+    "populationThreshold": 25,
+    "palette": "#C49952",
+    "artDirection": "Bronz, mühür, tablet; bronze teal; workshop and strings."
+  },
+  {
+    "id": 4,
+    "name": {
+      "tr": "Antik İmparatorluklar",
+      "en": "Ancient Empires"
+    },
+    "settlement": {
+      "tr": "Taş Başkent",
+      "en": "Stone Capital"
+    },
+    "government": {
+      "tr": "İmparatorluk",
+      "en": "Empire"
+    },
+    "requiredTechnology": "civil_law",
+    "knowledgeThreshold": 82,
+    "stabilityThreshold": 35,
+    "populationThreshold": 25,
+    "palette": "#D8C3A1",
+    "artDirection": "Mermer, mozaik; ivory gold; crowds and ceremonial drums.",
+    "contentGate": {
+      "enabled": false,
+      "minimumCards": 40,
+      "minimumRecurring": 24,
+      "minimumConclusions": 8,
+      "minimumBridges": 8,
+      "requiredRecurringCategories": [
+        "province",
+        "taxation",
+        "logistics",
+        "roads",
+        "water",
+        "production",
+        "citizenship",
+        "law"
+      ],
+      "balanceEvidence": null
+    }
+  },
+  {
+    "id": 5,
+    "name": {
+      "tr": "Orta Çağ",
+      "en": "Middle Ages"
+    },
+    "settlement": {
+      "tr": "Kale Şehri",
+      "en": "Castle City"
+    },
+    "government": {
+      "tr": "Feodal Taç",
+      "en": "Feudal Crown"
+    },
+    "requiredTechnology": "printing",
+    "knowledgeThreshold": 84,
+    "stabilityThreshold": 35,
+    "populationThreshold": 25,
+    "palette": "#84617F",
+    "artDirection": "Parşömen, vitray; plum silver; rain bells and bowed strings.",
+    "contentGate": {
+      "enabled": false,
+      "minimumCards": 40,
+      "minimumRecurring": 24,
+      "minimumConclusions": 8,
+      "minimumBridges": 8,
+      "requiredRecurringCategories": []
+    }
+  },
+  {
+    "id": 6,
+    "name": {
+      "tr": "Rönesans",
+      "en": "Renaissance"
+    },
+    "settlement": {
+      "tr": "Akademi Kenti",
+      "en": "Academy City"
+    },
+    "government": {
+      "tr": "Kent Cumhuriyeti",
+      "en": "Civic Republic"
+    },
+    "requiredTechnology": "navigation",
+    "knowledgeThreshold": 86,
+    "stabilityThreshold": 35,
+    "populationThreshold": 25,
+    "palette": "#A67752",
+    "artDirection": "Yağlı boya, gravür; sienna gold; workshop lute.",
+    "contentGate": {
+      "enabled": false,
+      "minimumCards": 40,
+      "minimumRecurring": 24,
+      "minimumConclusions": 8,
+      "minimumBridges": 8,
+      "requiredRecurringCategories": []
+    }
+  },
+  {
+    "id": 7,
+    "name": {
+      "tr": "Keşifler ve Aydınlanma",
+      "en": "Exploration and Enlightenment"
+    },
+    "settlement": {
+      "tr": "Dünya Limanı",
+      "en": "World Port"
+    },
+    "government": {
+      "tr": "Meclisli Krallık",
+      "en": "Parliamentary Crown"
+    },
+    "requiredTechnology": "steam",
+    "knowledgeThreshold": 88,
+    "stabilityThreshold": 35,
+    "populationThreshold": 25,
+    "palette": "#3F8192",
+    "artDirection": "Harita, pusula; ocean parchment; rigging and chamber ensemble.",
+    "contentGate": {
+      "enabled": false,
+      "minimumCards": 40,
+      "minimumRecurring": 24,
+      "minimumConclusions": 8,
+      "minimumBridges": 8,
+      "requiredRecurringCategories": []
+    }
+  },
+  {
+    "id": 8,
+    "name": {
+      "tr": "Sanayi Çağı",
+      "en": "Industrial Age"
+    },
+    "settlement": {
+      "tr": "Sanayi Kenti",
+      "en": "Industrial City"
+    },
+    "government": {
+      "tr": "Sanayi Devleti",
+      "en": "Industrial State"
+    },
+    "requiredTechnology": "electricity",
+    "knowledgeThreshold": 90,
+    "stabilityThreshold": 35,
+    "populationThreshold": 25,
+    "palette": "#9A7962",
+    "artDirection": "Çelik, buhar; rust charcoal; machinery and low pulse.",
+    "contentGate": {
+      "enabled": false,
+      "minimumCards": 40,
+      "minimumRecurring": 24,
+      "minimumConclusions": 8,
+      "minimumBridges": 8,
+      "requiredRecurringCategories": []
+    }
+  },
+  {
+    "id": 9,
+    "name": {
+      "tr": "Modern Çağ",
+      "en": "Modern Age"
+    },
+    "settlement": {
+      "tr": "Metropol",
+      "en": "Metropolis"
+    },
+    "government": {
+      "tr": "Modern Cumhuriyet",
+      "en": "Modern Republic"
+    },
+    "requiredTechnology": "computing",
+    "knowledgeThreshold": 92,
+    "stabilityThreshold": 35,
+    "populationThreshold": 25,
+    "palette": "#7F968B",
+    "artDirection": "Özgün fotoğrafik kolaj; muted green; radio texture and orchestra.",
+    "contentGate": {
+      "enabled": false,
+      "minimumCards": 40,
+      "minimumRecurring": 24,
+      "minimumConclusions": 8,
+      "minimumBridges": 8,
+      "requiredRecurringCategories": []
+    }
+  },
+  {
+    "id": 10,
+    "name": {
+      "tr": "Dijital Çağ",
+      "en": "Digital Age"
+    },
+    "settlement": {
+      "tr": "Akıllı Şehir",
+      "en": "Smart City"
+    },
+    "government": {
+      "tr": "Ağ Cumhuriyeti",
+      "en": "Network Republic"
+    },
+    "requiredTechnology": "autonomy",
+    "knowledgeThreshold": 94,
+    "stabilityThreshold": 35,
+    "populationThreshold": 25,
+    "palette": "#4FA8BB",
+    "artDirection": "Cam, veri; cyan graphite; restrained electronic pulse.",
+    "contentGate": {
+      "enabled": false,
+      "minimumCards": 40,
+      "minimumRecurring": 24,
+      "minimumConclusions": 8,
+      "minimumBridges": 8,
+      "requiredRecurringCategories": []
+    }
+  },
+  {
+    "id": 11,
+    "name": {
+      "tr": "Yapay Zekâ ve Uzay Çağı",
+      "en": "AI and Space Age"
+    },
+    "settlement": {
+      "tr": "Yörünge İstasyonu",
+      "en": "Orbital Station"
+    },
+    "government": {
+      "tr": "Gezegen Konseyi",
+      "en": "Planetary Council"
+    },
+    "requiredTechnology": "stellar_drive",
+    "knowledgeThreshold": 96,
+    "stabilityThreshold": 35,
+    "populationThreshold": 25,
+    "palette": "#9791D0",
+    "artDirection": "Hologram, seramik; violet white; habitat hum and synthesis.",
+    "contentGate": {
+      "enabled": false,
+      "minimumCards": 40,
+      "minimumRecurring": 24,
+      "minimumConclusions": 8,
+      "minimumBridges": 8,
+      "requiredRecurringCategories": []
+    }
+  },
+  {
+    "id": 12,
+    "name": {
+      "tr": "Yıldızlararası Çağ",
+      "en": "Interstellar Age"
+    },
+    "settlement": {
+      "tr": "Yıldız Başkenti",
+      "en": "Stellar Capital"
+    },
+    "government": {
+      "tr": "Yıldızlar Birliği",
+      "en": "Stellar Union"
+    },
+    "requiredTechnology": "continuity",
+    "knowledgeThreshold": 100,
+    "stabilityThreshold": 35,
+    "populationThreshold": 25,
+    "palette": "#D6B781",
+    "artDirection": "Kozmik ışık; indigo gold; stellar ambience and spacious harmonics.",
+    "contentGate": {
+      "enabled": false,
+      "minimumCards": 40,
+      "minimumRecurring": 24,
+      "minimumConclusions": 8,
+      "minimumBridges": 8,
+      "requiredRecurringCategories": []
+    }
+  }
+]

@@ -6,6 +6,8 @@ public struct FoodBudget: Equatable {
     public let shortfall: Int
     /// Surplus actually stored this turn (Era 4 storage only; zero elsewhere).
     public var stored: Int = 0
+    /// Shortfall covered this turn by opening a sealed public store (Era 4 relief only).
+    public var relieved: Int = 0
     public var populationLoss: Int { shortfall == 0 ? 0 : (maximumLoss * shortfall + consumption - 1) / consumption }
     public var stabilityLoss: Int { shortfall == 0 ? 0 : (4 * shortfall + consumption - 1) / consumption }
     let maximumLoss: Int
@@ -36,7 +38,13 @@ extension GameEngine {
         // Outlays that could not be paid from reserves use this turn's supplies first.
         // This prevents clamped maintenance costs becoming free healing at zero reserves.
         let shortfall = min(consumption, max(0, consumption + max(0,unfundedResources) - production - state.stats["resources", default: 0]))
-        var budget = FoodBudget(production: production, consumption: consumption, shortfall: shortfall, maximumLoss: balance.starvationLoss)
+        // A sealed public store is opened once against hunger; it covers part of the gap and is then empty.
+        var relieved = 0
+        if let relief = balance.provincialFamineRelief, state.era >= relief.minimumEra, shortfall > 0, state.flags.contains(relief.flag) {
+            relieved = min(shortfall, relief.maximumShares)
+        }
+        var budget = FoodBudget(production: production, consumption: consumption, shortfall: shortfall - relieved, maximumLoss: balance.starvationLoss)
+        budget.relieved = relieved
         // Surplus capacity above ordinary consumption is kept only with a storage record, a little per turn,
         // and never past the reserve ceiling: accumulation is real but bounded.
         if let rule = balance.provincialStorage, state.era >= rule.minimumEra, shortfall == 0, unfundedResources <= 0,

@@ -1,13 +1,13 @@
 {
   "errors": [],
   "warnings": [],
-  "cards": 240,
+  "cards": 255,
   "eraInventory": {
     "4": {
-      "total": 60,
-      "recurring": 37,
-      "conclusions": 11,
-      "bridges": 11,
+      "total": 75,
+      "recurring": 46,
+      "conclusions": 14,
+      "bridges": 14,
       "recurringCategories": [
         "citizenship",
         "ecology",
@@ -117,14 +117,14 @@
       "open": false
     }
   },
-  "choices": 657,
+  "choices": 715,
   "stochasticChoices": 9,
-  "conditionalOutcomeChoices": 68,
+  "conditionalOutcomeChoices": 69,
   "eras": {
     "1": 60,
     "2": 60,
     "3": 60,
-    "4": 60,
+    "4": 75,
     "5": 0,
     "6": 0,
     "7": 0,
@@ -136,7 +136,7 @@
   },
   "authoredChainGroups": 11,
   "multiCardChainGroups": 11,
-  "crossEraLinks": 214,
+  "crossEraLinks": 230,
   "missingArt": [
     "card_broken_spear",
     "card_stranger_child",
@@ -334,7 +334,22 @@
     "card_estate_bondage_record",
     "card_tithe_measure_recall",
     "card_governor_succession_rule",
-    "card_merchant_grain_rights"
+    "card_merchant_grain_rights",
+    "card_representation_reform",
+    "card_land_tax_reform",
+    "card_grain_pact",
+    "card_public_safety_compact",
+    "card_legitimacy_oath",
+    "card_land_rights_survey",
+    "card_seasonal_migration",
+    "card_trade_treaty",
+    "card_terrace_upkeep",
+    "card_provincial_levy_review",
+    "card_barge_silt_league",
+    "card_granary_roof_watch",
+    "card_land_registry_record",
+    "card_water_court_canal",
+    "card_fuel_trade_clause"
   ],
   "missingAudio": [
     "era_1",
@@ -364,7 +379,7 @@
   ],
   "releaseReady": false,
   "releaseBlockers": [
-    "800 original cards required; current 240",
+    "800 original cards required; current 255",
     "Era 4 content gate closed (enabled:false; 40/24/8/8 inventory not met)",
     "At least 60 cards per era and 80 special events required",
     "100 completed chains / 50 cross-era links required",

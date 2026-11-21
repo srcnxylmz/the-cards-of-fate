@@ -152,6 +152,14 @@ public struct Balance: Codable {
     public var provincialStorage: ProvincialStorage?
     /// Optional (Phase 3, 240): fed, stable provinces regain households slowly, up to a ceiling.
     public var provincialGrowth: ProvincialGrowth?
+    /// Optional (Phase 3, 255): a sealed public store is opened once when hunger strikes, then it is empty.
+    public var provincialFamineRelief: ProvincialFamineRelief?
+}
+
+public struct ProvincialFamineRelief: Codable, Equatable {
+    public var minimumEra: Int
+    public var flag: String
+    public var maximumShares: Int
 }
 
 public struct ProvincialStorage: Codable, Equatable {

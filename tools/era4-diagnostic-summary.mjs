@@ -6,7 +6,7 @@ import { resolve, basename } from 'node:path';
 
 const dirs = process.argv.slice(2);
 if (!dirs.length) { console.error('Usage: node tools/era4-diagnostic-summary.mjs <dir> [<dir> ...]'); process.exit(2); }
-const policies = ['progression', 'knowledge', 'recovery', 'random', 'survival'];
+const policies = ['progression', 'knowledge', 'recovery', 'random', 'survival', 'investment'];
 const pct = (a, b) => b ? `${(100 * a / b).toFixed(1)}%` : '–';
 const avg = (a, b, d = 1) => b ? (a / b).toFixed(d) : '–';
 
@@ -37,6 +37,8 @@ export function summarize(report) {
     stabFlows: `${per(e, d, 'flow.card.stability.gain')}−${per(e, d, 'flow.card.stability.loss')} / −${per(e, d, 'flow.delayed.stability.loss')} / −${per(e, d, 'flow.world.stability.loss')} / −${per(e, d, 'flow.council.stability.loss')}`,
     at: [20, 40, 80].map(x => { const c = e[`at${x}.runs`] ?? 0; return c ? ['resources', 'stability', 'population'].map(s => ((e[`at${x}.${s}`] ?? 0) / c).toFixed(0)).join('/') : '–'; }).join(' · '),
     stored: per(e, d, 'flow.world.resources.gain'),
+    politics: e['politics.meetings'] ? `${avg(e['politics.authority'] ?? 0, d)} / ${avg(e['politics.defense'] ?? 0, d)} / ${avg(e['politics.power.hunters'] ?? 0, d, 0)}–${avg(e['politics.power.keepers'] ?? 0, d, 0)} / ${avg(e['politics.relation.hunters'] ?? 0, d, 0)}–${avg(e['politics.relation.keepers'] ?? 0, d, 0)}` : '–',
+    challenges: e['politics.meetings'] ? `${avg(e['politics.challenges'] ?? 0, e['politics.meetings'], 2)} · −${per(e, d, 'flow.council.stability.loss')} istikrar` : '–',
     death: ['world', 'card', 'delayed'].map(s => `${s} ${e['death.' + s] ?? 0}`).join(', '),
     after100: `${e['after100.runs'] ?? 0} runs · ${avg(e['after100.distinctCards'] ?? 0, e['after100.runs'] ?? 0)} cards · ${avg(e['after100.distinctChoices'] ?? 0, e['after100.runs'] ?? 0)} choices`,
     capacity: Object.keys(e).filter(x => x.startsWith('capacity.') && x.endsWith('.producing')).map(x => `${x.split('.')[1]} ${pct(e[x], d)}`).join(', ') || '–'
@@ -49,7 +51,7 @@ const rows = [
   ['food', 'Yiyecek üretim/tüketim (tur)'], ['starvationTurns', 'Açlık turu oranı'], ['populationLostPerStarvedTurn', 'Açlık turunda nüfus kaybı'],
   ['stabilityCollapse', 'İstikrar <15 (koşu, tur)'], ['eligible', 'Uygun kart'], ['activeChoices', 'Aktif seçenek'],
   ['zeroReserve', 'Sıfır kaynak kararı · uygun kart'], ['lowStress', 'Uygun kart: düşük istikrar/nüfus/çevre/düşman'],
-  ['repeats', 'Tekrar: ilk 20/40/80 Era 4 kararı'], ['popCard', 'Nüfus/100 karar: kart −kayıp/+kazanç'], ['popDelayed', 'Nüfus/100 karar: gecikmeli'], ['popWorld', 'Nüfus/100 karar: tur sonu (açlık −, büyüme +)'], ['stabFlows', 'İstikrar/100 karar: kart net · gecikmeli · tur sonu · meclis'], ['at', '20./40./80. Era 4 kararında kaynak/istikrar/nüfus'], ['death', 'Nüfusu sıfırlayan adım (koşu)'], ['stored', 'Ambara birikim/100 karar (tur sonu kaynak artışı)'], ['after100', '100. karardan sonra çeşitlilik'], ['capacity', 'Üreten kapasite (karar payı)']
+  ['repeats', 'Tekrar: ilk 20/40/80 Era 4 kararı'], ['popCard', 'Nüfus/100 karar: kart −kayıp/+kazanç'], ['popDelayed', 'Nüfus/100 karar: gecikmeli'], ['popWorld', 'Nüfus/100 karar: tur sonu (açlık −, büyüme +)'], ['stabFlows', 'İstikrar/100 karar: kart net · gecikmeli · tur sonu · meclis'], ['at', '20./40./80. Era 4 kararında kaynak/istikrar/nüfus'], ['death', 'Nüfusu sıfırlayan adım (koşu)'], ['stored', 'Ambara birikim/100 karar (tur sonu kaynak artışı)'], ['politics', 'Otorite / meclis savunması / rakip gücü (avcı–rahip) / ilişki (avcı–rahip)'], ['challenges', 'Meclis itirazı/toplantı · meclis istikrar kaybı/100 karar'], ['after100', '100. karardan sonra çeşitlilik'], ['capacity', 'Üreten kapasite (karar payı)']
 ];
 for (const policy of policies) {
   const cols = dirs.map(dir => { const p = resolve(dir, `simulation-${policy}.json`); return fs.existsSync(p) ? summarize(JSON.parse(fs.readFileSync(p, 'utf8'))) : null; });

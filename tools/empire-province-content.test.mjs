@@ -97,12 +97,12 @@ test('civil_law is granted only by the paid, conditional legal reform; it cannot
   assert.equal(validate(cards, eras).eraInventory[5].open, false);
 });
 
-test('Era 4 stays closed at 60/40 and the validator still rejects flipping the switch alone', () => {
+test('Era 4 stays closed at 75/40 and the validator still rejects flipping the switch alone', () => {
   const result = validate(cards, eras);
   assert.deepEqual(result.errors, []);
   assert.deepEqual(result.warnings, []);
   const inv = result.eraInventory[4];
-  assert.deepEqual([inv.total, inv.recurring, inv.conclusions, inv.bridges, inv.enabled, inv.open], [60, 37, 11, 11, false, false]);
+  assert.deepEqual([inv.total, inv.recurring, inv.conclusions, inv.bridges, inv.enabled, inv.open], [75, 46, 14, 14, false, false]);
   assert.equal(inv.satisfied, true);
   const forced = structuredClone(eras); forced[3].contentGate.enabled = true;
   assert.ok(validate(cards, forced).errors.some(e => e.includes('gate enabled without recorded balance evidence')));

@@ -117,6 +117,18 @@ extension GameEngine {
         return state.stats["authority", default: 0] + min(rules.maximumSupport, support) + legitimacy + institutions
     }
 
+    /// Era 4 only (institutionDefense.reconciliation*): lawful voice slowly de-escalates hostile factions.
+    func reconcileFactions(_ state: inout GameState) {
+        guard let rule = content.politics.institutionDefense, state.era >= rule.minimumEra,
+              let step = rule.reconciliationPerFlag, let ceiling = rule.reconciliationCeiling,
+              state.turn % content.politics.meetingInterval == 0 else { return }
+        let held = rule.flags.filter(state.flags.contains).count
+        guard held > 0 else { return }
+        for i in state.rivals.indices where state.rivals[i].relation < ceiling {
+            state.rivals[i].relation = min(ceiling, state.rivals[i].relation + held * step)
+        }
+    }
+
     func updateFactionPower(_ state: inout GameState) {
         let rules = content.politics
         for i in state.rivals.indices {
@@ -135,4 +147,9 @@ public struct InstitutionDefense: Codable, Equatable {
     public var flags: [String]
     public var defensePerFlag: Int
     public var maximumDefense: Int
+    /// Optional (Phase 3, 255): at each council meeting every standing institution moves hostile factions
+    /// one step toward the ceiling. The ceiling stays below neutralRelation, so institutions end hostility
+    /// (no hostile power bonus, no coalition) without buying loyalty: challenges remain possible.
+    public var reconciliationPerFlag: Int?
+    public var reconciliationCeiling: Int?
 }

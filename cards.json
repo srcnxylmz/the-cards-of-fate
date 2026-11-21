@@ -53187,5 +53187,3521 @@
       "card.merchant_grain_rights.description"
     ],
     "eraRole": "conclusion"
+  },
+  {
+    "id": "representation_reform",
+    "era": 4,
+    "category": "citizenship",
+    "title": {
+      "tr": "Temsil Reformu",
+      "en": "A Reform of Representation"
+    },
+    "description": {
+      "tr": "Eyalet meclisindeki sıralar hâlâ eski soyların elinde. Kalabalık mahalleler sıraların hane sayısına göre dağıtılmasını istiyor; toprak sahipleri ise yalnız mülk sahiplerinin oy vermesini savunuyor. Kimin sayılacağı, kimin vergi ödeyeceğini de belirleyecek.",
+      "en": "The benches of the provincial council are still held by the old lineages. Crowded wards want the benches shared out by household; the landholders argue that only property owners should vote. Who is counted will also decide who pays the taxes."
+    },
+    "artAsset": "card_representation_reform",
+    "artDirection": "Fictional composite ancient empire, cut limestone and marble, wax tablets and papyrus rolls, bronze and iron hand tools, wool tunics and cloaks, no stirrups, no paper books, no gunpowder; ivory, gold and dusty terracotta palette, portrait composition. Provincial council hall with a scribe tallying households on wax tablets, ward delegates and landholders arguing across a marble floor, a bronze ballot urn on a stand, afternoon light through high windows.",
+    "rarity": "common",
+    "weight": 10,
+    "requirements": [],
+    "exclusionConditions": [],
+    "choices": [
+      {
+        "id": "households",
+        "text": {
+          "tr": "Sıraları hane sayısına göre dağıt.",
+          "en": "Share out the benches by household."
+        },
+        "risk": {
+          "tr": "Sonucu öngörülebilir",
+          "en": "Predictable outcome"
+        },
+        "requirements": [],
+        "immediateEffects": {
+          "stats": {},
+          "flags": [],
+          "technologies": [],
+          "buildings": [],
+          "rivalRelation": 0
+        },
+        "outcomes": [
+          {
+            "id": "result",
+            "probability": 1,
+            "affinity": null,
+            "text": {
+              "tr": "Kalabalık mahalleler ilk kez sıra kazandı. Eski soylar sözlerinin hafiflediğini yazdı; vali artık daha çok sesi hesaba katmak zorunda.",
+              "en": "The crowded wards won benches for the first time. The old lineages wrote that their word had lightened; the governor must now reckon with more voices."
+            },
+            "effect": {
+              "stats": {
+                "authority": -3,
+                "stability": 4
+              },
+              "flags": [
+                "household_representation"
+              ],
+              "technologies": [],
+              "buildings": [],
+              "rivalRelation": 3
+            },
+            "delayedEffects": [],
+            "animationPreset": "normal"
+          }
+        ]
+      },
+      {
+        "id": "property",
+        "text": {
+          "tr": "Oyu mülk şartına bağla.",
+          "en": "Tie the vote to a property qualification."
+        },
+        "risk": {
+          "tr": "Sonucu öngörülebilir",
+          "en": "Predictable outcome"
+        },
+        "requirements": [],
+        "immediateEffects": {
+          "stats": {},
+          "flags": [],
+          "technologies": [],
+          "buildings": [],
+          "rivalRelation": 0
+        },
+        "outcomes": [
+          {
+            "id": "result",
+            "probability": 1,
+            "affinity": null,
+            "text": {
+              "tr": "Yalnız mülk sahipleri oy verdi. Meclis sakin ve hızlı karar aldı; mahalleler dışarıda kaldığını unutmadı.",
+              "en": "Only property owners voted. The council decided quickly and calmly; the wards did not forget they had been left outside."
+            },
+            "effect": {
+              "stats": {
+                "authority": 2,
+                "stability": -3
+              },
+              "flags": [
+                "property_franchise"
+              ],
+              "technologies": [],
+              "buildings": [],
+              "rivalRelation": -2
+            },
+            "delayedEffects": [],
+            "animationPreset": "normal"
+          }
+        ]
+      },
+      {
+        "id": "residents",
+        "text": {
+          "tr": "Vatandaşlık duruşmasından geçen liman ailelerini de say.",
+          "en": "Count the harbor families who passed the citizenship hearing as well."
+        },
+        "risk": {
+          "tr": "Sonucu öngörülebilir",
+          "en": "Predictable outcome"
+        },
+        "requirements": [
+          {
+            "flag": "provincial_residency_hearing"
+          }
+        ],
+        "immediateEffects": {
+          "stats": {},
+          "flags": [],
+          "technologies": [],
+          "buildings": [],
+          "rivalRelation": 0
+        },
+        "outcomes": [
+          {
+            "id": "result",
+            "probability": 1,
+            "affinity": null,
+            "text": {
+              "tr": "Duruşma kayıtları sayıma eklendi. Liman mahallesi mecliste sesini buldu; vali bir yetkisini daha paylaştı.",
+              "en": "The hearing records were added to the count. The harbor ward found its voice in the council; the governor shared one more of his powers."
+            },
+            "effect": {
+              "stats": {
+                "authority": -3,
+                "stability": 5
+              },
+              "flags": [
+                "household_representation"
+              ],
+              "technologies": [],
+              "buildings": [],
+              "rivalRelation": 0
+            },
+            "delayedEffects": [],
+            "animationPreset": "normal"
+          }
+        ]
+      },
+      {
+        "id": "census",
+        "text": {
+          "tr": "Ücretli bir sayım yaptır; sıraları sayım sonucuna göre böl.",
+          "en": "Hold a paid census and divide the benches by its result."
+        },
+        "risk": {
+          "tr": "Sonucu öngörülebilir",
+          "en": "Predictable outcome"
+        },
+        "requirements": [
+          {
+            "stat": "resources",
+            "minimum": 5
+          }
+        ],
+        "immediateEffects": {
+          "stats": {},
+          "flags": [],
+          "technologies": [],
+          "buildings": [],
+          "rivalRelation": 0
+        },
+        "outcomes": [
+          {
+            "id": "result",
+            "probability": 1,
+            "affinity": null,
+            "text": {
+              "tr": "Sayım kâtipleri her kapıyı dolaştı. Ücretleri ödendi; sıralar herkesin itiraz edemeyeceği bir sayıyla bölündü.",
+              "en": "Census clerks went from door to door. They were paid; the benches were divided by a count no one could easily dispute."
+            },
+            "effect": {
+              "stats": {
+                "resources": -5,
+                "stability": 3,
+                "knowledge": 2
+              },
+              "flags": [
+                "household_representation"
+              ],
+              "technologies": [],
+              "buildings": [],
+              "rivalRelation": 0
+            },
+            "delayedEffects": [],
+            "animationPreset": "normal"
+          }
+        ]
+      }
+    ],
+    "worldFlags": [
+      "household_representation",
+      "property_franchise"
+    ],
+    "storyChainId": null,
+    "animationPreset": "normal",
+    "soundCue": "decision",
+    "cooldown": 4,
+    "localizationKeys": [
+      "card.representation_reform.title",
+      "card.representation_reform.description"
+    ],
+    "eraRole": "recurring"
+  },
+  {
+    "id": "land_tax_reform",
+    "era": 4,
+    "category": "taxation",
+    "title": {
+      "tr": "Toprak Vergisi Reformu",
+      "en": "Reforming the Land Tax"
+    },
+    "description": {
+      "tr": "Eski toprak vergisi tarlanın büyüklüğüne değil, sahibinin nüfuzuna göre toplanıyor. Kâtipler arazileri ölçüp yeni bir defter önermekte; tüccarlar ise kişi başı vergiyi daha kolay buluyor. Yoksul köyler vergiyi hasattan pay olarak ödemek istiyor.",
+      "en": "The old land tax is levied by the owner’s influence, not by the size of the field. Clerks propose measuring the land and writing a new register; merchants find a head tax simpler. Poor villages want to pay the tax as a share of the harvest."
+    },
+    "artAsset": "card_land_tax_reform",
+    "artDirection": "Fictional composite ancient empire, cut limestone and marble, wax tablets and papyrus rolls, bronze and iron hand tools, wool tunics and cloaks, no stirrups, no paper books, no gunpowder; ivory, gold and dusty terracotta palette, portrait composition. Surveyors with measuring rods and cords in a terraced field, a clerk writing a new land register on papyrus, villagers and a landholder watching, low golden light.",
+    "rarity": "common",
+    "weight": 10,
+    "requirements": [],
+    "exclusionConditions": [],
+    "choices": [
+      {
+        "id": "survey",
+        "text": {
+          "tr": "Arazileri ölçtür; vergiyi yeni deftere göre topla.",
+          "en": "Have the land surveyed and levy the tax by the new register."
+        },
+        "risk": {
+          "tr": "Sonucu öngörülebilir",
+          "en": "Predictable outcome"
+        },
+        "requirements": [
+          {
+            "stat": "resources",
+            "minimum": 6
+          }
+        ],
+        "immediateEffects": {
+          "stats": {},
+          "flags": [],
+          "technologies": [],
+          "buildings": [],
+          "rivalRelation": 0
+        },
+        "outcomes": [
+          {
+            "id": "result",
+            "probability": 1,
+            "affinity": null,
+            "text": {
+              "tr": "Ölçüm ekipleri tarlaları dolaştı ve ödendi. Nüfuzlu aileler ilk kez gerçek paylarını ödeyecek.",
+              "en": "The survey teams walked the fields and were paid. Influential families will pay their true share for the first time."
+            },
+            "effect": {
+              "stats": {
+                "resources": -6,
+                "stability": 2,
+                "knowledge": 2
+              },
+              "flags": [],
+              "technologies": [],
+              "buildings": [],
+              "rivalRelation": 0
+            },
+            "delayedEffects": [
+              {
+                "afterTurns": 6,
+                "minimumEra": 4,
+                "text": {
+                  "tr": "Ölçülmüş deftere göre toplanan vergi, kaçağı azalttı.",
+                  "en": "The tax levied by the surveyed register reduced evasion."
+                },
+                "effect": {
+                  "stats": {
+                    "resources": 4
+                  },
+                  "flags": [],
+                  "technologies": [],
+                  "buildings": [],
+                  "rivalRelation": 0
+                }
+              }
+            ],
+            "animationPreset": "normal"
+          }
+        ]
+      },
+      {
+        "id": "head",
+        "text": {
+          "tr": "Toprak vergisini kişi başı vergiye çevir.",
+          "en": "Replace the land tax with a head tax."
+        },
+        "risk": {
+          "tr": "Sonucu öngörülebilir",
+          "en": "Predictable outcome"
+        },
+        "requirements": [],
+        "immediateEffects": {
+          "stats": {},
+          "flags": [],
+          "technologies": [],
+          "buildings": [],
+          "rivalRelation": 0
+        },
+        "outcomes": [
+          {
+            "id": "result",
+            "probability": 1,
+            "affinity": null,
+            "text": {
+              "tr": "Herkes aynı vergiyi ödedi. Kasa hemen doldu; büyük toprak sahipleri sevindi, kalabalık yoksul aileler homurdandı.",
+              "en": "Everyone paid the same tax. The treasury filled at once; great landholders rejoiced, crowded poor families grumbled."
+            },
+            "effect": {
+              "stats": {
+                "resources": 3,
+                "stability": -4,
+                "authority": -1
+              },
+              "flags": [],
+              "technologies": [],
+              "buildings": [],
+              "rivalRelation": 0
+            },
+            "delayedEffects": [],
+            "animationPreset": "normal"
+          }
+        ]
+      },
+      {
+        "id": "harvest_share",
+        "text": {
+          "tr": "Vergiyi çiftlik hasadından pay olarak al.",
+          "en": "Take the tax as a share of the estate harvest."
+        },
+        "risk": {
+          "tr": "Sonucu öngörülebilir",
+          "en": "Predictable outcome"
+        },
+        "requirements": [
+          {
+            "flag": "estate_fields_worked"
+          }
+        ],
+        "immediateEffects": {
+          "stats": {},
+          "flags": [],
+          "technologies": [],
+          "buildings": [],
+          "rivalRelation": 0
+        },
+        "outcomes": [
+          {
+            "id": "result",
+            "probability": 1,
+            "affinity": null,
+            "text": {
+              "tr": "Vergi harmanda tartıldı. Kötü yılda daha az, iyi yılda daha çok ödenecek; tartı memurlarına güvenmeyenler itiraz etti.",
+              "en": "The tax was weighed on the threshing floor. Less will be paid in bad years, more in good ones; those who distrust the weighers objected."
+            },
+            "effect": {
+              "stats": {
+                "stability": 1,
+                "authority": -2
+              },
+              "flags": [],
+              "technologies": [],
+              "buildings": [],
+              "rivalRelation": 0
+            },
+            "delayedEffects": [
+              {
+                "afterTurns": 4,
+                "minimumEra": 4,
+                "text": {
+                  "tr": "Hasattan pay olarak alınan vergi ambara girdi.",
+                  "en": "The tax taken as a harvest share entered the granary."
+                },
+                "effect": {
+                  "stats": {
+                    "resources": 2
+                  },
+                  "flags": [],
+                  "technologies": [],
+                  "buildings": [],
+                  "rivalRelation": 0
+                }
+              }
+            ],
+            "animationPreset": "normal"
+          }
+        ]
+      },
+      {
+        "id": "keep",
+        "text": {
+          "tr": "Eski vergiyi değiştirme.",
+          "en": "Leave the old tax unchanged."
+        },
+        "risk": {
+          "tr": "Sonucu öngörülebilir",
+          "en": "Predictable outcome"
+        },
+        "requirements": [],
+        "immediateEffects": {
+          "stats": {},
+          "flags": [],
+          "technologies": [],
+          "buildings": [],
+          "rivalRelation": 0
+        },
+        "outcomes": [
+          {
+            "id": "result",
+            "probability": 1,
+            "affinity": null,
+            "text": {
+              "tr": "Hiçbir şey değişmedi. Nüfuzlu aileler yine az ödedi; köyler adaletsizliği bir kez daha deftere yazdırdı.",
+              "en": "Nothing changed. Influential families again paid little; the villages had the injustice recorded once more."
+            },
+            "effect": {
+              "stats": {
+                "authority": -1,
+                "stability": -1
+              },
+              "flags": [],
+              "technologies": [],
+              "buildings": [],
+              "rivalRelation": 0
+            },
+            "delayedEffects": [],
+            "animationPreset": "normal"
+          }
+        ]
+      }
+    ],
+    "worldFlags": [],
+    "storyChainId": null,
+    "animationPreset": "normal",
+    "soundCue": "decision",
+    "cooldown": 4,
+    "localizationKeys": [
+      "card.land_tax_reform.title",
+      "card.land_tax_reform.description"
+    ],
+    "eraRole": "recurring"
+  },
+  {
+    "id": "grain_pact",
+    "era": 4,
+    "category": "logistics",
+    "title": {
+      "tr": "Bölgesel Tahıl Paktı",
+      "en": "The Regional Grain Pact"
+    },
+    "description": {
+      "tr": "Komşu eyaletler kıtlık yıllarında birbirine tahıl göndermek için bir pakt kuruyor. Pakta katılan her eyalet ambarından ya da kasasından pay koymalı. Kıtlıktaki bir eyalet paktan ödünç tahıl alabilir, ama borcunu ödeyene kadar meclisinde sözü azalır.",
+      "en": "The neighbouring provinces are forming a pact to send each other grain in famine years. Every member must contribute from its granary or treasury. A province in famine may borrow grain from the pact, but its voice in the pact council shrinks until it repays."
+    },
+    "artAsset": "card_grain_pact",
+    "artDirection": "Fictional composite ancient empire, cut limestone and marble, wax tablets and papyrus rolls, bronze and iron hand tools, wool tunics and cloaks, no stirrups, no paper books, no gunpowder; ivory, gold and dusty terracotta palette, portrait composition. Envoys from several provinces around a table with grain samples in bronze bowls, a pact tablet being sealed, ox carts loaded with sacks waiting outside the colonnade, clear morning light.",
+    "rarity": "common",
+    "weight": 10,
+    "requirements": [],
+    "exclusionConditions": [],
+    "choices": [
+      {
+        "id": "pledge_store",
+        "text": {
+          "tr": "Pakta ambarla ya da emekle katıl.",
+          "en": "Join the pact with granary stock or with labour."
+        },
+        "risk": {
+          "tr": "Orta risk · koşullara bağlı",
+          "en": "Moderate risk · depends on conditions"
+        },
+        "requirements": [],
+        "immediateEffects": {
+          "stats": {},
+          "flags": [],
+          "technologies": [],
+          "buildings": [],
+          "rivalRelation": 0
+        },
+        "outcomes": [
+          {
+            "id": "store",
+            "probability": 0.5,
+            "affinity": null,
+            "text": {
+              "tr": "Depo pakt ambarı olarak yeniden mühürlendi ve ilk kafileyle komşuya gitti. Komşular sözü unutmayacak.",
+              "en": "The store was resealed as a pact granary and left with the first convoy to a neighbour. The neighbours will not forget the pledge."
+            },
+            "effect": {
+              "stats": {
+                "stability": 2,
+                "authority": -1
+              },
+              "flags": [
+                "regional_grain_pact"
+              ],
+              "technologies": [],
+              "buildings": [],
+              "rivalRelation": 6,
+              "removeFlags": [
+                "grain_famine_store"
+              ]
+            },
+            "delayedEffects": [
+              {
+                "afterTurns": 5,
+                "minimumEra": 4,
+                "text": {
+                  "tr": "Pakt sırası size geldi; komşu eyaletlerden tahıl kafilesi ulaştı.",
+                  "en": "The pact’s turn came round to you; a grain convoy arrived from the neighbouring provinces."
+                },
+                "effect": {
+                  "stats": {
+                    "resources": 3
+                  },
+                  "flags": [],
+                  "technologies": [],
+                  "buildings": [],
+                  "rivalRelation": 0
+                }
+              }
+            ],
+            "animationPreset": "normal",
+            "requirements": [
+              {
+                "flag": "grain_famine_store"
+              }
+            ]
+          },
+          {
+            "id": "labour",
+            "probability": 0.5,
+            "affinity": null,
+            "text": {
+              "tr": "Ambar boştu; eyalet pakta arabacı ve hamal gönderdi. Kendi tarlaları birkaç el eksik kaldı, ama pakt defterine yazıldı.",
+              "en": "The granary was empty; the province sent carters and porters to the pact. Its own fields were a few hands short, but it was entered in the pact ledger."
+            },
+            "effect": {
+              "stats": {
+                "authority": -2,
+                "stability": -1,
+                "population": -1
+              },
+              "flags": [
+                "regional_grain_pact"
+              ],
+              "technologies": [],
+              "buildings": [],
+              "rivalRelation": 3
+            },
+            "delayedEffects": [],
+            "animationPreset": "normal",
+            "requirements": [
+              {
+                "absentFlag": "grain_famine_store"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "pledge_coin",
+        "text": {
+          "tr": "Pakta kasadan pay koy.",
+          "en": "Contribute coin from the treasury to the pact."
+        },
+        "risk": {
+          "tr": "Sonucu öngörülebilir",
+          "en": "Predictable outcome"
+        },
+        "requirements": [
+          {
+            "stat": "resources",
+            "minimum": 5
+          }
+        ],
+        "immediateEffects": {
+          "stats": {},
+          "flags": [],
+          "technologies": [],
+          "buildings": [],
+          "rivalRelation": 0
+        },
+        "outcomes": [
+          {
+            "id": "result",
+            "probability": 1,
+            "affinity": null,
+            "text": {
+              "tr": "Pay ödendi ve eyalet pakta yazıldı. Kasa hafifledi; ilk karşılık birkaç tur sonra gelecek.",
+              "en": "The share was paid and the province entered the pact. The treasury thinned; the first return will come in a few turns."
+            },
+            "effect": {
+              "stats": {
+                "resources": -5,
+                "stability": 1
+              },
+              "flags": [
+                "regional_grain_pact"
+              ],
+              "technologies": [],
+              "buildings": [],
+              "rivalRelation": 4
+            },
+            "delayedEffects": [
+              {
+                "afterTurns": 5,
+                "minimumEra": 4,
+                "text": {
+                  "tr": "Pakt kafilesi ambara tahıl getirdi.",
+                  "en": "The pact convoy brought grain to the granary."
+                },
+                "effect": {
+                  "stats": {
+                    "resources": 3
+                  },
+                  "flags": [],
+                  "technologies": [],
+                  "buildings": [],
+                  "rivalRelation": 0
+                }
+              }
+            ],
+            "animationPreset": "normal"
+          }
+        ]
+      },
+      {
+        "id": "borrow",
+        "text": {
+          "tr": "Paktan şimdi ödünç tahıl iste.",
+          "en": "Ask the pact for grain on loan now."
+        },
+        "risk": {
+          "tr": "Sonucu öngörülebilir",
+          "en": "Predictable outcome"
+        },
+        "requirements": [
+          {
+            "absentFlag": "regional_grain_loan"
+          }
+        ],
+        "immediateEffects": {
+          "stats": {},
+          "flags": [],
+          "technologies": [],
+          "buildings": [],
+          "rivalRelation": 0
+        },
+        "outcomes": [
+          {
+            "id": "result",
+            "probability": 1,
+            "affinity": null,
+            "text": {
+              "tr": "Komşular tahılı gönderdi ve borcu pakt defterine yazdı. Vali pakt meclisinde bir süre sessiz kalmak zorunda.",
+              "en": "The neighbours sent the grain and wrote the debt in the pact ledger. The governor must keep quiet in the pact council for a while."
+            },
+            "effect": {
+              "stats": {
+                "resources": 4,
+                "authority": -3
+              },
+              "flags": [
+                "regional_grain_loan"
+              ],
+              "technologies": [],
+              "buildings": [],
+              "rivalRelation": 0
+            },
+            "delayedEffects": [
+              {
+                "afterTurns": 6,
+                "minimumEra": 4,
+                "text": {
+                  "tr": "Tahıl paktından alınan ödünç vadesinde geri ödendi.",
+                  "en": "The loan from the grain pact was repaid when it fell due."
+                },
+                "effect": {
+                  "stats": {
+                    "resources": -4
+                  },
+                  "flags": [],
+                  "technologies": [],
+                  "buildings": [],
+                  "rivalRelation": 0,
+                  "removeFlags": [
+                    "regional_grain_loan"
+                  ]
+                }
+              }
+            ],
+            "animationPreset": "normal"
+          }
+        ]
+      },
+      {
+        "id": "stay_out",
+        "text": {
+          "tr": "Pakta katılma.",
+          "en": "Stay out of the pact."
+        },
+        "risk": {
+          "tr": "Sonucu öngörülebilir",
+          "en": "Predictable outcome"
+        },
+        "requirements": [],
+        "immediateEffects": {
+          "stats": {},
+          "flags": [],
+          "technologies": [],
+          "buildings": [],
+          "rivalRelation": 0
+        },
+        "outcomes": [
+          {
+            "id": "result",
+            "probability": 1,
+            "affinity": null,
+            "text": {
+              "tr": "Eyalet kendi ambarına güvendi. Komşular bir sonraki kıtlıkta kapılarını hatırlayacaklarını söyledi.",
+              "en": "The province trusted its own granary. The neighbours said they would remember its gates in the next famine."
+            },
+            "effect": {
+              "stats": {
+                "authority": 1,
+                "stability": -1
+              },
+              "flags": [],
+              "technologies": [],
+              "buildings": [],
+              "rivalRelation": -4
+            },
+            "delayedEffects": [],
+            "animationPreset": "normal"
+          }
+        ]
+      }
+    ],
+    "worldFlags": [
+      "regional_grain_pact",
+      "regional_grain_loan"
+    ],
+    "storyChainId": null,
+    "animationPreset": "normal",
+    "soundCue": "decision",
+    "cooldown": 4,
+    "localizationKeys": [
+      "card.grain_pact.title",
+      "card.grain_pact.description"
+    ],
+    "eraRole": "recurring"
+  },
+  {
+    "id": "public_safety_compact",
+    "era": 4,
+    "category": "settlement",
+    "title": {
+      "tr": "Kamu Güvenliği Uzlaşısı",
+      "en": "A Compact for Public Safety"
+    },
+    "description": {
+      "tr": "Pazar yerinde bir hırsızlık kavgaya, kavga mahalle çatışmasına dönüştü. Mahalleler kendi gönüllü nöbetini kurmak istiyor; komutan sokaklara asker dikmeyi öneriyor. Kimin sopası kimin sırtına ineceği, kentin uzlaşısını belirleyecek.",
+      "en": "A theft in the market turned into a brawl, and the brawl into a clash between wards. The wards want to raise their own volunteer watch; the commander proposes posting soldiers in the streets. Whose staff falls on whose back will decide the town’s settlement."
+    },
+    "artAsset": "card_public_safety_compact",
+    "artDirection": "Fictional composite ancient empire, cut limestone and marble, wax tablets and papyrus rolls, bronze and iron hand tools, wool tunics and cloaks, no stirrups, no paper books, no gunpowder; ivory, gold and dusty terracotta palette, portrait composition. Night street with ward volunteers holding lanterns and staves, a patrol of soldiers at the corner, magistrate between them reading a compact tablet, torchlight on stone walls.",
+    "rarity": "common",
+    "weight": 10,
+    "requirements": [],
+    "exclusionConditions": [],
+    "choices": [
+      {
+        "id": "wards",
+        "text": {
+          "tr": "Mahallelere gönüllü nöbet hakkı ver.",
+          "en": "Give the wards the right to keep a volunteer watch."
+        },
+        "risk": {
+          "tr": "Sonucu öngörülebilir",
+          "en": "Predictable outcome"
+        },
+        "requirements": [],
+        "immediateEffects": {
+          "stats": {},
+          "flags": [],
+          "technologies": [],
+          "buildings": [],
+          "rivalRelation": 0
+        },
+        "outcomes": [
+          {
+            "id": "result",
+            "probability": 1,
+            "affinity": null,
+            "text": {
+              "tr": "Mahalleler kendi nöbetçilerini seçti. Kavgalar azaldı; valinin askerleri bazı sokaklara artık giremiyor.",
+              "en": "The wards chose their own watchmen. The brawls died down; the governor’s soldiers can no longer enter some streets."
+            },
+            "effect": {
+              "stats": {
+                "authority": -2,
+                "stability": 3
+              },
+              "flags": [],
+              "technologies": [],
+              "buildings": [],
+              "rivalRelation": 0
+            },
+            "delayedEffects": [],
+            "animationPreset": "normal"
+          }
+        ]
+      },
+      {
+        "id": "soldiers",
+        "text": {
+          "tr": "Sokaklara asker dik.",
+          "en": "Post soldiers in the streets."
+        },
+        "risk": {
+          "tr": "Sonucu öngörülebilir",
+          "en": "Predictable outcome"
+        },
+        "requirements": [],
+        "immediateEffects": {
+          "stats": {},
+          "flags": [],
+          "technologies": [],
+          "buildings": [],
+          "rivalRelation": 0
+        },
+        "outcomes": [
+          {
+            "id": "result",
+            "probability": 1,
+            "affinity": null,
+            "text": {
+              "tr": "Askerler köşe başlarını tuttu. Sessizlik geldi; mahalleler askerlerin kime ait olduğunu sordu.",
+              "en": "Soldiers held the street corners. Silence came; the wards asked whose soldiers they really were."
+            },
+            "effect": {
+              "stats": {
+                "authority": 2,
+                "stability": -3
+              },
+              "flags": [],
+              "technologies": [],
+              "buildings": [],
+              "rivalRelation": -2
+            },
+            "delayedEffects": [],
+            "animationPreset": "normal"
+          }
+        ]
+      },
+      {
+        "id": "paid",
+        "text": {
+          "tr": "Ücretli bekçiler tut.",
+          "en": "Hire paid watchmen."
+        },
+        "risk": {
+          "tr": "Sonucu öngörülebilir",
+          "en": "Predictable outcome"
+        },
+        "requirements": [
+          {
+            "stat": "resources",
+            "minimum": 5
+          }
+        ],
+        "immediateEffects": {
+          "stats": {},
+          "flags": [],
+          "technologies": [],
+          "buildings": [],
+          "rivalRelation": 0
+        },
+        "outcomes": [
+          {
+            "id": "result",
+            "probability": 1,
+            "affinity": null,
+            "text": {
+              "tr": "Ücretli bekçiler her mahallede devriye gezdi. Kasa ödedi; sokaklar sakinleşti.",
+              "en": "Paid watchmen patrolled every ward. The treasury paid; the streets calmed."
+            },
+            "effect": {
+              "stats": {
+                "resources": -5,
+                "stability": 4
+              },
+              "flags": [],
+              "technologies": [],
+              "buildings": [],
+              "rivalRelation": 0
+            },
+            "delayedEffects": [],
+            "animationPreset": "normal"
+          }
+        ]
+      },
+      {
+        "id": "guild",
+        "text": {
+          "tr": "Kamu muhafız loncasının nöbetini genişlet.",
+          "en": "Extend the public watch guild’s rounds."
+        },
+        "risk": {
+          "tr": "Sonucu öngörülebilir",
+          "en": "Predictable outcome"
+        },
+        "requirements": [
+          {
+            "flag": "watch_guild_public"
+          }
+        ],
+        "immediateEffects": {
+          "stats": {},
+          "flags": [],
+          "technologies": [],
+          "buildings": [],
+          "rivalRelation": 0
+        },
+        "outcomes": [
+          {
+            "id": "result",
+            "probability": 1,
+            "affinity": null,
+            "text": {
+              "tr": "Lonca nöbeti yeni mahallelere uzattı. Nöbet vergi defterinden ödendi; vali loncaya yeni bir söz vermek zorunda kaldı.",
+              "en": "The guild extended its rounds to new wards. The watch was paid from the tax ledger; the governor had to make the guild a new promise."
+            },
+            "effect": {
+              "stats": {
+                "stability": 4,
+                "authority": -2
+              },
+              "flags": [],
+              "technologies": [],
+              "buildings": [],
+              "rivalRelation": 0
+            },
+            "delayedEffects": [],
+            "animationPreset": "normal"
+          }
+        ]
+      }
+    ],
+    "worldFlags": [],
+    "storyChainId": null,
+    "animationPreset": "normal",
+    "soundCue": "decision",
+    "cooldown": 4,
+    "localizationKeys": [
+      "card.public_safety_compact.title",
+      "card.public_safety_compact.description"
+    ],
+    "eraRole": "recurring"
+  },
+  {
+    "id": "legitimacy_oath",
+    "era": 4,
+    "category": "province",
+    "title": {
+      "tr": "Sadakat Yemini",
+      "en": "The Oath of Loyalty"
+    },
+    "description": {
+      "tr": "Başkent bütün eyalet görevlilerinden imparatora yemin istiyor. Kentliler yeminin eyalet yasasına edilmesini, köylüler ise yerel tapınaklarda edilmesini istiyor. Yeminin kime edildiği, valinin hangi yetkiye dayandığını gösterecek.",
+      "en": "The capital demands an oath to the emperor from every provincial official. The townspeople want the oath sworn to the provincial law, the villagers want it sworn at the local shrines. To whom the oath is sworn will show on what authority the governor rests."
+    },
+    "artAsset": "card_legitimacy_oath",
+    "artDirection": "Fictional composite ancient empire, cut limestone and marble, wax tablets and papyrus rolls, bronze and iron hand tools, wool tunics and cloaks, no stirrups, no paper books, no gunpowder; ivory, gold and dusty terracotta palette, portrait composition. Officials raising their right hands before an altar and a bronze law tablet, a priest of a local shrine and an imperial envoy standing apart, citizens watching from steps, bright ceremonial light.",
+    "rarity": "common",
+    "weight": 10,
+    "requirements": [],
+    "exclusionConditions": [],
+    "choices": [
+      {
+        "id": "law",
+        "text": {
+          "tr": "Yemini eyalet yasasına ettir.",
+          "en": "Have the oath sworn to the provincial law."
+        },
+        "risk": {
+          "tr": "Sonucu öngörülebilir",
+          "en": "Predictable outcome"
+        },
+        "requirements": [],
+        "immediateEffects": {
+          "stats": {},
+          "flags": [],
+          "technologies": [],
+          "buildings": [],
+          "rivalRelation": 0
+        },
+        "outcomes": [
+          {
+            "id": "result",
+            "probability": 1,
+            "affinity": null,
+            "text": {
+              "tr": "Görevliler yasa tabletine el bastı. Kentliler kendi yasalarının önemsendiğini gördü; başkent elçisi kaşlarını çattı.",
+              "en": "The officials laid their hands on the law tablet. The townspeople saw their law honoured; the capital’s envoy frowned."
+            },
+            "effect": {
+              "stats": {
+                "authority": -2,
+                "stability": 3,
+                "knowledge": 1
+              },
+              "flags": [],
+              "technologies": [],
+              "buildings": [],
+              "rivalRelation": 0
+            },
+            "delayedEffects": [],
+            "animationPreset": "normal"
+          }
+        ]
+      },
+      {
+        "id": "cult",
+        "text": {
+          "tr": "İmparator kültü için bir tapınak yaptır.",
+          "en": "Build a temple to the imperial cult."
+        },
+        "risk": {
+          "tr": "Sonucu öngörülebilir",
+          "en": "Predictable outcome"
+        },
+        "requirements": [
+          {
+            "stat": "resources",
+            "minimum": 4
+          }
+        ],
+        "immediateEffects": {
+          "stats": {},
+          "flags": [],
+          "technologies": [],
+          "buildings": [],
+          "rivalRelation": 0
+        },
+        "outcomes": [
+          {
+            "id": "result",
+            "probability": 1,
+            "affinity": null,
+            "text": {
+              "tr": "İmparatorluk tapınağı yükseldi ve yemin orada edildi. Başkent memnun; yerel rahipler sunakların boşaldığını söyledi.",
+              "en": "The imperial temple rose and the oath was sworn there. The capital was pleased; the local priests said their altars were emptying."
+            },
+            "effect": {
+              "stats": {
+                "resources": -4,
+                "authority": 3,
+                "stability": 1
+              },
+              "flags": [],
+              "technologies": [],
+              "buildings": [],
+              "rivalRelation": -2
+            },
+            "delayedEffects": [],
+            "animationPreset": "normal"
+          }
+        ]
+      },
+      {
+        "id": "shrines",
+        "text": {
+          "tr": "Yemini yerel tapınaklarda ettir.",
+          "en": "Have the oath sworn at the local shrines."
+        },
+        "risk": {
+          "tr": "Sonucu öngörülebilir",
+          "en": "Predictable outcome"
+        },
+        "requirements": [],
+        "immediateEffects": {
+          "stats": {},
+          "flags": [],
+          "technologies": [],
+          "buildings": [],
+          "rivalRelation": 0
+        },
+        "outcomes": [
+          {
+            "id": "result",
+            "probability": 1,
+            "affinity": null,
+            "text": {
+              "tr": "Yeminler köy tapınaklarında edildi. Rahipler ve köylüler memnun; başkent valinin kime bağlı olduğunu sordu.",
+              "en": "The oaths were sworn at the village shrines. Priests and villagers were pleased; the capital asked to whom the governor was loyal."
+            },
+            "effect": {
+              "stats": {
+                "authority": -3,
+                "stability": 2
+              },
+              "flags": [],
+              "technologies": [],
+              "buildings": [],
+              "rivalRelation": 4
+            },
+            "delayedEffects": [],
+            "animationPreset": "normal"
+          }
+        ]
+      },
+      {
+        "id": "skip",
+        "text": {
+          "tr": "Yemini erteleyip sessizce geçiştir.",
+          "en": "Postpone the oath and let it pass quietly."
+        },
+        "risk": {
+          "tr": "Sonucu öngörülebilir",
+          "en": "Predictable outcome"
+        },
+        "requirements": [],
+        "immediateEffects": {
+          "stats": {},
+          "flags": [],
+          "technologies": [],
+          "buildings": [],
+          "rivalRelation": 0
+        },
+        "outcomes": [
+          {
+            "id": "result",
+            "probability": 1,
+            "affinity": null,
+            "text": {
+              "tr": "Yemin töreni yapılmadı. Kimse yemin etmedi, kimse de unutmadı.",
+              "en": "No oath ceremony was held. No one swore, and no one forgot."
+            },
+            "effect": {
+              "stats": {
+                "authority": -1,
+                "stability": -2
+              },
+              "flags": [],
+              "technologies": [],
+              "buildings": [],
+              "rivalRelation": 0
+            },
+            "delayedEffects": [],
+            "animationPreset": "normal"
+          }
+        ]
+      }
+    ],
+    "worldFlags": [],
+    "storyChainId": null,
+    "animationPreset": "normal",
+    "soundCue": "decision",
+    "cooldown": 4,
+    "localizationKeys": [
+      "card.legitimacy_oath.title",
+      "card.legitimacy_oath.description"
+    ],
+    "eraRole": "recurring"
+  },
+  {
+    "id": "land_rights_survey",
+    "era": 4,
+    "category": "production",
+    "title": {
+      "tr": "Toprak Hakları Ölçümü",
+      "en": "Surveying the Land Rights"
+    },
+    "description": {
+      "tr": "Eyalet çiftlikleri genişledikçe köylerin ortak meraları daralıyor. Köylüler eski sınır taşlarını gösteriyor; çiftlik kâhyaları yeni sınırların valilik mührüyle onaylandığını söylüyor. Bir kayıt tutulmazsa her hasatta kavga çıkacak.",
+      "en": "As the provincial estates widen, the villages’ common pastures shrink. Villagers point to the old boundary stones; estate stewards say the new limits were approved under the governorate seal. Without a record there will be a quarrel every harvest."
+    },
+    "artAsset": "card_land_rights_survey",
+    "artDirection": "Fictional composite ancient empire, cut limestone and marble, wax tablets and papyrus rolls, bronze and iron hand tools, wool tunics and cloaks, no stirrups, no paper books, no gunpowder; ivory, gold and dusty terracotta palette, portrait composition. Boundary stones in a meadow between ploughed estate fields and village pasture, villagers and estate stewards arguing, a surveyor with a measuring rod, late afternoon light.",
+    "rarity": "common",
+    "weight": 10,
+    "requirements": [],
+    "exclusionConditions": [],
+    "choices": [
+      {
+        "id": "commons",
+        "text": {
+          "tr": "Köylerin ortak meralarını onayla.",
+          "en": "Confirm the villages’ common pastures."
+        },
+        "risk": {
+          "tr": "Sonucu öngörülebilir",
+          "en": "Predictable outcome"
+        },
+        "requirements": [],
+        "immediateEffects": {
+          "stats": {},
+          "flags": [],
+          "technologies": [],
+          "buildings": [],
+          "rivalRelation": 0
+        },
+        "outcomes": [
+          {
+            "id": "result",
+            "probability": 1,
+            "affinity": null,
+            "text": {
+              "tr": "Eski sınır taşları yerinde kaldı. Köyler sevindi ve sürüler meraya döndü; çiftlik kâhyaları valinin sözünü geri aldığını yazdı.",
+              "en": "The old boundary stones stayed. The villages rejoiced and the flocks returned to the pasture; the estate stewards wrote that the governor had taken back his word."
+            },
+            "effect": {
+              "stats": {
+                "stability": 3,
+                "authority": -2,
+                "environment": 2
+              },
+              "flags": [],
+              "technologies": [],
+              "buildings": [],
+              "rivalRelation": 0
+            },
+            "delayedEffects": [],
+            "animationPreset": "normal"
+          }
+        ]
+      },
+      {
+        "id": "estates",
+        "text": {
+          "tr": "Çiftlik sınırlarını onayla.",
+          "en": "Confirm the estate boundaries."
+        },
+        "risk": {
+          "tr": "Sonucu öngörülebilir",
+          "en": "Predictable outcome"
+        },
+        "requirements": [],
+        "immediateEffects": {
+          "stats": {},
+          "flags": [],
+          "technologies": [],
+          "buildings": [],
+          "rivalRelation": 0
+        },
+        "outcomes": [
+          {
+            "id": "result",
+            "probability": 1,
+            "affinity": null,
+            "text": {
+              "tr": "Yeni sınırlar mühürlendi. Çiftlikler genişledi; köyler itirazlarını deftere yazdırdı.",
+              "en": "The new limits were sealed. The estates widened; the villages had their objections recorded."
+            },
+            "effect": {
+              "stats": {
+                "authority": 2,
+                "stability": -4
+              },
+              "flags": [
+                "recorded_provincial_dissent"
+              ],
+              "technologies": [],
+              "buildings": [],
+              "rivalRelation": 0
+            },
+            "delayedEffects": [],
+            "animationPreset": "normal"
+          }
+        ]
+      },
+      {
+        "id": "survey",
+        "text": {
+          "tr": "Ücretli ölçüm yaptır; sınırları yeni bir deftere yaz.",
+          "en": "Pay for a survey and write the boundaries in a new register."
+        },
+        "risk": {
+          "tr": "Sonucu öngörülebilir",
+          "en": "Predictable outcome"
+        },
+        "requirements": [
+          {
+            "stat": "resources",
+            "minimum": 5
+          }
+        ],
+        "immediateEffects": {
+          "stats": {},
+          "flags": [],
+          "technologies": [],
+          "buildings": [],
+          "rivalRelation": 0
+        },
+        "outcomes": [
+          {
+            "id": "result",
+            "probability": 1,
+            "affinity": null,
+            "text": {
+              "tr": "Ölçüm ekipleri sınırları yeniden çizdi ve deftere geçirdi. Ücretleri ödendi; iki taraf da bir şey kaybetti.",
+              "en": "The survey teams redrew the boundaries and entered them in a register. They were paid; both sides lost something."
+            },
+            "effect": {
+              "stats": {
+                "resources": -5,
+                "stability": 3,
+                "knowledge": 2
+              },
+              "flags": [
+                "land_rights_registry"
+              ],
+              "technologies": [],
+              "buildings": [],
+              "rivalRelation": 0
+            },
+            "delayedEffects": [],
+            "animationPreset": "normal"
+          }
+        ]
+      },
+      {
+        "id": "archive",
+        "text": {
+          "tr": "Kil arşivdeki eski sınır kayıtlarını getir.",
+          "en": "Bring the old boundary records from the clay archive."
+        },
+        "risk": {
+          "tr": "Sonucu öngörülebilir",
+          "en": "Predictable outcome"
+        },
+        "requirements": [
+          {
+            "flag": "public_archive"
+          },
+          {
+            "stat": "resources",
+            "minimum": 2
+          }
+        ],
+        "immediateEffects": {
+          "stats": {},
+          "flags": [],
+          "technologies": [],
+          "buildings": [],
+          "rivalRelation": 0
+        },
+        "outcomes": [
+          {
+            "id": "result",
+            "probability": 1,
+            "affinity": null,
+            "text": {
+              "tr": "Arşivden eski sınır tabletleri getirildi. Ölçüm kısaldı; kâtip yine ödendi.",
+              "en": "Old boundary tablets were brought from the archive. The survey was shortened; the clerk was still paid."
+            },
+            "effect": {
+              "stats": {
+                "resources": -2,
+                "stability": 3
+              },
+              "flags": [
+                "land_rights_registry"
+              ],
+              "technologies": [],
+              "buildings": [],
+              "rivalRelation": 0
+            },
+            "delayedEffects": [],
+            "animationPreset": "normal"
+          }
+        ]
+      }
+    ],
+    "worldFlags": [
+      "recorded_provincial_dissent",
+      "land_rights_registry"
+    ],
+    "storyChainId": null,
+    "animationPreset": "normal",
+    "soundCue": "decision",
+    "cooldown": 4,
+    "localizationKeys": [
+      "card.land_rights_survey.title",
+      "card.land_rights_survey.description"
+    ],
+    "eraRole": "recurring"
+  },
+  {
+    "id": "seasonal_migration",
+    "era": 4,
+    "category": "settlement",
+    "title": {
+      "tr": "Mevsimlik Göç",
+      "en": "Seasonal Migration"
+    },
+    "description": {
+      "tr": "Hasat mevsiminde dağ köylerinden yüzlerce işçi ovaya iniyor. Çiftlikler bu ellere muhtaç, ama kentliler kamplarda çıkan kavgalardan ve kiralardan şikâyet ediyor. Bazı göçmenler kalıcı olarak yerleşmek istiyor.",
+      "en": "At harvest time hundreds of labourers come down from the mountain villages to the plain. The estates need these hands, but townspeople complain of brawls in the camps and of rents. Some of the migrants want to settle for good."
+    },
+    "artAsset": "card_seasonal_migration",
+    "artDirection": "Fictional composite ancient empire, cut limestone and marble, wax tablets and papyrus rolls, bronze and iron hand tools, wool tunics and cloaks, no stirrups, no paper books, no gunpowder; ivory, gold and dusty terracotta palette, portrait composition. Lines of mountain labourers with sickles and bundles descending to golden fields, a temporary camp of reed shelters, a magistrate registering names, dusty late-summer light.",
+    "rarity": "common",
+    "weight": 10,
+    "requirements": [],
+    "exclusionConditions": [],
+    "choices": [
+      {
+        "id": "hands",
+        "text": {
+          "tr": "Mevsimlik işçileri çiftliklerde çalıştır.",
+          "en": "Put the seasonal labourers to work on the estates."
+        },
+        "risk": {
+          "tr": "Sonucu öngörülebilir",
+          "en": "Predictable outcome"
+        },
+        "requirements": [
+          {
+            "flag": "estate_fields_worked"
+          }
+        ],
+        "immediateEffects": {
+          "stats": {},
+          "flags": [],
+          "technologies": [],
+          "buildings": [],
+          "rivalRelation": 0
+        },
+        "outcomes": [
+          {
+            "id": "result",
+            "probability": 1,
+            "affinity": null,
+            "text": {
+              "tr": "İşçiler hasadı kaldırdı. Kampların çevresinde kavgalar çıktı; korulardan odun kesildi.",
+              "en": "The labourers brought in the harvest. Brawls broke out around the camps; wood was cut from the groves."
+            },
+            "effect": {
+              "stats": {
+                "stability": -2,
+                "environment": -1
+              },
+              "flags": [],
+              "technologies": [],
+              "buildings": [],
+              "rivalRelation": 0
+            },
+            "delayedEffects": [
+              {
+                "afterTurns": 3,
+                "minimumEra": 4,
+                "text": {
+                  "tr": "Mevsimlik işçilerin kaldırdığı hasat ambara girdi.",
+                  "en": "The harvest brought in by the seasonal labourers entered the granary."
+                },
+                "effect": {
+                  "stats": {
+                    "resources": 3
+                  },
+                  "flags": [],
+                  "technologies": [],
+                  "buildings": [],
+                  "rivalRelation": 0
+                }
+              }
+            ],
+            "animationPreset": "normal"
+          }
+        ]
+      },
+      {
+        "id": "settle",
+        "text": {
+          "tr": "İsteyen göçmenlere küçük tarla ver.",
+          "en": "Grant small plots to migrants who wish to stay."
+        },
+        "risk": {
+          "tr": "Sonucu öngörülebilir",
+          "en": "Predictable outcome"
+        },
+        "requirements": [
+          {
+            "stat": "resources",
+            "minimum": 4
+          }
+        ],
+        "immediateEffects": {
+          "stats": {},
+          "flags": [],
+          "technologies": [],
+          "buildings": [],
+          "rivalRelation": 0
+        },
+        "outcomes": [
+          {
+            "id": "result",
+            "probability": 1,
+            "affinity": null,
+            "text": {
+              "tr": "Göçmen aileler tarlalarını aldı. Tohum ve araç kasadan çıktı; kentin yanında yeni bir mahalle doğdu.",
+              "en": "The migrant families received their plots. Seed and tools came from the treasury; a new ward grew beside the town."
+            },
+            "effect": {
+              "stats": {
+                "resources": -4,
+                "population": 2,
+                "stability": -1
+              },
+              "flags": [],
+              "technologies": [],
+              "buildings": [],
+              "rivalRelation": 0
+            },
+            "delayedEffects": [],
+            "animationPreset": "normal"
+          }
+        ]
+      },
+      {
+        "id": "bar",
+        "text": {
+          "tr": "Göç yollarını kapat.",
+          "en": "Close the migration roads."
+        },
+        "risk": {
+          "tr": "Sonucu öngörülebilir",
+          "en": "Predictable outcome"
+        },
+        "requirements": [],
+        "immediateEffects": {
+          "stats": {},
+          "flags": [],
+          "technologies": [],
+          "buildings": [],
+          "rivalRelation": 0
+        },
+        "outcomes": [
+          {
+            "id": "result",
+            "probability": 1,
+            "affinity": null,
+            "text": {
+              "tr": "Yollar kapandı. Kent sakinleşti; dağ köyleri ovaya küstü.",
+              "en": "The roads were closed. The town calmed; the mountain villages turned their backs on the plain."
+            },
+            "effect": {
+              "stats": {
+                "authority": 1,
+                "stability": -1
+              },
+              "flags": [],
+              "technologies": [],
+              "buildings": [],
+              "rivalRelation": -3
+            },
+            "delayedEffects": [],
+            "animationPreset": "normal"
+          }
+        ]
+      },
+      {
+        "id": "toll",
+        "text": {
+          "tr": "Göçmenlerden geçiş harcı al.",
+          "en": "Charge the migrants a crossing toll."
+        },
+        "risk": {
+          "tr": "Sonucu öngörülebilir",
+          "en": "Predictable outcome"
+        },
+        "requirements": [],
+        "immediateEffects": {
+          "stats": {},
+          "flags": [],
+          "technologies": [],
+          "buildings": [],
+          "rivalRelation": 0
+        },
+        "outcomes": [
+          {
+            "id": "result",
+            "probability": 1,
+            "affinity": null,
+            "text": {
+              "tr": "Harç kasaya girdi. Daha az işçi geldi; gelenler valiye kızgındı.",
+              "en": "The toll entered the treasury. Fewer labourers came; those who did were angry with the governor."
+            },
+            "effect": {
+              "stats": {
+                "resources": 2,
+                "stability": -2
+              },
+              "flags": [],
+              "technologies": [],
+              "buildings": [],
+              "rivalRelation": -2
+            },
+            "delayedEffects": [],
+            "animationPreset": "normal"
+          }
+        ]
+      }
+    ],
+    "worldFlags": [],
+    "storyChainId": null,
+    "animationPreset": "normal",
+    "soundCue": "decision",
+    "cooldown": 4,
+    "localizationKeys": [
+      "card.seasonal_migration.title",
+      "card.seasonal_migration.description"
+    ],
+    "eraRole": "recurring"
+  },
+  {
+    "id": "trade_treaty",
+    "era": 4,
+    "category": "trade",
+    "title": {
+      "tr": "Komşu Eyaletle Ticaret Antlaşması",
+      "en": "A Trade Treaty with the Neighbouring Province"
+    },
+    "description": {
+      "tr": "Komşu eyalet karşılıklı gümrük indirimi içeren bir antlaşma öneriyor. Yerel tüccarlar yabancı malın pazarı dolduracağından korkuyor; bir lonca ise tek başına ayrıcalık istiyor. Antlaşma iki eyaletin meclisinde de tartışılacak.",
+      "en": "The neighbouring province proposes a treaty of mutual tariff reductions. Local merchants fear foreign goods will flood the market; one guild wants an exclusive privilege for itself. The treaty will be debated in both provinces’ councils."
+    },
+    "artAsset": "card_trade_treaty",
+    "artDirection": "Fictional composite ancient empire, cut limestone and marble, wax tablets and papyrus rolls, bronze and iron hand tools, wool tunics and cloaks, no stirrups, no paper books, no gunpowder; ivory, gold and dusty terracotta palette, portrait composition. Two delegations exchanging sealed treaty tablets across a table under a portico, merchants with amphorae and bolts of wool behind them, a guild master pressing his own petition, warm light.",
+    "rarity": "common",
+    "weight": 10,
+    "requirements": [],
+    "exclusionConditions": [],
+    "choices": [
+      {
+        "id": "lower",
+        "text": {
+          "tr": "Gümrükleri karşılıklı indir.",
+          "en": "Lower the tariffs on both sides."
+        },
+        "risk": {
+          "tr": "Sonucu öngörülebilir",
+          "en": "Predictable outcome"
+        },
+        "requirements": [],
+        "immediateEffects": {
+          "stats": {},
+          "flags": [],
+          "technologies": [],
+          "buildings": [],
+          "rivalRelation": 0
+        },
+        "outcomes": [
+          {
+            "id": "result",
+            "probability": 1,
+            "affinity": null,
+            "text": {
+              "tr": "Antlaşma imzalandı. Yerel tüccarlar valiye kızdı; ilk kervanlar birkaç tur sonra gelecek.",
+              "en": "The treaty was signed. Local merchants were angry with the governor; the first caravans will come in a few turns."
+            },
+            "effect": {
+              "stats": {
+                "authority": -2,
+                "stability": -1
+              },
+              "flags": [],
+              "technologies": [],
+              "buildings": [],
+              "rivalRelation": 3
+            },
+            "delayedEffects": [
+              {
+                "afterTurns": 5,
+                "minimumEra": 4,
+                "text": {
+                  "tr": "Antlaşmayla artan ticaret pazar vergisini yükseltti.",
+                  "en": "Trade increased by the treaty raised the market dues."
+                },
+                "effect": {
+                  "stats": {
+                    "resources": 3
+                  },
+                  "flags": [],
+                  "technologies": [],
+                  "buildings": [],
+                  "rivalRelation": 0
+                }
+              }
+            ],
+            "animationPreset": "normal"
+          }
+        ]
+      },
+      {
+        "id": "exclusive",
+        "text": {
+          "tr": "Ayrıcalığı tek bir loncaya ver.",
+          "en": "Grant the privilege to a single guild."
+        },
+        "risk": {
+          "tr": "Sonucu öngörülebilir",
+          "en": "Predictable outcome"
+        },
+        "requirements": [],
+        "immediateEffects": {
+          "stats": {},
+          "flags": [],
+          "technologies": [],
+          "buildings": [],
+          "rivalRelation": 0
+        },
+        "outcomes": [
+          {
+            "id": "result",
+            "probability": 1,
+            "affinity": null,
+            "text": {
+              "tr": "Lonca ayrıcalığını aldı ve kasaya pay ödedi. Diğer tüccarlar ve komşu eyalet ayrıcalığa itiraz etti.",
+              "en": "The guild received its privilege and paid a share to the treasury. Other merchants and the neighbouring province objected."
+            },
+            "effect": {
+              "stats": {
+                "resources": 3,
+                "stability": -3
+              },
+              "flags": [],
+              "technologies": [],
+              "buildings": [],
+              "rivalRelation": -2
+            },
+            "delayedEffects": [],
+            "animationPreset": "normal"
+          }
+        ]
+      },
+      {
+        "id": "envoys",
+        "text": {
+          "tr": "Ücretli elçilerle dengeli bir antlaşma yaz.",
+          "en": "Draft a balanced treaty through paid envoys."
+        },
+        "risk": {
+          "tr": "Sonucu öngörülebilir",
+          "en": "Predictable outcome"
+        },
+        "requirements": [
+          {
+            "stat": "resources",
+            "minimum": 4
+          }
+        ],
+        "immediateEffects": {
+          "stats": {},
+          "flags": [],
+          "technologies": [],
+          "buildings": [],
+          "rivalRelation": 0
+        },
+        "outcomes": [
+          {
+            "id": "result",
+            "probability": 1,
+            "affinity": null,
+            "text": {
+              "tr": "Elçiler haftalarca pazarlık etti ve ödendi. Antlaşma iki tarafın tüccarını da korudu.",
+              "en": "The envoys bargained for weeks and were paid. The treaty protected the merchants of both sides."
+            },
+            "effect": {
+              "stats": {
+                "resources": -4,
+                "stability": 1
+              },
+              "flags": [],
+              "technologies": [],
+              "buildings": [],
+              "rivalRelation": 5
+            },
+            "delayedEffects": [
+              {
+                "afterTurns": 5,
+                "minimumEra": 4,
+                "text": {
+                  "tr": "Dengeli antlaşmanın ilk ticaret geliri kasaya girdi.",
+                  "en": "The balanced treaty’s first trade revenue entered the treasury."
+                },
+                "effect": {
+                  "stats": {
+                    "resources": 3
+                  },
+                  "flags": [],
+                  "technologies": [],
+                  "buildings": [],
+                  "rivalRelation": 0
+                }
+              }
+            ],
+            "animationPreset": "normal"
+          }
+        ]
+      },
+      {
+        "id": "refuse",
+        "text": {
+          "tr": "Antlaşmayı reddet.",
+          "en": "Refuse the treaty."
+        },
+        "risk": {
+          "tr": "Sonucu öngörülebilir",
+          "en": "Predictable outcome"
+        },
+        "requirements": [],
+        "immediateEffects": {
+          "stats": {},
+          "flags": [],
+          "technologies": [],
+          "buildings": [],
+          "rivalRelation": 0
+        },
+        "outcomes": [
+          {
+            "id": "result",
+            "probability": 1,
+            "affinity": null,
+            "text": {
+              "tr": "Antlaşma reddedildi. Yerel tüccarlar rahatladı; komşu eyalet kapısını biraz daha kapattı.",
+              "en": "The treaty was refused. Local merchants were relieved; the neighbouring province closed its gate a little further."
+            },
+            "effect": {
+              "stats": {
+                "authority": 1,
+                "stability": -1
+              },
+              "flags": [],
+              "technologies": [],
+              "buildings": [],
+              "rivalRelation": -2
+            },
+            "delayedEffects": [],
+            "animationPreset": "normal"
+          }
+        ]
+      }
+    ],
+    "worldFlags": [],
+    "storyChainId": null,
+    "animationPreset": "normal",
+    "soundCue": "decision",
+    "cooldown": 4,
+    "localizationKeys": [
+      "card.trade_treaty.title",
+      "card.trade_treaty.description"
+    ],
+    "eraRole": "recurring"
+  },
+  {
+    "id": "terrace_upkeep",
+    "era": 4,
+    "category": "production",
+    "title": {
+      "tr": "Teras ve Set Bakımı",
+      "en": "Upkeep of the Terraces and Dikes"
+    },
+    "description": {
+      "tr": "Kış yağmurları teras duvarlarını ve çiftlik setlerini oydu. Onarılmazsa bahar selleri tarlaları sürükleyecek. Onarım için usta ve taş gerekiyor; köylüler angaryadan bıkmış.",
+      "en": "The winter rains have gouged the terrace walls and estate dikes. If they are not repaired, the spring floods will carry the fields away. Repairs need masons and stone; the villagers are tired of corvée."
+    },
+    "artAsset": "card_terrace_upkeep",
+    "artDirection": "Fictional composite ancient empire, cut limestone and marble, wax tablets and papyrus rolls, bronze and iron hand tools, wool tunics and cloaks, no stirrups, no paper books, no gunpowder; ivory, gold and dusty terracotta palette, portrait composition. Collapsed stretch of a stone terrace wall on a hillside of fields, masons resetting stones, villagers carrying baskets of earth, grey spring sky.",
+    "rarity": "common",
+    "weight": 10,
+    "requirements": [],
+    "exclusionConditions": [],
+    "choices": [
+      {
+        "id": "repair",
+        "text": {
+          "tr": "Ücretli ustalarla terasları onar.",
+          "en": "Repair the terraces with paid masons."
+        },
+        "risk": {
+          "tr": "Sonucu öngörülebilir",
+          "en": "Predictable outcome"
+        },
+        "requirements": [
+          {
+            "stat": "resources",
+            "minimum": 5
+          }
+        ],
+        "immediateEffects": {
+          "stats": {},
+          "flags": [],
+          "technologies": [],
+          "buildings": [],
+          "rivalRelation": 0
+        },
+        "outcomes": [
+          {
+            "id": "result",
+            "probability": 1,
+            "affinity": null,
+            "text": {
+              "tr": "Ustalar duvarları yeniden ördü. Kasa ödedi; tarlalar bahar sellerine hazır.",
+              "en": "The masons rebuilt the walls. The treasury paid; the fields are ready for the spring floods."
+            },
+            "effect": {
+              "stats": {
+                "resources": -5,
+                "environment": 3,
+                "stability": 1
+              },
+              "flags": [],
+              "technologies": [],
+              "buildings": [],
+              "rivalRelation": 0
+            },
+            "delayedEffects": [],
+            "animationPreset": "normal"
+          }
+        ]
+      },
+      {
+        "id": "corvee",
+        "text": {
+          "tr": "Onarımı köylülere angaryayla yaptır.",
+          "en": "Have the villagers do the repair as corvée."
+        },
+        "risk": {
+          "tr": "Orta risk · koşullara bağlı",
+          "en": "Moderate risk · depends on conditions"
+        },
+        "requirements": [],
+        "immediateEffects": {
+          "stats": {},
+          "flags": [],
+          "technologies": [],
+          "buildings": [],
+          "rivalRelation": 0
+        },
+        "outcomes": [
+          {
+            "id": "rebuilt",
+            "probability": 0.5,
+            "affinity": null,
+            "text": {
+              "tr": "Köylüler duvarları ücretsiz ördü. Kendi tarlaları beklerken öfkeleri büyüdü.",
+              "en": "The villagers rebuilt the walls without pay. Their anger grew while their own fields waited."
+            },
+            "effect": {
+              "stats": {
+                "stability": -3,
+                "environment": 3,
+                "authority": -1
+              },
+              "flags": [],
+              "technologies": [],
+              "buildings": [],
+              "rivalRelation": 0
+            },
+            "delayedEffects": [],
+            "animationPreset": "normal",
+            "requirements": [
+              {
+                "stat": "population",
+                "minimum": 25
+              }
+            ]
+          },
+          {
+            "id": "half",
+            "probability": 0.5,
+            "affinity": null,
+            "text": {
+              "tr": "Angaryaya yeterli el çıkmadı. Duvarların yalnız yarısı örüldü; köylüler yine de tarlalarını bıraktı.",
+              "en": "Too few hands answered the corvée. Only half the walls were rebuilt; the villagers still had to leave their fields."
+            },
+            "effect": {
+              "stats": {
+                "stability": -3,
+                "environment": 1,
+                "authority": -1
+              },
+              "flags": [],
+              "technologies": [],
+              "buildings": [],
+              "rivalRelation": 0
+            },
+            "delayedEffects": [],
+            "animationPreset": "normal",
+            "requirements": [
+              {
+                "stat": "population",
+                "maximum": 24
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "defer",
+        "text": {
+          "tr": "Onarımı gelecek yıla bırak.",
+          "en": "Leave the repair for next year."
+        },
+        "risk": {
+          "tr": "Sonucu öngörülebilir",
+          "en": "Predictable outcome"
+        },
+        "requirements": [],
+        "immediateEffects": {
+          "stats": {},
+          "flags": [],
+          "technologies": [],
+          "buildings": [],
+          "rivalRelation": 0
+        },
+        "outcomes": [
+          {
+            "id": "result",
+            "probability": 1,
+            "affinity": null,
+            "text": {
+              "tr": "Duvarlar onarılmadı. Köylüler bahar yağmurlarını endişeyle bekliyor.",
+              "en": "The walls were not repaired. The villagers await the spring rains with dread."
+            },
+            "effect": {
+              "stats": {
+                "stability": -1
+              },
+              "flags": [],
+              "technologies": [],
+              "buildings": [],
+              "rivalRelation": 0
+            },
+            "delayedEffects": [
+              {
+                "afterTurns": 5,
+                "minimumEra": 4,
+                "text": {
+                  "tr": "Bahar selleri onarılmayan terasları yıktı; çiftlik tarlaları sürüklendi.",
+                  "en": "The spring floods broke the unrepaired terraces; the estate fields were washed away."
+                },
+                "effect": {
+                  "stats": {
+                    "stability": -2,
+                    "environment": -2
+                  },
+                  "flags": [],
+                  "technologies": [],
+                  "buildings": [],
+                  "rivalRelation": 0,
+                  "removeFlags": [
+                    "estate_fields_worked"
+                  ]
+                }
+              }
+            ],
+            "animationPreset": "normal"
+          }
+        ]
+      },
+      {
+        "id": "council",
+        "text": {
+          "tr": "Onarım masrafını yerel meclisle paylaş.",
+          "en": "Share the cost of repair with the local council."
+        },
+        "risk": {
+          "tr": "Sonucu öngörülebilir",
+          "en": "Predictable outcome"
+        },
+        "requirements": [
+          {
+            "flag": "provincial_assembly_seats"
+          },
+          {
+            "stat": "resources",
+            "minimum": 2
+          }
+        ],
+        "immediateEffects": {
+          "stats": {},
+          "flags": [],
+          "technologies": [],
+          "buildings": [],
+          "rivalRelation": 0
+        },
+        "outcomes": [
+          {
+            "id": "result",
+            "probability": 1,
+            "affinity": null,
+            "text": {
+              "tr": "Meclis masrafın yarısını üstlendi. Ustalar ödendi; meclis bir sonraki vergi kararında söz istedi.",
+              "en": "The council took on half the cost. The masons were paid; the council asked for a say in the next tax ruling."
+            },
+            "effect": {
+              "stats": {
+                "resources": -2,
+                "environment": 3,
+                "stability": 2,
+                "authority": -1
+              },
+              "flags": [],
+              "technologies": [],
+              "buildings": [],
+              "rivalRelation": 0
+            },
+            "delayedEffects": [],
+            "animationPreset": "normal"
+          }
+        ]
+      }
+    ],
+    "worldFlags": [],
+    "storyChainId": null,
+    "animationPreset": "normal",
+    "soundCue": "decision",
+    "cooldown": 4,
+    "localizationKeys": [
+      "card.terrace_upkeep.title",
+      "card.terrace_upkeep.description"
+    ],
+    "eraRole": "recurring"
+  },
+  {
+    "id": "provincial_levy_review",
+    "era": 4,
+    "category": "legacy",
+    "title": {
+      "tr": "Eyalet Angaryasının Gözden Geçirilmesi",
+      "en": "Reviewing the Provincial Labour Levy"
+    },
+    "description": {
+      "tr": "Eyalet, kanal ve yol işleri için yeni bir angarya çizelgesi hazırlıyor. Tunç Çağı’ndaki angarya duruşması yükümlülüğün incelenip incelenmediğini, ertelenip ertelenmediğini ya da kalıtsal olmaktan çıkarılıp çıkarılmadığını kaydetmişti.",
+      "en": "The province is drawing up a new levy roster for canal and road works. The Bronze Age levy hearing had recorded whether the obligation was reviewed, deferred or stripped of its hereditary character."
+    },
+    "artAsset": "card_provincial_levy_review",
+    "artDirection": "Fictional composite ancient empire, cut limestone and marble, wax tablets and papyrus rolls, bronze and iron hand tools, wool tunics and cloaks, no stirrups, no paper books, no gunpowder; ivory, gold and dusty terracotta palette, portrait composition. Provincial clerks reading an old clay levy tablet beside a new roster on papyrus, labourers waiting with tools, a magistrate presiding, morning light in a colonnade.",
+    "rarity": "uncommon",
+    "weight": 10,
+    "requirements": [
+      {
+        "completedCard": "levy_hearing"
+      }
+    ],
+    "exclusionConditions": [
+      {
+        "flag": "resolved_provincial_levy_review"
+      }
+    ],
+    "choices": [
+      {
+        "id": "reviewed",
+        "text": {
+          "tr": "İncelenmiş angarya kaydını eyalete uygula; inceleme kâtiplerini öde.",
+          "en": "Apply the reviewed-levy record to the province and pay the reviewing clerks."
+        },
+        "risk": {
+          "tr": "Sonucu öngörülebilir",
+          "en": "Predictable outcome"
+        },
+        "requirements": [
+          {
+            "flag": "reviewed_labor_levy"
+          },
+          {
+            "stat": "resources",
+            "minimum": 3
+          }
+        ],
+        "immediateEffects": {
+          "stats": {},
+          "flags": [],
+          "technologies": [],
+          "buildings": [],
+          "rivalRelation": 0
+        },
+        "outcomes": [
+          {
+            "id": "result",
+            "probability": 1,
+            "affinity": null,
+            "text": {
+              "tr": "Her köyün yükü yeniden hesaplandı. Kâtipler ödendi; ağır yük taşıyanlar rahatladı.",
+              "en": "Each village’s burden was recalculated. The clerks were paid; those who bore the heaviest load were relieved."
+            },
+            "effect": {
+              "stats": {
+                "resources": -3,
+                "stability": 4,
+                "authority": -1
+              },
+              "flags": [
+                "provincial_levy_reviewed",
+                "resolved_provincial_levy_review"
+              ],
+              "technologies": [],
+              "buildings": [],
+              "rivalRelation": 0
+            },
+            "delayedEffects": [],
+            "animationPreset": "normal"
+          }
+        ]
+      },
+      {
+        "id": "deferred",
+        "text": {
+          "tr": "Ertelenmiş angaryanın vadesini şimdi iste.",
+          "en": "Call in the deferred levy now."
+        },
+        "risk": {
+          "tr": "Sonucu öngörülebilir",
+          "en": "Predictable outcome"
+        },
+        "requirements": [
+          {
+            "flag": "deferred_labor_levy"
+          }
+        ],
+        "immediateEffects": {
+          "stats": {},
+          "flags": [],
+          "technologies": [],
+          "buildings": [],
+          "rivalRelation": 0
+        },
+        "outcomes": [
+          {
+            "id": "result",
+            "probability": 1,
+            "affinity": null,
+            "text": {
+              "tr": "Ertelenen angarya çağrıldı. İşler ilerledi; köyler eski erteleme sözünün bozulduğunu söyledi.",
+              "en": "The deferred levy was called in. The works went ahead; the villages said the old promise of deferral had been broken."
+            },
+            "effect": {
+              "stats": {
+                "authority": -2,
+                "stability": -2
+              },
+              "flags": [
+                "provincial_levy_called",
+                "resolved_provincial_levy_review"
+              ],
+              "technologies": [],
+              "buildings": [],
+              "rivalRelation": 0
+            },
+            "delayedEffects": [],
+            "animationPreset": "normal"
+          }
+        ]
+      },
+      {
+        "id": "nonhereditary",
+        "text": {
+          "tr": "Kalıtsal olmayan hizmet kuralını eyalete taşı.",
+          "en": "Carry the non-hereditary service rule into the province."
+        },
+        "risk": {
+          "tr": "Sonucu öngörülebilir",
+          "en": "Predictable outcome"
+        },
+        "requirements": [
+          {
+            "flag": "nonhereditary_city_service"
+          }
+        ],
+        "immediateEffects": {
+          "stats": {},
+          "flags": [],
+          "technologies": [],
+          "buildings": [],
+          "rivalRelation": 0
+        },
+        "outcomes": [
+          {
+            "id": "result",
+            "probability": 1,
+            "affinity": null,
+            "text": {
+              "tr": "Angarya babadan oğula geçmez oldu. Genç aileler rahatladı; vali bir çalışma gücü kaynağını kaybetti.",
+              "en": "The levy no longer passed from father to son. Young families breathed easier; the governor lost a source of labour."
+            },
+            "effect": {
+              "stats": {
+                "stability": 3,
+                "authority": -3
+              },
+              "flags": [
+                "provincial_levy_reviewed",
+                "resolved_provincial_levy_review"
+              ],
+              "technologies": [],
+              "buildings": [],
+              "rivalRelation": 0
+            },
+            "delayedEffects": [],
+            "animationPreset": "normal"
+          }
+        ]
+      },
+      {
+        "id": "decree",
+        "text": {
+          "tr": "Yeni çizelgeyi valilik emriyle uygula.",
+          "en": "Impose the new roster by governor’s decree."
+        },
+        "risk": {
+          "tr": "Sonucu öngörülebilir",
+          "en": "Predictable outcome"
+        },
+        "requirements": [],
+        "immediateEffects": {
+          "stats": {},
+          "flags": [],
+          "technologies": [],
+          "buildings": [],
+          "rivalRelation": 0
+        },
+        "outcomes": [
+          {
+            "id": "result",
+            "probability": 1,
+            "affinity": null,
+            "text": {
+              "tr": "Çizelge emirle uygulandı. İşler başladı; eski kayıtlar hiç okunmadı.",
+              "en": "The roster was imposed by decree. Work began; the old records were never read."
+            },
+            "effect": {
+              "stats": {
+                "authority": 2,
+                "stability": -3
+              },
+              "flags": [
+                "resolved_provincial_levy_review"
+              ],
+              "technologies": [],
+              "buildings": [],
+              "rivalRelation": 0
+            },
+            "delayedEffects": [],
+            "animationPreset": "normal"
+          }
+        ]
+      }
+    ],
+    "worldFlags": [
+      "provincial_levy_reviewed",
+      "resolved_provincial_levy_review",
+      "provincial_levy_called"
+    ],
+    "storyChainId": "debt",
+    "animationPreset": "normal",
+    "soundCue": "decision",
+    "cooldown": 4,
+    "localizationKeys": [
+      "card.provincial_levy_review.title",
+      "card.provincial_levy_review.description"
+    ],
+    "eraRole": "bridge"
+  },
+  {
+    "id": "barge_silt_league",
+    "era": 4,
+    "category": "legacy",
+    "title": {
+      "tr": "Mavna ve Çamur Birliği",
+      "en": "The Barge and Silt League"
+    },
+    "description": {
+      "tr": "Nehir boyundaki eyaletler mavna yolunu tıkayan çamur için bir birlik kurmak istiyor. Tunç Çağı’ndaki çamur sözleşmesi temizliğin ortak mı yapılacağını, yoksa geçen mavnalardan harç mı alınacağını kaydetmişti.",
+      "en": "The provinces along the river want to form a league against the silt choking the barge channel. The Bronze Age silt charter had recorded whether the cleaning would be shared or paid for by a toll on passing barges."
+    },
+    "artAsset": "card_barge_silt_league",
+    "artDirection": "Fictional composite ancient empire, cut limestone and marble, wax tablets and papyrus rolls, bronze and iron hand tools, wool tunics and cloaks, no stirrups, no paper books, no gunpowder; ivory, gold and dusty terracotta palette, portrait composition. Wide river with grain barges stuck on a silt bar, dredging crews with long rakes, envoys from upstream and downstream towns on the bank holding an old charter tablet, hazy light.",
+    "rarity": "uncommon",
+    "weight": 10,
+    "requirements": [
+      {
+        "completedCard": "silt_charter"
+      }
+    ],
+    "exclusionConditions": [
+      {
+        "flag": "resolved_barge_silt_league"
+      }
+    ],
+    "choices": [
+      {
+        "id": "joint",
+        "text": {
+          "tr": "Kentler arası çamur sözleşmesini eyaletlere genişlet; payını öde.",
+          "en": "Extend the intercity silt charter to the provinces and pay your share."
+        },
+        "risk": {
+          "tr": "Sonucu öngörülebilir",
+          "en": "Predictable outcome"
+        },
+        "requirements": [
+          {
+            "flag": "intercity_silt_charter"
+          },
+          {
+            "stat": "resources",
+            "minimum": 4
+          }
+        ],
+        "immediateEffects": {
+          "stats": {},
+          "flags": [],
+          "technologies": [],
+          "buildings": [],
+          "rivalRelation": 0
+        },
+        "outcomes": [
+          {
+            "id": "result",
+            "probability": 1,
+            "affinity": null,
+            "text": {
+              "tr": "Birlik kuruldu ve tarama ekipleri ortak ödendi. Mavna yolu açıldı; komşu eyaletler payınızı kaydetti.",
+              "en": "The league was formed and the dredging crews were paid jointly. The barge channel opened; the neighbouring provinces recorded your share."
+            },
+            "effect": {
+              "stats": {
+                "resources": -4,
+                "environment": 3,
+                "stability": 1
+              },
+              "flags": [
+                "provincial_silt_league",
+                "resolved_barge_silt_league"
+              ],
+              "technologies": [],
+              "buildings": [],
+              "rivalRelation": 4
+            },
+            "delayedEffects": [],
+            "animationPreset": "normal"
+          }
+        ]
+      },
+      {
+        "id": "toll",
+        "text": {
+          "tr": "Eski geçiş harcı kaydını sürdür.",
+          "en": "Keep the old transit-toll record."
+        },
+        "risk": {
+          "tr": "Sonucu öngörülebilir",
+          "en": "Predictable outcome"
+        },
+        "requirements": [
+          {
+            "flag": "silt_transit_levy"
+          }
+        ],
+        "immediateEffects": {
+          "stats": {},
+          "flags": [],
+          "technologies": [],
+          "buildings": [],
+          "rivalRelation": 0
+        },
+        "outcomes": [
+          {
+            "id": "result",
+            "probability": 1,
+            "affinity": null,
+            "text": {
+              "tr": "Mavnalardan harç alınmaya devam edildi. Harç tarama işine gitti; komşu eyaletler yükün kendilerine kaldığını söyledi.",
+              "en": "The barges went on paying the toll. The toll went to the dredging; the neighbouring provinces said the burden fell on them."
+            },
+            "effect": {
+              "stats": {
+                "authority": 1,
+                "stability": -1
+              },
+              "flags": [
+                "resolved_barge_silt_league"
+              ],
+              "technologies": [],
+              "buildings": [],
+              "rivalRelation": -3
+            },
+            "delayedEffects": [],
+            "animationPreset": "normal"
+          }
+        ]
+      },
+      {
+        "id": "alone",
+        "text": {
+          "tr": "Kendi kıyınızı kendi ekiplerinizle tarayın.",
+          "en": "Dredge your own stretch with your own crews."
+        },
+        "risk": {
+          "tr": "Sonucu öngörülebilir",
+          "en": "Predictable outcome"
+        },
+        "requirements": [
+          {
+            "stat": "resources",
+            "minimum": 6
+          }
+        ],
+        "immediateEffects": {
+          "stats": {},
+          "flags": [],
+          "technologies": [],
+          "buildings": [],
+          "rivalRelation": 0
+        },
+        "outcomes": [
+          {
+            "id": "result",
+            "probability": 1,
+            "affinity": null,
+            "text": {
+              "tr": "Ekipleriniz kendi kıyınızı taradı ve ödendi. Mavnalar sizin limana ulaştı; yukarı kıyılar tıkalı kaldı.",
+              "en": "Your crews dredged your own stretch and were paid. Barges reached your harbor; the upstream banks stayed choked."
+            },
+            "effect": {
+              "stats": {
+                "resources": -6,
+                "environment": 3,
+                "stability": 2
+              },
+              "flags": [
+                "resolved_barge_silt_league"
+              ],
+              "technologies": [],
+              "buildings": [],
+              "rivalRelation": 0
+            },
+            "delayedEffects": [],
+            "animationPreset": "normal"
+          }
+        ]
+      },
+      {
+        "id": "ignore",
+        "text": {
+          "tr": "Çamuru bırak.",
+          "en": "Leave the silt."
+        },
+        "risk": {
+          "tr": "Sonucu öngörülebilir",
+          "en": "Predictable outcome"
+        },
+        "requirements": [],
+        "immediateEffects": {
+          "stats": {},
+          "flags": [],
+          "technologies": [],
+          "buildings": [],
+          "rivalRelation": 0
+        },
+        "outcomes": [
+          {
+            "id": "result",
+            "probability": 1,
+            "affinity": null,
+            "text": {
+              "tr": "Kimse taramadı. Mavnalar daha az yükle yol aldı; kıyılar bataklığa döndü.",
+              "en": "No one dredged. The barges sailed with lighter loads; the banks turned to marsh."
+            },
+            "effect": {
+              "stats": {
+                "environment": -2,
+                "stability": -1
+              },
+              "flags": [
+                "resolved_barge_silt_league"
+              ],
+              "technologies": [],
+              "buildings": [],
+              "rivalRelation": 0
+            },
+            "delayedEffects": [],
+            "animationPreset": "normal"
+          }
+        ]
+      }
+    ],
+    "worldFlags": [
+      "provincial_silt_league",
+      "resolved_barge_silt_league"
+    ],
+    "storyChainId": "river_memory",
+    "animationPreset": "normal",
+    "soundCue": "decision",
+    "cooldown": 4,
+    "localizationKeys": [
+      "card.barge_silt_league.title",
+      "card.barge_silt_league.description"
+    ],
+    "eraRole": "bridge"
+  },
+  {
+    "id": "granary_roof_watch",
+    "era": 4,
+    "category": "legacy",
+    "title": {
+      "tr": "Ambar Çatılarının Nöbeti",
+      "en": "The Watch over the Granary Roofs"
+    },
+    "description": {
+      "tr": "Eyalet ambarlarının ahşap çatıları çürümeye başladı; yağmur sızarsa tahıl küflenecek. Tunç Çağı’ndaki çatı kirişi kararı kerestenin ambarda mı saklanacağını, çatıların mı dağıtılacağını yoksa bir çatı nöbeti mi kurulacağını kaydetmişti.",
+      "en": "The timber roofs of the provincial granaries have begun to rot; if rain leaks in, the grain will mould. The Bronze Age roof-beam ruling had recorded whether timber would be kept in a storehouse, roofs distributed, or a roof watch set up."
+    },
+    "artAsset": "card_granary_roof_watch",
+    "artDirection": "Fictional composite ancient empire, cut limestone and marble, wax tablets and papyrus rolls, bronze and iron hand tools, wool tunics and cloaks, no stirrups, no paper books, no gunpowder; ivory, gold and dusty terracotta palette, portrait composition. Granary roof with rotten timber beams being replaced, carpenters on ladders, a scribe checking an old roof-beam tablet, sacks of grain covered with hides below, overcast light.",
+    "rarity": "uncommon",
+    "weight": 10,
+    "requirements": [
+      {
+        "completedCard": "roof_beams"
+      }
+    ],
+    "exclusionConditions": [
+      {
+        "flag": "resolved_granary_roof_watch"
+      }
+    ],
+    "choices": [
+      {
+        "id": "timber",
+        "text": {
+          "tr": "Kereste ambarı kaydını kullan; çatıları yenile ve tartı defteri aç.",
+          "en": "Use the timber-store record, renew the roofs and open a weighing register."
+        },
+        "risk": {
+          "tr": "Sonucu öngörülebilir",
+          "en": "Predictable outcome"
+        },
+        "requirements": [
+          {
+            "flag": "timber_storehouse"
+          },
+          {
+            "stat": "resources",
+            "minimum": 4
+          }
+        ],
+        "immediateEffects": {
+          "stats": {},
+          "flags": [],
+          "technologies": [],
+          "buildings": [],
+          "rivalRelation": 0
+        },
+        "outcomes": [
+          {
+            "id": "result",
+            "probability": 1,
+            "affinity": null,
+            "text": {
+              "tr": "Ambardaki kereste çatılara çıktı; marangozlar ödendi. Yenilenen ambarlarda her çuval tartılıp yazılmaya başlandı.",
+              "en": "The stored timber went up onto the roofs; the carpenters were paid. In the renewed granaries every sack began to be weighed and recorded."
+            },
+            "effect": {
+              "stats": {
+                "resources": -4,
+                "stability": 2,
+                "knowledge": 1
+              },
+              "flags": [
+                "granary_register_kept",
+                "resolved_granary_roof_watch"
+              ],
+              "technologies": [],
+              "buildings": [],
+              "rivalRelation": 0
+            },
+            "delayedEffects": [],
+            "animationPreset": "normal"
+          }
+        ]
+      },
+      {
+        "id": "distributed",
+        "text": {
+          "tr": "Dağıtılmış çatı kaydını uygula; her mahalle bir ambar çatısını üstlensin.",
+          "en": "Apply the distributed-roof record: each ward takes on one granary roof."
+        },
+        "risk": {
+          "tr": "Sonucu öngörülebilir",
+          "en": "Predictable outcome"
+        },
+        "requirements": [
+          {
+            "flag": "distributed_roofs"
+          }
+        ],
+        "immediateEffects": {
+          "stats": {},
+          "flags": [],
+          "technologies": [],
+          "buildings": [],
+          "rivalRelation": 0
+        },
+        "outcomes": [
+          {
+            "id": "result",
+            "probability": 1,
+            "affinity": null,
+            "text": {
+              "tr": "Mahalleler çatıları paylaştı. Onarım yavaş ama ucuz oldu; vali işi mahallelere bırakmak zorunda kaldı.",
+              "en": "The wards shared the roofs. Repair was slow but cheap; the governor had to leave the work to the wards."
+            },
+            "effect": {
+              "stats": {
+                "authority": -2,
+                "stability": 2,
+                "environment": 1
+              },
+              "flags": [
+                "resolved_granary_roof_watch"
+              ],
+              "technologies": [],
+              "buildings": [],
+              "rivalRelation": 0
+            },
+            "delayedEffects": [],
+            "animationPreset": "normal"
+          }
+        ]
+      },
+      {
+        "id": "roster",
+        "text": {
+          "tr": "Kent çatı nöbetini ambarlara uygula.",
+          "en": "Apply the civic roof watch to the granaries."
+        },
+        "risk": {
+          "tr": "Sonucu öngörülebilir",
+          "en": "Predictable outcome"
+        },
+        "requirements": [
+          {
+            "flag": "civic_roof_watch"
+          }
+        ],
+        "immediateEffects": {
+          "stats": {},
+          "flags": [],
+          "technologies": [],
+          "buildings": [],
+          "rivalRelation": 0
+        },
+        "outcomes": [
+          {
+            "id": "result",
+            "probability": 1,
+            "affinity": null,
+            "text": {
+              "tr": "Nöbetçiler yağmurlu gecelerde çatıları kontrol etti. Sızıntılar erken bulundu; nöbet çizelgesi valinin değil kentin oldu.",
+              "en": "Watchmen checked the roofs on rainy nights. Leaks were found early; the roster belonged to the town, not the governor."
+            },
+            "effect": {
+              "stats": {
+                "stability": 3,
+                "authority": -2
+              },
+              "flags": [
+                "resolved_granary_roof_watch"
+              ],
+              "technologies": [],
+              "buildings": [],
+              "rivalRelation": 0
+            },
+            "delayedEffects": [],
+            "animationPreset": "normal"
+          }
+        ]
+      },
+      {
+        "id": "leave",
+        "text": {
+          "tr": "Çatıları olduğu gibi bırak.",
+          "en": "Leave the roofs as they are."
+        },
+        "risk": {
+          "tr": "Sonucu öngörülebilir",
+          "en": "Predictable outcome"
+        },
+        "requirements": [],
+        "immediateEffects": {
+          "stats": {},
+          "flags": [],
+          "technologies": [],
+          "buildings": [],
+          "rivalRelation": 0
+        },
+        "outcomes": [
+          {
+            "id": "result",
+            "probability": 1,
+            "affinity": null,
+            "text": {
+              "tr": "Çatılara dokunulmadı. Yağmur mevsimi yaklaşıyor.",
+              "en": "The roofs were left untouched. The rainy season is approaching."
+            },
+            "effect": {
+              "stats": {
+                "stability": -1
+              },
+              "flags": [
+                "resolved_granary_roof_watch"
+              ],
+              "technologies": [],
+              "buildings": [],
+              "rivalRelation": 0
+            },
+            "delayedEffects": [
+              {
+                "afterTurns": 4,
+                "minimumEra": 4,
+                "text": {
+                  "tr": "Sızan yağmur ambarda tahılı küflendirdi.",
+                  "en": "Leaking rain moulded the grain in the granary."
+                },
+                "effect": {
+                  "stats": {
+                    "resources": -2
+                  },
+                  "flags": [],
+                  "technologies": [],
+                  "buildings": [],
+                  "rivalRelation": 0
+                }
+              }
+            ],
+            "animationPreset": "normal"
+          }
+        ]
+      }
+    ],
+    "worldFlags": [
+      "granary_register_kept",
+      "resolved_granary_roof_watch"
+    ],
+    "storyChainId": "memory",
+    "animationPreset": "normal",
+    "soundCue": "decision",
+    "cooldown": 4,
+    "localizationKeys": [
+      "card.granary_roof_watch.title",
+      "card.granary_roof_watch.description"
+    ],
+    "eraRole": "bridge"
+  },
+  {
+    "id": "land_registry_record",
+    "era": 4,
+    "category": "legacy",
+    "title": {
+      "tr": "Toprak Defterinin Kaydı",
+      "en": "The Record of the Land Register"
+    },
+    "description": {
+      "tr": "Toprak hakları ölçümünden sonra eyalet, sınırların hangi arşivde tutulacağına karar vermeli. Tunç Çağı’ndaki arşiv anlaşmazlığı herkesin adının tek bir arşive mi yazılacağını, yoksa iki ayrı kaydın mı tutulacağını belirlemişti.",
+      "en": "After the land-rights survey, the province must decide in which archive the boundaries will be kept. The Bronze Age archive dispute had decided whether everyone’s name would be written in one archive or two separate records kept."
+    },
+    "artAsset": "card_land_registry_record",
+    "artDirection": "Fictional composite ancient empire, cut limestone and marble, wax tablets and papyrus rolls, bronze and iron hand tools, wool tunics and cloaks, no stirrups, no paper books, no gunpowder; ivory, gold and dusty terracotta palette, portrait composition. Archive hall with clay tablets and new papyrus land registers on shelves, scribes copying boundary lines, villagers and stewards waiting to see their names, lamplight.",
+    "rarity": "uncommon",
+    "weight": 10,
+    "requirements": [
+      {
+        "completedCard": "archive_dispute"
+      },
+      {
+        "completedCard": "land_rights_survey"
+      }
+    ],
+    "exclusionConditions": [
+      {
+        "flag": "resolved_land_registry_record"
+      }
+    ],
+    "choices": [
+      {
+        "id": "inclusive",
+        "text": {
+          "tr": "Kapsayıcı arşiv kaydını uygula; herkesin toprağını tek deftere yaz.",
+          "en": "Apply the inclusive-archive record and write everyone’s land in one register."
+        },
+        "risk": {
+          "tr": "Sonucu öngörülebilir",
+          "en": "Predictable outcome"
+        },
+        "requirements": [
+          {
+            "flag": "inclusive_archive"
+          },
+          {
+            "stat": "resources",
+            "minimum": 3
+          }
+        ],
+        "immediateEffects": {
+          "stats": {},
+          "flags": [],
+          "technologies": [],
+          "buildings": [],
+          "rivalRelation": 0
+        },
+        "outcomes": [
+          {
+            "id": "result",
+            "probability": 1,
+            "affinity": null,
+            "text": {
+              "tr": "Köy ve çiftlik sınırları aynı deftere girdi. Kâtipler ödendi; kavga eden taraflar aynı sayfada adlarını gördü.",
+              "en": "Village and estate boundaries went into the same register. The clerks were paid; the quarrelling parties saw their names on the same page."
+            },
+            "effect": {
+              "stats": {
+                "resources": -3,
+                "stability": 5,
+                "knowledge": 1
+              },
+              "flags": [
+                "unified_land_register",
+                "resolved_land_registry_record"
+              ],
+              "technologies": [],
+              "buildings": [],
+              "rivalRelation": 0
+            },
+            "delayedEffects": [],
+            "animationPreset": "normal"
+          }
+        ]
+      },
+      {
+        "id": "parallel",
+        "text": {
+          "tr": "Ayrı arşiv kaydını sürdür; çiftlik ve köy defterleri ayrı kalsın.",
+          "en": "Continue the parallel-archive record; estate and village registers stay separate."
+        },
+        "risk": {
+          "tr": "Sonucu öngörülebilir",
+          "en": "Predictable outcome"
+        },
+        "requirements": [
+          {
+            "flag": "parallel_archives"
+          }
+        ],
+        "immediateEffects": {
+          "stats": {},
+          "flags": [],
+          "technologies": [],
+          "buildings": [],
+          "rivalRelation": 0
+        },
+        "outcomes": [
+          {
+            "id": "result",
+            "probability": 1,
+            "affinity": null,
+            "text": {
+              "tr": "İki defter ayrı tutuldu. Kâhyalar kendi defterlerini korudu; köyler sınır kavgalarının bitmeyeceğini söyledi.",
+              "en": "Two registers were kept apart. The stewards kept their own book; the villages said the boundary quarrels would never end."
+            },
+            "effect": {
+              "stats": {
+                "authority": 1,
+                "stability": -3
+              },
+              "flags": [
+                "parallel_land_registers",
+                "resolved_land_registry_record"
+              ],
+              "technologies": [],
+              "buildings": [],
+              "rivalRelation": 0
+            },
+            "delayedEffects": [],
+            "animationPreset": "normal"
+          }
+        ]
+      },
+      {
+        "id": "fresh",
+        "text": {
+          "tr": "Yeni bir eyalet defteri aç; eski arşivleri bir kenara bırak.",
+          "en": "Open a new provincial register and set the old archives aside."
+        },
+        "risk": {
+          "tr": "Sonucu öngörülebilir",
+          "en": "Predictable outcome"
+        },
+        "requirements": [
+          {
+            "stat": "resources",
+            "minimum": 5
+          }
+        ],
+        "immediateEffects": {
+          "stats": {},
+          "flags": [],
+          "technologies": [],
+          "buildings": [],
+          "rivalRelation": 0
+        },
+        "outcomes": [
+          {
+            "id": "result",
+            "probability": 1,
+            "affinity": null,
+            "text": {
+              "tr": "Yeni defter sıfırdan yazıldı. Kâtipler ve tanıklar ödendi; eski kayıtlar tozlu raflarda kaldı.",
+              "en": "The new register was written from scratch. The clerks and witnesses were paid; the old records stayed on dusty shelves."
+            },
+            "effect": {
+              "stats": {
+                "resources": -5,
+                "stability": 3,
+                "knowledge": 2
+              },
+              "flags": [
+                "unified_land_register",
+                "resolved_land_registry_record"
+              ],
+              "technologies": [],
+              "buildings": [],
+              "rivalRelation": 0
+            },
+            "delayedEffects": [],
+            "animationPreset": "normal"
+          }
+        ]
+      }
+    ],
+    "worldFlags": [
+      "unified_land_register",
+      "resolved_land_registry_record",
+      "parallel_land_registers"
+    ],
+    "storyChainId": "memory",
+    "animationPreset": "normal",
+    "soundCue": "decision",
+    "cooldown": 4,
+    "localizationKeys": [
+      "card.land_registry_record.title",
+      "card.land_registry_record.description"
+    ],
+    "eraRole": "conclusion"
+  },
+  {
+    "id": "water_court_canal",
+    "era": 4,
+    "category": "legacy",
+    "title": {
+      "tr": "Kanal Suyunun Mahkemesi",
+      "en": "The Court of Canal Water"
+    },
+    "description": {
+      "tr": "Yeni kanal tarlaları suyu paylaşmaya başlayınca eski su mahkemesi yeniden konuşuldu. Tunç Çağı’ndaki su mahkemesi suyun yasayla mı paylaşılacağını, yoksa izin belgeleriyle mi satılacağını kaydetmişti.",
+      "en": "When the new canal fields began to share the water, the old water court was spoken of again. The Bronze Age water court had recorded whether water would be shared by law or sold by permit."
+    },
+    "artAsset": "card_water_court_canal",
+    "artDirection": "Fictional composite ancient empire, cut limestone and marble, wax tablets and papyrus rolls, bronze and iron hand tools, wool tunics and cloaks, no stirrups, no paper books, no gunpowder; ivory, gold and dusty terracotta palette, portrait composition. Canal sluice with farmers queuing for their water turn, a magistrate seated under an awning with an old water-court tablet, permit tokens on a table, bright midday light.",
+    "rarity": "uncommon",
+    "weight": 10,
+    "requirements": [
+      {
+        "completedCard": "water_court"
+      },
+      {
+        "completedCard": "canal_extension"
+      }
+    ],
+    "exclusionConditions": [
+      {
+        "flag": "resolved_water_court_canal"
+      }
+    ],
+    "choices": [
+      {
+        "id": "court_law",
+        "text": {
+          "tr": "Su mahkemesi yasasını kanala uygula; kâtip ve nöbetçileri öde.",
+          "en": "Apply the water-court law to the canal and pay the clerks and watchmen."
+        },
+        "risk": {
+          "tr": "Sonucu öngörülebilir",
+          "en": "Predictable outcome"
+        },
+        "requirements": [
+          {
+            "flag": "water_court_law"
+          },
+          {
+            "stat": "resources",
+            "minimum": 3
+          }
+        ],
+        "immediateEffects": {
+          "stats": {},
+          "flags": [],
+          "technologies": [],
+          "buildings": [],
+          "rivalRelation": 0
+        },
+        "outcomes": [
+          {
+            "id": "result",
+            "probability": 1,
+            "affinity": null,
+            "text": {
+              "tr": "Kanal suyu yasayla saatlere bölündü. Kâtipler ve nöbetçiler ödendi; aşağı tarlalar da sırasını aldı.",
+              "en": "The canal water was divided into hours by law. The clerks and watchmen were paid; the lower fields got their turn too."
+            },
+            "effect": {
+              "stats": {
+                "resources": -3,
+                "stability": 4,
+                "environment": 2
+              },
+              "flags": [
+                "canal_water_law",
+                "resolved_water_court_canal"
+              ],
+              "technologies": [],
+              "buildings": [],
+              "rivalRelation": 0
+            },
+            "delayedEffects": [],
+            "animationPreset": "normal"
+          }
+        ]
+      },
+      {
+        "id": "permits",
+        "text": {
+          "tr": "Su izni kaydını sürdür; kanal saatlerini satarak dağıt.",
+          "en": "Continue the water-permit record and distribute canal hours by sale."
+        },
+        "risk": {
+          "tr": "Sonucu öngörülebilir",
+          "en": "Predictable outcome"
+        },
+        "requirements": [
+          {
+            "flag": "water_permits"
+          }
+        ],
+        "immediateEffects": {
+          "stats": {},
+          "flags": [],
+          "technologies": [],
+          "buildings": [],
+          "rivalRelation": 0
+        },
+        "outcomes": [
+          {
+            "id": "result",
+            "probability": 1,
+            "affinity": null,
+            "text": {
+              "tr": "Kanal saatleri izin belgesiyle satıldı. Zengin çiftlikler suyu aldı; küçük tarlalar kurudu.",
+              "en": "Canal hours were sold by permit. Rich estates got the water; small fields dried out."
+            },
+            "effect": {
+              "stats": {
+                "authority": 1,
+                "stability": -2,
+                "environment": -1
+              },
+              "flags": [
+                "canal_water_permits",
+                "resolved_water_court_canal"
+              ],
+              "technologies": [],
+              "buildings": [],
+              "rivalRelation": 0
+            },
+            "delayedEffects": [],
+            "animationPreset": "normal"
+          }
+        ]
+      },
+      {
+        "id": "council",
+        "text": {
+          "tr": "Su dağıtımını yerel meclise bırak.",
+          "en": "Leave the water allocation to the local council."
+        },
+        "risk": {
+          "tr": "Sonucu öngörülebilir",
+          "en": "Predictable outcome"
+        },
+        "requirements": [],
+        "immediateEffects": {
+          "stats": {},
+          "flags": [],
+          "technologies": [],
+          "buildings": [],
+          "rivalRelation": 0
+        },
+        "outcomes": [
+          {
+            "id": "result",
+            "probability": 1,
+            "affinity": null,
+            "text": {
+              "tr": "Meclis suyu oylamayla dağıttı. Kararlar yavaş çıktı; vali kanalın yönetimini meclisle paylaştı.",
+              "en": "The council allocated the water by vote. Decisions came slowly; the governor shared the canal’s management with the council."
+            },
+            "effect": {
+              "stats": {
+                "authority": -2,
+                "stability": 2
+              },
+              "flags": [
+                "resolved_water_court_canal"
+              ],
+              "technologies": [],
+              "buildings": [],
+              "rivalRelation": 0
+            },
+            "delayedEffects": [],
+            "animationPreset": "normal"
+          }
+        ]
+      }
+    ],
+    "worldFlags": [
+      "canal_water_law",
+      "resolved_water_court_canal",
+      "canal_water_permits"
+    ],
+    "storyChainId": "river_memory",
+    "animationPreset": "normal",
+    "soundCue": "decision",
+    "cooldown": 4,
+    "localizationKeys": [
+      "card.water_court_canal.title",
+      "card.water_court_canal.description"
+    ],
+    "eraRole": "conclusion"
+  },
+  {
+    "id": "fuel_trade_clause",
+    "era": 4,
+    "category": "legacy",
+    "title": {
+      "tr": "Antlaşmada Yakıt Maddesi",
+      "en": "The Fuel Clause in the Treaty"
+    },
+    "description": {
+      "tr": "Ticaret antlaşmasından sonra komşu eyalet kömür ve odun alımı için ayrı bir madde istiyor. Tunç Çağı’ndaki kömür ambargosu yakıtın kaynağının denetlenip denetlenmediğini ve orman bedelinin kimde kaldığını kaydetmişti.",
+      "en": "After the trade treaty, the neighbouring province wants a separate clause for buying charcoal and timber. The Bronze Age charcoal embargo had recorded whether the fuel’s origin was inspected and who bore the cost to the forest."
+    },
+    "artAsset": "card_fuel_trade_clause",
+    "artDirection": "Fictional composite ancient empire, cut limestone and marble, wax tablets and papyrus rolls, bronze and iron hand tools, wool tunics and cloaks, no stirrups, no paper books, no gunpowder; ivory, gold and dusty terracotta palette, portrait composition. Charcoal sacks and stacked timber at a border customs post, inspectors checking origin tags, envoys holding a treaty tablet and an old embargo record, smoky afternoon light.",
+    "rarity": "uncommon",
+    "weight": 10,
+    "requirements": [
+      {
+        "completedCard": "charcoal_embargo"
+      },
+      {
+        "completedCard": "trade_treaty"
+      }
+    ],
+    "exclusionConditions": [
+      {
+        "flag": "resolved_fuel_trade_clause"
+      }
+    ],
+    "choices": [
+      {
+        "id": "provenance",
+        "text": {
+          "tr": "Yakıt kaynağı denetimini antlaşmaya yaz; denetçileri öde.",
+          "en": "Write fuel-origin inspection into the treaty and pay the inspectors."
+        },
+        "risk": {
+          "tr": "Sonucu öngörülebilir",
+          "en": "Predictable outcome"
+        },
+        "requirements": [
+          {
+            "flag": "fuel_provenance"
+          },
+          {
+            "stat": "resources",
+            "minimum": 3
+          }
+        ],
+        "immediateEffects": {
+          "stats": {},
+          "flags": [],
+          "technologies": [],
+          "buildings": [],
+          "rivalRelation": 0
+        },
+        "outcomes": [
+          {
+            "id": "result",
+            "probability": 1,
+            "affinity": null,
+            "text": {
+              "tr": "Her kömür yükünün ormanı kayda geçti. Denetçiler ödendi; kesilen ormanlar dinlenmeye bırakıldı.",
+              "en": "The forest of every charcoal load was recorded. The inspectors were paid; felled forests were left to rest."
+            },
+            "effect": {
+              "stats": {
+                "resources": -3,
+                "environment": 3,
+                "stability": 1
+              },
+              "flags": [
+                "treaty_fuel_inspection",
+                "resolved_fuel_trade_clause"
+              ],
+              "technologies": [],
+              "buildings": [],
+              "rivalRelation": 2
+            },
+            "delayedEffects": [],
+            "animationPreset": "normal"
+          }
+        ]
+      },
+      {
+        "id": "refused",
+        "text": {
+          "tr": "Denetimi reddetme kaydını sürdür.",
+          "en": "Continue the record of refusing inspection."
+        },
+        "risk": {
+          "tr": "Sonucu öngörülebilir",
+          "en": "Predictable outcome"
+        },
+        "requirements": [
+          {
+            "flag": "fuel_inspection_refused"
+          }
+        ],
+        "immediateEffects": {
+          "stats": {},
+          "flags": [],
+          "technologies": [],
+          "buildings": [],
+          "rivalRelation": 0
+        },
+        "outcomes": [
+          {
+            "id": "result",
+            "probability": 1,
+            "affinity": null,
+            "text": {
+              "tr": "Denetim yapılmadı. Kömür serbestçe aktı; komşu eyalet ormanlarının sizin için kesildiğini söyledi.",
+              "en": "No inspection was made. Charcoal flowed freely; the neighbouring province said its forests were being cut for you."
+            },
+            "effect": {
+              "stats": {
+                "authority": 1,
+                "environment": -2
+              },
+              "flags": [
+                "resolved_fuel_trade_clause"
+              ],
+              "technologies": [],
+              "buildings": [],
+              "rivalRelation": -2
+            },
+            "delayedEffects": [],
+            "animationPreset": "normal"
+          }
+        ]
+      },
+      {
+        "id": "exported",
+        "text": {
+          "tr": "Orman bedelini yine dışarıya yükle.",
+          "en": "Push the cost to the forest abroad again."
+        },
+        "risk": {
+          "tr": "Sonucu öngörülebilir",
+          "en": "Predictable outcome"
+        },
+        "requirements": [
+          {
+            "flag": "exported_forest_cost"
+          }
+        ],
+        "immediateEffects": {
+          "stats": {},
+          "flags": [],
+          "technologies": [],
+          "buildings": [],
+          "rivalRelation": 0
+        },
+        "outcomes": [
+          {
+            "id": "result",
+            "probability": 1,
+            "affinity": null,
+            "text": {
+              "tr": "Kömür ucuz kaldı. Bedel komşu ormanlarına yüklendi; kendi tepelerinizde de kesim hızlandı.",
+              "en": "Charcoal stayed cheap. The cost fell on the neighbouring forests; felling sped up on your own hills too."
+            },
+            "effect": {
+              "stats": {
+                "environment": -3,
+                "stability": -1,
+                "authority": 1
+              },
+              "flags": [
+                "resolved_fuel_trade_clause"
+              ],
+              "technologies": [],
+              "buildings": [],
+              "rivalRelation": 0
+            },
+            "delayedEffects": [],
+            "animationPreset": "normal"
+          }
+        ]
+      },
+      {
+        "id": "drop",
+        "text": {
+          "tr": "Yakıt maddesini antlaşmadan çıkar.",
+          "en": "Drop the fuel clause from the treaty."
+        },
+        "risk": {
+          "tr": "Sonucu öngörülebilir",
+          "en": "Predictable outcome"
+        },
+        "requirements": [],
+        "immediateEffects": {
+          "stats": {},
+          "flags": [],
+          "technologies": [],
+          "buildings": [],
+          "rivalRelation": 0
+        },
+        "outcomes": [
+          {
+            "id": "result",
+            "probability": 1,
+            "affinity": null,
+            "text": {
+              "tr": "Madde çıkarıldı. Antlaşma sürdü; komşu eyalet bir sonraki görüşmede bunu hatırlatacak.",
+              "en": "The clause was dropped. The treaty held; the neighbouring province will bring it up at the next talks."
+            },
+            "effect": {
+              "stats": {
+                "stability": -1
+              },
+              "flags": [
+                "resolved_fuel_trade_clause"
+              ],
+              "technologies": [],
+              "buildings": [],
+              "rivalRelation": -2
+            },
+            "delayedEffects": [],
+            "animationPreset": "normal"
+          }
+        ]
+      }
+    ],
+    "worldFlags": [
+      "treaty_fuel_inspection",
+      "resolved_fuel_trade_clause"
+    ],
+    "storyChainId": "embers",
+    "animationPreset": "normal",
+    "soundCue": "decision",
+    "cooldown": 4,
+    "localizationKeys": [
+      "card.fuel_trade_clause.title",
+      "card.fuel_trade_clause.description"
+    ],
+    "eraRole": "conclusion"
   }
 ]

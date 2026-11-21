@@ -1,5 +1,15 @@
 # 180 kart kalite doğrulaması — 2026-11-19
 
+# 255 kart yerel doğrulama — 2026-11-21 (dal `phase3-era4-255`, Era 4 kapalı)
+
+255 benzersiz kart (60/60/60/75; Era 4 kapalı), 715 karar.
+
+- **Windows:** `build-content --check` geçti; doğrulayıcı 0 hata/0 uyarı; `node --test tools/*.test.mjs` **99/99**; `swift test` **148/148** (136 FateCore + 12 Diagnostics).
+- Aynı-seed: altı politika × 10.000 seed, `compare-reference.mjs docs/analysis/milestone240-windows docs/analysis/milestone255-windows 240 255` → altısı "identical except contentCardCount 240 → 255".
+- **Teşhis** (2.000 seed; 210/225/240 referansları aynı ikiliyle, kendi kart/balance/politics dosyalarıyla): meclis baskısı ve gerçek açlık kaybı düştü, deste tükenmesi %0. İstikrar hedefi progression ve knowledge için tutmadı; random'da %83 nüfus sıfırlanması. Yatırım politikası ayrı raporlandı. Tablolar: `docs/analysis/milestone255-era4-diagnostic/SUMMARY.md`.
+- Native CI: **henüz çalıştırılmadı** (PR açıldıktan sonra tek tam koşu yapılacak).
+- **Görsel:** yeni görsel yok; 43 aday, 212 eksik.
+
 # 240 kart yerel doğrulama — 2026-11-21 (dal `phase3-era4-240`, Era 4 kapalı)
 
 240 benzersiz kart (60/60/60/60; Era 4 kapalı), 657 karar.
