@@ -110,7 +110,7 @@ Kalan açığın kaynakları (ölçülmüş):
 | `swift test` | **135/135** (FateCoreTests 123 + FateDiagnosticsTests 12; 8 yeni `EmpireHarvestTests`) |
 | Release `FateSimulation`, altı politika × 10.000 seed | `node tools/compare-reference.mjs docs/analysis/milestone210-windows docs/analysis/milestone225-windows 210 225`: altısı "identical except contentCardCount 210 → 225" |
 | Teşhis, beş politika × 2.000 seed (210 referansı ve 225) | `docs/analysis/milestone225-era4-diagnostic/`, `docs/analysis/milestone225-210-era4-reference/` |
-| Native iPhone CI | [run 44813221092](https://github.com/srcnxylmz/the-cards-of-fate/actions/runs/44813221092), kaynak `89173de`: **başarılı**. 5/5 iş; verify'da Node, Swift, iPhone derleme/kurulum/açılış ve TR/EN UI adımları geçti. Sayılar logdan okunmadı (log oturum istiyor) |
+| Native iPhone CI | [run 44813221092](https://github.com/srcnxylmz/the-cards-of-fate/actions/runs/44813221092), kaynak `89173de`: **başarılı**. 5/5 iş; Node 84/84, macOS Swift 135/135, iPhone SE (3. nesil) / iOS 18.5 6/6 UI; altı × 10.000 native simülasyon tamamlandı |
 
 Yeni Swift testleri:
 - Kapasitenin yalnız Era 4'te, nüfus ve çevre şartıyla ve tüketim tavanı altında üretmesi.
