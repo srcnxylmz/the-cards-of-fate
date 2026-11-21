@@ -17,6 +17,7 @@ const before195 = read('docs/analysis/milestone210-195-before/cards.json');
 const before210 = read('docs/analysis/milestone225-210-before/cards.json');
 const before225 = read('docs/analysis/milestone240-225-before/cards.json');
 const before240 = read('docs/analysis/milestone255-240-before/cards.json');
+const before255 = read('docs/analysis/milestone270-255-before/cards.json');
 // Earlier packages must stay identical except for the declared, measured 240 rebalance (EMPIRE_REBALANCE).
 const asDelayed = (afterTurns, minimumEra, tr, en, stats, flags = []) => ({ afterTurns, minimumEra, text: { tr, en }, effect: { stats, flags, technologies: [], buildings: [], rivalRelation: 0 } });
 const rebalanced = list => { const copy = structuredClone(list); rebalanceEmpireEvents({ cards: copy, delayed: asDelayed, strict: false }); return copy; };
@@ -24,29 +25,30 @@ const empire = cards.filter(c => c.era === 4);
 const all = c => c.choices.flatMap(ch => [ch.immediateEffects, ...ch.outcomes.flatMap(o => [o.effect, ...o.delayedEffects.map(d => d.effect)])]);
 const earlyFlags = new Set(cards.filter(c => c.era <= 3).flatMap(c => all(c).flatMap(e => e.flags)));
 
-test('255 events: earlier packages are identical except the declared rebalance; seventy-five events are Era 4 only', () => {
-  assert.equal(cards.length, 255);
-  assert.equal(new Set(cards.map(c => c.id)).size, 255);
+test('270 events: earlier packages are identical except the declared rebalance; ninety events are Era 4 only', () => {
+  assert.equal(cards.length, 270);
+  assert.equal(new Set(cards.map(c => c.id)).size, 270);
+  assert.deepEqual(cards.slice(0, 255), before255, 'the 255-card package is preserved byte-for-byte');
   assert.deepEqual(cards.slice(0, 240), before240, 'the 240-card package is preserved byte-for-byte');
   assert.deepEqual(cards.slice(0, 195), rebalanced(before195), 'the 195-card package is preserved in order, apart from declared rebalances');
   assert.deepEqual(cards.slice(0, 210), rebalanced(before210), 'the 210-card package is preserved in order, apart from declared rebalances');
   assert.deepEqual(cards.slice(0, 225), rebalanced(before225), 'the 225-card package is preserved in order, apart from declared rebalances');
   assert.deepEqual(cards.filter(c => c.era <= 3), before);
   for (const e of [1, 2, 3]) assert.equal(cards.filter(c => c.era === e).length, 60);
-  assert.equal(empire.length, 75);
+  assert.equal(empire.length, 90);
   assert.equal(cards.filter(c => c.era > 4).length, 0);
   assert.deepEqual(read('cards.json'), cards, 'root compatibility mirror stays in sync');
-  for (const lang of ['tr', 'en']) for (const f of ['title', 'description']) assert.equal(new Set(cards.map(c => c[f][lang])).size, 255);
-  assert.equal(new Set(empire.map(c => c.artDirection)).size, 75);
+  for (const lang of ['tr', 'en']) for (const f of ['title', 'description']) assert.equal(new Set(cards.map(c => c[f][lang])).size, 270);
+  assert.equal(new Set(empire.map(c => c.artDirection)).size, 90);
 });
 
-test('package distribution: forty-six recurring events, fourteen Bronze bridges, fourteen conditional conclusions, one reform', () => {
+test('package distribution: fifty-five recurring events, seventeen Bronze bridges, seventeen conditional conclusions, one reform', () => {
   const roles = r => empire.filter(c => c.eraRole === r);
-  assert.equal(roles('recurring').length, 46);
-  assert.equal(roles('bridge').length, 14);
-  assert.equal(roles('conclusion').length, 14);
+  assert.equal(roles('recurring').length, 55);
+  assert.equal(roles('bridge').length, 17);
+  assert.equal(roles('conclusion').length, 17);
   assert.equal(roles('reform').length, 1);
-  assert.equal(empire.length, 46 + 14 + 14 + 1);
+  assert.equal(empire.length, 55 + 17 + 17 + 1);
   for (const c of roles('recurring')) assert.ok(!c.exclusionConditions.some(x => x.flag === `resolved_${c.id}`), c.id + ' must stay repeatable');
   for (const c of [...roles('bridge'), ...roles('conclusion')]) {
     assert.ok(c.exclusionConditions.some(x => x.flag === `resolved_${c.id}`), c.id + ' is one-shot');
@@ -68,7 +70,7 @@ test('Era 4 readiness gate is explicit and disabled; the inventory is met but ba
   assert.equal(gate.enabled, false);
   assert.deepEqual([gate.minimumCards, gate.minimumRecurring, gate.minimumConclusions, gate.minimumBridges], [40, 24, 8, 8]);
   const inv = inventory(cards, 4);
-  assert.deepEqual([inv.total, inv.recurring, inv.conclusions, inv.bridges], [75, 46, 14, 14]);
+  assert.deepEqual([inv.total, inv.recurring, inv.conclusions, inv.bridges], [90, 55, 17, 17]);
   assert.equal(gate.balanceEvidence, null, 'no balance acceptance has been recorded');
   for (const category of gate.requiredRecurringCategories) assert.ok(inv.recurringCategories.includes(category), category);
   for (const e of eras.filter(e => e.id > 4)) assert.equal(e.contentGate.enabled, false);

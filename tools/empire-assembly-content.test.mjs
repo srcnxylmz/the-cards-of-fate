@@ -15,7 +15,7 @@ const before = read('docs/analysis/milestone255-240-before/cards.json');
 const beforeBalance = read('docs/analysis/milestone255-240-before/balance.json');
 const beforePolitics = read('docs/analysis/milestone255-240-before/politics.json');
 const byId = id => cards.find(c => c.id === id);
-const fresh = cards.slice(240);
+const fresh = cards.slice(240, 255);
 const earlyFlags = new Set(cards.filter(c => c.era <= 3).flatMap(c => c.choices.flatMap(ch => ch.outcomes.flatMap(o => [...o.effect.flags, ...o.delayedEffects.flatMap(d => d.effect.flags)]))));
 const results = c => c.choices.flatMap(ch => ch.outcomes.map(o => ({ c, ch, o })));
 const RECURRING = ['representation_reform', 'land_tax_reform', 'grain_pact', 'public_safety_compact', 'legitimacy_oath', 'land_rights_survey', 'seasonal_migration', 'trade_treaty', 'terrace_upkeep'];
@@ -24,13 +24,13 @@ const matches = (r, s) => (r.stat ? s.stats[r.stat] >= (r.minimum ?? 0) && s.sta
 const open = (list, s) => (list ?? []).every(r => matches(r, s));
 
 test('fifteen new Era 4 events: nine recurring, three bridges, three conclusions; the 240 package is byte-identical', () => {
-  assert.equal(cards.length, 255);
+  assert.equal(cards.length, 270, 'the 255 → 270 package follows (tools/empire-strain-content.test.mjs)');
   assert.deepEqual(cards.slice(0, 240), before);
   assert.deepEqual(fresh.filter(c => c.eraRole === 'recurring').map(c => c.id), RECURRING);
   assert.deepEqual(fresh.filter(c => c.eraRole === 'bridge').map(c => c.id), ['provincial_levy_review', 'barge_silt_league', 'granary_roof_watch']);
   assert.deepEqual(fresh.filter(c => c.eraRole === 'conclusion').map(c => c.id), ['land_registry_record', 'water_court_canal', 'fuel_trade_clause']);
   for (const e of [1, 2, 3]) assert.equal(cards.filter(c => c.era === e).length, 60);
-  assert.equal(cards.filter(c => c.era === 4).length, 75);
+  assert.equal(cards.filter(c => c.era === 4).length, 90);
   assert.equal(cards.filter(c => c.era >= 5).length, 0);
   for (const c of fresh) for (const lang of ['tr', 'en']) for (const ch of c.choices) assert.ok(ch.text[lang].length > 10 && ch.outcomes.every(o => o.text[lang].length > 30), `${c.id}.${ch.id} ${lang}`);
 });
@@ -60,7 +60,7 @@ test('famine relief and faction reconciliation are bounded Era 4 data; no other 
   assert.ok(!earlyFlags.has(PROVINCIAL_FAMINE_RELIEF.flag), 'the relief needs an Era 4 store that costs reserves to fill');
   for (const { c, ch, o } of cards.flatMap(results).filter(({ o }) => o.effect.flags.includes(PROVINCIAL_FAMINE_RELIEF.flag)))
     assert.ok((o.effect.stats.resources ?? 0) < 0, `${c.id}.${ch.id} fills the store without paying`);
-  const { provincialFamineRelief, ...balanceRest } = balance;
+  const { provincialFamineRelief, eraMilestones, ...balanceRest } = balance;
   assert.deepEqual(balanceRest, beforeBalance);
   const rule = politics.institutionDefense;
   assert.ok(rule.reconciliationCeiling < politics.neutralRelation, 'reconciliation ends hostility but never buys loyalty');
@@ -123,13 +123,13 @@ test('ledger: the pact loan has its own identity, old records only discount, not
   assert.ok(byId('terrace_upkeep').choices.find(ch => ch.id === 'defer').outcomes[0].delayedEffects.some(d => d.effect.removeFlags?.includes('estate_fields_worked')));
 });
 
-test('Era 4 stays closed at seventy-five cards; Era 5 stays closed; no balance evidence', () => {
+test('Era 4 stays closed at ninety cards; Era 5 stays closed; no balance evidence', () => {
   const gate = eras.find(e => e.id === 4).contentGate;
   assert.deepEqual([gate.enabled, gate.balanceEvidence], [false, null]);
   const result = validate(cards, eras);
   assert.deepEqual([result.errors, result.warnings], [[], []]);
   const inv = result.eraInventory[4];
-  assert.deepEqual([inv.total, inv.recurring, inv.conclusions, inv.bridges, inv.satisfied, inv.open], [75, 46, 14, 14, true, false]);
+  assert.deepEqual([inv.total, inv.recurring, inv.conclusions, inv.bridges, inv.satisfied, inv.open], [90, 55, 17, 17, true, false]);
   assert.equal(result.eraInventory[5].open, false);
   const forced = structuredClone(eras); forced[3].contentGate.enabled = true;
   assert.ok(validate(cards, forced).errors.some(e => e.includes('without recorded balance evidence')));

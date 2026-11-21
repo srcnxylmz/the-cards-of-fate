@@ -139,6 +139,6 @@ test('Era 4 stays closed at seventy-five cards; no balance evidence is recorded'
   const result = validate(cards, eras);
   assert.deepEqual([result.errors, result.warnings], [[], []]);
   const inv = result.eraInventory[4];
-  assert.deepEqual([inv.total, inv.recurring, inv.conclusions, inv.bridges, inv.satisfied, inv.open], [75, 46, 14, 14, true, false]);
+  assert.deepEqual([inv.total, inv.recurring, inv.conclusions, inv.bridges, inv.satisfied, inv.open], [90, 55, 17, 17, true, false]);
   assert.equal(result.eraInventory[5].open, false);
 });

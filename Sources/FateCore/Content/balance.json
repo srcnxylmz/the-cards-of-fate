@@ -62,5 +62,73 @@
     "minimumEra": 4,
     "flag": "grain_famine_store",
     "maximumShares": 4
-  }
+  },
+  "eraMilestones": [
+    {
+      "id": "enduring_empire",
+      "era": 4,
+      "flag": "enduring_empire_recorded",
+      "minimumEraDecisions": 120,
+      "minimumResources": 15,
+      "minimumStability": 50,
+      "minimumAuthority": 25,
+      "institutionFlags": [
+        "provincial_assembly_seats",
+        "garrison_civil_oversight",
+        "provincial_delegated_seal",
+        "elected_governorship",
+        "recallable_governorship",
+        "province_local_steward"
+      ],
+      "minimumInstitutions": 2,
+      "rightsFlags": [
+        "household_representation",
+        "land_rights_registry",
+        "unified_land_register",
+        "canal_water_law",
+        "canal_shared_with_villages",
+        "provincial_levy_reviewed",
+        "guest_citizenship",
+        "public_care_settlement",
+        "provincial_infirmary_public",
+        "provincial_charter_rights",
+        "joint_imperial_council",
+        "veteran_land_rights"
+      ],
+      "minimumRights": 2,
+      "obligationFlags": [
+        "garrison_pay_arrears",
+        "debased_coinage",
+        "temple_grain_loan",
+        "regional_grain_loan",
+        "provincial_tax_deferred",
+        "tax_farm_contract",
+        "veteran_debts",
+        "plague_relief_credit"
+      ],
+      "completedAnyOf": [
+        "cistern_precedent",
+        "guard_levy_charter",
+        "care_census_hearing",
+        "pasture_gate_levy",
+        "guest_assembly_bench",
+        "assembly_seal_appeal",
+        "quarry_stone_granary",
+        "furnace_fire_law",
+        "tithe_measure_recall",
+        "governor_succession_rule",
+        "merchant_grain_rights",
+        "land_registry_record",
+        "water_court_canal",
+        "fuel_trade_clause",
+        "assembly_center_accord",
+        "veteran_land_charter",
+        "plague_relief_reckoning"
+      ],
+      "text": {
+        "tr": "Tarihsel dönüm noktası: Eyalet kendi ambarını dolduruyor, borcu yok, farklı toplulukların haklarını yazıya geçirdi ve meşruiyetini koruyor. Kâtipler bu dönemi kalıcı bir imparatorluğun kuruluşu olarak kaydetti. Tarih burada bitmiyor.",
+        "en": "Historical milestone: the province fills its own granary, owes no debt, has written down the rights of its different communities and keeps its legitimacy. The scribes recorded this age as the founding of an enduring empire. History does not end here."
+      }
+    }
+  ]
 }

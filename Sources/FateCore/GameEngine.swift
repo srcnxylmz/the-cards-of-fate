@@ -130,7 +130,7 @@ public struct GameEngine {
         apply(.init(stats: ["resources": food.production-food.consumption-unfundedResources+food.stored], flags: [], technologies: [], buildings: [], rivalRelation: 0), to: &state)
         if food.relieved > 0, let relief = balance.provincialFamineRelief {
             state.flags.remove(relief.flag)
-            append(.init(tr: "Kıtlıkta kamu ambarı açıldı; mühürlü tahıl (food.relieved) payı karşıladı ve depo boşaldı.", en: "The public store was opened against hunger; the sealed grain covered (food.relieved) shares and the store is now empty."), to: &state)
+            append(.init(tr: "Kıtlıkta kamu ambarı açıldı; mühürlü tahıl \(food.relieved) payı karşıladı ve depo boşaldı.", en: "The public store was opened against hunger; the sealed grain covered \(food.relieved) shares and the store is now empty."), to: &state)
         }
         if food.shortfall > 0 {
             apply(.init(stats: ["population": -food.populationLoss, "stability": -food.stabilityLoss], flags: [], technologies: [], buildings: [], rivalRelation: 0), to: &state)
@@ -192,6 +192,7 @@ public struct GameEngine {
             state.leaderTurns += 1; state.consecutiveLeaderTurns += 1
             state.longestLeadership = max(state.longestLeadership, state.consecutiveLeaderTurns)
         } else { state.consecutiveLeaderTurns = 0 }
+        recordEraMilestones(&state)
         if state.stats["population"] == 0 {
             state.ending = .init(tr: "Son ocak söndü. Açlık, uygarlığın yaşayan hafızasını tüketti.", en: "The last hearth went dark. Hunger consumed your civilization's living memory.")
         } else if state.stats["environment"] == 0 && state.stats["stability", default: 0] < 15 {

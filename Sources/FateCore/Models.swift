@@ -154,6 +154,8 @@ public struct Balance: Codable {
     public var provincialGrowth: ProvincialGrowth?
     /// Optional (Phase 3, 255): a sealed public store is opened once when hunger strikes, then it is empty.
     public var provincialFamineRelief: ProvincialFamineRelief?
+    /// Optional (Phase 3, 270): recorded historical milestones of an era. They never end the run.
+    public var eraMilestones: [EraMilestone]?
 }
 
 public struct ProvincialFamineRelief: Codable, Equatable {

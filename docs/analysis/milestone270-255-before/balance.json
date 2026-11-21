@@ -1,0 +1,66 @@
+{
+  "startingStats": {
+    "population": 55,
+    "resources": 55,
+    "authority": 40,
+    "knowledge": 28,
+    "stability": 55,
+    "environment": 70
+  },
+  "resourceConsumption": 4,
+  "hardExtraConsumption": 2,
+  "farmProduction": 2,
+  "starvationLoss": 8,
+  "successionTurns": 24,
+  "rivalPressure": 5,
+  "provincialProduction": [
+    {
+      "flag": "estate_fields_worked",
+      "minimumEra": 4,
+      "minimumPopulation": 20,
+      "minimumEnvironment": 0,
+      "yield": 1
+    },
+    {
+      "flag": "canal_fields_open",
+      "minimumEra": 4,
+      "minimumPopulation": 0,
+      "minimumEnvironment": 30,
+      "yield": 1
+    },
+    {
+      "flag": "harbor_fishery_licensed",
+      "minimumEra": 4,
+      "minimumPopulation": 15,
+      "minimumEnvironment": 20,
+      "yield": 1
+    },
+    {
+      "flag": "granary_register_kept",
+      "minimumEra": 4,
+      "minimumPopulation": 10,
+      "minimumEnvironment": 0,
+      "yield": 1
+    }
+  ],
+  "provincialStorage": {
+    "minimumEra": 4,
+    "flags": [
+      "granary_register_kept",
+      "grain_famine_store"
+    ],
+    "maximumPerTurn": 1,
+    "reserveCeiling": 40
+  },
+  "provincialGrowth": {
+    "minimumEra": 4,
+    "interval": 4,
+    "minimumStability": 25,
+    "populationCeiling": 60
+  },
+  "provincialFamineRelief": {
+    "minimumEra": 4,
+    "flag": "grain_famine_store",
+    "maximumShares": 4
+  }
+}

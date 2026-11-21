@@ -18,6 +18,7 @@ import { addEmpireProvinceEvents } from './content/empire-province-events.mjs';
 import { addEmpireHarvestEvents, PROVINCIAL_PRODUCTION } from './content/empire-harvest-events.mjs';
 import { addEmpireGovernanceEvents, rebalanceEmpireEvents, PROVINCIAL_STORAGE, PROVINCIAL_GROWTH } from './content/empire-governance-events.mjs';
 import { addEmpireAssemblyEvents, PROVINCIAL_FAMINE_RELIEF } from './content/empire-assembly-events.mjs';
+import { addEmpireStrainEvents, enduringEmpireMilestone } from './content/empire-strain-events.mjs';
 import { composeArtManifest } from './art-pipeline.mjs';
 
 // Authoring helpers normalize structure only. Every event below is individually authored.
@@ -267,6 +268,8 @@ addEmpireProvinceEvents({ cards, card, choice, outcome, delayed });
 addEmpireHarvestEvents({ cards, card, choice, outcome, delayed });
 addEmpireGovernanceEvents({ cards, card, choice, outcome, delayed });
 addEmpireAssemblyEvents({ cards, card, choice, outcome, delayed });
+// Phase 3, 255 → 270: late-game strains of a strong empire; the gate stays disabled.
+addEmpireStrainEvents({ cards, card, choice, outcome, delayed });
 // Measured, documented rebalance of earlier Era 4 decisions (see EMPIRE_REBALANCE).
 rebalanceEmpireEvents({ cards, delayed });
 for(let i=0;i<cards.length;i++)cards[i]=withProductionInputs(cards[i]);
@@ -309,7 +312,8 @@ const eraRows = [
   ['Yıldızlararası Çağ','Interstellar Age','Yıldız Başkenti','Stellar Capital','Yıldızlar Birliği','Stellar Union','continuity',100,'#D6B781','Kozmik ışık; indigo gold; stellar ambience and spacious harmonics.']
 ];
 const eras = eraRows.map((r,i) => ({ id:i+1, name:text(r[0],r[1]), settlement:text(r[2],r[3]), government:text(r[4],r[5]), requiredTechnology:r[6], knowledgeThreshold:r[7], stabilityThreshold:35, populationThreshold:25, palette:r[8], artDirection:r[9], ...(i===3 ? { contentGate:ERA4_GATE } : i>3 ? { contentGate:FUTURE_ERA_GATE } : {}) }));
-const balance = { startingStats:{population:55,resources:55,authority:40,knowledge:28,stability:55,environment:70}, resourceConsumption:4, hardExtraConsumption:2, farmProduction:2, starvationLoss:8, successionTurns:24, rivalPressure:5, provincialProduction:PROVINCIAL_PRODUCTION, provincialStorage:PROVINCIAL_STORAGE, provincialGrowth:PROVINCIAL_GROWTH, provincialFamineRelief:PROVINCIAL_FAMINE_RELIEF };
+const balance = { startingStats:{population:55,resources:55,authority:40,knowledge:28,stability:55,environment:70}, resourceConsumption:4, hardExtraConsumption:2, farmProduction:2, starvationLoss:8, successionTurns:24, rivalPressure:5, provincialProduction:PROVINCIAL_PRODUCTION, provincialStorage:PROVINCIAL_STORAGE, provincialGrowth:PROVINCIAL_GROWTH, provincialFamineRelief:PROVINCIAL_FAMINE_RELIEF,
+  eraMilestones:[enduringEmpireMilestone(cards.filter(c=>c.era===4&&c.eraRole==='conclusion').map(c=>c.id))] };
 function write(relative, data) {
   const destination=resolve(root,relative), serialized=JSON.stringify(data,null,2)+'\n';
   if (process.argv.includes('--check')) {
