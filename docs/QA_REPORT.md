@@ -1,5 +1,15 @@
 # 180 kart kalite doğrulaması — 2026-11-19
 
+# 225 kart yerel doğrulama — 2026-11-20 (dal `phase3-era4-225`, Era 4 kapalı)
+
+225 benzersiz kart (60/60/60 + 45 kapalı Era 4), 600 karar.
+
+- **Windows:** `build-content --check` geçti; doğrulayıcı 0 hata/0 uyarı; `node --test tools/*.test.mjs` **84/84**; `swift test` **135/135** (123 FateCore + 12 Diagnostics).
+- **Aynı seed:** altı politika × 10.000 seed; `compare-reference.mjs` altısı için 210 Windows raporlarıyla "identical except contentCardCount 210 → 225" (`docs/analysis/milestone225-windows/`).
+- **Teşhis** (kapı zorla açık, 2.000 seed; 210 referansı aynı ikiliyle): deste tükenmesi %0, Era 4'te karar/koşu 2–4 kat. Açlık sonu %87–100, progression/knowledge istikrarı 9–12; hedefler tutmadı. Tablolar: `docs/analysis/milestone225-era4-diagnostic/SUMMARY.md`.
+- Native CI [run 44813221092](https://github.com/srcnxylmz/the-cards-of-fate/actions/runs/44813221092) (#35, `89173de`, workflow_dispatch) **başarılı**: 5/5 iş yeşil (verify; short, knowledge, progression ve recovery simülasyonları). verify işindeki her adım başarılı: Node testleri, art-audit, feedback, `build-content --check`, doğrulayıcı, macOS Swift testleri, Xcode projesi, iPhone simülatöründe derleme, kurulum ve açılış, TR/EN UI ve kalıcılık, ekran görüntüsü dışa aktarımı. verify logundan okunan sayılar: Node **84/84**, macOS Swift **135/135**, iPhone SE (3. nesil) / iOS 18.5'te **6/6** UI testi (`TEST SUCCEEDED`). Altı politika × 10.000 seed native simülasyon tamamlandı. macOS artifact'larındaki altı JSON, `docs/analysis/milestone225-windows/` raporlarıyla 63 üst düzey alanın hepsinde birebir aynı (kanonik JSON, alan başına SHA-256 karşılaştırması).
+- **Görsel:** yeni görsel yok; 43 aday, 182 eksik.
+
 # 210 kart yerel doğrulama — 2026-11-20 (dal `phase3-era4-210`, Era 4 kapalı)
 
 210 benzersiz kart (60/60/60 + 30 kapalı Era 4), 541 karar. Windows: `build-content --check` geçti, doğrulayıcı 0 hata/0 uyarı, `node --test tools/*.test.mjs` **77/77**, `swift test` **127/127** (115 FateCore + 12 Diagnostics). Altı politika × 10.000 seed: `compare-reference.mjs` altısı 195 Windows raporlarıyla "identical except contentCardCount 195 → 210" (`docs/analysis/milestone210-windows/`). Teşhis (kapı zorla açık, oyuncuya kapalı): Era 4 açlık ve deste tükenmesiyle bitiyor; ayrıntı [PHASE3_210_REPORT.md](PHASE3_210_REPORT.md). Native CI [run 44748860814](https://github.com/srcnxylmz/the-cards-of-fate/actions/runs/44748860814) (`0521f6f`, workflow_dispatch) **başarılı**: Node 77/77, macOS Swift 127/127, iPhone SE 3 / iOS 18.5 derleme + 6/6 UI testi, 4 simülasyon işi (short, knowledge, progression, recovery). Yeni görsel yok: 43 aday, 167 eksik.

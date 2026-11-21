@@ -1,27 +1,31 @@
 {
   "errors": [],
   "warnings": [],
-  "cards": 210,
+  "cards": 225,
   "eraInventory": {
     "4": {
-      "total": 30,
-      "recurring": 17,
-      "conclusions": 6,
-      "bridges": 6,
+      "total": 45,
+      "recurring": 28,
+      "conclusions": 8,
+      "bridges": 8,
       "recurringCategories": [
         "citizenship",
+        "ecology",
         "economy",
+        "health",
         "law",
         "logistics",
         "production",
         "province",
         "roads",
+        "settlement",
         "taxation",
+        "trade",
         "water"
       ],
       "missingCategories": [],
       "enabled": false,
-      "satisfied": false,
+      "satisfied": true,
       "open": false
     },
     "5": {
@@ -113,14 +117,14 @@
       "open": false
     }
   },
-  "choices": 541,
-  "stochasticChoices": 7,
-  "conditionalOutcomeChoices": 50,
+  "choices": 600,
+  "stochasticChoices": 8,
+  "conditionalOutcomeChoices": 67,
   "eras": {
     "1": 60,
     "2": 60,
     "3": 60,
-    "4": 30,
+    "4": 45,
     "5": 0,
     "6": 0,
     "7": 0,
@@ -132,7 +136,7 @@
   },
   "authoredChainGroups": 11,
   "multiCardChainGroups": 11,
-  "crossEraLinks": 183,
+  "crossEraLinks": 199,
   "missingArt": [
     "card_broken_spear",
     "card_stranger_child",
@@ -300,7 +304,22 @@
     "card_pasture_gate_levy",
     "card_guest_assembly_bench",
     "card_assembly_seal_appeal",
-    "card_civil_code_draft"
+    "card_civil_code_draft",
+    "card_provincial_estates",
+    "card_crop_share_dispute",
+    "card_harvest_tithe",
+    "card_famine_store_release",
+    "card_canal_extension",
+    "card_harbor_fishery",
+    "card_grain_convoy",
+    "card_drought_year",
+    "card_plague_quarantine",
+    "card_insula_fire",
+    "card_ferry_upkeep",
+    "card_infirmary_ward",
+    "card_granary_tally_office",
+    "card_quarry_stone_granary",
+    "card_furnace_fire_law"
   ],
   "missingAudio": [
     "era_1",
@@ -330,7 +349,7 @@
   ],
   "releaseReady": false,
   "releaseBlockers": [
-    "800 original cards required; current 210",
+    "800 original cards required; current 225",
     "Era 4 content gate closed (enabled:false; 40/24/8/8 inventory not met)",
     "At least 60 cards per era and 80 special events required",
     "100 completed chains / 50 cross-era links required",

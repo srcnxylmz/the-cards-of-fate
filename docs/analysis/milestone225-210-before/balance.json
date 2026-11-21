@@ -1,0 +1,16 @@
+{
+  "startingStats": {
+    "population": 55,
+    "resources": 55,
+    "authority": 40,
+    "knowledge": 28,
+    "stability": 55,
+    "environment": 70
+  },
+  "resourceConsumption": 4,
+  "hardExtraConsumption": 2,
+  "farmProduction": 2,
+  "starvationLoss": 8,
+  "successionTurns": 24,
+  "rivalPressure": 5
+}

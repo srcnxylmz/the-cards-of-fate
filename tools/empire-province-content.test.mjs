@@ -9,7 +9,7 @@ const read = p => JSON.parse(readFileSync(p, 'utf8'));
 const cards = read('Sources/FateCore/Content/cards.json');
 const eras = read('Sources/FateCore/Content/eras.json');
 const byId = id => cards.find(c => c.id === id);
-const fresh = cards.slice(195);
+const fresh = cards.slice(195, 210);
 const earlyFlags = new Set(cards.filter(c => c.era <= 3).flatMap(c => c.choices.flatMap(ch => ch.outcomes.flatMap(o => [...o.effect.flags, ...o.delayedEffects.flatMap(d => d.effect.flags)]))));
 const results = c => c.choices.flatMap(ch => ch.outcomes.map(o => ({ c, ch, o })));
 const reqs = (c, ch, o) => [...c.requirements, ...ch.requirements, ...(o?.requirements ?? [])];
@@ -97,14 +97,17 @@ test('civil_law is granted only by the paid, conditional legal reform; it cannot
   assert.equal(validate(cards, eras).eraInventory[5].open, false);
 });
 
-test('Era 4 stays closed at 30/40 and the validator still rejects flipping the switch alone', () => {
+test('Era 4 stays closed at 45/40 and the validator still rejects flipping the switch alone', () => {
   const result = validate(cards, eras);
   assert.deepEqual(result.errors, []);
   assert.deepEqual(result.warnings, []);
   const inv = result.eraInventory[4];
-  assert.deepEqual([inv.total, inv.recurring, inv.conclusions, inv.bridges, inv.enabled, inv.open], [30, 17, 6, 6, false, false]);
+  assert.deepEqual([inv.total, inv.recurring, inv.conclusions, inv.bridges, inv.enabled, inv.open], [45, 28, 8, 8, false, false]);
+  assert.equal(inv.satisfied, true);
   const forced = structuredClone(eras); forced[3].contentGate.enabled = true;
-  assert.ok(validate(cards, forced).errors.some(e => e.includes('gate enabled before inventory')));
+  assert.ok(validate(cards, forced).errors.some(e => e.includes('gate enabled without recorded balance evidence')));
+  const short = cards.filter(c => c.era < 4 || cards.indexOf(c) < 210);
+  assert.ok(validate(short, forced).errors.some(e => e.includes('gate enabled before inventory')));
   const broken = structuredClone(cards); broken.find(c => c.id === 'civil_code_draft').exclusionConditions = [];
   assert.ok(validate(broken, eras).errors.some(e => e.includes('reform stays drawable')));
 });

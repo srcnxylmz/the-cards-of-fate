@@ -50,12 +50,15 @@ final class EmpireGroundworkTests: XCTestCase {
 
     func testEveryEraFourChoiceAndContextOutcomeIsSelectableAndReplayable() throws {
         let e = try engine()
-        XCTAssertEqual(empireIDs.count, 30)
+        XCTAssertEqual(empireIDs.count, 45)
         for id in empireIDs {
             let card = try XCTUnwrap(e.content.card(id))
             for choice in card.choices {
                 for outcome in choice.outcomes {
-                    var s = fixture(id, e)
+                  // Stochastic outcomes are resolved under the first seed that draws them; context outcomes on the first.
+                  var resolved = false
+                  for seed in UInt64(195)..<UInt64(choice.outcomes.count > 1 ? 259 : 196) where !resolved {
+                    var s = fixture(id, e, seed: seed)
                     let required = card.requirements + choice.requirements + (outcome.requirements ?? [])
                     satisfy(required, e, &s)
                     // Isolate this context outcome: clear flags that only sibling outcomes require.
@@ -68,12 +71,14 @@ final class EmpireGroundworkTests: XCTestCase {
                     s = draw(id, s, e)
                     let result = try e.choose(choice.id, in: s)
                     XCTAssertEqual(result, try e.choose(choice.id, in: roundtrip(s)), "\(id).\(choice.id) replay")
-                    XCTAssertTrue(result.history.contains { $0.text == outcome.text }, "\(id).\(choice.id).\(outcome.id) resolved")
                     XCTAssertTrue(result.stats.values.allSatisfy { (0...100).contains($0) })
                     XCTAssertEqual(result.era, 4)
                     if card.exclusionConditions.contains(where: { $0.flag == "resolved_" + id }) {
                         XCTAssertTrue(card.exclusionConditions.contains { $0.matches(result) }, "\(id) closes after one use")
                     }
+                    resolved = result.history.contains { $0.text == outcome.text }
+                  }
+                  XCTAssertTrue(resolved, "\(id).\(choice.id).\(outcome.id) resolved")
                 }
             }
         }

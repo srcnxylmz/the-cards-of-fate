@@ -12,8 +12,11 @@
 //   legitimacy      recorded_provincial_dissent, lawful_review_precedent
 //   old bonds       provincial_bond_registry (carries actual Bronze bond state; never reopens paid debt)
 // Every transaction costs resources when it pays; paying choices require the reserve up front.
+// balanceEvidence: a complete inventory is not enough. Opening Era 4 also needs a recorded diagnostic
+// balance acceptance (report path, source SHA, native CI run) and explicit user approval; the validator
+// rejects enabled:true while this stays null. The Swift engine ignores the field.
 export const ERA4_GATE = { enabled:false, minimumCards:40, minimumRecurring:24, minimumConclusions:8, minimumBridges:8,
-  requiredRecurringCategories:['province','taxation','logistics','roads','water','production','citizenship','law'] };
+  requiredRecurringCategories:['province','taxation','logistics','roads','water','production','citizenship','law'], balanceEvidence:null };
 export const FUTURE_ERA_GATE = { enabled:false, minimumCards:40, minimumRecurring:24, minimumConclusions:8, minimumBridges:8, requiredRecurringCategories:[] };
 export const LEDGER_EXCLUSIVE = [
   ['province_local_steward','province_central_receiver'],

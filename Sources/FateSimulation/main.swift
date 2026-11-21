@@ -73,6 +73,8 @@ var lateDecisions: [String:Int] = [:], lateRepeats: [String:Int] = [:]
 var eraStatSums: [String:Int] = [:], stageGains: [String:Int] = [:], stageLosses: [String:Int] = [:]
 var capEras: [String:Int] = [:], capChoices: [String:Int] = [:], capStatRanges: [String:Int] = [:]
 var capDistinctCards = 0, capPendingConsequences = 0, reaches100 = 0
+// Diagnostic-only economy measurements for the forced-open era (absent from baseline reports).
+var economy: [String:Int] = [:]
 
 for seed in 0..<count {
     var crisis = CrisisDiagnostics()
@@ -83,14 +85,18 @@ for seed in 0..<count {
     var eligibilitySeen: Set<String> = []
     var selectionSeen: Set<String> = []
     var tailStates:[[String:Int]] = []
+    var eraIndex = 0, eraEntryTurn = 0, collapsed = false
+    var lateCards: Set<String> = [], lateChoices: Set<String> = []
     for _ in 0..<500 {
         guard state.ending == nil, let card = content.card(state.currentCardID) else { break }
+        var eligibleNow = 0
         for event in content.cards where event.era == state.era {
             let eligible = event.requirements.allSatisfy { $0.matches(state) }
                 && !event.exclusionConditions.contains { $0.matches(state) }
                 && event.choices.filter { $0.available(in: state) }.count >= 2
                 && (event.id == card.id || state.turn - state.lastSeen[event.id, default: -10000] >= event.cooldown)
             if eligible {
+                eligibleNow += 1
                 if event.id != card.id { eligibleUnselected[event.id, default: 0] += 1 }
                 if eligibilitySeen.insert(event.id).inserted {
                     firstEligibleTurnSums[event.id, default: 0] += state.turn
@@ -131,6 +137,49 @@ for seed in 0..<count {
         if let action=actionKind { for stat in Stat.allCases { let change=state.stats[stat.rawValue,default:0]-councilStatsBefore[stat.rawValue,default:0]; if change != 0 { managedCouncilChanges[eraKey+"."+action+"."+stat.rawValue+"."+(change<0 ? "loss":"gain"),default:0] += abs(change) } } }
         let choices = card.choices.filter { $0.available(in: state) }
         let choice = policyName == "recovery" ? engine.selectRecovery(choices,state:state) : engine.select(choices, state: state, policyName: policyName, random: &policy)
+        let measuring = diagnosticOpenEra == state.era
+        if measuring {
+            if eraIndex == 0 {
+                eraEntryTurn = state.turn; economy["entry.runs", default: 0] += 1
+                for stat in Stat.allCases { economy["entry."+stat.rawValue, default: 0] += state.stats[stat.rawValue, default: 0] }
+            }
+            eraIndex += 1
+            let food = engine.foodBudget(in: state)
+            economy["food.production", default: 0] += food.production
+            economy["food.consumption", default: 0] += food.consumption
+            for building in ["granary", "work_calendar", "terrace"] where state.buildings.contains(building) { economy["holds."+building, default: 0] += 1 }
+            if state.technologies.contains("irrigation") { economy["holds.irrigation", default: 0] += 1 }
+            for source in content.balance.provincialProduction ?? [] where state.flags.contains(source.flag) {
+                economy["capacity."+source.flag+".held", default: 0] += 1
+                if state.stats["population", default: 0] >= source.minimumPopulation && state.stats["environment", default: 0] >= source.minimumEnvironment {
+                    economy["capacity."+source.flag+".producing", default: 0] += 1
+                }
+            }
+            economy["decisions", default: 0] += 1
+            economy["eligibleCards", default: 0] += eligibleNow
+            economy["activeChoices", default: 0] += choices.count
+            let reserve = state.stats["resources", default: 0]
+            for (name, limit) in [("zeroReserve", 0), ("lowReserve", 9)] where reserve <= limit {
+                economy[name+".decisions", default: 0] += 1
+                economy[name+".eligibleCards", default: 0] += eligibleNow
+                economy[name+".activeChoices", default: 0] += choices.count
+            }
+            for (name, low) in [("lowStability", state.stats["stability", default: 0] < 25), ("lowPopulation", state.stats["population", default: 0] < 25), ("lowEnvironment", state.stats["environment", default: 0] < 30), ("hostileRival", state.rivals.contains { $0.relation <= content.politics.hostileRelation })] where low {
+                economy[name+".decisions", default: 0] += 1
+                economy[name+".eligibleCards", default: 0] += eligibleNow
+            }
+            let repeatHere = state.history.contains(where: { $0.cardID == card.id })
+            for window in [20, 40, 80] where eraIndex <= window {
+                economy["window\(window).decisions", default: 0] += 1
+                if repeatHere { economy["window\(window).repeats", default: 0] += 1 }
+            }
+            if eraIndex > 100 { lateCards.insert(card.id); lateChoices.insert(card.id+"."+choice.id) }
+            if !collapsed && state.stats["stability", default: 0] < 15 {
+                collapsed = true
+                economy["stabilityCollapse.runs", default: 0] += 1
+                economy["stabilityCollapse.turnsAfterEntry", default: 0] += state.turn - eraEntryTurn
+            }
+        }
         crisis.begin(state,card:card,choice:choice)
         development.begin(state,card:card,choice:choice)
         let decisionKey = "\(card.id).\(choice.id)"
@@ -159,6 +208,10 @@ for seed in 0..<count {
                 let key=eraKey+"."+stage+"."+stat.rawValue
                 if delta<0 { stageLosses[key,default:0] -= delta }
                 if delta>0 { stageGains[key,default:0] += delta }
+            }
+            if measuring && stage == "world" && snapshot.stats["population", default: 0] < stageStats["population", default: 0] {
+                economy["starvation.turns", default: 0] += 1
+                economy["starvation.populationLost", default: 0] += stageStats["population", default: 0] - snapshot.stats["population", default: 0]
             }
             stageStats = snapshot.stats
             if stage == "card" && previousEra == 1 {
@@ -211,6 +264,18 @@ for seed in 0..<count {
         state = engine.acknowledge(state)
     }
     if state.turn>=100 { reaches100 += 1 }
+    if eraIndex > 0 {
+        economy["era.decisionsPerRun", default: 0] += eraIndex
+        let ending = state.ending?.en ?? "cap"
+        let kind = ending.hasPrefix("The last hearth") ? "starvation" : ending.hasPrefix("This development build") ? "exhaustion" : ending.hasPrefix("The land") ? "land" : ending == "cap" ? "cap" : "other"
+        economy["ending."+kind, default: 0] += 1
+        for stat in Stat.allCases { economy["final."+stat.rawValue, default: 0] += state.stats[stat.rawValue, default: 0] }
+        if eraIndex > 100 {
+            economy["after100.runs", default: 0] += 1
+            economy["after100.distinctCards", default: 0] += lateCards.count
+            economy["after100.distinctChoices", default: 0] += lateChoices.count
+        }
+    }
     if state.ending == nil {
         capped += 1; capEras[String(state.era),default:0] += 1
         let tail=state.history.filter { $0.cardID != nil }.suffix(80)
@@ -281,6 +346,7 @@ var report: [String: Any] = [
 // Keys are added only in diagnostic mode, so baseline reports keep their exact shape.
 if let era = diagnosticOpenEra {
     report["diagnosticOpenEra"] = era
+    report["diagnosticEconomy"] = economy
     report["diagnosticNotice"] = "Era \(era) gate forced open for measurement only; not player-reachable. Do not compare with baseline reports."
 }
 let data = try JSONSerialization.data(withJSONObject: report, options: [.prettyPrinted, .sortedKeys])
